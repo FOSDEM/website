@@ -123,7 +123,7 @@ module NavTreeHelper
         if not href.nil? then
           xml.a(:href => href) do
             xml.text! node.name
-            xml.span(node.item[:navorder] ? node.item[:navorder].to_s : "*100", :class=>"badge")
+            # xml.span(node.item[:navorder] ? node.item[:navorder].to_s : "*100", :class=>"badge")
           end
         else
           xml.text! node.name.capitalize
