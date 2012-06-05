@@ -1,0 +1,21 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    cri (2.2.1)
+    kramdown (0.13.7)
+    nanoc (3.3.7)
+      cri (~> 2.2)
+    nokogiri (1.5.3)
+    rainpress (1.0)
+    systemu (2.5.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  cri (~> 2.2.1)
+  kramdown (~> 0.13.6)
+  nanoc (~> 3.3.7)
+  nokogiri
+  rainpress
+  systemu
