@@ -1,0 +1,45 @@
+---
+title: Sponsors
+navorder: 20
+nosponsors: true
+sponsors_root: true
+---
+<p>
+FOSDEM would not be possible without the generous help of our sponsors
+</p>
+<div id="sponsors-quick-links">
+    <% sponsors.reverse.each do |s| %>
+	<a href="#<%= s.id %>">
+		<% if s.thumb? then %>
+        <img src="<%= s.thumb %>" alt="<%= s.name %>"/>
+		<% else %>
+		<%= s.name %>
+		<% end %>
+	</a>
+	<% end %>
+</div>
+
+<hr />
+
+<h3>In alphabetical order:</h3>
+
+<table>
+	<tbody>
+        <% sponsors.each do |s| %>
+		<tr>
+			<td colspan="2">
+                <h2><a name="#<%= s.id %>" id="<%= s.id %>"></a><a href="<%= s.url %>"><%= s.name %></a></h2>
+			</td>
+		</tr>
+		<tr>
+            <td><%= s.propaganda %><br/><br/></td>
+            <td>
+                <% if s.logo? then %>
+                <img src="<%= s.logo %>"/>
+                <% end %>
+            </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+

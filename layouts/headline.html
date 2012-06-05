@@ -1,0 +1,12 @@
+<div class="row-fluid">
+	<div class="span11">
+        <h5>&#x231A; <%= item[:created_at].strftime('%Y-%m-%d') %></h5>
+		<h4>&#9733; <a href="<%= relpath(@item_rep.path, item[:fullpost]) %>"><%= item[:title] %></a></h4>
+        <%= item.compiled_content(:snapshot => :pre) %>
+	</div>
+	<div class="span1">
+		<% if item[:readmore] then %>
+		<a class="btn btn-inverse btn-large" href="<%= relpath(@item_rep.path, item[:readmore]) %>">&#9654;</a>
+		<% end %>
+	</div>
+</div>

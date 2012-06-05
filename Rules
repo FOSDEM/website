@@ -1,0 +1,138 @@
+#!/usr/bin/env ruby
+# vim: set ts=2 sw=2 et ai ft=ruby:
+
+#
+# fosdem.org nanoc configuration
+#
+# Original version: 2012-06-05 by Pascal Bleser <loki@fosdem.org>
+# Questions -> loki@fosdem.org
+# Documentation -> http://nanoc.stoneship.org/docs/
+#
+
+##### PREPROCESSING
+preprocess do
+  # clone items that have "aliases: foo, bar, spam" in their metadata
+  make_aliases
+
+  # create /headline/... items from content/news/*
+  make_headlines
+
+  # auto-set the title of content/interviews/*
+  decorate_interviews
+end
+
+##### COMPILING
+compile '/assets/style/*' do
+  filter :relativize_paths, :type => :css if item[:extension] == 'css'
+  # minimize CSS files:
+  filter :rainpress
+end
+
+# don't apply any filters or layouts on content/sponsors/*
+#compile '/sponsors/*/' do;end
+
+# don't apply any filters on the headlines/* items as they are already
+# rendered by the "make_headlines" helper at preprocessing stage
+# (they do not exist in the filesystem under content/ -- instead, they
+# are items that are created on-the-fly as headlines from content/news/*)
+compile '/headlines/*' do;end
+
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    # process <% ERB %> templating
+    # http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html
+    filter :erb
+
+    # convert .md and .markdown files to HTML using the
+    # kramdown processor
+    filter :kramdown if ['markdown', 'md'].include? item[:extension]
+
+    # run the custom interview filter (lib/helpers/interview_filter.rb)
+    # on content/interviews/* -- it adds a CC license footer and
+    # converts "Q: ..." lines to styled HTML markup
+    filter :interview if item.interview?
+
+    # do the same as above for items that have "qa: true" in their
+    # metadata, but without adding the license footer
+    filter :interview, {:nolicense => true} if item[:filter] == 'qa'
+
+    # run the custom news filter (lib/helpers/news_filter.rb) on
+    # content/news/* -- it removes "---MORE---" lines and removes
+    # from the beginning of the content until "---FULL---" lines
+    # (analog to the make_headlines function from lib/helpers/news.rb
+    # which does the "opposite" (kindof) to generate headline items)
+    filter :news if item.news?
+
+    # run the custom pagelinks filter (lib/helpers/pagelinks.rb) on
+    # all items to replace page:... URLs with their actual URLs as
+    # they will be rendered
+    filter :pagelinks
+
+    # run the custom assetlinks filter (lib/helpers/assetlinks.rb)
+    # on all items to replace asset:... URLs with their actual URLs
+    # as they will be rendered
+    filter :assetlinks
+
+    # transform absolute paths in URLs with relative paths using the
+    # relativize_paths filter (that is shipped with nanoc)
+    filter :relativize_paths, :type => :xhtml
+
+    # use layout/default.html for all items
+    layout 'default' unless item.sponsor?
+  end
+end
+
+##### ROUTING
+
+# route /headlines/* into oblivion as they don't really exist on
+# the site (and are not supposed to): they are created dynamically
+# during preprocessing stage (by the "make_headlines" function that's
+# defined in lib/helpers/news.rb) and only intended to be gathered
+# in content/index.html
+route '/headlines/*/' do;end
+
+# deploy content/assets/style/foo.css as output/assets/style/foo.css
+# (without this, nanoc would deploy it as output/assets/style/foo/index.html)
+route '/assets/style/*' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+# do _not_ deploy the files under content/sponsors/ as they are only used
+# programatically in content/about/sponsors.html, but we _do_ want to
+# deploy binary files (typically the sponsor logos) that are under
+# content/sponsors/, hence the "if item.binary?"
+route '/sponsors/*/' do
+  if item.binary?
+    if item.identifier =~ %r{^(.+)/(.+?)-(big|small)/$} then
+      case $3
+      when 'big'
+        # big logos: /sponsored-by/google.png
+        "/sponsored-by/#{$2}.#{item[:extension]}"
+      when 'small'
+        # small logos: /sponsored-by/thumb/oreilly.png
+        "/sponsored-by/thumb/#{$2}.#{item[:extension]}"
+      else
+        raise "wtf?"
+      end
+    else
+      "/sponsored-by/#{item.id}.#{item[:extension]}"
+    end
+  else
+    # do nothing with the non-binary files
+  end
+end
+
+route '*' do
+  if item.binary?
+    # Write binary item with identifier /foo/ to /foo.ext
+    item.identifier.chop + '.' + item[:extension]
+  else
+    # Write text item with identifier /foo/ to /foo/index.html
+    item.identifier + 'index.html'
+  end
+end
+
+##### LAYOUT PROCESSING
+layout '*', :erb

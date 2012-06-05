@@ -1,0 +1,29 @@
+---
+title: Home
+navorder: -999
+navcat: true
+maxnews: 10
+nohead: true
+---
+
+<div class="well">
+    <p>FOSDEM is the biggest free and non-commercial event organized by and for the community.</p>
+    <p>Its goal is to provide Free and Open Source developers a place to meet.</p>
+    <p><span class="label label-info">No registration necessary.</span></p>
+</div>
+<div>
+    <p>See <a href="page:about">here for details about the event</a>.
+</div>
+
+<div class="container-fluid">
+    <%
+    newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse
+    newsitems[0,item[:maxnews]].each do |hl|
+    %>
+	<%= render('headline', :item => hl) %>
+	<hr />
+    <% end %>
+    <% if newsitems.length > item[:maxnews] %>
+    <a href="/news/">More news&#x2026;</a>
+    <% end %>
+</div>

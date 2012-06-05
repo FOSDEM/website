@@ -1,0 +1,7 @@
+<div class="row-fluid">
+	<div class="span8">
+		<h6 class="pull-right">&#x231A; <%= item[:created_at].strftime('%Y-%m-%d') %></h6>
+		<h3>&#9733; <a href="<%= relpath(@item_rep.path, item.path) %>"><%= item[:title] %></a></h3>
+		<%= item.compiled_content(:snapshot => :pre) %>
+	</div>
+</div>

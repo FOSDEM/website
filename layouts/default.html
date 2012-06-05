@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="generator" content="nanoc 3.3.7">
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<link type="text/css" rel="stylesheet" media="screen" href="<%= relative_path_to('/assets/style/bootstrap.css') %>"/>
+		<title>FOSDEM - <%= @item[:title] %></title>
+		<style type="text/css">
+			body {
+				padding-top: 60px;
+				padding-bottom: 40px;
+			}
+			.sidebar-nav {
+				padding: 9px 0;
+            }
+            .interview-license {
+                margin-top: 3em;
+            }
+            .interview-license img, #infoblock img {
+                float: left;
+                margin: 0.3em 1em 0.3em 0.3em;
+            }
+            #infoblock {
+                background: inherit;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="#">FOSDEM</a>
+					<div class="nav-collapse">
+						<ul class="nav">
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div> <!-- navbar-inner -->
+		</div> <!-- navbar -->
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<ul class="well sidebar-nav">
+						<ul class="nav nav-list">
+							<%= navtree %>
+						</ul>
+					</ul>
+				</div>
+                <div class="<%= @item[:nosponsors] ? 'span9' : 'span6' %>">
+                    <% if not @item[:nohead] %>
+					<ul class="breadcrumb">
+						<%= bcrumbs %>
+					</ul>
+                    <h1><%= @item[:title] %></h1>
+                    <% end %>
+					<%= yield %>
+                </div>
+                <% unless @item[:nosponsors] %>
+				<div class="span3">
+					<ul class="well sidebar-nav">
+						<ul class="nav nav-list">
+							<li class="nav-header">Support</li>
+							<li>
+							<div class="btn-group">
+								<a href="#" class="btn btn-primary">Donate</a>
+								<a href="#" class="btn btn-success">Promote</a>
+							</div>
+							</li>
+							<li class="nav-header">Cornerstone Sponsors</li>
+                            <% sponsors.select{|s| s.cornerstone?}.each do |s| %>
+							<a href="<%= relpath(@item_rep.path, s.path) %>">
+                                <% if s.logo? %>
+                                <img src="<%= relpath(@item_rep.path, s.logo) %>" alt="<%= s.name %>" title="<%= s.name %>"/>
+                                <% else %>
+                                <%= s.name %>
+                                <% end %>
+							</a>
+							<% end %>
+							<li class="nav-header">Other Sponsors</li>
+                            <% sponsors.select{|s| not s.cornerstone?}.each do |s| %>
+							<a href="<%= relpath(@item_rep.path, s.path) %>">
+                                <% if s.logo? %>
+								<img src="<%= relpath(@item_rep.path, s.logo) %>" alt="<%= s.name %>" title="<%= s.name %>"/>
+                                <% else %>
+                                <%= s.name %>
+                                <% end %>
+							</a>
+							<% end %>
+						</ul>
+					</ul>
+                </div>
+                <% end #nosponsors %>
+                <% if @item[:infoblock] %>
+                <div class="span3 well" id="infoblock">
+                    <%= @item[:infoblock] %>
+                </div>
+                <% end #infoblock %>
+			</div>
+		</div>
+
+	</body>
+</html>
