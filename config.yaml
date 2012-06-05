@@ -78,3 +78,13 @@ watcher:
   notify_on_compilation_success: true
   notify_on_compilation_failure: true
 
+deploy:
+  public:
+    kind: rsync
+    dst:  "achanes.fosdem.org:/var/www/new.fosdem.org/public"
+    options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
+  staging:
+    kind: rsync
+    dst:  "achanes.fosdem.org:/var/www/staging.fosdem.org/public"
+    options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
+
