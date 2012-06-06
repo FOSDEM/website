@@ -57,7 +57,7 @@
 						</ul>
 					</ul>
 				</div>
-                <div class="<%= @item[:nosponsors] ? 'span9' : 'span6' %>">
+                <div class="<%= @item[:no_sponsors] ? 'span9' : 'span6' %>">
                     <% if not @item[:nohead] %>
 					<ul class="breadcrumb">
 						<%= bcrumbs %>
@@ -66,7 +66,7 @@
                     <% end %>
 					<%= yield %>
                 </div>
-                <% unless @item[:nosponsors] %>
+                <% unless @item[:no_sponsors] %>
 				<div class="span3">
 					<ul class="well sidebar-nav">
 						<ul class="nav nav-list">
@@ -100,7 +100,7 @@
 						</ul>
 					</ul>
                 </div>
-                <% end #nosponsors %>
+                <% end #no_sponsors %>
                 <% if @item[:infoblock] %>
                 <div class="span3 well" id="infoblock">
                     <%= @item[:infoblock] %>
