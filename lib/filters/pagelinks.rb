@@ -19,18 +19,25 @@ class PageLinks < LinkProcessor
     results = @items.select do |item|
       if item.identifier == curl then
         true
-      elsif (not item[:title].nil?) and (item[:title].casecmp(url) == 0) then
+      elsif (not item[:title].nil?) and (item[:title].casecmp(curl) == 0) then
         true
-      elsif self.match_filename(item, url) then
+      elsif self.match_filename(item, curl) then
+        true
+      elsif self.match_basename(item, curl) then
         true
       else
         false
       end
     end
 
-    raise "Failed to resolve \"page:#{url}\" URL" if results.empty?
-    raise "Found more than one item that resolves the URL \"page:#{url}\": #{results}" if results.length > 1
+    raise "Failed to resolve \"#{url}\" URL" if results.empty?
+    raise "Found more than one item that resolves the URL \"#{url}\": #{results}" if results.length > 1
     return results[0].identifier
+  end
+
+  def match_basename(item, q)
+    require 'pathname'
+    Pathname.new(item.path.nil? ? item.identifier : item.path).basename.to_s == Pathname.new(q).basename.to_s
   end
 
   def match_filename(item, q)
