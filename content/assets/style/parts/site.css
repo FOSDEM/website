@@ -1,0 +1,23 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+.sidebar-nav {
+	padding: 9px 0;
+}
+.interview-license {
+    margin-top: 3em;
+}
+.interview-license img, #infoblock img {
+    float: left;
+    margin: 0.3em 1em 0.3em 0.3em;
+}
+#infoblock {
+    background: inherit;
+}
+table#sponsors td {
+    vertical-align: top;
+}
+table#sponsors img {
+    padding-left: 2em;
+}

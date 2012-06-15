@@ -1,0 +1,3 @@
+<% @items.select{|i| i.identifier =~ %r{^/assets/style/parts/.+/$}}.each do |css| %>
+<%= css.compiled_content %>
+<% end %>
