@@ -43,6 +43,10 @@ enable_output_diff: false
 
 base_url: 'http://fosdem.org'
 
+# configure auto_prune here because of a bug in the configuration lookup
+# in nanoc <= 3.5 (reported upstream)
+auto_prune: true
+
 prune:
   # Whether to automatically remove files not managed by nanoc from the output
   # directory. For safety reasons, this is turned off by default.
