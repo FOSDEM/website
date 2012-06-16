@@ -5,33 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="generator" content="nanoc 3.3.7">
 		<meta http-equiv="content-type" content="text/html;charset=utf-8">
-		<link type="text/css" rel="stylesheet" media="screen" href="<%= relative_path_to('/assets/style/bootstrap.css') %>"/>
+        <link type="text/css" rel="stylesheet" media="screen" href="<%= relpath(@item_rep.path, locate_item_by_identifier('/assets/style/fosdem/')) %>"/>
+        <link href="<%= relpath(@item_rep.path, locate_item_by_identifier('/atom/')) %>" type="application/atom+xml" rel="alternate" title="FOSDEM ATOM Feed"/>
 		<title>FOSDEM - <%= @item[:title] %></title>
-		<style type="text/css">
-			body {
-				padding-top: 60px;
-				padding-bottom: 40px;
-			}
-			.sidebar-nav {
-				padding: 9px 0;
-            }
-            .interview-license {
-                margin-top: 3em;
-            }
-            .interview-license img, #infoblock img {
-                float: left;
-                margin: 0.3em 1em 0.3em 0.3em;
-            }
-            #infoblock {
-                background: inherit;
-            }
-            table#sponsors td {
-                vertical-align: top;
-            }
-            table#sponsors img {
-                padding-left: 2em;
-            }
-		</style>
 	</head>
 	<body>
 		<div class="navbar navbar-fixed-top">

@@ -31,6 +31,11 @@ def make_headlines
       mtime = item.mtime
       headline = Nanoc::Item.new(headline_content, attrs, id, { :mtime => mtime, :binary => false })
       headline[:fullpost] = item.identifier
+
+      # also put the headline text into the item (used when rendering the atom feed)
+      item[:headline] = headline_content
+
+      # add the headline item to the list of items
       @items << headline
     else
       raise "news file name does not start with a date (YYYY-MM-DD-...): #{item.id}"

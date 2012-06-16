@@ -3,7 +3,7 @@
 def locate_item_by_identifier(identifier, items=@items)
     q = identifier
     q.insert(0, '/') unless q[0,1] == '/'
-    q << '/' unless q[-1,1] == '/'
+    q << '/' unless q[-1,1] == '/' or q.split('/')[-1].include? '.'
     l = items.select{|item| item.identifier == q}
     raise "failed to find an item that matches the identifier #{q}" if l.empty?
     raise "found more than one item that matches the identifier #{q}: #{l}" if l.length > 1

@@ -6,13 +6,13 @@ class LinkProcessor < Nanoc::Filter
   require 'nanoc/helpers/link_to'
   include Nanoc::Helpers::LinkTo
 
-  SELECTORS = [ 'a/@href', 'img/@src', 'script/@src', 'link/@href' ]
+  @@SELECTORS = [ 'a/@href', 'img/@src', 'script/@src', 'link/@href' ]
 
   def run(content, params={})
     # Set assigns so helper function can be used
     @item_rep = assigns[:item_rep] if @item_rep.nil?
 
-    selectors  = params.fetch(:select) { SELECTORS }
+    selectors  = params.fetch(:select) { @@SELECTORS }
     namespaces = params[:namespaces] || {}
 
     require 'nokogiri'

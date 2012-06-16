@@ -22,20 +22,36 @@ preprocess do
 end
 
 ##### COMPILING
+
+# skip those, as they are combined into content/assets/style/fosdem.css
+compile '/assets/style/parts/*' do;end
+route '/assets/style/parts/*' do;end
+
 compile '/assets/style/*' do
-  filter :relativize_paths, :type => :css if item[:extension] == 'css'
+  # merge all content/assets/style/parts/*.css files into one
+  # in content/assets/style/*.css (see the ERB/ruby code there)
+  # in order to optimize web browser performance (less HTTP
+  # round-trips), see
+  # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
+  # for inspiration
+
+  # process those using ERB:
+  filter :erb
+  # then relativize any resource paths (to images and such):
+  filter :relativize_paths, :type => :css
   # minimize CSS files:
   filter :rainpress
 end
-
-# don't apply any filters or layouts on content/sponsors/*
-#compile '/sponsors/*/' do;end
 
 # don't apply any filters on the headlines/* items as they are already
 # rendered by the "make_headlines" helper at preprocessing stage
 # (they do not exist in the filesystem under content/ -- instead, they
 # are items that are created on-the-fly as headlines from content/news/*)
 compile '/headlines/*' do;end
+
+compile '/atom/' do
+  filter :erb
+end
 
 compile '*' do
   if item.binary?
@@ -75,6 +91,14 @@ compile '*' do
     # as they will be rendered
     filter :assetlinks
 
+    # retrieve the image width and height from the image files that
+    # are referenced in <img/> tags to speed up browser rendering
+    # performance, see
+    # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
+    # for inspiration, as well as
+    # https://developers.google.com/speed/docs/best-practices/rendering#SpecifyImageDimensions
+    filter :imagesize
+
     # transform absolute paths in URLs with relative paths using the
     # relativize_paths filter (that is shipped with nanoc)
     filter :relativize_paths, :type => :xhtml
@@ -93,10 +117,18 @@ end
 # in content/index.html
 route '/headlines/*/' do;end
 
+route '/atom/' do
+  '/atom.xml'
+end
+
 # deploy content/assets/style/foo.css as output/assets/style/foo.css
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
 route '/assets/style/*' do
-  item.identifier.chop + '.' + item[:extension]
+  require 'digest/sha2'
+  sha = Digest::SHA256.new
+  sha << item.raw_content
+  digest = sha.hexdigest.downcase
+  "#{item.identifier.chop}-#{digest}.#{item[:extension]}"
 end
 
 # do _not_ deploy the files under content/sponsors/ as they are only used

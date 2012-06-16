@@ -5,10 +5,11 @@ GEM
     colored (1.2)
     cri (2.3.0)
       colored (>= 1.2)
+    image_size (1.1.0)
     kramdown (0.13.7)
     nanoc (3.3.7)
       cri (~> 2.2)
-    nokogiri (1.5.3)
+    nokogiri (1.5.4)
     rainpress (1.0)
     systemu (2.5.1)
 
@@ -18,6 +19,7 @@ PLATFORMS
 DEPENDENCIES
   builder
   cri (~> 2.3.0)
+  image_size
   kramdown (~> 0.13.6)
   nanoc (~> 3.3.7)
   nokogiri
