@@ -124,19 +124,20 @@ end
 # deploy content/assets/style/foo.css as output/assets/style/foo.css
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
 route '/assets/*/' do
-  if @site.config[:digest_assets] then
-    require 'digest/sha2'
-    sha = Digest::SHA256.new
-    if item.binary? then
-      sha << IO.read(item[:filename])
-    else
-      sha << item.raw_content
-    end
-    digest = sha.hexdigest.downcase
-    "#{item.identifier.chop}-#{digest}.#{item[:extension]}"
-  else
-    "#{item.identifier.chop}.#{item[:extension]}"
-  end
+  suffix = if @site.config[:digest_assets] then
+             require 'digest/sha2'
+             sha = Digest::SHA256.new
+             if item.binary? then
+               sha << IO.read(item[:filename])
+             else
+               sha << item.raw_content
+             end
+             digest = sha.hexdigest.downcase
+             "-#{digest}"
+           else
+             ""
+           end
+  "#{item.identifier.chop}#{suffix}.#{item[:extension]}"
 end
 
 # do _not_ deploy the files under content/sponsors/ as they are only used
@@ -146,13 +147,25 @@ end
 route '/sponsors/*/' do
   if item.binary?
     if item.identifier =~ %r{^(.+)/(.+?)-(big|small)/$} then
-      case $3
+      name = $2
+      size = $3
+      suffix = if @site.config[:digest_sponsor_logos] then
+                 require 'digest/sha2'
+                 sha = Digest::SHA256.new
+                 sha << IO.read(item[:filename])
+                 digest = sha.hexdigest.downcase
+                 "-#{digest}"
+               else
+                 ""
+               end
+
+      case size
       when 'big'
         # big logos: /sponsored-by/google.png
-        "/sponsored-by/#{$2}.#{item[:extension]}"
+        "/sponsored-by/#{name}#{suffix}.#{item[:extension]}"
       when 'small'
         # small logos: /sponsored-by/thumb/oreilly.png
-        "/sponsored-by/thumb/#{$2}.#{item[:extension]}"
+        "/sponsored-by/thumb/#{name}#{suffix}.#{item[:extension]}"
       else
         raise "wtf?"
       end

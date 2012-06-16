@@ -9,6 +9,9 @@
 # aggressive caching of larger files where the URLs don't matter
 digest_assets: true
 
+# Same thing as above but for sponsor logos:
+digest_sponsor_logos: true
+
 # Whether to append "/index.html" to links to pages:
 # this looks really ugly and silly on the HTTP served website, but is
 # needed when looking at the output locally before pushing changes, as
