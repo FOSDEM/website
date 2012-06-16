@@ -49,10 +49,6 @@ end
 # are items that are created on-the-fly as headlines from content/news/*)
 compile '/headlines/*' do;end
 
-compile '/atom/' do
-  filter :erb
-end
-
 compile '*' do
   if item.binary?
     # don’t filter binary items
@@ -61,50 +57,52 @@ compile '*' do
     # http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html
     filter :erb
 
-    # convert .md and .markdown files to HTML using the
-    # kramdown processor
-    filter :kramdown if ['markdown', 'md'].include? item[:extension]
+    unless item[:extension] == 'xml' then
+      # convert .md and .markdown files to HTML using the
+      # kramdown processor
+      filter :kramdown if ['markdown', 'md'].include? item[:extension]
 
-    # run the custom interview filter (lib/helpers/interview_filter.rb)
-    # on content/interviews/* -- it adds a CC license footer and
-    # converts "Q: ..." lines to styled HTML markup
-    filter :interview if item.interview?
+      # run the custom interview filter (lib/helpers/interview_filter.rb)
+      # on content/interviews/* -- it adds a CC license footer and
+      # converts "Q: ..." lines to styled HTML markup
+      filter :interview if item.interview?
 
-    # do the same as above for items that have "qa: true" in their
-    # metadata, but without adding the license footer
-    filter :interview, {:nolicense => true} if item[:filter] == 'qa'
+      # do the same as above for items that have "qa: true" in their
+      # metadata, but without adding the license footer
+      filter :interview, {:nolicense => true} if item[:filter] == 'qa'
 
-    # run the custom news filter (lib/helpers/news_filter.rb) on
-    # content/news/* -- it removes "---MORE---" lines and removes
-    # from the beginning of the content until "---FULL---" lines
-    # (analog to the make_headlines function from lib/helpers/news.rb
-    # which does the "opposite" (kindof) to generate headline items)
-    filter :news if item.news?
+      # run the custom news filter (lib/helpers/news_filter.rb) on
+      # content/news/* -- it removes "---MORE---" lines and removes
+      # from the beginning of the content until "---FULL---" lines
+      # (analog to the make_headlines function from lib/helpers/news.rb
+      # which does the "opposite" (kindof) to generate headline items)
+      filter :news if item.news?
 
-    # run the custom pagelinks filter (lib/helpers/pagelinks.rb) on
-    # all items to replace page:... URLs with their actual URLs as
-    # they will be rendered
-    filter :pagelinks
+      # run the custom pagelinks filter (lib/helpers/pagelinks.rb) on
+      # all items to replace page:... URLs with their actual URLs as
+      # they will be rendered
+      filter :pagelinks
 
-    # run the custom assetlinks filter (lib/helpers/assetlinks.rb)
-    # on all items to replace asset:... URLs with their actual URLs
-    # as they will be rendered
-    filter :assetlinks
+      # run the custom assetlinks filter (lib/helpers/assetlinks.rb)
+      # on all items to replace asset:... URLs with their actual URLs
+      # as they will be rendered
+      filter :assetlinks
 
-    # retrieve the image width and height from the image files that
-    # are referenced in <img/> tags to speed up browser rendering
-    # performance, see
-    # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
-    # for inspiration, as well as
-    # https://developers.google.com/speed/docs/best-practices/rendering#SpecifyImageDimensions
-    filter :imagesize
+      # retrieve the image width and height from the image files that
+      # are referenced in <img/> tags to speed up browser rendering
+      # performance, see
+      # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
+      # for inspiration, as well as
+      # https://developers.google.com/speed/docs/best-practices/rendering#SpecifyImageDimensions
+      filter :imagesize
 
-    # transform absolute paths in URLs with relative paths using the
-    # relativize_paths filter (that is shipped with nanoc)
-    filter :relativize_paths, :type => :xhtml
+      # transform absolute paths in URLs with relative paths using the
+      # relativize_paths filter (that is shipped with nanoc)
+      filter :relativize_paths, :type => :xhtml
 
-    # use layout/default.html for all items
-    layout 'default' unless item.sponsor?
+      # use layout/default.html for all items
+      layout 'default' unless item.sponsor?
+    end
   end
 end
 
@@ -116,10 +114,6 @@ end
 # defined in lib/helpers/news.rb) and only intended to be gathered
 # in content/index.html
 route '/headlines/*/' do;end
-
-route '/atom/' do
-  '/atom.xml'
-end
 
 # deploy content/assets/style/foo.css as output/assets/style/foo.css
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
@@ -180,6 +174,9 @@ end
 route '*' do
   if item.binary?
     # Write binary item with identifier /foo/ to /foo.ext
+    item.identifier.chop + '.' + item[:extension]
+  elsif item[:extension] == 'xml'
+    # Write XML files with identifier /foo/ to /foo.xml
     item.identifier.chop + '.' + item[:extension]
   else
     # Write text item with identifier /foo/ to /foo/index.html
