@@ -13,7 +13,7 @@ class AssetLinks < LinkProcessor
     raise "URL #{url} does not match asset:" unless url =~ /^asset:(.+)$/
     a = $1
 
-    candidates = @items.select{|i| i.path =~ %r,^/assets(/.+?)?/#{a}\..+$,i}
+    candidates = @items.select{|i| i.path =~ %r,^/assets(/.+?)?/#{a}\..+$,i or (not i[:filename].nil? and i[:filename] =~ %r,^content/assets(/.+?)?/#{a}\..+$,)}
 
     raise "Failed to find asset resource that matches \"#{a}\" (referenced as URL \"#{url}\" in #{@item.identifier})" if candidates.empty?
     raise "Found #{candidates.length} asset resource that match \"#{a}\" (referenced as URL \"#{url}\" in #{@item.identifier})" if candidates.length > 1

@@ -46,7 +46,8 @@ class ImageSizeFilter < Nanoc::Filter
 
   def image_size(path)
     require 'image_size'
-    img = ImageSize.new(IO.read("content/#{path}"))
+    path = '/' + path unless path[0, 1] == '/'
+    img = ImageSize.new(IO.read("output#{path}"))
     { :height => img.height, :width => img.width }
   end
 

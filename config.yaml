@@ -1,5 +1,25 @@
 # vim: set sw=2 ts=2 et ai:
 
+#########################################################################
+# FOSDEM site specific configuration:
+#########################################################################
+
+# Whether to compute SHA256 digests on asset files (CSS, JavaScript, images, ...)
+# and use those as part of the resulting URLs and filenames, to enable very
+# aggressive caching of larger files where the URLs don't matter
+digest_assets: true
+
+# Whether to append "/index.html" to links to pages:
+# this looks really ugly and silly on the HTTP served website, but is
+# needed when looking at the output locally before pushing changes, as
+# browsers don't look for index.html in the local filesystem ;)
+# Normally, this SHOULD be left to "false", as we can use "nanoc view" to
+# start a tiny local web server to browse the locally rendered content
+append_index_html_to_urls: false
+
+#########################################################################
+# everything below is standard nanoc configuration stuff
+
 # A list of file extensions that nanoc will consider to be textual rather than
 # binary. If an item with an extension not in this list is found,  the file
 # will be considered as binary.
@@ -26,7 +46,7 @@ base_url: 'http://fosdem.org'
 prune:
   # Whether to automatically remove files not managed by nanoc from the output
   # directory. For safety reasons, this is turned off by default.
-  auto_prune: false
+  auto_prune: true
 
   # Which files and directories you want to exclude from pruning. If you version
   # your output directory, you should probably exclude VCS directories such as
