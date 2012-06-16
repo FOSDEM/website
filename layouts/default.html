@@ -60,7 +60,7 @@
 							</div>
 							</li>
 							<li class="nav-header">Cornerstone Sponsors</li>
-                            <% sponsors.select{|s| s.cornerstone?}.each do |s| %>
+                            <% sponsors.select{|s| s.include_in_toplevel? and s.cornerstone?}.each do |s| %>
 							<a href="<%= relpath(@item_rep.path, s.path) %>">
                                 <% if s.logo? %>
                                 <img src="<%= relpath(@item_rep.path, s.logo) %>" alt="<%= s.name %>" title="<%= s.name %>"/>
@@ -70,7 +70,7 @@
 							</a>
 							<% end %>
 							<li class="nav-header">Other Sponsors</li>
-                            <% sponsors.select{|s| not s.cornerstone?}.each do |s| %>
+                            <% sponsors.select{|s| s.include_in_toplevel? and (not s.cornerstone?)}.each do |s| %>
 							<a href="<%= relpath(@item_rep.path, s.path) %>">
                                 <% if s.thumb? %>
 								<img src="<%= relpath(@item_rep.path, s.thumb) %>" alt="<%= s.name %>" title="<%= s.name %>"/>
