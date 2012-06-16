@@ -40,6 +40,8 @@ class Sponsor
     @propaganda = item.compiled_content(:snapshot => :pre)
     @cornerstone = !item[:cornerstone].nil?
     @path = item.path
+    @section = item[:section].nil? ? '' : item[:section]
+    @attribs = item.attributes
   end
 
   def id
@@ -54,12 +56,24 @@ class Sponsor
     @propaganda
   end
 
+  def include_in_toplevel?
+    @section == '' or @attribs[:include_in_toplevel]
+  end
+
+  def section
+    @section
+  end
+
   def path
     @@basepage.path + '#' + self.id
   end
 
   def cornerstone?
     @cornerstone
+  end
+
+  def url?
+    not @url.nil?
   end
 
   def url
@@ -86,10 +100,14 @@ class Sponsor
     locate_item_by_filename(@logo[:big], @@items_cache).path
   end
 
+  def order
+    @attribs[:order].nil? ? 100 : @attribs[:order]
+  end
+
   def self.list(items)
     if @@cache.nil? then
       @@items_cache = items.select{|item| item[:disabled].nil? or not item[:disabled]}
-      @@cache = @@items_cache.select{|item| item.sponsor? }.map{|item| Sponsor.new(item)}.sort_by{|s| s.name}
+      @@cache = @@items_cache.select{|item| item.sponsor? }.map{|item| Sponsor.new(item)}.sort_by{|s| [s.order, s.name]}
       begin
         l = @@items_cache.select{|item| item[:sponsors_root]}
         raise "failed to find item with attribute :sponsors_root" if l.empty?
