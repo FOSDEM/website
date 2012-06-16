@@ -1,6 +1,8 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    adsf (1.1.1)
+      rack (>= 1.0.0)
     builder (3.0.0)
     colored (1.2)
     cri (2.3.0)
@@ -10,6 +12,7 @@ GEM
     nanoc (3.3.7)
       cri (~> 2.2)
     nokogiri (1.5.4)
+    rack (1.4.1)
     rainpress (1.0)
     systemu (2.5.1)
 
@@ -17,6 +20,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  adsf
   builder
   cri (~> 2.3.0)
   image_size
