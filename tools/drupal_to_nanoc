@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+# vim: set ts=2 sw=2 et ai ft=ruby:
+require 'open-uri'
+require 'nokogiri'
+
+uri = ARGV[0]
+raise "must specify URL as parameter" if uri.nil?
+
+doc = Nokogiri::HTML(open(uri))
+
+if uri =~ %r{/(\d\d\d\d)/interview/(.+)\.html$} then
+  year = $1
+  id = $2.downcase.gsub(/-/, '_')
+  meta = {
+    :year => year,
+  }
+  titles = doc.xpath(%#/html/head/title#)
+  raise "failed to find <title/> in document" if titles.empty?
+  raise "found more than one <title/> in document" if titles.length > 1
+  n = titles[0]
+  if n.content =~ /^interview\s*:\s*(.+?)\s*\|/i then
+    meta[:person] = $1
+    meta[:slug] = $1.downcase.gsub(' ', '_')
+    fid = id.gsub('_', '-')
+    outfile = "content/interviews/#{year}-#{fid}.html"
+  else
+    raise "not an interview"
+  end
+else
+  raise "unsupported URL: #{uri}"
+end
+
+out = File.new(outfile, "w")
+out.puts '---'
+meta.each{|k,v| out.puts "#{k.to_s}: #{v.to_s}"}
+out.puts '---'
+
+doc = Nokogiri::HTML(open(uri))
+doc.xpath(%#//div[@class='content']/*#).reject{|n| ['sponsor-logos', 'menu'].include?(n[:class]) or ['form'].include?(n.name)}.each do |n|
+  next if n.content =~ %r{^\s*This interview is licensed}
+
+  # preprocess links
+  n.xpath(%#//a[@href]#).each do |a|
+    next if a[:href] =~ %r{^.+?:.+}
+    if a[:href] =~ %r{schedule/speaker/(.+)\.html$} then
+      a[:href] = "speaker:#{year}/#{$1}"
+    elsif a[:href] =~ %r{schedule/event/(.+)\.html$} then
+      a[:href] = "event:#{year}/#{$1}"
+    end
+  end
+
+  out.puts n.to_s.gsub(%r{^<h3>}i, '<h5>Q: ').gsub(%r{</h5>$}i, '</p>')
+end
+out.close
+puts "Written to #{outfile}"

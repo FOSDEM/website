@@ -1,0 +1,10 @@
+#!/bin/bash
+curl -s https://archive.fosdem.org/2012/interviews.html \
+| perl -ne '
+print "https://archive.fosdem.org/$1.html","\n" if m,href="https?://(?:archive\.)?fosdem\.org/(\d+/interview/.+?)",;
+print "https://archive.fosdem.org/2012/$1","\n" if m,href="(interview/.+\.html)",;
+' \
+| while read url; do
+    echo "==== $url"
+    ./tools/drupal_to_nanoc "$url"
+done
