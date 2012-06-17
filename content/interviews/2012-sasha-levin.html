@@ -1,0 +1,48 @@
+---
+year: 2012
+person: Sasha Levin
+slug: sasha_levin
+---
+<p><a href="speaker:2012/sasha_levin">Sasha Levin</a> will give a talk about <a href="event:2012/native_kvm">"Native KVM tool"</a> at FOSDEM 2012.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>My name is Sasha Levin, I'm a 26 year old Linux Hacker currently living in-between Cambridge, MA, US and Tel-Aviv, Israel.</p>
+<p>I've been working with Linux since I was a teenager, and quite recently I got myself into the wonderful world of KVM.</p>
+<p>For the past 3 years I've been working on KVM related projects, biggest of them is probably the Native KVM tool which I'll be presenting.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>I'll be talking about the Linux Native KVM tool, starting from the history of the tool and the motivation of writing it the way it was written and all the way to demonstrating the result by showing the integration with the kernel code by talking about the design and
+implementation of main system components.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you expect?</p>
+<p>There are several things I'd like to accomplish by giving this talk:</p>
+<ul>
+<li>Present the KVM tool as an alternative to QEMU. Most people aren't even aware that QEMU and KVM are different systems, and I'd like to show that it is possible to use the tool in a variety of use cases which can be interesting for the crowd that will be in FOSDEM;</li>
+  <li>Raise some interest in kernel and userspace hackers to work on the tool by demonstrating the benefits of developing userspace code which is
+tightly integrated with its kernel counterpart within the same code tree;</li>
+  <li>Receive input from people about how they see the tool, possible use cases, and feature requests.</li>
+</ul>
+<p>Q: What are the most important reasons for end users to use the native KVM tool instead of QEMU?</p>
+<p>Currently the end users are mostly other hackers. The tool makes the lives of hackers much easier for a couple of reasons:</p>
+<ul>
+<li>Very easy kernel testing and debugging;</li>
+  <li>Sandboxing allows testing of software without fear of killing the host;</li>
+  <li>Easier development of kernel code - mostly for KVM and paravirt related code.</li>
+</ul>
+<p>For the common user, the tool provides a lightweight and efficient solution for running KVM guests. If the user doesn't need any legacy emulation in his server, the tool is more than capable in providing anything he needs.</p>
+<p>Q: Which features that are provided by QEMU are not supported in the native KVM tool? Which subset of the QEMU features are you targetting?</p>
+<p>QEMU has a whole bunch of features not supported by the tool, but we're not trying to cover everything QEMU does either.</p>
+<p>The interesting features for us are:</p>
+<ul>
+<li>More complete BIOS support &amp; integration with external BIOS;</li>
+  <li>Support for more architectures;</li>
+  <li>Booting non-linux guests.</li>
+</ul>
+<p>Q: How many developers are working on the native KVM tool?</p>
+<p>There are 4 core developers: Pekka Enberg, Asias He, Cyrill Gorcunov and myself. In addition, there are about 10-15 people who contribute code on a regular basis.</p>
+<p>I think that it's worth mentioning that since one of the goals of the tool was to make the code look like kernel code, a large part of the contributors are kernel hackers including several major Linux subsystem
+maintainers such as Ingo Molnar, Thomas Gleixner and Pekka Enberg.</p>
+<p>Q: Which new features will we see this year?</p>
+<p>We're working on re-hauling the codebase before adding more big features, so I guess that the first feature would be shiny new code :)</p>
+<p>Other than that, we're looking into improving sandboxing and making it more intuitive. For example, we'd like users to be able to run 'kvm sandbox firefox' and have an instance of firefox with all their settings
+run in a virtual guest.</p>
+<p>Another feature would be external BIOS support. This optional feature would pave the way to booting non-linux guests and being able to do the entire boot process (with grub and everyhing), unlike how it works now.</p>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>Have to say that this will be my first FOSDEM, and I can't wait! :)</p>

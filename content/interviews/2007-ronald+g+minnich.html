@@ -1,0 +1,87 @@
+---
+year: 2007
+person: Ronald G Minnich
+slug: ronald_g_minnich
+---
+<a href="../schedule/speakers/ronald%2bg%2bminnich.html"><img src="../schedule/images/speaker-33-128x128.jpg"></a>
+<p>
+LinuxBIOS is working hard to remove one of the last barriers to truly free computing. Learn all about it from the project's creator, Ronald G Minich.
+</p>
+<p>Q: 
+What's your goal for your talk at FOSDEM?
+</p>
+<p>
+I'd like to communicate the basic ideas -- that Linux is a good BIOS, and why; why LinuxBIOS is built the way it is; where we are going; and how people can help. Most importantly, why it all matters -- and it really matters a lot. We're on the verge of losing control of the systems we buy, and we need to make a conscious effort, as a community, to ensure this loss of control does not happen. That effort will not be without some sacrifice, but if we are to maintain our
+ability to use and program our machines, and have fun with them, we have to act now. Because, if the computing business stops being fun, what's the point?
+</p>
+<p>Q: 
+We saw the mention on the LinuxBIOS website about one million devices shipped with LinuxBIOS. Could you tell us more about these devices?
+</p>
+<p>
+Yes, these are internet terminals that were built in India, based on the [x86 system-on-chip] STPC chip, I am told; also, there evidently is a Turkish-built digital TV that runs LinuxBIOS. I have also heard that there are routers and many other embedded devices running LinuxBIOS. I think at this point that 1 million is a low number. I am in contact with other set-top box vendors that are talking about numbers in the 10s of millions for their products. These numbers actually make the OLPC numbers seem small, which is in itself amazing.
+</p>
+<p>Q: 
+What kind of support have you received from chipset and motherboard manufacturers so far?
+</p>
+<p>
+Mixed. Initially, <a href="http://www.sis.com/">SiS</a>, <a href="http://www.via.com.tw/">VIA</a>, and [<a href="http://en.wikipedia.org/wiki/Acer_Laboratories_Incorporated">ALi</a>] were strong supporters, but they have dropped off in recent years. <a href="http://www.amd.com/">AMD</a> has been a very strong supporter in recent years; <a href="http://www.intel.com/">Intel</a> was initially very helpful, but in recent years have become a very strong opponent of LinuxBIOS. <a href="http://www.tyan.com/">Tyan</a> provided great support, but their support dropped off when they did not see a market appear (this problem was due to a number of issues, including an engineering-marketing disconnect). <a href="http://www.msi.com.tw/">MSI</a> is one of our latest supporters, and I think they may hit the sweet spot -- timing, internal ability, marketing, and so on -- that will spell success. <a href="http://www.linuxlabs.com/">Linux Labs</a>, a system vendor, also shipped LinuxBIOS-based systems for many years.
+</p>
+<p>
+<a href="http://www.irobot.com/">iRobot</a> had a major involvement, and, I understand, still use LinuxBIOS in one or two products -- but not the Roomba, sadly :-)
+</p>
+<p>
+<a href="http://www.linuxnetworx.com/">Linux Networx</a> deserves special mention here. They have been a key supporter of LinuxBIOS, and in the early years were a major driver for our success.
+</p>
+<p>
+It is clear that our major successes have been in the embedded market, such as routers and set-top boxes.
+</p>
+<p>Q: 
+Could LinuxBIOS theoretically replace all BIOSes, of are there certain limitations to be taken into account?
+</p>
+<p>
+It could in theory replace them all, and do a better job than all of them. At the same time, in practice, it's harder: chipset, mainboard, and system vendors are loath to reveal information we need. Rather than condemning these companies, I think we need to undersatnd their concerns and convince them that there is an upside to systems such as LinuxBIOS. We have to make a business case to these companies that the gain in sales dollars exceeds the cost of providing the information, and opening up what they consider to be, in some cases, trade secrets.
+</p>
+<p>
+It is really the open source OS argument all over again; the same problems we had getting Linux drivers 10-12 years ago, we are now having getting info for LinuxBIOS chipset drivers. All the same arguments get trotted out all over again. It's just a matter of education.
+</p>
+<p>Q: 
+Could you tell us a bit more about the BIOS side of the OLPC laptop?
+</p>
+<p>
+OLPC is designed from the start as an open system. The chip specs are wide open (with one or two exceptions still being resolved); the board schematics are there for all to see. Because the system is open, OLPC can avoid using "standards" such as ACPI, which mainly exist to protect closed interfaces. OLPC can thus integrate functions into the firmware and kernel that, on other systems, would be locked away in the BIOS and ACPI. OLPC as a result will have far better control over power, and hence far better suspend/resume performance, than any laptop in existence. This improvement will be dramatic -- the system will resume so fast it will seem instantaneous. And, it will have a battery life that will be equally surprising for people used to commercial laptops.
+</p>
+<p>
+OLPC will show what is possible with an open system that is not oriented to preserving proprietary interfaces and information. The customers will benefit, and, we hope, put pressure on other laptop vendors to provide a similarly high quality environment.
+</p>
+<p>Q: 
+What exactly is the difference between "easy" hardware to write a BIOS for, and the "tough" hardware?
+</p>
+<p>
+"Easy" hardware is documented; the vendor answers questions and provides sample source; there are lots of people familiar with it; the hardware is well designed, and simple to code to.
+</p>
+<p>
+"Hard" hardware is undocumented; the vendor hides and obscures information; few if any people understand it; and it has obscure interfaces.
+</p>
+<p>Q: 
+What are your thoughts on the Extensible Firmware Interface (<a href="http://en.wikipedia.org/wiki/Extensible_Firmware_Interface">EFI</a>)?
+</p>
+<p>
+I have spoken with the EFI authors at length. They make no secret of the fact that a "core value" of EFI is the preservation of intellectual property related to chipset programming and internal architecture. To put it another way, EFI is dedicated to the preservation of "Hard" hardware (as defined above), and the provision of binary interfaces and subsystems to BIOS vendors and others.
+<br>
+It is not really possible to build a full open-source BIOS if EFI is involved. The <a href="https://www.tianocore.org/">Tiano</a> system, which Intel claims is an open source BIOS, can not be used to build a BIOS unless it is attached to proprietary, binary-only BIOS code provided by a vendor.
+</p>
+<p>
+Another important thing to realize about EFI is that it also contemplates enabling chipset features that will trap certain OS operations to an EFI-based control system running in System Management Mode. In other words, under EFI, there is no guarantee that the OS owns the platform.
+<br>
+Accesses to IDE I/O addresses, or certain memory addresses, can  be trapped to EFI code and potentially examined and modified or aborted. Many see this as an effort to build a "DRM BIOS".<br>
+I am not sure what the real intent of this design is, but is is a real concern in secure environments (such as those found in governments, banks, and large search engine companies). A number of vendors and users have told me that they are not sure they can ship an EFI system they are willing to trust in a secure environment.
+</p>
+<hr>
+<p>
+Additional links:
+</p>
+<ul>
+<li><a href="http://linuxbios.org/">LinuxBIOS</a></li>
+ <li><a href="http://public.lanl.gov/rminnich/index.html">Ron's homepage</a></li>
+
+</ul>

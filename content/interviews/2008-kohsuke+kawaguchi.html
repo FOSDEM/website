@@ -1,0 +1,133 @@
+---
+year: 2008
+person: Kohsuke Kawaguchi
+slug: kohsuke_kawaguchi
+---
+<p>
+<a href="http://fosdem.org/2008/schedule/speakers/kohsuke+kawaguchi">Kohsuke Kawaguchi</a> will give a presentation about <a href="http://fosdem.org/2008/schedule/events/253">Hudson</a>.
+</p>
+<ul>
+<li class="toclevel-2"><a href="#What.27s_your_goal_for_this_talk.3F"><span class="tocnumber">1</span> <span class="toctext">What's your goal for this talk?</span></a></li>
+<li class="toclevel-2"><a href="#Can_you_describe_the_benefits_of_continuous_integration.3F"><span class="tocnumber">2</span> <span class="toctext">Can you describe the benefits of continuous integration?</span></a></li>
+<li class="toclevel-2"><a href="#Of_course._How_does_Hudson_test_itself.3F_Is_that_actually_easy_to_do.3F"><span class="tocnumber">3</span> <span class="toctext">Of course. How does Hudson test itself? Is that actually easy to do?</span></a></li>
+<li class="toclevel-2"><a href="#Are_there_other_continuous_integration_systems_for_Java.2C_and_how_do_they_compare.3F"><span class="tocnumber">4</span> <span class="toctext">Are there other continuous integration systems for Java, and how do they compare?</span></a></li>
+
+<li class="toclevel-2"><a href="#How_practical_is_it_to_integrate_Hudson_with_existing_version.2Frelease_management_systems.3F"><span class="tocnumber">5</span> <span class="toctext">How practical is it to integrate Hudson with existing version/release management systems?</span></a></li>
+<li class="toclevel-2"><a href="#What_about_issue_tracking_tools.3F"><span class="tocnumber">6</span> <span class="toctext">What about issue tracking tools?</span></a></li>
+<li class="toclevel-2"><a href="#Flexibility_and_extensibility_usually_allows_a_system_to_be_adapted_to_different_needs._Which_applications_of_Hudson_have_surprised_you_personally.3F"><span class="tocnumber">7</span> <span class="toctext">Flexibility and extensibility usually allows a system to be adapted to different needs. Which applications of Hudson have surprised you personally?</span></a></li>
+<li class="toclevel-2"><a href="#The_name_Hudson.2C_is_it_inspired_by_the_Hudson_river.3F"><span class="tocnumber">8</span> <span class="toctext">The name Hudson, is it inspired by the Hudson river?</span></a></li>
+<li class="toclevel-2"><a href="#We.27re_looking_forward_to_meet_him.21"><span class="tocnumber">9</span> <span class="toctext">We're looking forward to meet him!</span></a></li>
+
+</ul>
+<a name="What.27s_your_goal_for_this_talk.3F"></a>
+<p>Q: What's your goal for this talk?</p>
+<p>I hope to get more adoption of Hudson, as well as perhaps solicit more
+contributions to the project, as I'm always looking for more committers.
+</p>
+<a name="Can_you_describe_the_benefits_of_continuous_integration.3F"></a>
+<p>Q: Can you describe the benefits of continuous integration?</p>
+<p>In my experience in deploying Hudson inside Sun for our group, I think
+the primary benefit is about moving mundane repetitive work from people
+to machines. For example, now that Hudson is running tests for our team,
+we don't need to run through testing before making a commit, which makes
+people more productive.
+</p>
+<p>The fact that builds and tests are run continuously also improve the
+turn-around time for regression much shorter, and it also makes it
+easier to track down regressions to a small set of changes, reducing the
+effort it takes to find the cause of a regression.
+</p>
+<p>Having a central server to do all these means that there's a single
+place for people to come to see all kinds of information, and this
+brings more transparency to projects, which is also a good thing.
+</p>
+<p>Finally, Hudson has a lot of inter-project features, and when your big
+project consists of a set of smaller teams, these features reduce the
+communication necessary between teams, as well as keeping the overall
+project stable.
+
+</p>
+<p>There are a lot more, but I need to keep some of this for my talk :-)
+</p>
+<a name="Of_course._How_does_Hudson_test_itself.3F_Is_that_actually_easy_to_do.3F"></a>
+<p>Q: Of course. How does Hudson test itself? Is that actually easy to do?</p>
+<p>Unfortunately, testing Hudson is very hard.
+</p>
+<p>For one thing, testing web apps is hard. You can do some scripted tests,
+but it won't find broken layouts or typos, for example. Hudson also
+interfaces in a lot of native applications in different OSes with
+different set ups (imagine all kinds of different svn connection modes.)<br>
+The developer/tester resources that we have are limited, too, as with any
+open-source project, so our only hope is automated testing.  But for all
+the reasons I mentioned above, it's hard.
+</p>
+<a name="Are_there_other_continuous_integration_systems_for_Java.2C_and_how_do_they_compare.3F"></a>
+<p>Q: Are there other continuous integration systems for Java, and how do they compare?</p>
+<p>Yes. Since Java had pioneered this whole field of CI tools, there is
+plenty of competition. There's CruiseControl, which is still very
+famous, although I think it shows its age -- for example its design
+center is not around a web UI, and it doesn't have much inter-project
+handling at all.
+</p>
+<p>There's also Apache Continuum. It's got the Apache brand, which is very
+strong, but I don't think it has been very active for the last few years.
+</p>
+<p>Then there's commercial offerings like Atlassian Bamboo and JetBrains
+TeamCity. They are both from very reputable companies, but both charge a
+hefty license fee, and more importantly, they are not free as in speech,
+and as a result lack extensibility and the community.
+</p>
+<p>There are probably a dozen or more smaller players in the field, and I
+think it's great that Java has such a vital community in this area.
+</p>
+<a name="How_practical_is_it_to_integrate_Hudson_with_existing_version.2Frelease_management_systems.3F"></a>
+<p>Q: How practical is it to integrate Hudson with existing version/release management systems?</p>
+<p>This is one area where the community contributions really excel.<br>
+Initially Hudson only had CVS and Subversion support, but since then
+people from all over the world have developed plugins for Perforce,
+Accurev, ClearCase, and StarTeam, and I added one for Mercurial myself.<br>
+So this is one of the most tried and tested areas of Hudson plugin
+development, and I think it should be easy for anyone else to join us
+and write one for their favorite SCMs.
+</p>
+<a name="What_about_issue_tracking_tools.3F"></a>
+<p>Q: What about issue tracking tools?</p>
+<p>Hudson has integration with many different test frameworks. This is
+particularly easy for Java-based ones, as there's a de-facto report
+format developed by Ant, and everyone seems to follow that. But
+internally Hudson is also flexible enough to add different reporting
+formats, or even different object models for tests. The community has
+developed a few plugin to bridge Hudson with test frameworks in other
+languages, like .NET.
+</p>
+<p>There's issue tracker integration as well. Perhaps the most advanced is
+the JIRA integration plugin, which provides two-way links between JIRA
+and Hudson. There is a similar plugins for Trac, too. I have more ideas
+about better integration with the issue tracker, and so I'm hoping to
+find some time to work on it.
+</p>
+<a name="Flexibility_and_extensibility_usually_allows_a_system_to_be_adapted_to_different_needs._Which_applications_of_Hudson_have_surprised_you_personally.3F"></a>
+<p>Q: Flexibility and extensibility usually allows a system to be adapted to different needs. Which applications of Hudson have surprised you personally?</p>
+<p>When I design an extensibility point, I usually have some idea about how
+it could be used, so in that sense what people are doing with it is
+usually within what I had imagined.
+</p>
+<p>Perhaps one real pleasant surprise is a contribution from JBoss that
+implements a feature of "pushing" build records from one Hudson to
+another, so that you can run builds inside a firewall but publish a
+result outside. I tried to think about how I'd have done it by myself,
+and couldn't come up with a good approach, so it was really amazing for
+them to pull this off.
+
+</p>
+<a name="The_name_Hudson.2C_is_it_inspired_by_the_Hudson_river.3F"></a>
+<p>Q: The name Hudson, is it inspired by the Hudson river?</p>
+<p>I think of this program as my personal butler or secretary -- someone
+who's very organized and handles my administrative works. Since we the
+lowly engineers don't get one unlike managers, I started writing one. So
+I wanted a name that sounds like a butler, and since Jeeves was already
+used, I took Hudson.
+</p>
+<a name="We.27re_looking_forward_to_meet_him.21"></a>
+<p>Q: We're looking forward to meet him!</p>
+<a href="http://www.netlash.com/">Netlash</a>

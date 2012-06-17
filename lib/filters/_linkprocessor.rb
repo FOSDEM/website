@@ -23,6 +23,8 @@ class LinkProcessor < Nanoc::Filter
 
   protected
   def nokogiri_process(content, selectors, namespaces, klass, type)
+    require 'uri'
+
     # Ensure that all prefixes are strings
     namespaces = namespaces.inject({}) { |new, (prefix, uri)| new.merge(prefix.to_s => uri) }
 
@@ -31,7 +33,7 @@ class LinkProcessor < Nanoc::Filter
       doc.xpath(selector, namespaces).each do |node|
         if qualifies?(node.content) then
           newurl = resolve(node.content)
-          relurl = relpath(@item.identifier, newurl)
+          relurl = relpath(@item.identifier, newurl) unless URI.parse(newurl).absolute?
           node.content = newurl
         end
       end

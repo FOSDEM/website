@@ -1,0 +1,530 @@
+---
+year: 2008
+person: Kurt Pfeifle and Simon Peter
+slug: kurt_pfeifle_and_simon_peter
+---
+<p>
+<a href="http://fosdem.org/2008/schedule/speakers/kurt+pfeifle">Kurt Pfeifle</a> and <a href="http://fosdem.org/2008/schedule/speakers/simon+peter">Simon Peter</a> are the authors of <a href="http://fosdem.org/2008/schedule/events/klik">klik</a>. At FOSDEM 2008 they will talk about the advantages of klik, and the architecture of the upcoming klik2.
+</p>
+<ul>
+<li class="toclevel-1"><a href="#You_guys_will_dive_into_the_technical_details_of_Klik_at_FOSDEM.3F"><span class="tocnumber">1</span> <span class="toctext">You guys will dive into the technical details of Klik at FOSDEM?</span></a></li>
+<li class="toclevel-1"><a href="#What_do_you_expect_back_from_your_FOSDEM_presence.3F"><span class="tocnumber">2</span> <span class="toctext">What do you expect back from your FOSDEM presence?</span></a></li>
+<li class="toclevel-1"><a href="#Virtualization_and_Live_CDs_are_often_used_as_alternatives_for_.27installation.27_these_days._Could_klik_be_the_solution_that_solves_the_traditional_problems.3F"><span class="tocnumber">3</span> <span class="toctext">Virtualization and Live CDs are often used as alternatives for 'installation' these days. Could klik be the solution that solves the traditional problems?</span></a></li>
+
+<li class="toclevel-1"><a href="#The_possibilities_are_endless.__Does_klik_have_disadvantages_too.3F"><span class="tocnumber">4</span> <span class="toctext">The possibilities are endless.  Does klik have disadvantages too?</span></a></li>
+<li class="toclevel-1"><a href="#Do_you_know_of_similar_systems.3F_Did_you_draw_inspiration_from_Mac_OS_X.3F"><span class="tocnumber">5</span> <span class="toctext">Do you know of similar systems? Did you draw inspiration from Mac OS X?</span></a></li>
+<li class="toclevel-1"><a href="#Who_is_actually_doing_all_the_klik_packaging.3F_Are_you_maintaining_your_own_community_of_packagers.2C_or_do_you_prefer_to_collaborate_with_the_upstream_projects.3F"><span class="tocnumber">6</span> <span class="toctext">Who is actually doing all the klik packaging? Are you maintaining your own community of packagers, or do you prefer to collaborate with the upstream projects?</span></a></li>
+<li class="toclevel-1"><a href="#How_does_klik2_fit_into_this_grand_vision.3F"><span class="tocnumber">7</span> <span class="toctext">How does klik2 fit into this grand vision?</span></a></li>
+<li class="toclevel-1"><a href="#Klik_is_technically_very_attractive.2C_and_it_does_wonders_for_usability._Do_you_feel_it_could_become_even_more_popular_than_it_is_now.3F"><span class="tocnumber">8</span> <span class="toctext">Klik is technically very attractive, and it does wonders for usability. Do you feel it could become even more popular than it is now?</span></a></li>
+
+<li class="toclevel-1"><a href="#The_first_time_you_see_it_in_action.2C_klik_seems_to_do_magic..._That_makes_you_magicians_:-.29"><span class="tocnumber">9</span> <span class="toctext">The first time you see it in action, klik seems to do magic... That makes you magicians :-)</span></a></li>
+</ul>
+<a name="You_guys_will_dive_into_the_technical_details_of_Klik_at_FOSDEM.3F"></a>
+<p>Q: You guys will dive into the technical details of Klik at FOSDEM?</p>
+<p><b>Kurt:</b><br>
+Yes, we'll discuss how Klik makes applications 'virtual' to run from a signle file on multiple distributions.
+</p>
+<p>Once we have any application 'klik-virtualized', it is liberated from its normal
+confinement. That confinement makes it nearly inseparately super-glued to a
+single machine, where all the multiple files that compose it need to obey and
+intermingle into a specific directory hierarchy layout in order to make it work.
+</p>
+<p>Without the help of a sophisticated package manager software you can not rip the
+original application off that system any more, and you find it nearly impossible
+to transfer or copy the application to a different PC, especially if this PC
+runs a different Linux distro.
+</p>
+<p>A single-file klik application image can be freely moved to a different location
+of the local file system and will happily run from there. Even USB thumbdrives
+or CD-RW media may be used to run klik-ified applications from.
+</p>
+<p>The klik-ified application that is encapsulated in a single file can of course 
+easily be deleted, backed-up or copied to a different machine. We can pass it to a 
+friend in an e-mail attachment, transfer it to an other Linux distribution or even host
+and use it side by side with many different (and even conflicting) versions of
+the same or similar applications.
+
+</p>
+<p>In a way that single file archive of the application is also a confinement, a
+container, but one that is no longer inseparately superglued to a specific
+computer and Linux distro version.
+</p>
+<p>BTW, in the Windows world, this concept is also gaining traction recently,
+and there it is known as "portable applications" as well as "application 
+virtualization".
+</p>
+<a name="What_do_you_expect_back_from_your_FOSDEM_presence.3F"></a>
+<p>Q: What do you expect back from your FOSDEM presence?</p>
+<p><b>Simon: </b><br>
+We'd like to showcase klik as a complement to traditional distribution-based
+package-manager-centric software packaging. Of course we hope to gain
+developers' interest and maybe even win new contributors.
+</p>
+<p>We want to make absolutely clear that klik is <b>not</b> a package manager. It is <b>not</b> a competitor or a replacement for traditional RPM or debian packages
+Those are still needed and used in the base system and also as ingredients
+for klik.
+</p>
+<p><b>Kurt: </b><br>
+
+We'd like to show how well klik2 currently works for different scenarios
+already, even though we have not officially released anything, and it is still
+in a pre-Beta development stage. Already now, klik can be useful for developers
+since it can provide a safe sandbox to test bleeding-edge, unstable applications
+without messing with the base system, and even to test multiple versions of the
+same application on one and the same system without installation.
+</p>
+<p><b>Simon: </b><br>
+We are still lacking developer skills in a few areas. By way of our demos and talks at FOSDEM we hope
+to attract new contributors, for example to complement our existing
+Gtk/Gnome-based client GUI with one that integrates better into Qt/KDE
+environments.
+</p>
+<p>Another example where we need help:  KDE is well known for its deep
+inter-integration of applications. One of the challenges with
+KDE that still puzzles us is how to make a klik bundle use its own embedded
+version of the manual when you click the "help" button, and not to show the old
+version that may already be installed on the system (or none, if the system
+hasn't the app installed). Another is how do deal with the sycoca cache. We hope to be able to resolve this kind of questions
+by meeting and discussing with KDE guys at FOSDEM.
+</p>
+<a name="Virtualization_and_Live_CDs_are_often_used_as_alternatives_for_.27installation.27_these_days._Could_klik_be_the_solution_that_solves_the_traditional_problems.3F"></a>
+<p>Q: Virtualization and Live CDs are often used as alternatives for 'installation' these days. Could klik be the solution that solves the traditional problems?</p>
+<p><b>Simon: </b><br>
+What Knoppix and VMware have done on a system-wide level, klik is doing on a
+per-application level. Live CDs are a great way to test and use Linux
+distributions. But out of necessity they can offer only a limited selection of
+pre-installed applications.  OS virtualization doesn't have this limitation but
+it comes at a performance cost, as well as with an overhead of resource
+consumption. In many cases, it is not necessary to virtualize an entire OS just
+because of one application.
+</p>
+<p>On the other hand, once you run an OS from a Live CD, you can easily add more
+applications to it by attaching a USB thumbdrive that contains all the klik
+application bundles you want to use with it.
+</p>
+<p><b>Kurt: </b><br>
+Here are just a few more examples for different use cases:
+</p>
+<ul><li> User Anna's favorite distro X doesn't have the new application version CoolApp-123 in its repository. But Anna almost dies in craving for a testdrive of version 123 of CoolApp, and she knows that distro Y does have it... but she also does not want to change distro just for one application. Now klik-ify Y's native package of CoolApp-123, and -- voila!, you've got an application bundle that runs for Anna on X as well, and she can even mail it to her boyfriend Aaron who happens to run distro Z!
+
+</li></ul>
+<ul><li> User Benny is a fan of testing Live CDs. He has a collection of more than 100 already, and he uses his favourite 5 Live CDS also for his day-to-day work. But he can never be sure of having all his favourite applications available on the CD he's currently booted. So he puts all his favourite klik bundles on a USB thumbdrive, and he can always use the same application that he likes and he's used to.
+</li></ul>
+<ul><li> Commercial Company CopyCatCo used to be selling their proprietary software CopyCatApp on MS Windows and Apple Mac platforms only. But now they are exploring new waters with their first port to Linux. However, they don't like it that users expect them to build and provide comfortable package repositories for each and every major distro. Business sense tells them to go for one package format only, so they decide for an LSB (Linux Standard Base, ed.)-compliant RPM. Debian users are left out, right? -- Ha!, no problem for klik: it takes the CopyCatApp.rpm, converts it to a single-file CopyCatApp.cmg and that file can be run on practically all distros right away.
+</li></ul>
+<ul><li> FOSS Developer Danny is still quite some months away from a final release of his new cool FooBarBaz software version that is a complete re-write of its very successful pre-decessor. FooBarBaz had a team of non-coding contributors: translators, art designers, usability experts, documentation writers. But these guys don't like to compile software from source code and they also don't have time to do it every day. However, they would like to start with working on their own contribution parts for FooBarBaz, and it would be very helpful if they could see the code Danny wrote so far in action. But Danny's resources are not sufficient for nightly builds of binary packages for each and every distro version that his team of helpers happen to run. A klik bundle to the rescue!, and everyone can testdrive the nightly build independently from which current distro he's on.
+</li></ul>
+<ul><li> IT Magazine Publishing House ElElements likes to add gimmick CDs to some of their monthlies that contain test versions of new software releases, commercial as well as proprietary. While their Windows-using readers hardly ever have problems to install their .msi packages, the complaints from Linux users like "Why did you only provide a BlueHat 9 RPM?!?" are never-ending... So isn't it cool for them that they now can ship klik-bundles that run directly from CD, for any LSB-distro, without a need of installation at all? (They'll soon have to deal with complaints from their Windows users about that inconvenient installation process, but that we don't care about... :-)
+</li></ul>
+<a name="The_possibilities_are_endless.__Does_klik_have_disadvantages_too.3F"></a>
+<p>Q: The possibilities are endless.  Does klik have disadvantages too?</p>
+<p><b>Kurt: </b><br>
+
+klik is not a package manager. But that is by design. klik is intended for
+(add-on) applications (the stuff the end-user cares about), not for routine
+maintenance of the underlying core operating system (the stuff the distro vendor
+takes care of).
+</p>
+<p>And since klik is not meant as a package management system, it
+also does not (yet) provide for features such as automatic updates and upgrades,
+which are the typical domain of system and package management software. klik
+places the responsibility for using klik bundles into the users' hands, but
+makes this task extremely easy.
+</p>
+<p>However, there is no iron limitation that prevents anyone who has the skills and
+motivation to create an additional infrastructure and GUI applications to klik
+clients that make it easy to "upgrade" klik bundles. Maybe this is something for
+us to do at a later stage, but we currently do not have plans for this. One day
+someone might come and pick klik's basic format to build a complete distro
+architecture around it. But this is not our own intention right now as we
+believe the world doesn't need yet another distro.
+</p>
+<p><b>Simon: </b><br>
+Some readers may ask: Doesn't the klik concept lead to many occasions of
+duplication, where certain libraries are provided multiple times inside the
+different klik bundles? Doesn't that lead to wasting harddisk space as well?
+</p>
+<p>The answer is: you'd be surprised how rarely this type of duplication does
+occur, if the definition of "the base system" is done well. To make klik
+bundles work, klik of course needs to assume a certain
+"fixed" base system at the OS level with a defined set of available system
+libraries and applications. LSB-3.2 is a good foundation for that. Everything
+else what the application needs is packed into the klik bundle. Upon execution,
+some functions needed by the application are of course still provided by the
+base system.
+</p>
+<p>And as for the "waste of harddisk space" -- let's look at some rough figures: a
+full, traditional installation of OpenOffice.org takes about 300 MBytes on the
+harddisk, with 4000 files spread across 400 sub-directories. A klik bundle of
+OOo takes less than 150 MByte encapsulated into a single file, and that file lets OOo
+start and run without  major noticeable  performance loss...
+</p>
+<p>Which brings us to the performance topic. Sure, klik adds a layer of overhead
+for the application virtualization. However, the performance hit is almost not
+noticeable in most day-to-day use cases.
+</p>
+<p><b>Kurt: </b><br>
+Also, if you discuss "disadvantages" of klik, please keep this in mind: klik is 
+geared towards typical end-user applications with a GUI. While klik can
+handle CLI-only applications as well, it is not intended to be used
+for packages that contain libraries only, or for long running daemons, or for
+applications that need to bind to a privileged TCP/IP port, or that need root
+privileges in other ways.
+</p>
+<p>For me personally, the main disadvantage of klik currently is its still
+un-finished stage. And the fact, that the environment where it can come to full
+fruition is only now getting ready: namely a fully matured LSB release that gets
+widely adopted by different Linux distros and provides a universally available
+platform where very widespread binary compatibility of traditional packages
+built by Debian or Red Hat or openSUSE Build Service contributors provide the
+tailwinds that lets the klik2 ideas sail ahead full speed.
+</p>
+<a name="Do_you_know_of_similar_systems.3F_Did_you_draw_inspiration_from_Mac_OS_X.3F"></a>
+<p>Q: Do you know of similar systems? Did you draw inspiration from Mac OS X?</p>
+<p><b>Simon: </b><br>
+
+The very first Mac in 1984 basically followed the "one app = one file" approach.
+But the fundamental idea is even older. Heck, it is even the most natural thing
+to do and construe!
+</p>
+<p><b>Kurt: </b><br>
+If you have an application that needs and uses many different files it is the
+most obvious idea to group those files into one common place, isn't it?
+</p>
+<p>Against that background, we rather draw our inspiration from looking at and
+getting challenged by some of the old-age Unix gurus who pop up from time to
+time and try to teach us that the right way to do *everything* is to spread and
+sprinkle all the files needed for an application's execution across the entire
+system and harddisk.  :-)
+</p>
+<p><b>Simon: </b><br>
+To be fair to the mentioned Unix veterans, since the times of the first Mac,
+complexity has very much increased and applications no longer consist of just
+one file. Complexity has increased up to the point that the user is no longer in
+charge of managing software, making package managers a necessity.
+</p>
+<p>Also, to handle that complexity, Unix systems came up with a concept that group
+similar files from different apps into same places: config files go to /etc/,
+libraries go to /usr/lib/, executables go to /usr/bin/ (unless they are meant
+for root, when you put them to /usr/sbin/), etc. This system was designed for
+large machines with multiple hard disks, multiple users and a knowledgable
+system administrator, but not for the casual user with little clue and a
+personal notebook.
+</p>
+<p><b>Kurt: </b><br>
+That concept works, and works well enough for all applications that are part of
+the base system, and as such are handled by the distro vendor tools and package
+managers. It would even work for all end-user packages forever if the Linux
+world consisted of only one distro, and everybody would develop and package for
+that one universal distro only.
+</p>
+<p>However, in the real world this concept starts to get overly complex for end
+users who want to simply run new software that is *not* available for their own
+distro. Or if they need to or just want to run different versions of the same
+application on the same hosting system without a constant cycle of "shut down
+version A, deinstall version A, install version B, start up version B"
+administrative and repetitive, time-consuming work.
+</p>
+<p>klik tries to dramatically decrease again that complexity for the user, by
+giving him back the <i>"one app = one file"</i> simplicity. When Mac applications
+became more complex, they were distributed in "application folders" or "disk
+images" (which get unpacked and expanded into application folders upon
+installation) instead of "one file".
+
+</p>
+<p>klik however takes this one step further by offering a way to use "one file
+images" even as the default way of storing and using applications if the user
+likes this. If you don't want to go that far, you can use it just on occasions
+where you find it convenient to testdrive some interesting new application in a
+very fast and effortless way that does not mess with your base system should the
+application in question turn out to be too buggy.
+</p>
+<p><b>Simon: </b><br>
+If you look a bit more closely at the internal structure of a klik application image,
+you'll see that it does not overturn "the Unix way" of file system layout at
+all. On the contrary, it mirrors and re-uses that very same structure internally
+for all the application's own files, but it archives them into a compressed ISO
+image and hides that internal complexity from the end-user who only needs to
+ever handle with the single file.
+</p>
+<p>So in a way, klik is not at all a denial of the Unix concept and of FHS (Filesystem Hierarchy Standard, ed.), klik
+just applies it on a different abstraction level with the individual application
+as the topmost entity.
+</p>
+<p><b>Kurt: </b><br>
+One more comment about "inspirations", and who inspires whom....
+</p>
+<p>If you care to look around in the IT world outside FOSS and Linux, you'll
+discover a slew of Windows-based companies that currently work on proprietary
+software that is based on similar ideas as klik. But not for Linux, they do it
+for the benefit Microsoft operating systems.
+</p>
+<p>I don't know any architectural or implementation details about any of them. I
+don't know if any of these has gone to the "1 app == 1 file" extreme yet, but
+they clearly speak of "application virtualization". They also want to tackle the
+"DLL Hell" that Windows is infamous for, similar as we do want to tackle the
+"packaging maze".
+</p>
+<p>Oh, and for additional complication they can't limit themselves to an
+application's files only, they also have to virtualize the registry...  :-&gt;
+</p>
+<p><b>Simon: </b><br>
+Windows application virtualizers (last I looked, Google found at least half a dozen 
+of them) also want to put applications into movable containers which can be easily
+deployed to many different computers by means of simple file copy steps. Big companies are  working on that,
+and they have started to take virtualization beyond the level of the complete
+computer or OS. Additionally, projects and companies that offer "PortableApps" or
+"U3" USB stick software have gained some popularity on Windows.
+</p>
+<p><b>Kurt: </b><br>
+
+To us it rather looks like some of the activities we currently can observe in
+the proprietary world have drawn their inspiration from us, the Free and Open
+Source Software world.  :-)
+</p>
+<p>My very personal opinion about virtualization on the application level is
+that, at least in the Windows world, we will see a similar effect as we are 
+observing with virtualization on the OS or hardware level: it will open up a whole 
+new family of use-cases. There will also be a time of this getting hyped, and
+it will be soon... Additionally, I'm sure we will see some scenarios where the 
+benefits of concurrent virtualization on the OS as well as on application level 
+will be exploited in a combined form.
+</p>
+<a name="Who_is_actually_doing_all_the_klik_packaging.3F_Are_you_maintaining_your_own_community_of_packagers.2C_or_do_you_prefer_to_collaborate_with_the_upstream_projects.3F"></a>
+<p>Q: Who is actually doing all the klik packaging? Are you maintaining your own community of packagers, or do you prefer to collaborate with the upstream projects?</p>
+<p><b>Simon: </b><br>
+klik utilizes existing binary repositories, such as debian. XML files called
+"recipes" tell the klik client application where to fetch binary "ingredients"
+for a klik bundle from, and how to meld these ingredients into a single klik
+"app bundle" file.
+</p>
+<p>The ingredients may be .deb packages from the official debian repositories or
+from elsewhere, they may be .rpms from Fedora's yum repos or from openSUSE's
+Build Service, or .tgzs/.tbz2s from Slackware, or .packages from Autopackage.
+They may even consist of a mix from several of these package formats. Ideally they are built on a LSB reference platform.
+</p>
+<p>The result of processing these ingredients according to the recipe is a portable
+klik application bundle, a single file.
+</p>
+<p><b>Kurt: </b><br>
+As you can see, typically, klik itself doesn't compile from sources, and it
+itself doesn't package anything from scratch. Therefore, klik does not make
+traditional packaging methods and skills obsolete. On the contrary: klik re-uses
+the work and the skills of existing packagers, and adds more value to their
+efforts by offering new use cases and wider adaption of certain packages.
+</p>
+<p>So, in essence, klik is not "packaging" a .cmg (klik's file extension for a klik
+application bundle inside a compressed ISO filesystem) from scratch, it is
+rather "re-packaging" in most cases, and it uses pre-existing .deb, .rpm and
+other packages.
+</p>
+<p><b>Simon: </b><br>
+
+Currently, most of the klik recipes are <i>automatically</i> 
+generated by the klik server, and they have a very standard, uniform format. 
+However, some need to be hand-tuned in order to make them fully work, or to 
+make them work on a particular distribution.
+</p>
+<p><b>Kurt: </b><br>
+Here we are looking for volunteers to maintain the recipes, ideally from the
+respective packages' upstream projects. If readers want to help, they are very
+welcome. The work involved here is mainly one of quality assurance for a few
+specific bundles that you adopt: make sure they work flawlessly on your own 
+favourite distro; if it doesn't, help us find a fix and test that...
+</p>
+<p><b>Simon: </b><br>
+BTW, a klik QA would at the same time prove and ensure the quality of the Linux Standard Base 
+itself. To the extent that klik bundles run flawlessly on each LSB-compliant distribution, they are proof not only of the klik recipe XML's correctness, 
+but also that the binaries inside the recipe's ingredient (native) packages
+were built in an LSB-compliant way.
+</p>
+<p><b>Kurt: </b><br>
+At this point, it may be of the foremost interest to our readers to get a 
+"helicopter view" of how klik works under the hood.
+</p>
+<p>
+<img src="../../../florisla.be/fosdem/images/klik1.png" height="298" width="460" alt="klik screenshot: Download and run flock?"></p>
+<p>If a user executes "klik get coolapp", the klik client contacts the klik server.
+The klik server then looks if it has a ready-made coolapp.xml recipe in its
+database already and sends back that in case it has. Otherwise, it looks if the
+Debian repository has coolapp available.
+</p>
+<p>It then computes all the direct dependencies for coolapp (additionally required
+.deb packages needed to run coolapp), locates the exact download URLs for each
+package and puts them into the recipe. It also includes the package description
+from Debian. As an icing on the recipe cake, it searches the "Debtags"
+repository and adds all software category information it finds about coolapp
+into the XML file.
+</p>
+<p>The recipe is sent back to the klik client. The klik client then simply 
+"executes" the recipe, which means to fetch all the indicated "ingredients" from 
+their original repository locations and to build the single-file .cmg bundle 
+from them as a result.<br>
+
+This way the klik server does not need to cope with huge bandwidth demands of
+distributing pre-fabricated .cmg files. And we don't need to re-build packaged
+files on the server each time a recipe or an ingredient gets updated.
+</p>
+<p><b>Simon: </b><br>
+This architecture of course offers a convenient way for upstream software
+developers and maintainers to provide their bleeding edge versions to beta
+testers and other end users without needing to find a packager for each and
+every distribution out there.
+</p>
+<p>Developers can simply build *one* traditional package for a distro of their
+liking, and maintain the simple klik XML recipe (which can be hosted on the klik
+server) that takes care of making the klik clients on all other distros convert
+their original ingredient package into a portable klik bundle that runs
+everywhere.
+</p>
+<p><b>Kurt: </b><br>
+Since the download of the ingredients can still happen from their original
+location, they even keep full control over their download figures and statistics
+if they want. This also allows proprietary applications to be used with klik,
+because we don't have to legally "distribute" them.
+</p>
+<p>On top of our server-provided (and mostly auto-generated) recipes, anyone
+can of course write their own hand-tuned recipes from scratch easily and use the
+klik2 client to run them in order to create portable applications. We know that
+one of the two main developers of Beagle did just that last X-mas... And he did
+not even have to ask us for directions in advance. We just by accident stumbled
+upon his blog were he described how to use his recipe with the klik2 client.
+</p>
+<p>Uhmm... maybe I should re-evaluate my earlier statement about "klik not being 
+really suitable for for long running daemons" now? :-)
+</p>
+<p><b>Simon: </b><br>
+We hope to win over many upstream projects to test, tune and update the
+respective recipes for their applications, especially if it concerns their own
+development versions. That would be a win not only for klik but also for the upstream projects:
+because they can simplify their packaging and consolidate it to the one distro
+they like most. Then klik cares for converting it to a format that is able to
+run in userspace on all other distros even without an installation as we know
+it.
+</p>
+<p>A packager or a developer who happens to like niche distro ABC a lot and uses it
+and who creates good working LSB-compliant packages of some bleeding edge
+unreleased software for this favourite distro may see his work be used and
+tested by only a few users of that niche distro. With klik, he can effortlessly
+open his work to a much wider audience, and double, quadruple or even increase a
+thousandfold his user base in no time.
+</p>
+<p>So yes, we are seeking intense cooperation with upstream projects as well as
+with creators of traditional packages, since we need the fruits of their work to
+make klik tick, and klik in turn makes their work more valuable and more widely
+available.
+</p>
+<a name="How_does_klik2_fit_into_this_grand_vision.3F"></a>
+<p>Q: How does klik2 fit into this grand vision?</p>
+<p><b>Simon: </b><br>
+klik2 is a rewrite from the ground up. Let's see if we can summarize all the
+changes in a few bullet points...
+</p>
+<p>klik1 (which started in 2004, BTW) was more a proof-of-concept. klik2 will 
+be the "real thing", now that klik1 has demonstrated the viability of all the 
+base ideas of the fundamental concepts.
+</p>
+<p>The klik1 client was writen in Bash. klik2 uses Python.
+</p>
+<p>klik1 used zisofs and cramfs for image and compression. klik2 uses zisofs
+compressed ISO files.
+</p>
+<p>klik1 used Xdialog, kdialog and zenity dialogs for user-facing GUI elements.
+klik2 will be able to provide fully-fledged GUIs based on Gtk/Gnome and Qt/KDE
+(and even Tcl/Tk, PyGtk, PyQt, FLTK, or whatever anyone who wants to write a
+klik GUI cares about.)
+</p>
+<p><b>Kurt: </b><br>
+klik1 relied on loop-mounting the application images, and was restricted to a
+maximum of 7 concurrent mounts at a time. klik2 does take advantage of FUSE
+(since FUSE is now widespread enough) and can therefore run practically an unlimited
+number of klik applications concurrently.
+</p>
+<p><img src="../../../florisla.be/fosdem/images/klik2.png" height="182" width="468" alt="Screenshot: Fuse filesystem on Ubuntu"></p>
+<p>klik1 based itself on Debian Stable, and only could guarantee to work on Debian.
+klik2 relies on LSB-3.2/4.x, will fully work on all LSB-compliant distros, and
+will even work for many applications on most other distros.
+</p>
+<p><b>Simon: </b><br>
+One new thing klik2 will gain is the option to "sandbox" an application:
+</p>
+<ul><li> While klik1 apps didn't interfere with the base system, they could still mess with the user's "dot files" and personal data, if he was careless enough to run an unstable, bleeding edge application inside his standard environment.
+</li></ul>
+<ul><li> klik2 however will be able to activate a sandboxing feature on demand, which will force any write access by the application to a separate directory, so that now even user data can be safeguarded against corruption or unintentional overwriting, like, when a bleeding edge Thunderbird is test-used with the help of klik. This will also allow one to carry around applications along with their settings, e.g., on a USB stick. Think "Portable Firefox" with bookmarks.
+</li></ul>
+<p><b>Kurt: </b><br>
+klik1 had to use an ugly binary patching technique when creating the .cmg in order to get
+rid of embedded absolute paths that were hardcoded into the binaries. With
+keeping these hardcoded paths we would not have been able to make the image
+re-locate-able for loop-mounting. klik2 uses the Union File system and
+libfakechroot to make applications portable and re-locate-able, even if they
+have hardcoded paths inside.
+</p>
+<p><b>Simon: </b><br>
+klik1 recipes were simple shell scripts without  verification. klik2
+will sport a new recipe format that is based on <a href="http://0install.net/" class="external text" title="http://0install.net/" rel="nofollow">0install</a> XML that embeds digital
+signatures for verification. In fact, we worked with Thomas Leonhard, the
+0install developer, to use a common syntax for 0install and klik XML files.
+Maybe one day you will be able to just use klik2 XML recipes to drive a
+0install-ation and vice-versa...
+</p>
+<p><b>Kurt: </b><br>
+
+klik1 was never packaged as a client application by the major distros. With
+klik2 we hope to enter the time where the klik2 client will be shipped and
+pre-installed by default.
+</p>
+<p>What will stay the same? The "one app = one file" idea. The ease of use for the
+end user. The degree of automatization for packagers. Our quest for adding more
+features by re-using the work of others in the FOSS community.
+</p>
+<a name="Klik_is_technically_very_attractive.2C_and_it_does_wonders_for_usability._Do_you_feel_it_could_become_even_more_popular_than_it_is_now.3F"></a>
+<p>Q: Klik is technically very attractive, and it does wonders for usability. Do you feel it could become even more popular than it is now?</p>
+<p><b>Kurt: </b><br>
+Definitely, since it has merely started yet. Not too many regular Linux users have
+heard about it, let alone used it.
+</p>
+<p>So far, klik has only been a proof-of-concept, experimental software. We hope to
+get the full, proper implementation of the idea in place with "klik2", and we
+hope for seeing a wide-spread adoption and embracing of klik2 by the FOSS
+community.
+</p>
+<p>Then we'll be able to enjoy features on any Linux distro that are still far away
+for users of proprietary OS platforms.
+</p>
+<p><b>Simon: </b><br>
+klik1 remained a proof-of-concept, known only to a few. With klik2 we hope to
+become more mainstream in the not too distant future.
+</p>
+<p>Also, klik1 only worked reliably for 80% of users and 80% of applications. Had
+we had more manpower and had we invested more manual tweaking of our
+automatically created server-side recipes (basically, via separate #ifdefs for
+each major distro), we nevertheless <em>could</em> have achieved 95% figures even with
+klik1.
+
+</p>
+<p>But now, with klik2 and LSB we hope to achieve 98%  with much less effort in a
+very short time.
+</p>
+<a name="The_first_time_you_see_it_in_action.2C_klik_seems_to_do_magic..._That_makes_you_magicians_:-.29"></a>
+<p>Q: The first time you see it in action, klik seems to do magic... That makes you magicians :-)</p>
+<p><b>Simon: </b><br>
+More like a Hogwarts students in FOSS wonderland... ;-)
+</p>
+<p><b>Kurt: </b><br>
+Seriously, if you look a little bit closer at it, you'll quickly discover that
+the magic of klik is not so much in itself, but in the components it drags into
+its machinery and which it orchestrates to produce the end result: FUSE and
+Union mounting; server-side APT and dependency resolution; decentral client-side
+execution of klik's recipes with repackaging of ingredient .rpm, .deb, .tgz or
+.tb2 packages; the expert skills and the hard and industrious work of many
+hundred Debian and RPM packagers, whose products klik recipes use as
+"ingredients"; the people who create, maintain and continuously expand the
+marvelous "Debtag" database from which klik automatically draws package
+descriptions.
+</p>
+<p>So a lot of peope will soon find their own work re-used by klik2 at some stage
+of klik's execution, and they may not have been aware of it before. All these
+should regard themselves as part of the "klik magician posse".  :-)
+</p>
+<a href="http://www.netlash.com/">Netlash</a>

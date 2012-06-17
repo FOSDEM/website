@@ -1,0 +1,124 @@
+---
+year: 2008
+person: Bill Hoffman
+slug: bill_hoffman
+---
+<p>
+<a href="http://fosdem.org/2008/schedule/speakers/bill+hoffman">Bill Hoffman</a> will give a talk about <a href="http://fosdem.org/2008/schedule/events/255">CMake</a> at FOSDEM 2008.
+</p>
+<ul>
+<li class="toclevel-1"><a href="#What_do_you_hope_will_be_the_result_of_your_talk.3F"><span class="tocnumber">1</span> <span class="toctext">What do you hope will be the result of your talk?</span></a></li>
+<li class="toclevel-1"><a href="#How_did_the_various_sponsors_influence_CMake.27s_development.3F"><span class="tocnumber">2</span> <span class="toctext">How did the various sponsors influence CMake's development?</span></a></li>
+<li class="toclevel-1"><a href="#What_are_the_pros_and_cons_of_interfacing_with_native_build_systems_like_Make.3F"><span class="tocnumber">3</span> <span class="toctext">What are the pros and cons of interfacing with native build systems like Make?</span></a></li>
+
+<li class="toclevel-1"><a href="#Being_cross-platform_and_keep_being_it.2C_is_that_a_difficult_goal_to_reach.3F"><span class="tocnumber">4</span> <span class="toctext">Being cross-platform and keep being it, is that a difficult goal to reach?</span></a></li>
+<li class="toclevel-1"><a href="#So_the_test_are_covered._What_are_the_other_common_problems_when_building_large_projects.3F"><span class="tocnumber">5</span> <span class="toctext">So the test are covered. What are the other common problems when building large projects?</span></a></li>
+<li class="toclevel-1"><a href="#Did_CMake_benefit_from_having_KDE_as_a_user.3F"><span class="tocnumber">6</span> <span class="toctext">Did CMake benefit from having KDE as a user?</span></a></li>
+<li class="toclevel-1"><a href="#How_is_Kitware_doing_currently.3F"><span class="tocnumber">7</span> <span class="toctext">How is Kitware doing currently?</span></a></li>
+</ul>
+<a name="What_do_you_hope_will_be_the_result_of_your_talk.3F"></a>
+<p>Q: What do you hope will be the result of your talk?</p>
+<p>I hope to gain more visibility for CMake, and to be able to answer any
+questions people may have, and clear up any misconceptions.  Also, I
+would like to make people aware of the software process that can be
+achieved with CMake.  I also hope to meet other developers and drink
+some beer!
+</p>
+<a name="How_did_the_various_sponsors_influence_CMake.27s_development.3F"></a>
+<p>Q: How did the various <a href="http://www.cmake.org/HTML/Sponsors.html" class="external text" title="http://www.cmake.org/HTML/Sponsors.html">sponsors</a> influence CMake's development?</p>
+<p>
+CMake's sponsors have made CMake possible. Starting with National
+Library of Medicine (NLM), that provided the initial funding for CMake
+development, and as time went on other customers of Kitware (Sandia
+National Labs, Los Alamos National Labs and the National Institutes of
+Health NAMIC project) have provided needed funding for CMake
+development. Great deals of effort have been spent and continue to be
+spent on the development of CMake, and without sponsors it would not be
+possible. So, I would like to thank all of them for their past and
+continued support we enjoy.
+</p>
+<a name="What_are_the_pros_and_cons_of_interfacing_with_native_build_systems_like_Make.3F"></a>
+<p>Q: What are the pros and cons of interfacing with native build systems like Make?</p>
+<p>The cons are that you can not control everything you would like to.
+Also, you are subject to bugs in those other build systems. Make is an
+interesting one, in that it provides very little as it is a simple
+command line tool.  It did allow us to focus on higher level build
+operations while not having to worry about the lower level details of a
+make like system.  At some point there may be a CBuild that could
+potentially replace make on some systems.
+</p>
+<p>The more interesting argument on the pro side for interfacing with
+native build systems are the IDE's like Visual Studio, Xcode, KDevelop,
+and Eclipse.  The big pro is that developers can use the tool they are
+most efficient with, in a very native way. This allows teams of
+developers the freedom to choose the build tool that works best for
+them. At Kitware, there are 40 plus developers collaborating with many
+other outside groups.  There is no single development tool forced on
+anyone in the company.  I use emacs, gnu make and the visual studio
+compiler. Other developers use Visual Studio projects, and some are not
+even using the same versions of Visual Studio.  Still others at Kitware
+use Linux or MacOSX. This keeps the developers happy and productive, and
+avoids forcing people to use things they are not good at.
+
+</p>
+<a name="Being_cross-platform_and_keep_being_it.2C_is_that_a_difficult_goal_to_reach.3F"></a>
+<p>Q: Being cross-platform and keep being it, is that a difficult goal to reach?</p>
+<p>It would be impossible to do without the software development process
+that we use.  By using CMake/CTest/CPack, each night we regression test
+CMake on every platform that we support.  The results are posted to web
+pages called dashboards. If I break something on a different platform
+than the one I am developing on, I will usually receive and email within
+15 minutes with a link to a page showing me exactly what broke and why.
+</p>
+<p>CMake uses CTest to populate both nightly,
+continuous, and experimental dashboards for itself.  They are publicly
+available and can be found <a href="http://public.kitware.com/dashboard.php?name=cmake" title="http://public.kitware.com/dashboard.php?name=cmake">here</a>.
+</p>
+<p>Each night, the same snapshot of CMake is built on more than 100
+computers covering various platforms and configurations.   In addition,
+after almost every commit to the repository, CMake is built and tested
+on 5 or more machines.
+</p>
+<p>We have a saying "If it's not tested, it doesn't work!".  CMake has
+about 70% code coverage with a large suite of regression tests. When a
+bug is fixed, we add a test for it.
+</p>
+<a name="So_the_test_are_covered._What_are_the_other_common_problems_when_building_large_projects.3F"></a>
+<p>Q: So the test are covered. What are the other common problems when building large projects?</p>
+<p>Performance would be the hardest problem that you face with large
+projects. The edit/compile/run loop needs to be very fast or developers
+just can't get things done.  Some performance issues just don't show up
+on smaller projects.
+</p>
+<a name="Did_CMake_benefit_from_having_KDE_as_a_user.3F"></a>
+<p>Q: Did CMake benefit from having KDE as a user?</p>
+<p>It has benefited greatly from KDE.  During the transition many features
+were added to CMake to support KDE. The installation process became more
+standard, many performance issues were fixed, progress and color output
+was added to Make-based builds, and a bunch more features. KDE has also
+helped to solve the CMake chicken and the egg problem. A project that
+uses CMake requires CMake to be installed on the machine that is
+building the software.  This requirement has caused some folks to not
+use CMake.  However, if CMake is a standard tool available on systems
+natively, like the compiler and make, this argument goes away. The use of
+CMake by KDE has prompted many linux distributions to provide good CMake
+packages.
+
+</p>
+<a name="How_is_Kitware_doing_currently.3F"></a>
+<p>Q: How is Kitware doing currently?</p>
+<p>Kitware is doing very well, want a job?  Kitware is always looking for
+talented developers to join the team. :)  It has been very exciting to
+watch the company grow from 1 person in 1998 to over 40 in 2008.  This
+March we will be celebrating our 10th year in business.
+</p>
+<p>The impact we have been able to have on the world with our open source
+tools like <a href="http://www.cmake.org/" class="external text" title="http://www.cmake.org">CMake</a>, <a href="http://www.vtk.org/" class="external text" title="http://www.vtk.org">VTK</a>, <a href="http://www.itk.org/" class="external text" title="http://www.itk.org">ITK</a>,
+<a href="http://www.paraview.org/" class="external text" title="http://www.paraview.org">ParaView</a>, <a href="http://www.insight-journal.org/" class="external text" title="http://www.insight-journal.org">the Insight Journal</a> and <a href="http://www.gccxml.org/" class="external text" title="http://www.gccxml.org">GCC_XML</a> are really
+amazing given the size of the company.  In the end of 2007, we started a
+
+<a href="http://kitware.com/profile/press/?Hoogs" class="external text" title="http://kitware.com/profile/press/?Hoogs">computer vision group</a> within Kitware.  I think 2008 is going to be
+a big growth year for the company, and am looking forward to the coming
+year.
+</p>
+<a href="http://www.netlash.com/">Netlash</a>

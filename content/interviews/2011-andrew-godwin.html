@@ -1,0 +1,110 @@
+---
+year: 2011
+person: Andrew Godwin
+slug: andrew_godwin
+---
+<p>Andrew Godwin will enlighten the FOSDEM 2011 audience about Django.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>Well, I've been writing open-source software for the last seven years
+and Python for the last four or five of those; while you can usually
+find me doing freelance web development, I'm currently working with a
+mixture of both operations and web development for my new startup, <a href="http://www.ep.io/">ep.io</a>.</p>
+<p>I tend to use Django in most of my work, but I do try and keep abreast
+of other frameworks, especially where something a little less massive
+than Django is required. I also enjoy playing around with new databases
+and datastores, cheese, and mountains.</p>
+<p>Q: What aspects of Django's architecture will you cover in your talk?</p>
+<p>It's more of a broad overview; while the talk will be technical, I don't
+expect that many people to be familiar with anything beyond the basic
+layout of Django's internals. I want to address each of the major parts
+of Django as a framework - the model layer, the templating layer, HTTP
+and URL handling, and so on - and take a look at their individual
+design, how other libraries and frameworks have done it better, how
+Django chose surprisingly well, or (in many cases) how we adapted.</p>
+<p>Q: What do you hope to accomplish by giving this talk ? What do you expect?</p>
+<p>I'm not sure what I expect - introducing people to Django is always
+nice, but a lot of people have heard of it these days. I'd say I see it
+more as showing people the classic cases where things can go wrong in an
+open-source project like this - some are web-specific, some are not.</p>
+<p>Still, Django has a lot of history - almost 6 years, now - and in that
+time we've managed to massively overhaul parts of the framework while
+keeping backwards compatibility. There's lessons to be learnt about
+being flexible, and adapting and fixing problems, but not rewriting
+everything all at once. Django really is quite a nice framework, at the
+end of the day, even after all the flaws I'll be discussing - a lot of
+them are historical.</p>
+<p>Q: Those flaws -- the 'bad/ugly' parts of Django's architecture -- do you consider those to be fixable?</p>
+<p>Well, of the non-historical issues I'll be discussing, some of them can
+be fixed relatively soon - in the next release or two, perhaps - while
+others are perhaps more fundamental, and would have to accompany a
+release with a significant drop in backwards-compatibility. We've not
+really discussed if, or indeed when, such a release would happen.</p>
+<p>Q: So there are already ideas brewing for Django post-v1.3?</p>
+<p>Of course - there are too many! 1.3 was supposed to mostly be a
+bug-fixing release, although several medium-size feature changes have
+snuck in. There's a whole host of ideas for 1.4 and beyond - template
+compiler improvements, adding some migration support into Django itself,
+making the auth app more reusable, and others. We won't decide what goes
+in the next release until 1.3 is released and everyone's had a bit of a
+rest, however.</p>
+<p>Q: Which properties of Python make it a nice language to write a framework in?</p>
+<p>I'd say it's a combination of the huge number of libraries available
+(there's at least one for everything), its relative ubiquity (I can't
+think of a mainstream distribution of Linux that hasn't shipped with
+Python in the last few years), and the relatively clean and consistent
+code that gets produced - there's a pretty well-adopted core set of code
+conventions (PEP8) that means nearly all Python code looks the same.</p>
+<p>It's also quite an accessible language, which helps bring fresh talent
+to the various Python communities. Still, there's definitely also the
+fact that it's popular because... it's popular. Having a large community
+to draw on for support and development resources seems to just drive the
+language forward more and more.</p>
+<p>Q: For some frameworks, it seems that the bigger they get, the more alternatives pop up for some of their subsystems.  Is this true for Django too?</p>
+<p>I'd say it's not the framework getting bigger that's necessarily the
+direct cause - as more people become familiar with a language, more
+frameworks and libraries are going to spring up. It's definitely true
+for Django, however - most of what's in the framework is also available
+elsewhere as a separate library, or often as several competing libraries.</p>
+<p>Still, I think this is a good thing. Competition, as well as new ideas
+from those other alternatives, help us see what's popular and what
+isn't. If we genuinely thought an external solution was better than our
+subsystem (and that includes integrating with the other parts of Django
+with only a reasonable amount of code), it'd be considered for inclusion
+- after all, it's less code for us to maintain. That said, backwards
+compatibility means such an inclusion is unlikely, except with new
+features or parts.</p>
+<p>Q: You work a lot on South (schema and database migration for Django). What makes migrations hard, and how does Django/South help?</p>
+<p>Databases themselves are mostly what make migrations hard - they're not
+particularly happy with changing their schema in the first place, and on
+top of that, each database has a different syntax and different
+restrictions (or, in the case of SQLite, an inability to do basically
+anything other than add columns). The hardest part of South is
+maintaining those abstractions to the different databases.</p>
+<p>There's also the element of organisation that South solves for you, by
+tracking what's applied. That's not necessarily as difficult for the
+developer to do, but it's tedious, and a small mistake can result in the
+database schema being changed in unintended ways. I wanted to remove
+that element of risk, and apparently a lot of other people agree with me.</p>
+<p>Q: How would you describe the Django community?</p>
+<p>It's fantastic. We have a great core team, and a good community of
+people around that, not only contributing patches and reporting bugs,
+but also helping by writing documentation, running conferences,
+supporting other users, giving us constructive criticism, promoting
+Django, or just writing great sites using it. It's everything I could
+ask for from an open-source community.</p>
+<p>Q: Nice to hear.  You're also working on a hosting service for Python apps (<a href="http://www.ep.io/">ep.io</a>).  Is it any different to develop for a hosting platform versus standard web/framework programming?</p>
+<p>It depends if you're talking about developing applications to run on the
+hosting platform, or developing the hosting platform itself. Developing
+applications to run on ep.io is almost identical to normal web
+development - that's one of the design goals, and there's only a few
+small restrictions to keep things portable. Some other hosting platforms
+require significant changes to your code to get it to run, but it's
+usually to make it easier for them to scale your app; we went for the
+route that gives us the hard work, not the users.</p>
+<p>Developing the platform itself, on the other hand, has been very
+interesting, mostly since I finally get to use a whole heap of core
+Linux functionality and system calls that have no use in normal
+programs, as well as the inherent difficulty in testing and optimising a
+distributed, self-healing system. I consider this fun; other people
+probably have a different opinion.</p>
+<p>Q: OK, thanks!</p>

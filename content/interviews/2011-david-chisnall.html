@@ -1,0 +1,112 @@
+---
+year: 2011
+person: David Chisnall
+slug: david_chisnall
+---
+<p>David Chisnall will speak about Objective-C at FOSDEM 2011.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>
+I'm a freelance writer and consultant. 
+I have a PhD in computer science and have written three books, one on Xen and two on Objective-C, the second of which should be in shops just in time for FOSDEM.  When I started my PhD, I was on the same grant as Nicolas Roard.  At the time, Nicolas was a very active contributor to GNUstep, the open source implementation of the Cocoa APIs, and convinced me that it was worth the effort of learning this weird Objective-C language that I'd heard a bit about.
+</p>
+<p>
+Nicolas was also one of the people who pushed for the founding of the <a href="http://etoileos.com/etoile/">Étoilé</a> project - he was having similar conversations with both Quentin Mathé and myself about why using computers was so much harder than it needed to be, and pushed us both to do something about it.  He was also responsible for getting me to work on GNUstep.
+</p>
+<p>
+After I'd been using GNUstep for a little while, I became frustrated with the lack of investment in Objective-C from the GCC team - they even shipped one release with serious Objective-C bugs and stated that Objective-C bugs were not considered show-stoppers anymore.  Objective-C 2 features weren't even on their roadmap.  I got involved with clang, which has a much cleaner design, and seem to have become the de-facto maintainer of the GNU runtime part of clang.
+</p>
+<p>
+These days, a lot of what I work on seems to be various compilers, but I'll probably end up spending some time nearer the top of the stack again eventually.  I'm also currently teaching a course on high-performance computing at Swansea University.
+</p>
+<p>
+In my free time, I cook, play ultimate frisbee, and dance cuban salsa and argentine tango.
+</p>
+<p>Q:  OK. What will you be talking about at FOSDEM 2011?</p>
+<p>
+I'm not yet exactly sure - I'm currently trying to squeeze about five hours of material into a 
+50 minute timeslot, so a lot of what I hope to talk about will have to be cut.  I plan on covering what makes Objective-C a good language, how it's supported by open source tools, and some of the things that we've done with it in Étoilé that would be very difficult in other languages.  I'd also like to talk about some of the things that have been done recently to make GNUstep applications integrate better with Windows and GNOME.
+</p>
+<p>Q: And what are your ultimate goals for coming to FOSDEM?</p>
+<p>
+A lot of people seem to regard Objective-C as an Apple-only technology.  I hope to dispel this myth in my talk.  Apple has invested a lot in Objective-C, but a lot of this work can be used by other people.  Clang is largely developed by Apple and we just needed to write one extra class to get it to support the GNU runtimes.  To put this in perspective, my copy of the clang tree is about 300,000 lines of code.  Of this, about 2,000 are specific to the GNU runtime - the rest is common to both implementations.  This is not including LLVM code, just the front end, which generates LLVM IR from source code.
+</p>
+<p>
+We can also use clang for things like syntax highlighting and code indexing.  I'll be showing an example in my talk of a syntax highlighting framework that I wrote on top of clang, which is only a few hundred lines of code but does much more accurate highlighting than anything else outside of Apple's XCode (which also uses clang).
+</p>
+<p>
+Of course, Apple's implementation of Cocoa is proprietary, but Cocoa itself is based on the OpenStep specification.  This was jointly developed by NeXT and Sun and provides a large set of classes - you can write rich applications without going outside the OpenStep core.  GNUstep was originally created to implement OpenStep.  The goal switched to tracking the Cocoa extensions when OS X was released, but a lot of the stuff that people use regularly dates back to OpenStep.
+</p>
+<p>
+GNUstep doesn't implement everything, but it's a lot more complete than most people seem to realise.  My latest book is aimed at OS X and iPhone developers, so I didn't write any of the examples with GNUstep compatibility in mind.  Last week, someone added the last calendar-localisation classes, so all of the examples now work with GNUstep.  I hope to convince people that it's worth using Objective-C for open source projects and that it's worth contributing improvements to GNUstep if they find bits of Cocoa that are missing.
+</p>
+<p>Q: 
+You also work on [user environment] Étoilé.  Are you using it daily?
+</p>
+<p>
+Most days, I live in an OS X terminal connected to a FreeBSD VM via SSH.  Étoilé is now starting to get to the point where some of the parts are useable, but most of the work that we've done so far has been on the low-level parts - frameworks and even a compiler.
+</p>
+<p>
+At 14:45 on the Saturday [at FOSDEM], I'll be giving a talk about the EtoileText framework in the World of GNUstep devroom.  I used this framework to generate the XHTML used for the ePub version of my latest book from LaTeX sources, and I'll be talking about how that worked.
+</p>
+<p>Q: How do you see Étoilé evolve in 2011?</p>
+<p>
+We're now at the point where most of the low-level stuff that we need to build shiny things is done, so 2011 should hopefully be the year when we get some demos that are exciting to users, as well as to developers.  We're also hoping to see a sizeable deployment in East Africa, although this has been delayed by problems with their electrical infrastructure.
+</p>
+<p>Q: Is Objective-C your favorite programming language? What makes it so?</p>
+<p>
+It's certainly the language that I'd choose for most things, although there are some things in Haskell that I'd love to see in a language like Objective-C - monads for software transactional memory, for example - but it's very difficult to unify the pure functional and object oriented paradigms in a clean way.
+</p>
+<p>
+It's really a mistake to think of Objective-C as a single language.  Tom Love, one of its designers, called it a hybrid language.  One language is C, and the other is a dialect of Smalltalk.  You're just allowed to mix them in the same source files (and even in the same expression).  It's easy to use pure C, and compiler extensions like SSE intrinsics or inline assembly, when you need raw performance.
+</p>
+<p>
+It's also possible to use high-level constructs.  For example, one of the things that we do in Étoilé is provide an -inNewThread higher-order message, which lets you spin an object off into another thread - any messages you send to it (methods you invoke, in Java parlance) are queued in the other thread and you get a future back.  When you send a message to the future, you block until the method has finished.  This gives implicit synchronisation using high-level techniques, but in a language that also gives you all of the low-level power of C.
+</p>
+<p>Q: Given these properties, which jobs fit Objective-C best, and in which cases would you revert to another language?</p>
+<p>
+The sweet spot for languages is always a moving target.  When I learned C (back when ANSI C, aka C89, was new and shiny), it was taught as a high-level language for people who didn't really care about performance and were willing to take a hit of 50% or more over hand-tweaked assembly.  People who really cared about performance didn't use it.  Some still don't - if you talk to the libavcodec developers, for example, you'll find people who still regard C in this light.  On the other hand, I'm now teaching C to undergraduates as a low-level language, in the context of a module on high-performance computing.
+</p>
+<p>
+I find that Objective-C provides a convenient middle ground.  For some performance-critical things, you probably wouldn't want to use the dynamic features of Objective-C.  In a typical program on a modern computer, however, the really CPU-bound parts are often quite small.  I subscribe to the philosophy of 'make it work, then make it fast', so I tend to write code that uses all of the flexible bits of Objective-C, and then bypass them after profiling if the code isn't fast enough.  I was recently reminded of just how fast modern computers are by one of my programs - something that I expected to have to spend a lot of time optimising once I'd got it working - taking well under a second of CPU time to run in the unoptimised version.
+</p>
+<p>
+That said, there are some situations where the dynamic parts of Objective-C would just get in the way.  If you were doing image or video processing, for example, you wouldn't want to be doing a message send to get each pixel.  On the other hand, pure C probably isn't the best tool for the job there anymore.  You might use OpenCL C and use an Objective-C object for marshalling the data and launching the kernel.
+</p>
+<p>
+At the other end, there's always room for improvement.  One of the things that I've worked on for Étoilé is a framework called LanguageKit, for implementing other languages on top of the Objective-C runtime.  This currently supports a dialect of Smalltalk and a (very experimental!) dialect of JavaScript, with an interpreter, a static compiler and a JIT compiler.  The compiler modes use LLVM, so benefit from all of the optimisations that I worked on for Objective-C with LLVM/Clang.  Floating point performance is pretty terrible, but for anything else it generates code that's about as fast as Objective-C - in a lot of cases Smalltalk code compiled with LangaugeKit is faster than Objective-C compiled with GCC.
+</p>
+<p>
+Because the languages use the same object model, you can use them interchangeably.  You can write some methods on an object in Objective-C, some in Smalltalk.  I've also got an unfinished OMeta implementation (OMeta is a parser generator that defines grammars as objects, with a method for each rule), so eventually you should be able to very easily create domain-specific languages that express your problem domain very concisely.
+</p>
+<p>
+The STEPS project at the ViewPoint Research Institute is a constant source of inspiration for us.  Their aim is to produce an entire working environment - including compiler, kernel, and applications - in under 20,000 lines of code.  They're really pushing the boundaries in what's possible for high-level languages.
+</p>
+<p>Q: Apple's and FSF's Objective-C implementation differ from each other. Is that unfortunate, or does it also have advantages?</p>
+<p>
+The FSF actually has two Objective-C runtimes.  One is maintained by the GCC project and has been modified by a number of people - including Richard Stallman - over the last two decades.  The other is written by me and is maintained as part of the GNUstep project.  The GNUstep runtime is (mostly) backwards compatible with the GCC runtime, but is a complete rewrite and provides a number of new features, such as support for blocks, and a new ABI that provides some things like faster proxies, non-fragile instance variables, and support for safe method lookup caching.
+</p>
+<p>
+The last of these is very important for performance, and isn't possible with the GCC or Apple runtimes.  It allows us to avoid the cost of dynamic dispatch.  There are some LLVM optimisations in the GNUstep runtime's Subversion tree that let you speculatively inline methods on hot paths.  When you run these, performance of Objective-C with dynamic behaviour and static C is so close that it's within the margin of error between runs on my benchmarks.
+</p>
+<p>
+There are two big differences between the GNU runtimes and the Apple runtimes.  One is the way in which message sending is implemented.  Apple provides a single function that implements message sending.  Unfortunately, this is impossible to implement in pure C, and needs to be written for each calling convention, so there are three versions for Darwin/x86, three for Darwin/PowerPC, three for Darwin/ARM and so on.  The GNU runtimes are expected to work everywhere, so this is not really feasible - even Linux/x86 and FreeBSD/x86 would need different versions of these functions.  Instead, the GNU runtimes return the method pointer from a lookup function and the compiler inserts a call to this function.  This gives the Apple version slightly better code density, but the GNU approach exposes a number of optimisation opportunities later on in the pipeline, so it's a trade.
+</p>
+<p>
+The other major difference is in the implementation of selectors (method names).  These are just strings in the Apple runtimes.  The GNU runtimes treat them as pairs of a name and a type.  The GCC runtime doesn't do anything with this difference, although GNUstep uses it to make distributed objects faster (it can handle locally stuff that requires a network round-trip on the Apple runtime).  One of the things I plan on showing in my talk is how the GNUstep runtime uses this to throw an exception (or, with a little Étoilé magic, silently fix a programmer error at run time) in places where the Apple and GCC runtimes both silently corrupt the stack.
+</p>
+<p>Q: Thousands of programmers were introduced to Objective-C due to Apple. How did this affect the (non-Apple) open source Objective-C community?</p>
+<p>
+We've seen a lot of new developers.  NeXT sold around 50,000 computers, in total.  Tim Berners-Lee credited the NeXT frameworks and Objective-C with making WorldWideWeb possible, but most developers never saw a NeXT workstation.  If you learn to program with the Win32 APIs and Microsoft Foundation Classes, then pretty much any subsequent framework that you learn seems amazingly good in comparison, and this happened to an entire generation of developers.
+</p>
+<p>
+With Cocoa on OS X, we're starting to see people looking at the open source community with experience using Objective-C.  They've used Cocoa on OS X and don't want to settle for anything else on other platforms.  We've also seen some contributions to GNUstep from companies that want to port their Mac applications to Windows - it's cheaper for them to implement a few missing pieces of GNUstep than to do a complete rewrite for Windows.
+</p>
+<p>Q: 
+How is it like to teaching programming to others? Does it influence your programming style for example?
+</p>
+<p>
+One of the most rewarding parts of open source development is doing code review for inexperienced developers.  We've had a few people join Étoilé with little programming experience and almost no Objective-C knowledge at all.  Several of these have gone on to become some of our most active contributors.
+</p>
+<p>
+I'm not sure teaching influences my programming style much, but knowing that other people will read my code certainly does.  One place where teaching does help, is to remind me what things other people find difficult.  When you've been working with code that employs a particular design pattern in a lot of places, then you find that very familiar.
+</p>

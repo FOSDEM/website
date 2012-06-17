@@ -1,0 +1,26 @@
+---
+year: 2012
+person: Soren Hansen
+slug: soren_hansen
+---
+<p><a href="speaker:2012/soren_hansen">Soren Hansen</a> will give a talk about <a href="event:2012/monitoring">"Bringing monitoring into the 21st century"</a> at FOSDEM 2012.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>Sure. My name is Soren Hansen. I live in Denmark with my wife and daughter. I spend most of my time working on <a href="http://openstack.org/">OpenStack</a>, but have now also ventured into the land of monitoring. I work for Cisco.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>I'll be talking a lot about the shortcomings of "modern" monitoring tools. This includes examples of incidents that they're completely oblivious to, as well as really simple ways the collected data could
+have been used to predict failures long in advance. I'll also be presenting a monitoring project called <a href="http://www.surveilr.net/">Surveilr</a> that I'm working on which will, hopefully, eventually address these shortcomings.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you expect?</p>
+<p>I've been monitoring things for over a decade. I've always been a bit annoyed by the tools, but it wasn't until about a year ago I starting putting my finger on what the problems actually were. Knowing what the problems are makes it so much easier to identify solutions and alternative approaches. I hope I'll be able to get other people thinking about these problems as well so that we can work together to address them.</p>
+<p>Q: Doesn't passive monitoring has the downside that it can detect too much anomalies that are not really relevant (false positives)?</p>
+<p>Quite the contrary. Active monitoring typically means you're making requests that are somehow fake or amputated. Testing that your MySQL server works and that your web server works doesn't mean that your users
+are getting database backed responses from your web server within a reasonable timeframe. Even if your web server test involves having the web server connect to the database server, your users might still be
+experiencing poor performance or seeing errors, because they're exercising it in all sorts of different ways, and that's what really matters, isn't it?  All the data is there, you just need to collect it
+and analyze it.</p>
+<p>Q: How do you guarantee that you'll always see the forest through the trees?</p>
+<p>Just because you're doing passive monitoring doesn't mean that you should raise an alert on every single request that times out. You may be completely happy if just 99% of your requests are within a certain threshold. It's all about discovering patterns and trends.</p>
+<p>Q: Doesn't passive monitoring need too much storage because you have to monitor and keep a lot of generated data to be able to use statistical prediction methods?</p>
+<p>Some of the forecasting models I'll be talking about have constant space requirements for their state. If the data being modeled has no particular seasonality, you don't need to keep any old data at all to be
+able to make semi-decent forecasts. For the models that do, you don't need to keep every single datapoint for all eternity. A per-minute mean value going back one year will get you very far and that's only half a
+million values. With an efficient storage model, that'll fit easily in 20 MB or something.</p>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>This is only my second FOSDEM and to be perfectly honest, I spent almost all of the first one in my hotel room recovering from the beer event on Friday :) That little I did experience was really nice, though.  It's an impressive event and now that I've had a taste, I'll try to be back every year for sure.</p>

@@ -1,0 +1,72 @@
+---
+year: 2009
+person: Scott James Remnant
+slug: scott_james_remnant
+---
+<p><a href="http://fosdem.org/2009/schedule/speakers/scott+james+remnant">Scott James Remnant</a> will give a talk about <a href="http://fosdem.org/2009/schedule/events/upstart">Upstart</a> at FOSDEM 2009.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>Well, my name is Scott James Remnant.  I work for <a href="http://www.canonical.com/">Canonical Ltd</a>, the commercial sponsors of <a href="http://www.ubuntu.com/">Ubuntu</a>; and my job is a lead developer for the Ubuntu Foundations team.</p>
+<p>My particular area is the boot process and the plumbing layer.  I care for those pieces of infrastructure between the kernel and the X server. Notably this includes the init system and udev.</p>
+<p>I've been involved with Ubuntu since the very beginning, and was one of the Debian developers that Mark hired when originally forming Canonical. I've done a number of different jobs at the company, including finding my way into, and back out of, management.</p>
+<p>Previously to working on Ubuntu, I was a member of the Debian project where I maintained dpkg and <a href="http://www.gnu.org/software/libtool/">Libtool</a> - the latter, I did enough work on to become one of the upstream maintainers as well.  I've also written a couple of small projects such as the popular Planet aggregator and dircproxy IRC bouncer.</p>
+<p>My first real contribution to the Linux community was running a humour site called Segfault.org, but I think that's been forgotten in the mists of time ;-)</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>I'll be talking a little about the history of <a href="http://upstart.ubuntu.com/">Upstart</a> and the problems with the current releases, and then will introduce the planned Upstart 1.0 and talk a little about the changes that are going to happen and the roadmap to get there.</p>
+<p>Q: What do you hope to accomplish by giving this talk ? What do you expect?</p>
+<p>I'm hoping to answer many people's questions about what's next for Upstart (of which I spy a few below :p), and what I'm planning to do with it.</p>
+<p>Hopefully I'll get a lot of feedback as a result, and will know what people think will work and what people think won't.  Maybe I'll even get ideas for new features or better ways of doing things.</p>
+<p>Also I'm hoping simply to educate.</p>
+<p>Q: What did you do as Ubuntu Development Manager?</p>
+<p>Canonical originally had only a single team working on Ubuntu, which grew to fifteen people reporting to one person (Matt Zimmerman, the CTO).  We realised that it just wasn't scaling, and had to split the team into two.</p>
+<p>I successfully interviewed to manage one of the resulting two teams, and thus roughly half of the Canonical Ubuntu developers reported to me.  My job was pretty much the same as any other team lead or manager job at any other company.</p>
+<p>I managed the day-to-day work of the team, planned work for each six-monthly cycle, handled performance reviews and so on.</p>
+<p>Canonical didn't stop growing, and we quickly added further teams. Along the way we rebranded my team to be the Ubuntu Desktop team, and thus my job title was actually Ubuntu Desktop Team Manager for most of the time.</p>
+<p>However I stepped down last year, wanting to return to full time development work.</p>
+<p>Q: What were your reasons to start developing the Upstart system? Which problems is it trying to solve?</p>
+<p>A number of different reasons really.</p>
+<p>Firstly the simple realisation that one of the most core pieces of software in Linux was the least understood and maintained.  Nobody actually uses sysvinit's features, and instead works around them with "init scripts" and other similar things.</p>
+<p>Secondly work on hotplug and then <a href="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">udev</a>, and increasing support in the kernel for userspace being able to react to changes, made me realise just how adaptive the boot sequence really needed to be.</p>
+<p>That work also led to a lot of race conditions, and a lot of busy loops; being able to eliminate those was a big reason.</p>
+<p>Q: Why did you decide that Upstart should be backwards compatible with SysV init?</p>
+<p>That was easy ;)</p>
+<p>There's a long running joke that the reason Ubuntu works as well as it does is the side-effect of the battle between Colin Watson and I.</p>
+<p>Colin firmly believes that all changes should be made in as small a steps as possible, always preserving compatibility both backwards and sideways, and that patching and improving an existing system is better than writing a new one.</p>
+<p>I firmly believe that sometimes you've just got to ditch the past and start over from scratch.  (The standard library inside Upstart is called libnih for a reason :p)  To steal a phrase from a favourite author of mine, I am to backwards compatibility what King Herod was to the Bethlehem Playgroup Association.</p>
+<p>Since the right course of action is always somewhere inbetween these two extreme points of view, Ubuntu steers well down it.</p>
+<p>The only way I was ever going to get Colin to agree that writing a new init system was a good idea was by promising to make it backwards compatible with the old one.</p>
+<p>And as ever, that compromise between us works out absolutely for the best.</p>
+<p>It's easy for any distribution to adopt Upstart, they only need to throw away the old /etc/inittab file, which hardly anybody uses anyway.  All the old init scripts still work just as before.</p>
+<p>It's also meant that we don't need any kind of Upstart flag day, since init scripts can be supported forever, we don't need to convert things over to Upstart jobs in a rush.</p>
+<p>Instead we've been able to get the system right first!</p>
+<p>Q: When will all services in Ubuntu have their SysV init scripts converted to Upstart? What are the difficulties in converting them?</p>
+<p>The difficulty has been that Upstart's method of describing when they should be run is not exactly the kindest thing, and gets really complicated for trivial use cases.</p>
+<p>It exposes too many internals, basically.</p>
+<p>One of the big changes I'll be presenting is the solution to this problem, which will hopefully begin the avalanche of jobs moving over.</p>
+<p>Another side reason has been the desire to have at least one other distribution using Upstart; now that Fedora ships with it by default, we can actually try to standardise on job definitions.  My hope is that an upstream should feel confident shipping an Upstart job in their own releases, and expect it to just work on all distributions.</p>
+<p>Q: Which new features can we expect in Upstart and when?</p>
+<p>You'll have to come see my talk for that one ;-)</p>
+<p>Q: How will Upstart replace cron and atd?</p>
+<p>A goal is to try and centralise all service management facilities in one place.  Now, cron might seem a little unrelated to init scripts, but if you actually look at what tends to be in /etc/cron.* they're not as distant as you might think.</p>
+<p>For example, on my system here, sysklogd has a cron.daily script; this calls savelog and then actually calls the sysklogd init script to restart the logging daemon.</p>
+<p>I believe that such things should just be a part of the sysklogd service definition.  You should be able to see that sysklogd has a "rotate-logs" action defined, and run that manually if you want.  Since that also requires automatic activation, the init daemon would have to support the notion of such things as "daily".</p>
+<p>Once you do that, it's not a big push just to merge the whole thing into init anyway.  After all, did you know that cron supports @reboot for user jobs?</p>
+<p>Obviously we'd extend it as well, you wouldn't just be limited to standard time definitions, but times related to other events as well. Who has never wanted to define a service as being run from "45s after startup" or similar?</p>
+<p>Merging cron's other features has benefits too.  cron mails you the output of its jobs, why doesn't init?  If apache fails, having the errors mailed to you would be rather handy, don't you think?</p>
+<p>So I think they're natural fits.</p>
+<p>atd is just a specialised version of crond, from this point of view.</p>
+<p>inetd is another question people ask, and that's a much more difficult answer ;)  Apple's launchd integrates these two _very_ well.</p>
+<p>Q: You were a Debian developer for years. What made you decide to become a Ubuntu developer?</p>
+<p>Ubuntu is more fun.</p>
+<p>I could never have done something like Upstart in Debian, and certainly couldn't look after something like the boot sequence!</p>
+<p>For example, this week in Ubuntu we switched to using /lib/udev/rules.d for the install location of udev rules (matching upstream).  Such an action in Debian would require explaining the reasoning, and probably arguing, with dozens of different maintainers - and maybe even not getting agreement.</p>
+<p>In Ubuntu, I just did the ~80 uploads myself.</p>
+<p>Likewise for simple changes to boot reordering, in Debian, that could be a complete nightmare.  In Ubuntu, I have the freedom to do it all myself (you can still persuade others too, of course ;p)</p>
+<p>And I really didn't like the way that Debian reacted to Ubuntu.  I had thought that it would embrace its offspring, and see that Ubuntu was attempting to reach a completely different individual to what Debian had.</p>
+<p>I even thought that Debian might not mind that Ubuntu patched software to make it work differently, especially together.</p>
+<p>After all, how many patches does Debian carry against its upstreams where they've failed to get agreement with the maintainer - or are just dealing with a different policy?</p>
+<p>The whole ethos of Open Source is that anyone can take your work, and build something different or better out of it.  And that you can then see what they've done, and if you like, integrate it back in.</p>
+<p>Debian's reaction baffles me to this day.</p>
+<p>Compare it to Ubuntu's embracing of all of the different derivatives of it, even those that change fundamental things.</p>
+<p>It was the Debian event when somebody turned up in a "Fuck Ubuntu" t-shirt that made me decide to leave.</p>
+<p>I realised there were too many people in Debian who believed in Debian more than they believed in free software; and too many people who were so religious about "their package" they they didn't want to see the bigger picture.</p>
+<a href="http://www.netlash.com/">Netlash</a>

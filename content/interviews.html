@@ -6,12 +6,12 @@ navcat: true
 
 <p>Every edition of FOSDEM, we conduct a short interview with the main track and keynote speakers.</p>
 
-<% @items.select{|i| i.interview? and not i[:disabled]}.sort_by{|i| i[:year]}.group_by{|i| i[:year]}.each do |year, items| %>
+<% @items.select{|i| i.interview? and not i[:disabled]}.sort_by{|i| i[:year]}.reverse.group_by{|i| i[:year]}.each do |year, items| %>
 <% unless items.empty? %>
 <h2><%= year %></h2>
 <ul>
     <% items.sort_by{|i| i[:person]}.each do |item| %>
-    <li><a href="<%= relpath(@item_rep.path, item.identifier) %>"><%= item[:person] %>: <%= item[:topic] %></a></li>
+    <li><a href="<%= relpath(@item_rep.path, item.identifier) %>"><%= item[:person] %><% if item[:topic] %>: <%= item[:topic] %><% end %></a></li>
     <% end %>
 </ul>
 <% end %>

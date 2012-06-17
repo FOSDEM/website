@@ -1,0 +1,23 @@
+---
+year: 2012
+person: Garrett Serack
+slug: garrett_serack
+---
+<p><a href="speaker:2012/garrett_serack">Garrett Serack</a> will give a talk about <a href="event:2012/coapp">"CoApp: Packaging Open Source software for Windows"</a> at FOSDEM 2012.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>My name is Garrett Serack, I'm a Senior Software Development Engineer at Microsoft, where I work in the Open Source Technology Center. I've worked at Microsoft for the last six years, and my primary responsibility is making open source software run better on Windows. When folks ask me <q>You work on Open Source, and work at Microsoft? Why? ...</q> I like to say that <q>Working on Open Source in Microsoft is kinda like being a Preacher in Vegas. It's the one place in the universe that I'm needed most.</q></p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>I've been spending the last year and a half constructing an open-source package management system for Windows called <a href="http://coapp.org/index.html">"CoApp"</a>.  We've taken a different approach than simply porting something like RPM or DPKG to Windows, as Windows and Linux are fundamentally different platforms, and we want to make sure that we address the specific needs of developers and software publishers for the Windows platform.  I'm going to talk about CoApp, and how it's going to support everything we ever wanted from package management on Windows.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you expect?</p>
+<p>Since we're just now reaching the point where CoApp is useful (we're about to ship Beta 3) I'm really hoping that we can attract two kinds of folks to the project.  First, we need people to download and use the new packages that are coming out (which starts with shared library and developer library packages) and help us shake out the many bugs left in the system, while creating new packages.  Secondly, I'm hoping to attract more folks to helping us tackle more functionality in CoApp itself.</p>
+<p>Q: Which other package management systems have you looked at and which ones did influence the design of CoApp?</p>
+<p>We've brought in ideas from a bunch of different package systems including RPM, DPKG, Gentoo's EBuild system, BSD's Ports, heck, even Node.js's NPM.  Overall though, we ended up rolling the design from scratch around so that we could leverage a few features in Windows that developers really *should* use, but don't because they aren't documented that well, and the tools, well... suck.</p>
+<p>Q: What are some key differences between CoApp and other package management systems? And what are CoApp's biggest advantages and biggest limitations at this moment?</p>
+<p>On Windows, package management is in its infancy, with the only existing solutions being fancy zip files.  We've implemented CoApp to support  features that are commonplace on systems like Linux: real shared libraries, automatic dependency management, package repositories, etc. On top of that we're supporting packages for multiple compilers/runtimes (vc6-vc10, plus GCC). Add to that features like zero reboots, frictionless installation (no need to download the package manager first), and true side-by-side installation of multiple versions of packages is going to change the way we use Open Source software on Windows.</p>
+<p>Our biggest limitation at this point, is that we're still writing the code :) ... We're still working towards 1.0, and so, we've not been ready for prime-time quite yet. I suspect that by the time that FOSDEM rolls out we should be releasing our next beta, and a significant number of packages should be rolling out.</p>
+<p>Q: How many packages can be installed at this moment with CoApp?</p>
+<p>Right now, only two :) ... CoApp itself, and the developer tools. I'm hoping to have that number to about 50 by the time FOSDEM hits, and a lot more as we progress forward.</p>
+<p>Q: Will CoApp limit its use to installing open source software on Windows or will it also be possible to install proprietary software with it?</p>
+<p>CoApp has no limitations with what you can use it with, it can easily be used for open source and proprietary software, and an individual software publisher can publish their own updates to their own repository trivially.</p>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>I spoken at a number of conferences, but this is my first visit to FOSDEM, and I'm really quite excited! I can't wait to see how it turns out :)</p>

@@ -1,0 +1,36 @@
+---
+year: 2012
+person: Renzo Davoli
+slug: renzo_davoli
+---
+<p><a href="speaker:2012/renzo_davoli">Renzo Davoli</a> will give a talk about <a href="event:2012/internet_of_threads">"Internet of Threads"</a> at FOSDEM 2012.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>There were two traumatic events in my childhood. I learnt assembly programming at the age of twelve. In 1976, it was unusual to have a computer. My machine (actually my parents' office machine) had 4 kB RAM in
+ferrite cores and a teletype as a printer. My second trauma was owning two building sets whose bricks were
+incompatible so I could not use them together for my creations. I had to make some interconnection blocks to solve the problem. So nowadays, I study and teach how to create virtualization concepts able to eliminate incompatibilities between existing tools. Meanwhile, I moved from assembly to C.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>The Internet of Threads (IoTh) is a new perspective on networking. The original design of IP is focused on interconnecting computers: in fact, the addressable nodes were (and are!) the network adapters. The implementation of networking support in operating systems is a direct consequence of this approach: one networking stack per computer shared by all processes, threads, users.</p>
+<p>Now, this "uniqueness dogma" has been weakened by the possibility of creating virtual machines or "containers", each with their own networking support. But meanwhile, the Internet has changed in the perception of its users. The internet connects client processes to server processes or peer processes. It connects processes, not computers.</p>
+<p>The central role of computers and interfaces has disappeared, services are the main focus now. The logical structure of the internet must change as a consequence of this. By the IoTh we mean a structure where the addressable nodes of the internet are, or can also be, processes or even concurrent threads of a process.</p>
+<p>In the IoTh the definition of an independent networking stack, with its own virtual interfaces, addresses, routing is as simple as the  creation of a PF_UNIX socket. It is an "ordinary business" user-space operation, not a structural and dangerous change, for system administrators only.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you expect?</p>
+<p>To spread enthusiasm about <a href="http://virtualsquare.org/">Virtual Square Lab</a> projects by osmosis.</p>
+<p>Q: What are some of the most interesting use cases of giving a process or thread its own network stack?</p>
+<p>I can give three use cases that, in my opinion, can show the effectiveness and convenience of this approach.</p>
+<p>So, let us start with a client side case. When using the IoTh a program, such as a web browser, could choose its networking stack from those available in the same way as it is currently possible to choose the printer. This means that a user can have different perspectives on the network, can use the local service or join a remote network using a VPN at the same time. One window or even one tab can be on a network while another is using a different service.</p>
+<p>On the server side, the IoTh allows the creation of virtual networking appliances, i.e. daemons with their networking stacks embedded. These appliances can migrate all over a virtual distributed network whilst keeping their own address and routing. This migration is as simple as stopping the process on a computer and starting it on another. No networking reconfiguration is required, no root access.</p>
+<p>But I think that the most interesting application is One-Time IP (OTIP): IP addresses can be computed using passwords and the current time, as we currently do with One-Time Passwords (OTP). Clearly this means that
+brute force password cracking attacks or port scanning on addresses got by network sniffing (perhaps found on alt.2600) are ineffective. OTIP is already compatible with your favourite clients and servers... are you curious to see how? Follow my presentation, then.</p>
+<p>Q: How big is the performance overhead of giving each process its own network stack?</p>
+<p>It depends. The relative overhead can be low or significant depending on the ratio between the communication costs (bandwidth, delay) and the computational costs. When the IoTh gets used on a fast local network the overhead can be quite high, but when using it to reach remote services on the internet the overhead can be negligible with respect to the total delay. For sure the IoTh can evolve.</p>
+<p>The current implementation uses LWIPv6 which is an IPv4/IPv6 networking stack running as a library in user space. A kernel implementation could be more effective.</p>
+<p>But let me answer by using an example: the overhead to running a program on a personal computer with respect to using a mainframe can be huge. Mainframes still exist. But the personal computer gives you the freedom to do your own computations as you wish. The IoTh is personal networking.</p>
+<p>Q: How many developers are working on the Virtual Square project?</p>
+<p>To be honest, I don't know. Virtual Square is a community, not a company. We have never created any kind of formal membership. For sure, more than forty people contributed to the code of Virtual Square projects. Perhaps, I think someone is in Virtual Square but he/she is not aware of this.</p>
+<p>Q: Which new features will the Virtual Square project see this year?</p>
+<p>We will certainly continue to work on OTIP. We want to release the tools I'll show during the talk very soon.</p>
+<p>I am currently working to create a "Virtual Square Tutorial" disk image for kvm.  This image will provide new developers and people interested in testing virtual square projects with a ready-to-run preconfigured environment where they can test all our tools.</p>
+<p>Then we plan to work on umview efficiency, by increasing the level of internal parallelism and by exploiting the new process_vm_{read,write}v system calls.</p>
+<p>We are also working hard to add other "amazing" and "incredible" features to our projects like kvde, the kernel implementation on VDE based on inter process networking (IPN), implementing virtual ptrace on Kmview (to show that ptrace can be "safely" eliminated from the kernel) etc. Stay tuned...</p>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>Absolutely! It is the only place in the world where I can find thousands of people speaking my language: code.</p>

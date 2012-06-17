@@ -1,0 +1,30 @@
+---
+year: 2010
+person: Sergey Petrunya
+slug: sergey_petrunya
+---
+<p><a href="http://fosdem.org/2010/schedule/speakers/sergey+petrunya">Sergey Petrunya</a> will give a talk about <a href="http://fosdem.org/2010/schedule/events/mariadb">MariaDB</a> at FOSDEM 2010.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>My name is Sergey Petrunya, and during the last six years I've made a number of improvements to the MySQL query optimizer. Until last spring I was doing this as an employee of Sun/MySQL but after that I continued it at Monty Program Ab.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>First, I'll try to present a technical but still comprehensible walkthrough of the differences between <a href="http://askmonty.org/wiki/index.php/MariaDB">MariaDB</a> and <a href="http://www.mysql.com/">MySQL</a>. The main focus will be on MariaDB's extra features but I'll also cover migration and compatibility with MySQL.</p>
+<p>The second part will be about our experiences with accepting external patches into MariaDB and what patch inclusion process we're moving towards.</p>
+<p>Q: What do you hope to accomplish by giving this talk ? What do you expect?</p>
+<p>I hope that after my talk more people will want to use MariaDB's features and they will know how to do it. I'm looking forward to hearing questions from the audience. They will help us to identify areas we'll need to improve.</p>
+<p>The goal of talking about accepting patches is to encourage external contributions and make the process of integration as painless as possible for both sides.</p>
+<p>Q: Why would a developer or database administrator use MariaDB instead of MySQL?</p>
+<p>The short answer is that MariaDB has more features, and some of them have already been proven to be useful by lots of people. I hope my talk will provide the long answer.</p>
+<p>Q: MariaDB has been announced in March 2009. Looking back, what has the project achieved since then?</p>
+<p>We've integrated a number of community patches that have never made it into the official MySQL version. We've also implemented several features on our own. We've built infrastructure for build and test automation and have used it to produce several beta versions of MariaDB and are making progress towards the release version.</p>
+<p>Q: What differentiates the storage engine Maria from MySQL's default storage engine, MyISAM, and other ones such as InnoDB?</p>
+<p>The <a href="http://askmonty.org/wiki/index.php/Maria">Maria</a> storage engine was initially based on MyISAM, and in the current version it is still a very MyISAM-like engine. For example it supports full-text and GIS indexes, which InnoDB and others do not support. The primary differences with MyISAM are that Maria has got crash safety and a page cache. The former is the first step towards making it a fully transactional engine, the latter allows to have more control over how available memory is split between different caches.</p>
+<p>Q: Will MariaDB always try to be a full drop in replacement for MySQL? Won't this hold back innovation?</p>
+<p>We will try to remain compatible unless there is a really good reason not to be. That is, we might make an incompatible change, but that will happen only if the change is expected to bring great benefits that will outweigh possible upgrade pains. I think we still have plenty of room for innovation within the current compatibility limits, the requirement to be a drop-in replacement is not holding us back at the moment.</p>
+<p>Q: Which new features can we expect in MariaDB in 2010?</p>
+<p>There is no definite list. First, MariaDB includes parts provided by the community, like the XTRADB and PBXT storage engines. We expect to receive more contributions during the year, but of course I cannot yet tell what they will be. With regards to internal development, Monty Program is offering non-recurring engineering services around the MariaDB/MySQL codebase, that is, if somebody pays for a certain feature, we will implement it before others. If we look at what features are already in the works, we'll see:</p>
+<ul>
+<li><a href="http://dev.mysql.com/doc/refman/5.1/en/index-merge-intersection.html">Lifting limitations in index_merge/intersection</a></li>
+  <li>Finishing and improving on some of MySQL's features that were slated for MySQL 6.0 but didn't go anywhere, like Batched Key Access and Subquery Optimizations.</li>
+</ul>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>No, unfortunately, not. This will be my first visit to FOSDEM.</p>

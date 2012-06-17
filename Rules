@@ -71,22 +71,28 @@ compile '*' do
       # metadata, but without adding the license footer
       filter :interview, {:nolicense => true} if item[:filter] == 'qa'
 
-      # run the custom news filter (lib/helpers/news_filter.rb) on
+      # run the custom news filter (lib/filters/news_filter.rb) on
       # content/news/* -- it removes "---MORE---" lines and removes
       # from the beginning of the content until "---FULL---" lines
       # (analog to the make_headlines function from lib/helpers/news.rb
       # which does the "opposite" (kindof) to generate headline items)
       filter :news if item.news?
 
-      # run the custom pagelinks filter (lib/helpers/pagelinks.rb) on
+      # run the custom pagelinks filter (lib/filters/pagelinks.rb) on
       # all items to replace page:... URLs with their actual URLs as
       # they will be rendered
       filter :pagelinks
 
-      # run the custom assetlinks filter (lib/helpers/assetlinks.rb)
+      # run the custom assetlinks filter (lib/filters/assetlinks.rb)
       # on all items to replace asset:... URLs with their actual URLs
       # as they will be rendered
       filter :assetlinks
+
+      # run the custom schedulelinks filter (lib/filters/schedulelinks.rb)
+      # on all items to replace speaker:..., event:... and track:...
+      # URLs with their actual URLs as they will be rendered, including
+      # e.g. speaker:2012/foobar that will point to archive.fosdem.org/...
+      filter :schedulelinks
 
       # retrieve the image width and height from the image files that
       # are referenced in <img/> tags to speed up browser rendering

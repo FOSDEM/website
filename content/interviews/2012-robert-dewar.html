@@ -1,0 +1,94 @@
+---
+year: 2012
+person: Robert Dewar
+slug: robert_dewar
+---
+<p><a href="speaker:2012/robert_dewar">Robert Dewar</a> will give a talk about <a href="event:2012/keynotes_model_success">"Free Software: A viable model for Commercial Success"</a> at FOSDEM 2012.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>I am Robert Dewar. I have been involved in programming language
+design and implementation since the late 60's (working on Algol-68,
+SNOBOL-4 (SPITBOL), COBOL, and since the early 80's on Ada. I was
+a professor of computer science first at Illinois Institute of
+Technology from 1968 to 1975, and then at the Courant Institute
+at New York University from 1976 to 2005.</p>
+<p>In 1994, with Ed Schonberg and Richard Kenner I founded <a href="http://www.adacore.com/">AdaCore</a>, of which I am now President and CEO. This is a 100% Free Software
+company devoted to building tools for reliable software (in
+particular safety-critical and security-critial software) based
+on the use of the Ada language and related technologies. Our
+implementation of Ada, <a href="http://www.gnu.org/software/gnat/">GNAT</a>, is part of the GCC system.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>AdaCore is a successful company totally based on Free Software (all
+the software we sell is licensed under the GPL, or other free software
+licenses). We are a successful multi-million dollar company with over
+60 employees (together with our French sister company in Paris). My
+talk will be about the business model we have adopted, and how it has
+been successful for us and our customers. And also I will discuss how
+we interact with the Free Software community in general, and the gcc
+project in particular in a way that is mutually beneficial.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you
+expect?</p>
+<p>Show people that there is no conflict between the use of Free Software
+licenses and building a successful commercial enterprise that can
+sustain itself over a long period. I believe this model is applicable
+in many other circumstances.</p>
+<p>Q: With the GNAT Academic Program (GAP), AdaCore supports the study of
+Ada in universities. What are some of the most interesting projects
+that came out of this program?</p>
+<p>Fun examples can be found <a href="http://www.adacore.com/home/academia/member-projects/">at our website</a> including robotics projects using LEGO Mindstorm, a real-time
+model railway system, a Mini Submersible, and a project to
+orbit a university designed and built satellite around the moon!</p>
+<p>Q: Open source plays an essential role in AdaCore's business model,
+which is not a trivial achievement. How do you explain this successful
+marriage between open source and business in your company?</p>
+<p>That's what the talk is all about, often people think there is a real
+conflict here, and ask us how we can survive. The message I will be
+giving is that this is actually a very comfortable coexistence both
+for AdaCore and for its customers. The business model we have developed
+over a 15-year period has been successful for us and our customers.</p>
+<p>Q: Ada is not as well-known as other programming languages, what are
+some of its unique selling points?</p>
+<p>It's particularly suited to very large scale systems with very high
+reliability requirements. Some examples are avionics systems (the
+Boeing 787 uses Ada in its flight control system), and air traffic
+control systems (the land based components of the new UK ATC system
+are entirely in Ada).</p>
+<p>Q: The SPARK language is a strict subset of Ada augmented with a
+system of contracts. What's so special about this?</p>
+<p>SPARK is aimed at "correctness by construction", making use of formal
+proof techniques, which are guided by the contracts. The idea is to
+write software that is correct from the start, rather than writing
+incorrect code and then trying to debug it into behaving well. An
+example is in fact the ATC system in the UK that I mentioned above,
+that is programmed in SPARK, and is formally proved to be free of
+run-time errors such as what would be called buffer overflows in C.</p>
+<p>Q: What are the biggest compilation challenges presented by the Ada
+programming language and what impact did these have on the GCC backend
+components?</p>
+<p>We did need to modify the back end of GCC, enhancing it with some new
+concepts that represent stuff that is in Ada, but not in C. For example,
+variant records, which resulted in the notion of self describing types.
+Basically though, the back end was well suited to the addition of Ada.
+One thing that definitely did occur was that Ada placed a general heavy
+stress on the back end, which showed up language independent problems
+that needed correcting. In addition Ada uses extensively features that
+have always been in the GCC back end but not heavily used, for example
+nested subprograms, and dynamically dimensioned arrays.</p>
+<p>Q: GNAT is licensed either under the GPL or the GMGPL (GNAT Modified
+General Public License) license. The latter adds the freedom to produce
+proprietary programs using the compiler and run-time library. What's
+the reason for this special-purpose license?</p>
+<p>Well this is copied from the approach with C (and its run time library).
+This allows GNAT to be used to generate proprietary programs. The FSF
+has always been more pragmatic than some might suppose. Richard Stallman
+would prefer to see everyone developing Free Software, but if they are
+going to generate proprietary software, he would prefer that they do it
+using Free Software tools. For most of our customers, this ability is
+crucial. It will be a while before we see software like the embedded
+avionics of military and commerical aircraft being open sourced, and
+indeed some of our customers work on classified projects so we don't
+even know what they are working on specifically.</p>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>Definitely, and we hope this will be another successful year, and that
+people will find the talk I will give a positive message that the Free
+Software approach is viable in the commercial world, and encourage
+others to follow the same path.</p>

@@ -3,9 +3,15 @@
 def decorate_interviews
   @items.select{|item| item.interview? }.each do |item|
     item[:kind] = 'interview'
-    item[:title] = "Interview: #{item[:person]}:<br/>#{item[:topic]}" if item[:title].nil?
-    item[:navtitle] = "#{item[:person]}: #{item[:topic]}"
     item[:nonav] = true
+
+    title = "Interview: #{item[:person]}"
+    title << ":<br/>#{item[:topic]}" if item[:topic]
+    item[:title] = title if item[:title].nil?
+
+    navtitle = "#{item[:person]}"
+    navtitle << ": #{item[:topic]}" if item[:topic]
+    item[:navtitle] = navtitle
   end
 end
 

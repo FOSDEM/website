@@ -1,0 +1,28 @@
+---
+year: 2009
+person: Kris Kennaway
+slug: kris_kennaway
+---
+<p><a href="http://www.fosdem.org/2009/schedule/speakers/kris+kennaway">Kris Kennaway</a> will give a talk about <a href="http://www.fosdem.org/2009/schedule/events/slow">optimizing FreeBSD systems</a> at FOSDEM 2009.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>I've been involved in the <a href="http://www.freebsd.org/">FreeBSD</a> project since the late 1990s, and I've been a committer since 1999.  Since then I've held a number of roles in the project.  I am a former Security Officer, a founding member of the Ports Management team that oversees the <a href="http://www.freebsd.org/ports/">FreeBSD ports</a> collection, and I am currently a member of the Core Team since the most recent election in 2008.</p>
+<p>For the past several years I have worked on FreeBSD performance and stability, trying to identify areas of poor performance or instability in the system on various interesting workloads, and working closely with other developers to develop and deploy fixes.</p>
+<p>In my non-FreeBSD life, I was trained as a theoretical physicist and worked in the US, Canada and France for about 10 years.  Recently I left that behind and moved to London to work for Google as a Site Reliability Engineer, where I help to keep Google's Ads system up and running.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>I'll be presenting some of the tools and methodologies I use to identify performance issues in FreeBSD workloads, proceeding from a high level system overview to pinpointing potential bottlenecks.  Some of the tools involved are FreeBSD-specific, but the approach applies to almost any system troubleshooting problem.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you expect?</p>
+<p>There are two main reasons.  Firstly, I'd like to share some of the experience I've gained over the past few years in applying these techniques myself.  Secondly, I think there is a lack of good documentation on the topic, and I wanted to help to fill that void.</p>
+<p>Q: Which metrics are available to describe performance?</p>
+<p>One of the points I stress in my talk is that the answer to this question depends very much on what your workload is, and what aspects of it you care about.  A classic example is latency vs throughput; depending on what you are trying to achieve with the system, either one or the other -- or both -- may be the critical factors.  Understanding what your particular workload is doing is key to improving its performance.</p>
+<p>Q: Which tools are available on FreeBSD to identify bottlenecks?</p>
+<p>There are a large variety of tools that can be useful, ranging from the 
+general (such as top(1)) to very specific tools such as kernel lock profiling or CPU performance counters.  I'll be discussing a number of these in my talk in some detail.</p>
+<p>One very powerful tool that I will not have time to discuss is Sun's <a href="http://opensolaris.org/os/community/dtrace/">DTrace</a> framework, which is now also available in FreeBSD.  There is some excellent documentation on Sun's website, which is well worth a look.</p>
+<p>Q: What's the biggest difference between desktops and servers with respect to the evaluation of the performance?</p>
+<p>The workloads tend to be very different: on a server you typically care about maximizing the use of the hardware.  On a desktop things like interactive response often tend to be more important.  I tend to focus more on server performance because that is where my interest lies.</p>
+<p>Q: In which situations is the performance of FreeBSD in need of improvement?</p>
+<p>We're constantly working on improving performance on various workloads, as we identify new issues and work to resolve them.  One area in which we have made significant recent progress is in UDP packet transmission on SMP hardware, which is important for certain server workloads including DNS and other high volume UDP services.  We're seeing dramatic performance benefits in FreeBSD 7.1 compared to Linux and older versions of FreeBSD, and we're working on new APIs for allowing applications to achieve even better performance on certain workloads.</p>
+<p>Some of the things we're working on for FreeBSD 8.0 include improved filesystem performance, virtual memory performance, and improvements to other aspects of networking.</p>
+<p>Q: What's FreeBSD used for at Google?</p>
+<p>Something interesting I learned recently is that there is FreeBSD code (as well as code from other open source projects, such as <a href="http://www.netbsd.org/">NetBSD</a>) used as part of the <a href="http://code.google.com/android/">Google Android</a> mobile phone platform (if you have a G1, you can see this for yourself under "Legal Information &gt; Open Source Licenses" in the settings menu - or by downloading the Android source code).  FreeBSD has been making a lot of inroads into the embedded space in the past few years, with ports to various <a href="http://www.freebsd.org/platforms/arm.html">ARM</a> and <a href="http://www.freebsd.org/platforms/mips.html">MIPS</a> targets available, but it's always nice to see it popping up in new places!</p>
+<a href="http://www.netlash.com/">Netlash</a>

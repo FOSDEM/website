@@ -1,0 +1,23 @@
+---
+year: 2010
+person: Elena Reshetova
+slug: elena_reshetova
+---
+<p><a href="http://fosdem.org/2010/schedule/speakers/elena+reshetova">Elena Reshetova</a> will give a talk about <a href="http://fosdem.org/2010/schedule/events/maemo">the Maemo 6 security framework</a> at FOSDEM 2010.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>My name is Elena Reshetova, and I am a senior security engineer at the Nokia Maemo Security team. The team is currently working on the platform security framework for the <a href="http://maemo.org/">Maemo</a> 6 release. I have joined the team one year ago, and before that I was working one year as a trainee in the Nokia Research Center security team in the area of Platform Security. I got my Master's Degree from Saint-Petersburg State University of Aerospace Instrumentation (Information Security Systems department). Currently I am also a doctoral student in Helsinki University of technology.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>Last October at the Maemo Summit, the business model and high level views of this topic were presented, but very little time was left to cover the technical key points. This talk will have a much more technical focus and will introduce most of the main concepts and components of Maemo Platform Security.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you expect?</p>
+<p>The main goal of the talk is to explain the basics of our platform security framework to people who are familiar with UNIX-like operating systems, and hopefully get feedback from them. We consider it to be very important to talk about our platform security framework, because we believe that it is the best way to improve it. That's why we would be glad to hear about suggestions or contributions.</p>
+<p>Q: Will the user's documents, contacts, photos, and so on be encrypted in Maemo 6?</p>
+<p>Currently there is a group of APIs provided by our security framework, which can be used to encrypt the user's data. They should be used by the application, which processes the data, and more information will be given during the presentation.</p>
+<p>Q: Why are existing security mechanisms in Linux like SELinux or AppArmor not suitable for Maemo?</p>
+<p>These access control mechanisms were created for servers or desktops controlled by administrators or advanced users, and thus have a different focus. They both provide a fine-grained access control, resulting in quite big and complex policies and overall system overhead. Another difficulty is that SELinux requires extended attributes to store the metadata, which might be a problem. Neither of these mechanisms provides protection from off-line attacks, and adding such protection would require us to maintain our own branches.</p>
+<p>Our main goal was to create a lightweight system on top of existing Linux security, to utilize the existing enforcement model and make the smallest possible change for existing applications. That's why we decided to design our own system. With our model however, both SELinux and AppArmor can coexist with our platform security framework, if needed.</p>
+<p>Q: Will existing Maemo applications have to be rewritten to fit in the Maemo 6 security architecture?</p>
+<p>The main advantage of our security framework architecture is that we don't have any special "security APIs" by default. For example, there is no secure_fopen() instead of fopen(), which should make the developer's life much easier. The only main change for most applications will be the creation of an additional file inside a Debian package, which we call the "Aegis Manifest File". This file declares the needed access control rights for the application, and it will be explained in more details in the presentation. Nonetheless, if an application would like to use some services provided by the security framework, for example to encrypt its messages over D-Bus, this application should then use the new APIs.</p>
+<p>Q: Will the security framework be released as open source?</p>
+<p>We will do our best to release the components of our security framework to the open source community. Already now, we are trying to offer our additions to the upstream D-Bus project. The <a href="http://www.gitorious.com/libcreds">libcreds</a> library, which allows getting the credentials of another process in a secure way, is hosted at gitorious.org.</p>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>Unfortunately, I haven't had the opportunity yet.</p>

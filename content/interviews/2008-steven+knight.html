@@ -1,0 +1,180 @@
+---
+year: 2008
+person: Steven Knight
+slug: steven_knight
+---
+<p>
+<a href="http://fosdem.org/2008/schedule/speakers/steven+knight">Steven Knight</a> will present at FOSDEM 2800 about his project <a href="http://fosdem.org/2008/schedule/events/scons">SCons</a>.
+</p>
+<ul>
+<li class="toclevel-1"><a href="#What_do_you_expect_from_your_presentation_at_FOSDEM.3F"><span class="tocnumber">1</span> <span class="toctext">What do you expect from your presentation at FOSDEM?</span></a></li>
+<li class="toclevel-1"><a href="#SCons_is_cross-platform._Is_that_a_major_feature_for_many_users.3F"><span class="tocnumber">2</span> <span class="toctext">SCons is cross-platform. Is that a major feature for many users?</span></a></li>
+<li class="toclevel-1"><a href="#Is_it_hard_to_remain_cross-platform_or_does_Python_does_most_of_the_heavy_lifting.3F"><span class="tocnumber">3</span> <span class="toctext">Is it hard to remain cross-platform or does Python does most of the heavy lifting?</span></a></li>
+
+<li class="toclevel-1"><a href="#Which_advanced_features_of_Python_does_SCons_rely_on.3F"><span class="tocnumber">4</span> <span class="toctext">Which advanced features of Python does SCons rely on?</span></a></li>
+<li class="toclevel-1"><a href="#Would_those_be_possible_in_other_languages_too.3F"><span class="tocnumber">5</span> <span class="toctext">Would those be possible in other languages too?</span></a></li>
+<li class="toclevel-1"><a href="#How_is_SCons_tested.3F"><span class="tocnumber">6</span> <span class="toctext">How is SCons tested?</span></a></li>
+<li class="toclevel-1"><a href="#A_flexible_system_is_a_system_that_can_be_.27abused.27_for_many_purposes._Have_you_seen_crazy_things_being_done_with_SCons.3F"><span class="tocnumber">7</span> <span class="toctext">A flexible system is a system that can be 'abused' for many purposes. Have you seen crazy things being done with SCons?</span></a></li>
+<li class="toclevel-1"><a href="#How_is_the_progress_towards_version_1.0_going.3F"><span class="tocnumber">8</span> <span class="toctext">How is the progress towards version 1.0 going?</span></a></li>
+
+<li class="toclevel-1"><a href="#What_was_your_personal_reason_to_start_working_on_SCons.3F"><span class="tocnumber">9</span> <span class="toctext">What was your personal reason to start working on SCons?</span></a></li>
+<li class="toclevel-1"><a href="#Where_does_the_name_SCons_come_from.3F_Especially_the_.27S.27_:-.29"><span class="tocnumber">10</span> <span class="toctext">Where does the name SCons come from? Especially the 'S' :-)</span></a></li>
+</ul>
+<a name="What_do_you_expect_from_your_presentation_at_FOSDEM.3F"></a>
+<p>Q: What do you expect from your presentation at FOSDEM?</p>
+<p>I mainly want to get the word out about how to use SCons effectively
+for Open Source development, and to get direct input on how to help
+improve SCons so it can be made even more effective for it.  The biggest
+expectation I have is to get a lot of good, in-depth feedback from
+people with software build issues (both potential or actual SCons users
+and others).  Finding out what problems people have or what doesn't work
+is more valuable than hearing if they like something I work on.
+</p>
+<a name="SCons_is_cross-platform._Is_that_a_major_feature_for_many_users.3F"></a>
+<p>Q: SCons is cross-platform. Is that a major feature for many users?</p>
+<p>It seems to be.  For example, I've heard of a fair number of gaming
+projects (both commercial and Open Source) that use SCons for development,
+reportedly because it makes it easier to manage development across the
+multiple platforms they want a game engine to support (multiple gaming
+consoles and a Windows version and...).  The cross-platform support's
+also a big attractor for many of the larger enterprise software vendors
+that use SCons to maintain software on multiple platforms.
+</p>
+<a name="Is_it_hard_to_remain_cross-platform_or_does_Python_does_most_of_the_heavy_lifting.3F"></a>
+<p>Q: Is it hard to remain cross-platform or does Python does most of the heavy lifting?</p>
+<p>Leveraging Python does give our cross-platform support a significant
+headstart, in that we don't have to wrestle directly with a lot of
+the lower-level implementation portability issues that projects that
+use C/C++ directly often have to worry about.  That having been said,
+remaining truly cross-platform is a constant struggle.
+</p>
+<p>The most consistent problem area is Windows portability, especially path
+name manipulation.  The underlying Python os.path module only takes you
+so far because it only abstracts out path name syntax, and you still
+have semantic issues with how the path names interact with the rest of
+your code and the outside environment.
+</p>
+<p>We also have a lot of the usual issues with trying to keep up to
+speed with different toolchains, and behavioral differences on various
+platforms.
+</p>
+<a name="Which_advanced_features_of_Python_does_SCons_rely_on.3F"></a>
+<p>Q: Which advanced features of Python does SCons rely on?</p>
+<p>Actually, SCons relies on *no* advanced features of Python, if by
+"advanced features" we mean things only available in newer versions of
+the language.  SCons is written so that it will work if all you have
+installed is the ancient Python 1.5.2 (which was still the default
+Python in Red Hat 7.3, for example).  We've started to make use of
+more modern Python modules (like subprocess) and features (like sets)
+but only if we have some mechanism, like an emulation layer, to keep
+the functional code compatible with 1.5.2.
+</p>
+<p>That said, we do use Python's introspective capabilities for certain
+features, mostly things like inserting layers dynamically to display
+tracing or debugging information without slowing down the normal
+code path.  Also, our parallel build (-j) support is based entirely on
+Python's threads, with a simple but effective worker-pool architecture.
+</p>
+<a name="Would_those_be_possible_in_other_languages_too.3F"></a>
+<p>Q: Would those be possible in other languages too?</p>
+<p>The underlying ideas in SCons -- that is, managing a full-tree
+build by using a scripting language API to program the dependency
+graph -- can certainly be implemented in other languages.  But since
+SCons configuration files actually *are* Python scripts, the result
+wouldn't be SCons, of course.  (Backwards compatibility might be a bit
+of a problem...  :-))
+
+</p>
+<a name="How_is_SCons_tested.3F"></a>
+<p>Q: How is SCons tested?</p>
+<p>We use a very strict testing methodology, adopted from Peter Miller's
+Aegis change management system, which requires that every change has
+at least one new or modified test (by default), and that those tests
+must not only pass when run against the new, modified code, but must
+also *fail* when run against the currently checked-in, unmodified code.
+</p>
+<p>We started with this methodology from day one of development, and have
+over time built up a really strong regression test suite.  The tests are
+every bit as much part of the "product" in that we treat any reported
+bugs not just as a problem in the SCons code itself, but also as a hole
+in our test coverage that must be fixed.
+</p>
+<p>We use Buildbot to make sure every change is tested on multiple platforms
+and against every major version of Python from 1.5.2 to 2.5.
+</p>
+<p>We just had a user report being pretty impressed by experiencing minimal
+hassles upgrading a complicated code base from using a three-and-a-half
+year old version of SCons.  That speaks well for our development
+methodology and our emphasis on backwards compatibility.
+</p>
+<a name="A_flexible_system_is_a_system_that_can_be_.27abused.27_for_many_purposes._Have_you_seen_crazy_things_being_done_with_SCons.3F"></a>
+<p>Q: A flexible system is a system that can be 'abused' for many purposes. Have you seen crazy things being done with SCons?</p>
+<p>Sure, but usually within the realm of transforming software source files
+into target files.  People have written some pretty comprehensive code to
+generate lists of target files dynamically from various arbitrary input.
+Our Wiki has a pretty extensive set of Builder modules that people have
+contributed for everything from CORBA to C# to Haskell.  We've even had
+someone write a wrapper in Lua around the underlying SCons build engine.
+</p>
+<a name="How_is_the_progress_towards_version_1.0_going.3F"></a>
+<p>Q: How is the progress towards version 1.0 going?</p>
+<p>Given how much attention we pay to backwards compatibility, a lot of
+people have suggested that we should just call what we have 1.0 and be
+done with it.  There's a good case to be made for that.
+</p>
+<p>Nevertheless, we've always wanted 1.0 to be really ready in as many
+details as possibile, mainly so that people who look at SCons for the
+first time when 1.0 is announced have as positive an experience as we
+can reasonably make it.  The main outstanding issues here are:
+</p>
+<ul><li>We're still shaking out issues from a big refactoring of our signature mechanism.   That's been in our checkpoint releases since September, and it's very functionally stable at this point, but I'm still looking at some performance ramifications.
+</li></ul>
+<ul><li> Our Autotools-like functionality still leaves too much to the individual SCons user.  It's kind of like having underlying Autoconf without the higher Automake layer that made things really useful by giving every package the same targets and build behavior, so that everyone can just "./configure; make; make install".  Maciej Pasternacki's Google Summer of Code project last year was targeted at this, and we're trying to finish that so we can roll it out before FOSDEM.
+</li></ul>
+<ul><li> We'd like a way for people to configure our implicit dependency scanner (used to derive dependencies automatically from #include lines) to more accurately reflect the symbols defined by the C preprocessor.
+</li></ul>
+<ul><li> The User's Guide has been lagging all of the features that are present in the man page.
+</li></ul>
+<a name="What_was_your_personal_reason_to_start_working_on_SCons.3F"></a>
+<p>Q: What was your personal reason to start working on SCons?</p>
+<p>I started working with Cons, the Perl-based predecessor to SCons, in 1998
+when I found that it basically solved the problem of building multiple
+side-by-side variants in a single dependency graph with minimal work.
+I got Cons to do what I wanted in one hour of work from a standing start,
+instead of weeks of monkeying with Makefiles and still not getting them
+to build variants in any extensible way.  I ended up doing the majority
+of ongoing work on the Cons code base (including contributing an extensive
+test suite) before that project basically withered on the vine.
+</p>
+<p>Despite the fact that Cons made me a fairly knowledgable Perl hacker,
+I had always been leery of Perl's esoteric syntax and TMTOWTDI-derived
+readability issues.  The Software Carpentry competition provided a
+concrete reason to see if I couldn't take the things I knew needed to
+be improved in the Cons architecture and make them work better in a
+friendlier language.  So I made the switch to Python and have never
+looked back.
+</p>
+<p>Since then, I've simply found that I really like working on this problem
+of trying to give people a framework to make it easier to manage really
+hard software build problems.  One of the things I like most about it is
+that it's so unglamorous -- most programmers would rather be working on
+"real software" than the internal build infrastructure.  So management
+typically assigns the Makefiles to be maintained by junior people or
+summer interns, and then we scratch our heads at why the builds are
+unreliable and we have to "make clean; make" all the time to make sure
+the dependencies are correct...
+</p>
+<a name="Where_does_the_name_SCons_come_from.3F_Especially_the_.27S.27_:-.29"></a>
+<p>Q: Where does the name SCons come from? Especially the 'S' :-)</p>
+<p>The real evolution of the name is pretty mundane.  Most of the
+underlying inspiration does come from the old Perl-based Cons tool.
+The Cons-inspired design that won the Software Carpentry competition
+in 2000 was actually named SCCons, for "Software Carpentry Cons".
+In practice, repeating the two 'c' characters when typing "sccons"
+looked and felt too much like a typographic error, so I dropped one,
+and the shortened name was retconned to stand for "Software CONStruction."
+</p>
+<p>The notion that "SCons" is short for "Steven's Cons" is purely an ugly
+rumor...  :-)
+</p>
+<a href="http://www.netlash.com/">Netlash</a>

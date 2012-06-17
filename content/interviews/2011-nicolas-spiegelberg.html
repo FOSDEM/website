@@ -1,0 +1,24 @@
+---
+year: 2011
+person: Nicolas Spiegelberg
+slug: nicolas_spiegelberg
+---
+<p>Nicolas Spiegelberg will give a talk about <em>"The Storage Technologies Behind Facebook Messages"</em> at FOSDEM 2011.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>Hi, I'm Nicolas Spiegelberg.  I spent five years of my life optimizing embedded networking equipment, only to decide that I've had my fill with micro-optimizing assembly and want to scale instead.  I joined Facebook a
+year and a half ago and immediately jumped on board as a storage engineer in the Facebook Messaging team.  I helped implement the <a href="http://hbase.apache.org/">HBase</a> storage solution for <a href="https://www.facebook.com/about/messages/">Facebook Messages</a> from design to deployment.  Additionally, I am an HBase committer and PMC member.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>There has been a lot of support within Facebook to find opportunities to work with the open source community.  I plan to detail the five open source projects that we're utilizing for Facebook Messaging and expound on our decision process.  In particular, the most controversial decision was to use HBase as our database storage engine.  I will introduce the project and its features, highlight why we chose HBase instead of other popular solutions, and talk some about the open source changes that we've contributed.  In addition, I'd like to cover some of the operational challenges and how we ramp up to Facebook-scale on new infrastructure.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you expect?</p>
+<p>I think all these open source projects provide great value to Facebook's product solution.  Facebook focuses on choosing the best tool for the job. Internally, we have begun to see this stack as a better tool than MySQL for some our real-time data storage use cases.  I hope that the audience will come away with some ideas about how they can effectively use this software to scale their research or business enterprise as well.</p>
+<p>Q: Can you give some numbers about the amount of Facebook messages that your platform has to handle?</p>
+<p>Our most recent numbers are per the initial release date.  Our Messages infrastructure handles over 350 million users sending over 15 billion person-to-person messages per month. Our chat service supports over 300
+million users who send over 120 billion messages per month.</p>
+<p>Q: Can you give an overview of the free and open source software that is used for the storage of Facebook messages?</p>
+<p>We utilize five main open source projects in Facebook messages: <a href="http://memcached.org/">Memcached</a>, <a href="http://hadoop.apache.org/">Hadoop</a>, <a href="http://hadoop.apache.org/hdfs/">HDFS</a>, <a href="http://hadoop.apache.org/zookeeper/">ZooKeeper</a>, and <a href="http://hbase.apache.org/">HBase</a>.  Memcached and Hadoop are pretty well-known.  We use an HBase/ZK/HDFS stack to provide a stable distributed storage engine, coordination service, and filesystem.</p>
+<p>Q: What's the biggest technological challenge for the storage technologies behind Facebook messages?</p>
+<p>It's challenging to take a new piece of software and scale it to support over 500 million users within a year's time.  It's even more challenging when you're working with a piece of software like a database storage
+engine that application developers just assume will work.  Really educating ourselves about the HBase codebase and ensuring data durability with disaster recovery has been a large undertaking.  It's always
+something in the back of your mind whenever you modify the codebase.</p>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>This will be my first time attending FOSDEM.  My fellow Facebook engineers have spoken highly of it.  I look at the list of past speakers and think 'wow!', so I'm looking forward to it.</p>

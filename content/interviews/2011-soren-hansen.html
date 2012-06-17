@@ -1,0 +1,47 @@
+---
+year: 2011
+person: Soren Hansen
+slug: soren_hansen
+---
+<p>Soren Hansen will give a talk about <em>"Building a free, massively scalable cloud computing platform"</em> at FOSDEM 2011.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>Certainly. My name is Soren, I'm Danish, and I'm 29 years old. I've been a free software user and enthusiast for around 15 years. I think I submitted my first patch to an open source project in ~1998.</p>
+<p>Q: What will your talk be about, exactly?</p>
+<p>I'll be presenting OpenStack's architecture, current as well as future. <a href="http://openstack.org/">OpenStack</a> is a rather new project aiming to build a free cloud computing platform.</p>
+<p>Q: What do you hope to accomplish by giving this talk? What do you expect?</p>
+<p>I hope to spark an interest in our project and either get developers involved, or just get people to start deploying it in their organizations so we have a broader testing base.</p>
+<p>Q: Can you explain what you mean by 'massively scalable' in the title of your talk <em>"Building a free, massively scalable cloud computing platform"</em>?</p>
+<p>One of our prime design concerns is that of scalability. To give you a sense of the target scale, we have a loosely defined goal of being able to support a million physical hosts. With those sort of numbers, no
+matter how efficient your code is, you're still in big trouble if your architecture isn't sound. A centralized architecture, for instance, is likely going to cause you headaches. If not due to bottlenecks, then due to the devastating effects of failures.</p>
+<p>Q: What where the reasons for Rackspace Hosting to give away some of their code in the form of the OpenStack project?</p>
+<p><a href="http://www.rackspace.com/">Rackspace</a> isn't a software company. Never was. Rackspace has built a
+business delivering services around free software for a long time. For instance, lots of people who care very deeply about their applications and services rely on Rackspace to manage their Apache and MySQL servers,
+even though lots of other companies let you run Apache and MySQL on their servers, too.  Rackspace's "secret sauce" isn't the software they use to run their customer's applications. Their "secret sauce" is in the
+way they deliver these services and in their support organization.</p>
+<p>Cloud computing isn't rocket science. Starting virtual machines in response to HTTP based API calls isn't that complicated. That's why we think it's silly that so many companies spend so much time inventing their own thing to do this.  OpenStack was launched in the hope that we can all work together on solving these relatively simple problems, so that we can compete on things like quality of service, support, pricing, etc. instead and also provide a solid framework on top of which other people can build cool services.</p>
+<p>Q: How does OpenStack compare to Eucalyptus, the Amazon EC2-compatible cloud computing platform that is for example used in Ubuntu Enterprise Cloud?</p>
+<p>Excellent question. It would almost be easier to list the ways in which we are the same: We both provide an EC2 compatible API. That's about it.</p>
+<p>OpenStack consists by and large of two components: <a href="http://openstack.org/projects/compute/">OpenStack Compute</a> (codenamed Nova) and <a href="http://openstack.org/projects/storage/">OpenStack Storage</a> (codenamed Swift). Swift is a distributed, replicated object store, similar to <a href="http://aws.amazon.com/s3/">Amazon S3</a>. It's designed to scale to many, many petabytes of data. Eucalyptus has no equivalent to this.  Sure, they have Walrus, which is an implementation of the S3 API, but it's not intended to support anywhere near the scale of S3.  It's a simple web frontend to a single filesystem on a single host.</p>
+<p><a href="http://open.eucalyptus.com/">Eucalyptus</a> is written mostly in Java. There are some C and Perl parts here and there, but the majority is in Java.  OpenStack is written pretty much entirely in Python. There are a couple of shell scripts, but they'll be disappearing soon.</p>
+<p>Eucalyptus makes heavy use of SOAP and XML Web Services for internal communication. We use <a href="http://www.amqp.org/">AMQP</a> to talk to a message broker. Typically <a href="http://www.rabbitmq.com/">RabbitMQ</a>.</p>
+<p>Eucalyptus is strictly hierarchical. There's a single "cloud controller" at the top. This is the component that handles all incoming requests from users. It speaks to a number of "cluster controllers," who in turn
+manage a number of "node controllers." They attempt to ensure that this scales by polling downwards from the top.  This way, no component should be overwhelmed by too many of its subjects trying to push information to
+it at the same time. In Nova, we instead rely on asynchronous message passing for our internal communication.  Worker nodes pop messages off the queues at the pace they're comfortable with, and an arbitrary amount of API frontend servers receive requests from users and put orders onto the message queue.</p>
+<p>Apart from the EC2 API, we also have another API, the OpenStack API. The EC2 API is owned by Amazon. Whether they even allow others to implement it... I don't know. I do know that it's no fun to be stuck
+trying to catch up with someone else and not be able to innovate on your own. That's why we have this other API.</p>
+<p>OpenStack is openly designed and developed. We have two design summits a year where everyone is free to turn up and share ideas or discuss implementation details. We publish our plans openly <a href="https://launchpad.net/openstack">on Launchpad</a>, and happily accept patches from anyone who wishes to contribute.  I've always found it difficult to follow what Eucalyptus was doing or planning to do, and influencing it even more difficult. Having talked to many people in the industry, it seems I'm not alone with this experience.</p>
+<p>Q: Which features will we see in the next two releases, Bexar and Cactus?</p>
+<p>We've just passed our feature freeze for Bexar, and some of the cool things in Nova are:</p>
+<ul>
+<li>support for "raw disk images".  This basically means you can take a snapshot of an existing server, upload it to Nova, and run it.</li>
+  <li>Microsoft HyperV support</li>
+  <li>Web based console access to virtual machines</li>
+  <li>IPv6 support</li>
+  <li>
+<a href="http://www.osrg.net/sheepdog/">Sheepdog</a> and <a href="http://ceph.newdream.net/category/rados/">RADOS</a> support.</li>
+</ul>
+<p>Cool new things in Swift include support for arbitrarily sized objects (up from 5 GB) as well as an Amazon S3 compatible frontend.</p>
+<p>It's hard to say what's going to land in Cactus. We have a strictly time-based release process, so whatever is in when feature freeze kicks in is in.  :) A few things that are almost certainly going to land is
+live migration of virtual machines within the infrastructure, snapshotting of virtual machines, a distributed data store, and support for the EC2 SOAP API.</p>
+<p>Q: Have you enjoyed previous FOSDEM editions?</p>
+<p>Believe it or not, this is going to be my first. I've wanted to go for ages, but it's never really worked out until this year. I'm really looking forward to it. I've heard lots of good things about it.</p>

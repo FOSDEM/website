@@ -1,0 +1,33 @@
+---
+year: 2009
+person: Brion Vibber
+slug: brion_vibber
+---
+<p><a href="http://www.fosdem.org/2009/schedule/speakers/brion+vibber">Brion Vibber</a> will give a talk about <a href="http://www.fosdem.org/2009/schedule/events/mediawiki">MediaWiki</a> at FOSDEM 2009.</p>
+<p>Q: What does the 'Chief Technical Officer' of the Wikimedia Foundation do?</p>
+<p>A little programming, a lot of code review, some capacity planning, and more paperwork than I used to do as a volunteer programmer!</p>
+<p>Basically I oversee our staff, contract, and volunteer developers and sysadmins working on <a href="http://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a> and <a href="http://www.wikimedia.org/">Wikimedia</a>'s tech infrastructure. Since it's not a huge team, this sometimes means poking at code myself, but I'm mainly sticking to patch review, integration testing, and prioritizing new tasks for the team to attack.</p>
+<p>I also get to do the fun stuff like hiring new folks and adding up our budget to make sure we can afford those servers to run Wikipedia!</p>
+<p>Q: And what do you do on <a href="http://en.wikipedia.org/wiki/Wikipedia:Brion_Vibber_Day">'Brion Vibber Day'</a>?</p>
+<p>"On Brion Vibber day, Wikipedians everywhere greet each other in Esperanto."</p>
+<p>I originally got into MediaWiki development through the localization end -- such as adding Unicode support -- after discovering the <a href="http://eo.wikipedia.org/">Esperanto edition of Wikipedia</a>. If you like learning languages, it's wacky fun. :D
+
+</p>
+<p>Q: Can you give us an impression of the scaling architecture of Wikipedia?</p>
+<p>Basically we've got several of the levels of the LAMP stack fanned out:</p>
+<ul>
+<li>Geographically distributed HTTP caches (Amsterdam and Seoul)</li>
+  <li>Local HTTP caches (Florida)</li>
+  <li>Apache+PHP machines hold the actual MediaWiki web app -- PHP scales out nice and linearly for request processing! It is though necessary to do some manual coding to properly send HTTP caching headers (for caching on the output end) and handling internal caching and database sharding/balancing...</li>
+  <li>Memcached holds lots of pre-rendered data, stashed in memory to avoid duplicate processing.</li>
+  <li>MySQL: Databases are sharded between sites, split between data with different access patterns, and replicated for failover and load balancing.</li>
+</ul>
+<p>Q: How do you balance Wikipedia's needs versus the needs of other MediaWiki users?</p>
+<p>Wikipedia always comes first. ;)</p>
+<p>Actually, MediaWiki is usually pretty expandable; as long as it's a fairly clean break, many things can get done as extensions or optional features. Sometimes we actually put in cool features for third-party users that we have to disable on our own sites because they don't scale enough... *sniff*</p>
+<p>Q: Where is MediaWiki heading to? Will it become more 'semantic web' buzzword-proof?</p>
+<p>Our big push this year is going to be on usability -- cleaning up things in the user interface and workflow that make it hard for folks to just get in and do what they mean to do.</p>
+<p>The 'semantic web' is fundamentally about making it easier to get "meta"-things done by throwing machine-readable data around from one part of the web to another. The hard part traditionally is figuring out how to get people to make the data in the first place without it being horribly difficult... certainly this is something we're interested in. :)</p>
+<p>Q: Are any changes planned in the MediaWiki wiki-syntax?</p>
+<p>For compatibility reasons, probably not much. But we are hoping to introduce more syntax-aware editing features which can help smooth out the editing experience.</p>
+<a href="http://www.netlash.com/">Netlash</a>

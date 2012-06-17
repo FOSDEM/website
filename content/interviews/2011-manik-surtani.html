@@ -1,0 +1,72 @@
+---
+year: 2011
+person: Manik Surtani
+slug: manik_surtani
+---
+<p>Manik Surtani will speak about Infinispan at FOSDEM 2011.</p>
+<p>Q: Could you briefly introduce yourself?</p>
+<p>
+My name is Manik Surtani, I'm an engineer at Red Hat working on JBoss middleware. 
+I have a background in clustering Java middleware for high availability and scalability, and work on a distributed data grid/NoSQL project called Infinispan, which I founded a couple of years back.
+</p>
+<p>Q: How will you introduce Infinispan at FOSDEM?</p>
+<p>
+Data as a service.
+Cloud computing is justifiably popular and will be the de-facto way applications are deployed in coming years, and great pains have been taken to develop cloud based infrastructure and platform services.  But relatively little though and effort has been put into scalable and reliable data storage services.  [My talk is about] why cloud data services are hard things to build, but how one could build such a service using Infinispan as a building block.
+</p>
+<p>Q: What goals do you have for your talk?</p>
+<p>
+I hope people will have an increased awareness of data storage on clouds,
+ and the challenges around it.  Also, [I hope] that people will have a greater understanding of techniques and services available.  Also, how one could use a data grid platform - such as Infinispan - to build such a service.
+</p>
+<p>Q: Infinispan is described as a 'data grid platform'. Would you argue it is not a 'database'?</p>
+<p>
+I would argue that it <em>is</em> a database in many ways: it can be used as a primary, definitive store of data,
+it supports XA transactions and can be queried.  But it specifically is <em>not</em> a SQL database, in that data is stored as key/value tuples rather than relations and tables.  Also, primarily, Infinispan stores data in-memory, providing high-speed, low-latency access. Durability is achieved by distribution across network nodes.  Infinispan also optionally writes through to disk for greater durability/persistence.
+</p>
+<p>Q: Conceptually, what makes Infinispan different from e.g. <a href="http://memcached.org/">memcached</a>?</p>
+<p>
+Where do I
+start?  :-)
+</p>
+<ul>
+<li>Distribution/clustering.  Memcached is a single  node daemon, while Infinispan can exist in a highly available/load balanced cluster.</li>
+ <li>Persistence.  Infinispan can write through to disk, while memcached does not.  If the memcached node goes down, you lose your data.  Full stop.</li>
+ <li>Memory management.  Infinispan supports some pretty interesting adaptive eviction techniques, to ensure the most relevant data is kept in memory for fast access while less relevant data pages to disk.</li>
+ <li>Transactions.  Infinispan can participate in distributed XA transactions, while memcached cannot.</li>
+ <li>Querying and Map/Reduce.  Quite simply, Infinispan can do these while memcached cannot.</li>
+</ul>
+<p>
+Summing things up, Infinispan is a full-featured data grid platform
+while memcached is a simplistic memory cache daemon
+</p>
+<p>Q: So how would a typical use case of Infinispan look like?</p>
+<p>
+Infinispan's use cases fit into
+three broad categories:
+</p>
+<ul>
+<li>Simple cache.  A simple, in-VM cache or out of process cache server (like memcached).  Allows removals of bottlenecks from databases, etc.</li>
+ <li>Clustering toolkit.  Applications and frameworks can delegate all state management to Infinispan, thus rendering themselves stateless and hence easy to cluster (Infinispan handles all of the clustering).  Popular application servers and servlet containers store HTTP sessions in Infinispan to gain clustering capabilities, for example.</li>
+ <li>Cloud-friendly, low latency, highly scalable NoSQL data store.  A primary, top-tier database replacement.</li>
+</ul>
+<p>Q: Obviously, scaling performance is important; but it also complex. What strategies do you use to ensure Infinispan scales well?</p>
+<p>
+A couple of things.  Consistent hashing is very important. 
+This ensures data can be located in a grid in a deterministic fashion, with minimal overhead.  No metadata, no multicasting to 'find' stuff in a cluster.  Virtual nodes are important as well, to ensure more even data distribution.
+</p>
+<p>Q: What about testing — how does one test a system that is designed to run on top of hundreds of machines in parallel?</p>
+<p>
+Lots of hardware.  :-) 
+We've built our own test and benchmarking framework as well - <a href="https://github.com/radargun/radargun">RadarGun - it's on GitHub</a>.  We encourage users to use RadarGun as well to benchmark different configurations and settings to see what works best on specific hardware/networks.
+</p>
+<p>Q: Infinispan's roadmap mentions support for non-Java clients. Will these clients be able to use all of its features, or will they be limited to certain use cases?</p>
+<p>
+We will try to expose as much as possible.
+Most of this is already available.  Certain things - like XA, querying and map/reduce to remote clients - are still on the roadmap.
+</p>
+<p>Q: Right on the Infinispan homepage, it says it's 'sexy'. What's the most sexy thing you've done lately? ;-)</p>
+<p>
+Extremely scalable data storage with a rich,
+yet easy to use API: and the best part is, and it's all open source.  :-)
+</p>
