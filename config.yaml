@@ -117,3 +117,11 @@ deploy:
     dst:  "achanes.fosdem.org:/var/www/staging.fosdem.org/public"
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
 
+pentabarf:
+  conference_id: 2
+  username: nanoc
+  password: nanoc
+  database: marius
+  host:     localhost
+  port:     15432
+  schema:   public

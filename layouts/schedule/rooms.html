@@ -1,0 +1,22 @@
+---
+title: Rooms
+---
+<table>
+    <thead>
+        <tr>
+            <th>Room</th>
+            <th>Capacity</th>
+            <th>Events (Sat)</th>
+            <th>Events (Sun)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% $rooms.select{|r| r.public}.sort_by{|r| r.rank}.each do |r| %>
+        <tr>
+            <td><a href="room:<%= slug(r) %>"><%= r.conference_room %></a></td>
+            <td><%= r.size %></td>
+            <td><%= $room_events[r.conference_room_id].size %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
