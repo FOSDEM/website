@@ -14,7 +14,7 @@ class Nanoc::Item
     self[:kind] == 'interview' or self.identifier =~ %r{^/interviews?/.+}
   end
   def page?
-    self[:kind] == 'page' or self.identifier.match(%r{^/(news|headlines|assets|sponsors?)/}).nil?
+    self[:kind] == 'page' or self.identifier.match(%r{^/(news|headlines|assets|sponsors?|schedule)/}).nil?
   end
   def news?
     self[:kind] == 'news' or self.identifier.match(%r{^/news/.+}).nil? ? false : true

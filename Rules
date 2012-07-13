@@ -19,6 +19,7 @@ preprocess do
 
   # auto-set the title of content/interviews/*
   decorate_interviews
+
 end
 
 ##### COMPILING

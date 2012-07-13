@@ -1,0 +1,44 @@
+---
+title: <%= name(@p) %>
+kind: speaker
+name: <%= name(@p) %>
+slug: <%= slug(@p) %>
+first_name: <%= @p.first_name %>
+last_name: <%= @p.last_name %>
+person_id: <%= @p.person_id %>
+---
+
+<% if @cp %>
+<h3>Bio</h3>
+<% if @cp.abstract %>
+<p><%= markup(@cp.abstract) %></p>
+<% end %>
+<% if @cp.description %>
+<p><%= markup(@cp.description) %></p>
+<% end %>
+<% end %>
+
+<% unless @events.empty? %>
+<h3>Sessions</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Day</th>
+            <th>Room</th>
+            <th>Start</th>
+            <th>End</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @events.sort_by{|e| e.start_datetime }.each do |e| %>
+        <tr>
+            <td><%= l(e) %></td>
+            <td><%= e.start_datetime.to_date.strftime('%a') %></td>
+            <td><%= l($room_by_id[e.conference_room_id]) %></td>
+            <td><%= e.start_datetime.to_time.strftime('%H:%M') %></td>
+            <td><%= e.end_datetime.to_time.strftime('%H:%M') %></td>
+        <% end %>
+    </tbody>
+</table>
+<% end %>

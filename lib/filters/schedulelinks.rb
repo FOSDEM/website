@@ -6,11 +6,11 @@ class ScheduleLinks < LinkProcessor
   protected
 
   def qualifies?(url)
-    url =~ /^(speaker|event|track):/
+    url =~ /^(speaker|person|event|track|room):/
   end
 
   def resolve(url)
-    raise "URL #{url} does not match (speaker|event|track):" unless url =~ /^(speaker|event|track):(.+)$/
+    raise "URL #{url} does not match (speaker|person|event|track|room):" unless url =~ /^(speaker|person|event|track|room):(.+)$/
     t = $1
     a = $2
 
@@ -22,7 +22,20 @@ class ScheduleLinks < LinkProcessor
     end
 
     if y.nil? or y >= 2013 then
-      "/schedule/speaker/#{a}/"
+      case t
+      when "speaker"
+        "/schedule/speaker/#{a}/"
+      when "person"
+        "/schedule/speaker/#{a}/"
+      when "event"
+        "/schedule/event/#{a}/"
+      when "track"
+        "/schedule/track/#{a}/"
+      when "room"
+        "/schedule/room/#{a}/"
+      else
+        raise "unsupported schedule URL for type \"#{t}\""
+      end
     else
       "https://archive.fosdem.org/#{y}/schedule/#{t}/#{a}.html"
     end

@@ -13,14 +13,16 @@ title: Events
         </tr>
     </thead>
     <tbody>
+        <% i = 0 %>
         <% $tracks.reject{|t| $track_events[t.conference_track_id].empty?}.sort_by{|t| t.rank}.each do |track| %>
         <tr>
             <td colspan="6"><%= $track_by_id[track.conference_track_id].conference_track %></td>
         </tr>
         <% $track_events[track.conference_track_id].sort_by{|e| e.start_datetime}.each do |e| %>
         <tr>
+            <% i += 1 %>
             <td><a href="event:<%= slug(e) %>"><%= e.title %></a></td>
-            <td></td>
+            <td><%= l($speaker_persons[id(e)]) %></td>
             <td><a href="room:<%= slug($room_by_id[e.conference_room_id]) %>"><%= $room_by_id[e.conference_room_id].conference_room %></a></td>
             <td><%= e.start_datetime.to_datetime.strftime('%a') %></td>
             <td><%= e.start_datetime.to_datetime.strftime('%H:%M') %></td>
@@ -30,3 +32,5 @@ title: Events
         <% end %>
     </tbody>
 </table>
+<p>Total: <%= i %> sessions</p>
+
