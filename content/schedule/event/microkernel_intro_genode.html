@@ -1,0 +1,44 @@
+---
+title: Introduction of the Genode OS Framework
+kind: event
+speakers:
+- norman_feske
+slug: microkernel_intro_genode
+day: Sun
+start: 10:10
+end: 10:10
+event_id: 547
+---
+
+<p><p>Today's operating systems try to find a balance between seemingly
+conflicting goals. Ease of use is traded against security, resource
+utilization is traded against resource accountability, and system
+complexity is traded against scalability. For example, SELinux is ill
+famed as hard to use and consequently remains widely unused. As another
+example, isolation kernels minimize the complexity of critical system
+software but at the cost of limiting these solutions to static applications.</p>
+
+<p>The Genode OS architecture shows how these apparently inherent conflicts
+can be solved by operating-system design.</p></p>
+<p><p>By combining a recursive
+system structure with capability-based security, mandatory access
+control becomes easy to deploy. At the same time, the trusted computing
+base can be minimized for each application individually such that the
+attack surface for security-critical system functions gets reduced by
+orders of magnitude compared to existing approaches. Furthermore, a
+concept for trading physical resources among processes allows for
+dynamic workloads while maintaining quality of service. That is not just
+theory - the system is ready for demonstration and its developers are
+planning to use it as development environment by the end of 2012.</p>
+
+<p>After a brief introduction of where Genode comes from, the main part of
+the talk will be focused on the OS architecture and give a glimpse at
+the implementation via live demonstrations. Finally, the talk will
+briefly discuss the planned steps towards using Genode as
+general-purpose OS.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/norman_feske">Norman Feske</a></li>
+</ul>
+

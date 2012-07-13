@@ -1,0 +1,31 @@
+---
+title: QA tools for FOSS distributions
+kind: event
+speakers:
+- pietro_abate
+slug: distro_qa_tools
+day: Sat
+start: 16:30
+end: 16:30
+event_id: 843
+---
+
+<p><p>FOSS distributions are increasingly over pressure to deliver stable releases including the most up to date upstream software. Time-based release strategies has exacerbated this problem putting even more pressure on QA teams.</p>
+
+<p>The recently concluded Mancoosi project has developed a number of tools to automatically analyse large packages collections for a range of problems, from
+installability checks to speculative analysis of software repositories.</p>
+
+<p>In this talk I'll present four command line tools to identify and correct potential problems as soon as possible during the release cycle.</p></p>
+<p><p>In particular :
+* Debcheck: This tools helps to identify all broken packages within a repository and provides a detailed explanation of the problem. This can be used to prevent shipping releases that contain packages that cannot be installed because of missing or malformed dependencies.
+* Buildcheck: Given a Sources file and a set of binary repositories, this tool identifies those source packages that cannot be compiled because their build dependencies cannot be satisfied.
+* Outdated: This tool identifies those broken packages that need special attention because of outdated meta-data.
+* Challenged: This tool performs a speculative analysis of the repository to identify those packages that, if upgraded to a specific version, would break a large number of other packages in the repository. This tool would be particularly useful during the upgrade of a specific component to evaluate its impact on the software archive.</p>
+
+<p>Most of our tools support both rpm (version 4 and 5) and deb based distributions.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/pietro_abate">Pietro Abate</a></li>
+</ul>
+

@@ -1,0 +1,32 @@
+---
+title: <%= y(@e.title) %>
+kind: event
+speakers:
+<% @speakers.each do |s| %>
+- <%= slug(s) %>
+<% end %>
+slug: <%= slug(@e) %>
+day: <%= @e.start_datetime.to_date.strftime('%a') %>
+start: <%= @e.start_datetime.to_time.strftime('%H:%M') %>
+end: <%= @e.start_datetime.to_time.strftime('%H:%M') %>
+event_id: <%= @e.event_id %>
+---
+
+<% if @e.abstract or @e.description %>
+<% if @e.abstract %>
+<p><%= markup(@e.abstract) %></p>
+<% end %>
+<% if @e.description %>
+<p><%= markup(@e.description) %></p>
+<% end %>
+<% end %>
+
+<% unless @speakers.empty? %>
+<h2>Speakers</h2>
+<ul>
+    <% @speakers.each do |s| %>
+    <li><%= l(s) %></li>
+    <% end %>
+</ul>
+<% end %>
+

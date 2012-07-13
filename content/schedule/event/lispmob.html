@@ -1,0 +1,24 @@
+---
+title: ! 'LISPmob: enhanced network layer mobility solution'
+kind: event
+speakers:
+- lorand_jakab
+slug: lispmob
+day: Sat
+start: 16:00
+end: 16:00
+event_id: 471
+---
+
+<p><p>Wouldn't it be great if our phones, tablets, laptops and other mobile gadgets could use the same IP (v4 and/or v6) address regardless of which network they are connected to? And all that without a fixed tunnel causing path stretch, while offering some advanced traffic management features? This talk will present the LISPmob project, which implements a network layer mobility solution based on the Locator/ID Separation Protocol.</p></p>
+<p><p>LISP stands for not just the programming language, but for the Locator/ID Separation Protocol as well, which is a soon-to-be-finalized IETF standard. LISP can be used to improve network layer mobility, by assigning a static Endpoint IDentifier (EID) to hosts, which are mapped to a Routing LOCator (RLOC) identifying the network point of attachment. Both EIDs and RLOCs are IP addresses. Transport layer connections use EIDs, while packets are traveling in dynamic point-to-point tunnels using RLOCs for encapsulation between hosts, thus avoiding path stretch.</p>
+
+<p>The LISP Mobile Node specification enables maintaining the same IP address regardless of network attachment point, and address family combination. For example, a device can use an IPv4 address on an IPv4-only, IPv6-only, or dual stack network. Since a roaming event does not change the IP address used by transport layer, ongoing connections (such as a SIP call) are maintained. Additionally, nodes with several available interfaces can define active-backup, or active-active load balanced incoming traffic policies.</p>
+
+<p>The LISPmob Project is an implementation of the above specification for Linux, consisting of two kernel modules and a user space daemon.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/lorand_jakab">Loránd Jakab</a></li>
+</ul>
+

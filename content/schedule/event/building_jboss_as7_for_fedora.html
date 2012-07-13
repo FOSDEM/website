@@ -1,0 +1,29 @@
+---
+title: ! 'JBoss AS7 : Building JBoss AS 7 for Fedora'
+kind: event
+speakers:
+slug: building_jboss_as7_for_fedora
+day: Sat
+start: 14:00
+end: 14:00
+event_id: 607
+---
+
+<p><p>While JBoss AS 7 (Application Server) in itself is FOSS (Free and Open Source Software) I would also like to make sure that the building process itself does not rely on anything but FOSS.
+Having a FOSS build process will truly liberate <em>any</em> Java project.</p>
+
+<p>With an overview of JBoss AS  7 the stage will be set for what components need to be FOSSilized.</p>
+
+<p>Fedora, because it is the most passionate advocate of the FOSS build requirement, makes an excellent target OS for the initial prototype. Plus we can draw upon existing manpower and resources (from Fedora and EAP) to execute it.</p>
+
+<p>Some issues encountered:
+  Hibernate Core 4 needs Gradle to build
+  RESTEasy depends on JAXB Reference Implementation
+  JBoss VFS uses Microsoft code (during testing)</p>
+
+<p>Relying on build tools like Maven, Gradle or Ivy can inadvertently lead to issues where (semi-) unknown dependencies creep into the build process (or worse the runtime operation).</p>
+
+<p>If people give <em>no</em> thought to building their code FOSS style, making it fully FOSS becomes quite a choir (or even impossible). So if you care about FOSS, make sure your build is also FOSS.
+Let's start here, let's start with JBoss AS 7.</p></p>
+
+

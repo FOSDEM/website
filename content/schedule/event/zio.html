@@ -1,0 +1,34 @@
+---
+title: The ZIO Framework
+kind: event
+speakers:
+- alessandro_rubini
+slug: zio
+day: Sat
+start: 16:20
+end: 16:20
+event_id: 483
+---
+
+<p><p>The ZIO framework is a novel way to manage laboratory input/output.
+It handles both data and meta-data, and is designed for multi-MB-per
+second I/O in distributed systems.</p></p>
+<p><p>ZIO is a framework for high-data-rate I/O.  The basic I/O item is a
+block, made up of data samples and full meta-data information, so
+input can be consumed offline and output cam be prepared in advance.
+The main use cases are waveform generation and distributed
+oscilloscopes, over possibly hundreds of systems spread over several
+kilometers.  Within ZIO, the buffer and the trigger are first-level
+objects, and both input and output have always been supported.  Data
+flow is a pipeline made up of device, trigger and buffer; usually the
+buffer is connected to char devices, but in-kernel users have been
+written with minimal effort.</p>
+
+<p>Code is being developed at http://www.ohwr.org/projects/zio and is
+being submitted to the kernel.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/alessandro_rubini">Alessandro Rubini</a></li>
+</ul>
+

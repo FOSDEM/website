@@ -1,0 +1,52 @@
+---
+title: Re-thinking system and distro development
+kind: event
+speakers:
+- lars_wirzenius
+slug: rethinking
+day: Sat
+start: 12:30
+end: 12:30
+event_id: 443
+---
+
+<p><p>We believe system (and distribution) development needs to be
+re-thought from the basic concepts upwards. We've implemented some
+ideas for streamlining development, reducing development friction,
+speeding up system upgrades and adding support for downgrades and
+rollbacks, and generally making development of entire systems faster
+and more fun.</p>
+
+<p>At the level of individual, atomic projects, several great tools and
+development methods have been developed over the past decade or so.
+Few of them are applied at the system or distribution level. The Linux
+kernel development, for example, greatly benefits from the ease of
+branching and merging that git provides, but it is not possible to branch
+and merge the whole system, or distribution, consisting of hundreds
+or tens of thousands of individual projects.</p>
+
+<p>From the agile development worlds, automated testing, test driven
+development, and continuous integration are common-place for individual
+projects, but not so much for complete systems development. Would it not
+be nice to have them?</p>
+
+<p>Packages have been the darling child of Linux distribution development
+since the early days. They are a natural, modular concept, and have been
+one of the key factors behind the success of the distribution concept.
+Package managers have made it easy to install and remove and upgrade
+each piece of software separately, and to upgrade the whole system by
+upgrading each installed package. However, a modern distribution consists
+of tens of thousands of packages, and the combinatorial explosion of
+dependencies and interaction may be getting out of hand. In this talk
+we explore another way of approaching the packaging problem.</p>
+
+<p>We believe these and other changes are useful for bridging the current
+gap between upstream development and end users, to speed up system
+and distribution development, and to let system builders bravely
+hack what no-one has hacked before.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/lars_wirzenius">Lars Wirzenius</a></li>
+</ul>
+

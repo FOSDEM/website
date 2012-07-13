@@ -1,0 +1,85 @@
+# encoding: utf-8
+
+#require 'httparty'
+
+module Bobthecow
+  module Nanoc
+    module DataSources
+      # A GitHub data source, for representing GitHub projects and forks.
+      #
+      # The GitHub data source stores its items in a file called 'github_items.yaml'
+      # in the site root. This file may be added to VCS, or regenerated as needed
+      #
+      # To update GitHub items, we (ab)use the DataSource#update ... Any time you
+      # want a fresh copy of your items, call `nanoc update -y`
+      class GitHub < ::Nanoc::DataSource
+        include HTTParty
+        base_uri 'https://api.github.com'
+
+        identifier :github
+
+        def items
+          load_items.map do |item|
+            Nanoc3::Item.new(item[:content], item[:attributes], item[:identifier], item[:mtime])
+          end
+        end
+
+        def update
+          require 'json'
+          require 'time'
+          require 'uri'
+
+          if self.config[:username].nil?
+            raise RuntimeError, "Please specify a GitHub username"
+          end
+
+          # Find all github repos
+          response = self.class.get "/users/#{URI.escape(self.config[:username])}/repos"
+          repos = ResponseEnumerator.new(self, response)
+
+          items = []
+
+          # Convert repos to items
+          repos.each do |repo|
+            content = repo['description']
+
+            attributes = {
+              :title      => repo['name'],
+              :watchers   => repo['watchers'],
+              :forks      => repo['forks'],
+              :language   => repo['language'],
+              :homepage   => repo['homepage'],
+              :url        => repo['html_url'],
+              :fork       => repo['fork'] || false,
+              :created_at => Time.parse(repo['created_at']).to_s,
+              :updated_at => Time.parse(repo['pushed_at']).to_s
+            }
+            attributes[:open_issues] = repo['open_issues'] if repo['has_issues']
+            identifier = repo['fork'] ? "/fork/#{repo['url'].split('/').last}/" : "/#{repo['url'].split('/').last}/"
+            mtime = Time.parse(repo['pushed_at'])
+
+            items << { :content => content, :attributes => attributes, :identifier => identifier, :mtime => mtime }
+          end
+
+          write_items(items)
+        end
+
+      private
+
+        def store_filename
+          'github_items.yaml'
+        end
+
+        def load_items
+          @items ||= File.exists?(store_filename) ? YAML.load_file(store_filename) : []
+        end
+
+        def write_items(items)
+          File.open(store_filename, 'w') do |f|
+            YAML.dump(items, f)
+          end
+        end
+      end
+    end
+  end
+end

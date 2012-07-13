@@ -6,15 +6,14 @@ module BCrumbs
   def bcrumbs
     require 'builder'
 
-    rootitem = nil
-    begin
-      roots = @items.select { |item| item.identifier == '/' }
-      raise Error, "failed to find the root item" if roots.empty?
-      raise Error, "found #{roots.length} root items" if roots.length > 1
-      rootitem = roots[0]
-    end
+    $rootitem ||= begin
+                    roots = @items.select { |item| item.identifier == '/' }
+                    raise Error, "failed to find the root item" if roots.empty?
+                    raise Error, "found #{roots.length} root items" if roots.length > 1
+                    roots[0]
+                  end
 
-    @cache ||= begin
+    $cache ||= begin
       c = {}
       @items.each do |i|
         if i.binary? or i.reps.empty? then
@@ -40,7 +39,7 @@ module BCrumbs
       end
     else
       xml.li do
-        xml.a(rootitem.navtitle, :href => relpath(@item_rep.path, rootitem.path))
+        xml.a($rootitem.navtitle, :href => relpath(@item_rep.path, $rootitem.path))
       end
       xml.span("/", :class => 'divider')
     end
@@ -48,7 +47,7 @@ module BCrumbs
     parts = @item.p.split('/')
     parts.each_with_index do |part, index|
       here = '/'+parts[0,index+1].join('/')+'/'
-      ref = @cache[here]
+      ref = $cache[here]
 
       if index == parts.length - 1 then
         # active
@@ -56,18 +55,31 @@ module BCrumbs
           xml.text! @item.navtitle
         end
       else
-        xml.li do
-          if ref then
-            if ref[:link] then
-              xml.a(ref[:title], :href => relpath(@item_rep.path, ref[:link]))
-            else
-              xml.text! ref[:title]
-            end #:link
-          else
-            #puts "noref for #{part} (#{here})"
-            xml.text! part
-          end
+        link, title = case part
+                        when 'track'
+                          ['/schedule/tracks/', 'Tracks']
+                        when 'schedule'
+                          ['/schedule/', 'Schedule']
+                        when 'event'
+                          ['/schedule/events/', 'Events']
+                        when 'speaker'
+                          ['/schedule/speakers/', 'Speakers']
+                        else
+                          if ref
+                            [ ref[:link], ref[:title] ]
+                          else
+                            [ nil, part ]
+                          end
+                        end
 
+        #puts "#{item.identifier} link=#{link} | title=#{title} | ref=#{ref.inspect}"
+
+        xml.li do
+          if link then
+            xml.a(title, :href => relpath(@item_rep.path, link))
+          else
+            xml.text! title
+          end
           xml.span("/", :class => 'divider')
         end #li
       end

@@ -1,0 +1,30 @@
+---
+title: Implementing Domain-Specific Languages with LLVM 
+kind: event
+speakers:
+- david_chisnall
+slug: dsl_llvm
+day: Sun
+start: 14:00
+end: 14:00
+event_id: 400
+---
+
+<p><p>Any sufficiently complex application eventually evolves its own scripting framework or domain-specific language.  These can be simple things, like a graphical scripting language for connecting pre-existing building blocks together, a domain-specific language for performing image convolutions, or a general-purpose language like a Lisp or JavaScript dialect for writing extensions.</p>
+
+<p>These are usually implemented as ad-hoc interpreters, which limits their utility things that are not performance critical.  With LLVM, it is very easy to turn a quick-and-dirty interpreter into a high-speed JIT or static compiler.  This talk will explain how to plug LLVM into your application and allow code in your scripting language to run (almost) as fast as compiled C.</p>
+
+<p>LLVM is a set of libraries that can be assembled to build compilers and related tools.  This talk will give a close look at some of the APIs, the core abstractions that they present, and how they are used.</p></p>
+<p><p>LLVM is probably best known for the clang front end, which allows it to work as a drop-in replacement for gcc when compiling C-family languages.  This use hides much of the power of LLVM.  It is not a monolithic compiler, but a set of libraries that can be assembled to build a static compiler, a JIT compiler, or a variety of other things.</p>
+
+<p>Most complex applications include some kind of scripting capability.  These come in a variety of forms.  Some include simple macro languages that allow the user to automate repetitive tasks.  Some, such as EMACS and Firefox, include such powerful scripting environments that a significant fraction of the application ends up being written using them, making scripting performance very important.  Graphical applications may embed a domain-specific language for things like image convolutions, which would benefit from being compiled down to SIMD instructions for the user's CPU.</p>
+
+<p>Embedding LLVM in other applications is a relatively easy way of providing any of these.  It is relatively easy to adapt an existing interpreter to use LLVM as a JIT compiler, or to write a new language front end and leave all of the code generation to LLVM.  If you write a JIT compiler that uses LLVM, then it is trivial to extend it to provide static compilation, so anything written in your scripting language and embedded in the application can be compiled to native code ahead of time and linked into the binary, just like C code.</p>
+
+<p>This talk will give a quick overview of the semantics of the LLVM intermediate representation and cover the main classes that a front end would need to use to generate it.  It will draw on the experience from writing Étoilé's Smalltalk implementation, which uses the same underlying object model as Objective-C, to provide suggestions for closely integrating scripted and native code, as well as mechanisms for adding profile-driven optimisations that are specific to a given language.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/david_chisnall">David Chisnall</a></li>
+</ul>
+

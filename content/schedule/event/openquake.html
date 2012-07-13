@@ -1,0 +1,33 @@
+---
+title: How we scaled up OpenQuake
+kind: event
+speakers:
+- muharem_hrnjadovic
+slug: openquake
+day: Sun
+start: 11:40
+end: 11:40
+event_id: 502
+---
+
+<p><p>Topics: partitioning of large calculations, computation networks, python, celery, rabbitmq, redis</p></p>
+<p><p>The open source OpenQuake seismic calculation engine (http://openquake.org/) is developed and maintained by the GEM foundation (http://www.globalquakemodel.org/) which is a public-private partnership that drives a collaborative effort aimed at developing and deploying tools and resources for earthquake risk assessment worldwide.</p>
+
+<p>Seismic hazard calculations can be massive making it necessary to partition and distribute them across a compute network. The OpenQuake engine (http://openquake.org/) partitions seismic calculation and uses</p>
+
+<ul>
+<li>celery</li>
+<li>rabbitmq</li>
+<li>redis</li>
+</ul>
+
+
+<p>to push the tasks into the compute network and to collect the results.</p>
+
+<p>There were a number of lessons learned while scaling up OpenQuake to perform seismic calculation for the whole of Europe and I will touch upon the most important ones.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/muharem_hrnjadovic">Muharem Hrnjadovic</a></li>
+</ul>
+

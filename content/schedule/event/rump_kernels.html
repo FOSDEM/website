@@ -1,0 +1,24 @@
+---
+title: Ultralightweight Kernel Service Virtualization with Rump Kernels
+kind: event
+speakers:
+- antti_kantee
+slug: rump_kernels
+day: Sun
+start: 13:00
+end: 13:00
+event_id: 578
+---
+
+<p><p>Existing virtualization solutions such as Xen, QEMU and usermode operating systems virtualize the entire OS.  While this is useful in a machine room type of use case, it is unnecessarily heavyweight when the interest is in virtualizing only one kernel driver or one kernel service.</p>
+
+<p>This talk introduces the anykernel architecture and rump kernels, which allow to safely virtualize individual drivers and subsystems from a monolithic kernel. Rump kernels can be used in a variety of different configurations, such as an application library, a microkernel style server, or as a server over the Internet.</p>
+
+<p>We will go over a number of real world use cases and present results which show that in their application domain rump kernels are faster, smaller and more agile than full OS virtualization technologies.</p></p>
+<p><p>The implementation is available in production quality code as part of NetBSD.  A key point of the project is the use of existing drivers from a real OS, i.e. real-world hardened code.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/antti_kantee">Antti Kantee</a></li>
+</ul>
+

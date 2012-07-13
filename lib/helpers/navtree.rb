@@ -71,12 +71,15 @@ module NavTreeHelper
     end
   end
 
-	def navtree
+	def navtree(path=nil)
+    items = @items
+    current_path = path or @item_rep.path
+
 		require 'builder'
 
     rootitem = nil
     begin
-      roots = @items.select { |item| item.identifier == '/' }
+      roots = items.select { |item| item.identifier == '/' }
       raise Error, "failed to find the root item" if roots.empty?
       raise Error, "found #{roots.length} root items" if roots.length > 1
       rootitem = roots[0]
@@ -84,7 +87,7 @@ module NavTreeHelper
 
     root = Node.new(rootitem, nil)
 
-    @items.reject { |i| i[:is_hidden] or i[:nonav] or i.binary? or i[:title].nil? or not i.page? }.sort_by {|item| item.identifier }.each do |item|
+    items.reject { |i| i[:is_hidden] or i[:nonav] or i.binary? or i[:title].nil? or not i.page? }.sort_by {|item| item.identifier }.each do |item|
       parts = item.pathparts
       raise Error, ":nav has more than two levels: \"#{item.identifier}\"" if parts.length > 2
 
@@ -107,14 +110,14 @@ module NavTreeHelper
       end
     end
 
-    def walk(xml, node)
+    def walk(xml, node, path)
       classes = []
       href = nil
       if node.item? and node.item.path then
-        href = relpath(@item_rep.path, node.item.path)
+        href = relpath(path, node.item.path)
       end
       title = node.item? ? node.item[:title] : nil
-      classes << 'active' if node.item? and node.active?(@item_rep.path)
+      classes << 'active' if node.item? and node.active?(path)
       classes << 'nav-header' if (node.item? and node.item[:navcat]) or not node.item?
       c = {}
       c[:class] = classes.join(" ") unless classes.empty?
@@ -130,13 +133,13 @@ module NavTreeHelper
         end
       end
       node.children.sort_by{|child| (child.item? and child.item[:navorder]) ? child.item[:navorder] : 100 }.each do |child|
-        walk(xml, child)
+        walk(xml, child, path)
       end
     end
 
     buffer = ''
 		xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
-    walk(xml, root)
+    walk(xml, root, current_path)
 
     buffer
 	end

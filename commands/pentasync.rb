@@ -9,6 +9,7 @@ YAML::ENGINE.yamler = 'psych'
 require 'erubis'
 
 module ::PentaHelpers
+  # Determine the "name" attribute depending on the object type
   def PentaHelpers.name(o)
     case o
     when Room
@@ -22,7 +23,7 @@ module ::PentaHelpers
     when ConferenceDay
       o.name
     when Person
-      if o.first_name.nil? or o.last_name.nil? and not o.public_name.nil?
+      if (o.first_name.nil? or o.last_name.nil?) and (not o.public_name.nil?)
         o.public_name
       else
         "#{o.first_name} #{o.last_name}"
@@ -32,6 +33,7 @@ module ::PentaHelpers
     end
   end
 
+  # Determine the identifying attribute depending on the object type
   def PentaHelpers.idattr(o)
     case o
     when Room
@@ -49,6 +51,7 @@ module ::PentaHelpers
     end
   end
 
+  # Determine the canonical URL identifier depending on the type
   def PentaHelpers.slug(o)
     require 'active_support/inflector/transliterate'
     require 'active_support/inflector/methods'
@@ -57,36 +60,44 @@ module ::PentaHelpers
         else
           name(o)
         end
-    ActiveSupport::Inflector.transliterate(s).downcase.gsub(/\s+/, '_').gsub(/\-/, '_')
+    # Inflector takes care of replacing locale specific symbols to
+    # something "safe" for URLs without requiring symbol gibberish
+
+    ActiveSupport::Inflector.transliterate(s).downcase.gsub(/\s+/, '_').gsub(/\-/, '_').gsub(/\./, '')
   end
 
-  def PentaHelpers.ltype(o)
-    case o
-    when Room
-      "room"
-    when Event
-      "event"
-    when ScheduleEvent
-      "event"
-    when Track
-      "track"
-    when ConferenceDay
-      "day"
-    when Person
-      "person"
-    else
-      raise "unsupported class for ltype(): #{o.class.to_s}"
-    end
+  # Determine the URL depending on the type
+  def PentaHelpers.url(o)
+    prefix = case o
+             when Room
+               "/schedule/room/"
+             when Person
+               "/schedule/speaker/"
+             when Event
+               "/schedule/event/"
+             when ScheduleEvent
+               "/schedule/event/"
+             when Track
+               "/schedule/track/"
+             when ConferenceDay
+               "/schedule/day/"
+             else
+               raise "unsupported class for url(): #{o.class.to_s}"
+             end
+    prefix + slug(o)
   end
 
+  # Make a link with the appropriate URL type and name
+  # depending on the type
   def PentaHelpers.l(obj)
     if obj.is_a? Array
       obj.map{|x| l(x)}.join(", ")
     else
-      "<a href=\"#{ltype(obj)}:#{slug(obj)}\">#{name(obj)}</a>"
+      "<a href=\"#{url(obj)}\">#{name(obj)}</a>"
     end
   end
 
+  # Return the unique identifier, depending on the type
   def PentaHelpers.id(obj)
     a = idattr(obj)
     obj.send(a)
@@ -97,6 +108,16 @@ module ::PentaHelpers
   def PentaHelpers.markup(text)
     require 'bluecloth'
     BlueCloth.new( text.to_s, :filter_html ).to_html
+  end
+
+  # Simple and stupid YAML-safe string escaping to put
+  # field values in page metadata sections
+  def PentaHelpers.y(o)
+    if o.include? ":"
+      "! '" + o.gsub(/'/, "''") + "'"
+    else
+      o
+    end
   end
 
 end
@@ -115,8 +136,8 @@ class Context < Erubis::Context
   def name(o)
     PentaHelpers::name(o)
   end
-  def ltype(o)
-    PentaHelpers::ltype(o)
+  def url(o)
+    PentaHelpers::url(o)
   end
   def l(o)
     PentaHelpers::l(o)
@@ -124,11 +145,12 @@ class Context < Erubis::Context
   def id(o)
     PentaHelpers::id(o)
   end
+  def y(o)
+    PentaHelpers::y(o)
+  end
 end
 
 class Pentabarf < ::Nanoc::CLI::CommandRunner
-
-  require 'ostruct'
 
   private
   def sha(content)
@@ -153,11 +175,20 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
         raise "unsupported render flag \"#{x}\""
       end
     end
-    t = Erubis::Eruby.new(File.read("layouts/schedule/#{template}.html"))
+    tf = File.join("templates", "#{template}.html")
+    t = Erubis::Eruby.new(File.read(tf), :filename => tf)
 
     context = Context.new(vars)
-    output = t.evaluate(context)
-    file = File.join("content", "schedule", "#{target}.html")
+    begin
+      output = t.evaluate(context)
+    rescue Exception => e
+      trace_normalizer = lambda { |line| line.gsub(/^\(erubis\):/, tf + ':') }
+      backtrace = e.backtrace.collect(&trace_normalizer)
+      message = trace_normalizer.call(e.message)
+      raise e.class, message, backtrace
+    end
+
+    file = File.join($outdir, "#{target}.html")
     d = Pathname.new(file).dirname.to_s
     FileUtils.mkdir_p(d) unless File.exists?(d)
 
@@ -183,6 +214,8 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       duration = Time.now - time_before
       Nanoc::CLI::Logger.instance.file(:low, :identical, file, duration)
     end
+
+    $schedule_tree_after << file
   end
 
   private
@@ -197,11 +230,24 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
     require_site
     begin
       config = site.config.fetch(:pentabarf)
-      $cache = config['cache'] || 'tmp/pentacache'
+      $cache = config.fetch(:cache, File.join('tmp', 'pentacache'))
       $cid = config.fetch(:conference_id)
+      $outdir = config.fetch(:outdir, File.join('content', 'schedule'))
     end
 
-    # define the database model classes for ActiveRecord
+    # record the filesystem before rendering
+    begin
+      require 'find'
+      $schedule_tree_before = []
+      Find.find($outdir) do |f|
+        $schedule_tree_before << f unless File.directory? f
+      end
+    end
+    $schedule_tree_after = []
+
+    # define the database model classes
+    # :ClassName => cache directory (under $cache/)
+    require 'ostruct'
     {
       :Room             => 'conference_room',
       :Event            => 'event',
@@ -221,7 +267,7 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       end
     end
 
-    FileUtils.mkdir_p 'content/schedule'
+    FileUtils.mkdir_p $outdir
 
     begin
       puts "Loading Pentabarf cache..."
@@ -284,6 +330,7 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       $speaker_conference_persons = {}
       $speaker_person_by_id = {}
       $speaker_for = earr($persons, :person_id)
+      $event_speakers = earr($events, :event_id)
 
       $events.each do |e|
         $speaker_persons[e.event_id] = []
@@ -296,6 +343,7 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
           $speaker_conference_persons[ep.event_id] << confperson unless confperson.nil?
           $speaker_person_by_id[person.person_id] = person
           $speaker_for[person.person_id] << e
+          $event_speakers[e.event_id] << person
         end
       end
 
@@ -305,11 +353,10 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
 
     begin
       puts "Compiling schedule pages..."
-      time_before = Time.now
 
       # and here we do the actual rendering
       # simply render all the templates that end in 's'
-      Dir.glob(File.join('layouts', 'schedule', '*s.html')).reject{|f| File.directory? f}.each do |template|
+      Dir.glob(File.join('templates', '*s.html')).reject{|f| File.directory? f}.each do |template|
         render(Pathname.new(template).basename.to_s.gsub(/\..+$/, ''))
       end
 
@@ -320,12 +367,66 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
         render_to('speaker', File.join('speaker', PentaHelpers::slug(person)), :p => person, :cp => confperson, :events => events)
       end
 
-      duration = Time.now - time_before
-      Nanoc::CLI::Logger.instance.log(:high, "%s%12s%s  [%2.2fs]  %s" % [ "\e[1m", "schedule", "\e[0m", duration, "rendered" ])
+      # render the events
+      $events.each do |event|
+        speakers = $event_speakers.fetch(event.event_id, [])
+        render_to('event', File.join('event', PentaHelpers::slug(event)), :e => event, :speakers => speakers)
+      end
+
+      $tracks.each do |track|
+        events = $track_events[track.conference_track_id]
+        render_to('track', File.join('track', PentaHelpers::slug(track)), :t => track, :events => events)
+      end
+    end
+
+    # remove dead files
+    begin
+      h = {}
+      $schedule_tree_after.each{|f| h[f] = 1}
+      
+      outdated = $schedule_tree_before.sort.reject{|f| h[f]}
+
+      require 'fileutils'
+      outdated.each do |f|
+        FileUtils.rm f
+        Nanoc::CLI::Logger.instance.file(:high, :delete, f)
+      end
+    end
+    
+    # now crawl for empty directories and remove those too
+    begin
+      # let's pack this routine into a function of its own,
+      # as we need to reiterate the process (see below)
+      def find_empty_dirs(dir)
+        list = []
+        require 'find'
+        Find.find(dir) do |d|
+          next unless File.directory? d
+
+          # see http://stackoverflow.com/questions/5059156/check-if-directory-is-empty-in-ruby
+          if (Dir.entries(d) - %w{ . .. }).empty?
+            list << d
+          end
+        end
+        list
+      end
+
+      # we have to iterate until we can't find any empty directories any more,
+      # as removing one empty directory can yield other empty directories as
+      # empty too
+      empty_dirs = find_empty_dirs($outdir)
+      until empty_dirs.empty?
+        empty_dirs.each do |d|
+          require 'fileutils'
+          FileUtils.rmdir d
+          Nanoc::CLI::Logger.instance.file(:high, :delete, d)
+        end
+        empty_dirs = find_empty_dirs($outdir)
+      end
     end
 
     puts
-    puts "Schedule compiled in #{format('%.2f', Time.now - start_time)}s."
+    puts "Schedule compiled in #{format('%.2f', Time.now - start_time)}s to #{$outdir}."
   end
 
 end

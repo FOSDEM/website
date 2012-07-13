@@ -1,0 +1,35 @@
+---
+title: Using the OpenJDK to investigate covariance in Java
+kind: event
+speakers:
+- janina_voigt
+- raoul_gabriel_urma
+slug: openjdk_covariance
+day: Sat
+start: 14:00
+end: 14:00
+event_id: 685
+---
+
+<p><p>The Java type system is unsafe since it allows covariant use of arrays. For example, an array of Bananas can be used where an array of Fruit is expected, given that Banana is a subclass of Fruit. This allows the following unsafe code:</p>
+
+<pre><code>Banana[] bananas = new Banana[5];
+Fruit[] fruits = bananas;
+fruits[0] = new Apple();  // runtime exception
+bananas[0];  //  Apple?
+</code></pre>
+
+<p>In the above example, the programmer gets back an Apple where he was expecting Bananas, causing an undesired runtime exception.</p>
+
+<p>We investigate the covariant use of arrays in open source Java programs to see whether programmers use this problematic feature of Java. We make use of the freely available OpenJDK, modifying its Java compiler to disallow covariant use of arrays, thus reporting any such uses as compile errors. We apply this compiler to a code corpus of 106 open source programs, including large and well-known programs such as Eclipse, JUnit and Ant.</p>
+
+<p>Initial results of our investigation show that covariance is rarely used outside the context of legacy code and Java libraries. This leads us to question its relevance in the Java language.</p>
+
+<p>In our talk, we also discuss solutions to covariance taken by other languages such as Scala and Google Dart, explain our modifications to the OpenJDK Java compiler and report the full results of our study.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/janina_voigt">Janina Voigt</a></li>
+    <li><a href="/schedule/speaker/raoul_gabriel_urma">Raoul-Gabriel Urma</a></li>
+</ul>
+

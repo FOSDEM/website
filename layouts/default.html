@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<meta name="generator" content="nanoc 3.3.7">
+		<meta name="generator" content="nanoc">
 		<meta http-equiv="content-type" content="text/html;charset=utf-8">
         <link type="text/css" rel="stylesheet" media="screen" href="<%= relpath(@item_rep.path, locate_item_by_identifier('/assets/style/fosdem/')) %>"/>
         <link href="<%= relpath(@item_rep.path, locate_item_by_identifier('/atom/')) %>" type="application/atom+xml" rel="alternate" title="FOSDEM ATOM Feed"/>
@@ -34,15 +34,15 @@
 			<div class="row-fluid">
 				<div class="span3">
 					<ul class="well sidebar-nav">
-						<ul class="nav nav-list">
-							<%= navtree %>
+                        <ul class="nav nav-list">
+                            <%= @item.identifier =~ %r{^/schedule/} ? $schedule_navigation_item.compiled_content : navtree(@item_rep.path) %>
 						</ul>
 					</ul>
 				</div>
                 <div class="<%= @item[:no_sponsors] ? 'span9' : 'span6' %>">
                     <% if not @item[:nohead] %>
 					<ul class="breadcrumb">
-						<%= bcrumbs %>
+                        <%= bcrumbs %>
 					</ul>
                     <h1><%= @item[:title] %></h1>
                     <% end %>
@@ -59,26 +59,7 @@
 								<a href="#" class="btn btn-success">Promote</a>
 							</div>
 							</li>
-							<li class="nav-header">Cornerstone Sponsors</li>
-                            <% sponsors.select{|s| s.include_in_toplevel? and s.cornerstone?}.each do |s| %>
-							<a href="<%= relpath(@item_rep.path, s.path) %>">
-                                <% if s.logo? %>
-                                <img src="<%= relpath(@item_rep.path, s.logo) %>" alt="<%= s.name %>" title="<%= s.name %>"/>
-                                <% else %>
-                                <%= s.name %>
-                                <% end %>
-							</a>
-							<% end %>
-							<li class="nav-header">Other Sponsors</li>
-                            <% sponsors.select{|s| s.include_in_toplevel? and (not s.cornerstone?)}.each do |s| %>
-							<a href="<%= relpath(@item_rep.path, s.path) %>">
-                                <% if s.thumb? %>
-								<img src="<%= relpath(@item_rep.path, s.thumb) %>" alt="<%= s.name %>" title="<%= s.name %>"/>
-                                <% else %>
-                                <%= s.name %>
-                                <% end %>
-							</a>
-							<% end %>
+                            <%= $sponsors_navigation_item.compiled_content %>
 						</ul>
 					</ul>
                 </div>

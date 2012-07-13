@@ -1,0 +1,27 @@
+---
+title: ! 'Dovecot: More than an email server'
+kind: event
+speakers:
+- timo_sirainen
+slug: dovecot
+day: Sat
+start: 14:20
+end: 14:20
+event_id: 459
+---
+
+<p><p>Dovecot is primarily an IMAP server, but nowadays it could also be used as a core for many other things: Rapid development of a feature rich email client, easily trying out your own IMAP protocol replacement, creating an IMAP proxy with mail filtering capabilities, and so on. Most of this is possible due to a new "imapc" mail storage backend, which makes Dovecot act as an IMAP client.</p></p>
+<p><p>Dovecot is a widely used open source IMAP/POP3 server. Its internal design is based around libraries, which aren't very IMAP-specific. This allows using the same libraries to implement any kind of email related products. This talk gives a quick overview about 3 rapidly developed product prototypes:</p>
+
+<ol>
+<li><p>MH-like email client built entirely with shell scripts and doveadm tool. The client is capable of reading emails from any IMAP server, as well as having a local full text search index.</p></li>
+<li><p>A server for XML-based "XMLMAP" email access protocol. This server was used by a friend of mine who wanted to create a prototype email client without bothering to learn the IMAP protocol. The best thing about it was that he could access his own mails from GMail by using the "imapc" backend, almost as if GMail itself had implemented XMLMAP.</p></li>
+<li><p>An IMAP proxy that can modify the message body contents, such as transparently decrypting PGP encrypted mails.</p></li>
+</ol>
+</p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/timo_sirainen">Timo Sirainen</a></li>
+</ul>
+

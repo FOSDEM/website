@@ -243,7 +243,7 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       def find_empty_dirs(dir)
         list = []
         require 'find'
-        Find.find($cache) do |d|
+        Find.find(dir) do |d|
           next unless File.directory? d
 
           # see http://stackoverflow.com/questions/5059156/check-if-directory-is-empty-in-ruby

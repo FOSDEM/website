@@ -20,9 +20,28 @@ preprocess do
   # auto-set the title of content/interviews/*
   decorate_interviews
 
+  # performance hack:
+  # All the schedule/ pages have the same navigation and, hence, we're going
+  # to create a single item where it is rendered once
+  # (see content/schedule_navigation.erb)
+  # and cache the reference to that item using a global variable
+  # $schedule_navigation_item to also avoid having to run through
+  # all items to find it.
+  # That $schedule_navigation_item is referenced and used in
+  # layouts/default.html
+  $schedule_navigation_item = @items.select{|item| item.identifier == '/schedule_navigation/'}.first
+  raise "failed to find an item with the identifier /schedule_navigation/" unless $schedule_navigation_item
+
+  # and the same for the sponsors block
+  # (this optimization actually reduces rendering time from 4min to 30sec)
+  $sponsors_navigation_item = @items.select{|item| item.identifier == '/sponsors_navigation/'}.first
+  raise "failed to find an item with the identifier /sponsors_navigation/" unless $sponsors_navigation_item
+
 end
 
 ##### COMPILING
+
+compile '/static/*' do; end
 
 # skip those, as they are combined into content/assets/style/fosdem.css
 compile '/assets/style/parts/*' do;end
@@ -58,62 +77,81 @@ compile '*' do
     # http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html
     filter :erb
 
-    unless item[:extension] == 'xml' then
-      # convert .md and .markdown files to HTML using the
-      # kramdown processor
-      filter :kramdown if ['markdown', 'md'].include? item[:extension]
+    # only run the chain of filters when it's not an .xml or .erb file
+    unless ['xml', 'erb'].include? item[:extension] then
 
-      # run the custom interview filter (lib/helpers/interview_filter.rb)
-      # on content/interviews/* -- it adds a CC license footer and
-      # converts "Q: ..." lines to styled HTML markup
-      filter :interview if item.interview?
+      unless item.identifier =~ %r{^/schedule/} or item[:kind] == 'internal'
 
-      # do the same as above for items that have "qa: true" in their
-      # metadata, but without adding the license footer
-      filter :interview, {:nolicense => true} if item[:filter] == 'qa'
+        # convert .md and .markdown files to HTML using the
+        # kramdown processor
+        filter :kramdown if ['markdown', 'md'].include? item[:extension]
 
-      # run the custom news filter (lib/filters/news_filter.rb) on
-      # content/news/* -- it removes "---MORE---" lines and removes
-      # from the beginning of the content until "---FULL---" lines
-      # (analog to the make_headlines function from lib/helpers/news.rb
-      # which does the "opposite" (kindof) to generate headline items)
-      filter :news if item.news?
+        # run the custom interview filter (lib/helpers/interview_filter.rb)
+        # on content/interviews/* -- it adds a CC license footer and
+        # converts "Q: ..." lines to styled HTML markup
+        filter :interview if item.interview?
 
-      # run the custom pagelinks filter (lib/filters/pagelinks.rb) on
-      # all items to replace page:... URLs with their actual URLs as
-      # they will be rendered
-      filter :pagelinks
+        # do the same as above for items that have "qa: true" in their
+        # metadata, but without adding the license footer
+        filter :interview, {:nolicense => true} if item[:filter] == 'qa'
 
-      # run the custom assetlinks filter (lib/filters/assetlinks.rb)
-      # on all items to replace asset:... URLs with their actual URLs
-      # as they will be rendered
-      filter :assetlinks
+        # run the custom news filter (lib/filters/news_filter.rb) on
+        # content/news/* -- it removes "---MORE---" lines and removes
+        # from the beginning of the content until "---FULL---" lines
+        # (analog to the make_headlines function from lib/helpers/news.rb
+        # which does the "opposite" (kindof) to generate headline items)
+        filter :news if item.news?
 
-      # run the custom schedulelinks filter (lib/filters/schedulelinks.rb)
-      # on all items to replace speaker:..., event:... and track:...
-      # URLs with their actual URLs as they will be rendered, including
-      # e.g. speaker:2012/foobar that will point to archive.fosdem.org/...
-      filter :schedulelinks
+        # run the custom pagelinks filter (lib/filters/pagelinks.rb) on
+        # all items to replace page:... URLs with their actual URLs as
+        # they will be rendered
+        filter :pagelinks
 
-      # retrieve the image width and height from the image files that
-      # are referenced in <img/> tags to speed up browser rendering
-      # performance, see
-      # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
-      # for inspiration, as well as
-      # https://developers.google.com/speed/docs/best-practices/rendering#SpecifyImageDimensions
-      filter :imagesize
+        # run the custom assetlinks filter (lib/filters/assetlinks.rb)
+        # on all items to replace asset:... URLs with their actual URLs
+        # as they will be rendered
+        filter :assetlinks
+
+        # run the custom schedulelinks filter (lib/filters/schedulelinks.rb)
+        # on all items to replace speaker:..., event:... and track:...
+        # URLs with their actual URLs as they will be rendered, including
+        # e.g. speaker:2012/foobar that will point to archive.fosdem.org/...
+        filter :schedulelinks
+
+        # retrieve the image width and height from the image files that
+        # are referenced in <img/> tags to speed up browser rendering
+        # performance, see
+        # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
+        # for inspiration, as well as
+        # https://developers.google.com/speed/docs/best-practices/rendering#SpecifyImageDimensions
+        filter :imagesize
+      end
 
       # transform absolute paths in URLs with relative paths using the
       # relativize_paths filter (that is shipped with nanoc)
-      filter :relativize_paths, :type => :xhtml
+      # *** OPTIMIZATION: don't use it as of now, wins a few seconds ***
+      #filter :relativize_paths, :type => :xhtml unless item[:relativize] == false
 
-      # use layout/default.html for all items
-      layout 'default' unless item.sponsor?
+      # use layout/default.html for all items, except
+      # sponsor pages and pages that have "layout: false"
+      # in their metadata
+      layout 'default' unless item.sponsor? or item[:layout] == false
     end
   end
 end
 
 ##### ROUTING
+
+# send this one into oblivion, its compiled content is included in
+# layouts/default.html, but is not to be rendered as a file of its
+# own into output
+route '/schedule_navigation/' do;end
+route '/sponsors_navigation/' do;end
+
+route '/static/*' do
+  # /static/foo.html/ -> /foo.html
+  item.identifier[7..-2]
+end
 
 # route /headlines/* into oblivion as they don't really exist on
 # the site (and are not supposed to): they are created dynamically

@@ -1,0 +1,36 @@
+---
+title: NanoBSD and the art of Timekeeping with appliances.
+kind: event
+speakers:
+- rudi_van_drunen
+slug: nanobsd
+day: Sat
+start: 11:00
+end: 11:00
+event_id: 697
+---
+
+<p><p>The time has come to make the switch from embedded Linux to embedded BSD....
+In this talk we will focus on the building of embedded appliances in the BSD world,
+and more specifically on using NanoBSD to create FreeBSD images that run on
+embedded systems.
+In the stock FreeBSD distribution an application (script) called NanoBSD is present
+that takes a configuration file and builds an image for a flash disk which then can be
+used on an embedded system. A short cookbook will be presented on the steps
+needed to actually create the image, and deploy it. Also the in-system upgrading of
+the image will be discussed.
+The use case we will present is an Stratum 0 NTP appliance that serves as network
+time server using GPS with PPS synchronization. This appliance is capable of
+providing highly accurate time service to a network of servers and desktop
+machines, even when disconnected from the internet. The example will use a Soekris
+4501 embedded board and an OEM hockey puck-style GPS device and some tricks to
+use the high-res timing on the board, together with a temperature controlled crystal
+oscillator.
+The contents of talk have previously been published by the presenter in ;login:.
+the USENIX periodical [1]</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/rudi_van_drunen">Rudi van Drunen</a></li>
+</ul>
+

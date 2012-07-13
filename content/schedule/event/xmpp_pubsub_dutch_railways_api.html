@@ -1,0 +1,33 @@
+---
+title: ! 'Applications: PubSub in the Dutch Railways API '
+kind: event
+speakers:
+- stefan_de_konink
+slug: xmpp_pubsub_dutch_railways_api
+day: Sat
+start: 16:00
+end: 16:00
+event_id: 909
+---
+
+<p><p>Implementation of PubSub, Service Discovery and User Location on top
+the Dutch Railways API.</p></p>
+<p><p>Dutch Railways has opened up an API to their presentation layer. The
+API hooks into the back office and contains similar data as can be
+found on stations and their website. The system is pull based, and has
+a limitation of 40k request per unique API key, the format: XML.</p>
+
+<p>The openOV project removed the requirement for the API key by acting
+as open proxy, caching request and offering a PubSub allowing
+subscriptions to specific stations. Upon changes any subscriber gets
+informed, in realtime. Additional views in virtual nodes were made to
+retrieve data of a single train passing by stations.</p>
+
+<p>Some commercial partners popped up such as <a href="http://42transit.com">http://42transit.com</a>
+doing BOSH, to our service.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/stefan_de_konink">Stefan de Konink</a></li>
+</ul>
+

@@ -1,0 +1,57 @@
+---
+title: A strategy for managing diverse equipment in the CERN controls group
+kind: event
+speakers:
+- juan_david_gonzalez_cobas
+slug: manage_diverse_equip
+day: Sun
+start: 13:00
+end: 13:00
+event_id: 392
+---
+
+<p><p>The CERN accelerator control systems access equipment distributed over a
+geographic area tens of kilometers across.</p>
+
+<p>When off the shelf hardware is not available engineers design and prototype I/O
+devices as needed. With the advent of the open hardware repository,
+collaborations between the physics laboratories, research institutes and
+industry now ensure high quality designs and generality. The manufacture of
+these devices may be tendered out to industry and the companies involved are
+free to add them to their own catalogs.</p>
+
+<p>The control system requires very precise timing and synchronization of control
+and acquisition values over a large area and a diverse array of configurable
+equipment connected to the accelerators. Great care is required to manage the
+control system timing and configuration so that remote FPGA cores are set up
+correctly.</p>
+
+<p>The “White-Rabbit” timing project is open and addresses the future timing
+and synchronization needs for CERN and other laboratories. White-rabbit makes
+use of synchronous Ethernet and uses ideas from IEEE 1588 PTP protocol to
+synchronize remote equipment up to 10Km apart to better than one nanosecond.</p>
+
+<p>Various control system devices at different geographic locations will have on
+board FPGA logic loaded dynamically by carrier FMC device drivers with
+configuration data. Device specific drivers then scan the FPGA configuration
+via a Wishbone-standard bus to determine the installation and if any further
+configuration is needed.</p>
+
+<p>Etherbone is a software extension of the Wishbone hardware standard permitting
+remote FPGA cores to communicate with each other and with other control system
+components.</p>
+
+<p>The variety of I/O peripherals, their wide range of activation mode
+and the requirement to move several megabytes of data per channel per
+second is managed by ZIO, a new I/O framework designed to handle
+the usual I/O channels but also pulse generation and sampling; all
+peripherals may also be white-rabbit-aware, so that their own
+timestamps are more precise than what the host computer can offer.
+Although ZIO examples drive simple I/O channels, the system is able
+to DMA directly to user space, to sustain high data rates.</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/juan_david_gonzalez_cobas">Juan David Gonzalez Cobas</a></li>
+</ul>
+

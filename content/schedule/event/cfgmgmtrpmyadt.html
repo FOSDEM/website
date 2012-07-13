@@ -1,0 +1,31 @@
+---
+title: Configuration management and deployment with RPM and YADT
+kind: event
+speakers:
+- ralph_angenendt
+slug: cfgmgmtrpmyadt
+day: Sun
+start: 16:00
+end: 16:00
+event_id: 652
+---
+
+<p><p>RPM is a well understood and relatively easy packaging format that helps to deploy sets of files in a consistent, reproducible and reversible way, and YADT enables organizations to describe their system landscape in a simple, human readable YAML format.</p></p>
+<p><p>RPM is a well understood and relatively easy packaging format that helps to deploy sets of files in a consistent, reproducible and reversible way. Tools like yum, zypper and apt have enabled admins to install, remove and update complete dependency chains of RPMs and to verify on-system changes to these file sets.</p>
+
+<p>Which seems to be a perfect starting point for doing general configuration management with those tools: larger dependency chains can be pulled in via a simple RPM, configuration files can be delivered inside RPMs, administrators feel right at home and have their toolset for installing, updating and verifying the configuration on the machines, developers can easily contribute to simple packaging.</p>
+
+<p>Part I of this talk describes how (and why) we do this at Immobilienscout24.de and discusses pro and cons of this approach.</p>
+
+<p>Part II builds on this and describes our next generation data center deployment and management tool, YADT.</p>
+
+<p>YADT enables organizations to describe their system landscape in a simple, human readable YAML format. YADT is fully aware of not only dependencies between packages and configs, but also of interservice dependencies. Due to this, YADT makes sure that the systems within your platform are updated, configured and restarted in the correct order. It does this by analyzing service and package dependencies and by grouping dependent systems into "chunks".  Deployment then happens as a sequential wave over those chunks, making sure that the platform stays online during the deployment.</p>
+
+<p>YADT is in the process of being open sourced and is available at
+https://code.google.com/p/yadt/</p></p>
+
+<h2>Speakers</h2>
+<ul>
+    <li><a href="/schedule/speaker/ralph_angenendt">Ralph Angenendt</a></li>
+</ul>
+
