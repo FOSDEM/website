@@ -7,6 +7,10 @@ first_name: Stefan
 last_name: Sayer
 person_id: 634
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Stefan Sayer has been involved since the early days in iptel.org and the SEMS open source project as core developer. As co-founder and CEO of FRAFOS GmbH and SEMS lead developer, he is pushing open source VoIP in large telecom installations.</p></p>
@@ -18,6 +22,7 @@ person_id: 634
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 634
             <td><a href="/schedule/event/sbc_sems">Session Border Control with SEMS</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></td>
             <td>12:35</td>
             <td>13:15</td>
     </tbody>

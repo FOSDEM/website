@@ -7,6 +7,10 @@ first_name: Tomas
 last_name: Gustavsson
 person_id: 357
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Thomas is the project founder/manager of the <a href="http://ejbca.org/">EJBCA PKI project</a> and CTO at <a href="http://primekey.se">PrimeKey</a>.
@@ -19,6 +23,7 @@ Long time developer and consultant with PKI/security solutions (nowadays exclusi
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ Long time developer and consultant with PKI/security solutions (nowadays exclusi
             <td><a href="/schedule/event/cesecore_common_criteria">CESecore and common criteria certification of open source software</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2214">H.2214</a></td>
+            <td><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></td>
             <td>11:45</td>
             <td>12:30</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Guillaume
 last_name: Emont
 person_id: 541
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Guillaume Emont is an Igalian who likes free software, multimedia, occasional real world hacks and beer.</p></p>
@@ -26,6 +30,7 @@ many other things.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -35,6 +40,7 @@ many other things.</p></p>
             <td><a href="/schedule/event/balloonfreaks">Hacking in the real world: photography from above</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>13:40</td>
             <td>13:55</td>
     </tbody>

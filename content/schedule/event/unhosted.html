@@ -2,7 +2,10 @@
 title: Unhosted
 kind: event
 speakers:
-- michiel_de_jong
+  -
+    name: Michiel de Jong
+    slug: michiel_de_jong
+    url: /schedule/speaker/michiel_de_jong
 slug: unhosted
 day: Sun
 start: 16:40
@@ -10,21 +13,40 @@ end: 16:40
 event_id: 482
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:40</dd>
+    <dt>End:</dt>
+    <dd>16:55</dd>
+</dl>
 
-<p><p>Unhosted is a non-profit project defining a standard to separate web applications from data storage.</p>
+<p>Unhosted is a non-profit project defining a standard to separate web applications from data storage.</p>
 
-<p>The web apps are pure client-side Javascript, fully inspectable and thus enable truly free software on the web. It also allows app developers to enter the web market a lot faster by not needing to care for any data storage. At the same time, users have their data in one place and can use all the apps with just one account and data storage.</p></p>
-<p><p>Usually, web applications always come with storage attached to it. You can not choose where an app stores the files you use, it’s just their server. Put plainly: You get their app, they get your data. We want to improve the web infrastructure by separating web applications from your data.</p>
+<p>The web apps are pure client-side Javascript, fully inspectable and thus enable truly free software on the web. It also allows app developers to enter the web market a lot faster by not needing to care for any data storage. At the same time, users have their data in one place and can use all the apps with just one account and data storage.</p>
+<p>Usually, web applications always come with storage attached to it. You can not choose where an app stores the files you use, it’s just their server. Put plainly: You get their app, they get your data. We want to improve the web infrastructure by separating web applications from your data.</p>
 
 <p>You have one remote storage where your data and user account resides. In apps, you identify with your user address which then connects to your remote storage and loads your data locally in the app – nothing leaking to the app server. This makes it easier for users because they only need one account and place to have their data – a "My Documents" for the web.</p>
 
 <p>App developers don’t need to bother about storing user data or scaling their applications – because it all runs in the user’s web browser. The applications can be Javascript apps using localStorage, like many web apps already. Just include the remoteStorage.js library and search/replace localStorage with remoteStorage – and the app enables people to use their own remote storage for it.</p>
 
-<p>To act as a remote storage, a platform needs to provide WebFinger for discovery, OAuth for authorization and Cross-Origin Resource Sharing (CORS) for cross-domain AJAX calls: ownCloud is already compatible and we work on making CouchDB, Wordpress and Google Drive compatible.</p></p>
+<p>To act as a remote storage, a platform needs to provide WebFinger for discovery, OAuth for authorization and Cross-Origin Resource Sharing (CORS) for cross-domain AJAX calls: ownCloud is already compatible and we work on making CouchDB, Wordpress and Google Drive compatible.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/michiel_de_jong">Michiel de Jong</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

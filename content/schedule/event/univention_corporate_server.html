@@ -2,7 +2,10 @@
 title: Univention Corporate Server
 kind: event
 speakers:
-- moritz_muehlenhoff
+  -
+    name: Moritz Muehlenhoff
+    slug: moritz_muehlenhoff
+    url: /schedule/speaker/moritz_muehlenhoff
 slug: univention_corporate_server
 day: Sat
 start: 13:15
@@ -10,13 +13,24 @@ end: 13:15
 event_id: 821
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1301">H.1301</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:15</dd>
+    <dt>End:</dt>
+    <dd>14:00</dd>
+</dl>
 
-<p><p>Univention Corporate Server (UCS) is a Debian-derived distribution focused on enterprise environments and heavily based on LDAP.
+<p>Univention Corporate Server (UCS) is a Debian-derived distribution focused on enterprise environments and heavily based on LDAP.
 In contrast to most other Debian-derived distributions it is based on Debian stable instead of snapshots from Debian unstable.</p>
 
-<p>With it's earliest development roots dating back ten years, UCS is now used in approx. 700 installations with the biggest having 80,000 users.</p></p>
-<p><p>This technical talk will cover the following topics:
+<p>With it's earliest development roots dating back ten years, UCS is now used in approx. 700 installations with the biggest having 80,000 users.</p>
+<p>This technical talk will cover the following topics:
 - Basing on Debian stable: Benefits and challenges
 - Introduction to a few features specific to UCS:
 * Template-based configuration management with Univention Configuration Registry
@@ -25,10 +39,18 @@ In contrast to most other Debian-derived distributions it is based on Debian sta
 * Web-based administration with the Univention Management Console
 - UCS is the first distribution to include Samba 4 in a supported product</p>
 
-<p>The talk will provide an overview of the supported features, e.g. assigning group policy objects to Windows clients.</p></p>
+<p>The talk will provide an overview of the supported features, e.g. assigning group policy objects to Windows clients.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/moritz_muehlenhoff">Moritz Muehlenhoff</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

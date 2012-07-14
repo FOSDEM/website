@@ -7,6 +7,10 @@ first_name: Hans
 last_name: de Graaff
 person_id: 843
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Hans de Graaff has been a Gentoo developer since 2006, where he is currently the ruby team lead. With a background in technical informatics his main concern is to make cool technology usable for everyone, currently at Winkwaves creating a social platform for use within companies.</p></p>
@@ -18,6 +22,7 @@ person_id: 843
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 843
             <td><a href="/schedule/event/gentoo_ruby">Gentoo ruby packaging</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1302">H.1302</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>16:30</td>
             <td>17:00</td>
     </tbody>

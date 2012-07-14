@@ -7,6 +7,10 @@ first_name: Juan David
 last_name: Gonzalez Cobas
 person_id: 436
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Juan David González Cobas was born in Avilés (Spain) in 1968. He holds a MSc in Mathematics. As an early adopter of GNU/Linux almost from its inception, he had the opportunity to participate in several Open Source software projects,the most relevant being the Yafray raytracer now known as Yafaray.
@@ -19,6 +23,7 @@ After 13 years in the Computer Science Dept. of Oviedo University (Spain), he wa
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ After 13 years in the Computer Science Dept. of Oviedo University (Spain), he wa
             <td><a href="/schedule/event/manage_diverse_equip">A strategy for managing diverse equipment in the CERN controls group</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k1105">K.1.105</a></td>
+            <td><a href="/schedule/track/network_and_io">Network and IO</a></td>
             <td>13:00</td>
             <td>13:50</td>
     </tbody>

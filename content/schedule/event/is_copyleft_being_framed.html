@@ -2,7 +2,10 @@
 title: Is copyleft being framed?
 kind: event
 speakers:
-- john_sullivan
+  -
+    name: John Sullivan
+    slug: john_sullivan
+    url: /schedule/speaker/john_sullivan
 slug: is_copyleft_being_framed
 day: Sat
 start: 16:00
@@ -10,9 +13,20 @@ end: 16:00
 event_id: 653
 ---
 
-<p>Track: <a href="/schedule/track/legal_issues_devroom">Legal Issues Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/legal_issues">Legal Issues</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:30</dd>
+</dl>
 
-<p><p>This short talk will address the following questions, to inspire
+<p>This short talk will address the following questions, to inspire
 discussion and contemplation about how we frame descriptions of the
 state of licensing in free software.</p>
 
@@ -21,10 +35,18 @@ state of licensing in free software.</p>
 <li>Is the "percentage of free software projects which use copyleft licenses" a useful way to judge the success of copyleft? Does an increase in the percentage of projects using non-copyleft permissive licenses indicate a failure of copyleft?</li>
 <li>As a small related case study, what role have the licensing terms of popular mobile application stores played in this debate, and how have those terms changed the frame of the discussion?</li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/john_sullivan">John Sullivan</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

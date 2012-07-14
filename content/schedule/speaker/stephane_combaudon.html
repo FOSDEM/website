@@ -7,6 +7,10 @@ first_name: Stéphane
 last_name: Combaudon
 person_id: 364
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Stéphane is a MySQL DBA at Dailymotion, one of the leading video-sharing websites in the world. He has been using the LAMP platform for almost 10 years in various companies and is particularly enthusiastic about MySQL. He is a regular speaker at conferences on MySQL and on free software.</p></p>
@@ -18,6 +22,7 @@ person_id: 364
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 364
             <td><a href="/schedule/event/pratical_indexing_guidelines">Practical indexing guidelines</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h1309">H.1309</a></td>
+            <td><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></td>
             <td>13:30</td>
             <td>13:55</td>
     </tbody>

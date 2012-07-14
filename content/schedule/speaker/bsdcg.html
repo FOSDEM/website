@@ -7,6 +7,10 @@ first_name: BSDCG
 last_name: 
 person_id: 625
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>The BSD Certification Group (BSDCG) is a non-profit organization committed to creating and maintaining a global certification standard for system administration on BSD based operating systems. The BSDCG works with the BSD and sysadmin communities in order to provide a practical and relevant certification.</p></p>
@@ -18,6 +22,7 @@ person_id: 625
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 625
             <td><a href="/schedule/event/cert_bsdsa">BSDA certification exams</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ua2114">UA2.114</a></td>
+            <td><a href="/schedule/track/certification">Certification</a></td>
             <td>14:00</td>
             <td>16:00</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Serafeim
 last_name: Zanikolas
 person_id: 823
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Serafeim Zanikolas became a Debian Developer to maintain his sanity while going through the financial and telecom sectors. He's feeling healthier than ever since he joined leemail.me, a purely free-software powered startup.</p></p>
@@ -18,6 +22,7 @@ person_id: 823
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 823
             <td><a href="/schedule/event/debian_dep9">How to replace a legacy tool with 100k installations</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1302">H.1302</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>11:30</td>
             <td>12:00</td>
     </tbody>

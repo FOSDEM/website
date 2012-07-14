@@ -2,7 +2,10 @@
 title: Native KVM Tool
 kind: event
 speakers:
-- sasha_levin
+  -
+    name: Sasha Levin
+    slug: sasha_levin
+    url: /schedule/speaker/sasha_levin
 slug: native_kvm
 day: Sat
 start: 17:00
@@ -10,13 +13,24 @@ end: 17:00
 event_id: 360
 ---
 
-<p>Track: <a href="/schedule/track/hypervisors_track">Hypervisors Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/hypervisors">Hypervisors</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>17:50</dd>
+</dl>
 
-<p><p>The goal of the Native Linux KVM Tool is to provide a clean, from-scratch, lightweight
+<p>The goal of the Native Linux KVM Tool is to provide a clean, from-scratch, lightweight
 KVM host tool implementation that can boot Linux guest images with no
 BIOS dependencies and with only the minimal amount of legacy device
-emulation.</p></p>
-<p><p>The Native KVM tool was started as a response to Ingo Molnar's proposal
+emulation.</p>
+<p>The Native KVM tool was started as a response to Ingo Molnar's proposal
 about a userspace tool which would sit under the /tools/ directory in the
 kernel tree and be the usermode counterpart of the kernel side KVM
 (the mail &amp; related thread can be found at
@@ -34,10 +48,18 @@ thread.gmane.org/gmane.linux.kernel/962051/focus=962620 )</p>
 - Experimental QCOW2 image support</p>
 
 <p>The tool was developed over the course of almost two years, and is now
-in a stage where it is ready for merging into the kernel tree.</p></p>
+in a stage where it is ready for merging into the kernel tree.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/sasha_levin">Sasha Levin</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

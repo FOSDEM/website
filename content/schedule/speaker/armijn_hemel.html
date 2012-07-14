@@ -7,6 +7,10 @@ first_name: Armijn
 last_name: Hemel
 person_id: 690
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Armijn Hemel is a long time open source user (since 1994). Since 2005 he is part of the core team of gpl-violations.org. Armijn is the owner of Tjaldur Software Governance Solutions and the author of the Binary Analysis Tool. In the past he has given talks at ELCE, Android Builders Summit, FOSDEM and various NLUUG conferences.</p></p>
@@ -18,6 +22,7 @@ person_id: 690
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,12 +32,14 @@ person_id: 690
             <td><a href="/schedule/event/what_goes_into_an_executable">What Goes into an Executable? Identifying a Binary's Sources by Tracing Build Processes </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
             <td>12:00</td>
             <td>12:30</td>
         <tr>
             <td><a href="/schedule/event/lincense_issues_in_android">License issues in Android</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/lameere">Lameere</a></td>
+            <td><a href="/schedule/track/embedded">Embedded</a></td>
             <td>14:00</td>
             <td>15:00</td>
     </tbody>

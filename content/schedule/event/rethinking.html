@@ -2,7 +2,10 @@
 title: Re-thinking system and distro development
 kind: event
 speakers:
-- lars_wirzenius
+  -
+    name: Lars Wirzenius
+    slug: lars_wirzenius
+    url: /schedule/speaker/lars_wirzenius
 slug: rethinking
 day: Sat
 start: 12:30
@@ -10,9 +13,20 @@ end: 12:30
 event_id: 443
 ---
 
-<p>Track: <a href="/schedule/track/keynotes">Keynotes</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/keynotes">Keynotes</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:30</dd>
+    <dt>End:</dt>
+    <dd>13:20</dd>
+</dl>
 
-<p><p>We believe system (and distribution) development needs to be
+<p>We believe system (and distribution) development needs to be
 re-thought from the basic concepts upwards. We've implemented some
 ideas for streamlining development, reducing development friction,
 speeding up system upgrades and adding support for downgrades and
@@ -45,10 +59,18 @@ we explore another way of approaching the packaging problem.</p>
 <p>We believe these and other changes are useful for bridging the current
 gap between upstream development and end users, to speed up system
 and distribution development, and to let system builders bravely
-hack what no-one has hacked before.</p></p>
+hack what no-one has hacked before.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/lars_wirzenius">Lars Wirzenius</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

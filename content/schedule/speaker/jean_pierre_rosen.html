@@ -7,6 +7,10 @@ first_name: Jean-Pierre
 last_name: Rosen
 person_id: 861
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jean-Pierre Rosen graduated from ENST (French engineering school) in 1975, and obtained PhD in 1986. He started as a software engineer at the computing center of ENST, then as Professor, where he was responsible for the teaching of Software Engineering and Ada. He has formed Adalog, a company specialized in high level training, consultancy and software development in the fields of Ada and associated technologies (software engineering, object oriented methodologies).
@@ -19,6 +23,7 @@ Jean-Pierre Rosen is Chairman of the AFNOR (French standardization body) group f
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,12 +33,14 @@ Jean-Pierre Rosen is Chairman of the AFNOR (French standardization body) group f
             <td><a href="/schedule/event/introduction_to_ada">An introduction to Ada 2005 and Ada 2012</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/ada">Ada</a></td>
             <td>12:05</td>
             <td>12:50</td>
         <tr>
             <td><a href="/schedule/event/contract_model_of_ada_2012">The contract model of Ada 2012</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/ada">Ada</a></td>
             <td>13:30</td>
             <td>13:55</td>
     </tbody>

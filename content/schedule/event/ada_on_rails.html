@@ -2,7 +2,10 @@
 title: Ada on Rails 
 kind: event
 speakers:
-- david_sauvage
+  -
+    name: David Sauvage
+    slug: david_sauvage
+    url: /schedule/speaker/david_sauvage
 slug: ada_on_rails
 day: Sat
 start: 17:00
@@ -10,13 +13,32 @@ end: 17:00
 event_id: 878
 ---
 
-<p>Track: <a href="/schedule/track/ada_devroom">Ada Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/ada">Ada</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>17:25</dd>
+</dl>
 
-<p><p>Discover how Ada catches up with web application development.</p></p>
-<p><p>Ada on Rails is a bleeding edge Ada tooled framework environment that enables web applications development. The goal of Ada on Rails is to efficiently use all the strength of the Ada based technologies in web applications, while being: Rapid Application Development compatible; agile friendly; safe and secure; ready for formal method through SPARK Ada; low code, memory and CPU footprint; range from bareboard to large scaled distributed SOA applications.</p></p>
+<p>Discover how Ada catches up with web application development.</p>
+<p>Ada on Rails is a bleeding edge Ada tooled framework environment that enables web applications development. The goal of Ada on Rails is to efficiently use all the strength of the Ada based technologies in web applications, while being: Rapid Application Development compatible; agile friendly; safe and secure; ready for formal method through SPARK Ada; low code, memory and CPU footprint; range from bareboard to large scaled distributed SOA applications.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/david_sauvage">David Sauvage</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

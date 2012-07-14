@@ -7,6 +7,10 @@ first_name: Karl
 last_name: Helgason
 person_id: 277
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Karl Helgason is a developer at Miðverk ehf. and a contributor to the OpenJDK project. He has also worked on several open source audio programs including Frinika and RasmusDSP.</p></p>
@@ -18,6 +22,7 @@ person_id: 277
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 277
             <td><a href="/schedule/event/gervill_beyond_midi">Gervill - Beyond MIDI</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>14:00</td>
             <td>14:30</td>
     </tbody>

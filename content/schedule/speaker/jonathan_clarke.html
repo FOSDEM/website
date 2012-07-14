@@ -7,6 +7,10 @@ first_name: Jonathan
 last_name: Clarke
 person_id: 103
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jonathan has been working on Open Source infrastructures since his beginnings as a system administrator. His work is now focused around configuration management tools, in particular Rudder. He is also a contributor to several open source projects including CFEngine, LSC and OpenLDAP. In his spare time, he enjoys cocktails, good food, cinema and cycling around Paris.</p></p>
@@ -18,6 +22,7 @@ person_id: 103
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 103
             <td><a href="/schedule/event/cfgmgmtrudder">Rudder - configuration management benefits for everyone</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></td>
             <td>09:00</td>
             <td>09:45</td>
     </tbody>

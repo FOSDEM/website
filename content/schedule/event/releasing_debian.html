@@ -2,7 +2,10 @@
 title: 29,000 packages in 24 hours - Releasing Debian
 kind: event
 speakers:
-- neil_mcgovern
+  -
+    name: Neil McGovern
+    slug: neil_mcgovern
+    url: /schedule/speaker/neil_mcgovern
 slug: releasing_debian
 day: Sun
 start: 12:15
@@ -10,13 +13,32 @@ end: 12:15
 event_id: 820
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1302">H.1302</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:15</dd>
+    <dt>End:</dt>
+    <dd>13:00</dd>
+</dl>
 
-<p><p>This talk is to give an overview of what is involved in releasing Debian.
-It will cover policy, tools and an insight into what it takes to release the largest linux distribution.</p></p>
+<p>This talk is to give an overview of what is involved in releasing Debian.
+It will cover policy, tools and an insight into what it takes to release the largest linux distribution.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/neil_mcgovern">Neil McGovern</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

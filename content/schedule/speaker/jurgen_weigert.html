@@ -7,6 +7,10 @@ first_name: Jürgen
 last_name: Weigert
 person_id: 824
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Juergen, 8 years SUSE, desktop, multimedia, codecs, legal, documentation.
@@ -19,6 +23,7 @@ Senior hacker.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ Senior hacker.</p></p>
             <td><a href="/schedule/event/obs_sub_review">Submission Review with Open Build Service</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h1302">H.1302</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>15:00</td>
             <td>16:00</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: Cypher Query Language 
 kind: event
 speakers:
-- andres_taylor
+  -
+    name: Andrés Taylor
+    slug: andres_taylor
+    url: /schedule/speaker/andres_taylor
 slug: neo4j_cypher
 day: Sun
 start: 14:00
@@ -10,12 +13,31 @@ end: 14:00
 event_id: 718
 ---
 
-<p>Track: <a href="/schedule/track/graph_processing_devroom">Graph Processing Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/graph_processing">Graph Processing</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>14:35</dd>
+</dl>
 
-<p><p>Cypher is a declarative query language recently added to the Neo4j graph database. In this talk we explain the motivations for creating this language, describe its current features and design, and dive a little into its implementation. Finally, we discuss the future direction of how we expect the language to evolve.</p></p>
+<p>Cypher is a declarative query language recently added to the Neo4j graph database. In this talk we explain the motivations for creating this language, describe its current features and design, and dive a little into its implementation. Finally, we discuss the future direction of how we expect the language to evolve.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/andres_taylor">Andrés Taylor</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

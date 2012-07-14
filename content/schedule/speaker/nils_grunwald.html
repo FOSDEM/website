@@ -7,6 +7,10 @@ first_name: Nils
 last_name: Grunwald
 person_id: 723
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>[Nils Grünwald][https://github.com/ngrunwald] is a developer working for [Linkfluence][http://us.linkfluence.net/], a French startup specializing in the study of social networks on the web. He enjoys
@@ -19,6 +23,7 @@ working on web data mining, text mining and natural language processing.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ working on web data mining, text mining and natural language processing.</p></p>
             <td><a href="/schedule/event/cascalog_hadoop_graph">Using Cascalog and Hadoop for rapid graph processing and exploration </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
             <td>10:20</td>
             <td>11:05</td>
     </tbody>

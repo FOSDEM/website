@@ -2,7 +2,10 @@
 title: ! 'CAcert: Trust - the root of evil?!'
 kind: event
 speakers:
-- benedikt_heintel
+  -
+    name: Benedikt Heintel
+    slug: benedikt_heintel
+    url: /schedule/speaker/benedikt_heintel
 slug: cacert_trust
 day: Sat
 start: 16:00
@@ -10,9 +13,20 @@ end: 16:00
 event_id: 948
 ---
 
-<p>Track: <a href="/schedule/track/hardware_cryptography_devroom">Hardware Cryptography Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2214">H.2214</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:45</dd>
+</dl>
 
-<p><p>In a highly connected world like ours is trust one of the most important assets. But what if the root to trust is not trustworthy?</p>
+<p>In a highly connected world like ours is trust one of the most important assets. But what if the root to trust is not trustworthy?</p>
 
 <p> 2011 was the year where one Certificate Authority (CA) after the other
  came to fall. The cases of the Dutch DigiNotar and the Malaysian
@@ -24,10 +38,18 @@ event_id: 948
 <p> This talk enlightens why most commercial CAs are not trustworthy by
  default, what we can learn from 2011's cases, what makes CAcert
  different, why CAcert is not in the browsers by default and what we do
- to make it happen.</p></p>
+ to make it happen.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/benedikt_heintel">Benedikt Heintel</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

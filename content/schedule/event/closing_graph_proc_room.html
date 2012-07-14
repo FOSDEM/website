@@ -2,8 +2,14 @@
 title: Closing talk
 kind: event
 speakers:
-- achim_friedland
-- pere_urbon_bayes
+  -
+    name: Achim Friedland
+    slug: achim_friedland
+    url: /schedule/speaker/achim_friedland
+  -
+    name: Pere  Urbón-Bayes
+    slug: pere_urbon_bayes
+    url: /schedule/speaker/pere_urbon_bayes
 slug: closing_graph_proc_room
 day: Sun
 start: 16:45
@@ -11,13 +17,31 @@ end: 16:45
 event_id: 723
 ---
 
-<p>Track: <a href="/schedule/track/graph_processing_devroom">Graph Processing Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/graph_processing">Graph Processing</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:45</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>Saying proper good bye to our attendees plus with a resume of the sessions with resources, links, videos, etc where you will be able to extend and continue accessing the talks we made after Fosdem.</p></p>
+<p>Saying proper good bye to our attendees plus with a resume of the sessions with resources, links, videos, etc where you will be able to extend and continue accessing the talks we made after Fosdem.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/achim_friedland">Achim Friedland</a></li>
-    <li><a href="/schedule/speaker/pere_urbon_bayes">Pere  Urbón-Bayes</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

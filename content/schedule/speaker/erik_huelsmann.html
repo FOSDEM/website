@@ -7,6 +7,10 @@ first_name: Erik
 last_name: Huelsmann
 person_id: 915
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Long time FOSS contributor as full committer for Subversion, LedgerSMB, ArmedBear Common Lisp and a number of smaller projects as well as contributions to numerous projects.</p></p>
@@ -19,6 +23,7 @@ person_id: 915
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ person_id: 915
             <td><a href="/schedule/event/ledgersmb_perl">LedgerSMB: Open source accounting running on Perl</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/perl">Perl</a></td>
             <td>12:25</td>
             <td>12:45</td>
     </tbody>

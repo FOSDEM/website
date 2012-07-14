@@ -7,6 +7,10 @@ first_name: Marek
 last_name: Goldmann
 person_id: 631
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Marek joined Red Hat in January 2009 and started hacking on Cloud-related JBoss projects. He currently leads BoxGrinder - a tool for creating appliances for various virtual platforms. He also leads the effort of packaging JBoss Application Server 7 into Fedora.</p>
@@ -20,6 +24,7 @@ person_id: 631
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ person_id: 631
             <td><a href="/schedule/event/boxgrinder_grind_your_appliances_easily">BoxGrinder : Grind your appliances easily</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/jbossorg">JBoss.org</a></td>
             <td>11:00</td>
             <td>11:55</td>
     </tbody>

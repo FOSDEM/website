@@ -2,15 +2,42 @@
 title: Welcome to the Free Java DevRoom
 kind: event
 speakers:
-- martijn_verburg
-- mark_wielaard
-- tom_marble
-- ben_evans
-- andrew_hughes
-- andrew_haley
-- mario_torre
-- dalibor_topic
-- sylvestre_ledru
+  -
+    name: Martijn Verburg
+    slug: martijn_verburg
+    url: /schedule/speaker/martijn_verburg
+  -
+    name: Mark Wielaard
+    slug: mark_wielaard
+    url: /schedule/speaker/mark_wielaard
+  -
+    name: Tom Marble
+    slug: tom_marble
+    url: /schedule/speaker/tom_marble
+  -
+    name: Ben Evans
+    slug: ben_evans
+    url: /schedule/speaker/ben_evans
+  -
+    name: Andrew Hughes
+    slug: andrew_hughes
+    url: /schedule/speaker/andrew_hughes
+  -
+    name: Andrew Haley
+    slug: andrew_haley
+    url: /schedule/speaker/andrew_haley
+  -
+    name: Mario Torre
+    slug: mario_torre
+    url: /schedule/speaker/mario_torre
+  -
+    name: Dalibor Topić
+    slug: dalibor_topic
+    url: /schedule/speaker/dalibor_topic
+  -
+    name: Sylvestre Ledru
+    slug: sylvestre_ledru
+    url: /schedule/speaker/sylvestre_ledru
 slug: free_java
 day: Sat
 start: 11:00
@@ -18,20 +45,31 @@ end: 11:00
 event_id: 677
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:05</dd>
+</dl>
 
-<p><p>Brief Welcome to the Free Java DevRoom</p></p>
+<p>Brief Welcome to the Free Java DevRoom</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/martijn_verburg">Martijn Verburg</a></li>
-    <li><a href="/schedule/speaker/mark_wielaard">Mark Wielaard</a></li>
-    <li><a href="/schedule/speaker/tom_marble">Tom Marble</a></li>
-    <li><a href="/schedule/speaker/ben_evans">Ben Evans</a></li>
-    <li><a href="/schedule/speaker/andrew_hughes">Andrew Hughes</a></li>
-    <li><a href="/schedule/speaker/andrew_haley">Andrew Haley</a></li>
-    <li><a href="/schedule/speaker/mario_torre">Mario Torre</a></li>
-    <li><a href="/schedule/speaker/dalibor_topic">Dalibor Topić</a></li>
-    <li><a href="/schedule/speaker/sylvestre_ledru">Sylvestre Ledru</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

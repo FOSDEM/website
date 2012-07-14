@@ -7,6 +7,10 @@ first_name: Steve
 last_name: McIntyre
 person_id: 822
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Steve McIntyre is a long-time Debian Developer, and an ex-Debian Project Leader. He has been involved with Free Software since college days in the 1990s. Steve is now employed by ARM and seconded into Linaro, where he is working on making Free Software and ARM CPUs play nicely together. The latest project is the new Debian armhf port.</p></p>
@@ -18,6 +22,7 @@ person_id: 822
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 822
             <td><a href="/schedule/event/arm_bof">ARM BoF</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h1301">H.1301</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>15:00</td>
             <td>16:00</td>
     </tbody>

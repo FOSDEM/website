@@ -2,7 +2,10 @@
 title: Cross Platform Colour Management with Oyranos
 kind: event
 speakers:
-- kai_uwe_behrmann
+  -
+    name: Kai-Uwe Behrmann
+    slug: kai_uwe_behrmann
+    url: /schedule/speaker/kai_uwe_behrmann
 slug: oyranos
 day: Sun
 start: 15:30
@@ -10,12 +13,31 @@ end: 15:30
 event_id: 783
 ---
 
-<p>Track: <a href="/schedule/track/xorg+openicc_devroom">X.org+OpenICC Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3401">K.3.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:30</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>The Colour Management System exists since 2004 with a long history of new ideas for Linux ICC style Colour Management. Find out what it does and what is hot.</p></p>
+<p>The Colour Management System exists since 2004 with a long history of new ideas for Linux ICC style Colour Management. Find out what it does and what is hot.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/kai_uwe_behrmann">Kai-Uwe Behrmann</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

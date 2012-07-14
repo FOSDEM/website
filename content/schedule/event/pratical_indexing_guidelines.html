@@ -2,7 +2,10 @@
 title: Practical indexing guidelines
 kind: event
 speakers:
-- stephane_combaudon
+  -
+    name: Stéphane Combaudon
+    slug: stephane_combaudon
+    url: /schedule/speaker/stephane_combaudon
 slug: pratical_indexing_guidelines
 day: Sun
 start: 13:30
@@ -10,12 +13,31 @@ end: 13:30
 event_id: 938
 ---
 
-<p>Track: <a href="/schedule/track/mysql_and_friends_devroom">MySQL and Friends Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:30</dd>
+    <dt>End:</dt>
+    <dd>13:55</dd>
+</dl>
 
-<p><p>In many production systems, indexes are designed empirically and without instrumentation to check their efficiency, resulting in poor performance and increased hardware needs. Learn in this talk the fundamental ideas behind indexing, the errors you should avoid and the tools that can help you harness the full power of indexes. The following topics will be covered: - strengths and limitations of indexes in MySQL - performance degradation caused by bad indexes - guidelines to design efficient indexes - tools and methods to identify and remove unnecessary indexes.</p></p>
+<p>In many production systems, indexes are designed empirically and without instrumentation to check their efficiency, resulting in poor performance and increased hardware needs. Learn in this talk the fundamental ideas behind indexing, the errors you should avoid and the tools that can help you harness the full power of indexes. The following topics will be covered: - strengths and limitations of indexes in MySQL - performance degradation caused by bad indexes - guidelines to design efficient indexes - tools and methods to identify and remove unnecessary indexes.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/stephane_combaudon">Stéphane Combaudon</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

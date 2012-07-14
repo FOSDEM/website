@@ -2,9 +2,18 @@
 title: ! 'Caciocavallo: CacioTest, CacioWeb & Deployment'
 kind: event
 speakers:
-- mario_torre
-- roman_kennke
-- clemens_eisserer
+  -
+    name: Mario Torre
+    slug: mario_torre
+    url: /schedule/speaker/mario_torre
+  -
+    name: Roman Kennke
+    slug: roman_kennke
+    url: /schedule/speaker/roman_kennke
+  -
+    name: Clemens Eisserer
+    slug: clemens_eisserer
+    url: /schedule/speaker/clemens_eisserer
 slug: caciocavallo_caciotest_cacioweb_and_deployment
 day: Sat
 start: 16:30
@@ -12,9 +21,20 @@ end: 16:30
 event_id: 703
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:30</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>CacioCavallo is an award winning project sponsored by the OpenJDK porters group.</p>
+<p>CacioCavallo is an award winning project sponsored by the OpenJDK porters group.</p>
 
 <p>The main project was about refactoring of the graphics stack of OpenJDK to allow of easy porting on various platform.</p>
 
@@ -24,12 +44,18 @@ event_id: 703
 
 <p>The first project allows for easy deployment even on platforms without any Java support (like Apple iPad) and makes extremely easy the deployment even without any Java plugin.</p>
 
-<p>CacioTest aims to make easy the testing of Graphics stack, providing a reliable, unobtrusive way to run UI and graphics related tests.</p></p>
+<p>CacioTest aims to make easy the testing of Graphics stack, providing a reliable, unobtrusive way to run UI and graphics related tests.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/mario_torre">Mario Torre</a></li>
-    <li><a href="/schedule/speaker/roman_kennke">Roman Kennke</a></li>
-    <li><a href="/schedule/speaker/clemens_eisserer">Clemens Eisserer</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

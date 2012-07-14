@@ -2,7 +2,10 @@
 title: ! 'coreboot - The last frontier: Laptops'
 kind: event
 speakers:
-- carl_daniel_hailfinger
+  -
+    name: Carl-Daniel Hailfinger
+    slug: carl_daniel_hailfinger
+    url: /schedule/speaker/carl_daniel_hailfinger
 slug: coreboot_laptops
 day: Sun
 start: 12:00
@@ -10,21 +13,40 @@ end: 12:00
 event_id: 439
 ---
 
-<p>Track: <a href="/schedule/track/system_track">System Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/system">System</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:50</dd>
+</dl>
 
-<p><p>coreboot is a free firmware for x86 computers. It is designed as an extremely fast and lightweight alternative to BIOS and EFI (poweron to OS in &lt;500 ms) while retaining the flexibility to boot any operating system. A few hundred desktop/server/embedded mainboards are supported, but supported laptops were unavailable in shops until now.</p>
+<p>coreboot is a free firmware for x86 computers. It is designed as an extremely fast and lightweight alternative to BIOS and EFI (poweron to OS in &lt;500 ms) while retaining the flexibility to boot any operating system. A few hundred desktop/server/embedded mainboards are supported, but supported laptops were unavailable in shops until now.</p>
 
 <p>The coreboot developers are proud to present the first working mainstream laptop here at FOSDEM.
-We'll tell you how we did it, and how you can enjoy coreboot on your hardware as well.</p></p>
-<p><p>coreboot is a free firmware for x86 computers. It is designed as an extremely fast and lightweight alternative to BIOS and EFI (poweron to OS in &lt;500 ms) while retaining the flexibility to boot any operating system. A few hundred desktop/server/embedded mainboards are supported, but supported laptops were unavailable in shops until now.</p>
+We'll tell you how we did it, and how you can enjoy coreboot on your hardware as well.</p>
+<p>coreboot is a free firmware for x86 computers. It is designed as an extremely fast and lightweight alternative to BIOS and EFI (poweron to OS in &lt;500 ms) while retaining the flexibility to boot any operating system. A few hundred desktop/server/embedded mainboards are supported, but supported laptops were unavailable in shops until now.</p>
 
 <p>The coreboot developers are proud to present the first working mainstream laptop here at FOSDEM.</p>
 
 <p>This talk will briefly introduce coreboot goals and current project status, and then jump right into a rollercoaster ride through laptop architecture (main processor and embedded controllers), x86 early initialization, coreboot architecture, reverse engineering, hardware debugging, and how to write coreboot support for a laptop. You'll get to know the various technical (no debug hardware available, ...) and non-technical (no datasheets, ...) roadblocks and how to overcome them.
-Whether you just want to understand how coreboot works and buy supported hardware or you want to port and install coreboot to your own hardware, this talk will give you all the info to get started.</p></p>
+Whether you just want to understand how coreboot works and buy supported hardware or you want to port and install coreboot to your own hardware, this talk will give you all the info to get started.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/carl_daniel_hailfinger">Carl-Daniel Hailfinger</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

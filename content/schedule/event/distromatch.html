@@ -2,7 +2,10 @@
 title: I wrote Distromatch, shall we use it?
 kind: event
 speakers:
-- enrico_zini
+  -
+    name: Enrico Zini
+    slug: enrico_zini
+    url: /schedule/speaker/enrico_zini
 slug: distromatch
 day: Sat
 start: 18:15
@@ -10,16 +13,35 @@ end: 18:15
 event_id: 823
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1301">H.1301</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:15</dd>
+    <dt>End:</dt>
+    <dd>19:00</dd>
+</dl>
 
-<p><p>At the <a href="http://distributions.freedesktop.org/wiki/Meetings/AppInstaller2011">AppInstaller2011</a> meeting I started writing <a href="http://www.enricozini.org/2011/debian/distromatch/">Distromatch</a> which is able to map binary package names across different distribution using a wide set of euristics.</p>
+<p>At the <a href="http://distributions.freedesktop.org/wiki/Meetings/AppInstaller2011">AppInstaller2011</a> meeting I started writing <a href="http://www.enricozini.org/2011/debian/distromatch/">Distromatch</a> which is able to map binary package names across different distribution using a wide set of euristics.</p>
 
 <p>Distromatch has the potential of being a radical change in cross-distro cooperation, enabling exchange of package screenshots, categories, ratings, reviews and many other interesting kinds of metadata.</p>
 
-<p>Since distromatch has existed for almost a year and (afaik) so far none of this has happened, I am taking advantage of the cross-distro room to show how it works and discuss how to move on from here.</p></p>
+<p>Since distromatch has existed for almost a year and (afaik) so far none of this has happened, I am taking advantage of the cross-distro room to show how it works and discuss how to move on from here.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/enrico_zini">Enrico Zini</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

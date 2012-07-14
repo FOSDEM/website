@@ -7,6 +7,10 @@ first_name: Dodo
 last_name: Griffiths
 person_id: 877
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Dodo is a buddycloud contributor whose work can be found on ohloh, github, and on my self-founded distributed git hosting service codetube.</p></p>
@@ -18,6 +22,7 @@ person_id: 877
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 877
             <td><a href="/schedule/event/building_real_time">WebApps: Building Real-time in the Web with XMPP</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></td>
             <td>14:00</td>
             <td>14:30</td>
     </tbody>

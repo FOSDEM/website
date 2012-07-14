@@ -2,7 +2,10 @@
 title: Adventure of setting common account database for a distribution infrastructure
 kind: event
 speakers:
-- michael_scherer
+  -
+    name: Michael Scherer
+    slug: michael_scherer
+    url: /schedule/speaker/michael_scherer
 slug: account_database_for_distro
 day: Sun
 start: 14:00
@@ -10,12 +13,31 @@ end: 14:00
 event_id: 838
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1301">H.1301</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>15:00</dd>
+</dl>
 
-<p><p>The talk will be a summary of the motivation and problem encountered while setting a global shared account database for the Mageia distribution infrastructure, focusing on LDAP and the issues around software integration, patches and directory synchronisation.</p></p>
+<p>The talk will be a summary of the motivation and problem encountered while setting a global shared account database for the Mageia distribution infrastructure, focusing on LDAP and the issues around software integration, patches and directory synchronisation.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/michael_scherer">Michael Scherer</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

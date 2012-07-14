@@ -2,7 +2,10 @@
 title: Call a Cab to bring the Colors - Taxi DB
 kind: event
 speakers:
-- sirko_kemter
+  -
+    name: Sirko Kemter
+    slug: sirko_kemter
+    url: /schedule/speaker/sirko_kemter
 slug: taxi
 day: Sun
 start: 15:00
@@ -10,12 +13,31 @@ end: 15:00
 event_id: 782
 ---
 
-<p>Track: <a href="/schedule/track/xorg+openicc_devroom">X.org+OpenICC Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3401">K.3.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:30</dd>
+</dl>
 
-<p><p>Taxi DB is designed to store ICC device profiles and meta data online. What technology is used and how it works will be in the talk.</p></p>
+<p>Taxi DB is designed to store ICC device profiles and meta data online. What technology is used and how it works will be in the talk.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/sirko_kemter">Sirko Kemter</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

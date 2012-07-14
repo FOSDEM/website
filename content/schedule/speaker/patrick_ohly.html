@@ -7,6 +7,10 @@ first_name: Patrick
 last_name: Ohly
 person_id: 641
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>In a past life, Patrick has worked on performance analysis software for HPC clusters ("Intel Trace Analyzer and Collector") and cluster technology in general (PTP and hardware time stamping, included in Linux since
@@ -31,6 +35,7 @@ person_id: 641
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -40,6 +45,7 @@ person_id: 641
             <td><a href="/schedule/event/syncevolution_update">An update on PIM storage and sync: SyncEvolution</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></td>
             <td>16:30</td>
             <td>17:00</td>
     </tbody>

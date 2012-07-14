@@ -2,7 +2,10 @@
 title: NoSQL/Graph Database Visualization, The case of Gephi and Neo4j 
 kind: event
 speakers:
-- martin_skurla
+  -
+    name: Martin Skurla
+    slug: martin_skurla
+    url: /schedule/speaker/martin_skurla
 slug: neo4j_gephi_visualization
 day: Sun
 start: 15:40
@@ -10,9 +13,20 @@ end: 15:40
 event_id: 721
 ---
 
-<p>Track: <a href="/schedule/track/graph_processing_devroom">Graph Processing Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/graph_processing">Graph Processing</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:40</dd>
+    <dt>End:</dt>
+    <dd>15:55</dd>
+</dl>
 
-<p><p>We are recently witnesses of the significant movement and adoption of NoSQL databases. In particular, the
+<p>We are recently witnesses of the significant movement and adoption of NoSQL databases. In particular, the
 graph databases become an important technology as we deal with a high increase of relational data.
 They not only store graph data structures much more efficiently, but also provide powerful graph traversal
 capabilities that make them suitable for this kind of data.</p>
@@ -26,10 +40,18 @@ discovered in the data.</p>
 
 <p>We will go through the installation and showcase of visualization capabilities of Neo4j graph database
 in Gephi. The talk will cover exploration of general useful features of Gephi applying them on imported Neo4j
-database.</p></p>
+database.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/martin_skurla">Martin Skurla</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

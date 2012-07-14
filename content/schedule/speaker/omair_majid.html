@@ -7,6 +7,10 @@ first_name: Omair
 last_name: Majid
 person_id: 227
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Omair Majid is a Software Engineer at Red Hat. He spends most of his time working on tooling for OpenJDK, though he also contributes to other Free Software projects like OpenJDK, IcedTea and IcedTea-Web and is involved in the Fedora Project.</p></p>
@@ -18,6 +22,7 @@ person_id: 227
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 227
             <td><a href="/schedule/event/thermostat">Thermostat: Taking over the Java tooling world with Open Source Software</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>18:00</td>
             <td>18:30</td>
     </tbody>

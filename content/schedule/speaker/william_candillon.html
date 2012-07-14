@@ -7,6 +7,10 @@ first_name: William
 last_name: Candillon
 person_id: 519
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>William Candillon is a software engineer at 28msec and member of the W3C XQuery working group.
@@ -20,6 +24,7 @@ William is also involved with the FLWOR foundation, a non-profit organization th
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ William is also involved with the FLWOR foundation, a non-profit organization th
             <td><a href="/schedule/event/xquery">XQuery 3.0 Rocks</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>10:00</td>
             <td>10:15</td>
     </tbody>

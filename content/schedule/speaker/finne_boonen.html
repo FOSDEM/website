@@ -7,6 +7,10 @@ first_name: Finne
 last_name: Boonen
 person_id: 397
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 
@@ -17,6 +21,7 @@ person_id: 397
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -26,6 +31,7 @@ person_id: 397
             <td><a href="/schedule/event/caret_and_stick">Caret and Stick</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k1105">K.1.105</a></td>
+            <td><a href="/schedule/track/community">Community</a></td>
             <td>16:00</td>
             <td>16:50</td>
     </tbody>

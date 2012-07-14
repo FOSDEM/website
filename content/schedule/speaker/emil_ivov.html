@@ -7,6 +7,10 @@ first_name: Emil
 last_name: Ivov
 person_id: 373
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Emil Ivov is the founder and current lead of the Jitsi project. He is also involved with other initiatives like the icej4.org and JAIN SIP projects, and contributes to IETF related efforts like the AVTEXT and RTCWEB and P2PRG working groups. Emil obtained his Ph.D. from the University of Strasbourg in early 2008, and has been focusing primarily on Jitsi activities ever since.</p></p>
@@ -18,6 +22,7 @@ person_id: 373
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,12 +32,14 @@ person_id: 373
             <td><a href="/schedule/event/xmpp_jingle_and_everything">Multimedia: Jingle, the Universe, and Everything </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></td>
             <td>17:30</td>
             <td>18:00</td>
         <tr>
             <td><a href="/schedule/event/skype_alternative_floss">A real Skype alternative using standards compliant FLOSS</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></td>
             <td>14:05</td>
             <td>14:45</td>
     </tbody>

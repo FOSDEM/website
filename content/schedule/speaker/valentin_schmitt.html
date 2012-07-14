@@ -7,6 +7,10 @@ first_name: Valentin
 last_name: Schmitt
 person_id: 531
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Passionate Free Software advocate for years, I graduated with a master's degree specialized in Free Software Engineering in 2010. I currently work as a GNU/Linux system administrator at Bearstech: a worker cooperative of Free Software engineers specialized in outsourcing, Internet hosting and software development.</p></p>
@@ -18,6 +22,7 @@ person_id: 531
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 531
             <td><a href="/schedule/event/mail2trac">mail2trac</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>15:00</td>
             <td>15:15</td>
     </tbody>

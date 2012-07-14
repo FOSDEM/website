@@ -2,7 +2,10 @@
 title: Implementing JSR 292 in IKVM.NET
 kind: event
 speakers:
-- jeroen_frijters
+  -
+    name: Jeroen Frijters
+    slug: jeroen_frijters
+    url: /schedule/speaker/jeroen_frijters
 slug: implementing_jsr_292_in_ikvm_net
 day: Sat
 start: 12:00
@@ -10,12 +13,31 @@ end: 12:00
 event_id: 680
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>IKVM.NET is an implementation of a Java VM on top of Microsoft .NET and Mono. In this talk I'll describe how Java 7's JSR 292 invokedynamic and MethodHandles have been implemented in IKVM.NET.</p></p>
+<p>IKVM.NET is an implementation of a Java VM on top of Microsoft .NET and Mono. In this talk I'll describe how Java 7's JSR 292 invokedynamic and MethodHandles have been implemented in IKVM.NET.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jeroen_frijters">Jeroen Frijters</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

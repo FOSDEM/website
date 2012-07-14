@@ -2,7 +2,10 @@
 title: The contract model of Ada 2012
 kind: event
 speakers:
-- jean_pierre_rosen
+  -
+    name: Jean-Pierre Rosen
+    slug: jean_pierre_rosen
+    url: /schedule/speaker/jean_pierre_rosen
 slug: contract_model_of_ada_2012
 day: Sat
 start: 13:30
@@ -10,13 +13,32 @@ end: 13:30
 event_id: 873
 ---
 
-<p>Track: <a href="/schedule/track/ada_devroom">Ada Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/ada">Ada</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:30</dd>
+    <dt>End:</dt>
+    <dd>13:55</dd>
+</dl>
 
-<p><p>The basics of programming by contracts and how contracts were introduced in Ada 2012.</p></p>
-<p><p>Ada 2005 already had assertions. The notion was considerably extended in Ada 2012, with pre- and post-conditions and type invariants. Together with other properties of the language that separate clearly interfaces from implementations, these new features provide an accurate description of the obligations and expectations of the user and of the provider of software components.</p></p>
+<p>The basics of programming by contracts and how contracts were introduced in Ada 2012.</p>
+<p>Ada 2005 already had assertions. The notion was considerably extended in Ada 2012, with pre- and post-conditions and type invariants. Together with other properties of the language that separate clearly interfaces from implementations, these new features provide an accurate description of the obligations and expectations of the user and of the provider of software components.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jean_pierre_rosen">Jean-Pierre Rosen</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

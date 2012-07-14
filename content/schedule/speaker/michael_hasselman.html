@@ -7,6 +7,10 @@ first_name: Michael
 last_name: Hasselman
 person_id: 732
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Michael Hasselmann has been working at Openismus GmbH since January
@@ -23,6 +27,7 @@ Max-Delbrueck-Centrum in Berlin.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -32,6 +37,7 @@ Max-Delbrueck-Centrum in Berlin.</p></p>
             <td><a href="/schedule/event/why_mobile_text_input_is_hard">Why mobile text input is hard</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/lameere">Lameere</a></td>
+            <td><a href="/schedule/track/embedded">Embedded</a></td>
             <td>16:00</td>
             <td>17:00</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: GNUstep GUI
 kind: event
 speakers:
-- fred_kiefer
+  -
+    name: Fred Kiefer
+    slug: fred_kiefer
+    url: /schedule/speaker/fred_kiefer
 slug: gnustep_gui_news
 day: Sat
 start: 13:45
@@ -10,18 +13,37 @@ end: 13:45
 event_id: 894
 ---
 
-<p>Track: <a href="/schedule/track/gnustep_devroom">GNUstep Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/gnustep">GNUstep</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1126">AW1.126</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:45</dd>
+    <dt>End:</dt>
+    <dd>14:15</dd>
+</dl>
 
-<p><ul>
+<ul>
 <li>New features in the text system this year</li>
 <li>Resolution Independence/scale factor support</li>
 <li>Other graphics improvements</li>
 <li>Demo</li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/fred_kiefer">Fred Kiefer</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

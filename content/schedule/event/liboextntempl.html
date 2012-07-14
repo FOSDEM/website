@@ -2,7 +2,10 @@
 title: Improving the Extensions and Template Center
 kind: event
 speakers:
-- andreas_mantke
+  -
+    name: Andreas Mantke
+    slug: andreas_mantke
+    url: /schedule/speaker/andreas_mantke
 slug: liboextntempl
 day: Sat
 start: 14:00
@@ -10,12 +13,31 @@ end: 14:00
 event_id: 745
 ---
 
-<p>Track: <a href="/schedule/track/libreoffice_devroom">LibreOffice Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/libreoffice">LibreOffice</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>14:30</dd>
+</dl>
 
-<p><p>Explaining the upcoming hacks / improvements in the extensions- and specially the template-center.</p></p>
+<p>Explaining the upcoming hacks / improvements in the extensions- and specially the template-center.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/andreas_mantke">Andreas Mantke</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

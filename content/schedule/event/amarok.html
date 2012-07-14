@@ -2,7 +2,10 @@
 title: Amarok
 kind: event
 speakers:
-- bart_cerneels
+  -
+    name: Bart Cerneels
+    slug: bart_cerneels
+    url: /schedule/speaker/bart_cerneels
 slug: amarok
 day: Sun
 start: 11:20
@@ -10,9 +13,20 @@ end: 11:20
 event_id: 626
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:20</dd>
+    <dt>End:</dt>
+    <dd>11:35</dd>
+</dl>
 
-<p><p>Amarok is the old fart among the Free Desktop music players by now.
+<p>Amarok is the old fart among the Free Desktop music players by now.
 Newfangled software with "social" and "distributed" in their summeries
 has come and taken some of the buzz from our old wolf.
 But Amarok is still kicking! The recently released version 2.5 is
@@ -22,10 +36,18 @@ future. Come gather around the warm buzzing projector kids, to hear
 the story of Amarok's future on small pocketable devices and large
 clumsy desktops.</p>
 
-<p>&lt;/deliberate comedic effect></p></p>
+<p>&lt;/deliberate comedic effect></p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/bart_cerneels">Bart Cerneels</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

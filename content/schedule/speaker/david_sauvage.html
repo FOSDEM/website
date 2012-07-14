@@ -7,6 +7,10 @@ first_name: David
 last_name: Sauvage
 person_id: 865
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>David Sauvage graduated from ESME Sudria (French engineering school) in 2004. He started as a software engineer at Thales, where he discovered Ada. Working on tactical data link product lines, he then became an agile software architect. In 2010, he formed AdaLabs Ltd (http://adalabs.com/), a company specialized in Ada based technologies and services, located in Mauritius, also empowering open source and sustainable development. David started using Debian GNU/Linux in 1999, and launched the GNU Go Ada Initiative (http://gnugoada.info/) in 2010.</p></p>
@@ -18,6 +22,7 @@ person_id: 865
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 865
             <td><a href="/schedule/event/ada_on_rails">Ada on Rails </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/ada">Ada</a></td>
             <td>17:00</td>
             <td>17:25</td>
     </tbody>

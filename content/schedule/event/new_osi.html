@@ -2,7 +2,10 @@
 title: A New OSI For A New Decade
 kind: event
 speakers:
-- simon_phipps
+  -
+    name: Simon Phipps
+    slug: simon_phipps
+    url: /schedule/speaker/simon_phipps
 slug: new_osi
 day: Sat
 start: 12:00
@@ -10,14 +13,33 @@ end: 12:00
 event_id: 526
 ---
 
-<p>Track: <a href="/schedule/track/keynotes">Keynotes</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/keynotes">Keynotes</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>The OSI (Open Source Initiative) is reorganizing its governance from a board-only organization into a member-based structure in 2012.</p>
+<p>The OSI (Open Source Initiative) is reorganizing its governance from a board-only organization into a member-based structure in 2012.</p>
 
-<p>Simon will give us a brief explanation of what that is, what it means, and how to join.</p></p>
+<p>Simon will give us a brief explanation of what that is, what it means, and how to join.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/simon_phipps">Simon Phipps</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

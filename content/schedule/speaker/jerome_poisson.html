@@ -7,6 +7,10 @@ first_name: Jérôme
 last_name: Poisson
 person_id: 880
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Developer and traveller, I have worked on many more or less small projects (Saitek P2500 kernel driver, lm, mkvconvert, gcp, etc), but "Salut à Toi" is definitely my most important project. Politically engaged, I'm mainly developing the "Salut à Toi" project to have a libre, decentralised and privacy-friendly way to communicate. I'm currently working at Substantiel in Paris, a society developing "Ordissimo", an easy to use computer based on Debian and EFL.</p></p>
@@ -18,6 +22,7 @@ person_id: 880
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 880
             <td><a href="/schedule/event/xmpp_salut">Social Networking: Salut à Toi, a multi-frontend, multi-purpose XMPP client</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></td>
             <td>18:00</td>
             <td>18:15</td>
     </tbody>

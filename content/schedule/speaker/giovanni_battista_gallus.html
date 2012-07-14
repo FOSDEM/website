@@ -7,6 +7,10 @@ first_name: Giovanni Battista
 last_name: Gallus
 person_id: 695
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Giovanni Battista Gallus is  an attorney with more than ten years of
@@ -23,6 +27,7 @@ substantial part of his practice to the legal implications of FLOSS and
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -32,6 +37,7 @@ substantial part of his practice to the legal implications of FLOSS and
             <td><a href="/schedule/event/app_store_panel">Panel on Application Stores</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
             <td>17:30</td>
             <td>18:00</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Martin
 last_name: Zobel-Helas
 person_id: 826
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Martin works for the 'Open Source Support Center' at credativ GmbH as Senior Consultant and Team Leader for Application Operation. In his spare time when not totally busy with his kids or wife, he helps Debian to take over world domination.</p>
@@ -20,6 +24,7 @@ person_id: 826
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ person_id: 826
             <td><a href="/schedule/event/distro_sysadmin">Distributions' infrastructure system administration (round table/Q&A)</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h1301">H.1301</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>13:00</td>
             <td>14:00</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Michael
 last_name: Mrozek
 person_id: 597
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Michael is 34 years old and comes from Ingolstadt in Germany. He has been supporting OpenSource gaming handhelds for years in Germany, making them easy to buy via his shop (GP2X Shop). He started to develop the Pandora gaming handhelds together with some other guys and a large community backing them. Now he is in charge of the production of the Pandora.</p></p>
@@ -18,6 +22,7 @@ person_id: 597
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 597
             <td><a href="/schedule/event/open_pandora">Pandora - a mobile Linux computer including gaming controls</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></td>
             <td>12:40</td>
             <td>13:25</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: Freedom, Out of the Box!
 kind: event
 speakers:
-- bdale_garbee
+  -
+    name: Bdale Garbee
+    slug: bdale_garbee
+    url: /schedule/speaker/bdale_garbee
 slug: freedom_ootb
 day: Sun
 start: 17:00
@@ -10,12 +13,31 @@ end: 17:00
 event_id: 380
 ---
 
-<p>Track: <a href="/schedule/track/keynotes">Keynotes</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/keynotes">Keynotes</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>17:50</dd>
+</dl>
 
-<p><p>FreedomBox is a personal server running a free software operating system and free applications, designed to create and preserve personal privacy by providing a secure platform upon which federated social networks can be constructed.  Eben Moglen articulated the need for FreedomBox in his 2011 FOSDEM keynote, this presentation is a status update on the work done to turn Eben's vision into reality over the past year.  Software for FreedomBox is being assembled by volunteer programmers around the world who believe in Free Software and Free Society, with Bdale coordinating development of a reference implementation on behalf of the non-profit FreedomBox Foundation.</p></p>
+<p>FreedomBox is a personal server running a free software operating system and free applications, designed to create and preserve personal privacy by providing a secure platform upon which federated social networks can be constructed.  Eben Moglen articulated the need for FreedomBox in his 2011 FOSDEM keynote, this presentation is a status update on the work done to turn Eben's vision into reality over the past year.  Software for FreedomBox is being assembled by volunteer programmers around the world who believe in Free Software and Free Society, with Bdale coordinating development of a reference implementation on behalf of the non-profit FreedomBox Foundation.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/bdale_garbee">Bdale Garbee</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

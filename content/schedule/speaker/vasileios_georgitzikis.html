@@ -7,6 +7,10 @@ first_name: Vasileios
 last_name: Georgitzikis
 person_id: 552
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I am a computer engineering student who happens to love open source. I happen to organize the local LUG (Patras  LUG) and I'm one of the organizational members of our local hackerspace, P-Space. I'm lucky enough to have an interesting job at the Computer Technology Institute (www.cti.gr), a research-academic institute where i work on distributed systems and wireless sensor networks using Arduino. Oh, I'm also a volunteer system administrator on my school. But I'm not sure that counts as something. After all, sysadmins are even worse than code monkeys :P</p>
@@ -22,6 +26,7 @@ person_id: 552
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,12 +36,14 @@ person_id: 552
             <td><a href="/schedule/event/growl">The Growl Project: Making users happy one notification at a time</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>18:00</td>
             <td>18:15</td>
         <tr>
             <td><a href="/schedule/event/phm_home_automation_made_right">PMH: Home Automation made right™</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/lameere">Lameere</a></td>
+            <td><a href="/schedule/track/embedded">Embedded</a></td>
             <td>15:00</td>
             <td>16:00</td>
     </tbody>

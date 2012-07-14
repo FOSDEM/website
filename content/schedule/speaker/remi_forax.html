@@ -7,6 +7,10 @@ first_name: Rémi
 last_name: Forax
 person_id: 231
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Assistant Professor at Universisty Paris East (Marne-La-Vallée), France,
@@ -20,6 +24,7 @@ member of OpenJDK.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ member of OpenJDK.</p></p>
             <td><a href="/schedule/event/java_lambda_for_hackers">Java Lambda for Hackers </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>12:30</td>
             <td>13:00</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: SIP beyond VoIP
 kind: event
 speakers:
-- saul_ibarra_corretge
+  -
+    name: Saúl Ibarra Corretgé
+    slug: saul_ibarra_corretge
+    url: /schedule/speaker/saul_ibarra_corretge
 slug: sip_beyond_voip
 day: Sun
 start: 15:35
@@ -10,17 +13,36 @@ end: 15:35
 event_id: 587
 ---
 
-<p>Track: <a href="/schedule/track/telephony_and_communications_devroom">Telephony and Communications Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:35</dd>
+    <dt>End:</dt>
+    <dd>16:15</dd>
+</dl>
 
-<p><p>SIP can be used for much more than 'plain phone calls', and this talk will demonstrate chat, file transfer, contact lists and more!</p></p>
-<p><p>PSTN emulation and audio calls are by far the most used applications for VoIP and SIP these days. As our communication needs grow we are in need for new means of communication, however. Why use the phone to do VoIP, email to send files and jabber to have a chat channel in the context is a single conversation? We can merge those 3 communication channels within the same call with SIP today.</p>
+<p>SIP can be used for much more than 'plain phone calls', and this talk will demonstrate chat, file transfer, contact lists and more!</p>
+<p>PSTN emulation and audio calls are by far the most used applications for VoIP and SIP these days. As our communication needs grow we are in need for new means of communication, however. Why use the phone to do VoIP, email to send files and jabber to have a chat channel in the context is a single conversation? We can merge those 3 communication channels within the same call with SIP today.</p>
 
 <p>In order to find the perfect moment for the conversation presence may be used and policies for presence together with our own contact list may be stored in a remote server and synced with all of our devices.</p>
 
-<p>All this can be done today, with SIP, in a standard way and with Open Source tools.</p></p>
+<p>All this can be done today, with SIP, in a standard way and with Open Source tools.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/saul_ibarra_corretge">Saúl Ibarra Corretgé</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

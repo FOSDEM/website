@@ -2,7 +2,10 @@
 title: Introduction to hardening, the Gentoo Hardened approach
 kind: event
 speakers:
-- francisco_blas_izquierdo_riera
+  -
+    name: Francisco Blas Izquierdo Riera
+    slug: francisco_blas_izquierdo_riera
+    url: /schedule/speaker/francisco_blas_izquierdo_riera
 slug: gentoo_hardened
 day: Sat
 start: 17:00
@@ -10,12 +13,31 @@ end: 17:00
 event_id: 835
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1302">H.1302</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>18:00</dd>
+</dl>
 
-<p><p>In this talk we will explain how some common attacks against vulnerable software work and will explain how the security measures used by the Gentoo Hardened project act against them along with the drawbacks they impose.</p></p>
+<p>In this talk we will explain how some common attacks against vulnerable software work and will explain how the security measures used by the Gentoo Hardened project act against them along with the drawbacks they impose.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/francisco_blas_izquierdo_riera">Francisco Blas Izquierdo Riera</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

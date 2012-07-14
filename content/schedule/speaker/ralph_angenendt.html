@@ -7,6 +7,10 @@ first_name: Ralph
 last_name: Angenendt
 person_id: 706
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Ralph Angenendt works as an Application Manager at Immobilienscout24.de in Berlin, Germany. In his spare time he is one of the people taking care of the CentOS infrastructure and also does mirror management there. RPM/YADT is the third management system he uses, after (or besides) cfengine and puppet.</p></p>
@@ -18,6 +22,7 @@ person_id: 706
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 706
             <td><a href="/schedule/event/cfgmgmtrpmyadt">Configuration management and deployment with RPM and YADT</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></td>
             <td>16:00</td>
             <td>16:45</td>
     </tbody>

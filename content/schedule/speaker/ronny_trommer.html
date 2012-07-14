@@ -7,6 +7,10 @@ first_name: Ronny
 last_name: Trommer
 person_id: 705
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Ronny Trommer is working since over 5 years in IT services and using OpenNMS since 2004. He is a contract lecturer in the University of Applied Sciences in Fulda, Germany for computer communication and distributed systems. He is lucky for the possibility to write a German OpenNMS book with his two friends Alexander Finger and Klaus Thielking-Riechert and is a member of the Order of the Green Polo since 2009. Since 2011 he is working at the University of Applied Sciences in Fulda and is a freelance developer and consultant around OpenNMS.</p></p>
@@ -18,6 +22,7 @@ person_id: 705
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 705
             <td><a href="/schedule/event/cfgmgmtpullsthestrings">Who Pulls the Strings?  Integrating OpenNMS with Modern Configuration Management</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></td>
             <td>15:00</td>
             <td>15:45</td>
     </tbody>

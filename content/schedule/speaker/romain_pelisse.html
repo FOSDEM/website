@@ -7,6 +7,10 @@ first_name: Romain
 last_name: Pelisse
 person_id: 468
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Middleware Consultant at Red Hat, Romain Pelisse has more than 6 years of experience in Open Source Java products, including, of course, most of the JBoss products. Project leader of XRadar, and now PMD, Romain has been very active in the code quality control communites of the Java world, working with most of the products of this domain. Not only focusing on the "Java side" of the universe, Romain has also a lot of experience on many other Free Software, especially in DVCS technologies (Mercurial, Git) and Linux system tools, such as Puppet.
@@ -19,6 +23,7 @@ On the side, Romain write articles for GNU Linux Magazine France, regularly and 
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ On the side, Romain write articles for GNU Linux Magazine France, regularly and 
             <td><a href="/schedule/event/pmd5">PMD5: What can it do for you ?</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>18:20</td>
             <td>18:35</td>
     </tbody>

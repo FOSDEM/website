@@ -2,7 +2,10 @@
 title: Infrastructure as an open-source project
 kind: event
 speakers:
-- ryan_lane
+  -
+    name: Ryan Lane
+    slug: ryan_lane
+    url: /schedule/speaker/ryan_lane
 slug: wikimedia_infra
 day: Sat
 start: 16:00
@@ -10,14 +13,33 @@ end: 16:00
 event_id: 567
 ---
 
-<p>Track: <a href="/schedule/track/virtualization_and_cloud_devroom">Virtualization and Cloud Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/chavanne">Chavanne</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:55</dd>
+</dl>
 
-<p><p>I've been moving the site operations model of the Wikimedia infrastructure from being a closed, mainly staff-only, model to an open to all model of contributions. I'm treating operations like an open source project, using Puppet, OpenStack and Git. The bottleneck of the operations team is greatly lessened, allowing volunteer contributions to be accepted and implemented much faster.</p>
+<p>I've been moving the site operations model of the Wikimedia infrastructure from being a closed, mainly staff-only, model to an open to all model of contributions. I'm treating operations like an open source project, using Puppet, OpenStack and Git. The bottleneck of the operations team is greatly lessened, allowing volunteer contributions to be accepted and implemented much faster.</p>
 
-<p>In this presentation, I'll describe the architecture of the Wikimedia Labs project, and how we are utilizing it to allow anyone to push changes from ideas to production. I'll also describe how this same model can apply to other open source projects, and also how it could apply more generally in private cloud implementations.</p></p>
+<p>In this presentation, I'll describe the architecture of the Wikimedia Labs project, and how we are utilizing it to allow anyone to push changes from ideas to production. I'll also describe how this same model can apply to other open source projects, and also how it could apply more generally in private cloud implementations.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/ryan_lane">Ryan Lane</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

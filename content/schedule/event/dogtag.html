@@ -2,7 +2,10 @@
 title: Overview and a demo of  Dogtag Certificate system
 kind: event
 speakers:
-- kashyap_chamarthy
+  -
+    name: Kashyap Chamarthy
+    slug: kashyap_chamarthy
+    url: /schedule/speaker/kashyap_chamarthy
 slug: dogtag
 day: Sat
 start: 13:00
@@ -10,12 +13,31 @@ end: 13:00
 event_id: 947
 ---
 
-<p>Track: <a href="/schedule/track/hardware_cryptography_devroom">Hardware Cryptography Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2214">H.2214</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:00</dd>
+    <dt>End:</dt>
+    <dd>13:45</dd>
+</dl>
 
-<p><p>An open source and open standards based PKI project. Overview of subsystems ((CA, OCSP, KRA[key-recovery-archival] )</p></p>
+<p>An open source and open standards based PKI project. Overview of subsystems ((CA, OCSP, KRA[key-recovery-archival] )</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/kashyap_chamarthy">Kashyap Chamarthy</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: Spoon, a minimal object programming system
 kind: event
 speakers:
-- craig_latta
+  -
+    name: Craig Latta
+    slug: craig_latta
+    url: /schedule/speaker/craig_latta
 slug: spoon
 day: Sun
 start: 13:30
@@ -10,19 +13,36 @@ end: 13:30
 event_id: 887
 ---
 
-<p>Track: <a href="/schedule/track/smalltalk_devroom">Smalltalk Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/smalltalk">Smalltalk</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1126">AW1.126</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:30</dd>
+    <dt>End:</dt>
+    <dd>14:00</dd>
+</dl>
 
-<p><pre><code>  Spoon? 
-</code></pre>
-
-<p>Spoon! It's a minimal object programming system derived from Squeak, with new approaches to organization, collaboration, and deployment.</p>
+<p>Spoon?
+Spoon! It's a minimal object programming system derived from Squeak, with new approaches to organization, collaboration, and deployment.</p>
 
 <p>Spoon is the system I want for writing and distributing software. Initially, it has only that needed for a new programmer to start and extend it easily. This includes a module system, with which any Spoon system may provide code and data to others. Each module is a live object, and coordinates the direct synchronization of providing and consuming systems.</p>
 
-<p>The very smallest object memory snapshot I've made is 1,337 bytes long. An interesting intermediate result of this work has been "session imprinting", the transfer of compiled methods directly from one system to another as a side-effect of running them, without needing to compile source code.</p></p>
+<p>The very smallest object memory snapshot I've made is 1,337 bytes long. An interesting intermediate result of this work has been "session imprinting", the transfer of compiled methods directly from one system to another as a side-effect of running them, without needing to compile source code.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/craig_latta">Craig Latta</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

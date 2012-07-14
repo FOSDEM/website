@@ -7,6 +7,10 @@ first_name: David
 last_name: Fetter
 person_id: 513
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>David Fetter is based in the San Francisco Bay Area and has worked in various commercial enterprises, non-profits and educational institutions. He has worked extensively with Oracle, PostgreSQL, MySQL, Perl, PHP, PL/SQL, PL/PgSQL, PL/Perl and (of course!) vim on transaction processing and business intelligence systems.</p>
@@ -20,6 +24,7 @@ person_id: 513
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,12 +34,14 @@ person_id: 513
             <td><a href="/schedule/event/postgresql_database_virtualization">Database Virtualization</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/postgresql">PostgreSQL</a></td>
             <td>18:00</td>
             <td>18:50</td>
         <tr>
             <td><a href="/schedule/event/threatmodeling">Threat Modeling Revolutionized!</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>10:20</td>
             <td>10:35</td>
     </tbody>

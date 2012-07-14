@@ -2,7 +2,10 @@
 title: Liberating ARM's Mali GPU.
 kind: event
 speakers:
-- luc_verhaegen
+  -
+    name: Luc Verhaegen
+    slug: luc_verhaegen
+    url: /schedule/speaker/luc_verhaegen
 slug: mali
 day: Sat
 start: 16:00
@@ -10,16 +13,35 @@ end: 16:00
 event_id: 940
 ---
 
-<p>Track: <a href="/schedule/track/xorg+openicc_devroom">X.org+OpenICC Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3401">K.3.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>While everything is pretty much said and done on the x86 graphics front, and all the players have taken their respective positions and stick by it (despite ones best efforts), nothing has been done for the ARM world, even with the massive market penetration the linux and ARM combination currently has.</p>
+<p>While everything is pretty much said and done on the x86 graphics front, and all the players have taken their respective positions and stick by it (despite ones best efforts), nothing has been done for the ARM world, even with the massive market penetration the linux and ARM combination currently has.</p>
 
 <p>The Mali is ARM's own GPU that is rapidly gaining traction. The most popular high end android smartphone so far is Samsung's Galaxy S2. The Mali-400 present in the Exynos SoC of the Galaxy S2 has been leader of the benchmarks for quite a bit. Besides the exynos, Mali is present in a rapidly growing number of SoCs, including telechips, allwinner, amlogic, realtek, VIA, ... The OpenGLES2.0 capable (and thus with separate vertex and fragment shaders) Mali is a highly clean design, and, of all the possible ARM GPUs, the perfect candidate for a free software driver.</p>
 
-<p>This talk will explain the rationale behind this project, the methodology used, the current status and the future direction. At the end, the current functionality (which is rapidly growing) will be demoed on both Mali-200 and Mali-400 based hardware. It will kick off a new era for free software graphics driver development.</p></p>
+<p>This talk will explain the rationale behind this project, the methodology used, the current status and the future direction. At the end, the current functionality (which is rapidly growing) will be demoed on both Mali-200 and Mali-400 based hardware. It will kick off a new era for free software graphics driver development.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/luc_verhaegen">Luc Verhaegen</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -7,9 +7,13 @@ first_name: Jannis
 last_name: Pohlmann
 person_id: 676
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
-<p><p> Jannis is one of the developers behind the Xfce desktop environment.
+<p><p>Jannis is one of the developers behind the Xfce desktop environment.
  Today, he is mainly responsible for maintaining and improving the
  Thunar file manager and the Tumbler thumbnailing service. Jannis
  recently graduated from University and has joined Codethink as a
@@ -24,6 +28,7 @@ person_id: 676
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -33,6 +38,7 @@ person_id: 676
             <td><a href="/schedule/event/tumbler">Tumbler - A Modern D-Bus Thumbnail Service</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1308">H.1308</a></td>
+            <td><a href="/schedule/track/crossdesktop">CrossDesktop</a></td>
             <td>15:40</td>
             <td>16:10</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: Perlito
 kind: event
 speakers:
-- flavio_glock
+  -
+    name: Flávio Glock
+    slug: flavio_glock
+    url: /schedule/speaker/flavio_glock
 slug: perlito
 day: Sun
 start: 11:05
@@ -10,12 +13,31 @@ end: 11:05
 event_id: 911
 ---
 
-<p>Track: <a href="/schedule/track/perl_devroom">Perl Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/perl">Perl</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:05</dd>
+    <dt>End:</dt>
+    <dd>11:45</dd>
+</dl>
 
-<p><p>MiniPerl6 ("perlito") is a subset of Perl 6, which was designed as a light bootstrapping language. MiniPerl6 is now self-hosted in Javascript, Lisp and in Perl 5.</p></p>
+<p>MiniPerl6 ("perlito") is a subset of Perl 6, which was designed as a light bootstrapping language. MiniPerl6 is now self-hosted in Javascript, Lisp and in Perl 5.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/flavio_glock">Flávio Glock</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

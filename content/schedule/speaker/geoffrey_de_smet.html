@@ -7,6 +7,10 @@ first_name: Geoffrey
 last_name: De Smet
 person_id: 598
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Geoffrey De Smet is the Drools Planner lead and works for Red Hat. He started programming Java applets in 2000 and graduated in 2003. He’s contributed to many open source projects (such as spring-richclient and maven plugins). In 2006, he founded Drools Planner and it’s his passion ever since. He joined Red Hat in 2010.</p></p>
@@ -18,6 +22,7 @@ person_id: 598
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,12 +32,14 @@ person_id: 598
             <td><a href="/schedule/event/drools_planner_planning_optimization_by_example">Drools Planner: Planning optimization by example</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/jbossorg">JBoss.org</a></td>
             <td>12:00</td>
             <td>12:55</td>
         <tr>
             <td><a href="/schedule/event/managing_workflows_and_business_rules_with_guvnor_and_the_jbpm_designer">Guvnor/jBPM: Managing workflows and business rules with Guvnor and the jBPM designer</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/jbossorg">JBoss.org</a></td>
             <td>18:00</td>
             <td>18:55</td>
     </tbody>

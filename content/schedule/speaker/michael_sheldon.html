@@ -7,6 +7,10 @@ first_name: Michael
 last_name: Sheldon
 person_id: 510
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Core developer for GNU FM (Libre.fm), the Jokosher audio editor and the PSchema developmental learning framework. Currently completing a PhD in developmental robotics at Aberystwyth University.</p></p>
@@ -18,6 +22,7 @@ person_id: 510
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 510
             <td><a href="/schedule/event/librefm">Libre.fm and GNU FM - Supporting free culture artists with free software</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>14:20</td>
             <td>14:35</td>
     </tbody>

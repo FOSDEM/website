@@ -7,6 +7,10 @@ first_name: Branko
 last_name: Majic
 person_id: 869
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Branko is a system integration engineer/system administrator, Free Software enthusiast and supporter. He has been dealing with deployment of various Free Software solutions (integrating them often with proprietary solutions), and for the past two years he has dealt a lot with security-related technologies (mainly X.509, some Kerberos, and integration/installation of different solutions with those).</p></p>
@@ -18,6 +22,7 @@ person_id: 869
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 869
             <td><a href="/schedule/event/x509_deployment">Deployment and Use of X.509 in Free Software Components</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2214">H.2214</a></td>
+            <td><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></td>
             <td>14:00</td>
             <td>15:00</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Deb
 last_name: Nicholson
 person_id: 698
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Deb Nicholson works at the intersection of technology and social justice.
@@ -27,6 +31,7 @@ software movement. She lives in Cambridge, Massachusetts.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -36,6 +41,7 @@ software movement. She lives in Cambridge, Massachusetts.</p></p>
             <td><a href="/schedule/event/software_patent_panel">Panel on Software Patents</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
             <td>18:00</td>
             <td>18:30</td>
     </tbody>

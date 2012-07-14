@@ -2,7 +2,10 @@
 title: FOSS in Broadcast
 kind: event
 speakers:
-- kieran_kunhya
+  -
+    name: Kieran Kunhya
+    slug: kieran_kunhya
+    url: /schedule/speaker/kieran_kunhya
 slug: obe
 day: Sat
 start: 15:20
@@ -10,13 +13,32 @@ end: 15:20
 event_id: 484
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:20</dd>
+    <dt>End:</dt>
+    <dd>15:35</dd>
+</dl>
 
-<p><p>Broadcast has generally been the realm of expensive hardware and software and in the main quite objectionable to the use of FOSS. This presentation will talk about the challenges with developing and deploying FOSS in the broadcast environment, using the Open Broadcast Encoder as the main example.</p></p>
-<p><p>This presentation will go into the technical, social and legal challenges of using FOSS in broadcasting; an industry viewed as highly sceptical of using FOSS directly. Nonetheless, the industry has passionate and dedicated individuals developing and slowly deploying FOSS. This presentation will use the development and deployment of the Open Broadcast Encoder, a FOSS application intended to replace expensive hardware encoders with commodity software as an example of FOSS can be incorporated into an industry not used to it.</p></p>
+<p>Broadcast has generally been the realm of expensive hardware and software and in the main quite objectionable to the use of FOSS. This presentation will talk about the challenges with developing and deploying FOSS in the broadcast environment, using the Open Broadcast Encoder as the main example.</p>
+<p>This presentation will go into the technical, social and legal challenges of using FOSS in broadcasting; an industry viewed as highly sceptical of using FOSS directly. Nonetheless, the industry has passionate and dedicated individuals developing and slowly deploying FOSS. This presentation will use the development and deployment of the Open Broadcast Encoder, a FOSS application intended to replace expensive hardware encoders with commodity software as an example of FOSS can be incorporated into an industry not used to it.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/kieran_kunhya">Kieran Kunhya</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

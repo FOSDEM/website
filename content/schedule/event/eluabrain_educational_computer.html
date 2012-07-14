@@ -2,8 +2,14 @@
 title: ! 'eLuaBrain: a 32-bit MCU based educational computer'
 kind: event
 speakers:
-- raman_gopalan
-- bogdan_marinescu
+  -
+    name: Raman Gopalan
+    slug: raman_gopalan
+    url: /schedule/speaker/raman_gopalan
+  -
+    name: Bogdan Marinescu
+    slug: bogdan_marinescu
+    url: /schedule/speaker/bogdan_marinescu
 slug: eluabrain_educational_computer
 day: Sun
 start: 10:00
@@ -11,9 +17,20 @@ end: 10:00
 event_id: 763
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:00</dd>
+    <dt>End:</dt>
+    <dd>11:00</dd>
+</dl>
 
-<p><p>eLuaBrain is an experiment in educational computers with a number of
+<p>eLuaBrain is an experiment in educational computers with a number of
 unique features. It is a low cost, completely autonomous computer
 designed to work with low cost peripherals (PS/2 keyboard on input and
 a standard VGA monitor on output). Its main goal is to offer another
@@ -53,11 +70,18 @@ course) games.</p>
 we'll take a deeper look at the implementation of eLuaBrain at both
 hardware and software level and its future directions of development.
 If time allows and the right hardware is in place, a live demo of the
-platform will also be provided.</p></p>
+platform will also be provided.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/raman_gopalan">Raman Gopalan</a></li>
-    <li><a href="/schedule/speaker/bogdan_marinescu">Bogdan Marinescu</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

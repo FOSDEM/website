@@ -2,7 +2,10 @@
 title: Open Source Infrastructure - Running the Jenkins project with Puppet
 kind: event
 speakers:
-- r_tyler_croy
+  -
+    name: R Tyler Croy
+    slug: r_tyler_croy
+    url: /schedule/speaker/r_tyler_croy
 slug: cfgmgmtjenkins
 day: Sun
 start: 13:00
@@ -10,10 +13,21 @@ end: 13:00
 event_id: 649
 ---
 
-<p>Track: <a href="/schedule/track/configuration_and_systems_management_devroom">Configuration and Systems Management Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3601">K.3.601</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:00</dd>
+    <dt>End:</dt>
+    <dd>13:45</dd>
+</dl>
 
-<p><p>How the Jenkins project had to grow infrastructure overnight, and how a costly mistake doing things the wrong way forced us to migrate to managing our infrastructure with Puppet.</p></p>
-<p><p> In early 2011 the Jenkins project became the Jenkins project, leaving
+<p>How the Jenkins project had to grow infrastructure overnight, and how a costly mistake doing things the wrong way forced us to migrate to managing our infrastructure with Puppet.</p>
+<p>In early 2011 the Jenkins project became the Jenkins project, leaving
 behind an organically grown but Oracle (formerly Sun) operated infrastructure.
 An open source project with thousands of users had to grow an infrastructure
 practically overnight, initially doing things "the wrong way" by hand crafting
@@ -27,10 +41,18 @@ transparent and welcoming tradition the project prides itself on.</p>
 
 <p>In this talk I will discuss the ups and downs of switching an established
 infrastructure to Puppet, all within the public eye and with volunteer time and
-energy.</p></p>
+energy.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/r_tyler_croy">R Tyler Croy</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

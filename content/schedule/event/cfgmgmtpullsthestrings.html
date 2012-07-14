@@ -2,9 +2,18 @@
 title: Who Pulls the Strings?  Integrating OpenNMS with Modern Configuration Management
 kind: event
 speakers:
-- jeffrey_gehlbach
-- ronny_trommer
-- jason_aras
+  -
+    name: Jeffrey Gehlbach
+    slug: jeffrey_gehlbach
+    url: /schedule/speaker/jeffrey_gehlbach
+  -
+    name: Ronny Trommer
+    slug: ronny_trommer
+    url: /schedule/speaker/ronny_trommer
+  -
+    name: Jason Aras
+    slug: jason_aras
+    url: /schedule/speaker/jason_aras
 slug: cfgmgmtpullsthestrings
 day: Sun
 start: 15:00
@@ -12,10 +21,21 @@ end: 15:00
 event_id: 651
 ---
 
-<p>Track: <a href="/schedule/track/configuration_and_systems_management_devroom">Configuration and Systems Management Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3601">K.3.601</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:45</dd>
+</dl>
 
-<p><p>This talk considers the two most common user stories for OpenNMS integration with modern, conventions-centric configuration management platforms.</p></p>
-<p><p>As organizations of all sizes provision and run servers at larger
+<p>This talk considers the two most common user stories for OpenNMS integration with modern, conventions-centric configuration management platforms.</p>
+<p>As organizations of all sizes provision and run servers at larger
 scale and in ever more agile ways, the platforms used to monitor and
 manage those servers' performance often become a liability.  The
 best-known free software tools in this space tend to make compromises
@@ -50,12 +70,18 @@ show how you can create a Puppet URL handler and a Puppet provisioning
 adapter. With this adapter it is possible to pull node information
 from a Puppet master into OpenNMS. If you want to have Puppet as your
 master database for nodes, we will give examples how is it possible to
-use the OpenNMS ReST API to push nodes from a Puppet master into OpenNMS.</p></p>
+use the OpenNMS ReST API to push nodes from a Puppet master into OpenNMS.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jeffrey_gehlbach">Jeffrey Gehlbach</a></li>
-    <li><a href="/schedule/speaker/ronny_trommer">Ronny Trommer</a></li>
-    <li><a href="/schedule/speaker/jason_aras">Jason Aras</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

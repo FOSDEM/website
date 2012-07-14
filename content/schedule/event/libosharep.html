@@ -2,8 +2,14 @@
 title: LibreOffice extension for Sharepoint
 kind: event
 speakers:
-- miklos_vajna
-- cedric_bosdonnat
+  -
+    name: Miklos Vajna
+    slug: miklos_vajna
+    url: /schedule/speaker/miklos_vajna
+  -
+    name: Cedric Bosdonnat
+    slug: cedric_bosdonnat
+    url: /schedule/speaker/cedric_bosdonnat
 slug: libosharep
 day: Sat
 start: 18:00
@@ -11,15 +17,33 @@ end: 18:00
 event_id: 753
 ---
 
-<p>Track: <a href="/schedule/track/libreoffice_devroom">LibreOffice Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/libreoffice">LibreOffice</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:00</dd>
+    <dt>End:</dt>
+    <dd>18:15</dd>
+</dl>
 
-<p><p>LPSP stands for LibreOffice extension providing connection to SharePoint. This Java extension is a great solution for users needing SharePoint support right now and/or don't consider upgrading (yet) to newer SharePoint versions supporting CMIS.</p>
+<p>LPSP stands for LibreOffice extension providing connection to SharePoint. This Java extension is a great solution for users needing SharePoint support right now and/or don't consider upgrading (yet) to newer SharePoint versions supporting CMIS.</p>
 
-<p>We'll also take a short time to explain about the CMIS connection and why it is a cool thing to hack on.</p></p>
+<p>We'll also take a short time to explain about the CMIS connection and why it is a cool thing to hack on.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/miklos_vajna">Miklos Vajna</a></li>
-    <li><a href="/schedule/speaker/cedric_bosdonnat">Cedric Bosdonnat</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

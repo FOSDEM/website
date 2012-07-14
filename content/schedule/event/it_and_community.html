@@ -2,7 +2,10 @@
 title: IT and Community
 kind: event
 speakers:
-- arzhel_younsi
+  -
+    name: Arzhel Younsi
+    slug: arzhel_younsi
+    url: /schedule/speaker/arzhel_younsi
 slug: it_and_community
 day: Sat
 start: 14:30
@@ -10,14 +13,33 @@ end: 14:30
 event_id: 766
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:30</dd>
+    <dt>End:</dt>
+    <dd>15:00</dd>
+</dl>
 
-<p><p>Mozilla IT has been managed for a too long time by paid-staff only. We are now moving toward opening it to the community, be as open as possible.</p>
+<p>Mozilla IT has been managed for a too long time by paid-staff only. We are now moving toward opening it to the community, be as open as possible.</p>
 
-<p>This talk will be about how we're doing it, but it is also an opportunity to gather feedback and exchange with the OSS projects that have always been working that way.</p></p>
+<p>This talk will be about how we're doing it, but it is also an opportunity to gather feedback and exchange with the OSS projects that have always been working that way.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/arzhel_younsi">Arzhel Younsi</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

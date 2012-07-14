@@ -7,6 +7,10 @@ first_name: Eric
 last_name: Anholt
 person_id: 895
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Eric Anholt has been working at Intel on Linux graphics drivers since 2006, developing native modesetting on Intel hardware, the GEM graphics memory management system, and in recent years pushing the Mesa OpenGL implementation forward.</p></p>
@@ -18,6 +22,7 @@ person_id: 895
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 895
             <td><a href="/schedule/event/intel_userspace">intel userspace</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>11:00</td>
             <td>12:00</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: Caching and Tuning fun for high scalability
 kind: event
 speakers:
-- wim_godden
+  -
+    name: Wim Godden
+    slug: wim_godden
+    url: /schedule/speaker/wim_godden
 slug: cache_tune_fun
 day: Sun
 start: 11:00
@@ -10,12 +13,31 @@ end: 11:00
 event_id: 370
 ---
 
-<p>Track: <a href="/schedule/track/system_track">System Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/system">System</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:50</dd>
+</dl>
 
-<p><p>Caching has been a 'hot' topic for a few years. But caching takes more than merely taking data and putting it in a cache : the right caching techniques can improve performance and reduce load significantly. But we'll also look at some major pitfalls, showing that caching the wrong way can bring down your site. If you're looking for a clear explanation about various caching techniques and tools like Memcached, Nginx and Varnish, as well as ways to deploy them in an efficient way, this talk is for you. In this talk, we'll start from a Zend Framework (PHP) based site. We'll add caching, begin to add servers and replace the standard LAMP stack, all while performing live benchmarks.</p></p>
+<p>Caching has been a 'hot' topic for a few years. But caching takes more than merely taking data and putting it in a cache : the right caching techniques can improve performance and reduce load significantly. But we'll also look at some major pitfalls, showing that caching the wrong way can bring down your site. If you're looking for a clear explanation about various caching techniques and tools like Memcached, Nginx and Varnish, as well as ways to deploy them in an efficient way, this talk is for you. In this talk, we'll start from a Zend Framework (PHP) based site. We'll add caching, begin to add servers and replace the standard LAMP stack, all while performing live benchmarks.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/wim_godden">Wim Godden</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

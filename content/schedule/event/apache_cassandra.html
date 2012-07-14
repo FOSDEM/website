@@ -2,7 +2,10 @@
 title: Dealing with JVM limitations in Apache Cassandra 
 kind: event
 speakers:
-- jonathan_ellis
+  -
+    name: Jonathan Ellis
+    slug: jonathan_ellis
+    url: /schedule/speaker/jonathan_ellis
 slug: apache_cassandra
 day: Sun
 start: 10:00
@@ -10,9 +13,20 @@ end: 10:00
 event_id: 708
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:00</dd>
+    <dt>End:</dt>
+    <dd>10:30</dd>
+</dl>
 
-<p><p>The Cassandra distributed database runs on the JVM, which in many ways
+<p>The Cassandra distributed database runs on the JVM, which in many ways
 is a huge productivity boost. However, the more you care about
 performance, the less you can afford to let abstractions like i/o and
 memory management exist as black boxes.</p>
@@ -25,10 +39,18 @@ management to avoid pain points in common garbage collection designs,
 including in OpenJDK. Third, how Cassandra uses the JDK's
 instrumentation hooks to measure the real size of on-heap structures
 and make better decisions about what to keep in memory without
-error-prone manual adjustments.</p></p>
+error-prone manual adjustments.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jonathan_ellis">Jonathan Ellis</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

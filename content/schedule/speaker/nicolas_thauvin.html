@@ -7,6 +7,10 @@ first_name: Nicolas
 last_name: Thauvin
 person_id: 716
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Nicolas Thauvin</p></p>
@@ -18,6 +22,7 @@ person_id: 716
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,12 +32,14 @@ person_id: 716
             <td><a href="/schedule/event/postgresql_managing_rights_in_postgresql_from_the_basics_to_se_postgresql">Managing rights in PostgreSQL: from the basics to SE-PostgreSQL</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/postgresql">PostgreSQL</a></td>
             <td>16:00</td>
             <td>16:50</td>
         <tr>
             <td><a href="/schedule/event/automated_pkg_building">Automated package building</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/bsd">BSD</a></td>
             <td>16:00</td>
             <td>16:30</td>
     </tbody>

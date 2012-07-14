@@ -7,6 +7,10 @@ first_name: Marcus
 last_name: Paradies 
 person_id: 761
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Marcus Paradies is a first-year Ph.D. student at the Database Technology Group at the Technische Universität Dresden. His advisor is Wolfgang Lehner. Before coming to Dresden, Marcus Paradies completed his diploma degree at the Ilmenau University of Technology. Marcus' thesis involved distributed entity matching on semistructured data sources co-advised by Susan Malaika, IBM Software Group and Jerome Simeon, IBM T.J. Watson Research. Hi current research focus is on graph processing and graph data management.</p></p>
@@ -18,6 +22,7 @@ person_id: 761
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 761
             <td><a href="/schedule/event/graph_database_benchmark">Challenges in the Design of a Graph Database Benchmark </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
             <td>16:00</td>
             <td>16:40</td>
     </tbody>

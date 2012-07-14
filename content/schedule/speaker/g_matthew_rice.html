@@ -7,6 +7,10 @@ first_name: G. Matthew
 last_name: Rice
 person_id: 909
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>G. Matthew Rice is an engineering graduate of University of Toronto's Engineering Science programme. After university, he dove right into software development in Fortran, C, Tcl and Perl. Also, an accomplished Linux sysadmin, his expertise has increasingly become invaluable to the Linux Professional Institute (http://www.lpi.org) where he acts as the
@@ -19,6 +23,7 @@ Director of Product Development.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ Director of Product Development.</p></p>
             <td><a href="/schedule/event/lpi_workshop">LPI Item Writing Workshop</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ua2114">UA2.114</a></td>
+            <td><a href="/schedule/track/certification">Certification</a></td>
             <td>11:00</td>
             <td>17:00</td>
     </tbody>

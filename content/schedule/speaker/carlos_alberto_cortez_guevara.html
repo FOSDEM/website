@@ -7,6 +7,10 @@ first_name: Carlos Alberto
 last_name: Cortez Guevara
 person_id: 768
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Part of the Mono team at Novell from 2005 to 2011. Worked mostly on the System.Windows.Forms implementation, as well as the Base Class Library.</p></p>
@@ -18,6 +22,7 @@ person_id: 768
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 768
             <td><a href="/schedule/event/mono_ironpython">IronPython: Bringing the dynamic world to the CLR</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/mono">Mono</a></td>
             <td>15:40</td>
             <td>16:25</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Rudi
 last_name: van Drunen
 person_id: 733
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Rudi van Drunen is CTO of Competa IT, an enterprise IT company and, because of his
@@ -25,6 +29,7 @@ traveling and photography.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -34,6 +39,7 @@ traveling and photography.</p></p>
             <td><a href="/schedule/event/nanobsd">NanoBSD and the art of Timekeeping with appliances.</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/lameere">Lameere</a></td>
+            <td><a href="/schedule/track/embedded">Embedded</a></td>
             <td>11:00</td>
             <td>12:00</td>
     </tbody>

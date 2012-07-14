@@ -7,6 +7,10 @@ first_name: Carsten
 last_name: Haitzler
 person_id: 409
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Some may better know me as Raster or Rasterman. I've been using Linux as my only operating system since 1996. I've been developing applications for Linux since then, and before that I also wrote some software for Solaris.
@@ -22,6 +26,7 @@ I've contributed to GTK+ and GNOME, and am the founder/lead for Enlightenment. I
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ I've contributed to GTK+ and GNOME, and am the founder/lead for Enlightenment. I
             <td><a href="/schedule/event/efl">EFL, the toolkit for up and coming Linux mobile devices</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k1105">K.1.105</a></td>
+            <td><a href="/schedule/track/future_of_ui">Future of UI</a></td>
             <td>15:00</td>
             <td>15:50</td>
     </tbody>

@@ -2,8 +2,14 @@
 title: Getting into GNOME - Impressions of a new maintainer
 kind: event
 speakers:
-- ekaterina_gerasimova
-- david_king
+  -
+    name: Ekaterina Gerasimova
+    slug: ekaterina_gerasimova
+    url: /schedule/speaker/ekaterina_gerasimova
+  -
+    name: David King
+    slug: david_king
+    url: /schedule/speaker/david_king
 slug: getting_into_gnome
 day: Sun
 start: 15:45
@@ -11,9 +17,20 @@ end: 15:45
 event_id: 727
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:45</dd>
+    <dt>End:</dt>
+    <dd>16:15</dd>
+</dl>
 
-<p><ul>
+<ul>
 <li>Where to start as a novice</li>
 <li>Mentoring programmes (Google Summer of Code and Code-In, Outreach Program for Women, GNOME Love) for those who want to commit to a longer-term involvement</li>
 <li>Guest appearance by Ekaterina Gerasimova to talk about the Outreach Program for Women, and her experience as both an intern and mentor in the GNOME Documentation Project</li>
@@ -22,11 +39,18 @@ event_id: 727
 <li>Examples of the above topics , with specific references to the Vinagre, Vino and Cheese projects, which I maintain</li>
 <li>Alternative ways to contribute to GNOME, such as translation or volunteering to help organise GNOME events</li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/ekaterina_gerasimova">Ekaterina Gerasimova</a></li>
-    <li><a href="/schedule/speaker/david_king">David King</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

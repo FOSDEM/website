@@ -2,7 +2,10 @@
 title: X Server 1.12 and beyond.
 kind: event
 speakers:
-- keith_packard
+  -
+    name: Keith Packard
+    slug: keith_packard
+    url: /schedule/speaker/keith_packard
 slug: xserver
 day: Sat
 start: 17:00
@@ -10,12 +13,31 @@ end: 17:00
 event_id: 933
 ---
 
-<p>Track: <a href="/schedule/track/xorg+openicc_devroom">X.org+OpenICC Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3401">K.3.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>18:00</dd>
+</dl>
 
-<p><p>Version 1.12 of the X server is scheduled to be released in early March, shortly after FOSDEM occurs. The talk will cover what has changed since 1.11, including multi-touch support, and a raft of code cleanups to try and bring the server out of the last century.  Beyond 1.12, this presentation will outline further work planned for the Linux desktop. How X and Wayland will work together, the work remaining to support OpenGL 3.0 and beyond within the X environment and further plans to streamline and modernize the code base.</p></p>
+<p>Version 1.12 of the X server is scheduled to be released in early March, shortly after FOSDEM occurs. The talk will cover what has changed since 1.11, including multi-touch support, and a raft of code cleanups to try and bring the server out of the last century.  Beyond 1.12, this presentation will outline further work planned for the Linux desktop. How X and Wayland will work together, the work remaining to support OpenGL 3.0 and beyond within the X environment and further plans to streamline and modernize the code base.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/keith_packard">Keith Packard</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

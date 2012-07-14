@@ -60,15 +60,13 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     # obviously, we haven't created/updated any files yet
     $cache_tree_after = []
 
-    def yc(file, v)
+    def yf(file, content)
       time_before = Time.now
       require 'pathname'
       fqf = File.join($cache, file)
       b = Pathname.new(fqf).dirname.to_s
       # don't bother about directories in $cache_tree_after
       FileUtils.mkdir_p(b) unless File.exists? b
-
-      content = v.attributes.to_yaml
 
       action = if File.exists?(fqf)
                  new_digest = sha(content)
@@ -93,6 +91,10 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       Nanoc::CLI::Logger.instance.file(action == :identical ? :low : :high, action, fqf, Time.now - time_before)
     end
 
+    def yc(file, v)
+      yf(file, v.attributes.to_yaml)
+    end
+
     puts "Rendering cache to #{$cache}..."
     {
       :Room             => [ 'conference_room',     'rooms',    :conference_room_id,    :cid,       ],
@@ -103,6 +105,7 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       :Person           => 'person',
       :EventPerson      => 'event_person',
       :ConferencePerson => 'conference_person',
+      :PersonImage      => 'person_image',
     }.each do |klass, info|
       if info.is_a? Array and info.size > 1 then
         table = info[0]
@@ -202,6 +205,23 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
         raise "event #{e.event_id} references a person #{ep.person_id} which doesn't exist" unless person
         # and export it
         yc(File.join('persons', person.person_id.to_s), person)
+
+        # as well as that person's photo, if available
+        PentaDB::PersonImage.where(:public => true, :person_id => person.person_id).find(:all).each do |i|
+          extension = case i.mime_type
+                      when 'image/png'
+                        'png'
+                      when 'image/gif'
+                        'gif'
+                      when 'image/jpeg'
+                        'jpg'
+                      else
+                        raise "unsupported image MIME type \"#{i.mime_type}\" for person #{person.person_id}"
+                      end
+          filename = File.join('person_images', "#{person.person_id.to_s}.#{extension}")
+          content = i.image
+          yf(filename, content) unless content.size < 1
+        end
 
         # as well as the conference_person, if available
         conference_person = conference_persons_by_person_id[person.person_id]

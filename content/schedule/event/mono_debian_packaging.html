@@ -2,7 +2,10 @@
 title: Enough Debian packaging knowledge to hurt yourselves slightly less than you do already
 kind: event
 speakers:
-- jo_shields
+  -
+    name: Jo Shields
+    slug: jo_shields
+    url: /schedule/speaker/jo_shields
 slug: mono_debian_packaging
 day: Sat
 start: 11:00
@@ -10,12 +13,31 @@ end: 11:00
 event_id: 735
 ---
 
-<p>Track: <a href="/schedule/track/mono_devroom">Mono Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mono">Mono</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3601">K.3.601</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:45</dd>
+</dl>
 
-<p><p>There are millions of users running a Debian-based Linux distribution. Increase distribution of your hottest Mono apps by making them available in .deb format. Learn the basics, caveats, gotchas, and fastest shortcuts involved in making distribution-integrated packages for Debian and Ubuntu</p></p>
+<p>There are millions of users running a Debian-based Linux distribution. Increase distribution of your hottest Mono apps by making them available in .deb format. Learn the basics, caveats, gotchas, and fastest shortcuts involved in making distribution-integrated packages for Debian and Ubuntu</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jo_shields">Jo Shields</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

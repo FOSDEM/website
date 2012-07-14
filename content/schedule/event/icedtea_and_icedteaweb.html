@@ -2,7 +2,10 @@
 title: IcedTea and IcedTea-Web
 kind: event
 speakers:
-- deepak_bhole
+  -
+    name: Deepak Bhole
+    slug: deepak_bhole
+    url: /schedule/speaker/deepak_bhole
 slug: icedtea_and_icedteaweb
 day: Sun
 start: 15:30
@@ -10,9 +13,20 @@ end: 15:30
 event_id: 715
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:30</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>If you are using the default Java/Java plug-in on a major Linux distribution,
+<p>If you are using the default Java/Java plug-in on a major Linux distribution,
 chances are, you are using IcedTea and IcedTea-Web. This talk will focus on
 those projects. It will cover what IcedTea and IcedTea-Web are, the many
 improvements have gone in over the past year, and where the two projects are
@@ -25,10 +39,18 @@ headed over the next year.</p>
 * Don't care about Java and want to fall asleep? Come to this talk!</p>
 
 <p>Well maybe not the last one, but you will leave satisfied about #s 1, 2
-and 3 :)</p></p>
+and 3 :)</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/deepak_bhole">Deepak Bhole</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

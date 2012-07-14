@@ -2,7 +2,10 @@
 title: ! 'Hacking in the real world: photography from above'
 kind: event
 speakers:
-- guillaume_emont
+  -
+    name: Guillaume Emont
+    slug: guillaume_emont
+    url: /schedule/speaker/guillaume_emont
 slug: balloonfreaks
 day: Sat
 start: 13:40
@@ -10,20 +13,39 @@ end: 13:40
 event_id: 488
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:40</dd>
+    <dt>End:</dt>
+    <dd>13:55</dd>
+</dl>
 
-<p><p>This talk is about taking pictures from above with a big latex balloon, helium,
+<p>This talk is about taking pictures from above with a big latex balloon, helium,
 strings, duct tape and CHDK, and making a nice video with the pictures using
-python, GStreamer and OpenCV.</p></p>
-<p><p>Some friends of mine and I got pretty busy last year on a crazy balloon
+python, GStreamer and OpenCV.</p>
+<p>Some friends of mine and I got pretty busy last year on a crazy balloon
 photography project. I want to share that experience, say what worked (helium,
 CHDK, GStreamer)  and what didn't (crazy kite-balloon ideas, arduino
 connectivity, and some other things, all due to a lack of time). Hopefully,
 that would motivate hackers to get out of their basement and go do cool things
-under the Sun.</p></p>
+under the Sun.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/guillaume_emont">Guillaume Emont</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

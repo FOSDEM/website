@@ -2,13 +2,34 @@
 title: Working with contributor communities (round table)
 kind: event
 speakers:
-- petteri_raty
-- oliver_burger
-- kostas_koudaras
-- christoph_wickert
-- stefano_zacchiroli
-- donnie_berkholz
-- laura_czajkowski
+  -
+    name: Petteri Räty
+    slug: petteri_raty
+    url: /schedule/speaker/petteri_raty
+  -
+    name: Oliver Burger
+    slug: oliver_burger
+    url: /schedule/speaker/oliver_burger
+  -
+    name: Kostas Koudaras
+    slug: kostas_koudaras
+    url: /schedule/speaker/kostas_koudaras
+  -
+    name: Christoph Wickert
+    slug: christoph_wickert
+    url: /schedule/speaker/christoph_wickert
+  -
+    name: Stefano Zacchiroli
+    slug: stefano_zacchiroli
+    url: /schedule/speaker/stefano_zacchiroli
+  -
+    name: Donnie Berkholz
+    slug: donnie_berkholz
+    url: /schedule/speaker/donnie_berkholz
+  -
+    name: Laura Czajkowski
+    slug: laura_czajkowski
+    url: /schedule/speaker/laura_czajkowski
 slug: contributor_communities
 day: Sun
 start: 11:30
@@ -16,23 +37,36 @@ end: 11:30
 event_id: 824
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1301">H.1301</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:30</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>Several distribution projects have existing initiatives and programs in order to coordinate and/or fund local communities as well as shipping or producing promotional material, going to events to promote the project, etc...
+<p>Several distribution projects have existing initiatives and programs in order to coordinate and/or fund local communities as well as shipping or producing promotional material, going to events to promote the project, etc...
 Some projects are currently looking into setting up something like this, and others are rethinking their current model.
 Those programs all have their differences, but achieve pretty similar goals.</p>
 
 <p>In this session, we will bring together a bunch of people from different projects who are in charge or actively participating in such initiatives, in order to briefly present what they are currently doing in their project and, more importantly, share experience about what has worked well and what hasn't in an open discussion session.
-Let's learn from each others' ideas and mistakes.</p></p>
+Let's learn from each others' ideas and mistakes.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/petteri_raty">Petteri Räty</a></li>
-    <li><a href="/schedule/speaker/oliver_burger">Oliver Burger</a></li>
-    <li><a href="/schedule/speaker/kostas_koudaras">Kostas Koudaras</a></li>
-    <li><a href="/schedule/speaker/christoph_wickert">Christoph Wickert</a></li>
-    <li><a href="/schedule/speaker/stefano_zacchiroli">Stefano Zacchiroli</a></li>
-    <li><a href="/schedule/speaker/donnie_berkholz">Donnie Berkholz</a></li>
-    <li><a href="/schedule/speaker/laura_czajkowski">Laura Czajkowski</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

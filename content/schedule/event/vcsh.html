@@ -2,7 +2,10 @@
 title: vcsh - manage config files in $HOME via fake bare git repositories
 kind: event
 speakers:
-- richard_hartmann
+  -
+    name: Richard Hartmann
+    slug: richard_hartmann
+    url: /schedule/speaker/richard_hartmann
 slug: vcsh
 day: Sat
 start: 15:40
@@ -10,10 +13,21 @@ end: 15:40
 event_id: 503
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:40</dd>
+    <dt>End:</dt>
+    <dd>15:55</dd>
+</dl>
 
-<p><p>So you have your system set up to work perfectly. But moving to new machines, adding or changing configs etc is hard and takes way too much time. Thus, you hacked up a common CVS/SVN/Git/whatever repository and soft-link into $HOME. There is a better way and it's called vcsh.</p></p>
-<p><p>I will demonstrate, in order:</p>
+<p>So you have your system set up to work perfectly. But moving to new machines, adding or changing configs etc is hard and takes way too much time. Thus, you hacked up a common CVS/SVN/Git/whatever repository and soft-link into $HOME. There is a better way and it's called vcsh.</p>
+<p>I will demonstrate, in order:</p>
 
 <ul>
 <li>the need for config management</li>
@@ -22,10 +36,18 @@ event_id: 503
 <li>show a demo</li>
 <li>take questions if I have time</li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/richard_hartmann">Richard Hartmann</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

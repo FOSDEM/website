@@ -2,7 +2,10 @@
 title: Widget Layout
 kind: event
 speakers:
-- caolan_mcnamara
+  -
+    name: Caolan McNamara
+    slug: caolan_mcnamara
+    url: /schedule/speaker/caolan_mcnamara
 slug: libolayout
 day: Sat
 start: 12:15
@@ -10,12 +13,31 @@ end: 12:15
 event_id: 742
 ---
 
-<p>Track: <a href="/schedule/track/libreoffice_devroom">LibreOffice Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/libreoffice">LibreOffice</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:15</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>Dialogs in LibreOffice are horrifically ugly, mostly because all widgets contained within them and the dialog themselves are typically fixed size and sized to contain the text of the longest translation. The other reason they are ugly is because they are so painful to edit. There's been plenty of proposals and attempts to fix them. Here's another one.</p></p>
+<p>Dialogs in LibreOffice are horrifically ugly, mostly because all widgets contained within them and the dialog themselves are typically fixed size and sized to contain the text of the longest translation. The other reason they are ugly is because they are so painful to edit. There's been plenty of proposals and attempts to fix them. Here's another one.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/caolan_mcnamara">Caolan McNamara</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

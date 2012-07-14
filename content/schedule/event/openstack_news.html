@@ -2,7 +2,10 @@
 title: ! 'OpenStack News: Last year retrospective'
 kind: event
 speakers:
-- thierry_carrez
+  -
+    name: Thierry Carrez
+    slug: thierry_carrez
+    url: /schedule/speaker/thierry_carrez
 slug: openstack_news
 day: Sat
 start: 11:00
@@ -10,12 +13,31 @@ end: 11:00
 event_id: 552
 ---
 
-<p>Track: <a href="/schedule/track/virtualization_and_cloud_devroom">Virtualization and Cloud Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/chavanne">Chavanne</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:25</dd>
+</dl>
 
-<p><p>OpenStack is a common effort to produce open source software to implement scalable Infrastructure as a Service providers. What happened in the project since FOSDEM 2011 presentation ? This talk will quickly introduce what OpenStack is about and the changes over the last year: Growth, new core projects, continuous integration changes and what's coming up in the Essex release.</p></p>
+<p>OpenStack is a common effort to produce open source software to implement scalable Infrastructure as a Service providers. What happened in the project since FOSDEM 2011 presentation ? This talk will quickly introduce what OpenStack is about and the changes over the last year: Growth, new core projects, continuous integration changes and what's coming up in the Essex release.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/thierry_carrez">Thierry Carrez</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

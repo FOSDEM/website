@@ -2,7 +2,10 @@
 title: Cluster internals
 kind: event
 speakers:
-- ralf_gebhardt_
+  -
+    name: Ralf Gebhardt 
+    slug: ralf_gebhardt_
+    url: /schedule/speaker/ralf_gebhardt_
 slug: cluster_internals
 day: Sun
 start: 12:00
@@ -10,12 +13,31 @@ end: 12:00
 event_id: 663
 ---
 
-<p>Track: <a href="/schedule/track/mysql_and_friends_devroom">MySQL and Friends Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:25</dd>
+</dl>
 
-<p><p>This talk will go through the components of the MySQL Cluster architecture. How MySQL Cluster fits into the standard MySQL through the storage engine interface, as well as the different node types in the MySQL Cluster and how they work internally to guarantee high availability. We will also take a look at the resource utilisation within the nodes and how that is managed and configured.</p></p>
+<p>This talk will go through the components of the MySQL Cluster architecture. How MySQL Cluster fits into the standard MySQL through the storage engine interface, as well as the different node types in the MySQL Cluster and how they work internally to guarantee high availability. We will also take a look at the resource utilisation within the nodes and how that is managed and configured.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/ralf_gebhardt_">Ralf Gebhardt </a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

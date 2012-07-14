@@ -7,6 +7,10 @@ first_name: Ben
 last_name: Klang
 person_id: 445
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Ben Klang is the leader of the Adhearsion project and contributes to many other open source efforts directly with code and indirectly through evangelism.  A regular speaker on open source telephony, he has spoken at several large and small conferences throughout the United States and Europe. He currently serves the Adhearsion Foundation as leader of the Adhearsion Project and also holds a position on the core team for the Horde Project.  Klang is the founder and Technology Strategist at Mojo Lingo, an Atlanta firm specializing in telephony application development.</p></p>
@@ -21,6 +25,7 @@ person_id: 445
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,6 +35,7 @@ person_id: 445
             <td><a href="/schedule/event/voice_apps">Voice Applications for the Modern Open Source Hacker</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k1105">K.1.105</a></td>
+            <td><a href="/schedule/track/network_and_io">Network and IO</a></td>
             <td>10:00</td>
             <td>10:50</td>
     </tbody>

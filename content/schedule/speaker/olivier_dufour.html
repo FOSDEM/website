@@ -7,6 +7,10 @@ first_name: Olivier
 last_name: Dufour
 person_id: 789
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I live in France (near Paris) and I’ve been working as an IT project
@@ -21,6 +25,7 @@ I am a Mono fan and I have worked on a few projects around it
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,6 +35,7 @@ I am a Mono fan and I have worked on a few projects around it
             <td><a href="/schedule/event/mono_banshee">Banshee: Past, Present, Future and the Crazy stuff</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/mono">Mono</a></td>
             <td>14:40</td>
             <td>15:25</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: Introducing the Mozilla Labs Apps Project
 kind: event
 speakers:
-- rob_hawkes_
+  -
+    name: Rob Hawkes 
+    slug: rob_hawkes_
+    url: /schedule/speaker/rob_hawkes_
 slug: html5_hacking_session_apps
 day: Sat
 start: 16:00
@@ -10,14 +13,33 @@ end: 16:00
 event_id: 890
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:30</dd>
+</dl>
 
-<p><p>In this talk Rob will introduce the Mozilla Labs Apps project and the related technologies that are helping it happen. The aim of this project is to produce an apps eco-system on the Web that uses open technologies and gives developers and users the freedom to sell and use apps in the way they want.</p>
+<p>In this talk Rob will introduce the Mozilla Labs Apps project and the related technologies that are helping it happen. The aim of this project is to produce an apps eco-system on the Web that uses open technologies and gives developers and users the freedom to sell and use apps in the way they want.</p>
 
-<p>Aside from the conceptual issues that this project tackles, Rob will also cover some of the JavaScript APIs that are being worked on to provide the necessary functionality for apps. It is these APIs that allow developers to create an immersive experience within their apps that they wouldn't have been able to achieve in the browser until now.</p></p>
+<p>Aside from the conceptual issues that this project tackles, Rob will also cover some of the JavaScript APIs that are being worked on to provide the necessary functionality for apps. It is these APIs that allow developers to create an immersive experience within their apps that they wouldn't have been able to achieve in the browser until now.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/rob_hawkes_">Rob Hawkes </a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

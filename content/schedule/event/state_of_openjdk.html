@@ -2,7 +2,10 @@
 title: The state of OpenJDK
 kind: event
 speakers:
-- mark_reinhold
+  -
+    name: Mark Reinhold
+    slug: mark_reinhold
+    url: /schedule/speaker/mark_reinhold
 slug: state_of_openjdk
 day: Sat
 start: 11:05
@@ -10,12 +13,31 @@ end: 11:05
 event_id: 678
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:05</dd>
+    <dt>End:</dt>
+    <dd>11:30</dd>
+</dl>
 
-<p><p>A review of the recent past, a summary of current work on JDK 7 and JDK 8, and a look ahead to upcoming improvements in both governance and infrastructure.</p></p>
+<p>A review of the recent past, a summary of current work on JDK 7 and JDK 8, and a look ahead to upcoming improvements in both governance and infrastructure.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/mark_reinhold">Mark Reinhold</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

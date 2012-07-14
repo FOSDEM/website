@@ -7,6 +7,10 @@ first_name: Pietro
 last_name: Abate
 person_id: 825
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>In the last 5 years Peitro has been involved with two academic research projects, Cduce and Mancoosi founded by European community.
@@ -23,6 +27,7 @@ His focus at the moment is on open source and in particular in relation to quali
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -32,6 +37,7 @@ His focus at the moment is on open source and in particular in relation to quali
             <td><a href="/schedule/event/distro_qa_tools">QA tools for FOSS distributions</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1301">H.1301</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>16:30</td>
             <td>17:30</td>
     </tbody>

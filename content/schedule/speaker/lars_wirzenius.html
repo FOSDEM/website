@@ -7,6 +7,10 @@ first_name: Lars
 last_name: Wirzenius
 person_id: 490
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I'm a hacker, programmer, software developer. I am 42, originally from Finland, and now live in Manchester, UK. I've been programming computers since 1984. I read the GNU Manifesto in 1986, but didn't really become interested in software freedom until 1988, when I got into university and got access to the Internet.</p>
@@ -29,6 +33,7 @@ given me a good sense of the job of developing and maintaining a large Linux dis
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -38,6 +43,7 @@ given me a good sense of the job of developing and maintaining a large Linux dis
             <td><a href="/schedule/event/rethinking">Re-thinking system and distro development</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/janson">Janson</a></td>
+            <td><a href="/schedule/track/keynotes">Keynotes</a></td>
             <td>12:30</td>
             <td>13:20</td>
     </tbody>

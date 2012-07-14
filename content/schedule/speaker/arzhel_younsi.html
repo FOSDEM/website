@@ -7,6 +7,10 @@ first_name: Arzhel
 last_name: Younsi
 person_id: 121
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I'm a computer science student in France, part time network engineer
@@ -20,6 +24,7 @@ kid.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ kid.</p></p>
             <td><a href="/schedule/event/it_and_community">IT and Community</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>14:30</td>
             <td>15:00</td>
     </tbody>

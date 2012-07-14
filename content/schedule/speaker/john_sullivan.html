@@ -7,6 +7,10 @@ first_name: John
 last_name: Sullivan
 person_id: 693
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>John started working with GNU Press and the Free Software Foundation in
@@ -31,6 +35,7 @@ both Harvard and Michigan State University.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -40,6 +45,7 @@ both Harvard and Michigan State University.</p></p>
             <td><a href="/schedule/event/is_copyleft_being_framed">Is copyleft being framed?</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
             <td>16:00</td>
             <td>16:30</td>
     </tbody>

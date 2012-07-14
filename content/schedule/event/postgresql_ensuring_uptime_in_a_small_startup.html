@@ -2,7 +2,10 @@
 title: Ensuring uptime in a small startup
 kind: event
 speakers:
-- apostolos_bessas
+  -
+    name: Apostolos Bessas
+    slug: apostolos_bessas
+    url: /schedule/speaker/apostolos_bessas
 slug: postgresql_ensuring_uptime_in_a_small_startup
 day: Sat
 start: 11:00
@@ -10,18 +13,37 @@ end: 11:00
 event_id: 669
 ---
 
-<p>Track: <a href="/schedule/track/postgresql_devroom">PostgreSQL Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/postgresql">PostgreSQL</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:50</dd>
+</dl>
 
-<p><p>Running a web application that is used by people from all over the world means that you cannot afford any downtime.
+<p>Running a web application that is used by people from all over the world means that you cannot afford any downtime.
 However, the codebase and the database schema constantly evolves, while at the same time hardware failures may happen.
 The talk will try to present ways that we, at transifex.net, use to deal with the following two issues:
 - schema changes
 - hardware failures
 in order to achieve 100% uptime.
-The talk will discuss tools that PostgreSQL provides, like functions and triggers, and how they can be used to deal with schema changes and how to setup streaming replication for fail-over.</p></p>
+The talk will discuss tools that PostgreSQL provides, like functions and triggers, and how they can be used to deal with schema changes and how to setup streaming replication for fail-over.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/apostolos_bessas">Apostolos Bessas</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

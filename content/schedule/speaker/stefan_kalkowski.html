@@ -7,6 +7,10 @@ first_name: Stefan
 last_name: Kalkowski
 person_id: 769
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Stefan Kalkowski has been working with the Genode OS framework since
@@ -23,6 +27,7 @@ Systems Group of TU Dresden as a PhD student.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -32,6 +37,7 @@ Systems Group of TU Dresden as a PhD student.</p></p>
             <td><a href="/schedule/event/microkernel_agony">The agony of choice - the diversity of microkernels in Genode</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
             <td>14:10</td>
             <td>14:55</td>
     </tbody>

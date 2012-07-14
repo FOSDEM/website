@@ -2,7 +2,10 @@
 title: Mobicents TelScale and RestComm
 kind: event
 speakers:
-- jean_deruelle
+  -
+    name: Jean Deruelle
+    slug: jean_deruelle
+    url: /schedule/speaker/jean_deruelle
 slug: mobicents
 day: Sun
 start: 10:30
@@ -10,13 +13,32 @@ end: 10:30
 event_id: 590
 ---
 
-<p>Track: <a href="/schedule/track/telephony_and_communications_devroom">Telephony and Communications Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:30</dd>
+    <dt>End:</dt>
+    <dd>11:10</dd>
+</dl>
 
-<p><p>RestComm and TelScale make it possible for application developers to easily connect voice applications to Web 2.0 services and networks.</p></p>
-<p><p>The evolution of cloud computing has given birth to new incredibly successful applications. Cloud based voice and media services can create similar opportunities and add tremendous value to existing web applications. Traditionally voice and media services require capabilities that are well beyond the scope of typical IT department, but Telecom engineers are no longer needed to make enticing value-added services. Any web developer can make telecom apps in minutes and integrate them with Web 2.0 and social networks. This session will explore how this can be made possible through the use of RestComm for adding voice and text to current cloud-based applications and services and explain how RestComm is backed by a powerful and autoscalable PaaS based on Mobicents.</p></p>
+<p>RestComm and TelScale make it possible for application developers to easily connect voice applications to Web 2.0 services and networks.</p>
+<p>The evolution of cloud computing has given birth to new incredibly successful applications. Cloud based voice and media services can create similar opportunities and add tremendous value to existing web applications. Traditionally voice and media services require capabilities that are well beyond the scope of typical IT department, but Telecom engineers are no longer needed to make enticing value-added services. Any web developer can make telecom apps in minutes and integrate them with Web 2.0 and social networks. This session will explore how this can be made possible through the use of RestComm for adding voice and text to current cloud-based applications and services and explain how RestComm is backed by a powerful and autoscalable PaaS based on Mobicents.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jean_deruelle">Jean Deruelle</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: Safe upgrade of embedded systems
 kind: event
 speakers:
-- arnaut_vandecappelle
+  -
+    name: Arnaut Vandecappelle
+    slug: arnaut_vandecappelle
+    url: /schedule/speaker/arnaut_vandecappelle
 slug: safe_upgrade_of_embedded_systems
 day: Sun
 start: 12:00
@@ -10,12 +13,31 @@ end: 12:00
 event_id: 699
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>13:00</dd>
+</dl>
 
-<p><p>After deploying an embedded system, it is desirable to be able to upgrade the firmware, in order to add new features or to solve bugs. However, it is often difficult and expensive for a technician to get physical access to the device(s). Therefore, it should be possible to perform the upgrade remotely, which also means that it should be secure and survive any kind of failure. In the course of their career the consultants at Essensium/Mind have encountered many failure paths and solutions of how to deal with them. This includes issues like bad firmware, power failure, communication problems, security issues, flash corruption and bootloader bugs. Solutions include fall-back firmware, watchdogs, journalling filesystems, backup media and package managers. But in the end, it turns out that there is no silver bullet and that the best upgrade approach mostly depends on how the system is used.</p></p>
+<p>After deploying an embedded system, it is desirable to be able to upgrade the firmware, in order to add new features or to solve bugs. However, it is often difficult and expensive for a technician to get physical access to the device(s). Therefore, it should be possible to perform the upgrade remotely, which also means that it should be secure and survive any kind of failure. In the course of their career the consultants at Essensium/Mind have encountered many failure paths and solutions of how to deal with them. This includes issues like bad firmware, power failure, communication problems, security issues, flash corruption and bootloader bugs. Solutions include fall-back firmware, watchdogs, journalling filesystems, backup media and package managers. But in the end, it turns out that there is no silver bullet and that the best upgrade approach mostly depends on how the system is used.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/arnaut_vandecappelle">Arnaut Vandecappelle</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

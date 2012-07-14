@@ -2,7 +2,10 @@
 title: Calligra - Free Office Everywhere
 kind: event
 speakers:
-- dan_leinir_turthra_jensen
+  -
+    name: Dan Leinir Turthra Jensen
+    slug: dan_leinir_turthra_jensen
+    url: /schedule/speaker/dan_leinir_turthra_jensen
 slug: calligra
 day: Sun
 start: 14:15
@@ -10,16 +13,35 @@ end: 14:15
 event_id: 620
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>14:15</dd>
+    <dt>End:</dt>
+    <dd>14:55</dd>
+</dl>
 
-<p><p>The world's oldest free office suite, now under its new name Calligra,
+<p>The world's oldest free office suite, now under its new name Calligra,
 is deployed over many different devices. It's engine is used in
 various places, and greatly varying applications throughout the world.
 Come and see what we do, and witness, perhaps, some things you didn't
-know it did, and places you had no idea it would be found.</p></p>
+know it did, and places you had no idea it would be found.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/dan_leinir_turthra_jensen">Dan Leinir Turthra Jensen</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

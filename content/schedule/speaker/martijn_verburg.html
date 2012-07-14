@@ -7,6 +7,10 @@ first_name: Martijn
 last_name: Verburg
 person_id: 274
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Martijn Verburg (CTO - TeamSparq) has over 10 years experience as a
@@ -27,6 +31,7 @@ status quo as the "Diabolical Developer".</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -36,12 +41,14 @@ status quo as the "Diabolical Developer".</p></p>
             <td><a href="/schedule/event/free_java">Welcome to the Free Java DevRoom</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>11:00</td>
             <td>11:05</td>
         <tr>
             <td><a href="/schedule/event/our_year_to_date_in_the_jcp">Politics, Positives, Paperwork and Pain - Our year to date in the JCP</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>14:30</td>
             <td>15:00</td>
     </tbody>

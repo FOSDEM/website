@@ -2,7 +2,10 @@
 title: Mono — State of the Union
 kind: event
 speakers:
-- miguel_de_icaza
+  -
+    name: Miguel De Icaza
+    slug: miguel_de_icaza
+    url: /schedule/speaker/miguel_de_icaza
 slug: mono_stateoftheunion
 day: Sat
 start: 12:00
@@ -10,14 +13,33 @@ end: 12:00
 event_id: 778
 ---
 
-<p>Track: <a href="/schedule/track/mono_devroom">Mono Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mono">Mono</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3601">K.3.601</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>13:00</dd>
+</dl>
 
-<p><p>The state of the Mono project in the year 2012.</p>
+<p>The state of the Mono project in the year 2012.</p>
 
-<p>Will give an update on the progress of Mono and the Mono 2.12 release, which is a major release containing a year worth of improving</p></p>
+<p>Will give an update on the progress of Mono and the Mono 2.12 release, which is a major release containing a year worth of improving</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/miguel_de_icaza">Miguel De Icaza</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

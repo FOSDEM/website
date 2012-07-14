@@ -7,6 +7,10 @@ first_name: Neil
 last_name: Deakin
 person_id: 659
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Neil Deakin has worked on XUL development both an an employee of Mozilla and before that a contributor for 10 years. Recently he has also worked on drag and drop, focus management and other user interface related features for Firefox.</p></p>
@@ -18,6 +22,7 @@ person_id: 659
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 659
             <td><a href="/schedule/event/the_future_of_xbl">Discussion about the future of XBL</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>16:30</td>
             <td>17:00</td>
     </tbody>

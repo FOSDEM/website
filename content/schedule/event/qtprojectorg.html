@@ -2,8 +2,14 @@
 title: qt-project.org and Qt 5
 kind: event
 speakers:
-- lars_knoll
-- thiago_macieira
+  -
+    name: Lars Knoll
+    slug: lars_knoll
+    url: /schedule/speaker/lars_knoll
+  -
+    name: Thiago Macieira
+    slug: thiago_macieira
+    url: /schedule/speaker/thiago_macieira
 slug: qtprojectorg
 day: Sun
 start: 11:40
@@ -11,18 +17,36 @@ end: 11:40
 event_id: 612
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:40</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>The Qt project was established in October to drive further development of
+<p>The Qt project was established in October to drive further development of
 Qt as an open source project. The main development effort of
 qt-project.org goes into Qt 5, the next major version of Qt that is
 currently being developed. The talk will explain the setup of
 qt-project.org, and how people can participate and contribute to the
-project. It'll also give an overview over Qt 5.</p></p>
+project. It'll also give an overview over Qt 5.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/lars_knoll">Lars Knoll</a></li>
-    <li><a href="/schedule/speaker/thiago_macieira">Thiago Macieira</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

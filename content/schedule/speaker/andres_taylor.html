@@ -7,6 +7,10 @@ first_name: Andrés
 last_name: Taylor
 person_id: 758
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Andrés Taylor works for Neo Technology, the commercial backing entity behind the worlds best graph database - Neo4j. He is the creator of Cypher.</p></p>
@@ -18,6 +22,7 @@ person_id: 758
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 758
             <td><a href="/schedule/event/neo4j_cypher">Cypher Query Language </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
             <td>14:00</td>
             <td>14:35</td>
     </tbody>

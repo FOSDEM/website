@@ -7,6 +7,10 @@ first_name: Michelle
 last_name: Thorne
 person_id: 870
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I work for Mozilla as a Global Event Strategist, aiming to grow communities around open web projects through live events. We host small meet-ups, to larger hack jams and learning labs, and an annual festival. I formerly worked at Creative Commons as the International Project Manager.</p></p>
@@ -18,6 +22,7 @@ person_id: 870
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 870
             <td><a href="/schedule/event/a_generation_of_webmakers_hacking_with_kids_journalists_and_filmmakers">A Generation of Webmakers: Hacking with kids, journalists, and filmmakers</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>16:15</td>
             <td>16:30</td>
     </tbody>

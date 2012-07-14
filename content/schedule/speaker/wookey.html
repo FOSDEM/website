@@ -7,6 +7,10 @@ first_name:
 last_name: Wookey
 person_id: 831
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Wookey has been a Debian developer since 2000, working primarily on the ARM ports, Embedded Debian and Cross-building. He's made a living as an Embedded Linux geek for a decade, and is currently working on crossbuilding within Linaro/Ubuntu/Debian.</p></p>
@@ -18,6 +22,7 @@ person_id: 831
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 831
             <td><a href="/schedule/event/multiarch">Multiarch - why it's important</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1302">H.1302</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>13:00</td>
             <td>14:00</td>
     </tbody>

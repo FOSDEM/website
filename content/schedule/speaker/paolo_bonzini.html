@@ -7,6 +7,10 @@ first_name: Paolo
 last_name: Bonzini
 person_id: 493
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I'm a Software Engineer in Red Hat's "virtualization platform" team, which basically covers QEMU and the KVM hypervisor.  Before joining Red Hat I worked on several GNU programs (as a volunteer), including GCC; I'm still maintaining GNU sed, GNU grep and GNU Smalltalk.</p></p>
@@ -18,6 +22,7 @@ person_id: 493
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 493
             <td><a href="/schedule/event/virt_kvm">Virtualization with KVM: bottom to top, past to future</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/janson">Janson</a></td>
+            <td><a href="/schedule/track/hypervisors">Hypervisors</a></td>
             <td>15:00</td>
             <td>15:50</td>
     </tbody>

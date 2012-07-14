@@ -7,6 +7,10 @@ first_name: Jens
 last_name: Wiik
 person_id: 916
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>active in the Finnish MeeGo community, organizing the Helsinki
@@ -19,6 +23,7 @@ meetups and in charge of marketing for MeeGo Summit FI.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ meetups and in charge of marketing for MeeGo Summit FI.</p></p>
             <td><a href="/schedule/event/clouds_over_computing">Clouds over computing</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></td>
             <td>18:00</td>
             <td>18:30</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Lydia
 last_name: Pintscher
 person_id: 290
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Lydia Pintscher is a people geek and cat herder by nature. Among
@@ -21,6 +25,7 @@ Community Working Group and is a board member of KDE e.V.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,12 +35,14 @@ Community Working Group and is a board member of KDE e.V.</p></p>
             <td><a href="/schedule/event/openadvice">Open Advice</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1308">H.1308</a></td>
+            <td><a href="/schedule/track/crossdesktop">CrossDesktop</a></td>
             <td>14:50</td>
             <td>15:05</td>
         <tr>
             <td><a href="/schedule/event/trollsdramagossip">Trolls, Drama and Gossip</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1308">H.1308</a></td>
+            <td><a href="/schedule/track/crossdesktop">CrossDesktop</a></td>
             <td>15:05</td>
             <td>15:35</td>
     </tbody>

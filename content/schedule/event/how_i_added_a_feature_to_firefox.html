@@ -2,7 +2,10 @@
 title: How I added a feature to Firefox
 kind: event
 speakers:
-- paolo_amadini
+  -
+    name: Paolo Amadini
+    slug: paolo_amadini
+    url: /schedule/speaker/paolo_amadini
 slug: how_i_added_a_feature_to_firefox
 day: Sat
 start: 16:30
@@ -10,9 +13,20 @@ end: 16:30
 event_id: 769
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:30</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>A lot has been said about writing your first patch, but how about adding a new feature?</p>
+<p>A lot has been said about writing your first patch, but how about adding a new feature?</p>
 
 <ul>
 <li>What's the impact that volunteer contributors can have in innovating the browser?</li>
@@ -21,10 +35,18 @@ event_id: 769
 </ul>
 
 
-<p>We'll talk about these topics using the Firefox Downloads Panel as a real-world example.</p></p>
+<p>We'll talk about these topics using the Firefox Downloads Panel as a real-world example.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/paolo_amadini">Paolo Amadini</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

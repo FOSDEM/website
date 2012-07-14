@@ -7,6 +7,10 @@ first_name: Jo
 last_name: Shields
 person_id: 305
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I'm a Debian Developer, Ubuntu MOTU, sysadmin at Collabora, and inhabitant of Banbury in the UK. I've been helping make Mono packages since around 2007. If you've used Ubuntu within the past 3 years or so, you've experienced my Mono packaging work.</p></p>
@@ -18,6 +22,7 @@ person_id: 305
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 305
             <td><a href="/schedule/event/mono_debian_packaging">Enough Debian packaging knowledge to hurt yourselves slightly less than you do already</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/mono">Mono</a></td>
             <td>11:00</td>
             <td>11:45</td>
     </tbody>

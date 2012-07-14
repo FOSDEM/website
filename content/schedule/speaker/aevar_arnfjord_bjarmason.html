@@ -7,6 +7,10 @@ first_name: Ævar Arnfjörð
 last_name: Bjarmason
 person_id: 889
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Ævar's worked on the perl core, the Git project, MediaWiki and various other miscellaneous free software projects. He's currently employed at Booking.com as a Perl developer.</p></p>
@@ -18,6 +22,7 @@ person_id: 889
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 889
             <td><a href="/schedule/event/gd">Rapid real-world testing using git-deploy</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/perl">Perl</a></td>
             <td>14:15</td>
             <td>14:35</td>
     </tbody>

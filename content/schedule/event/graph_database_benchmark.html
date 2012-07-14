@@ -2,7 +2,10 @@
 title: Challenges in the Design of a Graph Database Benchmark 
 kind: event
 speakers:
-- marcus_paradies_
+  -
+    name: Marcus Paradies 
+    slug: marcus_paradies_
+    url: /schedule/speaker/marcus_paradies_
 slug: graph_database_benchmark
 day: Sun
 start: 16:00
@@ -10,16 +13,35 @@ end: 16:00
 event_id: 722
 ---
 
-<p>Track: <a href="/schedule/track/graph_processing_devroom">Graph Processing Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/graph_processing">Graph Processing</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:40</dd>
+</dl>
 
-<p><p>Graph databases are one of the leading drivers in the emerging, highly heterogeneous landscape of database management systems for non-relational data management and processing. The recent interest and success of graph databases arises mainly from the growing interest in social media analysis and the exploration and mining of relationships in social media data. However, with a graph-based model as a very flexible underlying data model, a graph database can serve a large variety of scenarios from different domains such as travel planning, supply chain management and package routing.</p></p>
-<p><p>During the past months, many vendors have designed and implemented solutions to satisfy the need to efficiently store, manage and query graph data. However, the solutions are very diverse in terms of the supported graph data model, supported query languages, and APIs. With a growing number of vendors offering graph processing and graph management functionality, there is also an increased need to compare the solutions on a functional level as well as on a performance level with the help of benchmarks.
+<p>Graph databases are one of the leading drivers in the emerging, highly heterogeneous landscape of database management systems for non-relational data management and processing. The recent interest and success of graph databases arises mainly from the growing interest in social media analysis and the exploration and mining of relationships in social media data. However, with a graph-based model as a very flexible underlying data model, a graph database can serve a large variety of scenarios from different domains such as travel planning, supply chain management and package routing.</p>
+<p>During the past months, many vendors have designed and implemented solutions to satisfy the need to efficiently store, manage and query graph data. However, the solutions are very diverse in terms of the supported graph data model, supported query languages, and APIs. With a growing number of vendors offering graph processing and graph management functionality, there is also an increased need to compare the solutions on a functional level as well as on a performance level with the help of benchmarks.
 Graph database benchmarking is a challenging task. Already existing graph database benchmarks are limited in their functionality and portability to different graph-based data models and different application domains. Existing benchmarks and the supported workloads are typically based on a proprietary query language and on a specific graph-based data model derived from the mathematical notion of a graph. The variety and lack of standardization with respect to the logical representation of graph data and the retrieval of graph data make it hard to define a portable graph database benchmark.
 In this talk, we present a proposal and design guideline for a graph database benchmark. Typically, a database benchmark consists of a synthetically generated data set of varying size and varying characteristics and a workload driver. In order to generate graph data sets, we present parameters from graph theory, which influence the characteristics of the generated graph data set. Following, the workload driver issues a set of queries against a well-defined interface of the graph database and gathers relevant performance numbers. We propose a set of performance measures to determine the response time behavior on different workloads and also initial suggestions for typical workloads in graph data scenarios.
-Our main objective of this session is to open the discussion on graph database benchmarking. We believe that there is a need for a common understanding of different workloads for graph processing from different domains and the definition of a common subset of core graph functionality in order to provide a general-purpose graph database benchmark. We encourage vendors to participate and to contribute with their domain-dependent knowledge and to define a graph database benchmark proposal.</p></p>
+Our main objective of this session is to open the discussion on graph database benchmarking. We believe that there is a need for a common understanding of different workloads for graph processing from different domains and the definition of a common subset of core graph functionality in order to provide a general-purpose graph database benchmark. We encourage vendors to participate and to contribute with their domain-dependent knowledge and to define a graph database benchmark proposal.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/marcus_paradies_">Marcus Paradies </a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

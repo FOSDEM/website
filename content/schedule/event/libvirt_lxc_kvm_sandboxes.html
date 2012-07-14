@@ -2,7 +2,10 @@
 title: Building app sandboxes on top of LXC and KVM with libvirt
 kind: event
 speakers:
-- daniel_berrange
+  -
+    name: Daniel Berrange
+    slug: daniel_berrange
+    url: /schedule/speaker/daniel_berrange
 slug: libvirt_lxc_kvm_sandboxes
 day: Sun
 start: 15:00
@@ -10,12 +13,31 @@ end: 15:00
 event_id: 580
 ---
 
-<p>Track: <a href="/schedule/track/virtualization_and_cloud_devroom">Virtualization and Cloud Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/chavanne">Chavanne</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:55</dd>
+</dl>
 
-<p><p>The libvirt library provides a hypervisor agnostic API for interacting with &amp; managing virtualization hosts. Traditional uses of virtualization have focused on running entire operating systems in virtual machines or containers. The libvirt-sandbox library builds on libvirt, LXC &amp; KVM, providing an API which facilitates the use of virtualization as a tool for building secure application sandboxes, without the additional burden of maintaining additional OS installations.</p></p>
+<p>The libvirt library provides a hypervisor agnostic API for interacting with &amp; managing virtualization hosts. Traditional uses of virtualization have focused on running entire operating systems in virtual machines or containers. The libvirt-sandbox library builds on libvirt, LXC &amp; KVM, providing an API which facilitates the use of virtualization as a tool for building secure application sandboxes, without the additional burden of maintaining additional OS installations.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/daniel_berrange">Daniel Berrange</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

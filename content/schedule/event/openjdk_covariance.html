@@ -2,8 +2,14 @@
 title: Using the OpenJDK to investigate covariance in Java
 kind: event
 speakers:
-- janina_voigt
-- raoul_gabriel_urma
+  -
+    name: Janina Voigt
+    slug: janina_voigt
+    url: /schedule/speaker/janina_voigt
+  -
+    name: Raoul-Gabriel Urma
+    slug: raoul_gabriel_urma
+    url: /schedule/speaker/raoul_gabriel_urma
 slug: openjdk_covariance
 day: Sat
 start: 14:00
@@ -11,9 +17,20 @@ end: 14:00
 event_id: 685
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>14:30</dd>
+</dl>
 
-<p><p>The Java type system is unsafe since it allows covariant use of arrays. For example, an array of Bananas can be used where an array of Fruit is expected, given that Banana is a subclass of Fruit. This allows the following unsafe code:</p>
+<p>The Java type system is unsafe since it allows covariant use of arrays. For example, an array of Bananas can be used where an array of Fruit is expected, given that Banana is a subclass of Fruit. This allows the following unsafe code:</p>
 
 <pre><code>Banana[] bananas = new Banana[5];
 Fruit[] fruits = bananas;
@@ -27,11 +44,18 @@ bananas[0];  //  Apple?
 
 <p>Initial results of our investigation show that covariance is rarely used outside the context of legacy code and Java libraries. This leads us to question its relevance in the Java language.</p>
 
-<p>In our talk, we also discuss solutions to covariance taken by other languages such as Scala and Google Dart, explain our modifications to the OpenJDK Java compiler and report the full results of our study.</p></p>
+<p>In our talk, we also discuss solutions to covariance taken by other languages such as Scala and Google Dart, explain our modifications to the OpenJDK Java compiler and report the full results of our study.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/janina_voigt">Janina Voigt</a></li>
-    <li><a href="/schedule/speaker/raoul_gabriel_urma">Raoul-Gabriel Urma</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

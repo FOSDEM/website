@@ -2,7 +2,10 @@
 title: ARM BoF
 kind: event
 speakers:
-- steve_mcintyre
+  -
+    name: Steve McIntyre
+    slug: steve_mcintyre
+    url: /schedule/speaker/steve_mcintyre
 slug: arm_bof
 day: Sun
 start: 15:00
@@ -10,14 +13,33 @@ end: 15:00
 event_id: 830
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1301">H.1301</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>More and more distributions are porting their software to run on ARM CPUs. This is a session for people working on or otherwise interested in those ports to share progress reports, problems and ideas.</p>
+<p>More and more distributions are porting their software to run on ARM CPUs. This is a session for people working on or otherwise interested in those ports to share progress reports, problems and ideas.</p>
 
-<p>Steve will start the discussion with the current status of the two ARM ports in Debian ("armel" and "armhf"), but is not planning on spending the whole session on that!</p></p>
+<p>Steve will start the discussion with the current status of the two ARM ports in Debian ("armel" and "armhf"), but is not planning on spending the whole session on that!</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/steve_mcintyre">Steve McIntyre</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

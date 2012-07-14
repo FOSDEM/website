@@ -2,7 +2,10 @@
 title: Creative Commons 4.0 licenses and other opportunities for FLOSS/free culture legal/policy intersections
 kind: event
 speakers:
-- mike_linksvayer
+  -
+    name: Mike Linksvayer
+    slug: mike_linksvayer
+    url: /schedule/speaker/mike_linksvayer
 slug: creative_commons_4
 day: Sat
 start: 18:30
@@ -10,9 +13,20 @@ end: 18:30
 event_id: 658
 ---
 
-<p>Track: <a href="/schedule/track/legal_issues_devroom">Legal Issues Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/legal_issues">Legal Issues</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:30</dd>
+    <dt>End:</dt>
+    <dd>19:00</dd>
+</dl>
 
-<p><p>Creative Commons has since its launch in 2002 acknowledged free
+<p>Creative Commons has since its launch in 2002 acknowledged free
 software as an inspiration, but in-depth communication and understanding
 across the "free culture" (and education, science, government...) and
 free software movements has been thin, resulting in missed opportunities
@@ -33,10 +47,18 @@ a continuation of the tendency of free culture (with the exception of
 Wikimedia) being dependent on proprietary web silos. This talk will very
 briefly summarize the relevant history, describe the pertinent CC 4.0
 licenses and policy issues, and hopefully provoke solutions and actions
-benefiting free software and free culture.</p></p>
+benefiting free software and free culture.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/mike_linksvayer">Mike Linksvayer</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

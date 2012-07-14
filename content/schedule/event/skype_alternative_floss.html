@@ -2,7 +2,10 @@
 title: A real Skype alternative using standards compliant FLOSS
 kind: event
 speakers:
-- emil_ivov
+  -
+    name: Emil Ivov
+    slug: emil_ivov
+    url: /schedule/speaker/emil_ivov
 slug: skype_alternative_floss
 day: Sun
 start: 14:05
@@ -10,10 +13,21 @@ end: 14:05
 event_id: 588
 ---
 
-<p>Track: <a href="/schedule/track/telephony_and_communications_devroom">Telephony and Communications Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>14:05</dd>
+    <dt>End:</dt>
+    <dd>14:45</dd>
+</dl>
 
-<p><p>The University of Strasbourg has built a 'Skype replacement' for ~60,000 users using open source standards and software.</p></p>
-<p><p>A few years ago the French Ministry of Education and Research, issued a memo that strongly advised against use of Skype in universities and research centers. Security and excessive bandwidth consumption were among the main concerns.</p>
+<p>The University of Strasbourg has built a 'Skype replacement' for ~60,000 users using open source standards and software.</p>
+<p>A few years ago the French Ministry of Education and Research, issued a memo that strongly advised against use of Skype in universities and research centers. Security and excessive bandwidth consumption were among the main concerns.</p>
 
 <p>In practice however, the directive has been rarely applied for one major reason: (perceived) lack of alternatives.</p>
 
@@ -21,10 +35,18 @@ event_id: 588
 
 <p>It then continued with a deployment of the actual network using exclusively FLOSS projects such as Openfire, Jinglenodes, FreeSWITCH/Asterisk, TurnServer and others.</p>
 
-<p>The talk will also cover aspects such as NAT traversal with ICE and JingleNodes, redundancy, security and confidentiality.</p></p>
+<p>The talk will also cover aspects such as NAT traversal with ICE and JingleNodes, redundancy, security and confidentiality.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/emil_ivov">Emil Ivov</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

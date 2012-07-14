@@ -7,6 +7,10 @@ first_name: Florian
 last_name: Zeitz
 person_id: 881
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Florian is an IT student in Germany and a contributor to several open-source projects in the Jabber/XMPP community.</p></p>
@@ -18,6 +22,7 @@ person_id: 881
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 881
             <td><a href="/schedule/event/xmpp_objective_c">Coding: ObjXMPP - An XMPP framework for Objective C with ObjFW</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></td>
             <td>18:15</td>
             <td>18:30</td>
     </tbody>

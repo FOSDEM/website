@@ -7,6 +7,10 @@ first_name: Heikki
 last_name: Linnakangas
 person_id: 234
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Heikki is a long-time PostgreSQL developer and committer. He has worked on many parts of PostgreSQL backend, authoring features such as Two-Phase Commit and the new Free Space Map implementation in PostgreSQL 8.4.</p>
@@ -20,6 +24,7 @@ person_id: 234
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ person_id: 234
             <td><a href="/schedule/event/postgresql_multi_cpu_performance_in_postgresql_92">Multi-CPU performance in PostgreSQL 9.2</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/postgresql">PostgreSQL</a></td>
             <td>14:00</td>
             <td>14:50</td>
     </tbody>

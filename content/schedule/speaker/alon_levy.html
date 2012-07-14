@@ -7,6 +7,10 @@ first_name: Alon
 last_name: Levy
 person_id: 890
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Alon has been a Spice developer at Red Hat for almost 2 years, and was a long time Linux and OSS
@@ -19,6 +23,7 @@ user and enthusiast before joining Red Hat.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ user and enthusiast before joining Red Hat.</p></p>
             <td><a href="/schedule/event/xorg_xspice">Xspice: Integrating spice-server into Xorg</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>11:00</td>
             <td>11:30</td>
     </tbody>

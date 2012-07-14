@@ -7,6 +7,10 @@ first_name: Wim
 last_name: Godden
 person_id: 411
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Wim Godden is the owner and principal consultant at Cu.be. He has been working with PHP since 1996. In 1999, he developed the advertising software phpAdsNew (now OpenX) and in the years following worked with a wide range of technologies (from PHP over database clusters to Internet backbone infrastructure design).</p>
@@ -23,6 +27,7 @@ person_id: 411
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -32,6 +37,7 @@ person_id: 411
             <td><a href="/schedule/event/cache_tune_fun">Caching and Tuning fun for high scalability</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/janson">Janson</a></td>
+            <td><a href="/schedule/track/system">System</a></td>
             <td>11:00</td>
             <td>11:50</td>
     </tbody>

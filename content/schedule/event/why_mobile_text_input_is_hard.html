@@ -2,7 +2,10 @@
 title: Why mobile text input is hard
 kind: event
 speakers:
-- michael_hasselman
+  -
+    name: Michael Hasselman
+    slug: michael_hasselman
+    url: /schedule/speaker/michael_hasselman
 slug: why_mobile_text_input_is_hard
 day: Sat
 start: 16:00
@@ -10,9 +13,20 @@ end: 16:00
 event_id: 696
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>Mobile text input requires easy copy'n'paste interaction, reliable
+<p>Mobile text input requires easy copy'n'paste interaction, reliable
 cursor positioning and the ability to edit (or fix) previously written
 text. For Asian markets, computer-assisted input of composed characters
 is of paramount importance. A virtual keyboard alone cannot solve that.
@@ -26,10 +40,18 @@ slowly improving, Maliit - a flexible and cross-platform input method
 framework - can further narrow this functionality gap.</p>
 
 <p>This talk will analyze problems of mobile text input and show how they
-were solved on Nokia's N9.</p></p>
+were solved on Nokia's N9.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/michael_hasselman">Michael Hasselman</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

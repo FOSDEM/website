@@ -2,7 +2,10 @@
 title: ! 'Free Software: A viable model for Commercial Success'
 kind: event
 speakers:
-- robert_dewar
+  -
+    name: Robert Dewar
+    slug: robert_dewar
+    url: /schedule/speaker/robert_dewar
 slug: keynotes_model_success
 day: Sat
 start: 11:00
@@ -10,14 +13,33 @@ end: 11:00
 event_id: 449
 ---
 
-<p>Track: <a href="/schedule/track/keynotes">Keynotes</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/keynotes">Keynotes</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:50</dd>
+</dl>
 
-<p><p>This talk will discuss our experience at <a href="http://www.adacore.com/">AdaCore</a>, one of only a handful of 100% Free Software companies. All of our commercial products are licensed under the GPL and other Free Software Licenses.
+<p>This talk will discuss our experience at <a href="http://www.adacore.com/">AdaCore</a>, one of only a handful of 100% Free Software companies. All of our commercial products are licensed under the GPL and other Free Software Licenses.
 People often assume that there is a conflict between the use of such licenses and the needs of a commercial software company. Our experience at AdaCore shows that on the contrary, the Free Software model can be very successful both for us as a company and for our customers.
-We think this model can be used in many other circumstances, and want to encourage free software enthusiasts to consider this model in other circumstances.</p></p>
+We think this model can be used in many other circumstances, and want to encourage free software enthusiasts to consider this model in other circumstances.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/robert_dewar">Robert Dewar</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

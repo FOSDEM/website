@@ -2,7 +2,10 @@
 title: The FusionInventory Project
 kind: event
 speakers:
-- guillaume_rousse
+  -
+    name: Guillaume Rousse
+    slug: guillaume_rousse
+    url: /schedule/speaker/guillaume_rousse
 slug: fusioninventory
 day: Sun
 start: 15:50
@@ -10,13 +13,32 @@ end: 15:50
 event_id: 920
 ---
 
-<p>Track: <a href="/schedule/track/perl_devroom">Perl Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/perl">Perl</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:50</dd>
+    <dt>End:</dt>
+    <dd>16:10</dd>
+</dl>
 
-<p><p>FusionInventory is an IT asset inventory solution. The project has two components: the server, a PHP plugin for GLPI and the agent, a Perl program.</p></p>
-<p><p>The agent is responsible for executing various tasks implemented as plugins, such as local inventory, network discovery, software execution, etc. Its design, resulting from the aggregation of multiple unrelated pieces of software, was quite... baroque. This talk will present the challenge of joining an already existing project, with a legacy code base, and turning it to modern Perl best practices.</p></p>
+<p>FusionInventory is an IT asset inventory solution. The project has two components: the server, a PHP plugin for GLPI and the agent, a Perl program.</p>
+<p>The agent is responsible for executing various tasks implemented as plugins, such as local inventory, network discovery, software execution, etc. Its design, resulting from the aggregation of multiple unrelated pieces of software, was quite... baroque. This talk will present the challenge of joining an already existing project, with a legacy code base, and turning it to modern Perl best practices.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/guillaume_rousse">Guillaume Rousse</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

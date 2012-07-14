@@ -7,6 +7,10 @@ first_name: Julian
 last_name: Stecklina
 person_id: 608
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Julian Stecklina finished his Diplom (Master's thesis) in 2009 at the
@@ -24,6 +28,7 @@ NOVA as a PhD student.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -33,12 +38,14 @@ NOVA as a PhD student.</p></p>
             <td><a href="/schedule/event/microkernel_intro_nova">Introduction to the NOVA kernel API</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
             <td>09:30</td>
             <td>10:00</td>
         <tr>
             <td><a href="/schedule/event/microkernel_discussion">Panel discussion</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
             <td>16:00</td>
             <td>17:00</td>
     </tbody>

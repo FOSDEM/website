@@ -35,7 +35,7 @@
 				<div class="span3">
 					<ul class="well sidebar-nav">
                         <ul class="nav nav-list">
-                            <%= @item.identifier =~ %r{^/schedule/} ? $schedule_navigation_item.compiled_content : navtree(@item_rep.path) %>
+                            <%= @item.identifier =~ %r{^/schedule/} ? $schedule_navigation_item.compiled_content : navigation(@item_rep.path) %>
 						</ul>
 					</ul>
 				</div>

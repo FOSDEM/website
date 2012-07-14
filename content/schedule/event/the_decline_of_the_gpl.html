@@ -2,7 +2,10 @@
 title: The (possible) decline of the GPL, and what to do about it
 kind: event
 speakers:
-- richard_fontana
+  -
+    name: Richard Fontana
+    slug: richard_fontana
+    url: /schedule/speaker/richard_fontana
 slug: the_decline_of_the_gpl
 day: Sat
 start: 16:30
@@ -10,10 +13,21 @@ end: 16:30
 event_id: 655
 ---
 
-<p>Track: <a href="/schedule/track/legal_issues_devroom">Legal Issues Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/legal_issues">Legal Issues</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:30</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>Discussion of the possible decline of copyleft licensing.</p></p>
-<p><p>During the past few years some have asserted that the use of
+<p>Discussion of the possible decline of copyleft licensing.</p>
+<p>During the past few years some have asserted that the use of
 copyleft licenses, particularly the GPL, is in decline among
 FLOSS projects. While the data that is said to support this
 contention may be suspect, it matches my own observations and
@@ -30,10 +44,18 @@ economic developments affecting free software hackers.</p>
 
 <p>If it is real, the GPL's decline is a problematic development for
 free software culture. I propose ways in which the trajectory of
-relevance and influence of strong copyleft can be turned around.</p></p>
+relevance and influence of strong copyleft can be turned around.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/richard_fontana">Richard Fontana</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

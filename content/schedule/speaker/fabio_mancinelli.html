@@ -7,6 +7,10 @@ first_name: Fabio
 last_name: Mancinelli
 person_id: 613
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Fabio Mancinelli is Research Project Manager at XWiki. He leads the development of the XWiki proof of concept within CompatibleOne.</p></p>
@@ -18,6 +22,7 @@ person_id: 613
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 613
             <td><a href="/schedule/event/compatibleone">Open Cloud Interoperability with CompatibleOne</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/chavanne">Chavanne</a></td>
+            <td><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></td>
             <td>14:30</td>
             <td>14:55</td>
     </tbody>

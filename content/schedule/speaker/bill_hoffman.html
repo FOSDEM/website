@@ -7,6 +7,10 @@ first_name: Bill
 last_name: Hoffman
 person_id: 672
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Mr. Hoffman is a founder of Kitware and currently serves as Vice President and Chief Technical Officer. He is the original author and lead architect of CMake , an open-source, cross-platform build and configuration tool that is used by hundreds of projects around the world and the co-author of the accompanying text, Mastering CMake. Using his 20+ years of experience with large software systems development, Mr. Hoffman is also a major technical contributor to Kitware's Visualization Toolkit, Insight Toolkit and ParaView projects.</p>
@@ -22,6 +26,7 @@ person_id: 672
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ person_id: 672
             <td><a href="/schedule/event/cmakemorethanyouthink">CMake the build tool that does more than you think it can</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1308">H.1308</a></td>
+            <td><a href="/schedule/track/crossdesktop">CrossDesktop</a></td>
             <td>12:20</td>
             <td>13:00</td>
     </tbody>

@@ -2,8 +2,14 @@
 title: CMake the build tool that does more than you think it can
 kind: event
 speakers:
-- alexander_neundorf
-- bill_hoffman
+  -
+    name: Alexander Neundorf
+    slug: alexander_neundorf
+    url: /schedule/speaker/alexander_neundorf
+  -
+    name: Bill Hoffman
+    slug: bill_hoffman
+    url: /schedule/speaker/bill_hoffman
 slug: cmakemorethanyouthink
 day: Sat
 start: 12:20
@@ -11,9 +17,20 @@ end: 12:20
 event_id: 610
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:20</dd>
+    <dt>End:</dt>
+    <dd>13:00</dd>
+</dl>
 
-<p><p>Bill Hoffman, the original CMake developer, and Alexander Neundorf the
+<p>Bill Hoffman, the original CMake developer, and Alexander Neundorf the
 architect of the KDE CMake Build system will talk about the full capabilities of CMake as a
 build tool. They will cover both the basics of getting started with CMake, and some really cool
 features that allow for the cross platform building of entire packages of software. This will be
@@ -27,11 +44,18 @@ some interesting historical notes on CMake. Covered topics will include:
 * Installing your CMake-based library - exporting and importing targets
 * Cross-platform scripting with CMake (cmake -E, cmake -P, file(DOWNLOAD ...) )
 * Lots of fun historical notes on the development of CMake and the KDE CMake build
-system</p></p>
+system</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/alexander_neundorf">Alexander Neundorf</a></li>
-    <li><a href="/schedule/speaker/bill_hoffman">Bill Hoffman</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

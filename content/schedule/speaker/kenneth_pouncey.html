@@ -7,6 +7,10 @@ first_name: Kenneth
 last_name: Pouncey
 person_id: 787
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I'm a Luxembourg based developer of the Open Source MonoGame project.  My daytime job is as a systems analyst for financial institutions in various capacities from IBM Main Fame and IBM AS400 systems to PC applications written for Server and Desktop applications.  Have worked on and contributed to multiple OpenSource projects ranging from Apache to KDE as well as having an OpenSource 5250 emulator project for IBM's AS400 called TN5250j written in Java.</p>
@@ -22,6 +26,7 @@ person_id: 787
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ person_id: 787
             <td><a href="/schedule/event/mono_monogame">MonoGame</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/mono">Mono</a></td>
             <td>16:40</td>
             <td>17:30</td>
     </tbody>

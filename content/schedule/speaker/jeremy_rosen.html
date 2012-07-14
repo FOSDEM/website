@@ -7,6 +7,10 @@ first_name: Jeremy
 last_name: Rosen
 person_id: 590
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jeremy Rosen is a Software engineer which has been active in the open source community since 2004. He is one of the oldest developer still active in Battle for Wesnoth and has been observing this community grow from a small developer community to it's current status.</p></p>
@@ -18,6 +22,7 @@ person_id: 590
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 590
             <td><a href="/schedule/event/game_balancing">Balancing a game: the open source way</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></td>
             <td>13:35</td>
             <td>14:20</td>
     </tbody>

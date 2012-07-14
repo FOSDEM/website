@@ -2,7 +2,10 @@
 title: Thunderbird
 kind: event
 speakers:
-- ludovic_hirlimann
+  -
+    name: Ludovic Hirlimann
+    slug: ludovic_hirlimann
+    url: /schedule/speaker/ludovic_hirlimann
 slug: thunderbird
 day: Sat
 start: 15:30
@@ -10,12 +13,31 @@ end: 15:30
 event_id: 768
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:30</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>Thunderbird since version 3.0, what happened, how it happened and what's coming up.</p></p>
+<p>Thunderbird since version 3.0, what happened, how it happened and what's coming up.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/ludovic_hirlimann">Ludovic Hirlimann</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

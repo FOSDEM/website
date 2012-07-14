@@ -2,7 +2,10 @@
 title: Debtags.debian.net reloaded!
 kind: event
 speakers:
-- enrico_zini
+  -
+    name: Enrico Zini
+    slug: enrico_zini
+    url: /schedule/speaker/enrico_zini
 slug: debtags_reloaded
 day: Sun
 start: 10:00
@@ -10,16 +13,35 @@ end: 10:00
 event_id: 869
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1302">H.1302</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:00</dd>
+    <dt>End:</dt>
+    <dd>11:00</dd>
+</dl>
 
-<p><p>I have just finished redesigning the Debtags website, consolidating a 9 years long history of bringing categories to a large and complex distribution like Debian.</p>
+<p>I have just finished redesigning the Debtags website, consolidating a 9 years long history of bringing categories to a large and complex distribution like Debian.</p>
 
 <p>There is more to Debtags than meets the eye: interesting library science concepts, anonymous submissions, an efficient review workflow, a fully automated tagging engine, dynamically generated tagging hints, fancy tag search algorithms.</p>
 
-<p>On top of that, there is not much that is Debian-specific in the new codebase, so if you are interested in implementing categories on your distribution of choice, this could give you quite a head start.</p></p>
+<p>On top of that, there is not much that is Debian-specific in the new codebase, so if you are interested in implementing categories on your distribution of choice, this could give you quite a head start.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/enrico_zini">Enrico Zini</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

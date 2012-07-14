@@ -7,6 +7,10 @@ first_name: Paolo
 last_name: Amadini
 person_id: 652
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Paolo Amadini finds it's really hard to come up with something
@@ -25,6 +29,7 @@ a consultant in the Firefox engineering team.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -34,6 +39,7 @@ a consultant in the Firefox engineering team.</p></p>
             <td><a href="/schedule/event/how_i_added_a_feature_to_firefox">How I added a feature to Firefox</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>16:30</td>
             <td>17:00</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: Tumbler - A Modern D-Bus Thumbnail Service
 kind: event
 speakers:
-- jannis_pohlmann
+  -
+    name: Jannis Pohlmann
+    slug: jannis_pohlmann
+    url: /schedule/speaker/jannis_pohlmann
 slug: tumbler
 day: Sat
 start: 15:40
@@ -10,9 +13,20 @@ end: 15:40
 event_id: 614
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:40</dd>
+    <dt>End:</dt>
+    <dd>16:10</dd>
+</dl>
 
-<p><p>Tumbler is a D-Bus service that generates thumbnails for various kinds
+<p>Tumbler is a D-Bus service that generates thumbnails for various kinds
 of applications. Clients can pick from several schedulers and thumbnail
 flavors depending on their needs. Tumbler provides a plugin interface
 via which the list of supported file types can be extended. It already
@@ -26,10 +40,18 @@ later integrated in MeeGo and is now used on the N9 as well. In this
 talk, I will explain the features, design, and usage of Tumbler as well
 as its current limitations. The ultimate goal is to make application and
 desktop developers aware of it and motivate them to adopt Tumbler in
-their software. The talk will include a live demonstration.</p></p>
+their software. The talk will include a live demonstration.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jannis_pohlmann">Jannis Pohlmann</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: Touch your NetBSD
 kind: event
 speakers:
-- pierre_pronchery
+  -
+    name: Pierre Pronchery
+    slug: pierre_pronchery
+    url: /schedule/speaker/pierre_pronchery
 slug: touch_your_netbsd
 day: Sun
 start: 13:45
@@ -10,14 +13,33 @@ end: 13:45
 event_id: 943
 ---
 
-<p>Track: <a href="/schedule/track/bsd_devroom">BSD Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/bsd">BSD</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:45</dd>
+    <dt>End:</dt>
+    <dd>14:15</dd>
+</dl>
 
-<p><p>The AFUL, a French non-profit organization, has launched a contest called AFULTab to challenge developers to propose a FOSS tablet environment with the hardware of their choice. NetBSD enthusiast and DeforaOS developer is currently working on his own proposal, both adapting NetBSD for tablet hardware and polishing the user interface from the DeforaOS desktop environment.</p>
+<p>The AFUL, a French non-profit organization, has launched a contest called AFULTab to challenge developers to propose a FOSS tablet environment with the hardware of their choice. NetBSD enthusiast and DeforaOS developer is currently working on his own proposal, both adapting NetBSD for tablet hardware and polishing the user interface from the DeforaOS desktop environment.</p>
 
-<p>This talk will summarize the work done, in progress and planned before the official release date on May 1st.</p></p>
+<p>This talk will summarize the work done, in progress and planned before the official release date on May 1st.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/pierre_pronchery">Pierre Pronchery</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

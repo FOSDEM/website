@@ -7,6 +7,10 @@ first_name: Hervé
 last_name: Bitteur
 person_id: 543
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Software engineering has been my passion for 30+ years, through many exciting projects notably at French Civil Aviation, Schlumberger, Alcatel, Sun Microsystems.
@@ -20,6 +24,7 @@ Software development on Optical Music Recognition began as a hobby, and went on 
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ Software development on Optical Music Recognition began as a hobby, and went on 
             <td><a href="/schedule/event/audiveris">Audiveris: Optical Music Recognition</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>15:00</td>
             <td>15:15</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Niibe
 last_name: Yutaka
 person_id: 838
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Niibe is a contributer to GNU Project since 1989 and a Debian developer since 2005.
@@ -20,6 +24,7 @@ He is a long time GNU/Linux developer and the principal author of Gnuk, and the 
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ He is a long time GNU/Linux developer and the principal author of Gnuk, and the 
             <td><a href="/schedule/event/gnuk">Gnuk - OpenPGP USB Token implementation</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1301">H.1301</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>15:00</td>
             <td>15:45</td>
     </tbody>

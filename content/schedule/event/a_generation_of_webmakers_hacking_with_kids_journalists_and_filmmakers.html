@@ -2,7 +2,10 @@
 title: ! 'A Generation of Webmakers: Hacking with kids, journalists, and filmmakers'
 kind: event
 speakers:
-- michelle_thorne
+  -
+    name: Michelle Thorne
+    slug: michelle_thorne
+    url: /schedule/speaker/michelle_thorne
 slug: a_generation_of_webmakers_hacking_with_kids_journalists_and_filmmakers
 day: Sun
 start: 16:15
@@ -10,12 +13,31 @@ end: 16:15
 event_id: 893
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:15</dd>
+    <dt>End:</dt>
+    <dd>16:30</dd>
+</dl>
 
-<p><p>Mozilla is building a generation of webmakers — people who do not consume the web, but help make it. To do this, we're teaming developers up with journalists, filmmakers, and kids around programs that show you how to bend and hack the web. We need your help to reach more people and build tools that expose the power of the web. Come learn more!</p></p>
+<p>Mozilla is building a generation of webmakers — people who do not consume the web, but help make it. To do this, we're teaming developers up with journalists, filmmakers, and kids around programs that show you how to bend and hack the web. We need your help to reach more people and build tools that expose the power of the web. Come learn more!</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/michelle_thorne">Michelle Thorne</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: ! 'GNOME 3.4 accessible: Status, news, future'
 kind: event
 speakers:
-- alejandro_pineiro_iglesias
+  -
+    name: Alejandro Piñeiro Iglesias
+    slug: alejandro_pineiro_iglesias
+    url: /schedule/speaker/alejandro_pineiro_iglesias
 slug: gnome3a11y
 day: Sun
 start: 09:15
@@ -10,9 +13,20 @@ end: 09:15
 event_id: 617
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>09:15</dd>
+    <dt>End:</dt>
+    <dd>09:55</dd>
+</dl>
 
-<p><p>In GNOME, accessibility is a core value that touches all aspects of
+<p>In GNOME, accessibility is a core value that touches all aspects of
 the system. [1]</p>
 
 <p>From the infrastructure, to the graphical toolkit, to the
@@ -37,10 +51,18 @@ from the framework itself.</p>
   * KDE status and cooperation
   * Future</p>
 
-<p>[1] http://library.gnome.org/devel/accessibility-devel-guide/nightly/gad-how-it-works.html.en</p></p>
+<p>[1] http://library.gnome.org/devel/accessibility-devel-guide/nightly/gad-how-it-works.html.en</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/alejandro_pineiro_iglesias">Alejandro Piñeiro Iglesias</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

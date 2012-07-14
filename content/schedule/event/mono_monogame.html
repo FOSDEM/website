@@ -2,9 +2,18 @@
 title: MonoGame
 kind: event
 speakers:
-- dominique_louis
-- dean_ellis
-- kenneth_pouncey
+  -
+    name: Dominique Louis
+    slug: dominique_louis
+    url: /schedule/speaker/dominique_louis
+  -
+    name: Dean Ellis
+    slug: dean_ellis
+    url: /schedule/speaker/dean_ellis
+  -
+    name: Kenneth Pouncey
+    slug: kenneth_pouncey
+    url: /schedule/speaker/kenneth_pouncey
 slug: mono_monogame
 day: Sat
 start: 16:40
@@ -12,19 +21,36 @@ end: 16:40
 event_id: 773
 ---
 
-<p>Track: <a href="/schedule/track/mono_devroom">Mono Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mono">Mono</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3601">K.3.601</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:40</dd>
+    <dt>End:</dt>
+    <dd>17:30</dd>
+</dl>
 
-<p><ol>
+<ol>
 <li><p>Talk covering a the history of MonoGame, where we are at and where we want to go. We will show some demos of things running on Mac, PC and iOS/Android devices. This will be presented by Dean Ellis, Kenneth Pouncey  and Me.</p></li>
 <li><p>Using advertising within iOS/Android. This will be presented by Dean Ellis &amp; Me.</p></li>
 <li><p>Networking within MonoGame. This will be presented by Dean Ellis, and Kenneth Pouncey.</p></li>
 </ol>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/dominique_louis">Dominique Louis</a></li>
-    <li><a href="/schedule/speaker/dean_ellis">Dean Ellis</a></li>
-    <li><a href="/schedule/speaker/kenneth_pouncey">Kenneth Pouncey</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

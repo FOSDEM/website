@@ -2,7 +2,10 @@
 title: Colour Management in Compositors.
 kind: event
 speakers:
-- kai_uwe_behrmann
+  -
+    name: Kai-Uwe Behrmann
+    slug: kai_uwe_behrmann
+    url: /schedule/speaker/kai_uwe_behrmann
 slug: cm_compositors
 day: Sun
 start: 12:00
@@ -10,12 +13,31 @@ end: 12:00
 event_id: 924
 ---
 
-<p>Track: <a href="/schedule/track/xorg+openicc_devroom">X.org+OpenICC Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3401">K.3.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>13:00</dd>
+</dl>
 
-<p><p>Xorg allows compositors to run on efficient GPU hardware. It is possibly to deploy GPUs for low power consumption colour correction of the whole desktop. The talk will introduce in the topic by the CompICC colour server implementation and give a overview about used techniques and concepts. It will try to outline next generation desktop colour management and what is needed to get colour management well supported in graphics servers and deployed by toolkits and applications.</p></p>
+<p>Xorg allows compositors to run on efficient GPU hardware. It is possibly to deploy GPUs for low power consumption colour correction of the whole desktop. The talk will introduce in the topic by the CompICC colour server implementation and give a overview about used techniques and concepts. It will try to outline next generation desktop colour management and what is needed to get colour management well supported in graphics servers and deployed by toolkits and applications.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/kai_uwe_behrmann">Kai-Uwe Behrmann</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

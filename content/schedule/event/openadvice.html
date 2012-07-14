@@ -2,7 +2,10 @@
 title: Open Advice
 kind: event
 speakers:
-- lydia_pintscher
+  -
+    name: Lydia Pintscher
+    slug: lydia_pintscher
+    url: /schedule/speaker/lydia_pintscher
 slug: openadvice
 day: Sat
 start: 14:50
@@ -10,17 +13,36 @@ end: 14:50
 event_id: 724
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:50</dd>
+    <dt>End:</dt>
+    <dd>15:05</dd>
+</dl>
 
-<p><p>Come and join us for the release of the Open Advice book.
+<p>Come and join us for the release of the Open Advice book.
 Open Advice is a collaboration of people from many different Free
 Software projects answering one question: What's one key thing you
 would have liked to know when you started contributing. We will give a
 short tour of the book and talk about some of the lessons learned from
-taking a large-scale book project from idea to publishing.</p></p>
+taking a large-scale book project from idea to publishing.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/lydia_pintscher">Lydia Pintscher</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

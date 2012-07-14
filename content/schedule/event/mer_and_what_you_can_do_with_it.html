@@ -2,7 +2,10 @@
 title: Mer ... and what you can do with it
 kind: event
 speakers:
-- david_greaves
+  -
+    name: David Greaves
+    slug: david_greaves
+    url: /schedule/speaker/david_greaves
 slug: mer_and_what_you_can_do_with_it
 day: Sat
 start: 11:30
@@ -10,12 +13,31 @@ end: 11:30
 event_id: 592
 ---
 
-<p>Track: <a href="/schedule/track/open_mobile_linux_devroom">Open Mobile Linux Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:30</dd>
+    <dt>End:</dt>
+    <dd>12:00</dd>
+</dl>
 
-<p><p>Mer says it is "aimed at device manufacturers" - but what does this mean? It has the same source as many other distros so this talk will introduce the non-code areas where Mer differentiates and how it does that by operating in the open. From systems and tools to processes; what's available, what Mer does and does not address and how a Mer-based project gets going?</p></p>
+<p>Mer says it is "aimed at device manufacturers" - but what does this mean? It has the same source as many other distros so this talk will introduce the non-code areas where Mer differentiates and how it does that by operating in the open. From systems and tools to processes; what's available, what Mer does and does not address and how a Mer-based project gets going?</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/david_greaves">David Greaves</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

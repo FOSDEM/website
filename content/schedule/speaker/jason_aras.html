@@ -7,6 +7,10 @@ first_name: Jason
 last_name: Aras
 person_id: 784
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jason Aras has been tackling large and small scale operational problems over the last decade by leveraging  and extending open source tools. His goal in life is to make his job and the jobs of those around him easier though tooling and automation.  He currently works as a Senior Operations Engineer for the mobile startup StackMob where he uses Puppet, OpenNMS and various other tools on a daily basis to maintain internal and cloud infrastructure.  He has been a member of the Order of the Green Polo since 2007.</p></p>
@@ -18,6 +22,7 @@ person_id: 784
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 784
             <td><a href="/schedule/event/cfgmgmtpullsthestrings">Who Pulls the Strings?  Integrating OpenNMS with Modern Configuration Management</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></td>
             <td>15:00</td>
             <td>15:45</td>
     </tbody>

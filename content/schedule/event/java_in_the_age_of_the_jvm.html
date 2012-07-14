@@ -2,7 +2,10 @@
 title: Java in the Age of the JVM
 kind: event
 speakers:
-- steve_o'grady
+  -
+    name: Steve O'Grady
+    slug: steve_ogrady
+    url: /schedule/speaker/steve_ogrady
 slug: java_in_the_age_of_the_jvm
 day: Sat
 start: 15:30
@@ -10,16 +13,35 @@ end: 15:30
 event_id: 689
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:30</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>By now, it's become well understood that Java is far from dead, and that rumors of its demise have been greatly exaggerated. The language once written off maintains its truly unique role as the power behind the legacy enterprise applications as well as the foundation for some of the biggest and most influential next generation companies on the web.</p>
+<p>By now, it's become well understood that Java is far from dead, and that rumors of its demise have been greatly exaggerated. The language once written off maintains its truly unique role as the power behind the legacy enterprise applications as well as the foundation for some of the biggest and most influential next generation companies on the web.</p>
 
 <p>What is less clear, however, is the future of Java the language versus Java the platform.  JVM based languages are proliferating wildly: Scala, Clojure and its brethren are household names, and even established specialized languages like R are being ported to the JVM. What does this mean for the future of Java? Will they carry it forward into the future, or relegate it to the role of lower level component?</p>
 
-<p>We'll explore this question through a mix of quantitative data derived from sources like GitHub, HackerNews and StackOverflow, as well as qualitative research on technology developments and directions.</p></p>
+<p>We'll explore this question through a mix of quantitative data derived from sources like GitHub, HackerNews and StackOverflow, as well as qualitative research on technology developments and directions.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/steve_o'grady">Steve O'Grady</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

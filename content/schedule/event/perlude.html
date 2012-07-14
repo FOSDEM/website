@@ -2,7 +2,10 @@
 title: ! 'Perlude: a taste of Haskell in Perl'
 kind: event
 speakers:
-- marc_chantreux
+  -
+    name: Marc Chantreux
+    slug: marc_chantreux
+    url: /schedule/speaker/marc_chantreux
 slug: perlude
 day: Sun
 start: 10:05
@@ -10,12 +13,31 @@ end: 10:05
 event_id: 908
 ---
 
-<p>Track: <a href="/schedule/track/perl_devroom">Perl Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/perl">Perl</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:05</dd>
+    <dt>End:</dt>
+    <dd>10:45</dd>
+</dl>
 
-<p><p>Perlude (formaly Lazyness) steal haskell prelude keywords to give perl a convenient way to deal with generators the way haskell uses monad. It actually adds a pipe feature to perl. Lot of problems can be solved with smaller, more reusable and easier to maintain code.</p></p>
+<p>Perlude (formaly Lazyness) steal haskell prelude keywords to give perl a convenient way to deal with generators the way haskell uses monad. It actually adds a pipe feature to perl. Lot of problems can be solved with smaller, more reusable and easier to maintain code.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/marc_chantreux">Marc Chantreux</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

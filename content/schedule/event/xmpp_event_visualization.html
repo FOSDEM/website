@@ -2,8 +2,14 @@
 title: ! 'Applications: Event Visualization in Emergency Call Systems '
 kind: event
 speakers:
-- nobuo_ogashiwa
-- yoshihiro_suzuki
+  -
+    name: Nobuo Ogashiwa
+    slug: nobuo_ogashiwa
+    url: /schedule/speaker/nobuo_ogashiwa
+  -
+    name: Yoshihiro Suzuki
+    slug: yoshihiro_suzuki
+    url: /schedule/speaker/yoshihiro_suzuki
 slug: xmpp_event_visualization
 day: Sat
 start: 17:00
@@ -11,14 +17,32 @@ end: 17:00
 event_id: 912
 ---
 
-<p>Track: <a href="/schedule/track/jabber_and_xmpp_devroom">Jabber and XMPP Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>17:30</dd>
+</dl>
 
-<p><p>Our "Soft Emergency Call System" solves two problems: event aggregation and event visualization.</p></p>
-<p><p>We designed a "Soft Emergency Call System" to deploy in local government to provide care in an aging society.  In the design process we had 2 issues ("Event Aggregation" and "Event Visualization"). We describe two ideas to solve those issues, and introduce the system's implementation and development environment.</p></p>
+<p>Our "Soft Emergency Call System" solves two problems: event aggregation and event visualization.</p>
+<p>We designed a "Soft Emergency Call System" to deploy in local government to provide care in an aging society.  In the design process we had 2 issues ("Event Aggregation" and "Event Visualization"). We describe two ideas to solve those issues, and introduce the system's implementation and development environment.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/nobuo_ogashiwa">Nobuo Ogashiwa</a></li>
-    <li><a href="/schedule/speaker/yoshihiro_suzuki">Yoshihiro Suzuki</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

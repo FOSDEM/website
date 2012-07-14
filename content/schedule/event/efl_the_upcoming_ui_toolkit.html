@@ -2,7 +2,10 @@
 title: EFL the upcoming embedded UI toolkit
 kind: event
 speakers:
-- cedric_bail
+  -
+    name: Cedric Bail
+    slug: cedric_bail
+    url: /schedule/speaker/cedric_bail
 slug: efl_the_upcoming_ui_toolkit
 day: Sun
 start: 14:00
@@ -10,9 +13,20 @@ end: 14:00
 event_id: 701
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>15:00</dd>
+</dl>
 
-<p><p>The Enlightenment Foundation Libraries is a UI toolkit designed for
+<p>The Enlightenment Foundation Libraries is a UI toolkit designed for
 the embeded world in mind. We have now released version 1.1 after
 almost one year of work. This new version come with new features, a
 lot of speed and memory improvement, improved portability (we
@@ -22,10 +36,18 @@ serious work. We are now working on preparing a release for another
 set of important libraries and also finishing the last few items in
 the Enlightenment DR 17 todo list. With Tizen project and the growing
 contribution of Samsung, 2012 is going to be a very interesting year
-for the Enlightenment project and we will talk about just that.</p></p>
+for the Enlightenment project and we will talk about just that.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/cedric_bail">Cedric Bail</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

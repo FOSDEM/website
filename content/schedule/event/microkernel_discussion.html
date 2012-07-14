@@ -2,10 +2,22 @@
 title: Panel discussion
 kind: event
 speakers:
-- jakub_jermar
-- christian_helmuth
-- ben_gras
-- julian_stecklina
+  -
+    name: Jakub Jermář
+    slug: jakub_jermar
+    url: /schedule/speaker/jakub_jermar
+  -
+    name: Christian Helmuth
+    slug: christian_helmuth
+    url: /schedule/speaker/christian_helmuth
+  -
+    name: Ben Gras
+    slug: ben_gras
+    url: /schedule/speaker/ben_gras
+  -
+    name: Julian Stecklina
+    slug: julian_stecklina
+    url: /schedule/speaker/julian_stecklina
 slug: microkernel_discussion
 day: Sun
 start: 16:00
@@ -13,15 +25,31 @@ end: 16:00
 event_id: 551
 ---
 
-<p>Track: <a href="/schedule/track/microkernel_os_devroom">Microkernel OS Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/microkernel_os">Microkernel OS</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3201">K.3.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>Panel discussion on various topics with authors of several microkernel / multiserver operating systems.</p></p>
+<p>Panel discussion on various topics with authors of several microkernel / multiserver operating systems.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jakub_jermar">Jakub Jermář</a></li>
-    <li><a href="/schedule/speaker/christian_helmuth">Christian Helmuth</a></li>
-    <li><a href="/schedule/speaker/ben_gras">Ben Gras</a></li>
-    <li><a href="/schedule/speaker/julian_stecklina">Julian Stecklina</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

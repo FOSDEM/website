@@ -7,6 +7,10 @@ first_name: Fred
 last_name: Kiefer
 person_id: 884
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 
@@ -17,6 +21,7 @@ person_id: 884
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -26,6 +31,7 @@ person_id: 884
             <td><a href="/schedule/event/gnustep_gui_news">GNUstep GUI</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/gnustep">GNUstep</a></td>
             <td>13:45</td>
             <td>14:15</td>
     </tbody>

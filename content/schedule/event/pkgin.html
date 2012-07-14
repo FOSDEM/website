@@ -2,7 +2,10 @@
 title: pkgin, a binary package manager for pkgsrc
 kind: event
 speakers:
-- emile_heitor
+  -
+    name: Emile Heitor
+    slug: emile_heitor
+    url: /schedule/speaker/emile_heitor
 slug: pkgin
 day: Sun
 start: 15:30
@@ -10,14 +13,33 @@ end: 15:30
 event_id: 850
 ---
 
-<p>Track: <a href="/schedule/track/bsd_devroom">BSD Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/bsd">BSD</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:30</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>pkgin is aimed at being an /apt / yum/ like tool for managing pkgsrc binary packages. Many so-called GNU/Linux distributions provide a convenient way of searching, installing and upgrading software by using binary archives found on "repositories". NetBSD, and more widely, all operating systems relying on pkgsrc have tools like pkg<em>add and pkg</em>delete, but those are unable to correctly handle binary upgrades, and sometimes even installation itself.</p>
+<p>pkgin is aimed at being an /apt / yum/ like tool for managing pkgsrc binary packages. Many so-called GNU/Linux distributions provide a convenient way of searching, installing and upgrading software by using binary archives found on "repositories". NetBSD, and more widely, all operating systems relying on pkgsrc have tools like pkg<em>add and pkg</em>delete, but those are unable to correctly handle binary upgrades, and sometimes even installation itself.</p>
 
-<p>This is the purpose of /pkgin/, to provide the user a convenient way to handle binary packages, using the same working mechanisms than tools like /apt-get/.</p></p>
+<p>This is the purpose of /pkgin/, to provide the user a convenient way to handle binary packages, using the same working mechanisms than tools like /apt-get/.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/emile_heitor">Emile Heitor</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

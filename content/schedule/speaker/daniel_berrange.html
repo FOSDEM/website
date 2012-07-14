@@ -7,6 +7,10 @@ first_name: Daniel
 last_name: Berrange
 person_id: 623
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Daniel Berrange has been one of the lead developers &amp; architects in the libvirt development community for the past 5 years. He is also the founder of the GTK-VNC, virt-manager, Test-AutoBuild and Entangle Photo projects, a significant contributor to the Xen, KVM, oVirt and SPICE-GTK projects, and maintainer of a number of Perl modules on CPAN. Daniel is a firm believer in the development and use of open source software under copyleft licenses.</p></p>
@@ -18,6 +22,7 @@ person_id: 623
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 623
             <td><a href="/schedule/event/libvirt_lxc_kvm_sandboxes">Building app sandboxes on top of LXC and KVM with libvirt</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/chavanne">Chavanne</a></td>
+            <td><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></td>
             <td>15:00</td>
             <td>15:55</td>
     </tbody>

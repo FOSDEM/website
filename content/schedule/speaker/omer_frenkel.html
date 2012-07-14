@@ -7,6 +7,10 @@ first_name: Omer
 last_name: Frenkel
 person_id: 621
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Omer Frenkel is the oVirt engine core maintainer and Team Lead. He works as a Senior Software Engineer at Red Hat.</p></p>
@@ -18,6 +22,7 @@ person_id: 621
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 621
             <td><a href="/schedule/event/ovirt_engine_core">oVirt Engine Core: Internals and Infrastructure</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/chavanne">Chavanne</a></td>
+            <td><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></td>
             <td>11:30</td>
             <td>11:55</td>
     </tbody>

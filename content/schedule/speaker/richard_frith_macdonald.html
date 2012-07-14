@@ -7,6 +7,10 @@ first_name: Richard
 last_name: Frith-Macdonald
 person_id: 766
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 
@@ -17,6 +21,7 @@ person_id: 766
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -26,6 +31,7 @@ person_id: 766
             <td><a href="/schedule/event/gnustep_in_enterprise">Enterprise Control, Configuration and Logging/Alarming using GNUstep-base</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/gnustep">GNUstep</a></td>
             <td>15:15</td>
             <td>16:00</td>
     </tbody>

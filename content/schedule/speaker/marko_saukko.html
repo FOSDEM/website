@@ -7,6 +7,10 @@ first_name: Marko
 last_name: Saukko
 person_id: 643
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Marko worked with MeeGo since the very beginning as part of the Nokia N900 Hardware Adaptation team. After MeeGo 1.2 a community project called MeeGo Community Edition (CE) was announced, which concentrated getting Handset UX working on N900. In MeeGo CE Marko worked in release engineering, image building, general OBS project maintenance and many other things. At the moment Marko is working with the Nemo Mobile project and handling the releases, OBS project structures etc.</p></p>
@@ -18,6 +22,7 @@ person_id: 643
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 643
             <td><a href="/schedule/event/nemo_mobile">Nemo Mobile - How to contribute to the project</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></td>
             <td>15:30</td>
             <td>16:00</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Chris
 last_name: Hofmann
 person_id: 116
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>As Director of Engineering and then Special Projects at the Mozilla Foundation and Corporation since 2003, Chris Hofmann has spearheaded the research and development work of thousands of open source contributors around the world.</p>
@@ -26,6 +30,7 @@ person_id: 116
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -35,6 +40,7 @@ person_id: 116
             <td><a href="/schedule/event/mozilla_in_your_language_2012">Mozilla in your Language in 2012</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>15:30</td>
             <td>16:00</td>
     </tbody>

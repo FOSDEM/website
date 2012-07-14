@@ -2,7 +2,10 @@
 title: How Eclipse Works
 kind: event
 speakers:
-- mike_milinkovich
+  -
+    name: Mike Milinkovich
+    slug: mike_milinkovich
+    url: /schedule/speaker/mike_milinkovich
 slug: how_eclipse_works
 day: Sun
 start: 12:00
@@ -10,14 +13,33 @@ end: 12:00
 event_id: 711
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>By any measure, Eclipse has been a very successful open source community, and it has certainly contributed immensely to the worldwide success of Java. It has also been for many years, one of best examples of a vendor-neutral, free Java community.</p>
+<p>By any measure, Eclipse has been a very successful open source community, and it has certainly contributed immensely to the worldwide success of Java. It has also been for many years, one of best examples of a vendor-neutral, free Java community.</p>
 
-<p>But there is one thing in particular that sets Eclipse apart: it ALWAYS ships on time. For eight straight years, the Eclipse community has shipped its major release on time to the day. How the heck does that work? This talk will focus on the processes, community interactions, and most importantly, the cultural aspects of Eclipse that makes this possible. The not-so-subliminal message is that OpenJDK would be well served to emulate Eclipse in its predictability.</p></p>
+<p>But there is one thing in particular that sets Eclipse apart: it ALWAYS ships on time. For eight straight years, the Eclipse community has shipped its major release on time to the day. How the heck does that work? This talk will focus on the processes, community interactions, and most importantly, the cultural aspects of Eclipse that makes this possible. The not-so-subliminal message is that OpenJDK would be well served to emulate Eclipse in its predictability.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/mike_milinkovich">Mike Milinkovich</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

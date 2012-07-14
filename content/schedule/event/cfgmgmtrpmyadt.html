@@ -2,7 +2,10 @@
 title: Configuration management and deployment with RPM and YADT
 kind: event
 speakers:
-- ralph_angenendt
+  -
+    name: Ralph Angenendt
+    slug: ralph_angenendt
+    url: /schedule/speaker/ralph_angenendt
 slug: cfgmgmtrpmyadt
 day: Sun
 start: 16:00
@@ -10,10 +13,21 @@ end: 16:00
 event_id: 652
 ---
 
-<p>Track: <a href="/schedule/track/configuration_and_systems_management_devroom">Configuration and Systems Management Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3601">K.3.601</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:45</dd>
+</dl>
 
-<p><p>RPM is a well understood and relatively easy packaging format that helps to deploy sets of files in a consistent, reproducible and reversible way, and YADT enables organizations to describe their system landscape in a simple, human readable YAML format.</p></p>
-<p><p>RPM is a well understood and relatively easy packaging format that helps to deploy sets of files in a consistent, reproducible and reversible way. Tools like yum, zypper and apt have enabled admins to install, remove and update complete dependency chains of RPMs and to verify on-system changes to these file sets.</p>
+<p>RPM is a well understood and relatively easy packaging format that helps to deploy sets of files in a consistent, reproducible and reversible way, and YADT enables organizations to describe their system landscape in a simple, human readable YAML format.</p>
+<p>RPM is a well understood and relatively easy packaging format that helps to deploy sets of files in a consistent, reproducible and reversible way. Tools like yum, zypper and apt have enabled admins to install, remove and update complete dependency chains of RPMs and to verify on-system changes to these file sets.</p>
 
 <p>Which seems to be a perfect starting point for doing general configuration management with those tools: larger dependency chains can be pulled in via a simple RPM, configuration files can be delivered inside RPMs, administrators feel right at home and have their toolset for installing, updating and verifying the configuration on the machines, developers can easily contribute to simple packaging.</p>
 
@@ -24,10 +38,18 @@ event_id: 652
 <p>YADT enables organizations to describe their system landscape in a simple, human readable YAML format. YADT is fully aware of not only dependencies between packages and configs, but also of interservice dependencies. Due to this, YADT makes sure that the systems within your platform are updated, configured and restarted in the correct order. It does this by analyzing service and package dependencies and by grouping dependent systems into "chunks".  Deployment then happens as a sequential wave over those chunks, making sure that the platform stays online during the deployment.</p>
 
 <p>YADT is in the process of being open sourced and is available at
-https://code.google.com/p/yadt/</p></p>
+https://code.google.com/p/yadt/</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/ralph_angenendt">Ralph Angenendt</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

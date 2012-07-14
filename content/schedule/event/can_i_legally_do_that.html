@@ -2,7 +2,10 @@
 title: Can I legally do that?
 kind: event
 speakers:
-- mark_wielaard
+  -
+    name: Mark Wielaard
+    slug: mark_wielaard
+    url: /schedule/speaker/mark_wielaard
 slug: can_i_legally_do_that
 day: Sun
 start: 11:30
@@ -10,9 +13,20 @@ end: 11:30
 event_id: 710
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:30</dd>
+    <dt>End:</dt>
+    <dd>12:00</dd>
+</dl>
 
-<p><p>Often when people ask the question "Can I legally do that?", they mean
+<p>Often when people ask the question "Can I legally do that?", they mean
 "Will someone sue me if I do...?". Sadly the answer is that if something
 is successful, no matter what and how you did things, at some point
 someone will just try and sue, just to see if they can get some part of
@@ -23,10 +37,18 @@ issues a Free Software hacker dealing with the core java platform may
 encounter. And some techniques we as a community can employ to make the
 chances of individual hackers being the target of a lawsuit smaller and
 how to make it harder for someone to take down one of our core java
-platform projects.</p></p>
+platform projects.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/mark_wielaard">Mark Wielaard</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

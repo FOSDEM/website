@@ -7,6 +7,10 @@ first_name: Anders
 last_name: Rundgren
 person_id: 914
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Anders is a seasoned developer and entrepreneur who has worked exclusively with Internet-based systems since 1995.
@@ -19,6 +23,7 @@ Anders is currently a consultant at PrimeKey solutions with enrollment to EJBCA 
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ Anders is currently a consultant at PrimeKey solutions with enrollment to EJBCA 
             <td><a href="/schedule/event/open_security_hw">Open Security Hardware</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2214">H.2214</a></td>
+            <td><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></td>
             <td>11:00</td>
             <td>11:30</td>
     </tbody>

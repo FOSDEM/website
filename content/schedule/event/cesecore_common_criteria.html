@@ -2,7 +2,10 @@
 title: CESecore and common criteria certification of open source software
 kind: event
 speakers:
-- tomas_gustavsson
+  -
+    name: Tomas Gustavsson
+    slug: tomas_gustavsson
+    url: /schedule/speaker/tomas_gustavsson
 slug: cesecore_common_criteria
 day: Sat
 start: 11:45
@@ -10,18 +13,37 @@ end: 11:45
 event_id: 946
 ---
 
-<p>Track: <a href="/schedule/track/hardware_cryptography_devroom">Hardware Cryptography Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2214">H.2214</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:45</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>CESeCore is a common criteria certified security core. It is a developer
+<p>CESeCore is a common criteria certified security core. It is a developer
 library, including support for hardware cryptographic devices, of JEE
 components and was recently certified at Common Criteria level EAL4+.
 This talk will give an overview of what CESeCore is and what it can be
 used for. It will also share experiences about Common Criteria
 certification, what it is, what's good and what's bad, and challenges
-involved for open source software.</p></p>
+involved for open source software.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/tomas_gustavsson">Tomas Gustavsson</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

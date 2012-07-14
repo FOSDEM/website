@@ -2,7 +2,10 @@
 title: LTE is here, and ModemManager is (almost) ready for it
 kind: event
 speakers:
-- aleksander_morgado
+  -
+    name: Aleksander Morgado
+    slug: aleksander_morgado
+    url: /schedule/speaker/aleksander_morgado
 slug: lte_modemmanager
 day: Sun
 start: 09:00
@@ -10,10 +13,21 @@ end: 09:00
 event_id: 582
 ---
 
-<p>Track: <a href="/schedule/track/telephony_and_communications_devroom">Telephony and Communications Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>09:00</dd>
+    <dt>End:</dt>
+    <dd>09:40</dd>
+</dl>
 
-<p><p>An overview of LTE/LTE-advanced technologies, and how ModemManager will work with LTE devices.</p></p>
-<p><p>3GPP Long Term Evolution (LTE) is the new standard for high speed data
+<p>An overview of LTE/LTE-advanced technologies, and how ModemManager will work with LTE devices.</p>
+<p>3GPP Long Term Evolution (LTE) is the new standard for high speed data
 communications, an evolution of the 3GPP-family of standards (GSM,
 UMTS...), but adopted also by CDMA networks as the next 4G technology.</p>
 
@@ -26,10 +40,18 @@ devices.</p>
 <p>This talk will provide an overview of the new LTE and LTE advanced
 technologies, from both network and device points of view; present the
 new features arriving with this technology; and describe what is being
-done in ModemManager to be able to manage 4G devices.</p></p>
+done in ModemManager to be able to manage 4G devices.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/aleksander_morgado">Aleksander Morgado</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

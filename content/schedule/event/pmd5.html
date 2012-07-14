@@ -2,7 +2,10 @@
 title: ! 'PMD5: What can it do for you ?'
 kind: event
 speakers:
-- romain_pelisse
+  -
+    name: Romain Pelisse
+    slug: romain_pelisse
+    url: /schedule/speaker/romain_pelisse
 slug: pmd5
 day: Sat
 start: 18:20
@@ -10,12 +13,31 @@ end: 18:20
 event_id: 458
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:20</dd>
+    <dt>End:</dt>
+    <dd>18:35</dd>
+</dl>
 
-<p><p>This lightning talk will be an overview of the important features of PMD 5.0, from which a beta should be release before then.Introducing briefly what PMD does (static code control and analysis) and how it does it (using XPath to query over Abstract Syntax Tree provided by pre-compilation), the talk will focus on the more important enhancement of this version: multi language support, mostly achieved by the great work of Ryan Gustavson between 2009 - 2010. With this features, PMD can be easily extend to support a large set of languages, including already XML based languages and ECMAScript (more commonly designated by the name JavaScript)</p></p>
+<p>This lightning talk will be an overview of the important features of PMD 5.0, from which a beta should be release before then.Introducing briefly what PMD does (static code control and analysis) and how it does it (using XPath to query over Abstract Syntax Tree provided by pre-compilation), the talk will focus on the more important enhancement of this version: multi language support, mostly achieved by the great work of Ryan Gustavson between 2009 - 2010. With this features, PMD can be easily extend to support a large set of languages, including already XML based languages and ECMAScript (more commonly designated by the name JavaScript)</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/romain_pelisse">Romain Pelisse</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -7,6 +7,10 @@ first_name: Richard
 last_name: Hartmann
 person_id: 497
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Richard "RichiH" Hartmann is a member of the board of the PDPC, freenode staff, and OFTC staff. His dayjob being a project and backbone management at Globalways AG, many of his nights are spent around FLOSS in general. His main interests hover around command line tools, data integrity, FLOSS communities, cold countries, and scuba diving.</p>
@@ -20,6 +24,7 @@ person_id: 497
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,12 +34,14 @@ person_id: 497
             <td><a href="/schedule/event/vcsh">vcsh - manage config files in $HOME via fake bare git repositories</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>15:40</td>
             <td>15:55</td>
         <tr>
             <td><a href="/schedule/event/gitannex">git-annex - manage files with git, without checking their contents into git</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>15:40</td>
             <td>15:55</td>
     </tbody>

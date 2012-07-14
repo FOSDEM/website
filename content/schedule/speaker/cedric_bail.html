@@ -7,6 +7,10 @@ first_name: Cedric
 last_name: Bail
 person_id: 259
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Cedric is one of the main developers of the EFL toolkit</p></p>
@@ -18,6 +22,7 @@ person_id: 259
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 259
             <td><a href="/schedule/event/efl_the_upcoming_ui_toolkit">EFL the upcoming embedded UI toolkit</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/lameere">Lameere</a></td>
+            <td><a href="/schedule/track/embedded">Embedded</a></td>
             <td>14:00</td>
             <td>15:00</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Lucas
 last_name: Stach
 person_id: 901
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Lucas is a student at University of Applied Sciences Leipzig working on various free software project in his free time since 2007. He is deeply obsessed with understanding complex hardware well and assurance of quality of code. He had his first real contact with nouveau in 2009.</p>
@@ -20,6 +24,7 @@ person_id: 901
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ person_id: 901
             <td><a href="/schedule/event/nouveau">Nouveau: Recap, on-going and future work</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>15:00</td>
             <td>16:00</td>
     </tbody>

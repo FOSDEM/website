@@ -2,7 +2,10 @@
 title: libguestfs - tools for modifying virtual machine disk images
 kind: event
 speakers:
-- richard_jones
+  -
+    name: Richard Jones
+    slug: richard_jones
+    url: /schedule/speaker/richard_jones
 slug: libguestfs
 day: Sat
 start: 12:30
@@ -10,13 +13,32 @@ end: 12:30
 event_id: 560
 ---
 
-<p>Track: <a href="/schedule/track/virtualization_and_cloud_devroom">Virtualization and Cloud Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/chavanne">Chavanne</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:30</dd>
+    <dt>End:</dt>
+    <dd>12:55</dd>
+</dl>
 
-<p><p>libguestfs is a set of tools for accessing and modifying virtual machine (VM) disk images.  You can use this to inject files, resize, rescue, create, view or audit disks.  libguestfs is also a library that you can link to management programs written in C, Perl, Python, Ruby, Java and other languages.  In this talk, Richard Jones will
-introduce the tools and give live demonstrations.  He also talks about how they work behind the scenes.</p></p>
+<p>libguestfs is a set of tools for accessing and modifying virtual machine (VM) disk images.  You can use this to inject files, resize, rescue, create, view or audit disks.  libguestfs is also a library that you can link to management programs written in C, Perl, Python, Ruby, Java and other languages.  In this talk, Richard Jones will
+introduce the tools and give live demonstrations.  He also talks about how they work behind the scenes.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/richard_jones">Richard Jones</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

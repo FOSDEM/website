@@ -7,6 +7,10 @@ first_name: Jacob
 last_name: Sparre Andersen
 person_id: 862
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jacob Sparre Andersen holds a Ph.D. in experimental physics from the Niels Bohr Institute. After his Ph.D. he has worked in bioinformatics, taught physics, statistics and software engineering, and worked in an investment bank.
@@ -20,6 +24,7 @@ Jacob has his own consulting company -- Jacob Sparre Andersen Research &amp; Inn
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,12 +34,14 @@ Jacob has his own consulting company -- Jacob Sparre Andersen Research &amp; Inn
             <td><a href="/schedule/event/ada_in_game_crimeville">Ada in the on-line multi-user game Crimeville</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/ada">Ada</a></td>
             <td>13:00</td>
             <td>13:25</td>
         <tr>
             <td><a href="/schedule/event/arduinos_in_ada">Programming Arduinos in Ada</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/ada">Ada</a></td>
             <td>15:30</td>
             <td>15:55</td>
     </tbody>

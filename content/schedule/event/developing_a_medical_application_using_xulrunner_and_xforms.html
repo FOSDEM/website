@@ -2,7 +2,10 @@
 title: ! 'On the shoulders of giants: Developing a medical application using XULRunner and XForms'
 kind: event
 speakers:
-- philipp_wagner
+  -
+    name: Philipp Wagner
+    slug: philipp_wagner
+    url: /schedule/speaker/philipp_wagner
 slug: developing_a_medical_application_using_xulrunner_and_xforms
 day: Sun
 start: 15:00
@@ -10,12 +13,31 @@ end: 15:00
 event_id: 863
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:30</dd>
+</dl>
 
-<p><p>In the form of XULRunner, the Mozilla Platform can be used as framework to develop powerful applications. This talk looks at how XULRunner together with the Mozilla XForms extension has been used by a university hospital to build a powerful medical documentation system. A special look will be given to the changes over the years and how the Rapid Release Process influenced the way the application and the XForms extension are developed.</p></p>
+<p>In the form of XULRunner, the Mozilla Platform can be used as framework to develop powerful applications. This talk looks at how XULRunner together with the Mozilla XForms extension has been used by a university hospital to build a powerful medical documentation system. A special look will be given to the changes over the years and how the Rapid Release Process influenced the way the application and the XForms extension are developed.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/philipp_wagner">Philipp Wagner</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

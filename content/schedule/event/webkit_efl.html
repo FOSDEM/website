@@ -2,7 +2,10 @@
 title: ! 'WebKit EFL and Testing: from 0% to 99% in 6 months'
 kind: event
 speakers:
-- leandro_pereira
+  -
+    name: Leandro Pereira
+    slug: leandro_pereira
+    url: /schedule/speaker/leandro_pereira
 slug: webkit_efl
 day: Sat
 start: 14:40
@@ -10,13 +13,32 @@ end: 14:40
 event_id: 460
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:40</dd>
+    <dt>End:</dt>
+    <dd>14:55</dd>
+</dl>
 
-<p><p>Early last year, the EFL port of WebKit was missing all the fun in executing over 20000 tests found in WebKit's repository. Required tools have been written, bugs were fixed, and features were implemented in 2011. Progress, important milestones and lessons learned will be shown in this talk.</p></p>
-<p><p>In order to provide better stability and ensure that future developments won't break things without them getting noticed, testing are an important part of software engineering. The WebKit project contains in its repository more than 20000 tests, scattered among different categories; most common ports (Mac, Qt, GTK+, the various Chromium ports) were performing these tests regularly, but the EFL port was missing all the fun. Tools were written and integrated in WebKit's testing drivers and after 6 months of hard work, we were able to pass 99% of these tests (excluding ones that are platform-specific and the ones that tests unimplemented features). In this talk, one of the developers will talk about the progress obtained while writing these tools, important milestones, and lessons learned.</p></p>
+<p>Early last year, the EFL port of WebKit was missing all the fun in executing over 20000 tests found in WebKit's repository. Required tools have been written, bugs were fixed, and features were implemented in 2011. Progress, important milestones and lessons learned will be shown in this talk.</p>
+<p>In order to provide better stability and ensure that future developments won't break things without them getting noticed, testing are an important part of software engineering. The WebKit project contains in its repository more than 20000 tests, scattered among different categories; most common ports (Mac, Qt, GTK+, the various Chromium ports) were performing these tests regularly, but the EFL port was missing all the fun. Tools were written and integrated in WebKit's testing drivers and after 6 months of hard work, we were able to pass 99% of these tests (excluding ones that are platform-specific and the ones that tests unimplemented features). In this talk, one of the developers will talk about the progress obtained while writing these tools, important milestones, and lessons learned.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/leandro_pereira">Leandro Pereira</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

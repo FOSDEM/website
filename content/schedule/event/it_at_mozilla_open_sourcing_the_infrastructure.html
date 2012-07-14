@@ -2,7 +2,10 @@
 title: ! 'IT@Mozilla: Open sourcing the infrastructure'
 kind: event
 speakers:
-- ben_kero
+  -
+    name: Ben Kero
+    slug: ben_kero
+    url: /schedule/speaker/ben_kero
 slug: it_at_mozilla_open_sourcing_the_infrastructure
 day: Sun
 start: 14:30
@@ -10,12 +13,31 @@ end: 14:30
 event_id: 862
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>14:30</dd>
+    <dt>End:</dt>
+    <dd>15:00</dd>
+</dl>
 
-<p><p>Mozilla supports one of the most diverse and varied sets of machines in the industry.  Some sets must serve tens of millions requests per day, and some must perform complicated and intensive functions.  Some of their greatest assets are external code contributions and community involvement.  Come see how many of the projects within Mozilla IT have been open sourced, and how external contributors have improved the projects.</p></p>
+<p>Mozilla supports one of the most diverse and varied sets of machines in the industry.  Some sets must serve tens of millions requests per day, and some must perform complicated and intensive functions.  Some of their greatest assets are external code contributions and community involvement.  Come see how many of the projects within Mozilla IT have been open sourced, and how external contributors have improved the projects.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/ben_kero">Ben Kero</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

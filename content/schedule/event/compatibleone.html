@@ -2,8 +2,14 @@
 title: Open Cloud Interoperability with CompatibleOne
 kind: event
 speakers:
-- jamie_marshall
-- fabio_mancinelli
+  -
+    name: Jamie Marshall
+    slug: jamie_marshall
+    url: /schedule/speaker/jamie_marshall
+  -
+    name: Fabio Mancinelli
+    slug: fabio_mancinelli
+    url: /schedule/speaker/fabio_mancinelli
 slug: compatibleone
 day: Sat
 start: 14:30
@@ -11,13 +17,31 @@ end: 14:30
 event_id: 561
 ---
 
-<p>Track: <a href="/schedule/track/virtualization_and_cloud_devroom">Virtualization and Cloud Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/chavanne">Chavanne</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:30</dd>
+    <dt>End:</dt>
+    <dd>14:55</dd>
+</dl>
 
-<p><p>This talk will detail the architecture the CompatibleOne open source collaborative project and will conclude with a live demonstration of what seems to be the first open source cloud broker. CompatibleOne develops interoperable middleware for the description and federation of heterogeneous clouds comprising resources provisioned by different vendors. The aim of CompatibleOne is break vendor-lock-in for developers and users by providing interoperability with most platforms. The project contributes to the cloud stack of the OW2 Open Source Cloudware initiative (OSCi).</p></p>
+<p>This talk will detail the architecture the CompatibleOne open source collaborative project and will conclude with a live demonstration of what seems to be the first open source cloud broker. CompatibleOne develops interoperable middleware for the description and federation of heterogeneous clouds comprising resources provisioned by different vendors. The aim of CompatibleOne is break vendor-lock-in for developers and users by providing interoperability with most platforms. The project contributes to the cloud stack of the OW2 Open Source Cloudware initiative (OSCi).</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jamie_marshall">Jamie Marshall</a></li>
-    <li><a href="/schedule/speaker/fabio_mancinelli">Fabio Mancinelli</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

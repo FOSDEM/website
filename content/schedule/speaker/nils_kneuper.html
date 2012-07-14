@@ -7,6 +7,10 @@ first_name: Nils
 last_name: Kneuper
 person_id: 586
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Nils has been active in open source projects for the last 7 years. In this time his main focus was working on the game Battle for Wesnoth. During various discussions over time he came to the conclusion that it would be great to have devroom at FOSDEM which centers on open source game development and went out to collaborate with several orgs to actually start such a devroom.</p></p>
@@ -18,6 +22,7 @@ person_id: 586
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 586
             <td><a href="/schedule/event/gamesdev_welcome">Welcome to the Games Devroom</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></td>
             <td>09:00</td>
             <td>09:10</td>
     </tbody>

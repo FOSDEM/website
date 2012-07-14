@@ -7,6 +7,10 @@ first_name: Benedikt
 last_name: Heintel
 person_id: 494
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 
@@ -17,6 +21,7 @@ person_id: 494
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -26,6 +31,7 @@ person_id: 494
             <td><a href="/schedule/event/cacert_trust">CAcert: Trust - the root of evil?!</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2214">H.2214</a></td>
+            <td><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></td>
             <td>16:00</td>
             <td>16:45</td>
     </tbody>

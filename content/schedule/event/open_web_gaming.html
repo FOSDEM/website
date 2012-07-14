@@ -2,7 +2,10 @@
 title: The Future of Open Web Gaming 
 kind: event
 speakers:
-- rob_hawkes_
+  -
+    name: Rob Hawkes 
+    slug: rob_hawkes_
+    url: /schedule/speaker/rob_hawkes_
 slug: open_web_gaming
 day: Sun
 start: 16:15
@@ -10,12 +13,31 @@ end: 16:15
 event_id: 530
 ---
 
-<p>Track: <a href="/schedule/track/open_source_game_development_devroom">Open Source Game Development Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:15</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>In this talk Rob will highlight the key technologies and events that are going to affect open Web game development in the near future. He will also demo some of these new technologies and show how easy it is to share your game and make money from it using the open and distributed Mozilla Labs Apps project.</p></p>
+<p>In this talk Rob will highlight the key technologies and events that are going to affect open Web game development in the near future. He will also demo some of these new technologies and show how easy it is to share your game and make money from it using the open and distributed Mozilla Labs Apps project.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/rob_hawkes_">Rob Hawkes </a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

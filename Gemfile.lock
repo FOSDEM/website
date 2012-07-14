@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ddfreyne/nanoc.git
-  revision: a2132c912312f249701a58d3da7a927891b04975
+  revision: 46c45c26f62f345ab1796ca605aeeacb128d160d
   branch: release-3.4.x
   specs:
     nanoc (3.4.0)
@@ -38,6 +38,7 @@ GEM
     psych (1.3.3)
     rack (1.4.1)
     rainpress (1.0)
+    rmagick (2.13.1)
     systemu (2.5.2)
     tzinfo (0.3.33)
 
@@ -58,4 +59,5 @@ DEPENDENCIES
   pg
   psych (~> 1.3.3)
   rainpress
+  rmagick
   systemu

@@ -2,7 +2,10 @@
 title: NanoBSD and the art of Timekeeping with appliances.
 kind: event
 speakers:
-- rudi_van_drunen
+  -
+    name: Rudi van Drunen
+    slug: rudi_van_drunen
+    url: /schedule/speaker/rudi_van_drunen
 slug: nanobsd
 day: Sat
 start: 11:00
@@ -10,9 +13,20 @@ end: 11:00
 event_id: 697
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>12:00</dd>
+</dl>
 
-<p><p>The time has come to make the switch from embedded Linux to embedded BSD....
+<p>The time has come to make the switch from embedded Linux to embedded BSD....
 In this talk we will focus on the building of embedded appliances in the BSD world,
 and more specifically on using NanoBSD to create FreeBSD images that run on
 embedded systems.
@@ -29,10 +43,18 @@ machines, even when disconnected from the internet. The example will use a Soekr
 use the high-res timing on the board, together with a temperature controlled crystal
 oscillator.
 The contents of talk have previously been published by the presenter in ;login:.
-the USENIX periodical [1]</p></p>
+the USENIX periodical [1]</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/rudi_van_drunen">Rudi van Drunen</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

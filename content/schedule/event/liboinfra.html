@@ -2,7 +2,10 @@
 title: The Infrastructure behind TDF
 kind: event
 speakers:
-- florian_effenberger
+  -
+    name: Florian Effenberger
+    slug: florian_effenberger
+    url: /schedule/speaker/florian_effenberger
 slug: liboinfra
 day: Sat
 start: 16:15
@@ -10,12 +13,31 @@ end: 16:15
 event_id: 749
 ---
 
-<p>Track: <a href="/schedule/track/libreoffice_devroom">LibreOffice Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/libreoffice">LibreOffice</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:15</dd>
+    <dt>End:</dt>
+    <dd>16:45</dd>
+</dl>
 
-<p><p>TDF provides not only a stable and reliable software to its users, but also a stable and reliable infrastructure for its community. Contrary to what we had before, most of the knowledge is now inside the community, giving a flexible and scalable solution that grows with the demands of the project. This talk gives an overview on the infrastructure that drives the LibreOffice community, including technical details on server administration and management.</p></p>
+<p>TDF provides not only a stable and reliable software to its users, but also a stable and reliable infrastructure for its community. Contrary to what we had before, most of the knowledge is now inside the community, giving a flexible and scalable solution that grows with the demands of the project. This talk gives an overview on the infrastructure that drives the LibreOffice community, including technical details on server administration and management.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/florian_effenberger">Florian Effenberger</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

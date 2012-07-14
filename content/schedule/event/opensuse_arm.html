@@ -2,7 +2,10 @@
 title: openSUSE on ARM
 kind: event
 speakers:
-- michal_hrusecky
+  -
+    name: Michal Hrusecky
+    slug: michal_hrusecky
+    url: /schedule/speaker/michal_hrusecky
 slug: opensuse_arm
 day: Sun
 start: 10:00
@@ -10,14 +13,33 @@ end: 10:00
 event_id: 836
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1301">H.1301</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:00</dd>
+    <dt>End:</dt>
+    <dd>10:30</dd>
+</dl>
 
-<p><p>The openSUSE community started to revive its ARM port recently.</p>
+<p>The openSUSE community started to revive its ARM port recently.</p>
 
-<p>This talk will show how do we work on our ARM, what troubles we were facing so far and what is the current status of the port and what our hopes are for the future.</p></p>
+<p>This talk will show how do we work on our ARM, what troubles we were facing so far and what is the current status of the port and what our hopes are for the future.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/michal_hrusecky">Michal Hrusecky</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

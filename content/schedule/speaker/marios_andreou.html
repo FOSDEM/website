@@ -7,6 +7,10 @@ first_name: Marios
 last_name: Andreou
 person_id: 615
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Marios Andreou is a software engineer and researcher/geek from Cyprus. He currently works for Red Hat on the Apache Deltacloud project and represents Red Hat in various cloud related standards initiatives such as the DMTF CMWG. As part of his work with Deltacloud, he has contributed to a number of open source projects such as the fog cross cloud computing library, the appoxy aws ruby gem for Amazon cloud services and the azure ruby gem for the Microsoft Azure platform. Once upon a time Marios studied software engineering at Newcastle University (UK) and went on to conduct research and earn a PhD in the general area of networks and security (Message Traceback Systems). Marios has previously held research/teaching positions at The University of Cyprus, Newcastle University and HP Labs (Bristol UK).</p></p>
@@ -18,6 +22,7 @@ person_id: 615
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 615
             <td><a href="/schedule/event/dmtf_deltacloud">DMTF CIMI and Apache Deltacloud</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/chavanne">Chavanne</a></td>
+            <td><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></td>
             <td>15:30</td>
             <td>15:55</td>
     </tbody>

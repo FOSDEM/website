@@ -2,7 +2,10 @@
 title: ! 'Social Networking: Salut à Toi, a multi-frontend, multi-purpose XMPP client'
 kind: event
 speakers:
-- jerome_poisson
+  -
+    name: Jérôme Poisson
+    slug: jerome_poisson
+    url: /schedule/speaker/jerome_poisson
 slug: xmpp_salut
 day: Sat
 start: 18:00
@@ -10,10 +13,21 @@ end: 18:00
 event_id: 916
 ---
 
-<p>Track: <a href="/schedule/track/jabber_and_xmpp_devroom">Jabber and XMPP Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:00</dd>
+    <dt>End:</dt>
+    <dd>18:15</dd>
+</dl>
 
-<p><p>Architecture and use cases of Salut à Toi, a XMPP client with multi frontends (console ncurses-like, command line interface, desktop, web), with special focus on microblogging.</p></p>
-<p><p>This talk aims to briefly present the Salut à Toi project and its goals. Salut à Toi is a XMPP client which focus on the whole XMPP stuff, not only instant messaging, and where many frontends use a common backend.</p>
+<p>Architecture and use cases of Salut à Toi, a XMPP client with multi frontends (console ncurses-like, command line interface, desktop, web), with special focus on microblogging.</p>
+<p>This talk aims to briefly present the Salut à Toi project and its goals. Salut à Toi is a XMPP client which focus on the whole XMPP stuff, not only instant messaging, and where many frontends use a common backend.</p>
 
 <p>The following points will be covered:</p>
 
@@ -24,10 +38,18 @@ event_id: 916
 <li><p>quick presentation of some features</p></li>
 <li><p>XMPP as a replacement of traditional e-mail network</p></li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jerome_poisson">Jérôme Poisson</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

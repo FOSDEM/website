@@ -1,0 +1,17 @@
+---
+navigation:
+  - /
+  - /news/
+  - /about/:
+    - /about/fosdem/
+    - /about/sponsors/
+    - /about/faq/
+  - Schedule:
+    - /schedule/events/
+    - /schedule/tracks/
+  - Practical Information:
+    - /practical/beerevent/
+    - /practical/transportation/
+  - Media and press:
+    - /interviews/
+

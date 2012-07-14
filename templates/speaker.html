@@ -1,12 +1,17 @@
+<% slug = slug(@p) %>
 ---
 title: <%= name(@p) %>
 kind: speaker
 name: <%= name(@p) %>
-slug: <%= slug(@p) %>
+slug: <%= slug %>
 first_name: <%= @p.first_name %>
 last_name: <%= @p.last_name %>
 person_id: <%= @p.person_id %>
 ---
+<%% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<%% if photo %>
+<img src="<%%= photo.path %>" width="<%%= photo[:width] %>" height="<%%= photo[:height] %>"/>
+<%% end %>
 
 <% if @cp %>
 <h3>Bio</h3>
@@ -26,6 +31,7 @@ person_id: <%= @p.person_id %>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -36,6 +42,7 @@ person_id: <%= @p.person_id %>
             <td><%= l(e) %></td>
             <td><%= e.start_datetime.to_date.strftime('%a') %></td>
             <td><%= l($room_by_id[e.conference_room_id]) %></td>
+            <td><%= l($track_by_id[e.conference_track_id]) %></td>
             <td><%= e.start_datetime.to_time.strftime('%H:%M') %></td>
             <td><%= e.end_datetime.to_time.strftime('%H:%M') %></td>
         <% end %>

@@ -2,7 +2,10 @@
 title: ! 'WebApps: webinos, Tying Web Technology to Everything '
 kind: event
 speakers:
-- victor_klos
+  -
+    name: Victor Klos
+    slug: victor_klos
+    url: /schedule/speaker/victor_klos
 slug: webinos_and_xmpp
 day: Sat
 start: 13:00
@@ -10,12 +13,31 @@ end: 13:00
 event_id: 899
 ---
 
-<p>Track: <a href="/schedule/track/jabber_and_xmpp_devroom">Jabber and XMPP Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:00</dd>
+    <dt>End:</dt>
+    <dd>13:30</dd>
+</dl>
 
-<p><p>The webinos project (http://webinos.org/) aims to deliver an open source open standards based platform for secure and privacy aware interaction between users and services. Developers program in JavaScript and get access to both local and remote services. Under the hood, the webinos runtime uses XMPP to do service discovery. This talk highlights some unique features of webinos and investigates the role of XMPP.</p></p>
+<p>The webinos project (http://webinos.org/) aims to deliver an open source open standards based platform for secure and privacy aware interaction between users and services. Developers program in JavaScript and get access to both local and remote services. Under the hood, the webinos runtime uses XMPP to do service discovery. This talk highlights some unique features of webinos and investigates the role of XMPP.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/victor_klos">Victor Klos</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

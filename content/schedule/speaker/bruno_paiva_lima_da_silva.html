@@ -7,6 +7,10 @@ first_name: Bruno
 last_name: Paiva Lima da Silva
 person_id: 759
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>23-yr old PhD student at GraphIK research group at LIRMM in Montpellier, France. His studies include storage and interrogation aspects of the Ontological Conjunctive Query Answering problem. Such aspects regroup different areas of informatics such as knowledge representation &amp; reasoning, logics, algorithms and (relational and non-relational) databases.</p></p>
@@ -18,6 +22,7 @@ person_id: 759
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 759
             <td><a href="/schedule/event/conjunctive_query_answering">Ontological Conjunctive Query Answering over large, semi-structured knowledge bases </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
             <td>14:40</td>
             <td>15:15</td>
     </tbody>

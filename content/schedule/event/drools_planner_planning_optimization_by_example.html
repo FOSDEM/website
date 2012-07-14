@@ -2,7 +2,10 @@
 title: ! 'Drools Planner: Planning optimization by example'
 kind: event
 speakers:
-- geoffrey_de_smet
+  -
+    name: Geoffrey De Smet
+    slug: geoffrey_de_smet
+    url: /schedule/speaker/geoffrey_de_smet
 slug: drools_planner_planning_optimization_by_example
 day: Sat
 start: 12:00
@@ -10,19 +13,38 @@ end: 12:00
 event_id: 539
 ---
 
-<p>Track: <a href="/schedule/track/jbossorg_devroom">JBoss.org Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/jbossorg">JBoss.org</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3201">K.3.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:55</dd>
+</dl>
 
-<p><p>Better planning algorithms can help save the environment, reduce costs and improve service quality. All organisations have planning problems, such as employee rostering, task scheduling, vehicle routing or bin packing. Yet, they hardly optimize those problems. Why? Because those problems are “NP-complete”: computationally very difficult and humanly impossible to optimize.</p>
+<p>Better planning algorithms can help save the environment, reduce costs and improve service quality. All organisations have planning problems, such as employee rostering, task scheduling, vehicle routing or bin packing. Yet, they hardly optimize those problems. Why? Because those problems are “NP-complete”: computationally very difficult and humanly impossible to optimize.</p>
 
-<p>Drools Planner optimizes such planning problems for normal Java programmers.</p></p>
-<p><p>It implements a series of optimization algorithms which can optimize any planning problem: heuristics and metaheuristics with fancy names such as “First Fit Decreasing”, “Tabu Search”, “Simulated Annealing”, … The input and output are plain old java beans (POJO’s), so it’s easy to integrate with JPA, JDBC, JSF, ... The constraints are expressed as Drools Expert rules, so adding extra constraints is object-orientated and scalable. And it’s easy to get a Planner project started with the detailed reference manual and many examples.</p>
+<p>Drools Planner optimizes such planning problems for normal Java programmers.</p>
+<p>It implements a series of optimization algorithms which can optimize any planning problem: heuristics and metaheuristics with fancy names such as “First Fit Decreasing”, “Tabu Search”, “Simulated Annealing”, … The input and output are plain old java beans (POJO’s), so it’s easy to integrate with JPA, JDBC, JSF, ... The constraints are expressed as Drools Expert rules, so adding extra constraints is object-orientated and scalable. And it’s easy to get a Planner project started with the detailed reference manual and many examples.</p>
 
 <p>In this presentation, Geoffrey De Smet (Drools Planner lead) will explain the nature of planning problems, go through an entire Drools Planner example, show some demo’s and compare the results of different optimization algorithms.</p>
 
-<p>Ref : http://www.jboss.org/drools/drools-planner.html</p></p>
+<p>Ref : http://www.jboss.org/drools/drools-planner.html</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/geoffrey_de_smet">Geoffrey De Smet</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

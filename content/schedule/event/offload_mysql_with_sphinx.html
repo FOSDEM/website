@@ -2,7 +2,10 @@
 title: How to offload MySQL server with Sphinx
 kind: event
 speakers:
-- vladimir_fedorkov
+  -
+    name: Vladimir Fedorkov
+    slug: vladimir_fedorkov
+    url: /schedule/speaker/vladimir_fedorkov
 slug: offload_mysql_with_sphinx
 day: Sun
 start: 11:00
@@ -10,12 +13,31 @@ end: 11:00
 event_id: 662
 ---
 
-<p>Track: <a href="/schedule/track/mysql_and_friends_devroom">MySQL and Friends Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:25</dd>
+</dl>
 
-<p><p>We’ll take close look on how to offload MySQL server with queries which might be efficiently handled on the Sphinx side. Real-world examples for handling non-Full-Text queries including geodistance search, time segments implementation, using multi-value attributes and more. We’ll also learn how to keep massive text collections away from MySQL databases and how to utilize power of Sphinx on Full-text queries.</p></p>
+<p>We’ll take close look on how to offload MySQL server with queries which might be efficiently handled on the Sphinx side. Real-world examples for handling non-Full-Text queries including geodistance search, time segments implementation, using multi-value attributes and more. We’ll also learn how to keep massive text collections away from MySQL databases and how to utilize power of Sphinx on Full-text queries.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/vladimir_fedorkov">Vladimir Fedorkov</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

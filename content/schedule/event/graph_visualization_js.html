@@ -2,7 +2,10 @@
 title: An example graph visualization with Processing.js 
 kind: event
 speakers:
-- max_de_marzi
+  -
+    name: Max De Marzi
+    slug: max_de_marzi
+    url: /schedule/speaker/max_de_marzi
 slug: graph_visualization_js
 day: Sun
 start: 15:20
@@ -10,12 +13,31 @@ end: 15:20
 event_id: 720
 ---
 
-<p>Track: <a href="/schedule/track/graph_processing_devroom">Graph Processing Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/graph_processing">Graph Processing</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:20</dd>
+    <dt>End:</dt>
+    <dd>15:35</dd>
+</dl>
 
-<p><p>Visualizing a directed property graph with Processing.js and Neo4j. A short introduction to Processing.js, followed by a high level overview of an example visualization and finally how to connect it to Neo4j via their REST API to populate it. Example: http://getvouched.com/visualizations</p></p>
+<p>Visualizing a directed property graph with Processing.js and Neo4j. A short introduction to Processing.js, followed by a high level overview of an example visualization and finally how to connect it to Neo4j via their REST API to populate it. Example: http://getvouched.com/visualizations</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/max_de_marzi">Max De Marzi</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

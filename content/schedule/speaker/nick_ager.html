@@ -7,6 +7,10 @@ first_name: Nick
 last_name: Ager
 person_id: 856
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Nick is a long-time contributor to multiple open source projects and recently made jQuery-Mobile available for Seaside.</p></p>
@@ -18,6 +22,7 @@ person_id: 856
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 856
             <td><a href="/schedule/event/jquery_mobile">An introduction to jQuery Mobile</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/smalltalk">Smalltalk</a></td>
             <td>12:00</td>
             <td>12:30</td>
     </tbody>

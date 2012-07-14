@@ -2,7 +2,10 @@
 title: Open Licences before European Courts
 kind: event
 speakers:
-- philippe_laurent
+  -
+    name: Philippe Laurent
+    slug: philippe_laurent
+    url: /schedule/speaker/philippe_laurent
 slug: open_licences_before_european_courts
 day: Sat
 start: 11:05
@@ -10,17 +13,36 @@ end: 11:05
 event_id: 640
 ---
 
-<p>Track: <a href="/schedule/track/legal_issues_devroom">Legal Issues Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/legal_issues">Legal Issues</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:05</dd>
+    <dt>End:</dt>
+    <dd>11:30</dd>
+</dl>
 
-<p><p>Open content licences are tools at the disposal of creative people who want to use their copyrights in a permissive manner.
+<p>Open content licences are tools at the disposal of creative people who want to use their copyrights in a permissive manner.
 Their first aim is to allow the sharing and spreading of works, by granting rights to the users on a royalty-free basis.
 However, these licences remain binding legal documents, according to which licensees must respect some obligations, and which are enforceable before courts.
 The proposed presentation aims at providing an analysis of interesting court decisions where open content licences were at issue.</p>
 
-<p>Please review the links below for background information:</p></p>
+<p>Please review the links below for background information:</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/philippe_laurent">Philippe Laurent</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

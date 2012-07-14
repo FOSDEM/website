@@ -2,7 +2,10 @@
 title: Managing your network with Netmagis
 kind: event
 speakers:
-- jean_benoit
+  -
+    name: Jean Benoit
+    slug: jean_benoit
+    url: /schedule/speaker/jean_benoit
 slug: netmagis
 day: Sun
 start: 14:40
@@ -10,10 +13,21 @@ end: 14:40
 event_id: 506
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>14:40</dd>
+    <dt>End:</dt>
+    <dd>14:55</dd>
+</dl>
 
-<p><p>Netmagis is a network management tool not unlike Netdot but with some original features</p></p>
-<p><ul>
+<p>Netmagis is a network management tool not unlike Netdot but with some original features</p>
+<ul>
 <li><p>Host and network management : Netmagis features host and network declaration, DNS and DHCP generation. Netmagis shows an interactive address MAP allowing to see free addresses. It also supports IPv6 addresses.</p></li>
 <li><p>Network Metrology : Netmagis is a complete plateform which also integrates network equipement polling via SNMP to generate automatically RRD trafic graphs</p></li>
 <li><p>Network Configuration and Topology and network equipement configuration collection (with rancid) and analysis to build a graph. From the graph, network maps are derived allowing vizualization of the topology.</p></li>
@@ -22,10 +36,18 @@ event_id: 506
 <li><p>Rights management and delegation : netmagis also possesses a detailed right models allowing delegation of several network management functions.</p></li>
 <li><p>License :Netmagis uses a BSD license</p></li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jean_benoit">Jean Benoit</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

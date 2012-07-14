@@ -7,6 +7,10 @@ first_name: Michael
 last_name: Meeks
 person_id: 425
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Michael is a Christian and enthusiastic believer in Free software. He very much enjoys working for SUSE where as the Linux Desktop Architect he tries to understand and nudge the direction of our Linux investment. He has appreciated working on various pieces of infrastructure and applications over the years: from GNOME office, through component technologies, to Evolution, Accessibility, MeeGo, and latterly LibreOffice much of the time.
@@ -19,6 +23,7 @@ Prior to this he worked for Quantel gaining expertise in both hardware and softw
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,18 +33,21 @@ Prior to this he worked for Quantel gaining expertise in both hardware and softw
             <td><a href="/schedule/event/liboeasy">Easy Hacks</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1309">H.1309</a></td>
+            <td><a href="/schedule/track/libreoffice">LibreOffice</a></td>
             <td>12:30</td>
             <td>13:00</td>
         <tr>
             <td><a href="/schedule/event/risks_vs_benefits_on_copyright_assignment">Risks vs. Benefits on Copyright Assignment</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
             <td>14:30</td>
             <td>15:00</td>
         <tr>
             <td><a href="/schedule/event/lo_online">LibreOffice: on-line and in your pocket</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k1105">K.1.105</a></td>
+            <td><a href="/schedule/track/future_of_ui">Future of UI</a></td>
             <td>16:00</td>
             <td>16:50</td>
     </tbody>

@@ -19,7 +19,7 @@ module ::PentaHelpers
     when ScheduleEvent
       o.title
     when Track
-      o.conference_track
+      o.conference_track.gsub(/\s+(track|devroom)$/i, '')
     when ConferenceDay
       o.name
     when Person
@@ -63,7 +63,7 @@ module ::PentaHelpers
     # Inflector takes care of replacing locale specific symbols to
     # something "safe" for URLs without requiring symbol gibberish
 
-    ActiveSupport::Inflector.transliterate(s).downcase.gsub(/\s+/, '_').gsub(/\-/, '_').gsub(/\./, '')
+    ActiveSupport::Inflector.transliterate(s).downcase.gsub(/\s+/, '_').gsub(/\-/, '_').gsub(/\./, '').gsub(/'/, '')
   end
 
   # Determine the URL depending on the type
@@ -106,8 +106,12 @@ module ::PentaHelpers
   # Pentabarf uses BlueCloth to convert its text markup in
   # description and abstract into HTML
   def PentaHelpers.markup(text)
+    return '' if text.nil?
+    text = text.to_s.strip
+    return '' if text.empty?
+
     require 'bluecloth'
-    BlueCloth.new( text.to_s, :filter_html ).to_html
+    BlueCloth.new(text, :filter_html).to_html
   end
 
   # Simple and stupid YAML-safe string escaping to put
@@ -118,6 +122,11 @@ module ::PentaHelpers
     else
       o
     end
+  end
+
+  def PentaHelpers.t(o)
+    return '' if o.nil?
+    o.to_time.strftime('%H:%M')
   end
 
 end
@@ -148,6 +157,9 @@ class Context < Erubis::Context
   def y(o)
     PentaHelpers::y(o)
   end
+  def t(o)
+    PentaHelpers::t(o)
+  end
 end
 
 class Pentabarf < ::Nanoc::CLI::CommandRunner
@@ -158,6 +170,44 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
     sha = Digest::SHA256.new
     sha << content
     sha.hexdigest.downcase
+  end
+
+  def identical_file(file, time_before=nil)
+    $schedule_tree_after << file
+    duration = time_before.nil? ? nil : Time.now - time_before
+    Nanoc::CLI::Logger.instance.file(:low, :identical, file, duration)
+  end
+
+  def write_to(file, content, time_before=nil)
+    d = Pathname.new(file).dirname.to_s
+    FileUtils.mkdir_p(d) unless File.exists?(d)
+
+    action = if File.exists?(file)
+               new_digest = sha(content)
+               old_digest = sha(IO.read(file))
+               if new_digest != old_digest
+                 :update
+               else
+                 :identical
+               end
+             else
+               :create
+             end
+
+    unless action == :identical
+      File.open(file, "wb") do |f|
+        f.write(content)
+      end
+      duration = time_before.nil? ? nil : Time.now - time_before
+      Nanoc::CLI::Logger.instance.file(:high, action, file, duration)
+    else
+      duration = time_before.nil? ? nil : Time.now - time_before
+      Nanoc::CLI::Logger.instance.file(:low, :identical, file, duration)
+    end
+
+    $schedule_tree_after << file
+
+    action
   end
 
   def render_to(template, target, *bindings)
@@ -179,43 +229,18 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
     t = Erubis::Eruby.new(File.read(tf), :filename => tf)
 
     context = Context.new(vars)
-    begin
-      output = t.evaluate(context)
-    rescue Exception => e
-      trace_normalizer = lambda { |line| line.gsub(/^\(erubis\):/, tf + ':') }
-      backtrace = e.backtrace.collect(&trace_normalizer)
-      message = trace_normalizer.call(e.message)
-      raise e.class, message, backtrace
-    end
-
-    file = File.join($outdir, "#{target}.html")
-    d = Pathname.new(file).dirname.to_s
-    FileUtils.mkdir_p(d) unless File.exists?(d)
-
-    action = if File.exists?(file)
-               new_digest = sha(output)
-               old_digest = sha(IO.read(file))
-               if new_digest != old_digest
-                 :update
-               else
-                 :identical
-               end
-             else
-               :create
+    output = begin
+               t.evaluate(context)
+             rescue Exception => e
+               trace_normalizer = lambda { |line| line.gsub(/^\(erubis\):/, tf + ':') }
+               backtrace = e.backtrace.collect(&trace_normalizer)
+               message = trace_normalizer.call(e.message)
+               raise e.class, message, backtrace
              end
 
-    unless action == :identical
-      File.open(file, "w+") do |f|
-        f.write(output)
-      end
-      duration = Time.now - time_before
-      Nanoc::CLI::Logger.instance.file(:high, action, file, duration)
-    else
-      duration = Time.now - time_before
-      Nanoc::CLI::Logger.instance.file(:low, :identical, file, duration)
-    end
+    file = File.join($outdir, "#{target}.html")
 
-    $schedule_tree_after << file
+    write_to(file, output, time_before)
   end
 
   private
@@ -233,6 +258,15 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       $cache = config.fetch(:cache, File.join('tmp', 'pentacache'))
       $cid = config.fetch(:conference_id)
       $outdir = config.fetch(:outdir, File.join('content', 'schedule'))
+
+      $thumb_width, $thumb_height = begin
+                                      t = config[:thumbnail]
+                                      if t
+                                        [ t.fetch(:width, 32), t.fetch(:height, 32) ]
+                                      else
+                                        [ 32, 32 ]
+                                      end
+                                    end
     end
 
     # record the filesystem before rendering
@@ -282,10 +316,10 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       end
 
       $conf = yl1(Conference, File.join($cache, 'conf'))
-      $days = yl(ConferenceDay, 'days')
+      $days = yl(ConferenceDay, 'days').sort_by{|d| d.conference_day}
       $events = yl(ScheduleEvent, 'events')
-      $rooms = yl(Room, 'rooms')
-      $tracks = yl(Track, 'tracks')
+      $rooms = yl(Room, 'rooms').sort_by{|r| r.rank}
+      $tracks = yl(Track, 'tracks').sort_by{|t| t.rank}
       $persons = yl(Person, 'persons')
       $event_persons = yl(EventPerson, 'event_persons')
       $conference_persons = yl(ConferencePerson, 'c_persons')
@@ -306,6 +340,7 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
         result
       end
 
+      $day_by_id = byid($days, :conference_day_id)
       $room_by_id = byid($rooms, :conference_room_id)
       $event_by_id = byid($events, :event_id)
       $track_by_id = byid($tracks, :conference_track_id)
@@ -364,7 +399,108 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       $speaker_person_by_id.values.each do |person|
         confperson = $conference_person_by_person_id[person.person_id]
         events = $speaker_for[person.person_id]
-        render_to('speaker', File.join('speaker', PentaHelpers::slug(person)), :p => person, :cp => confperson, :events => events)
+        slug = PentaHelpers::slug(person)
+        render_to('speaker', File.join('speaker', slug), :p => person, :cp => confperson, :events => events)
+
+        image_files = Dir.glob(File.join($cache, 'person_images', "#{person.person_id}.*"))
+        raise "found more than one image for person #{person.person_id}: #{image_files.join(', ')}" if image_files.size > 1
+        unless image_files.empty?
+          time_before = Time.now
+          require 'pathname'
+          require 'fileutils'
+          require 'RMagick'
+
+          image_file = image_files[0]
+          ext = Pathname.new(image_file).extname.to_s
+          basename = File.join($outdir, 'speaker_photos', slug)
+          target_filename = "#{basename}#{ext}"
+
+          unless File.exists? image_file
+            puts "WARNING: image file #{image_file} does not exist"
+            next
+          end
+          content = IO.read(image_file)
+          if content.size < 1
+            puts "WARNING: empty image file #{image_file}"
+            next
+          end
+
+          begin
+            image = Magick::Image::from_blob(content).first
+          rescue Exception => e
+            puts "WARNING: failed to read image file #{image_file}: #{e.message}"
+            next
+          end
+
+          width = image.columns
+          height = image.rows
+          action = write_to(target_filename, content, time_before)
+
+          begin
+            time_before = Time.now
+            meta_filename = "#{basename}.yaml"
+            content = <<EOF
+kind: speakerphoto
+speaker: #{person.person_id}
+slug: #{slug}
+image: #{Pathname.new(target_filename).basename.to_s}
+width: #{width}
+height: #{height}
+EOF
+            write_to(meta_filename, content, time_before)
+          end
+
+          thumbnail_basename = File.join($outdir, 'speaker_thumbnails', slug)
+          thumbnail_filename = "#{thumbnail_basename}#{ext}"
+          thumbnail_meta_filename = "#{thumbnail_basename}.yaml"
+
+          skip_thumbnail = if action == :identical
+                             if File.exists? thumbnail_filename
+                               identical_file(thumbnail_filename)
+                               true
+                             else
+                               false
+                             end
+                           else
+                             false
+                           end
+
+          skip_thumbnail_meta = if skip_thumbnail
+                                  File.exists? thumbnail_meta_filename
+                                else
+                                  false
+                                end
+
+          unless skip_thumbnail and skip_thumbnail_meta
+            time_before = Time.now
+            thumbnail = image.resize_to_fill($thumb_width, $thumb_height)
+            thumbnail_width = thumbnail.columns
+            thumbnail_height = thumbnail.columns
+
+            unless skip_thumbnail
+              write_to(thumbnail_filename, thumbnail.to_blob, time_before)
+              time_before = Time.now
+            else
+              identical_file thumbnail_filename
+            end
+            unless skip_thumbnail_meta
+              content = <<EOF
+kind: speakerphotothumbnail
+speaker: #{person.person_id}
+slug: #{slug}
+image: #{Pathname.new(thumbnail_filename).basename.to_s}
+width: #{thumbnail_width}
+height: #{thumbnail_height}
+EOF
+              write_to(thumbnail_meta_filename, content, time_before)
+            else
+              identical_file thumbnail_meta_filename, time_before
+            end
+          else
+              identical_file thumbnail_filename
+              identical_file thumbnail_meta_filename
+          end
+        end
       end
 
       # render the events

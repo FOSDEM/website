@@ -2,7 +2,10 @@
 title: Internet of Threads
 kind: event
 speakers:
-- renzo_davoli
+  -
+    name: Renzo Davoli
+    slug: renzo_davoli
+    url: /schedule/speaker/renzo_davoli
 slug: internet_of_threads
 day: Sun
 start: 11:00
@@ -10,10 +13,21 @@ end: 11:00
 event_id: 433
 ---
 
-<p>Track: <a href="/schedule/track/network_and_io_track">Network and IO Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/network_and_io">Network and IO</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k1105">K.1.105</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:50</dd>
+</dl>
 
-<p><p>"Internet of Threads" gives a new perspective on the Internet. Each process, group of processes or even a single thread can be an Internet node, having its own ip address, QoS, routing etc. Virtual Distributed Ethernet, User mode IP stacks, partial virtual machines can make this change possible.</p></p>
-<p><p>What does a network connect? The question about which are the real nodes of a network has been the target much recent discussion in the research community. In the beginning Internet and the TCP/IP protocols were based on the idea to connect computers, hence, the addressable entities were the networking adapters.</p>
+<p>"Internet of Threads" gives a new perspective on the Internet. Each process, group of processes or even a single thread can be an Internet node, having its own ip address, QoS, routing etc. Virtual Distributed Ethernet, User mode IP stacks, partial virtual machines can make this change possible.</p>
+<p>What does a network connect? The question about which are the real nodes of a network has been the target much recent discussion in the research community. In the beginning Internet and the TCP/IP protocols were based on the idea to connect computers, hence, the addressable entities were the networking adapters.</p>
 
 <p>This seminar introduces an alternative view: a process or a group of processes can be made to correspond to a single networking node. This concept has been named Internet of Threads.</p>
 
@@ -37,10 +51,18 @@ level code, depending on the performance requirements of the system. The fundame
 
 <p>   · The simultaneous support of several stacks for different usage scenarios: different retransmission policies, different sizes for the TCP packet windows etc.</p>
 
-<p>   · The support of a production stack together with an experimental stack. It is common to have one single stack implementation, including when several stack instances are running in the system (e.g. virtual adapters for containers). Through the idea of Internet of Threads it is possible to use a reliable stack for the normal use and in the meanwhile to control the experimental environment provided by a second stack, maybe still unreliable and under investigation.</p></p>
+<p>   · The support of a production stack together with an experimental stack. It is common to have one single stack implementation, including when several stack instances are running in the system (e.g. virtual adapters for containers). Through the idea of Internet of Threads it is possible to use a reliable stack for the normal use and in the meanwhile to control the experimental environment provided by a second stack, maybe still unreliable and under investigation.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/renzo_davoli">Renzo Davoli</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

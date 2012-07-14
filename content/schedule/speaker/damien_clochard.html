@@ -7,6 +7,10 @@ first_name: Damien
 last_name: Clochard
 person_id: 235
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Damien Clochard</p></p>
@@ -18,6 +22,7 @@ person_id: 235
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 235
             <td><a href="/schedule/event/postgresql_create_a_foreign_data_wrapper_in_15_minutes">Create a Foreign Data Wrapper in 15 minutes</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/postgresql">PostgreSQL</a></td>
             <td>12:00</td>
             <td>12:50</td>
     </tbody>

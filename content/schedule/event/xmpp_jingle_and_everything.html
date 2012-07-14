@@ -2,7 +2,10 @@
 title: ! 'Multimedia: Jingle, the Universe, and Everything '
 kind: event
 speakers:
-- emil_ivov
+  -
+    name: Emil Ivov
+    slug: emil_ivov
+    url: /schedule/speaker/emil_ivov
 slug: xmpp_jingle_and_everything
 day: Sat
 start: 17:30
@@ -10,12 +13,31 @@ end: 17:30
 event_id: 915
 ---
 
-<p>Track: <a href="/schedule/track/jabber_and_xmpp_devroom">Jabber and XMPP Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:30</dd>
+    <dt>End:</dt>
+    <dd>18:00</dd>
+</dl>
 
-<p><p>A talk about Jingle, its variants, its features, its NAT traversal, how it compares to SIP and everything you can do with it.</p></p>
+<p>A talk about Jingle, its variants, its features, its NAT traversal, how it compares to SIP and everything you can do with it.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/emil_ivov">Emil Ivov</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

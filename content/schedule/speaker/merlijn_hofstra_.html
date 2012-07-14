@@ -7,6 +7,10 @@ first_name: Merlijn
 last_name: Hofstra 
 person_id: 592
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Merlijn Hofstra has been working on various open source projects for nearly 10 years. In recent years he's been involved a lot with Xonotic and it's predecessor Nexuiz. Currently he has a leading role in the Xonotic core team, and mostly works on PR, legal and community related matters.</p></p>
@@ -18,6 +22,7 @@ person_id: 592
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 592
             <td><a href="/schedule/event/xonotic">Xonotic: The road to 1.0</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></td>
             <td>09:10</td>
             <td>09:55</td>
     </tbody>

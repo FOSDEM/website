@@ -2,7 +2,10 @@
 title: From zero to VoIP provider in 15 minutes
 kind: event
 speakers:
-- andreas_granig
+  -
+    name: Andreas Granig
+    slug: andreas_granig
+    url: /schedule/speaker/andreas_granig
 slug: zero_to_voip_provider
 day: Sun
 start: 11:15
@@ -10,14 +13,25 @@ end: 11:15
 event_id: 585
 ---
 
-<p>Track: <a href="/schedule/track/telephony_and_communications_devroom">Telephony and Communications Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:15</dd>
+    <dt>End:</dt>
+    <dd>11:55</dd>
+</dl>
 
-<p><p>By using the sip:provider Community Edition, an open source VoIP soft-switch
+<p>By using the sip:provider Community Edition, an open source VoIP soft-switch
 leveraging powerful and widely used open source components, we will in 15
 minutes create a VoIP deployment from scratch in order to provide future-proof
 voice and video communication services, preceded by an introduction into the
-system architecture.</p></p>
-<p><p>There are various open source components (e.g. Kamailio, Asterisk, Freeswitch
+system architecture.</p>
+<p>There are various open source components (e.g. Kamailio, Asterisk, Freeswitch
 and Sems) available to build a reasonably sized VoIP service from scratch.
 There are also some administrative web interfaces (e.g.  Webmin, Siremis),
 allowing you to control the most basic things in such a system. And in order to
@@ -39,10 +53,18 @@ etc. On reasonable hardware, the SPCE can serve 50k subscribers and more.</p>
 <p>As an introduction, I will outline the basic elements involved in a VoIP
 deployment. Then I will dive into the architecture of the SPCE, showing the
 building blocks and their interaction. Finally, I am going to do a live
-presentation on how to configure an SPCE instance for a typical deployment.</p></p>
+presentation on how to configure an SPCE instance for a typical deployment.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/andreas_granig">Andreas Granig</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

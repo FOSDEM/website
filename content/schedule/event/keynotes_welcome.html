@@ -2,7 +2,10 @@
 title: Welcome to FOSDEM 2012
 kind: event
 speakers:
-- fosdem_staff
+  -
+    name: FOSDEM Staff
+    slug: fosdem_staff
+    url: /schedule/speaker/fosdem_staff
 slug: keynotes_welcome
 day: Sat
 start: 10:30
@@ -10,13 +13,32 @@ end: 10:30
 event_id: 448
 ---
 
-<p>Track: <a href="/schedule/track/keynotes">Keynotes</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/keynotes">Keynotes</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>10:30</dd>
+    <dt>End:</dt>
+    <dd>10:55</dd>
+</dl>
 
-<p><p>FOSDEM welcome and opening talk.</p></p>
-<p><p>Welcome to FOSDEM 2012!</p></p>
+<p>FOSDEM welcome and opening talk.</p>
+<p>Welcome to FOSDEM 2012!</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/fosdem_staff">FOSDEM Staff</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: Open Security Hardware
 kind: event
 speakers:
-- anders_rundgren
+  -
+    name: Anders Rundgren
+    slug: anders_rundgren
+    url: /schedule/speaker/anders_rundgren
 slug: open_security_hw
 day: Sat
 start: 11:00
@@ -10,12 +13,31 @@ end: 11:00
 event_id: 955
 ---
 
-<p>Track: <a href="/schedule/track/hardware_cryptography_devroom">Hardware Cryptography Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2214">H.2214</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:30</dd>
+</dl>
 
-<p><p>An Open Source / Open Hardware scheme for making security hardware as easy to deploy as passwords.</p></p>
+<p>An Open Source / Open Hardware scheme for making security hardware as easy to deploy as passwords.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/anders_rundgren">Anders Rundgren</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

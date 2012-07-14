@@ -7,6 +7,10 @@ first_name: Ralf
 last_name: Gebhardt 
 person_id: 708
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>After spending more than 10 years in various Software Development, Support, Training, and Consulting roles, Ralf Gerbhardt joined MySQL in 2002 as a Sales Engineer. He continued in this capacity after MySQL’s acquisition by Sun Microsystems in 2008, and later, Sun’s acquisition by Oracle in 2010. Currently, Ralf serves as SkySQL's Principal Sales Engineer for EMEA. Ralf holds a masters degree in Computer Engineering from the University of Cooperative Education (in cooperation with IBM Deutschland), and is a frequent speaker at open source industry events.</p></p>
@@ -18,6 +22,7 @@ person_id: 708
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 708
             <td><a href="/schedule/event/cluster_internals">Cluster internals</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h1309">H.1309</a></td>
+            <td><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></td>
             <td>12:00</td>
             <td>12:25</td>
     </tbody>

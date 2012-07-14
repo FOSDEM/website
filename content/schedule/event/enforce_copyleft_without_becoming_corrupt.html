@@ -2,7 +2,10 @@
 title: Can for-profit companies enforce copyleft without becoming corrupt like MySQL AB?
 kind: event
 speakers:
-- loic_dachary
+  -
+    name: Loïc Dachary
+    slug: loic_dachary
+    url: /schedule/speaker/loic_dachary
 slug: enforce_copyleft_without_becoming_corrupt
 day: Sat
 start: 15:00
@@ -10,12 +13,31 @@ end: 15:00
 event_id: 646
 ---
 
-<p>Track: <a href="/schedule/track/legal_issues_devroom">Legal Issues Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/legal_issues">Legal Issues</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:30</dd>
+</dl>
 
-<p><p>When a company authors free software under the GNU GPL, it is likely that it will discover license violations. Non profit like FSF or Software Freedom Conservancy will try to resolve such violations amicably, because their mission is to further Free Software. They will only go to court as a last resort, if the infringer refuses to comply with the licenses and keeps distributing the software. The primary goal of a company is to generate profit, it will therefore take advantage of violations to this end. For instance, part of the former MySQL AB company business model was to threaten infringers and require that they buy a proprietary license to be redeemed. However, most of the infringements are honest mistakes and such methods are not in the best interest of the Free Software community. They are even counter productive for the company who makes short term profits but eventually scare their customers away.</p></p>
+<p>When a company authors free software under the GNU GPL, it is likely that it will discover license violations. Non profit like FSF or Software Freedom Conservancy will try to resolve such violations amicably, because their mission is to further Free Software. They will only go to court as a last resort, if the infringer refuses to comply with the licenses and keeps distributing the software. The primary goal of a company is to generate profit, it will therefore take advantage of violations to this end. For instance, part of the former MySQL AB company business model was to threaten infringers and require that they buy a proprietary license to be redeemed. However, most of the infringements are honest mistakes and such methods are not in the best interest of the Free Software community. They are even counter productive for the company who makes short term profits but eventually scare their customers away.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/loic_dachary">Loïc Dachary</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

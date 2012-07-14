@@ -7,6 +7,10 @@ first_name: Ambjörn
 last_name: Elder
 person_id: 689
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Ambjörn Elder is a candidate for a Master's degree in International Affairs at the American University of Paris.  His research focuses on civil society advocacy, especially as it relates to civil liberties in the online environment.  He also holds bachelor degrees from Yale University and the University of Kent as well as a professional degree from the London Academy of Music and Dramatic Art (LAMDA).  Ambjörn's FOSS contributions extend to bug reports and some writing and scripting for the GPL space game Naev.  He hopes his research, examining FOSS advocacy through the lens of political science, might help the FOSS community more effectively defend its interests in the political arena and better represent its ideas to society at large.</p></p>
@@ -18,6 +22,7 @@ person_id: 689
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 689
             <td><a href="/schedule/event/methods_of_foss_activism">The Methods of FOSS Activism</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
             <td>11:30</td>
             <td>12:00</td>
     </tbody>

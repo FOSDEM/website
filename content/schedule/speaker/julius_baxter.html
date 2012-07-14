@@ -7,6 +7,10 @@ first_name: Julius
 last_name: Baxter
 person_id: 731
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Julius Baxter has been working with the OpenRISC project for
@@ -25,6 +29,7 @@ http://juliusbaxter.net (presenter's pitiful site)</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -34,6 +39,7 @@ http://juliusbaxter.net (presenter's pitiful site)</p></p>
             <td><a href="/schedule/event/opencores_openrisc_true_open_hw">True open hardware: Opencores and OpenRISC</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/lameere">Lameere</a></td>
+            <td><a href="/schedule/track/embedded">Embedded</a></td>
             <td>15:00</td>
             <td>16:00</td>
     </tbody>

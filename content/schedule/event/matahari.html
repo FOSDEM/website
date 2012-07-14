@@ -2,7 +2,10 @@
 title: Systems Management with Matahari 
 kind: event
 speakers:
-- zane_bitter
+  -
+    name: Zane Bitter
+    slug: zane_bitter
+    url: /schedule/speaker/zane_bitter
 slug: matahari
 day: Sun
 start: 10:00
@@ -10,13 +13,32 @@ end: 10:00
 event_id: 647
 ---
 
-<p>Track: <a href="/schedule/track/configuration_and_systems_management_devroom">Configuration and Systems Management Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3601">K.3.601</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:00</dd>
+    <dt>End:</dt>
+    <dd>10:45</dd>
+</dl>
 
-<p><p>In this talk I will introduce the Matahari project, an interface for system management APIs of all kinds.</p></p>
-<p><p> I will discuss the architecture of the Matahari ecosystem and how the use of AMQP as a transport layer allows it to scale to large collections of servers in the Cloud. I will also describe the ways in which developers and sysadmins can get involved in the Matahari ecosystem: by creating agents to provide access to existing APIs through Matahari; by creating their own APIs; by writing their own clients to interact with agents; and by interacting through a command line shell or script.</p></p>
+<p>In this talk I will introduce the Matahari project, an interface for system management APIs of all kinds.</p>
+<p>I will discuss the architecture of the Matahari ecosystem and how the use of AMQP as a transport layer allows it to scale to large collections of servers in the Cloud. I will also describe the ways in which developers and sysadmins can get involved in the Matahari ecosystem: by creating agents to provide access to existing APIs through Matahari; by creating their own APIs; by writing their own clients to interact with agents; and by interacting through a command line shell or script.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/zane_bitter">Zane Bitter</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

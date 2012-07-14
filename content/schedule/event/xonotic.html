@@ -2,7 +2,10 @@
 title: ! 'Xonotic: The road to 1.0'
 kind: event
 speakers:
-- merlijn_hofstra_
+  -
+    name: Merlijn Hofstra 
+    slug: merlijn_hofstra_
+    url: /schedule/speaker/merlijn_hofstra_
 slug: xonotic
 day: Sun
 start: 09:10
@@ -10,12 +13,31 @@ end: 09:10
 event_id: 532
 ---
 
-<p>Track: <a href="/schedule/track/open_source_game_development_devroom">Open Source Game Development Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>09:10</dd>
+    <dt>End:</dt>
+    <dd>09:55</dd>
+</dl>
 
-<p><p>This will be a introduction to what our game is all about, and a showcase of the new features we have in our latest release and what can be expected in the next release. I will also touch upon what happened with Nexuiz and our reasons to fork.</p></p>
+<p>This will be a introduction to what our game is all about, and a showcase of the new features we have in our latest release and what can be expected in the next release. I will also touch upon what happened with Nexuiz and our reasons to fork.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/merlijn_hofstra_">Merlijn Hofstra </a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

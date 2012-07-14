@@ -7,6 +7,10 @@ first_name: Kevin
 last_name: Fleming
 person_id: 451
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Kevin P. Fleming has 20+ years of programming experience in fields like open source messaging and networking, and mainframe operating systems. Kevin excels in producing resource-efficient solutions through problem analysis and solution design.</p>
@@ -20,6 +24,7 @@ person_id: 451
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ person_id: 451
             <td><a href="/schedule/event/tel_comm_roundtable">Telephony and Communications Roundtable</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></td>
             <td>16:20</td>
             <td>17:00</td>
     </tbody>

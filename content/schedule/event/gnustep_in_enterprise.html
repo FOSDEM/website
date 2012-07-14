@@ -2,7 +2,10 @@
 title: Enterprise Control, Configuration and Logging/Alarming using GNUstep-base
 kind: event
 speakers:
-- richard_frith_macdonald
+  -
+    name: Richard Frith-Macdonald
+    slug: richard_frith_macdonald
+    url: /schedule/speaker/richard_frith_macdonald
 slug: gnustep_in_enterprise
 day: Sat
 start: 15:15
@@ -10,19 +13,38 @@ end: 15:15
 event_id: 732
 ---
 
-<p>Track: <a href="/schedule/track/gnustep_devroom">GNUstep Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/gnustep">GNUstep</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1126">AW1.126</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:15</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><ol>
+<ol>
 <li>An overview of the problem of dealing with multiple server processes on multiple hosts and sites.  How to provide fault tolerance and how to scale up without losing control.</li>
 <li>A discussion of the use of the basic technologies such as Distributed Objects and property lists etc to implement these systems.</li>
 <li>Control ... how we start/stop server processes, prevent duplication of processes, support automated restart, and query the state of processes.</li>
 <li>Configuration ... how we provide specific configuration to each process under central control, yet allow those servers to operate independently.</li>
 <li>Logging/Alarming ... how we provide and manage simple and consistent audit/debug logging facilities for server processes, and how we integrate with SNMP.</li>
 </ol>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/richard_frith_macdonald">Richard Frith-Macdonald</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

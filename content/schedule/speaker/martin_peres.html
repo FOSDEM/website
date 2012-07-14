@@ -7,6 +7,10 @@ first_name: Martin
 last_name: Peres
 person_id: 900
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Martin Peres is a French security engineer from the ENSI de Bourges and a PhD student at LaBRI. His research topic is on security &amp; power consumption in wireless networks.</p>
@@ -26,6 +30,7 @@ person_id: 900
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -35,6 +40,7 @@ person_id: 900
             <td><a href="/schedule/event/nouveau">Nouveau: Recap, on-going and future work</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>15:00</td>
             <td>16:00</td>
     </tbody>

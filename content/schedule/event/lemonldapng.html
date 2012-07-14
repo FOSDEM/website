@@ -2,7 +2,10 @@
 title: ! 'The LemonLDAP::NG Project'
 kind: event
 speakers:
-- clement_oudot
+  -
+    name: Clément Oudot
+    slug: clement_oudot
+    url: /schedule/speaker/clement_oudot
 slug: lemonldapng
 day: Sun
 start: 11:55
@@ -10,12 +13,31 @@ end: 11:55
 event_id: 913
 ---
 
-<p>Track: <a href="/schedule/track/perl_devroom">Perl Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/perl">Perl</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:55</dd>
+    <dt>End:</dt>
+    <dd>12:15</dd>
+</dl>
 
-<p><p>LemonLDAP::NG is a free WebSSO software written in Perl and using Apache engine. It supports CAS, OpenID and SAML 2.0 protocols.</p></p>
+<p>LemonLDAP::NG is a free WebSSO software written in Perl and using Apache engine. It supports CAS, OpenID and SAML 2.0 protocols.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/clement_oudot">Clément Oudot</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

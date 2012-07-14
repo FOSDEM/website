@@ -7,6 +7,10 @@ first_name: Christian
 last_name: Helmuth
 person_id: 648
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>In 2008, Christian co-founded Genode Labs, the company behind the
@@ -22,6 +26,7 @@ for day-to-day usage.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ for day-to-day usage.</p></p>
             <td><a href="/schedule/event/microkernel_discussion">Panel discussion</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
             <td>16:00</td>
             <td>17:00</td>
     </tbody>

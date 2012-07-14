@@ -7,6 +7,10 @@ first_name: Remko
 last_name: Tronçon
 person_id: 368
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Remko is a longtime contributor to the Jabber/XMPP community, first on the Psi client and now on the Swift client. He is also co-author of XMPP: The Definitive Guide (O'Reilly, 2009).</p></p>
@@ -18,6 +22,7 @@ person_id: 368
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 368
             <td><a href="/schedule/event/xmpp_101">Intro: XMPP 101 / Stump the Experts</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></td>
             <td>11:15</td>
             <td>12:00</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Stefan
 last_name: Marr
 person_id: 857
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>started as a PhD student in October 2008 at the Software Languages Lab of the Vrije Universiteit Brussel. My field of research are virtual machines especially with respect to concurrency issues and language constructs for modularization. Recently, I started working on concurrency support at the VM instruction set level.</p></p>
@@ -18,6 +22,7 @@ person_id: 857
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 857
             <td><a href="/schedule/event/roarvm">RoarVM, Sly</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/smalltalk">Smalltalk</a></td>
             <td>12:30</td>
             <td>13:00</td>
     </tbody>

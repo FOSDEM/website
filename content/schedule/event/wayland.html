@@ -2,7 +2,10 @@
 title: Wayland
 kind: event
 speakers:
-- kristian_hogsberg
+  -
+    name: Kristian Høgsberg
+    slug: kristian_hogsberg
+    url: /schedule/speaker/kristian_hogsberg
 slug: wayland
 day: Sat
 start: 17:00
@@ -10,14 +13,33 @@ end: 17:00
 event_id: 436
 ---
 
-<p>Track: <a href="/schedule/track/future_of_ui_track">Future of UI Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/future_of_ui">Future of UI</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k1105">K.1.105</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>17:50</dd>
+</dl>
 
-<p><p>Wayland is a new window system architecture aiming to be a good fit for everything from embedded and mobile devices to full-blown desktop environments. Wayland builds on most of the graphics driver, desktop and UI infrastructure we have today, but distills out just the display server functionality we actually use today. The toolkits, device
+<p>Wayland is a new window system architecture aiming to be a good fit for everything from embedded and mobile devices to full-blown desktop environments. Wayland builds on most of the graphics driver, desktop and UI infrastructure we have today, but distills out just the display server functionality we actually use today. The toolkits, device
 drivers, compositors and desktop environments we use today all play their parts, but the X server is essentially reduced to an awkward, 500kloc IPC mechanism.
-In the talk we will look at where Wayland comes from, how our graphics stack has evolved to make Wayland feasible and the basics of how Wayland works. We are working towards a 1.0 release of the protocol libraries and the reference compositor, Weston, and we'll take a look at what will be in the release.</p></p>
+In the talk we will look at where Wayland comes from, how our graphics stack has evolved to make Wayland feasible and the basics of how Wayland works. We are working towards a 1.0 release of the protocol libraries and the reference compositor, Weston, and we'll take a look at what will be in the release.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/kristian_hogsberg">Kristian Høgsberg</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

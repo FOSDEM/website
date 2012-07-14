@@ -7,6 +7,10 @@ first_name: Mike
 last_name: Hommey
 person_id: 137
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I am Mike Hommey. Despite the english sounding name, I'm not of english descent, and am actually french. My native language is thus french, english comes second, followed by japanese, and tiny bits of spanish.</p>
@@ -26,6 +30,7 @@ person_id: 137
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -35,6 +40,7 @@ person_id: 137
             <td><a href="/schedule/event/improving_firefox_startup_time_on_android">Improving Firefox startup time on Android</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>10:00</td>
             <td>10:30</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: QuantumSTEP
 kind: event
 speakers:
-- nikolaus_schaller
+  -
+    name: Nikolaus Schaller
+    slug: nikolaus_schaller
+    url: /schedule/speaker/nikolaus_schaller
 slug: quantumstep_future
 day: Sat
 start: 18:15
@@ -10,17 +13,36 @@ end: 18:15
 event_id: 868
 ---
 
-<p>Track: <a href="/schedule/track/gnustep_devroom">GNUstep Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/gnustep">GNUstep</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1126">AW1.126</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:15</dd>
+    <dt>End:</dt>
+    <dd>19:00</dd>
+</dl>
 
-<p><p>QuantumSTEP is a technology study framework and application
+<p>QuantumSTEP is a technology study framework and application
 suite that is partially based on GNUstep. It aims at consequently
 using Objective-C on embedded and portable devices. This talk
 describes the latest additions to the frameworks: CoreLocation,
 MKMapKit, CoreWLAN, CoreTelephony and demonstrates how
-they work on the new GTA04 hardware.</p></p>
+they work on the new GTA04 hardware.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/nikolaus_schaller">Nikolaus Schaller</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

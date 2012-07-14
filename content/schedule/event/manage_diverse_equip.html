@@ -2,7 +2,10 @@
 title: A strategy for managing diverse equipment in the CERN controls group
 kind: event
 speakers:
-- juan_david_gonzalez_cobas
+  -
+    name: Juan David Gonzalez Cobas
+    slug: juan_david_gonzalez_cobas
+    url: /schedule/speaker/juan_david_gonzalez_cobas
 slug: manage_diverse_equip
 day: Sun
 start: 13:00
@@ -10,9 +13,20 @@ end: 13:00
 event_id: 392
 ---
 
-<p>Track: <a href="/schedule/track/network_and_io_track">Network and IO Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/network_and_io">Network and IO</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k1105">K.1.105</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:00</dd>
+    <dt>End:</dt>
+    <dd>13:50</dd>
+</dl>
 
-<p><p>The CERN accelerator control systems access equipment distributed over a
+<p>The CERN accelerator control systems access equipment distributed over a
 geographic area tens of kilometers across.</p>
 
 <p>When off the shelf hardware is not available engineers design and prototype I/O
@@ -50,10 +64,18 @@ the usual I/O channels but also pulse generation and sampling; all
 peripherals may also be white-rabbit-aware, so that their own
 timestamps are more precise than what the host computer can offer.
 Although ZIO examples drive simple I/O channels, the system is able
-to DMA directly to user space, to sustain high data rates.</p></p>
+to DMA directly to user space, to sustain high data rates.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/juan_david_gonzalez_cobas">Juan David Gonzalez Cobas</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

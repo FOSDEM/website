@@ -7,6 +7,10 @@ first_name: Miguel
 last_name: De Icaza
 person_id: 791
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I founded the Gnome and Mono projects, and would love to talk about the status of Mono this year.</p></p>
@@ -18,6 +22,7 @@ person_id: 791
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,12 +32,14 @@ person_id: 791
             <td><a href="/schedule/event/mono_stateoftheunion">Mono — State of the Union</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/mono">Mono</a></td>
             <td>12:00</td>
             <td>13:00</td>
         <tr>
             <td><a href="/schedule/event/mono_monomac">MonoMac</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/mono">Mono</a></td>
             <td>18:30</td>
             <td>19:00</td>
     </tbody>

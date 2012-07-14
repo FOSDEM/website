@@ -2,7 +2,10 @@
 title: Enhancing FreePBX with Adhearsion
 kind: event
 speakers:
-- luca_pradovera
+  -
+    name: Luca Pradovera
+    slug: luca_pradovera
+    url: /schedule/speaker/luca_pradovera
 slug: adhearsion_freepbx
 day: Sun
 start: 13:20
@@ -10,19 +13,38 @@ end: 13:20
 event_id: 584
 ---
 
-<p>Track: <a href="/schedule/track/telephony_and_communications_devroom">Telephony and Communications Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:20</dd>
+    <dt>End:</dt>
+    <dd>14:00</dd>
+</dl>
 
-<p><p>Demonstration of building applications with the Adhearsion voice application development framework.</p></p>
-<p><p>Many open source hackers see the allure of building applications that integrate with the
+<p>Demonstration of building applications with the Adhearsion voice application development framework.</p>
+<p>Many open source hackers see the allure of building applications that integrate with the
 telephone network. However layers of industry jargon, proprietary technology and arcane
 knowledge lead many to believe that telephony is "hard." Adhearsion will change their minds.
 The Adhearsion project is an open source voice application development framework, the first
 of its kind in the open source world. In this talk we will build several working voice applications
 and demonstrate how to integrate them with existing PBX installations. Along the way, we will
-discuss voice application design and show how to avoid common pitfalls.</p></p>
+discuss voice application design and show how to avoid common pitfalls.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/luca_pradovera">Luca Pradovera</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

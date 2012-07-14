@@ -7,6 +7,10 @@ first_name: Janina
 last_name: Voigt
 person_id: 725
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Janina Voigt is a Java developer, passionate about programming languages and currently doing a PhD in Computer Science at Cambridge University.</p></p>
@@ -18,6 +22,7 @@ person_id: 725
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 725
             <td><a href="/schedule/event/openjdk_covariance">Using the OpenJDK to investigate covariance in Java</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>14:00</td>
             <td>14:30</td>
     </tbody>

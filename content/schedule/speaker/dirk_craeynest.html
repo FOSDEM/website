@@ -7,6 +7,10 @@ first_name: Dirk
 last_name: Craeynest
 person_id: 581
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Dirk Craeynest has been involved with the Ada programming language and related technology since more than 3 decades. After obtaining degrees in mathematics and computer science, he was involved in research and teaching at the Computer Science Department of the Leuven university. Since 1995, he works mainly on large Ada-related software projects in industry.
@@ -19,6 +23,7 @@ Dirk is co-founder and President of the Ada-Belgium Organization, Vice-President
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ Dirk is co-founder and President of the Ada-Belgium Organization, Vice-President
             <td><a href="/schedule/event/welcome_to_ada_devroom">Welcome</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/ada">Ada</a></td>
             <td>12:00</td>
             <td>12:05</td>
     </tbody>

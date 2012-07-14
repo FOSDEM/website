@@ -7,6 +7,10 @@ first_name: Cheryl
 last_name: Miller
 person_id: 535
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Cheryl D. Miller, Founder of Zen Digital Europe and European Director of Greenlightforgirls.org, has twenty years of international experience in the technology and ICT sector. She has worked around the world for blue-chip companies in Strategic Communications, Organizational Change Management and IT Management.</p>
@@ -28,6 +32,7 @@ person_id: 535
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -37,6 +42,7 @@ person_id: 535
             <td><a href="/schedule/event/greenlight4girls">greenlight for girls</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>13:20</td>
             <td>13:35</td>
     </tbody>

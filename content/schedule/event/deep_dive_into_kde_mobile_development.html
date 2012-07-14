@@ -2,7 +2,10 @@
 title: Deep Dive into KDE Mobile development on N9/N950 (Harmattan)
 kind: event
 speakers:
-- laszlo_papp
+  -
+    name: Laszlo Papp
+    slug: laszlo_papp
+    url: /schedule/speaker/laszlo_papp
 slug: deep_dive_into_kde_mobile_development
 day: Sat
 start: 14:00
@@ -10,9 +13,20 @@ end: 14:00
 event_id: 596
 ---
 
-<p>Track: <a href="/schedule/track/open_mobile_linux_devroom">Open Mobile Linux Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>14:30</dd>
+</dl>
 
-<p><p>The Nokia N9 phone has recently been released to the public, running the shiny
+<p>The Nokia N9 phone has recently been released to the public, running the shiny
 MeeGo 1.2 Harmattan. External developers were able to get such devices via
 several mediums. Qt is at the center of this platform. It provides a great set
 of tools and libraries that make this device very accessible and give an
@@ -20,8 +34,8 @@ excellent way to learn Qt development; also to experiment with KDE Mobile
 application development. In this presentation the KDE Mobile development
 workflow will be presented. Practically almost everything you need to know about
 how to make or port a KDE application for those gadgets and how to make the most
-out of the development tools.</p></p>
-<p><p>During the presentation, there will be some notes about general hints and the
+out of the development tools.</p>
+<p>During the presentation, there will be some notes about general hints and the
 development environments potentially available. We will see how to package your
 KDE Application for testing and later publishing. You can pick up technical tips
 and tricks for free that others have already spent a decent amount of time with.
@@ -33,10 +47,18 @@ store and their QA requirements. We will also have a look at the newly formed
 publishing story. Speaking of which, the Community OBS will also be presented
 along with the fallback KDE repository for distributing packages for developer
 purposes. In the end, we will have a small demo session about the already
-available KDE applications for this mobile handset platform.</p></p>
+available KDE applications for this mobile handset platform.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/laszlo_papp">Laszlo Papp</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

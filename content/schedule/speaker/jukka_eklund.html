@@ -7,6 +7,10 @@ first_name: Jukka
 last_name: Eklund
 person_id: 644
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jukka has worked with Nokia on Symbian, maemo and MeeGo products. Most
@@ -21,6 +25,7 @@ Nemo Mobile, that is continuing the work of MeeGo Community Edition.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,6 +35,7 @@ Nemo Mobile, that is continuing the work of MeeGo Community Edition.</p></p>
             <td><a href="/schedule/event/community_qt_apps_repository">Community Qt apps repository - way forward</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></td>
             <td>14:30</td>
             <td>15:00</td>
     </tbody>

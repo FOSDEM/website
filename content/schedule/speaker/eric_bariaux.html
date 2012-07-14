@@ -7,6 +7,10 @@ first_name: Eric
 last_name: Bariaux
 person_id: 514
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Eric is a Java and iOS developer as well as Home Automation and Home Theater specialist, always looking to push the boundaries.
@@ -20,6 +24,7 @@ In a previous life he has acted as senior developer, architect or project manage
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ In a previous life he has acted as senior developer, architect or project manage
             <td><a href="/schedule/event/openremote">Home Automation with Open Remote</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>15:20</td>
             <td>15:35</td>
     </tbody>

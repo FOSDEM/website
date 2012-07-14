@@ -2,7 +2,10 @@
 title: Build simple and complex replication clusters with Tungsten Replicator
 kind: event
 speakers:
-- giuseppe_maxia
+  -
+    name: Giuseppe Maxia
+    slug: giuseppe_maxia
+    url: /schedule/speaker/giuseppe_maxia
 slug: replication_cluster_with_tungsten
 day: Sun
 start: 11:30
@@ -10,12 +13,31 @@ end: 11:30
 event_id: 630
 ---
 
-<p>Track: <a href="/schedule/track/mysql_and_friends_devroom">MySQL and Friends Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:30</dd>
+    <dt>End:</dt>
+    <dd>11:55</dd>
+</dl>
 
-<p><p>Tired of the intricacies of circular replication? Dreaming of real multiple masters solutions for MySQL replication? Dream no more. Tungsten Replicator, a free and open source replacement for MySQL replication, can build clusters of asynchronous nodes in a matter of minutes. This workshop will explain the basics of Tungsten Replicator, and it will show how to start your multiple master cluster in a few minutes. There will be examples of several topologies: from the simplest bi-directional replication to the ambitious all-to-all (every node is a master), fan-in (multiple masters to a single slave), the star (a central hub connected to several bi-directional masters)</p></p>
+<p>Tired of the intricacies of circular replication? Dreaming of real multiple masters solutions for MySQL replication? Dream no more. Tungsten Replicator, a free and open source replacement for MySQL replication, can build clusters of asynchronous nodes in a matter of minutes. This workshop will explain the basics of Tungsten Replicator, and it will show how to start your multiple master cluster in a few minutes. There will be examples of several topologies: from the simplest bi-directional replication to the ambitious all-to-all (every node is a master), fan-in (multiple masters to a single slave), the star (a central hub connected to several bi-directional masters)</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/giuseppe_maxia">Giuseppe Maxia</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

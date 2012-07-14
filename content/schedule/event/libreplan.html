@@ -2,7 +2,10 @@
 title: ! 'LibrePlan: Open Web Planning'
 kind: event
 speakers:
-- diego_pino_garcia
+  -
+    name: Diego Pino García
+    slug: diego_pino_garcia
+    url: /schedule/speaker/diego_pino_garcia
 slug: libreplan
 day: Sun
 start: 11:20
@@ -10,19 +13,38 @@ end: 11:20
 event_id: 491
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:20</dd>
+    <dt>End:</dt>
+    <dd>11:35</dd>
+</dl>
 
-<p><p>LibrePlan is a collaborative tool for planning, monitoring and control of different types of projects. LibrePlan is a project management tool based on Gantt diagrams. It is also a web-application. Thanks to its rich web interface, LibrePlan provides an user experience similar to desktop applications like MS Project.</p></p>
-<p><p>When planning a project, it's very common to find yourself managing different resources working in different projects at the same time. LibrePlan was designed from the very beginning to deal with scenarios like this, where resources and projects have a high degree of connection. This requirement makes LibrePlan a little bit different to other existing tools.</p>
+<p>LibrePlan is a collaborative tool for planning, monitoring and control of different types of projects. LibrePlan is a project management tool based on Gantt diagrams. It is also a web-application. Thanks to its rich web interface, LibrePlan provides an user experience similar to desktop applications like MS Project.</p>
+<p>When planning a project, it's very common to find yourself managing different resources working in different projects at the same time. LibrePlan was designed from the very beginning to deal with scenarios like this, where resources and projects have a high degree of connection. This requirement makes LibrePlan a little bit different to other existing tools.</p>
 
 <p>LibrePlan is not an isolated island. It's usual that input data needed by LibrePlan may be stored in other systems. In that case, LibrePlan can be fed with these data, thanks to its web services import capabilities. On the other hand, LibrePlan can feed other applications if necessary or even communicate with other LibrePlan instances.</p>
 
 <p>LibrePlan is a free software application licensed under the AGPL. One of the great assets of LibrePlan is its open development process, always driven by the LibrePlan community. The LibrePlan community engages companies and individuals working together hand by hand to build the best free software project management tool.</p>
 
-<p>If are keen to know more about LibrePlan, if you are a developer and would like to collaborate with the LibrePlan community or if you are a company and would like to start using LibrePlan for planning your project, please come to see us and learn more why LibrePlan is important for you.</p></p>
+<p>If are keen to know more about LibrePlan, if you are a developer and would like to collaborate with the LibrePlan community or if you are a company and would like to start using LibrePlan for planning your project, please come to see us and learn more why LibrePlan is important for you.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/diego_pino_garcia">Diego Pino García</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

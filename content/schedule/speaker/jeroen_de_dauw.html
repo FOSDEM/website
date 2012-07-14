@@ -7,6 +7,10 @@ first_name: Jeroen
 last_name: De Dauw
 person_id: 545
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Actively involved with MediaWiki development since Google Summer of Code 2009. Wrote over a dozen MediaWiki extensions and contributed to many more. Maintainer of the Semantic MediaWiki project. Works part-time for the Wikimedia Foundation.</p></p>
@@ -18,6 +22,7 @@ person_id: 545
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 545
             <td><a href="/schedule/event/smw">Semantic MediaWiki</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>16:20</td>
             <td>16:35</td>
     </tbody>

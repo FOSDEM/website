@@ -7,6 +7,10 @@ first_name: Robert
 last_name: Bragg
 person_id: 892
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Robert works as an open source developer in the Intel OTC Visualization team. He maintains the Cogl 3D graphics library and is part of the Intel
@@ -21,6 +25,7 @@ the Linux OpenGL driver team.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,6 +35,7 @@ the Linux OpenGL driver team.</p></p>
             <td><a href="/schedule/event/wayland_compositor">Writing a Wayland Compositor</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>09:00</td>
             <td>10:00</td>
     </tbody>

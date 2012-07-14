@@ -7,6 +7,10 @@ first_name: Dave
 last_name: Neary
 person_id: 296
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Dave Neary is active in the GNOME project, and has previously worked on the GIMP, OpenWengo, Maemo and MeeGo. He works as a consultant, helping companies grow communities around their products, and helping them work more effectively with existing community projects.</p></p>
@@ -18,6 +22,7 @@ person_id: 296
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,12 +32,14 @@ person_id: 296
             <td><a href="/schedule/event/grey_areas_of_software_licensing">Grey Areas of Software Licensing</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
             <td>12:30</td>
             <td>13:00</td>
         <tr>
             <td><a href="/schedule/event/sustainablementorship">Sustainable mentorship</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1308">H.1308</a></td>
+            <td><a href="/schedule/track/crossdesktop">CrossDesktop</a></td>
             <td>14:20</td>
             <td>14:50</td>
     </tbody>

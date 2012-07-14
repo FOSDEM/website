@@ -7,6 +7,10 @@ first_name: Andreas
 last_name: Gal
 person_id: 521
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Director of Research at Mozilla, leading an amazing team of researchers and engineers working on various areas of the web stack. Previously, I worked as a project scientist at the University of California, Irvine, working in the Secure Systems and Languages Laboratory of Professor Michael Franz. My background is in secure systems, type-safe languages, dynamic compilation, and virtual machines.</p></p>
@@ -18,6 +22,7 @@ person_id: 521
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 521
             <td><a href="/schedule/event/boot_to_gecko_and_web_api">Boot to Gecko and Web API</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>18:00</td>
             <td>18:40</td>
     </tbody>

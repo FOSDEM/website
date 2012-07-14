@@ -2,7 +2,10 @@
 title: LPI Exam Session 3
 kind: event
 speakers:
-- klaus_behrla
+  -
+    name: Klaus Behrla
+    slug: klaus_behrla
+    url: /schedule/speaker/klaus_behrla
 slug: lpi_3
 day: Sun
 start: 10:30
@@ -10,12 +13,31 @@ end: 10:30
 event_id: 522
 ---
 
-<p>Track: <a href="/schedule/track/certification">Certification</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/certification">Certification</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/guillissen">Guillissen</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:30</dd>
+    <dt>End:</dt>
+    <dd>12:15</dd>
+</dl>
 
-<p><p>See https://fosdem.org/certification</p></p>
+<p>See https://fosdem.org/certification</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/klaus_behrla">Klaus Behrla</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

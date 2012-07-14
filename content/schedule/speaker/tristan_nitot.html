@@ -7,6 +7,10 @@ first_name: Tristan
 last_name: Nitot
 person_id: 117
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Tristan Nitot has co-founded Mozilla Europe in 2003 and has been its president until it merged with subsidiaries of Mozilla Foundation in 2011. Under his tenure, Mozilla has reached almost half a billion instances in the world, 45% being in Europe, where Community participation is also the highest.</p>
@@ -20,6 +24,7 @@ person_id: 117
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,6 +34,7 @@ person_id: 117
             <td><a href="/schedule/event/2012_new_perspectives_for_mozilla">2012: New perspectives for Mozilla</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>13:30</td>
             <td>14:00</td>
     </tbody>

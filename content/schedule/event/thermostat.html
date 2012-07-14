@@ -2,8 +2,14 @@
 title: ! 'Thermostat: Taking over the Java tooling world with Open Source Software'
 kind: event
 speakers:
-- jon_vanalten
-- omair_majid
+  -
+    name: Jon VanAlten
+    slug: jon_vanalten
+    url: /schedule/speaker/jon_vanalten
+  -
+    name: Omair Majid
+    slug: omair_majid
+    url: /schedule/speaker/omair_majid
 slug: thermostat
 day: Sat
 start: 18:00
@@ -11,15 +17,33 @@ end: 18:00
 event_id: 706
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:00</dd>
+    <dt>End:</dt>
+    <dd>18:30</dd>
+</dl>
 
-<p><p>One area in which proprietary JDK releases have traditionally showed superiority over OpenJDK is in monitoring and instrumentation tools.  We aim to overcome this shortcoming and even reverse the trend by introducing a new, scalable tool to the the ecosystem: Thermostat.  During the last half year, we've been quietly coming up with a plan for how this tool should work, and we're now ready to share what we've come up with.  By working with others in the open Java community, we believe that we can make the most useful, most comprehensive, and all around best application of its kind.</p>
+<p>One area in which proprietary JDK releases have traditionally showed superiority over OpenJDK is in monitoring and instrumentation tools.  We aim to overcome this shortcoming and even reverse the trend by introducing a new, scalable tool to the the ecosystem: Thermostat.  During the last half year, we've been quietly coming up with a plan for how this tool should work, and we're now ready to share what we've come up with.  By working with others in the open Java community, we believe that we can make the most useful, most comprehensive, and all around best application of its kind.</p>
 
-<p>In our presentation, we will describe our extensible model for collecting JVM and system monitoring data side by side.  Attendees will learn about the features we have planned, see a short demo of what is already working, and hopefully be inspired to join us in in making this awesome tool a reality.</p></p>
+<p>In our presentation, we will describe our extensible model for collecting JVM and system monitoring data side by side.  Attendees will learn about the features we have planned, see a short demo of what is already working, and hopefully be inspired to join us in in making this awesome tool a reality.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jon_vanalten">Jon VanAlten</a></li>
-    <li><a href="/schedule/speaker/omair_majid">Omair Majid</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

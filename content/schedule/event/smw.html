@@ -2,7 +2,10 @@
 title: Semantic MediaWiki
 kind: event
 speakers:
-- jeroen_de_dauw
+  -
+    name: Jeroen De Dauw
+    slug: jeroen_de_dauw
+    url: /schedule/speaker/jeroen_de_dauw
 slug: smw
 day: Sun
 start: 16:20
@@ -10,15 +13,34 @@ end: 16:20
 event_id: 493
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:20</dd>
+    <dt>End:</dt>
+    <dd>16:35</dd>
+</dl>
 
-<p><p>What is Semantic MediaWiki, what can it do for me, and why is it not on Wikipedia yet?</p></p>
-<p><p>Semantic MediaWiki (SMW) is a free, open-source extension to MediaWiki – the wiki software that powers Wikipedia – that lets you store and query data within the wiki's pages.</p>
+<p>What is Semantic MediaWiki, what can it do for me, and why is it not on Wikipedia yet?</p>
+<p>Semantic MediaWiki (SMW) is a free, open-source extension to MediaWiki – the wiki software that powers Wikipedia – that lets you store and query data within the wiki's pages.</p>
 
-<p>Semantic MediaWiki is also a full-fledged framework, in conjunction with many spinoff extensions, that can turn a wiki into a powerful and flexible “collaborative database”. All data created within SMW can easily be published via the Semantic Web, allowing other systems to use this data seamlessly.</p></p>
+<p>Semantic MediaWiki is also a full-fledged framework, in conjunction with many spinoff extensions, that can turn a wiki into a powerful and flexible “collaborative database”. All data created within SMW can easily be published via the Semantic Web, allowing other systems to use this data seamlessly.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jeroen_de_dauw">Jeroen De Dauw</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

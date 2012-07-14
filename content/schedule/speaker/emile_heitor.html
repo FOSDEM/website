@@ -7,6 +7,10 @@ first_name: Emile
 last_name: Heitor
 person_id: 849
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 
@@ -17,6 +21,7 @@ person_id: 849
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -26,12 +31,14 @@ person_id: 849
             <td><a href="/schedule/event/intro_to_pkgsrc">Introduction to pkgsrc, and to package creation in NetBSD</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/bsd">BSD</a></td>
             <td>15:00</td>
             <td>15:30</td>
         <tr>
             <td><a href="/schedule/event/pkgin">pkgin, a binary package manager for pkgsrc</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/bsd">BSD</a></td>
             <td>15:30</td>
             <td>16:00</td>
     </tbody>

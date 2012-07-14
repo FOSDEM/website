@@ -7,6 +7,10 @@ first_name: Luca
 last_name: Pradovera
 person_id: 637
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Luca Pradovera is a regular contributor to the Adhearsion project and is involved with local
@@ -26,6 +30,7 @@ technologies.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -35,6 +40,7 @@ technologies.</p></p>
             <td><a href="/schedule/event/adhearsion_freepbx">Enhancing FreePBX with Adhearsion</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></td>
             <td>13:20</td>
             <td>14:00</td>
     </tbody>

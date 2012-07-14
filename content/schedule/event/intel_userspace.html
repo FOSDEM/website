@@ -2,7 +2,10 @@
 title: intel userspace
 kind: event
 speakers:
-- eric_anholt
+  -
+    name: Eric Anholt
+    slug: eric_anholt
+    url: /schedule/speaker/eric_anholt
 slug: intel_userspace
 day: Sat
 start: 11:00
@@ -10,18 +13,37 @@ end: 11:00
 event_id: 927
 ---
 
-<p>Track: <a href="/schedule/track/xorg+openicc_devroom">X.org+OpenICC Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3401">K.3.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>12:00</dd>
+</dl>
 
-<p><p>Updates from the Intel userland: GL, X, and infrastructure.</p>
+<p>Updates from the Intel userland: GL, X, and infrastructure.</p>
 
 <p>Much has changed for the better in Linux graphics in the last few years. The radical changes driver architecture to make compositing possible are
 stabilized and mainstream, new desktop environments are popping up regularly making use of these features, and OpenGL is changing from a usually buggy luxury component to a standard working part of Linux.</p>
 
 <p>In this talk, Eric will cover what has been going on in the Intel graphics driver stack to stabilize Linux graphics and catch up to the
-capabilities of of the hardware.</p></p>
+capabilities of of the hardware.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/eric_anholt">Eric Anholt</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

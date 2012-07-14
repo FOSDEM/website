@@ -7,6 +7,10 @@ first_name: Edvard
 last_name: Wendelin
 person_id: 721
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Edvard Wendelin, located in Stockholm, Sweden, is a member of the Java Platform Group
@@ -19,6 +23,7 @@ at Oracle. He is currently the OpenJDK 7 updates project's technical lead.</p></
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ at Oracle. He is currently the OpenJDK 7 updates project's technical lead.</p></
             <td><a href="/schedule/event/jdk_7_updates_in_openjdk">JDK 7 Updates in OpenJDK </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>11:30</td>
             <td>12:00</td>
     </tbody>

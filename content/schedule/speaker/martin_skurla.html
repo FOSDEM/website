@@ -7,6 +7,10 @@ first_name: Martin
 last_name: Skurla
 person_id: 491
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I am student, software engineer and Java enthusiast. I like playing with code and libraries on the Java platform. Currently focusing on Groovy and Scala as well. I am a big fan of NetBeans, both the IDE and platform as well. I like especially "low level" stuff in Java - annotation processing, AST manipulations, class loading, garbage collection, concurrency, build tools.</p></p>
@@ -18,6 +22,7 @@ person_id: 491
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,12 +32,14 @@ person_id: 491
             <td><a href="/schedule/event/gc_visualization_gcspy_netbeans">Garbage Collection Visualization, GCSpy and NetBeans in tandem</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>17:30</td>
             <td>18:00</td>
         <tr>
             <td><a href="/schedule/event/neo4j_gephi_visualization">NoSQL/Graph Database Visualization, The case of Gephi and Neo4j </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
             <td>15:40</td>
             <td>15:55</td>
     </tbody>

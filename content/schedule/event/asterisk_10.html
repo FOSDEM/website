@@ -2,7 +2,10 @@
 title: ! 'Asterisk 10: New Features, New Testing'
 kind: event
 speakers:
-- matt_jordan
+  -
+    name: Matt Jordan
+    slug: matt_jordan
+    url: /schedule/speaker/matt_jordan
 slug: asterisk_10
 day: Sun
 start: 09:45
@@ -10,15 +13,34 @@ end: 09:45
 event_id: 583
 ---
 
-<p>Track: <a href="/schedule/track/telephony_and_communications_devroom">Telephony and Communications Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>09:45</dd>
+    <dt>End:</dt>
+    <dd>10:25</dd>
+</dl>
 
-<p><p>Asterisk 10 added many new features, and includes substantial automated testing.</p></p>
-<p><p>Asterisk 10 was recently released, and incorporates many new features, including nearly unlimited support for codec formats and sample rates, wideband audio conferencing, and much more. In addition, the Asterisk project team has built a large suite of unit and functional tests that are now run against each Asterisk release.</p>
+<p>Asterisk 10 added many new features, and includes substantial automated testing.</p>
+<p>Asterisk 10 was recently released, and incorporates many new features, including nearly unlimited support for codec formats and sample rates, wideband audio conferencing, and much more. In addition, the Asterisk project team has built a large suite of unit and functional tests that are now run against each Asterisk release.</p>
 
-<p>This talk will cover the major new features of Asterisk 10, and also cover how the Asterisk testsuite is developed and used to improve the code quality of each release.</p></p>
+<p>This talk will cover the major new features of Asterisk 10, and also cover how the Asterisk testsuite is developed and used to improve the code quality of each release.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/matt_jordan">Matt Jordan</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

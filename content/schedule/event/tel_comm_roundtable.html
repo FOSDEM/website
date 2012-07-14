@@ -2,7 +2,10 @@
 title: Telephony and Communications Roundtable
 kind: event
 speakers:
-- kevin_fleming
+  -
+    name: Kevin Fleming
+    slug: kevin_fleming
+    url: /schedule/speaker/kevin_fleming
 slug: tel_comm_roundtable
 day: Sun
 start: 16:20
@@ -10,12 +13,31 @@ end: 16:20
 event_id: 738
 ---
 
-<p>Track: <a href="/schedule/track/telephony_and_communications_devroom">Telephony and Communications Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:20</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>A round-table discussion about VoIP and related topics with the day's speakers.</p></p>
+<p>A round-table discussion about VoIP and related topics with the day's speakers.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/kevin_fleming">Kevin Fleming</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

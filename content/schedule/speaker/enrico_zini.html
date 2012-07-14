@@ -7,6 +7,10 @@ first_name: Enrico
 last_name: Zini
 person_id: 860
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Freelance Free Software developer, Mad (Computer) Scientist, founder of the Debtags project, author of apt-xapian-index and Distromatch, Debian Account Manager.</p></p>
@@ -18,6 +22,7 @@ person_id: 860
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,12 +32,14 @@ person_id: 860
             <td><a href="/schedule/event/distromatch">I wrote Distromatch, shall we use it?</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1301">H.1301</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>18:15</td>
             <td>19:00</td>
         <tr>
             <td><a href="/schedule/event/debtags_reloaded">Debtags.debian.net reloaded!</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h1302">H.1302</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>10:00</td>
             <td>11:00</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: Using Moose objects with Memcached
 kind: event
 speakers:
-- marius_olsthoorn
+  -
+    name: Marius Olsthoorn
+    slug: marius_olsthoorn
+    url: /schedule/speaker/marius_olsthoorn
 slug: moose_memcached
 day: Sun
 start: 16:20
@@ -10,11 +13,22 @@ end: 16:20
 event_id: 921
 ---
 
-<p>Track: <a href="/schedule/track/perl_devroom">Perl Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/perl">Perl</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:20</dd>
+    <dt>End:</dt>
+    <dd>16:40</dd>
+</dl>
 
-<p><p>2dehands/2ememain uses Memcached for caching Moose objects. We use MooseX::Storage for this, and have extended it in some interesting
-ways.</p></p>
-<p><p>We deal with issues such as:</p>
+<p>2dehands/2ememain uses Memcached for caching Moose objects. We use MooseX::Storage for this, and have extended it in some interesting
+ways.</p>
+<p>We deal with issues such as:</p>
 
 <ul>
 <li>We cannot flush the cache, so we need an upgrade path for new object versions.</li>
@@ -22,10 +36,18 @@ ways.</p></p>
 </ul>
 
 
-<p>In this talk Marius will describe how they use Moose with Memcached and show how they used the standard Moose/MOP tools to extend MooseX::Storage to support their needs.</p></p>
+<p>In this talk Marius will describe how they use Moose with Memcached and show how they used the standard Moose/MOP tools to extend MooseX::Storage to support their needs.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/marius_olsthoorn">Marius Olsthoorn</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

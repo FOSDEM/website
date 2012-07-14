@@ -2,7 +2,10 @@
 title: You're doing it wrong!
 kind: event
 speakers:
-- bryan_ostergaard
+  -
+    name: Bryan Østergaard
+    slug: bryan_ostergaard
+    url: /schedule/speaker/bryan_ostergaard
 slug: really_grow_community
 day: Sun
 start: 15:00
@@ -10,9 +13,20 @@ end: 15:00
 event_id: 404
 ---
 
-<p>Track: <a href="/schedule/track/community_track">Community Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/community">Community</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k1105">K.1.105</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:50</dd>
+</dl>
 
-<p><p>Based on his experiences with aggressively growing and maintaining the Exherbo community Bryan dives into the secrets and experience leading to this success.</p>
+<p>Based on his experiences with aggressively growing and maintaining the Exherbo community Bryan dives into the secrets and experience leading to this success.</p>
 
 <p>Exherbo averages 5 new contributors every month despite being a small and relatively unknown project. The contributors stay quite active within the project and stay with the project for years.</p>
 
@@ -22,10 +36,18 @@ event_id: 404
 * why you should only be looking for inexperienced developers
 * why you should openly apply social engineering techniques when dealing with developers
 * what makes inexperienced developers such a big asset for Exherbo
-* how users can manipulate developers into fixing their bugs and many more.</p></p>
+* how users can manipulate developers into fixing their bugs and many more.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/bryan_ostergaard">Bryan Østergaard</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

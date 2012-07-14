@@ -2,8 +2,14 @@
 title: ! 'True open hardware: Opencores and OpenRISC'
 kind: event
 speakers:
-- julius_baxter
-- olof_kindgren
+  -
+    name: Julius Baxter
+    slug: julius_baxter
+    url: /schedule/speaker/julius_baxter
+  -
+    name: Olof Kindgren
+    slug: olof_kindgren
+    url: /schedule/speaker/olof_kindgren
 slug: opencores_openrisc_true_open_hw
 day: Sat
 start: 15:00
@@ -11,9 +17,20 @@ end: 15:00
 event_id: 765
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>This presentation will be delivered in two sections, first an
+<p>This presentation will be delivered in two sections, first an
 introduction to the OpenRISC project by Julius Baxter, followed by a
 look at embedded hardware development with Open Source IP cores using
 the OpenRISC platform and the IP available on OpenCores.org with Olof
@@ -44,11 +61,18 @@ framework to put it all together.</p>
 of open source hardware and an overview of OpenCores. The main focus
 will be on how to use the OpenRISC Reference Platform System on Chip
 (ORPSoC) to build a custom SoC, which will be demonstrated on the
-OpenRISC FPGA development board.</p></p>
+OpenRISC FPGA development board.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/julius_baxter">Julius Baxter</a></li>
-    <li><a href="/schedule/speaker/olof_kindgren">Olof Kindgren</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

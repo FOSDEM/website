@@ -2,7 +2,10 @@
 title: How we scaled up OpenQuake
 kind: event
 speakers:
-- muharem_hrnjadovic
+  -
+    name: Muharem Hrnjadovic
+    slug: muharem_hrnjadovic
+    url: /schedule/speaker/muharem_hrnjadovic
 slug: openquake
 day: Sun
 start: 11:40
@@ -10,10 +13,21 @@ end: 11:40
 event_id: 502
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:40</dd>
+    <dt>End:</dt>
+    <dd>11:55</dd>
+</dl>
 
-<p><p>Topics: partitioning of large calculations, computation networks, python, celery, rabbitmq, redis</p></p>
-<p><p>The open source OpenQuake seismic calculation engine (http://openquake.org/) is developed and maintained by the GEM foundation (http://www.globalquakemodel.org/) which is a public-private partnership that drives a collaborative effort aimed at developing and deploying tools and resources for earthquake risk assessment worldwide.</p>
+<p>Topics: partitioning of large calculations, computation networks, python, celery, rabbitmq, redis</p>
+<p>The open source OpenQuake seismic calculation engine (http://openquake.org/) is developed and maintained by the GEM foundation (http://www.globalquakemodel.org/) which is a public-private partnership that drives a collaborative effort aimed at developing and deploying tools and resources for earthquake risk assessment worldwide.</p>
 
 <p>Seismic hazard calculations can be massive making it necessary to partition and distribute them across a compute network. The OpenQuake engine (http://openquake.org/) partitions seismic calculation and uses</p>
 
@@ -26,10 +40,18 @@ event_id: 502
 
 <p>to push the tasks into the compute network and to collect the results.</p>
 
-<p>There were a number of lessons learned while scaling up OpenQuake to perform seismic calculation for the whole of Europe and I will touch upon the most important ones.</p></p>
+<p>There were a number of lessons learned while scaling up OpenQuake to perform seismic calculation for the whole of Europe and I will touch upon the most important ones.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/muharem_hrnjadovic">Muharem Hrnjadovic</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

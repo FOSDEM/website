@@ -7,6 +7,10 @@ first_name: Daniel
 last_name: Stone
 person_id: 897
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Daniel was tricked into packaging X ten years ago, and has been working on input for the past few years, including maintaining (loosely speaking) the X keyboard code, and authoring the original input hotplug implementation.  He's still sorry about the HAL support in the X server, still has not forgiven those responsible for tricking him into packaging X in the first place, and can kill any conversation with boring did-you-knows about keyboards.</p></p>
@@ -18,6 +22,7 @@ person_id: 897
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 897
             <td><a href="/schedule/event/xorg_input">Input in a modern world - input methods and multitouch. </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>12:00</td>
             <td>13:00</td>
     </tbody>

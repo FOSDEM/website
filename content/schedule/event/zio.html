@@ -2,7 +2,10 @@
 title: The ZIO Framework
 kind: event
 speakers:
-- alessandro_rubini
+  -
+    name: Alessandro Rubini
+    slug: alessandro_rubini
+    url: /schedule/speaker/alessandro_rubini
 slug: zio
 day: Sat
 start: 16:20
@@ -10,12 +13,23 @@ end: 16:20
 event_id: 483
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:20</dd>
+    <dt>End:</dt>
+    <dd>16:35</dd>
+</dl>
 
-<p><p>The ZIO framework is a novel way to manage laboratory input/output.
+<p>The ZIO framework is a novel way to manage laboratory input/output.
 It handles both data and meta-data, and is designed for multi-MB-per
-second I/O in distributed systems.</p></p>
-<p><p>ZIO is a framework for high-data-rate I/O.  The basic I/O item is a
+second I/O in distributed systems.</p>
+<p>ZIO is a framework for high-data-rate I/O.  The basic I/O item is a
 block, made up of data samples and full meta-data information, so
 input can be consumed offline and output cam be prepared in advance.
 The main use cases are waveform generation and distributed
@@ -27,10 +41,18 @@ buffer is connected to char devices, but in-kernel users have been
 written with minimal effort.</p>
 
 <p>Code is being developed at http://www.ohwr.org/projects/zio and is
-being submitted to the kernel.</p></p>
+being submitted to the kernel.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/alessandro_rubini">Alessandro Rubini</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

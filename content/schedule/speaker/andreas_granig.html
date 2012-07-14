@@ -7,6 +7,10 @@ first_name: Andreas
 last_name: Granig
 person_id: 633
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Andreas Granig is a member of the management board of Kamailio, the most
@@ -22,6 +26,7 @@ systems serving large scale deployments.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ systems serving large scale deployments.</p></p>
             <td><a href="/schedule/event/zero_to_voip_provider">From zero to VoIP provider in 15 minutes</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></td>
             <td>11:15</td>
             <td>11:55</td>
     </tbody>

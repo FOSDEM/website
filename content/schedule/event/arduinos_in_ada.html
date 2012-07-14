@@ -2,7 +2,10 @@
 title: Programming Arduinos in Ada
 kind: event
 speakers:
-- jacob_sparre_andersen
+  -
+    name: Jacob Sparre Andersen
+    slug: jacob_sparre_andersen
+    url: /schedule/speaker/jacob_sparre_andersen
 slug: arduinos_in_ada
 day: Sat
 start: 15:30
@@ -10,13 +13,32 @@ end: 15:30
 event_id: 876
 ---
 
-<p>Track: <a href="/schedule/track/ada_devroom">Ada Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/ada">Ada</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:30</dd>
+    <dt>End:</dt>
+    <dd>15:55</dd>
+</dl>
 
-<p><p>Programming Arduinos made even easier (and more reliable).</p></p>
-<p><p>An introduction to programming Arduinos and compatible ATMEL based devices in Ada. The talk will give a short explanation of how you can set up an Ada development environment for Arduinos, followed by some real-life code and devices, demonstrating some of the elegance you can get from using Ada for programming embedded systems.</p></p>
+<p>Programming Arduinos made even easier (and more reliable).</p>
+<p>An introduction to programming Arduinos and compatible ATMEL based devices in Ada. The talk will give a short explanation of how you can set up an Ada development environment for Arduinos, followed by some real-life code and devices, demonstrating some of the elegance you can get from using Ada for programming embedded systems.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jacob_sparre_andersen">Jacob Sparre Andersen</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

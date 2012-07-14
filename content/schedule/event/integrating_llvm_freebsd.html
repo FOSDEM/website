@@ -2,7 +2,10 @@
 title: Integrating LLVM into FreeBSD
 kind: event
 speakers:
-- brooks_davis
+  -
+    name: Brooks Davis
+    slug: brooks_davis
+    url: /schedule/speaker/brooks_davis
 slug: integrating_llvm_freebsd
 day: Sun
 start: 11:45
@@ -10,12 +13,31 @@ end: 11:45
 event_id: 845
 ---
 
-<p>Track: <a href="/schedule/track/bsd_devroom">BSD Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/bsd">BSD</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:45</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>The FreeBSD Project has been actively working to incorporate tools from the LLVM project into our base system including clang, libc++, and possibly lldb. This talk will cover our efforts so far including our plans to ship FreeBSD 9.0 with clang in the base system. I will cover both our current work to replace GPL licensed components with BSD(ish) licensed components and future or experimental work to incorporate new technologies made possible by LLVM.</p></p>
+<p>The FreeBSD Project has been actively working to incorporate tools from the LLVM project into our base system including clang, libc++, and possibly lldb. This talk will cover our efforts so far including our plans to ship FreeBSD 9.0 with clang in the base system. I will cover both our current work to replace GPL licensed components with BSD(ish) licensed components and future or experimental work to incorporate new technologies made possible by LLVM.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/brooks_davis">Brooks Davis</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

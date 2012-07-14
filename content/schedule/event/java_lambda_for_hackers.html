@@ -2,7 +2,10 @@
 title: Java Lambda for Hackers 
 kind: event
 speakers:
-- remi_forax
+  -
+    name: Rémi Forax
+    slug: remi_forax
+    url: /schedule/speaker/remi_forax
 slug: java_lambda_for_hackers
 day: Sat
 start: 12:30
@@ -10,15 +13,34 @@ end: 12:30
 event_id: 683
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:30</dd>
+    <dt>End:</dt>
+    <dd>13:00</dd>
+</dl>
 
-<p><p>Lambdas in Java 8 will be the first major addition to the Java language since the Generics in Java 5,
+<p>Lambdas in Java 8 will be the first major addition to the Java language since the Generics in Java 5,
 while programming with a language that support lambdas/closures is way cool,
 there are several traps and pitfalls to their introduction in Java.
-This talk will explain the VM modifications already done and that will be done to support lambda in the JDK 8.</p></p>
+This talk will explain the VM modifications already done and that will be done to support lambda in the JDK 8.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/remi_forax">Rémi Forax</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

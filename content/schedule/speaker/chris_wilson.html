@@ -7,6 +7,10 @@ first_name: Chris
 last_name: Wilson
 person_id: 894
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Chris is the maintainer of Cairo and xf86-video-intel display driver on behalf of Intel.</p></p>
@@ -18,6 +22,7 @@ person_id: 894
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 894
             <td><a href="/schedule/event/xorg_cairo">Cairo: How to render tomorrow's user interfaces.</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>13:00</td>
             <td>14:00</td>
     </tbody>

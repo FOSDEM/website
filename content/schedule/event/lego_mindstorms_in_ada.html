@@ -2,7 +2,10 @@
 title: Programming LEGO MINDSTORMS robots in Ada 
 kind: event
 speakers:
-- jose_f_ruiz
+  -
+    name: José F. Ruiz
+    slug: jose_f_ruiz
+    url: /schedule/speaker/jose_f_ruiz
 slug: lego_mindstorms_in_ada
 day: Sat
 start: 16:00
@@ -10,13 +13,32 @@ end: 16:00
 event_id: 877
 ---
 
-<p>Track: <a href="/schedule/track/ada_devroom">Ada Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/ada">Ada</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:50</dd>
+</dl>
 
-<p><p>This presentation explains and demonstrates how Ada is effectively used to control a Segway-like self-balancing robot.</p></p>
-<p><p>LEGO MINDSTORMS are affordable and attractive robotics kits that can be used as teaching material, or as funny and interesting hobby. We have used this kit to design a Segway-like robot, where the control system is written in Ada and built with the GNAT compiler. The concurrency and real-time capabilities of the Ada Ravenscar profile are used to implement the dynamic interaction with the physical environment, respecting very stringent timing constraints.</p></p>
+<p>This presentation explains and demonstrates how Ada is effectively used to control a Segway-like self-balancing robot.</p>
+<p>LEGO MINDSTORMS are affordable and attractive robotics kits that can be used as teaching material, or as funny and interesting hobby. We have used this kit to design a Segway-like robot, where the control system is written in Ada and built with the GNAT compiler. The concurrency and real-time capabilities of the Ada Ravenscar profile are used to implement the dynamic interaction with the physical environment, respecting very stringent timing constraints.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jose_f_ruiz">José F. Ruiz</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

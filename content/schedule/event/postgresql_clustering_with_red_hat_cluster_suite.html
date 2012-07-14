@@ -2,7 +2,10 @@
 title: PostgreSQL Clustering with Red Hat Cluster Suite
 kind: event
 speakers:
-- devrim_gunduz
+  -
+    name: Devrim Gündüz
+    slug: devrim_gunduz
+    url: /schedule/speaker/devrim_gunduz
 slug: postgresql_clustering_with_red_hat_cluster_suite
 day: Sat
 start: 13:00
@@ -10,16 +13,35 @@ end: 13:00
 event_id: 671
 ---
 
-<p>Track: <a href="/schedule/track/postgresql_devroom">PostgreSQL Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/postgresql">PostgreSQL</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:00</dd>
+    <dt>End:</dt>
+    <dd>13:50</dd>
+</dl>
 
-<p><p>Red Hat Cluster Suite is a robust technology that is used at many areas.</p>
+<p>Red Hat Cluster Suite is a robust technology that is used at many areas.</p>
 
 <p>PostgreSQL can be directly used with Red Hat Cluster Suite, in order to create an active-passive clustering environment.</p>
 
-<p>In this session, we will setup a two-node cluster, learn how to configure it, also talk about some more details.</p></p>
+<p>In this session, we will setup a two-node cluster, learn how to configure it, also talk about some more details.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/devrim_gunduz">Devrim Gündüz</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

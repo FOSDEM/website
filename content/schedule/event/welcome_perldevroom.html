@@ -2,7 +2,10 @@
 title: Welcome to the Perl devroom
 kind: event
 speakers:
-- claudio_ramirez
+  -
+    name: Claudio Ramirez
+    slug: claudio_ramirez
+    url: /schedule/speaker/claudio_ramirez
 slug: welcome_perldevroom
 day: Sun
 start: 09:00
@@ -10,12 +13,31 @@ end: 09:00
 event_id: 905
 ---
 
-<p>Track: <a href="/schedule/track/perl_devroom">Perl Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/perl">Perl</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>09:00</dd>
+    <dt>End:</dt>
+    <dd>09:05</dd>
+</dl>
 
-<p><p>A short introduction to the Perl devroom schedule</p></p>
+<p>A short introduction to the Perl devroom schedule</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/claudio_ramirez">Claudio Ramirez</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

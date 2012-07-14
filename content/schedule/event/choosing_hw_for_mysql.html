@@ -2,7 +2,10 @@
 title: Choosing Hardware for MySQL
 kind: event
 speakers:
-- kenny_gryp
+  -
+    name: Kenny Gryp
+    slug: kenny_gryp
+    url: /schedule/speaker/kenny_gryp
 slug: choosing_hw_for_mysql
 day: Sun
 start: 16:30
@@ -10,12 +13,31 @@ end: 16:30
 event_id: 634
 ---
 
-<p>Track: <a href="/schedule/track/mysql_and_friends_devroom">MySQL and Friends Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:30</dd>
+    <dt>End:</dt>
+    <dd>16:55</dd>
+</dl>
 
-<p><p>In this session you'll learn how to choose hardware that helps MySQL execute queries the most quickly, while providing the best price-to-performance ratio. This includes choosing and configuring CPUs, RAM, network, and storage systems. We'll also discuss what performance you can expect from various Amazon EC2 instance sizes, including EBS volumes and Amazon's RDS service for MySQL.</p></p>
+<p>In this session you'll learn how to choose hardware that helps MySQL execute queries the most quickly, while providing the best price-to-performance ratio. This includes choosing and configuring CPUs, RAM, network, and storage systems. We'll also discuss what performance you can expect from various Amazon EC2 instance sizes, including EBS volumes and Amazon's RDS service for MySQL.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/kenny_gryp">Kenny Gryp</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

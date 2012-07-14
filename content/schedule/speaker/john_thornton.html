@@ -7,6 +7,10 @@ first_name: John
 last_name: Thornton
 person_id: 855
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>JohnnyT (a.k.a. John Thornton) has been developing web applications
@@ -27,6 +31,7 @@ Alliance Health Networks in Salt Lake City, Utah.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -36,6 +41,7 @@ Alliance Health Networks in Salt Lake City, Utah.</p></p>
             <td><a href="/schedule/event/amber">Amber, the Smalltalk for web developers</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/smalltalk">Smalltalk</a></td>
             <td>11:00</td>
             <td>12:00</td>
     </tbody>

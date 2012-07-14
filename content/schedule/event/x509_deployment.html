@@ -2,7 +2,10 @@
 title: Deployment and Use of X.509 in Free Software Components
 kind: event
 speakers:
-- branko_majic
+  -
+    name: Branko Majic
+    slug: branko_majic
+    url: /schedule/speaker/branko_majic
 slug: x509_deployment
 day: Sat
 start: 14:00
@@ -10,12 +13,31 @@ end: 14:00
 event_id: 889
 ---
 
-<p>Track: <a href="/schedule/track/hardware_cryptography_devroom">Hardware Cryptography Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2214">H.2214</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>15:00</dd>
+</dl>
 
-<p><p>Walkthrough for a successful X509/PKI deployment with free software.</p></p>
+<p>Walkthrough for a successful X509/PKI deployment with free software.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/branko_majic">Branko Majic</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

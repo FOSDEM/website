@@ -7,6 +7,10 @@ first_name: Robert
 last_name: Dewar
 person_id: 501
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Robert Dewar has been involved in programming language design and implementation since the late 60's (working on Algol-68, SNOBOL-4 (SPITBOL), COBOL, and since the early 80's on Ada). He was a professor of computer science first at Illinois Institute of Technology from 1968 to 1975, and then at the Courant Institute at New York University from 1976 to 2005.
@@ -20,6 +24,7 @@ Robert Dewar is co-author of the Java-in-education article that was "slashdotted
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -29,12 +34,14 @@ Robert Dewar is co-author of the Java-in-education article that was "slashdotted
             <td><a href="/schedule/event/keynotes_model_success">Free Software: A viable model for Commercial Success</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/janson">Janson</a></td>
+            <td><a href="/schedule/track/keynotes">Keynotes</a></td>
             <td>11:00</td>
             <td>11:50</td>
         <tr>
             <td><a href="/schedule/event/future_of_ada">The future of Ada: Robert Dewar looks into his cloudy crystal ball </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/ada">Ada</a></td>
             <td>18:00</td>
             <td>18:30</td>
     </tbody>

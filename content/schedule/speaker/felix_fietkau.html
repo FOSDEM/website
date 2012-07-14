@@ -7,6 +7,10 @@ first_name: Felix
 last_name: Fietkau
 person_id: 782
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Felix ('nbd') Fietkau is the lead developer of the OpenWrt Embedded
@@ -21,6 +25,7 @@ drivers.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,6 +35,7 @@ drivers.</p></p>
             <td><a href="/schedule/event/openwrt_evolution_of_an_embedded_linux_distribution">OpenWrt: Evolution of an Embedded Linux Distribution</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/lameere">Lameere</a></td>
+            <td><a href="/schedule/track/embedded">Embedded</a></td>
             <td>18:00</td>
             <td>19:00</td>
     </tbody>

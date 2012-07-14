@@ -2,8 +2,14 @@
 title: ! 'Guvnor/jBPM: Managing workflows and business rules with Guvnor and the jBPM designer'
 kind: event
 speakers:
-- geoffrey_de_smet
-- marco_rietveld
+  -
+    name: Geoffrey De Smet
+    slug: geoffrey_de_smet
+    url: /schedule/speaker/geoffrey_de_smet
+  -
+    name: Marco Rietveld
+    slug: marco_rietveld
+    url: /schedule/speaker/marco_rietveld
 slug: managing_workflows_and_business_rules_with_guvnor_and_the_jbpm_designer
 day: Sat
 start: 18:00
@@ -11,25 +17,43 @@ end: 18:00
 event_id: 544
 ---
 
-<p>Track: <a href="/schedule/track/jbossorg_devroom">JBoss.org Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/jbossorg">JBoss.org</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k3201">K.3.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:00</dd>
+    <dt>End:</dt>
+    <dd>18:55</dd>
+</dl>
 
-<p><p>The jBPM workflow engine and the Drools rule engine and the help you extract your business logic in workflows and rules, so you don’t need to hard code it in Java.</p>
+<p>The jBPM workflow engine and the Drools rule engine and the help you extract your business logic in workflows and rules, so you don’t need to hard code it in Java.</p>
 
 <p>For example, suppose your application handles mortgage approval and you have a team of business experts at your disposal that can’t program. What happens if your business experts want to add a workflow action to send a mail upon each mortgage approval above 100 000 € with an applicant below age 30? How long does it take to hit production? Can the business experts easily read the changes before they hit production?</p>
 
-<p>With Guvnor and the jBPM designer, those business experts can write and edit the workflows and business rules themselves. They can verify them and put them in poduction.</p></p>
-<p><p>The jBPM workflow engine and the Drools rule engine and the help you extract your business logic in workflows and rules, so you don’t need to hard code it in Java.</p>
+<p>With Guvnor and the jBPM designer, those business experts can write and edit the workflows and business rules themselves. They can verify them and put them in poduction.</p>
+<p>The jBPM workflow engine and the Drools rule engine and the help you extract your business logic in workflows and rules, so you don’t need to hard code it in Java.</p>
 
 <p>For example, suppose your application handles mortgage approval and you have a team of business experts at your disposal that can’t program. What happens if your business experts want to add a workflow action to send a mail upon each mortgage approval above 100 000 € with an applicant below age 30? How long does it take to hit production? Can the business experts easily read the changes before they hit production?</p>
 
 <p>With Guvnor and the jBPM designer, those business experts can write and edit the workflows and business rules themselves. They can verify them and put them in production.</p>
 
 <p>Ref : http://www.jboss.org/jbpm
-Ref : http://www.jboss.org/guvnor</p></p>
+Ref : http://www.jboss.org/guvnor</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/geoffrey_de_smet">Geoffrey De Smet</a></li>
-    <li><a href="/schedule/speaker/marco_rietveld">Marco Rietveld</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

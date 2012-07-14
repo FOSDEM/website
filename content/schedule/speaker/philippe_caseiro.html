@@ -7,6 +7,10 @@ first_name: Philippe
 last_name: Caseiro
 person_id: 668
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I'm part of the creators of the French Enlightenment community and association (http://www.enlightenment.fr).
@@ -22,6 +26,7 @@ brand new opensource small company "Cadoles" (http://www.cadoles.com).</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ brand new opensource small company "Cadoles" (http://www.cadoles.com).</p></p>
             <td><a href="/schedule/event/eflnewbie">How can a newbie start and succeed in developing an application with EFL</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1308">H.1308</a></td>
+            <td><a href="/schedule/track/crossdesktop">CrossDesktop</a></td>
             <td>18:00</td>
             <td>18:40</td>
     </tbody>

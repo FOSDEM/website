@@ -2,7 +2,10 @@
 title: Beyond Traditional Mobile Linux
 kind: event
 speakers:
-- carsten_munk
+  -
+    name: Carsten Munk
+    slug: carsten_munk
+    url: /schedule/speaker/carsten_munk
 slug: mobile_beyond
 day: Sat
 start: 14:00
@@ -10,19 +13,38 @@ end: 14:00
 event_id: 391
 ---
 
-<p>Track: <a href="/schedule/track/future_of_ui_track">Future of UI Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/future_of_ui">Future of UI</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k1105">K.1.105</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>14:50</dd>
+</dl>
 
-<p><p>The last few years has seen many different Mobile Linux projects come and go, both big and small, commercial and open source. This talk seeks to present about the current state of Mobile Linux and future challenges of the platforms that drive our mobile devices. The angle of attack is to identify and explain tendencies in technology about moving beyond Mobile Linux as defined by Linux handsets, netbooks and tablets - towards more unified and more connected experiences of interaction. The talk will center around the problems and challenges that open source efforts will have in such a world of connected experiences and describe what current efforts exist within the open source community that recognise this shift beyond traditional Mobile Linux.</p></p>
-<p><p>We are moving towards a paradigm shift in how we use computers - in fact we, we already see the beginnings of this in the way we use our mobile devices today. People are switching away from PCs onto tablets, your phone is more like a computer in your pocket and the monopoly of exclusively using the PC and the traditional WIMP interfaces has been broken.</p>
+<p>The last few years has seen many different Mobile Linux projects come and go, both big and small, commercial and open source. This talk seeks to present about the current state of Mobile Linux and future challenges of the platforms that drive our mobile devices. The angle of attack is to identify and explain tendencies in technology about moving beyond Mobile Linux as defined by Linux handsets, netbooks and tablets - towards more unified and more connected experiences of interaction. The talk will center around the problems and challenges that open source efforts will have in such a world of connected experiences and describe what current efforts exist within the open source community that recognise this shift beyond traditional Mobile Linux.</p>
+<p>We are moving towards a paradigm shift in how we use computers - in fact we, we already see the beginnings of this in the way we use our mobile devices today. People are switching away from PCs onto tablets, your phone is more like a computer in your pocket and the monopoly of exclusively using the PC and the traditional WIMP interfaces has been broken.</p>
 
 <p>But the problem is - this brave new world is so detrimentally different from the PC world that we in the Linux-centered open source community has been building software, distributions and UI toolkits for. And now many claim that the PC is dead! So what are we to do now? And what advantages do we have in this new world?</p>
 
 <p>This talk will illustrate what challenges efforts in Mobile Linux face and present areas we as a community need to collaborate together in to be strong in the new world of connected devices.</p>
 
-<p>Conservative views will be challenged and holy cows of traditional open source will be touched as entirely new approaches to a Linux experience - both in software, distributions and UI toolkits are needed to face these new challenges. Many efforts already exist that are going in the right direction and these will be described and contribution and collaboration and creation of new projects fitting this new world motivated.</p></p>
+<p>Conservative views will be challenged and holy cows of traditional open source will be touched as entirely new approaches to a Linux experience - both in software, distributions and UI toolkits are needed to face these new challenges. Many efforts already exist that are going in the right direction and these will be described and contribution and collaboration and creation of new projects fitting this new world motivated.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/carsten_munk">Carsten Munk</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

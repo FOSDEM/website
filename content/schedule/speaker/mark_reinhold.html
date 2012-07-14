@@ -7,6 +7,10 @@ first_name: Mark
 last_name: Reinhold
 person_id: 218
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I'm an Architect at Oracle, where I work on the Java SE Platform, OpenJDK, and other random things.</p>
@@ -22,6 +26,7 @@ person_id: 218
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,12 +36,14 @@ person_id: 218
             <td><a href="/schedule/event/state_of_openjdk">The state of OpenJDK</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>11:05</td>
             <td>11:30</td>
         <tr>
             <td><a href="/schedule/event/jdk_8">JDK 8</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>16:00</td>
             <td>16:30</td>
     </tbody>

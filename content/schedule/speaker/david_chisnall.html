@@ -7,6 +7,10 @@ first_name: David
 last_name: Chisnall
 person_id: 391
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>David Chisnall is an active contributor to a number of Free Software projects.  He is responsible for Objective-C support for non-Apple platforms in Clang and has contributed to several other parts of the compiler.  He is the original author of libcxxrt, which provides the low-level C++ ABI support.  Libcxxrt was developed for PathScale and was open sourced by the FreeBSD and NetBSD Foundations and will form the base of the new C++ stack in FreeBSD 10.</p>
@@ -24,6 +28,7 @@ person_id: 391
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -33,24 +38,28 @@ person_id: 391
             <td><a href="/schedule/event/new_objc_features">New Features of Objective-C</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/gnustep">GNUstep</a></td>
             <td>17:15</td>
             <td>18:00</td>
         <tr>
             <td><a href="/schedule/event/bsd_cxx_stack">Towards a BSD C++11 Stack </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/bsd">BSD</a></td>
             <td>11:00</td>
             <td>11:45</td>
         <tr>
             <td><a href="/schedule/event/native_smalltalk">Compiling Smalltalk to fast native Code</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/smalltalk">Smalltalk</a></td>
             <td>13:00</td>
             <td>13:30</td>
         <tr>
             <td><a href="/schedule/event/dsl_llvm">Implementing Domain-Specific Languages with LLVM </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/janson">Janson</a></td>
+            <td><a href="/schedule/track/development">Development</a></td>
             <td>14:00</td>
             <td>14:50</td>
     </tbody>

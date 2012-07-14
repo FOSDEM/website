@@ -7,6 +7,10 @@ first_name: Saúl Ibarra
 last_name: Corretgé
 person_id: 186
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>It was mid 2005 when a good friend tol me "Hey come and see this! It's called Asterisk and you can make calls with it! It uses a protocol called SIP and..." Since then I've been working on VoIP and liking it more every day. I also love IM and gadgets... everything that I can make 'talk'.</p></p>
@@ -19,6 +23,7 @@ person_id: 186
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ person_id: 186
             <td><a href="/schedule/event/sip_beyond_voip">SIP beyond VoIP</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></td>
             <td>15:35</td>
             <td>16:15</td>
     </tbody>

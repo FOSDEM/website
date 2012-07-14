@@ -7,6 +7,10 @@ first_name: Ben
 last_name: Gras
 person_id: 686
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Ben has an MSc in computer science from the VU University Amsterdam, and has spent the last 6 years working at the VU as a systems programmer on the MINIX3 research project. The goal of the project is to make MINIX3 both a real-world operating system and to perform OS research using it.</p></p>
@@ -18,6 +22,7 @@ person_id: 686
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 686
             <td><a href="/schedule/event/microkernel_discussion">Panel discussion</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
             <td>16:00</td>
             <td>17:00</td>
     </tbody>

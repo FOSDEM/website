@@ -2,7 +2,10 @@
 title: MINIX 3 and BSD
 kind: event
 speakers:
-- arun_thomas
+  -
+    name: Arun Thomas
+    slug: arun_thomas
+    url: /schedule/speaker/arun_thomas
 slug: minux3_and_bsd
 day: Sun
 start: 09:15
@@ -10,12 +13,31 @@ end: 09:15
 event_id: 846
 ---
 
-<p>Track: <a href="/schedule/track/bsd_devroom">BSD Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/bsd">BSD</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>09:15</dd>
+    <dt>End:</dt>
+    <dd>10:00</dd>
+</dl>
 
-<p><p>MINIX 3 is a BSD-licensed operating system focused on dependability. To improve the user experience, the MINIX team has been working to provide a more BSD-like environment on MINIX 3. This talk will describe our current progress on this front and our plans for the future.</p></p>
+<p>MINIX 3 is a BSD-licensed operating system focused on dependability. To improve the user experience, the MINIX team has been working to provide a more BSD-like environment on MINIX 3. This talk will describe our current progress on this front and our plans for the future.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/arun_thomas">Arun Thomas</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

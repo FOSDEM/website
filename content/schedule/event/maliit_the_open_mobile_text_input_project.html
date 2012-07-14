@@ -2,7 +2,10 @@
 title: Maliit - the open mobile text input project
 kind: event
 speakers:
-- jon_nordby
+  -
+    name: Jon Nordby
+    slug: jon_nordby
+    url: /schedule/speaker/jon_nordby
 slug: maliit_the_open_mobile_text_input_project
 day: Sat
 start: 15:00
@@ -10,17 +13,36 @@ end: 15:00
 event_id: 594
 ---
 
-<p>Track: <a href="/schedule/track/open_mobile_linux_devroom">Open Mobile Linux Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:30</dd>
+</dl>
 
-<p><p>Maliit is an open source project for enabling first-class text input solutions for mobile devices. The project aims to provides a reference solution for easy integration, and a framework that others can build upon. It also strives to work closely with the wider community to improve mobile text input on open platforms. Current examples include its use in MeeGo, Nemo Mobile and Maemo Fremantle, the integration in Qt Components and Libmeegotouch, and improvements made to Qt and GTK+ input method interfaces.</p></p>
-<p><p>Reviews of mobile devices most often include one or several sections about text input, and how well it works (or not). On-screen keyboard, language support, copy-paste and selection handling, error correction and word prediction, are all fundamental to a good end-user experience.</p>
+<p>Maliit is an open source project for enabling first-class text input solutions for mobile devices. The project aims to provides a reference solution for easy integration, and a framework that others can build upon. It also strives to work closely with the wider community to improve mobile text input on open platforms. Current examples include its use in MeeGo, Nemo Mobile and Maemo Fremantle, the integration in Qt Components and Libmeegotouch, and improvements made to Qt and GTK+ input method interfaces.</p>
+<p>Reviews of mobile devices most often include one or several sections about text input, and how well it works (or not). On-screen keyboard, language support, copy-paste and selection handling, error correction and word prediction, are all fundamental to a good end-user experience.</p>
 
 <p>The talk aims to highlight the importance of, and challenges in implementing, modern mobile text input methods on open mobile platforms. It also serves to encourage cross-project collaboration to overcome these challenges and explains how Maliit can provide a solid foundation for this collaboration.</p>
 
-<p>Maliit homepage: http://www.maliit.org</p></p>
+<p>Maliit homepage: http://www.maliit.org</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jon_nordby">Jon Nordby</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

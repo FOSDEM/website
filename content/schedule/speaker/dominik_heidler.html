@@ -7,6 +7,10 @@ first_name: Dominik
 last_name: Heidler
 person_id: 76
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Dominik is an open source software developer working for SuSE Linux since 2008. He is a member of the QA and develops openQA for testing SLES and openSUSE.</p></p>
@@ -18,6 +22,7 @@ person_id: 76
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 76
             <td><a href="/schedule/event/openqa">OpenQA</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1301">H.1301</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>15:45</td>
             <td>16:30</td>
     </tbody>

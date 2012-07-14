@@ -2,8 +2,14 @@
 title: Introduction to pkgsrc, and to package creation in NetBSD
 kind: event
 speakers:
-- emile_heitor
-- guillaume_lasmayous
+  -
+    name: Emile Heitor
+    slug: emile_heitor
+    url: /schedule/speaker/emile_heitor
+  -
+    name: Guillaume Lasmayous
+    slug: guillaume_lasmayous
+    url: /schedule/speaker/guillaume_lasmayous
 slug: intro_to_pkgsrc
 day: Sun
 start: 15:00
@@ -11,13 +17,31 @@ end: 15:00
 event_id: 848
 ---
 
-<p>Track: <a href="/schedule/track/bsd_devroom">BSD Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/bsd">BSD</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:30</dd>
+</dl>
 
-<p><p>pkgsrc is a cross systems packaging system, used in NetBSD, but also DragonflyBSD, MirBSD, Minix3 and a lot more. Through the example of shotwell, a digital pictures management application, this talk will give an introduction to pkgsrc for users and packagers.</p></p>
+<p>pkgsrc is a cross systems packaging system, used in NetBSD, but also DragonflyBSD, MirBSD, Minix3 and a lot more. Through the example of shotwell, a digital pictures management application, this talk will give an introduction to pkgsrc for users and packagers.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/emile_heitor">Emile Heitor</a></li>
-    <li><a href="/schedule/speaker/guillaume_lasmayous">Guillaume Lasmayous</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

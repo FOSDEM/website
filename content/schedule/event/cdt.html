@@ -2,7 +2,10 @@
 title: Powerful tools for Linux C/C++ developers based on Eclipse
 kind: event
 speakers:
-- andrew_overholt
+  -
+    name: Andrew Overholt
+    slug: andrew_overholt
+    url: /schedule/speaker/andrew_overholt
 slug: cdt
 day: Sun
 start: 11:00
@@ -10,12 +13,31 @@ end: 11:00
 event_id: 462
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:15</dd>
+</dl>
 
-<p><p>The Eclipse community's support for C and C++ programmers is continuously improving.  Coupling this support for editing and debugging with integration of existing Linux tools for profiling and analysis gives C and C++ programmers a powerful, one-stop-shop environment.  Valgrind, OProfile, and RPM integration?  This isn't your grandfather's Eclipse.  Come see it in action!</p></p>
+<p>The Eclipse community's support for C and C++ programmers is continuously improving.  Coupling this support for editing and debugging with integration of existing Linux tools for profiling and analysis gives C and C++ programmers a powerful, one-stop-shop environment.  Valgrind, OProfile, and RPM integration?  This isn't your grandfather's Eclipse.  Come see it in action!</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/andrew_overholt">Andrew Overholt</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: ! 'An update on PIM storage and sync: SyncEvolution'
 kind: event
 speakers:
-- patrick_ohly
+  -
+    name: Patrick Ohly
+    slug: patrick_ohly
+    url: /schedule/speaker/patrick_ohly
 slug: syncevolution_update
 day: Sat
 start: 16:30
@@ -10,12 +13,23 @@ end: 16:30
 event_id: 599
 ---
 
-<p>Track: <a href="/schedule/track/open_mobile_linux_devroom">Open Mobile Linux Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:30</dd>
+    <dt>End:</dt>
+    <dd>17:00</dd>
+</dl>
 
-<p><p>SyncEvolution has been the main synchronization engine in Moblin, MeeGo (together with Buteo) and will also be used in
+<p>SyncEvolution has been the main synchronization engine in Moblin, MeeGo (together with Buteo) and will also be used in
 Tizen. In addition there have been stable, regular upstream releases for desktop Linux since 2005. Ports to the N900 and N9
-are available, using their native PIM storage. This talk will give an overview of the architecture and introduce the latest features: KDE support, CalDAV/CardDAV synchronization, and ActiveSync.</p></p>
-<p><p>The slides can be viewed at http://syncevolution.org/blogs/pohly/2012/fosdem-2012</p>
+are available, using their native PIM storage. This talk will give an overview of the architecture and introduce the latest features: KDE support, CalDAV/CardDAV synchronization, and ActiveSync.</p>
+<p>The slides can be viewed at http://syncevolution.org/blogs/pohly/2012/fosdem-2012</p>
 
 <p>PIM storage and synchronization are important topics on mobile
 devices because of the central role that the data plays and the
@@ -28,10 +42,18 @@ as the main storage for PIM data in MeeGo and started to improve
 it. The initial round of improvements were aimed at minimizing
 overhead for sync and have been accepted by the upstream
 project. This talk summarizes these changes and outlines some
-further ideas.</p></p>
+further ideas.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/patrick_ohly">Patrick Ohly</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

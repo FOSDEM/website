@@ -2,7 +2,10 @@
 title: Debian packaging for beginners
 kind: event
 speakers:
-- lior_kaplan
+  -
+    name: Lior Kaplan
+    slug: lior_kaplan
+    url: /schedule/speaker/lior_kaplan
 slug: debian_packaging
 day: Sat
 start: 15:00
@@ -10,13 +13,32 @@ end: 15:00
 event_id: 831
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1302">H.1302</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:45</dd>
+</dl>
 
-<p><p>An introduction for creating Debian packages.
-The lecture is meant for people who want to package for Debian (or any Debian based distribution) with no prior experience or people during their first steps in packaging.</p></p>
+<p>An introduction for creating Debian packages.
+The lecture is meant for people who want to package for Debian (or any Debian based distribution) with no prior experience or people during their first steps in packaging.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/lior_kaplan">Lior Kaplan</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

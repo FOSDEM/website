@@ -5,18 +5,28 @@ title: Tracks
     <thead>
         <tr>
             <th>Track</th>
-            <th>Events</th>
             <th>Rooms</th>
-            <th>Days</th>
+            <% $days.sort_by{|d| d.conference_day}.each do |day| %>
+            <th><%= day.name %></th>
+            <% end %>
         </tr>
     </thead>
     <tbody>
         <% $tracks.reject{|t| $track_events[id(t)].empty?}.sort_by{|t| t.rank}.each do |t| %>
+        <% events = $track_events[id(t)] %>
         <tr>
             <td><%= l(t) %></td>
-            <td><%= $track_events[id(t)].size %></td>
-            <td><%= l($track_events[id(t)].map{|e| e.conference_room_id}.uniq.map{|id| $room_by_id[id]}.sort_by{|r| r.rank}) %></td>
-            <td><%= $track_events[id(t)].map{|e| e.start_datetime.to_date}.uniq.sort.map{|d| d.strftime('%a')}.join(', ') %></td>
+            <td><%= l(events.map{|e| e.conference_room_id}.uniq.map{|id| $room_by_id[id]}.sort_by{|r| r.rank}) %></td>
+            <% $days.sort_by{|d| d.conference_day}.each do |day| %>
+            <td><%=
+                events_that_day = events.select{|e| e.start_datetime.to_date == day.conference_day.to_date}
+                if events_that_day.empty?
+                "-"
+                else
+                "#{events_that_day.sort_by{|e| e.start_datetime.to_time}.first.start_datetime.strftime('%H:%M')} - #{events_that_day.sort_by{|e| e.end_datetime.to_time}.last.end_datetime.strftime('%H:%M')}"
+                end
+                %></td>
+            <% end %>
         </tr>
         <% end %>
     </tbody>

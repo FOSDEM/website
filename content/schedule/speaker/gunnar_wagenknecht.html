@@ -7,6 +7,10 @@ first_name: Gunnar
 last_name: Wagenknecht
 person_id: 478
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Gunnar is a software engineer who loves server and application
@@ -39,6 +43,7 @@ beer or a glass of dry, barrel aged red wine.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -48,6 +53,7 @@ beer or a glass of dry, barrel aged red wine.</p></p>
             <td><a href="/schedule/event/eclipsert">An introduction to EclipseRT</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>10:40</td>
             <td>10:55</td>
     </tbody>

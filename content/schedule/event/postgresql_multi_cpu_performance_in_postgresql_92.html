@@ -2,7 +2,10 @@
 title: Multi-CPU performance in PostgreSQL 9.2
 kind: event
 speakers:
-- heikki_linnakangas
+  -
+    name: Heikki Linnakangas
+    slug: heikki_linnakangas
+    url: /schedule/speaker/heikki_linnakangas
 slug: postgresql_multi_cpu_performance_in_postgresql_92
 day: Sat
 start: 14:00
@@ -10,12 +13,31 @@ end: 14:00
 event_id: 672
 ---
 
-<p>Track: <a href="/schedule/track/postgresql_devroom">PostgreSQL Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/postgresql">PostgreSQL</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>14:50</dd>
+</dl>
 
-<p><p>There will be many improvements to multi-CPU scalability in the upcoming 9.2 release. This presentation gives a sneak-peek preview of the changes that have been made, and presents the current status of PostgreSQL scalability.</p></p>
+<p>There will be many improvements to multi-CPU scalability in the upcoming 9.2 release. This presentation gives a sneak-peek preview of the changes that have been made, and presents the current status of PostgreSQL scalability.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/heikki_linnakangas">Heikki Linnakangas</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

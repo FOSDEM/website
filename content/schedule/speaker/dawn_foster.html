@@ -7,6 +7,10 @@ first_name: Dawn
 last_name: Foster
 person_id: 640
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Dawn Foster leads the Community Office within Intel’s Open Source Technology Center and is the author of Companies and Communities: Participating without being sleazy.</p></p>
@@ -18,6 +22,7 @@ person_id: 640
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 640
             <td><a href="/schedule/event/tizen_and_the_future_of_community">Intro to Tizen and the Future of the Community</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></td>
             <td>13:00</td>
             <td>13:30</td>
     </tbody>

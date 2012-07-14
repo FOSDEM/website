@@ -7,6 +7,10 @@ first_name: Thomas
 last_name: Petazzoni
 person_id: 736
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Since 2008, Thomas Petazzoni is an embedded Linux engineer and trainer
@@ -23,6 +27,7 @@ industrial products.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -32,6 +37,7 @@ industrial products.</p></p>
             <td><a href="/schedule/event/using_qt_for_non_graphical_applications">Using Qt for non-graphical applications</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/lameere">Lameere</a></td>
+            <td><a href="/schedule/track/embedded">Embedded</a></td>
             <td>13:00</td>
             <td>14:00</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: The Wild West of UNIX I/O
 kind: event
 speakers:
-- anil_madhavapeddy
+  -
+    name: Anil Madhavapeddy
+    slug: anil_madhavapeddy
+    url: /schedule/speaker/anil_madhavapeddy
 slug: unixio
 day: Sun
 start: 12:00
@@ -10,20 +13,39 @@ end: 12:00
 event_id: 446
 ---
 
-<p>Track: <a href="/schedule/track/network_and_io_track">Network and IO Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/network_and_io">Network and IO</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k1105">K.1.105</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:50</dd>
+</dl>
 
-<p><p>The Unpredictability of UNIX I/O (and how we might tame it)</p></p>
-<p><p>Inter-process communication and remote procedure call facilities have existed in operating systems for many decades. Ever since the first parallel applications ran on time-sharing machines, programmers have sought
+<p>The Unpredictability of UNIX I/O (and how we might tame it)</p>
+<p>Inter-process communication and remote procedure call facilities have existed in operating systems for many decades. Ever since the first parallel applications ran on time-sharing machines, programmers have sought
 ways to communicate between processes running on a single machine, and the first networked applications introduced the concept of sending a message to trigger a remote action.</p>
 
 <p>And today, these primitives are more relevant than ever before: parallel programming on clusters of machines relies heavily on facilities to pass data between processes and hosts. On a higher level, data-flow frameworks for parallel processing of large data sets (such as Hadoop or CIEL) depend on passing data between different tasks, which may run anywhere, including local to a machine, on a networked cluster, or far away in a virtualised wide-area "cloud".</p>
 
 <p>And yet, we are stuck with UNIX communication APIs closely coupled to the underlying mechanisms used to implement them: the programmer choice of sockets, pipes or shared memory constitutes an implicit choice of a whole set of assumptions about the relative locations of the communicating parties, as well as how the message is to be delivered. Worse even, the implicit trade-offs may not be the same in a different environment, and thus the programmer's choice of API depends on assumptions about the runtime environment (hardware, software and setup) in addition to the characteristics inherent to a mechanism implied.</p>
 
-<p>This talk will firstly discuss the impossibility of using current APIs efficiently (via benchmarks on a diverse set of hardware (from many-core AMDs to the experimental Intel SCC). Finally, I will describe our work on introducing a hierarchical name system and extended socket API that adds support for automatic transport selection and reconfigurable sockets. This permits many NUMA-related optimisations on single hosts, for VMs to switch to shared memory communication if on the same physical host, and for seamless network-wide protocol upgrades to multi path TCP or TCPcrypt.</p></p>
+<p>This talk will firstly discuss the impossibility of using current APIs efficiently (via benchmarks on a diverse set of hardware (from many-core AMDs to the experimental Intel SCC). Finally, I will describe our work on introducing a hierarchical name system and extended socket API that adds support for automatic transport selection and reconfigurable sockets. This permits many NUMA-related optimisations on single hosts, for VMs to switch to shared memory communication if on the same physical host, and for seamless network-wide protocol upgrades to multi path TCP or TCPcrypt.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/anil_madhavapeddy">Anil Madhavapeddy</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -7,6 +7,10 @@ first_name: Daniel
 last_name: Molina Aranda
 person_id: 629
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Daniel Molina Aranda holds M.E. and M.Sc. degrees in Computer Science. He is now part of the OpenNebula team as project engineer, being a major contributor in its open-source community.  His interests are in cloud and virtualization technologies. He has been involved in several EU-funded flagship projects in cloud computing, like RESERVOIR and NUBA and is now collaborating in StratusLab.</p></p>
@@ -18,6 +22,7 @@ person_id: 629
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 629
             <td><a href="/schedule/event/opennebula">OpenNebula Project</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/chavanne">Chavanne</a></td>
+            <td><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></td>
             <td>13:30</td>
             <td>13:55</td>
     </tbody>

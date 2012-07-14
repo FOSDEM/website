@@ -3,32 +3,52 @@ title: <%= y(@e.title) %>
 kind: event
 speakers:
 <% @speakers.each do |s| %>
-- <%= slug(s) %>
+  -
+    name: <%= y name(s) %>
+    slug: <%= slug(s) %>
+    url: <%= url(s) %>
 <% end %>
 slug: <%= slug(@e) %>
 day: <%= @e.start_datetime.to_date.strftime('%a') %>
-start: <%= @e.start_datetime.to_time.strftime('%H:%M') %>
-end: <%= @e.start_datetime.to_time.strftime('%H:%M') %>
+start: <%= t(@e.start_datetime) %>
+end: <%= t(@e.start_datetime) %>
 event_id: <%= @e.event_id %>
 ---
 
-<p>Track: <%= l($track_by_id[@e.conference_track_id]) %></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><%= l($track_by_id[@e.conference_track_id]) %></dd>
+    <dt>Room:</dt>
+    <dd><%= l($room_by_id[@e.conference_room_id]) %></dd>
+    <dt>Day:</dt>
+    <dd><%= name($day_by_id[@e.conference_day_id]) %></dd>
+    <dt>Start:</dt>
+    <dd><%= t(@e.start_datetime) %></dd>
+    <dt>End:</dt>
+    <dd><%= t(@e.end_datetime) %></dd>
+</dl>
 
 <% if @e.abstract or @e.description %>
 <% if @e.abstract %>
-<p><%= markup(@e.abstract) %></p>
+<%= markup(@e.abstract) %>
 <% end %>
 <% if @e.description %>
-<p><%= markup(@e.description) %></p>
+<%= markup(@e.description) %>
 <% end %>
 <% end %>
 
 <% unless @speakers.empty? %>
-<h2>Speakers</h2>
-<ul>
-    <% @speakers.each do |s| %>
-    <li><%= l(s) %></li>
-    <% end %>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <%% @item[:speakers].each do |s| %>
+        <tr>
+            <%% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><%% if photo %><a href="<%%= s[:url] %>"><img height="<%%= photo[:height] %>" width="<%%= photo[:width] %>" src="<%%= photo.path %>"/></a><%% end %></td>
+            <td><a href="<%%= s[:url] %>"><%%= s[:name] %></a></td>
+        </tr>
+        <%% end %>
+    </tbody>
+</table>
 <% end %>
 

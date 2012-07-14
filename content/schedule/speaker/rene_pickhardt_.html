@@ -7,6 +7,10 @@ first_name: Rene
 last_name: Pickhardt 
 person_id: 728
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>my short bio is available here: http://www.rene-pickhardt.de/about-rene-pickhardt/
@@ -19,6 +23,7 @@ you can also find a one year old graphical cv (just before I started my PhD):  h
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ you can also find a one year old graphical cv (just before I started my PhD):  h
             <td><a href="/schedule/event/graphity_neo4j_social_nets">Graphity: an efficient neo4j based graph model for retrieving the top k news feeds for users in social networks </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
             <td>12:45</td>
             <td>13:15</td>
     </tbody>

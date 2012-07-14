@@ -7,6 +7,10 @@ first_name: Clemens
 last_name: Eisserer
 person_id: 739
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>After attending "HTL-Steyr", Clemens Eisserer studies "Medical
@@ -24,6 +28,7 @@ StarTrek.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -33,6 +38,7 @@ StarTrek.</p></p>
             <td><a href="/schedule/event/caciocavallo_caciotest_cacioweb_and_deployment">Caciocavallo: CacioTest, CacioWeb & Deployment</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>16:30</td>
             <td>17:00</td>
     </tbody>

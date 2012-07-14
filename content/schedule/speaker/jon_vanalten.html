@@ -7,6 +7,10 @@ first_name: Jon
 last_name: VanAlten
 person_id: 741
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jon VanAlten is a relative newcomer to the open source world, but big believer in FOSS as a strategy for making better software.  Jon hacks on tools for Open Source Java at Red Hat.  His first exposure to JVM tooling came while investigating the usefulness of Systemtap hooks in Hotspot.  He is interested in complex software systems that push the physical limits of today's hardware.  Today, Jon spends most of his $DAYJOB time working towards a better Open Source JVM monitoring and instrumentation tool, but also contributes occasionally to IcedTea/OpenJDK.  Outside of work, you'll likely find Jon at a local watering hole taking in some live music, in the kitchen trying out a new recipe, or helping to organize events within the Humanitarian OSS movement.</p></p>
@@ -18,6 +22,7 @@ person_id: 741
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 741
             <td><a href="/schedule/event/thermostat">Thermostat: Taking over the Java tooling world with Open Source Software</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>18:00</td>
             <td>18:30</td>
     </tbody>

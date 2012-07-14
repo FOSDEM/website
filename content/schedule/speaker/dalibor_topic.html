@@ -7,6 +7,10 @@ first_name: Dalibor
 last_name: Topić
 person_id: 718
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Dalibor Topić lives in Hamburg, Germany, and works as Java F/OSS Ambassador for
@@ -22,6 +26,7 @@ feedback into the long-term strategy planning.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,12 +36,14 @@ feedback into the long-term strategy planning.</p></p>
             <td><a href="/schedule/event/free_java">Welcome to the Free Java DevRoom</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>11:00</td>
             <td>11:05</td>
         <tr>
             <td><a href="/schedule/event/jdk_7_updates_in_openjdk">JDK 7 Updates in OpenJDK </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>11:30</td>
             <td>12:00</td>
     </tbody>

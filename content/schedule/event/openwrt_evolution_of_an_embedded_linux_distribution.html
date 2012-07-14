@@ -2,7 +2,10 @@
 title: ! 'OpenWrt: Evolution of an Embedded Linux Distribution'
 kind: event
 speakers:
-- felix_fietkau
+  -
+    name: Felix Fietkau
+    slug: felix_fietkau
+    url: /schedule/speaker/felix_fietkau
 slug: openwrt_evolution_of_an_embedded_linux_distribution
 day: Sat
 start: 18:00
@@ -10,19 +13,38 @@ end: 18:00
 event_id: 757
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>18:00</dd>
+    <dt>End:</dt>
+    <dd>19:00</dd>
+</dl>
 
-<p><p>In this presentation, I will provide an overview of how big rewrite and
+<p>In this presentation, I will provide an overview of how big rewrite and
 redesign efforts have affected the development of the OpenWrt project.
 After showing two past examples of big structural changes, I will
 introduce the current effort to redesign large parts of the OpenWrt
 user space components.
 This redesign aims to bring some interesting approaches from the
 Desktop Linux world over to Embedded, without bringing along the
-amount of bloat that is usually associated with them.</p></p>
+amount of bloat that is usually associated with them.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/felix_fietkau">Felix Fietkau</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

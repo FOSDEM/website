@@ -2,7 +2,10 @@
 title: Deploying OpenStack with the XCP toolstack on Ubuntu
 kind: event
 speakers:
-- mike_mcclurg
+  -
+    name: Mike McClurg
+    slug: mike_mcclurg
+    url: /schedule/speaker/mike_mcclurg
 slug: openstack_xcp_ubuntu
 day: Sat
 start: 17:00
@@ -10,14 +13,33 @@ end: 17:00
 event_id: 568
 ---
 
-<p>Track: <a href="/schedule/track/virtualization_and_cloud_devroom">Virtualization and Cloud Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/chavanne">Chavanne</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>17:25</dd>
+</dl>
 
-<p><p>The Xen Cloud Platform (XCP) is an open source virtualization platform based on the Xen hypervisor. XCP isn't a server application which you install alongside of Xen, but rather an "embedded" appliance, which manages your host. While this gives XCP developers the ability to provide a tightly controlled, well integrated system, it makes it more difficult for FOSS developers to use and modify our software. To correct this, we have recently ported the XCP toolstack to run on Debian; it is currently in Debian unstable and will be in the next release of Ubuntu.</p>
+<p>The Xen Cloud Platform (XCP) is an open source virtualization platform based on the Xen hypervisor. XCP isn't a server application which you install alongside of Xen, but rather an "embedded" appliance, which manages your host. While this gives XCP developers the ability to provide a tightly controlled, well integrated system, it makes it more difficult for FOSS developers to use and modify our software. To correct this, we have recently ported the XCP toolstack to run on Debian; it is currently in Debian unstable and will be in the next release of Ubuntu.</p>
 
-<p>In this presentation, we would like to demonstrate the XCP toolstack running on Ubuntu. We will show how easy it is to use the toolstack to create and manage virtual machines, and how you can use XCP and XenServer management tools with the XCP toolstack on Ubuntu. We will also demo our software running OpenStack.</p></p>
+<p>In this presentation, we would like to demonstrate the XCP toolstack running on Ubuntu. We will show how easy it is to use the toolstack to create and manage virtual machines, and how you can use XCP and XenServer management tools with the XCP toolstack on Ubuntu. We will also demo our software running OpenStack.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/mike_mcclurg">Mike McClurg</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

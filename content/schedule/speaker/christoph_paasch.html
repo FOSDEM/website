@@ -7,6 +7,10 @@ first_name: Christoph
 last_name: Paasch
 person_id: 465
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Christoph Paasch is an Engineer in Computer Science, specialized in Networking and Security.
@@ -23,6 +27,7 @@ working on improvements to Multipath TCP and its open source Linux Kernel implem
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -32,6 +37,7 @@ working on improvements to Multipath TCP and its open source Linux Kernel implem
             <td><a href="/schedule/event/multipathtcp">Linux Kernel MultiPath TCP</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>14:00</td>
             <td>14:15</td>
     </tbody>

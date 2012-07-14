@@ -2,7 +2,10 @@
 title: ! 'PMH: Home Automation made right™'
 kind: event
 speakers:
-- vasileios_georgitzikis
+  -
+    name: Vasileios Georgitzikis
+    slug: vasileios_georgitzikis
+    url: /schedule/speaker/vasileios_georgitzikis
 slug: phm_home_automation_made_right
 day: Sun
 start: 15:00
@@ -10,9 +13,20 @@ end: 15:00
 event_id: 759
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>PMH is a home automation system built from the ground up to be easy to use, modular and as open as possible. Our software and hardware are completely open source, with source code, schematics and CAD files available online. PMH consists of 3 layers. The hardware layer, the überdust layer and the apps.</p>
+<p>PMH is a home automation system built from the ground up to be easy to use, modular and as open as possible. Our software and hardware are completely open source, with source code, schematics and CAD files available online. PMH consists of 3 layers. The hardware layer, the überdust layer and the apps.</p>
 
 <p>In the hardware layer, we use a wireless sensor network with sensor nodes and actuators that communicate with each other using the low-power IEEE 802.15.4 protocol and with a computer that acts as the main controller. The wireless sensor network consists mostly of Arduino nodes which control lighting, heating/air conditioning and electrical devices while at the same time using sensors to measure things like power consumption, temperature, light, movement, air quality etc.</p>
 
@@ -20,10 +34,18 @@ event_id: 759
 
 <p>In the application layer, we have developed a web and smartphone application that gives users the ability to remotely control the system, view the current status of the various sensors and set automated behaviors such as turning on the lights when there are people in the room, sending a notification to the user's smartphone when someone enters your room, turning on the water boiler on predefined times, etc.</p>
 
-<p>Last but not least, due to the modular and open source nature of our system, its easy to add additional data providers in the hardware layer, such as an arduino with additional sensors, or even your computer and smartphone (i.e. your smartphone's accelerometer, the status of your server). It's just as easy to develop your own apps using our APIs, and extend the capabilities of the system to meet your own needs (remote controlled BBQ anyone?)</p></p>
+<p>Last but not least, due to the modular and open source nature of our system, its easy to add additional data providers in the hardware layer, such as an arduino with additional sensors, or even your computer and smartphone (i.e. your smartphone's accelerometer, the status of your server). It's just as easy to develop your own apps using our APIs, and extend the capabilities of the system to meet your own needs (remote controlled BBQ anyone?)</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/vasileios_georgitzikis">Vasileios Georgitzikis</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

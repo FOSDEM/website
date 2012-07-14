@@ -2,7 +2,10 @@
 title: The Dynamic Data Driven Worlds of WorldForge
 kind: event
 speakers:
-- alistair_riddoch
+  -
+    name: Alistair Riddoch
+    slug: alistair_riddoch
+    url: /schedule/speaker/alistair_riddoch
 slug: worldforge
 day: Sun
 start: 11:45
@@ -10,14 +13,33 @@ end: 11:45
 event_id: 537
 ---
 
-<p>Track: <a href="/schedule/track/open_source_game_development_devroom">Open Source Game Development Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:45</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>The WorldForge Project was founded in 1998 on many dreams of online world with freedom, both in terms of price and from the constraints of proprietary software.
+<p>The WorldForge Project was founded in 1998 on many dreams of online world with freedom, both in terms of price and from the constraints of proprietary software.
 Pulled in many different directions by often conflicting visions of what the perfect online role playing game should be, the developers have been forced to come up with novel solutions allowing unprecedented flexibility to both the game designer and the player. Using data driven and procedural technologies, systems have been developed that remove the need for gigabytes of patches that are associated with proprietary commercial titles, and allow every host to configure their own game rules in a unique world.
-In this talk one of the projects longest standing programs will describe some of these technologies, including the possibilities they unlock and examples of their use.</p></p>
+In this talk one of the projects longest standing programs will describe some of these technologies, including the possibilities they unlock and examples of their use.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/alistair_riddoch">Alistair Riddoch</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

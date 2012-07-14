@@ -2,7 +2,10 @@
 title: ! 'OpenJDK on ARM: Quo vadis?'
 kind: event
 speakers:
-- andrew_haley
+  -
+    name: Andrew Haley
+    slug: andrew_haley
+    url: /schedule/speaker/andrew_haley
 slug: openjdk_on_arm
 day: Sun
 start: 12:30
@@ -10,9 +13,20 @@ end: 12:30
 event_id: 712
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:30</dd>
+    <dt>End:</dt>
+    <dd>13:00</dd>
+</dl>
 
-<p><p>This talk will cover progress with OpenJDK on ARM.  It's
+<p>This talk will cover progress with OpenJDK on ARM.  It's
 basically a progress report, but with some technical detail
 about the changes needed for:</p>
 
@@ -29,10 +43,18 @@ interpreter and JIT, and the other part will cover the ARM more
 generally.</p>
 
 <p>If there's any time left I'll also cover the upcoming ARM8
-architecture.</p></p>
+architecture.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/andrew_haley">Andrew Haley</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

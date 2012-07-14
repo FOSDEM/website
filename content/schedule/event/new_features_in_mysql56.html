@@ -2,7 +2,10 @@
 title: New Features in MySQL 5.6
 kind: event
 speakers:
-- oli_sennhauser
+  -
+    name: Oli Sennhauser
+    slug: oli_sennhauser
+    url: /schedule/speaker/oli_sennhauser
 slug: new_features_in_mysql56
 day: Sun
 start: 09:10
@@ -10,12 +13,31 @@ end: 09:10
 event_id: 934
 ---
 
-<p>Track: <a href="/schedule/track/mysql_and_friends_devroom">MySQL and Friends Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>09:10</dd>
+    <dt>End:</dt>
+    <dd>09:30</dd>
+</dl>
 
-<p><p>Many MySQL users have already put MySQL 5.5 in place and soon (2012) MySQL 5.6 will be GA! In this talk we will have a look at the New MySQL 5.6 Features which will come: InnoDB enhancements, Partitioning, Performance Schema and the new even more stable binary logging...</p></p>
+<p>Many MySQL users have already put MySQL 5.5 in place and soon (2012) MySQL 5.6 will be GA! In this talk we will have a look at the New MySQL 5.6 Features which will come: InnoDB enhancements, Partitioning, Performance Schema and the new even more stable binary logging...</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/oli_sennhauser">Oli Sennhauser</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

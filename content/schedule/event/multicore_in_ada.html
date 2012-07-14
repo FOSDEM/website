@@ -2,7 +2,10 @@
 title: Multicore programming support in Ada
 kind: event
 speakers:
-- jose_f_ruiz
+  -
+    name: José F. Ruiz
+    slug: jose_f_ruiz
+    url: /schedule/speaker/jose_f_ruiz
 slug: multicore_in_ada
 day: Sat
 start: 14:00
@@ -10,15 +13,34 @@ end: 14:00
 event_id: 874
 ---
 
-<p>Track: <a href="/schedule/track/ada_devroom">Ada Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/ada">Ada</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1121">AW1.121</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:00</dd>
+    <dt>End:</dt>
+    <dd>14:50</dd>
+</dl>
 
-<p><p>A presentation of Ada's features in the parallel/multicore area, given in such a way that people can start experimenting and doing "interesting stuff".</p></p>
-<p><p>Ada had built-in support for parallel programming from the start, and the successive standards keep improving that support, up to most recently for the new multiprocessor architectures.
+<p>A presentation of Ada's features in the parallel/multicore area, given in such a way that people can start experimenting and doing "interesting stuff".</p>
+<p>Ada had built-in support for parallel programming from the start, and the successive standards keep improving that support, up to most recently for the new multiprocessor architectures.
 An overview of the support that already existed in Ada 83 and Ada 95 will be given, with practical examples so participants can try out some simple things first.
-Ada 2012 comes with interesting additions for using multiprocessors effectively. Embedded systems can use an extension of the Ravenscar profile to achieve analyzable real-time behavior on multicore platforms. Ada's dispatching domains achieve flexible allocation schemes for high-performance computing.</p></p>
+Ada 2012 comes with interesting additions for using multiprocessors effectively. Embedded systems can use an extension of the Ravenscar profile to achieve analyzable real-time behavior on multicore platforms. Ada's dispatching domains achieve flexible allocation schemes for high-performance computing.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jose_f_ruiz">José F. Ruiz</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -37,6 +37,11 @@ preprocess do
   $sponsors_navigation_item = @items.select{|item| item.identifier == '/sponsors_navigation/'}.first
   raise "failed to find an item with the identifier /sponsors_navigation/" unless $sponsors_navigation_item
 
+  # build a global hash of items by their identifier, much faster for lookups
+  # than having to run over all of them; needs to be a global variable
+  $item_by_id = {}
+  @items.each{|item| $item_by_id[item.identifier] = item}
+
 end
 
 ##### COMPILING
@@ -46,6 +51,9 @@ compile '/static/*' do; end
 # skip those, as they are combined into content/assets/style/fosdem.css
 compile '/assets/style/parts/*' do;end
 route '/assets/style/parts/*' do;end
+
+compile '/navigation/' do;end
+route '/navigation/' do;end
 
 compile '/assets/style/*' do
   # merge all content/assets/style/parts/*.css files into one
@@ -177,6 +185,40 @@ route '/assets/*/' do
              ""
            end
   "#{item.identifier.chop}#{suffix}.#{item[:extension]}"
+end
+
+route '/schedule/speaker_photos/*/' do
+  suffix = if @site.config[:digest_assets] then
+             require 'digest/sha2'
+             sha = Digest::SHA256.new
+             if item.binary? then
+               sha << IO.read(item[:filename])
+             else
+               sha << item.raw_content
+             end
+             digest = sha.hexdigest.downcase
+             "-#{digest}"
+           else
+             ""
+           end
+  "/schedule/speaker/#{item[:slug]}#{suffix}.#{item[:extension]}"
+end
+
+route '/schedule/speaker_thumbnails/*/' do
+  suffix = if @site.config[:digest_assets] then
+             require 'digest/sha2'
+             sha = Digest::SHA256.new
+             if item.binary? then
+               sha << IO.read(item[:filename])
+             else
+               sha << item.raw_content
+             end
+             digest = sha.hexdigest.downcase
+             "-#{digest}"
+           else
+             ""
+           end
+  "/schedule/speaker/#{item[:slug]}-small#{suffix}.#{item[:extension]}"
 end
 
 # do _not_ deploy the files under content/sponsors/ as they are only used

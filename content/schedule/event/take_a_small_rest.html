@@ -2,7 +2,10 @@
 title: Take a small REST, Simple approaches for REST in smalltalk
 kind: event
 speakers:
-- norbert_hartl
+  -
+    name: Norbert Hartl
+    slug: norbert_hartl
+    url: /schedule/speaker/norbert_hartl
 slug: take_a_small_rest
 day: Sun
 start: 09:30
@@ -10,12 +13,31 @@ end: 09:30
 event_id: 867
 ---
 
-<p>Track: <a href="/schedule/track/smalltalk_devroom">Smalltalk Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/smalltalk">Smalltalk</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1126">AW1.126</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>09:30</dd>
+    <dt>End:</dt>
+    <dd>10:00</dd>
+</dl>
 
-<p><p>Showing simple ways to realize REST services in smalltalk. Combining routing, media type handling and meta tools to make REST an easy thing to do.</p></p>
+<p>Showing simple ways to realize REST services in smalltalk. Combining routing, media type handling and meta tools to make REST an easy thing to do.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/norbert_hartl">Norbert Hartl</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: Managing MySQL with Percona Toolkit
 kind: event
 speakers:
-- frederic_descamps
+  -
+    name: Frédéric Descamps
+    slug: frederic_descamps
+    url: /schedule/speaker/frederic_descamps
 slug: percona_toolkit
 day: Sun
 start: 16:00
@@ -10,12 +13,31 @@ end: 16:00
 event_id: 633
 ---
 
-<p>Track: <a href="/schedule/track/mysql_and_friends_devroom">MySQL and Friends Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:25</dd>
+</dl>
 
-<p><p>Percona Toolkit is an indispensable set of opensource command-line tools for managing and administering MySQL servers. This session will introduce the toolkit and the available tools, then demonstrate how to use some of the tools to manage replication, analyze queries, perform common DBA tasks, analyze disk I/O usage, and more.</p></p>
+<p>Percona Toolkit is an indispensable set of opensource command-line tools for managing and administering MySQL servers. This session will introduce the toolkit and the available tools, then demonstrate how to use some of the tools to manage replication, analyze queries, perform common DBA tasks, analyze disk I/O usage, and more.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/frederic_descamps">Frédéric Descamps</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

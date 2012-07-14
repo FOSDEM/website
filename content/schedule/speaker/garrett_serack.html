@@ -7,6 +7,10 @@ first_name: Garrett
 last_name: Serack
 person_id: 495
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Garrett Serack worked as an independent software development consultant in Calgary, Canada, for 15 years, with clients in fields such as government, telecom, petroleum, and railways. Joining Microsoft in the fall of 2005 as the Community Program Manager of the Federated Identity team, Garrett has worked with the companies and the Open Source community to build digital identity frameworks, tools, and standards that are shaping the future of Internet commerce and strengthening the fight against fraud.</p>
@@ -22,6 +26,7 @@ person_id: 495
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ person_id: 495
             <td><a href="/schedule/event/coapp">CoApp: Packaging Open Source software for Windows</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/janson">Janson</a></td>
+            <td><a href="/schedule/track/system">System</a></td>
             <td>10:00</td>
             <td>10:50</td>
     </tbody>

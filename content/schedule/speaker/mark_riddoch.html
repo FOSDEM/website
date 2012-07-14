@@ -7,6 +7,10 @@ first_name: Mark
 last_name: Riddoch
 person_id: 712
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Mark has worked in the computer industry for almost 30 years, this has included many roles in various software companies developing network and imaging applications. Prior to joining SkySQL he worked at Sybase as chief designer and project leader for the database kernel development team.</p></p>
@@ -18,6 +22,7 @@ person_id: 712
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 712
             <td><a href="/schedule/event/optimising_sql_applications_using_client_side_tools">Optimising SQL applications by using client side tools</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h1309">H.1309</a></td>
+            <td><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></td>
             <td>12:30</td>
             <td>12:55</td>
     </tbody>

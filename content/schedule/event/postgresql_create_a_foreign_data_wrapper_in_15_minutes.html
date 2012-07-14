@@ -2,7 +2,10 @@
 title: Create a Foreign Data Wrapper in 15 minutes
 kind: event
 speakers:
-- damien_clochard
+  -
+    name: Damien Clochard
+    slug: damien_clochard
+    url: /schedule/speaker/damien_clochard
 slug: postgresql_create_a_foreign_data_wrapper_in_15_minutes
 day: Sat
 start: 12:00
@@ -10,9 +13,20 @@ end: 12:00
 event_id: 670
 ---
 
-<p>Track: <a href="/schedule/track/postgresql_devroom">PostgreSQL Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/postgresql">PostgreSQL</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4201">K.4.201</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:50</dd>
+</dl>
 
-<p><p>SQL/MED is the new frontier of PostgreSQL !</p>
+<p>SQL/MED is the new frontier of PostgreSQL !</p>
 
 <p>Since the release of PostgreSQL 9.1, we see lots of Foreign Data Wrappers (FDW) coming out, giving you the ability to connect your database with multiple data sources : local files, other RDMS, NoSQL stores, webservices, etc.</p>
 
@@ -25,10 +39,18 @@ event_id: 670
 <li>Give an overview of the various existing Foreign Data Wrappers</li>
 <li>Show how to code a wrapper in a blink of en eye with multicorn</li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/damien_clochard">Damien Clochard</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

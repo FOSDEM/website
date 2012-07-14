@@ -2,7 +2,10 @@
 title: Optimising SQL applications by using client side tools
 kind: event
 speakers:
-- mark_riddoch
+  -
+    name: Mark Riddoch
+    slug: mark_riddoch
+    url: /schedule/speaker/mark_riddoch
 slug: optimising_sql_applications_using_client_side_tools
 day: Sun
 start: 12:30
@@ -10,16 +13,35 @@ end: 12:30
 event_id: 664
 ---
 
-<p>Track: <a href="/schedule/track/mysql_and_friends_devroom">MySQL and Friends Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:30</dd>
+    <dt>End:</dt>
+    <dd>12:55</dd>
+</dl>
 
-<p><p>Much is discussed regarding query optimisers within database server, attention is not always paid however to the actual queries that are passed to a database server to execute and the value of those queries within an application context.</p>
+<p>Much is discussed regarding query optimisers within database server, attention is not always paid however to the actual queries that are passed to a database server to execute and the value of those queries within an application context.</p>
 
 <p>No matter how good a query optimiser is it can not match the performance improvement that can be gained by not running a particular query at all, retrieving smaller result sets or running queries less frequently.</p>
 
-<p>We will discuss some methods to investigate the SQL your application is sending to your MySQL server, and examine some techniques to visualise the cost of the interactions your application has with the MySQL database.</p></p>
+<p>We will discuss some methods to investigate the SQL your application is sending to your MySQL server, and examine some techniques to visualise the cost of the interactions your application has with the MySQL database.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/mark_riddoch">Mark Riddoch</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

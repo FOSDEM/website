@@ -2,7 +2,10 @@
 title: OpenEmbedded and the Yocto Project - working together on a common Core
 kind: event
 speakers:
-- paul_eggleton
+  -
+    name: Paul Eggleton
+    slug: paul_eggleton
+    url: /schedule/speaker/paul_eggleton
 slug: openembedded_yocto_common_core
 day: Sat
 start: 17:00
@@ -10,9 +13,20 @@ end: 17:00
 event_id: 758
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:00</dd>
+    <dt>End:</dt>
+    <dd>18:00</dd>
+</dl>
 
-<p><p>OpenEmbedded and the Yocto Project have recently changed their structure
+<p>OpenEmbedded and the Yocto Project have recently changed their structure
 to collaborate around a common base: OpenEmbedded-Core, with additional
 layers being developed to be used on top. Moving to a multi-layer structure
 presents both organisational advantages and challenges.</p>
@@ -22,10 +36,18 @@ include recent developments in Yocto Project / OpenEmbedded structure, the
 current layer landscape, best practices for developing new layers and growing
 existing ones, and layer tooling enhancements developed as part of the Yocto
 Project that will benefit the entire OE community, as well as future plans
-along those lines.</p></p>
+along those lines.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/paul_eggleton">Paul Eggleton</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

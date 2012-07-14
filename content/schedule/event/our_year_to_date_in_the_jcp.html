@@ -2,8 +2,14 @@
 title: Politics, Positives, Paperwork and Pain - Our year to date in the JCP
 kind: event
 speakers:
-- martijn_verburg
-- ben_evans
+  -
+    name: Martijn Verburg
+    slug: martijn_verburg
+    url: /schedule/speaker/martijn_verburg
+  -
+    name: Ben Evans
+    slug: ben_evans
+    url: /schedule/speaker/ben_evans
 slug: our_year_to_date_in_the_jcp
 day: Sat
 start: 14:30
@@ -11,9 +17,20 @@ end: 14:30
 event_id: 690
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:30</dd>
+    <dt>End:</dt>
+    <dd>15:00</dd>
+</dl>
 
-<p><p>In 2011 the London Java Community (LJC) stood for, and overwhelmingly
+<p>In 2011 the London Java Community (LJC) stood for, and overwhelmingly
 won a seat in the open elections for a seat on the JCP Executive
 Committee (JCP EC), enough acronyms yet?  We haven't even started!
 It's been a whirlwind trip so far with a great deal learned about
@@ -26,8 +43,8 @@ forward such as the JSR-348 which is the start of reforming the JCP
 and JSRs towards a truly open and transparent model.  This talk covers
 the good works done so far, some anecdotes of what it's like to work
 as a developer amongst a mix of technologists and bearucrats and what
-we think is left to be done.</p></p>
-<p><p>What the audience will learn from the talk:</p>
+we think is left to be done.</p>
+<p>What the audience will learn from the talk:</p>
 
 <p>An insight to how the JCP really works and the surprising fact that
 Oracle and the other large corporates are generally pushing for a Free
@@ -37,11 +54,18 @@ Java.</p>
 
 <p>We want people to start supporting the JCP again and working with it
 to change it for the better, JSR-348 has proven that steps can be
-taken although we recognize there is still a long way to go.</p></p>
+taken although we recognize there is still a long way to go.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/martijn_verburg">Martijn Verburg</a></li>
-    <li><a href="/schedule/speaker/ben_evans">Ben Evans</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

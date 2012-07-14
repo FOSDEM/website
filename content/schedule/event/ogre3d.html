@@ -2,7 +2,10 @@
 title: Getting Started With Ogre3d For Game Development
 kind: event
 speakers:
-- erik_ogenvik
+  -
+    name: Erik Ogenvik
+    slug: erik_ogenvik
+    url: /schedule/speaker/erik_ogenvik
 slug: ogre3d
 day: Sun
 start: 14:30
@@ -10,12 +13,31 @@ end: 14:30
 event_id: 534
 ---
 
-<p>Track: <a href="/schedule/track/open_source_game_development_devroom">Open Source Game Development Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>14:30</dd>
+    <dt>End:</dt>
+    <dd>15:15</dd>
+</dl>
 
-<p><p>Learn how to set up and use Ogre3d to provide a powerful and extensible 3d graphical engine. The focus is on explaining the core concepts and objects needed to get rendering up and running, as well as how to integrate the graphical engine with a game.</p></p>
+<p>Learn how to set up and use Ogre3d to provide a powerful and extensible 3d graphical engine. The focus is on explaining the core concepts and objects needed to get rendering up and running, as well as how to integrate the graphical engine with a game.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/erik_ogenvik">Erik Ogenvik</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

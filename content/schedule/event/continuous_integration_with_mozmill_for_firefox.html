@@ -2,7 +2,10 @@
 title: Continuous integration with Mozmill for Firefox
 kind: event
 speakers:
-- henrik_skupin
+  -
+    name: Henrik Skupin
+    slug: henrik_skupin
+    url: /schedule/speaker/henrik_skupin
 slug: continuous_integration_with_mozmill_for_firefox
 day: Sun
 start: 12:00
@@ -10,12 +13,31 @@ end: 12:00
 event_id: 858
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>12:00</dd>
+    <dt>End:</dt>
+    <dd>12:30</dd>
+</dl>
 
-<p><p>An overview of how Mozmill is used to test daily Firefox builds in a CI environment. The talk also includes our plan to expand this testing to l10n builds triggered by check-ins from localizers.</p></p>
+<p>An overview of how Mozmill is used to test daily Firefox builds in a CI environment. The talk also includes our plan to expand this testing to l10n builds triggered by check-ins from localizers.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/henrik_skupin">Henrik Skupin</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -7,6 +7,10 @@ first_name: Saija
 last_name: Eteläniemi
 person_id: 636
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Saija Eteläniemi is a 26-year old developer who has been interested in Linux technologies for a decade now, for the last few years she has been concentrated solely on mobile Linux technologies. Her focus has been varying in between middleware and application layer on several mobile devices. After a few years working on Maemo and MeeGo, Saija is now working on Mer. In terms of programming languages and frameworks, Saija has been using C++ and OpenGL with GLUT on past decade. A few years ago she found Qt and QML, and has been especially interested in using Qt with OpenGL in hardware accelerated graphics, both 2D and 3D.</p></p>
@@ -18,6 +22,7 @@ person_id: 636
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 636
             <td><a href="/schedule/event/towards_accelerated_uis_on_mobile_linux_qt5">Towards Accelerated UI's on Mobile Linux With Power of Qt5</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></td>
             <td>12:30</td>
             <td>13:00</td>
     </tbody>

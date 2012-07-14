@@ -7,6 +7,10 @@ first_name: Marius
 last_name: Olsthoorn
 person_id: 891
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Marius Olsthoorn is a software developer for 2dehands/2ememain, the market leader for classified ads in Belgium. 2dehands/2ememain is a website that uses an open-source stack with tools such as Perl, Moose, Catalyst, Apache, Memcached, Varnish, and MySQL.</p></p>
@@ -18,6 +22,7 @@ person_id: 891
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 891
             <td><a href="/schedule/event/moose_memcached">Using Moose objects with Memcached</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1121">AW1.121</a></td>
+            <td><a href="/schedule/track/perl">Perl</a></td>
             <td>16:20</td>
             <td>16:40</td>
     </tbody>

@@ -7,6 +7,10 @@ first_name: Norman
 last_name: Feske
 person_id: 607
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Norman is one of the founders and architects of the Genode project. In
@@ -21,6 +25,7 @@ next-generation main-stream OS.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,6 +35,7 @@ next-generation main-stream OS.</p></p>
             <td><a href="/schedule/event/microkernel_intro_genode">Introduction of the Genode OS Framework</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
             <td>10:10</td>
             <td>10:55</td>
     </tbody>

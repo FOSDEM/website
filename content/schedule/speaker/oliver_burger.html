@@ -7,6 +7,10 @@ first_name: Oliver
 last_name: Burger
 person_id: 834
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Oliver Burger was a long time contributor to Mandriva as German translator and as packager and moderator of the German mandriva user community mandrivaUser.de.
@@ -21,6 +25,7 @@ He joined the Mageia project on day 1 in september 2010 and became an active mem
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,6 +35,7 @@ He joined the Mageia project on day 1 in september 2010 and became an active mem
             <td><a href="/schedule/event/contributor_communities">Working with contributor communities (round table)</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h1301">H.1301</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>11:30</td>
             <td>12:30</td>
     </tbody>

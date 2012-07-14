@@ -2,10 +2,22 @@
 title: Welcome to the Legal Issues DevRoom
 kind: event
 speakers:
-- tom_marble
-- karen_sandler
-- bradley_kuhn
-- richard_fontana
+  -
+    name: Tom Marble
+    slug: tom_marble
+    url: /schedule/speaker/tom_marble
+  -
+    name: Karen Sandler
+    slug: karen_sandler
+    url: /schedule/speaker/karen_sandler
+  -
+    name: Bradley Kuhn
+    slug: bradley_kuhn
+    url: /schedule/speaker/bradley_kuhn
+  -
+    name: Richard Fontana
+    slug: richard_fontana
+    url: /schedule/speaker/richard_fontana
 slug: legal_issues
 day: Sat
 start: 11:00
@@ -13,15 +25,31 @@ end: 11:00
 event_id: 629
 ---
 
-<p>Track: <a href="/schedule/track/legal_issues_devroom">Legal Issues Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/legal_issues">Legal Issues</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1125">AW1.125</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:05</dd>
+</dl>
 
-<p><p>Brief Welcome to the new Legal Issues DevRoom</p></p>
+<p>Brief Welcome to the new Legal Issues DevRoom</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/tom_marble">Tom Marble</a></li>
-    <li><a href="/schedule/speaker/karen_sandler">Karen Sandler</a></li>
-    <li><a href="/schedule/speaker/bradley_kuhn">Bradley Kuhn</a></li>
-    <li><a href="/schedule/speaker/richard_fontana">Richard Fontana</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

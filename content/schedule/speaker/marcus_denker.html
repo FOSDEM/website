@@ -7,6 +7,10 @@ first_name: Marcus
 last_name: Denker
 person_id: 853
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>is a core developer of Pharo</p></p>
@@ -18,6 +22,7 @@ person_id: 853
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 853
             <td><a href="/schedule/event/pharo_next_steps">The Next Steps for the Pharo Vision</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/smalltalk">Smalltalk</a></td>
             <td>10:00</td>
             <td>11:00</td>
     </tbody>

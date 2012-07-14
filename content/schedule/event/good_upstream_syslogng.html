@@ -2,7 +2,10 @@
 title: Being a good upstream - the syslog-ng PoV
 kind: event
 speakers:
-- peter_czanik
+  -
+    name: Peter Czanik
+    slug: peter_czanik
+    url: /schedule/speaker/peter_czanik
 slug: good_upstream_syslogng
 day: Sun
 start: 11:00
@@ -10,13 +13,32 @@ end: 11:00
 event_id: 840
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1302">H.1302</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:45</dd>
+</dl>
 
-<p><p>For many years, syslog-ng was part of many distributions but stuck at ancient software versions. My task was to help distributions to update their syslog-ng packages and now to keep them updated. This is a two way process, as while distros receive many help, we also get a lot of useful feedback and ideas, which influence the development of syslog-ng.
-Using syslog-ng as an example, I'll try to show how upstream can work with distributions for the benefit of both sides.</p></p>
+<p>For many years, syslog-ng was part of many distributions but stuck at ancient software versions. My task was to help distributions to update their syslog-ng packages and now to keep them updated. This is a two way process, as while distros receive many help, we also get a lot of useful feedback and ideas, which influence the development of syslog-ng.
+Using syslog-ng as an example, I'll try to show how upstream can work with distributions for the benefit of both sides.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/peter_czanik">Peter Czanik</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -7,6 +7,10 @@ first_name: Jonathan
 last_name: Ellis
 person_id: 404
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jonathan is Project Chair of Apache Cassandra and CTO and co-founder
@@ -22,6 +26,7 @@ JavaOne, OSCON, Strata, Devoxx, and PyCon.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ JavaOne, OSCON, Strata, Devoxx, and PyCon.</p></p>
             <td><a href="/schedule/event/apache_cassandra">Dealing with JVM limitations in Apache Cassandra </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k4401">K.4.401</a></td>
+            <td><a href="/schedule/track/free_java">Free Java</a></td>
             <td>10:00</td>
             <td>10:30</td>
     </tbody>

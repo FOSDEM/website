@@ -2,8 +2,14 @@
 title: OpenNebula Project
 kind: event
 speakers:
-- carlos_martin_sanchez
-- daniel_molina_aranda
+  -
+    name: Carlos Martín Sánchez
+    slug: carlos_martin_sanchez
+    url: /schedule/speaker/carlos_martin_sanchez
+  -
+    name: Daniel Molina Aranda
+    slug: daniel_molina_aranda
+    url: /schedule/speaker/daniel_molina_aranda
 slug: opennebula
 day: Sat
 start: 13:30
@@ -11,13 +17,31 @@ end: 13:30
 event_id: 563
 ---
 
-<p>Track: <a href="/schedule/track/virtualization_and_cloud_devroom">Virtualization and Cloud Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/chavanne">Chavanne</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:30</dd>
+    <dt>End:</dt>
+    <dd>13:55</dd>
+</dl>
 
-<p><p>The presentation will describe the state of the OpenNebula project for  data center virtualization, with a focus on the different innovative projects and infrastructures using OpenNebula as a platform for innovation and interoperability. We will show how OpenNebula integrates with other projects in the cloud and virtualization ecosystem and the potential areas for collaboration.</p></p>
+<p>The presentation will describe the state of the OpenNebula project for  data center virtualization, with a focus on the different innovative projects and infrastructures using OpenNebula as a platform for innovation and interoperability. We will show how OpenNebula integrates with other projects in the cloud and virtualization ecosystem and the potential areas for collaboration.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/carlos_martin_sanchez">Carlos Martín Sánchez</a></li>
-    <li><a href="/schedule/speaker/daniel_molina_aranda">Daniel Molina Aranda</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

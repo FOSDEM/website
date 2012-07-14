@@ -7,6 +7,10 @@ first_name: Claudio
 last_name: Martella
 person_id: 645
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Claudio Martella is an Apache Giraph PPMC Member and Committer.
@@ -23,6 +27,7 @@ claudio@apache.org.</p></p>
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -32,6 +37,7 @@ claudio@apache.org.</p></p>
             <td><a href="/schedule/event/apache_giraph_distributed_graph">Apache Giraph: distributed graph processing in the cloud</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
             <td>09:30</td>
             <td>10:15</td>
     </tbody>

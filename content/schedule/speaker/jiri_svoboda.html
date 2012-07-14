@@ -7,6 +7,10 @@ first_name: Jiří
 last_name: Svoboda
 person_id: 606
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Jiří is a long-time HelenOS developer who designed or contributed to many areas of the system, including the debugging framework, device driver framework, block layer, networking, the OpenMoko port, as well as functionality related to interfacing with the user.</p></p>
@@ -18,6 +22,7 @@ person_id: 606
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 606
             <td><a href="/schedule/event/microkernel_helenos_drivers">Dive into HelenOS Device Drivers</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
             <td>15:05</td>
             <td>15:50</td>
     </tbody>

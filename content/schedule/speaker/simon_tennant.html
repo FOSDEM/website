@@ -7,6 +7,10 @@ first_name: Simon
 last_name: Tennant
 person_id: 376
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 
 <h3>Sessions</h3>
@@ -16,6 +20,7 @@ person_id: 376
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -25,6 +30,7 @@ person_id: 376
             <td><a href="/schedule/event/buddycloud_xmpp_and_http">Social Networking: buddycloud, XMPP, and HTTP</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></td>
             <td>15:00</td>
             <td>15:30</td>
     </tbody>

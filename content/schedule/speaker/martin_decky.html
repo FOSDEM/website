@@ -7,6 +7,10 @@ first_name: Martin
 last_name: Děcký
 person_id: 605
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Martin has been with the HelenOS team for more than 6 years now. A life-long operating systems enthusiast, he enjoys everything from bare metal programming and submitting Linux kernel patches to designing the most progressive microkernel and working on its formal verification as a researcher at Charles University in Prague.</p></p>
@@ -18,6 +22,7 @@ person_id: 605
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 605
             <td><a href="/schedule/event/microkernel_overhead">The microkernel overhead</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3201">K.3.201</a></td>
+            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
             <td>13:00</td>
             <td>14:00</td>
     </tbody>

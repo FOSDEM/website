@@ -2,7 +2,10 @@
 title: ! 'CoApp: Packaging Open Source software for Windows'
 kind: event
 speakers:
-- garrett_serack
+  -
+    name: Garrett Serack
+    slug: garrett_serack
+    url: /schedule/speaker/garrett_serack
 slug: coapp
 day: Sun
 start: 10:00
@@ -10,16 +13,35 @@ end: 10:00
 event_id: 445
 ---
 
-<p>Track: <a href="/schedule/track/system_track">System Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/system">System</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/janson">Janson</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:00</dd>
+    <dt>End:</dt>
+    <dd>10:50</dd>
+</dl>
 
-<p><p>Open Source Software has long enjoyed the ability to be trivially acquired, installed and maintained on Linux via packages, where each package contains within it all the information required to find and configure the necessary dependencies.</p>
+<p>Open Source Software has long enjoyed the ability to be trivially acquired, installed and maintained on Linux via packages, where each package contains within it all the information required to find and configure the necessary dependencies.</p>
 
 <p>However, in many situations there is a strong need to install OSS on Windows,where traditional package management systems like RPM and DPKG are not only unavailable--but couldn't support the platform in a manner consistent with the other software.</p>
 
-<p>This presentation looks into the technical details of CoApp, a new fully-open source package management system fills this gap by providing all the tools to easily create, publish, discover, and install software packages, including automatically handling dependencies, managing updates and providing a frictionless end-user experience, all in a method that is well supported by the platform.</p></p>
+<p>This presentation looks into the technical details of CoApp, a new fully-open source package management system fills this gap by providing all the tools to easily create, publish, discover, and install software packages, including automatically handling dependencies, managing updates and providing a frictionless end-user experience, all in a method that is well supported by the platform.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/garrett_serack">Garrett Serack</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

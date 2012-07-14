@@ -7,6 +7,10 @@ first_name: Marc
 last_name: Balmer
 person_id: 173
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 
 <h3>Sessions</h3>
@@ -16,6 +20,7 @@ person_id: 173
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -25,6 +30,7 @@ person_id: 173
             <td><a href="/schedule/event/lua_in_the_kernel">The Lua Scripting Language in the NetBSD Kernel</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k4201">K.4.201</a></td>
+            <td><a href="/schedule/track/bsd">BSD</a></td>
             <td>13:15</td>
             <td>13:45</td>
     </tbody>

@@ -2,8 +2,14 @@
 title: How to trick a developer into being a designer?
 kind: event
 speakers:
-- seif_lotfy
-- allan_day
+  -
+    name: Seif Lotfy
+    slug: seif_lotfy
+    url: /schedule/speaker/seif_lotfy
+  -
+    name: Allan Day
+    slug: allan_day
+    url: /schedule/speaker/allan_day
 slug: trickdevintodesigner
 day: Sun
 start: 13:30
@@ -11,9 +17,20 @@ end: 13:30
 event_id: 619
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:30</dd>
+    <dt>End:</dt>
+    <dd>14:10</dd>
+</dl>
 
-<p><p>We can't get anywhere with free software if the developers don't do
+<p>We can't get anywhere with free software if the developers don't do
 design. They always did. It just sucked because they went with whatever
 the first iteration was. The focal point changed and "we'll add some UI
 later" is not design. Interaction with the software is key.</p>
@@ -33,11 +50,18 @@ prototyping is part of a healthy design process.</p>
 they don't get attached to their code).</p>
 
 <p>This talk is about how designers tricked a developer to be one of
-them...</p></p>
+them...</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/seif_lotfy">Seif Lotfy</a></li>
-    <li><a href="/schedule/speaker/allan_day">Allan Day</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

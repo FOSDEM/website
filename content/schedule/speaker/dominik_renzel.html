@@ -7,6 +7,10 @@ first_name: Dominik
 last_name: Renzel
 person_id: 873
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Dominik is working as a research assistant and PhD student at the Chair of Computer Science 5 (Information Systems &amp; Databases) at RWTH Aachen University since March 2009. He is currently working on the EU-funded large scale integrating (Open Source) project ROLE (Responsive Open Learning Environments; role-project.eu) with a focus on bringing different forms of XMPP-based real-time communication &amp; collaboration features into the world of widget-based personal learning environments.</p></p>
@@ -18,6 +22,7 @@ person_id: 873
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 873
             <td><a href="/schedule/event/interwidget_communication_with_xmpp">WebApps: Interwidget Communication with XMPP </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h2213">H.2213</a></td>
+            <td><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></td>
             <td>12:30</td>
             <td>13:00</td>
     </tbody>

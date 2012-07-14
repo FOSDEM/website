@@ -2,7 +2,10 @@
 title: LibreOffice debugging tips
 kind: event
 speakers:
-- jan_holesovsky
+  -
+    name: Jan Holesovsky
+    slug: jan_holesovsky
+    url: /schedule/speaker/jan_holesovsky
 slug: libodebug
 day: Sat
 start: 17:15
@@ -10,12 +13,31 @@ end: 17:15
 event_id: 751
 ---
 
-<p>Track: <a href="/schedule/track/libreoffice_devroom">LibreOffice Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/libreoffice">LibreOffice</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>17:15</dd>
+    <dt>End:</dt>
+    <dd>17:30</dd>
+</dl>
 
-<p><p>How to find your way through the complexities of LibreOffice, or any other large project; or "Find the needle in the haystack effectively", hear about our sexy new python debugging tools and techniques.</p></p>
+<p>How to find your way through the complexities of LibreOffice, or any other large project; or "Find the needle in the haystack effectively", hear about our sexy new python debugging tools and techniques.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/jan_holesovsky">Jan Holesovsky</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: JRuby
 kind: event
 speakers:
-- charles_nutter
+  -
+    name: Charles Nutter
+    slug: charles_nutter
+    url: /schedule/speaker/charles_nutter
 slug: jruby
 day: Sun
 start: 10:30
@@ -10,15 +13,34 @@ end: 10:30
 event_id: 709
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:30</dd>
+    <dt>End:</dt>
+    <dd>11:00</dd>
+</dl>
 
-<p><p>JRuby is Ruby on the JVM, and the first mainstream JVM
+<p>JRuby is Ruby on the JVM, and the first mainstream JVM
 language to make use of invokedynamic. We also have worked around
 limitations in OpenJDK's APIs (process mgmt, IO, native POSIX support)
-in many clever ways. Lots to talk about here.</p></p>
+in many clever ways. Lots to talk about here.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/charles_nutter">Charles Nutter</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

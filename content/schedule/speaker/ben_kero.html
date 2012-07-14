@@ -7,6 +7,10 @@ first_name: Ben
 last_name: Kero
 person_id: 658
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Ben is a system administrator by trade,and has experience with the Ganeti project from several sources. He has been a community systems administrator at the OSU Open Source Lab, where he helped and administered dozens of high-profile open source projects. Ben held this position for 4 years while attending classes at Oregon State University.</p>
@@ -22,6 +26,7 @@ person_id: 658
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -31,6 +36,7 @@ person_id: 658
             <td><a href="/schedule/event/it_at_mozilla_open_sourcing_the_infrastructure">IT@Mozilla: Open sourcing the infrastructure</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
+            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
             <td>14:30</td>
             <td>15:00</td>
     </tbody>

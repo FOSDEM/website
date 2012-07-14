@@ -7,6 +7,10 @@ first_name: Nicolas
 last_name: Charles
 person_id: 102
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Nicolas has been a developer in different languages and fields for the past 7 years. At Normation, he discovered the wonders of system administration with CFEngine, that he uses extensively in his work on Rudder. He is an active member of the CFEngine community.</p></p>
@@ -18,6 +22,7 @@ person_id: 102
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 102
             <td><a href="/schedule/event/cfgmgmtrudder">Rudder - configuration management benefits for everyone</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3601">K.3.601</a></td>
+            <td><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></td>
             <td>09:00</td>
             <td>09:45</td>
     </tbody>

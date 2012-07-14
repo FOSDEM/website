@@ -2,7 +2,10 @@
 title: Towards Accelerated UI's on Mobile Linux With Power of Qt5
 kind: event
 speakers:
-- saija_etelaniemi
+  -
+    name: Saija Eteläniemi
+    slug: saija_etelaniemi
+    url: /schedule/speaker/saija_etelaniemi
 slug: towards_accelerated_uis_on_mobile_linux_qt5
 day: Sat
 start: 12:30
@@ -10,15 +13,34 @@ end: 12:30
 event_id: 591
 ---
 
-<p>Track: <a href="/schedule/track/open_mobile_linux_devroom">Open Mobile Linux Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>12:30</dd>
+    <dt>End:</dt>
+    <dd>13:00</dd>
+</dl>
 
-<p><p>Qt has had a support for embedding accelerated native OpenGL code inside Qt applications, but hardware graphics acceleration has been always a bottleneck on Linux platforms due to lack of proper support and driver openness. The situation is getting better every day, and with hard effort there are now several hardware acceleration capable Linux devices either in the market already, or coming in a few months. Combined with capabilities of Qt version 5, including QML SceneGraph and OpenGL Shaders in QML called ShaderEffects, the possibilities are endless. 2D or 3D UI's with 60fps on a mobile Linux device is not only a dream these days.</p></p>
-<p><p>Qt framework has been popular amongst desktop developers already more than a decade. In few last years it has been gaining similar popularity amongst mobile developers. Since Qt is well supported on many mobile Linux platforms, including Maemo, MeeGo, MeeGo Harmattan and Mer, it has become a first class citizen on mobile Linux devices.</p>
+<p>Qt has had a support for embedding accelerated native OpenGL code inside Qt applications, but hardware graphics acceleration has been always a bottleneck on Linux platforms due to lack of proper support and driver openness. The situation is getting better every day, and with hard effort there are now several hardware acceleration capable Linux devices either in the market already, or coming in a few months. Combined with capabilities of Qt version 5, including QML SceneGraph and OpenGL Shaders in QML called ShaderEffects, the possibilities are endless. 2D or 3D UI's with 60fps on a mobile Linux device is not only a dream these days.</p>
+<p>Qt framework has been popular amongst desktop developers already more than a decade. In few last years it has been gaining similar popularity amongst mobile developers. Since Qt is well supported on many mobile Linux platforms, including Maemo, MeeGo, MeeGo Harmattan and Mer, it has become a first class citizen on mobile Linux devices.</p>
 
-<p>The project presented here (has no name yet) has an aim to form a vibrant community to create a free and open sourced resource collection of QML Shader Effects for 2D and 3D to be used freely in stunning mobile device UI's of devices as N9, N950 or Raspberry Pi.</p></p>
+<p>The project presented here (has no name yet) has an aim to form a vibrant community to create a free and open sourced resource collection of QML Shader Effects for 2D and 3D to be used freely in stunning mobile device UI's of devices as N9, N950 or Raspberry Pi.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/saija_etelaniemi">Saija Eteläniemi</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

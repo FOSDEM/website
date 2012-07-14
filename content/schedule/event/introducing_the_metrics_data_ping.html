@@ -2,7 +2,10 @@
 title: Introducing the Metrics Data Ping
 kind: event
 speakers:
-- mark_reid
+  -
+    name: Mark Reid
+    slug: mark_reid
+    url: /schedule/speaker/mark_reid
 slug: introducing_the_metrics_data_ping
 day: Sun
 start: 11:30
@@ -10,13 +13,32 @@ end: 11:30
 event_id: 857
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>11:30</dd>
+    <dt>End:</dt>
+    <dd>12:00</dd>
+</dl>
 
-<p><p>A General overview of the new data collection module, as well as an explanation of the rationale for adding it.</p></p>
-<p><p>Mozilla needs to have a clear, data-driven understanding of what using Firefox is like for the majority of our users. This allows us to make decisions about where to prioritize development, investigate new or poorly understood problems, and improve the user experience.  The Metrics Data Ping is a new project to address this need.</p></p>
+<p>A General overview of the new data collection module, as well as an explanation of the rationale for adding it.</p>
+<p>Mozilla needs to have a clear, data-driven understanding of what using Firefox is like for the majority of our users. This allows us to make decisions about where to prioritize development, investigate new or poorly understood problems, and improve the user experience.  The Metrics Data Ping is a new project to address this need.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/mark_reid">Mark Reid</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

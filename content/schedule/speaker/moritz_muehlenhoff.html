@@ -7,6 +7,10 @@ first_name: Moritz
 last_name: Muehlenhoff
 person_id: 821
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Moritz is a Debian developer and part of the Debian Security Team.
@@ -19,6 +23,7 @@ He lives in Bremen, the informal capital of North Germany. Moritz is working as 
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -28,6 +33,7 @@ He lives in Bremen, the informal capital of North Germany. Moritz is working as 
             <td><a href="/schedule/event/univention_corporate_server">Univention Corporate Server</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/h1301">H.1301</a></td>
+            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
             <td>13:15</td>
             <td>14:00</td>
     </tbody>

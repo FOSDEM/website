@@ -2,7 +2,10 @@
 title: Mozilla Communities - Agile approach, tools, patterns and metrics
 kind: event
 speakers:
-- bogomil_shopov
+  -
+    name: Bogomil Shopov
+    slug: bogomil_shopov
+    url: /schedule/speaker/bogomil_shopov
 slug: mozilla_communities
 day: Sat
 start: 11:00
@@ -10,9 +13,20 @@ end: 11:00
 event_id: 762
 ---
 
-<p>Track: <a href="/schedule/track/mozilla_devroom">Mozilla Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/mozilla">Mozilla</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ud2218a">UD2.218A</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:00</dd>
+    <dt>End:</dt>
+    <dd>11:30</dd>
+</dl>
 
-<p><p>We're living in hard times right now. Most of the F(L)OSS projects suffers from lack of volunteers especially if they must donate a large amount of time to this project. My talk will show how you can plan better your community how to measure it, how to use tips and tricks from the commercial world and how to use some agile methods and tools to make you community kick-ass squad.</p>
+<p>We're living in hard times right now. Most of the F(L)OSS projects suffers from lack of volunteers especially if they must donate a large amount of time to this project. My talk will show how you can plan better your community how to measure it, how to use tips and tricks from the commercial world and how to use some agile methods and tools to make you community kick-ass squad.</p>
 
 <ul>
 <li>How to plan your community for next couple of months; (ex. We need 3 more people to join our translation effort) and Create the Flow – how a bug report goes from bugzilla to the the end of it’s life. (a.k.a kill the bug)</li>
@@ -21,10 +35,18 @@ event_id: 762
 <li>How to find patterns into your community and how to use them. For example – Most of the answers I receive to my mailing comes during business hours OR Friday is not a good day to send emails</li>
 <li>What is Agile and how to use it to make my community life easier? ( Trello show-case )</li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/bogomil_shopov">Bogomil Shopov</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: ! 'Social Networking: User Address Ownership in the Federated Social Web'
 kind: event
 speakers:
-- michiel_de_jong
+  -
+    name: Michiel de Jong
+    slug: michiel_de_jong
+    url: /schedule/speaker/michiel_de_jong
 slug: user_addresses_in_federated_social_web
 day: Sat
 start: 15:30
@@ -10,15 +13,34 @@ end: 15:30
 event_id: 907
 ---
 
-<p>Track: <a href="/schedule/track/jabber_and_xmpp_devroom">Jabber and XMPP Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h2213">H.2213</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:30</dd>
+    <dt>End:</dt>
+    <dd>16:00</dd>
+</dl>
 
-<p><p>Why Webfinger is so important, why BrowserId is so important, and how to combine the two.</p></p>
-<p><p>The federated social web needs to be a tool-agnostic web. A user should be able to interact with other users, regardless of whether the other user is using xmpp-based tools, or OStatus-based tools, even SMTP, and maybe even SMS. But there is one central corner stone of socializing: user addresses. These can be email addresses, Jabber ID's, or webfinger account URIs.</p>
+<p>Why Webfinger is so important, why BrowserId is so important, and how to combine the two.</p>
+<p>The federated social web needs to be a tool-agnostic web. A user should be able to interact with other users, regardless of whether the other user is using xmpp-based tools, or OStatus-based tools, even SMTP, and maybe even SMS. But there is one central corner stone of socializing: user addresses. These can be email addresses, Jabber ID's, or webfinger account URIs.</p>
 
-<p>In this talk I'll discuss some of the challenges of enabling people to own their user address. In particular, I will discuss our experiences in both the LibreDocs project and the Opentabs project, about why Webfinger is so important, why BrowserId is so important, and how to combine the two.</p></p>
+<p>In this talk I'll discuss some of the challenges of enabling people to own their user address. In particular, I will discuss our experiences in both the LibreDocs project and the Opentabs project, about why Webfinger is so important, why BrowserId is so important, and how to combine the two.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/michiel_de_jong">Michiel de Jong</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

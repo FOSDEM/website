@@ -2,7 +2,10 @@
 title: Sustainable mentorship
 kind: event
 speakers:
-- dave_neary
+  -
+    name: Dave Neary
+    slug: dave_neary
+    url: /schedule/speaker/dave_neary
 slug: sustainablementorship
 day: Sat
 start: 14:20
@@ -10,17 +13,36 @@ end: 14:20
 event_id: 624
 ---
 
-<p>Track: <a href="/schedule/track/crossdesktop_devroom">CrossDesktop Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdesktop">CrossDesktop</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1308">H.1308</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>14:20</dd>
+    <dt>End:</dt>
+    <dd>14:50</dd>
+</dl>
 
-<p><p>The talk will cover a variety of topics including:
+<p>The talk will cover a variety of topics including:
 * Measuring success - and the success rates of mentoring programs
 * Preventing mentor burn-out, recruiting new mentors
 * Roping them in - turning interns into community members
 * Recruiting for diversity (Women's Outreach Program case study)
-* Keeping momentum - how to avoid ghost-towns</p></p>
+* Keeping momentum - how to avoid ghost-towns</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/dave_neary">Dave Neary</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -2,7 +2,10 @@
 title: How to replace a legacy tool with 100k installations
 kind: event
 speakers:
-- serafeim_zanikolas
+  -
+    name: Serafeim Zanikolas
+    slug: serafeim_zanikolas
+    url: /schedule/speaker/serafeim_zanikolas
 slug: debian_dep9
 day: Sat
 start: 11:30
@@ -10,14 +13,33 @@ end: 11:30
 event_id: 839
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1302">H.1302</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:30</dd>
+    <dt>End:</dt>
+    <dd>12:00</dd>
+</dl>
 
-<p><p>Debian has a number of legacy tools (that's a euphemism for ugly hacks) that are not addressed due to inertia, fear of breaking stuff, and the difficulty of reaching consensus for changes with cross-package impact. I'll talk about dealing with the above issues in the context of ongoing work as part of Debian Enhancement Proposal 9.</p>
+<p>Debian has a number of legacy tools (that's a euphemism for ugly hacks) that are not addressed due to inertia, fear of breaking stuff, and the difficulty of reaching consensus for changes with cross-package impact. I'll talk about dealing with the above issues in the context of ongoing work as part of Debian Enhancement Proposal 9.</p>
 
-<p>Specifically, the talk will cover how (not) to make proposals for cross-package changes, and how to map behaviour in a technical spec to feature-centered assertions in a test suite.</p></p>
+<p>Specifically, the talk will cover how (not) to make proposals for cross-package changes, and how to map behaviour in a technical spec to feature-centered assertions in a test suite.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/serafeim_zanikolas">Serafeim Zanikolas</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

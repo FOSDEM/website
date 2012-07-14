@@ -2,7 +2,10 @@
 title: LibreOffice QA
 kind: event
 speakers:
-- cor_nouws
+  -
+    name: Cor Nouws
+    slug: cor_nouws
+    url: /schedule/speaker/cor_nouws
 slug: liboqa
 day: Sat
 start: 13:15
@@ -10,12 +13,31 @@ end: 13:15
 event_id: 744
 ---
 
-<p>Track: <a href="/schedule/track/libreoffice_devroom">LibreOffice Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/libreoffice">LibreOffice</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1309">H.1309</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:15</dd>
+    <dt>End:</dt>
+    <dd>13:45</dd>
+</dl>
 
-<p><p>Come and hear how the LibreOffice QA team works, get hands on experience with bugzilla, find out where our daily snapshots are, and how to use them, and chat with fellow QA guys. See some feedback on the progress of bug tracking and some pretty graphs.</p></p>
+<p>Come and hear how the LibreOffice QA team works, get hands on experience with bugzilla, find out where our daily snapshots are, and how to use them, and chat with fellow QA guys. See some feedback on the progress of bug tracking and some pretty graphs.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/cor_nouws">Cor Nouws</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

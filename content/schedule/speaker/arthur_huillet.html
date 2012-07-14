@@ -7,6 +7,10 @@ first_name: Arthur
 last_name: Huillet
 person_id: 595
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Arthur Huillet has been taking down the average age in various open source projects since 2004, but he remained faithful throughout the time to his first true love: a role playing game called FreedroidRPG. His occupation is to design a high performance computing offer based on open source software, which has him use a various range of low-level skills, some of which acquired through work on FreedroidRPG and the Nouveau reverse-engineered nVidia driver.</p></p>
@@ -18,6 +22,7 @@ person_id: 595
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 595
             <td><a href="/schedule/event/role_playing_game">Anatomy of a role playing game</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1120">AW1.120</a></td>
+            <td><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></td>
             <td>10:00</td>
             <td>10:45</td>
     </tbody>

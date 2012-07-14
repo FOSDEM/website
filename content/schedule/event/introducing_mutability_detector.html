@@ -2,7 +2,10 @@
 title: Introducing Mutability Detector
 kind: event
 speakers:
-- graham_allan
+  -
+    name: Graham Allan
+    slug: graham_allan
+    url: /schedule/speaker/graham_allan
 slug: introducing_mutability_detector
 day: Sat
 start: 16:00
@@ -10,9 +13,20 @@ end: 16:00
 event_id: 692
 ---
 
-<p>Track: <a href="/schedule/track/free_java_devroom">Free Java Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/free_java">Free Java</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k4401">K.4.401</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>16:00</dd>
+    <dt>End:</dt>
+    <dd>16:30</dd>
+</dl>
 
-<p><p>Mutability Detector is a lightweight static analysis tool for Java which
+<p>Mutability Detector is a lightweight static analysis tool for Java which
 allows you to unit test for immutability. Using immutable objects is regarded as
 improving readability of your Java code, and greatly simplifying multithreaded
 code. However, without language support, it's all to easy to render classes
@@ -27,10 +41,18 @@ JDK, has greatly helped in improving the analysis.</p>
 <p> The audience will learn of a simple little utility that may just help them in
 their day-to-day development of Java. People can help out in the usual FLOSS way
 - using it, reporting bugs, giving feedback (especially the ways in which I
-suck).</p></p>
+suck).</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/graham_allan">Graham Allan</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

@@ -7,6 +7,10 @@ first_name: Jean-Michel
 last_name: Pouré
 person_id: 348
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 
 <h3>Sessions</h3>
@@ -16,6 +20,7 @@ person_id: 348
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -25,6 +30,7 @@ person_id: 348
             <td><a href="/schedule/event/smartcard_workshop">Smart card workshop</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/h2214">H.2214</a></td>
+            <td><a href="/schedule/track/security">Security</a></td>
             <td>13:00</td>
             <td>15:00</td>
     </tbody>

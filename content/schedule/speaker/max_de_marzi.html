@@ -7,6 +7,10 @@ first_name: Max
 last_name: De Marzi
 person_id: 760
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Max De Marzi, founder of getvouched.com, is a seasoned web developer. He started building websites in 1996 and has worked with Ruby on Rails since 2006. The web forced Max to wear many hats and master a wide range of technologies. He can be a system admin, database developer, graphic designer, back-end engineer and data scientist in the course of one afternoon. Max is a graph database enthusiast. He built the Neography Ruby Gem, a simple rest api wrapper to the Neo4j Graph Database. He is addicted to learning new things, loves a challenge and finding pragmatic solutions. Max is very easy to work with, focuses under pressure and has the patience of a rock.</p></p>
@@ -18,6 +22,7 @@ person_id: 760
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 760
             <td><a href="/schedule/event/graph_visualization_js">An example graph visualization with Processing.js </a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
             <td>15:20</td>
             <td>15:35</td>
     </tbody>

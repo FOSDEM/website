@@ -7,6 +7,10 @@ first_name: Kai-Uwe
 last_name: Behrmann
 person_id: 578
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Kai-Uwe Behrmann is a active developer in various open source colour management projects. He works on standards for Linux and is a member of ICC.</p></p>
@@ -18,6 +22,7 @@ person_id: 578
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,18 +32,21 @@ person_id: 578
             <td><a href="/schedule/event/cm_compositors">Colour Management in Compositors.</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>12:00</td>
             <td>13:00</td>
         <tr>
             <td><a href="/schedule/event/openicc">OpenICC - Colour Standards for Linux</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>13:00</td>
             <td>14:00</td>
         <tr>
             <td><a href="/schedule/event/oyranos">Cross Platform Colour Management with Oyranos</a></td>
             <td>Sun</td>
             <td><a href="/schedule/room/k3401">K.3.401</a></td>
+            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
             <td>15:30</td>
             <td>16:00</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: ! 'Audiveris: Optical Music Recognition'
 kind: event
 speakers:
-- herve_bitteur
+  -
+    name: Hervé Bitteur
+    slug: herve_bitteur
+    url: /schedule/speaker/herve_bitteur
 slug: audiveris
 day: Sat
 start: 15:00
@@ -10,12 +13,23 @@ end: 15:00
 event_id: 489
 ---
 
-<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/lightning_talks">Lightning Talks</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/ferrer">Ferrer</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:15</dd>
+</dl>
 
-<p><p>What can you do with your collection of sheet music, when all you have is paper or plain scans?
+<p>What can you do with your collection of sheet music, when all you have is paper or plain scans?
 You surely may feel frustrated if you are not ready for tedious sessions of manual typing.
-Here, <em>O</em>ptical <em>M</em>usic <em>R</em>ecognition comes to the rescue. It transcribes sheet music images to MusicXML symbolic format. Doing so, music content gets really "usable", since it can now easily be played, printed, transposed, re-published, analyzed, searched, etc.</p></p>
-<p><p><em>OMR</em> is difficult for a good reason: while text uses only horizontal lines, music combines the complexity of both vertical and horizontal directions.
+Here, <em>O</em>ptical <em>M</em>usic <em>R</em>ecognition comes to the rescue. It transcribes sheet music images to MusicXML symbolic format. Doing so, music content gets really "usable", since it can now easily be played, printed, transposed, re-published, analyzed, searched, etc.</p>
+<p><em>OMR</em> is difficult for a good reason: while text uses only horizontal lines, music combines the complexity of both vertical and horizontal directions.
 Today, there are just a few commercial OMRs available, and only one open-source product under heavy development activity: <em>Audiveris</em>.</p>
 
 <p>Audiveris is a Java application, using a neural network as its cornerstone.
@@ -24,10 +38,18 @@ Collaboration is welcome on the most notable foreseen developments:
 - Integration with Tesseract OCR V3,
 - Providing a web-based "OMR as a service",
 - Automated evaluation of transcription results,
-- Supporting microedition features to enable crowd-sourcing approaches.</p></p>
+- Supporting microedition features to enable crowd-sourcing approaches.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/herve_bitteur">Hervé Bitteur</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

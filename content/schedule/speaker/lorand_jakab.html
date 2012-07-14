@@ -7,6 +7,10 @@ first_name: Loránd
 last_name: Jakab
 person_id: 480
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>I first tried Linux in 1997, and have been using it ever since. My first distributions were Red Hat and Slackware, and after a short FreeBSD period, I "stabilized" on Gentoo, which is still my distribution of choice. My interest is in networking, so my FOSS contributions revolve around this topic, especially the Locator/ID Separation Protocol (LISP, not the programming language). I'm the author and maintainer of the LISP dissector for Wireshark, contributed part of the control plane of the OpenLISP distribution and IPv6 support to the LISP Internet Groper (lig). I'm also the maintainer of the LISPmob project, which I will present here.</p></p>
@@ -18,6 +22,7 @@ person_id: 480
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 480
             <td><a href="/schedule/event/lispmob">LISPmob: enhanced network layer mobility solution</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ferrer">Ferrer</a></td>
+            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
             <td>16:00</td>
             <td>16:15</td>
     </tbody>

@@ -2,7 +2,10 @@
 title: Data-Driven and Component-Based Game-Entities 
 kind: event
 speakers:
-- thomas_kinnen
+  -
+    name: Thomas Kinnen
+    slug: thomas_kinnen
+    url: /schedule/speaker/thomas_kinnen
 slug: game_entities
 day: Sun
 start: 10:55
@@ -10,14 +13,33 @@ end: 10:55
 event_id: 536
 ---
 
-<p>Track: <a href="/schedule/track/open_source_game_development_devroom">Open Source Game Development Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>10:55</dd>
+    <dt>End:</dt>
+    <dd>11:40</dd>
+</dl>
 
-<p><p>Game architectures used to be designed in an inheritance-based approach, which has proven to be difficult. The current state-of-the-art is a component-based architecture that allows loading all game entities from a separate data source. This enables easier testing and modularization of the code.
+<p>Game architectures used to be designed in an inheritance-based approach, which has proven to be difficult. The current state-of-the-art is a component-based architecture that allows loading all game entities from a separate data source. This enables easier testing and modularization of the code.
 It is also beneficial for the game designer as it weakens the game designer's dependency on the programmer. This is important for content creators of open-source games, so they can easily add their new content to the game, without relying on somebody else to help them.
-This talk will outline the reasons to use a data-driven and component-based architecture, give examples of architectures used in popular open-source games (Wesnoth, MegaGlest, 0AD and Unknown Horizons) and explain how Unknown Horizons moved from an inheritance-based approach to the new component-based architecture.</p></p>
+This talk will outline the reasons to use a data-driven and component-based architecture, give examples of architectures used in popular open-source games (Wesnoth, MegaGlest, 0AD and Unknown Horizons) and explain how Unknown Horizons moved from an inheritance-based approach to the new component-based architecture.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/thomas_kinnen">Thomas Kinnen</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

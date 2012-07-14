@@ -2,7 +2,10 @@
 title: Using Qt for non-graphical applications
 kind: event
 speakers:
-- thomas_petazzoni
+  -
+    name: Thomas Petazzoni
+    slug: thomas_petazzoni
+    url: /schedule/speaker/thomas_petazzoni
 slug: using_qt_for_non_graphical_applications
 day: Sun
 start: 13:00
@@ -10,9 +13,20 @@ end: 13:00
 event_id: 700
 ---
 
-<p>Track: <a href="/schedule/track/embedded_devroom">Embedded Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/embedded">Embedded</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/lameere">Lameere</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:00</dd>
+    <dt>End:</dt>
+    <dd>14:00</dd>
+</dl>
 
-<p><p>The Qt framework is best known by most developers as a graphical
+<p>The Qt framework is best known by most developers as a graphical
 toolkit library, which allows to build graphical interfaces with
 windows, buttons, checkboxes and drop-down lists.</p>
 
@@ -25,10 +39,18 @@ applications.</p>
 for a customer, we will detail how Qt has helped integrating features
 such as communication with multiple devices over serial ports,
 communication with a GSM modem, XML parsing, HTTP requests,
-communication with Linux input devices, and more.</p></p>
+communication with Linux input devices, and more.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/thomas_petazzoni">Thomas Petazzoni</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

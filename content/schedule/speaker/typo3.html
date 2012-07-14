@@ -7,6 +7,10 @@ first_name: TYPO3
 last_name: 
 person_id: 626
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>TYPO3 became one of the most important players in the CMS market within the last years. In this time the expectations of customers were growing continuously – web agencies became information consultancies.</p>
@@ -21,6 +25,7 @@ person_id: 626
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -30,6 +35,7 @@ person_id: 626
             <td><a href="/schedule/event/cert_typo3">TYPO3 certification exams</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/ua2114">UA2.114</a></td>
+            <td><a href="/schedule/track/certification">Certification</a></td>
             <td>14:00</td>
             <td>16:00</td>
     </tbody>

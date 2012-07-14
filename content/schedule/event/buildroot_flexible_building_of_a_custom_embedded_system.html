@@ -2,7 +2,10 @@
 title: ! 'buildroot: flexible building of a custom embedded system'
 kind: event
 speakers:
-- arnout_vandecappelle_
+  -
+    name: Arnout Vandecappelle 
+    slug: arnout_vandecappelle_
+    url: /schedule/speaker/arnout_vandecappelle_
 slug: buildroot_flexible_building_of_a_custom_embedded_system
 day: Sat
 start: 13:30
@@ -10,12 +13,31 @@ end: 13:30
 event_id: 595
 ---
 
-<p>Track: <a href="/schedule/track/open_mobile_linux_devroom">Open Mobile Linux Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/aw1120">AW1.120</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>13:30</dd>
+    <dt>End:</dt>
+    <dd>14:00</dd>
+</dl>
 
-<p><p>Buildroot is a nice, simple and efficient tool to build small to medium sized embedded Linux systems. It to automates the process of building a cross-compiling toolchain, the root filesystem with all userspace components, a Linux kernel image and a bootloader image.  It is used for embedded systems ranging from industrial controllers to hand-held media devices.</p></p>
+<p>Buildroot is a nice, simple and efficient tool to build small to medium sized embedded Linux systems. It to automates the process of building a cross-compiling toolchain, the root filesystem with all userspace components, a Linux kernel image and a bootloader image.  It is used for embedded systems ranging from industrial controllers to hand-held media devices.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/arnout_vandecappelle_">Arnout Vandecappelle </a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

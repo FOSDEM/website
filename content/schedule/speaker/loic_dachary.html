@@ -7,6 +7,10 @@ first_name: Loïc
 last_name: Dachary
 person_id: 692
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 <h3>Bio</h3>
 <p><p>Loïc Dachary (born in 1965) has been a free software developer and activist in France since 1987. Dachary currently contributes to Free Software projects and acts as president of the Free Software Foundation in France. He is a speaker for the GNU Project and the April association.</p></p>
@@ -18,6 +22,7 @@ person_id: 692
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -27,6 +32,7 @@ person_id: 692
             <td><a href="/schedule/event/enforce_copyleft_without_becoming_corrupt">Can for-profit companies enforce copyleft without becoming corrupt like MySQL AB?</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1125">AW1.125</a></td>
+            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
             <td>15:00</td>
             <td>15:30</td>
     </tbody>

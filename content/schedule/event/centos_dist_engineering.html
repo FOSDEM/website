@@ -2,7 +2,10 @@
 title: CentOS Distribution Engineering and how you can help
 kind: event
 speakers:
-- karanbir_singh
+  -
+    name: Karanbir Singh
+    slug: karanbir_singh
+    url: /schedule/speaker/karanbir_singh
 slug: centos_dist_engineering
 day: Sun
 start: 13:00
@@ -10,12 +13,31 @@ end: 13:00
 event_id: 829
 ---
 
-<p>Track: <a href="/schedule/track/crossdistribution_devroom">CrossDistribution Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/crossdistribution">CrossDistribution</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/h1302">H.1302</a></dd>
+    <dt>Day:</dt>
+    <dd>Sunday</dd>
+    <dt>Start:</dt>
+    <dd>13:00</dd>
+    <dt>End:</dt>
+    <dd>14:00</dd>
+</dl>
 
-<p></p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/karanbir_singh">Karanbir Singh</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

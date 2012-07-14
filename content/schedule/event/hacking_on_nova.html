@@ -2,7 +2,10 @@
 title: Hacking on OpenStack Compute (Nova) - A beginner's guide
 kind: event
 speakers:
-- soren_hansen
+  -
+    name: Soren Hansen
+    slug: soren_hansen
+    url: /schedule/speaker/soren_hansen
 slug: hacking_on_nova
 day: Sat
 start: 11:30
@@ -10,12 +13,31 @@ end: 11:30
 event_id: 553
 ---
 
-<p>Track: <a href="/schedule/track/virtualization_and_cloud_devroom">Virtualization and Cloud Devroom</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/chavanne">Chavanne</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>11:30</dd>
+    <dt>End:</dt>
+    <dd>11:55</dd>
+</dl>
 
-<p><p>This talk will include an introduction to OpenStack Nova's overall network architecture, as well as an introduction to the anatomy of one of the services that make up Nova. Finally, I'll give a give an introduction to Eventlet, the event library we use in all of OpenStack. In short, this talk should help you dive into most parts of Nova and not feel like too much of a stranger.</p></p>
+<p>This talk will include an introduction to OpenStack Nova's overall network architecture, as well as an introduction to the anatomy of one of the services that make up Nova. Finally, I'll give a give an introduction to Eventlet, the event library we use in all of OpenStack. In short, this talk should help you dive into most parts of Nova and not feel like too much of a stranger.</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/soren_hansen">Soren Hansen</a></li>
-</ul>
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

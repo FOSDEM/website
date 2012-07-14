@@ -2,7 +2,10 @@
 title: EFL, the toolkit for up and coming Linux mobile devices
 kind: event
 speakers:
-- carsten_haitzler
+  -
+    name: Carsten Haitzler
+    slug: carsten_haitzler
+    url: /schedule/speaker/carsten_haitzler
 slug: efl
 day: Sat
 start: 15:00
@@ -10,12 +13,23 @@ end: 15:00
 event_id: 383
 ---
 
-<p>Track: <a href="/schedule/track/future_of_ui_track">Future of UI Track</a></p>
+<dl class="dl-horizontal">
+    <dt>Track:</dt>
+    <dd><a href="/schedule/track/future_of_ui">Future of UI</a></dd>
+    <dt>Room:</dt>
+    <dd><a href="/schedule/room/k1105">K.1.105</a></dd>
+    <dt>Day:</dt>
+    <dd>Saturday</dd>
+    <dt>Start:</dt>
+    <dd>15:00</dd>
+    <dt>End:</dt>
+    <dd>15:50</dd>
+</dl>
 
-<p><h2>EFL, the toolkit for up and coming mobile devices</h2>
+<h2>EFL, the toolkit for up and coming mobile devices</h2>
 
-<p>EFL (The Enlightenment Foundation Libraries) were written to support the development of Enlightenment, and ultimately became a complete toolkit for making applications for desktops and especially lower powered devices like phones and tablets. The focus on achieving great effects, ease of programming and lean efficiency has attracted some major players to EFL, such as Samsung Electronics. EFL is being used in development for their next generation devices. Find out about EFL.</p></p>
-<p><p>This presentation will cover the following:</p>
+<p>EFL (The Enlightenment Foundation Libraries) were written to support the development of Enlightenment, and ultimately became a complete toolkit for making applications for desktops and especially lower powered devices like phones and tablets. The focus on achieving great effects, ease of programming and lean efficiency has attracted some major players to EFL, such as Samsung Electronics. EFL is being used in development for their next generation devices. Find out about EFL.</p>
+<p>This presentation will cover the following:</p>
 
 <ul>
 <li>What is EFL</li>
@@ -25,10 +39,18 @@ event_id: 383
 <li>Why would an electronics giant choose a little-known toolkit</li>
 <li>How you can use EFL effectively for fun and profit</li>
 </ul>
-</p>
 
-<h2>Speakers</h2>
-<ul>
-    <li><a href="/schedule/speaker/carsten_haitzler">Carsten Haitzler</a></li>
-</ul>
+
+<h3>Speakers</h3>
+<table>
+    <tbody>
+        <% @item[:speakers].each do |s| %>
+        <tr>
+            <% photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"] %>
+            <td><% if photo %><a href="<%= s[:url] %>"><img height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+            <td><a href="<%= s[:url] %>"><%= s[:name] %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 

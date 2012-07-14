@@ -7,6 +7,10 @@ first_name: Quentin
 last_name: Mathé
 person_id: 329
 ---
+<% photo = $item_by_id["/schedule/speaker_photos/#{@item[:slug]}/"] %>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>"/>
+<% end %>
 
 
 <h3>Sessions</h3>
@@ -16,6 +20,7 @@ person_id: 329
             <th>Title</th>
             <th>Day</th>
             <th>Room</th>
+            <th>Track</th>
             <th>Start</th>
             <th>End</th>
         </tr>
@@ -25,12 +30,14 @@ person_id: 329
             <td><a href="/schedule/event/etoile_status_talk">Étoilé: What has been done over the past year and what's next?</a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/gnustep">GNUstep</a></td>
             <td>14:30</td>
             <td>15:00</td>
         <tr>
             <td><a href="/schedule/event/coreobject">CoreObject </a></td>
             <td>Sat</td>
             <td><a href="/schedule/room/aw1126">AW1.126</a></td>
+            <td><a href="/schedule/track/gnustep">GNUstep</a></td>
             <td>16:15</td>
             <td>17:00</td>
     </tbody>
