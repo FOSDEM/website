@@ -397,14 +397,6 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
     begin
       puts "Compiling schedule pages..."
 
-      # render the day grids
-      $days.each do |day|
-        render_to('day', File.join('day', PentaHelpers::slug(day)),
-                  :day => day,
-                  :grid_max_columns => 7,
-                  :grid_max_title_length => 25)
-      end
-
       # and here we do the actual rendering
       # simply render all the templates that end in 's'
       Dir.glob(File.join('templates', '*s.html')).reject{|f| File.directory? f}.each do |template|
@@ -517,6 +509,14 @@ EOF
               identical_file thumbnail_meta_filename
           end
         end
+      end
+
+      # render the day grids
+      $days.each do |day|
+        render_to('day', File.join('day', PentaHelpers::slug(day)),
+                  :day => day,
+                  :grid_max_columns => 7,
+                  :grid_max_title_length => 25)
       end
 
       # render the events
