@@ -143,7 +143,13 @@ compile '*' do
       # use layout/default.html for all items, except
       # sponsor pages and pages that have "layout: false"
       # in their metadata
-      layout 'default' unless item.sponsor? or item[:layout] == false
+      if item[:layout] == false or item.sponsor?
+        # do nothing
+      elsif item[:layout]
+        layout item[:layout]
+      else
+        layout 'default'
+      end
     end
   end
 end

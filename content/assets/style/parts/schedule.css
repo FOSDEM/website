@@ -1,0 +1,38 @@
+#schedule-grid,
+#schedule-grid a {
+    font-size: 80%;
+}
+
+#schedule-grid tr.odd  td { background-color: white; }
+#schedule-grid tr.even td { background-color: #eee; }
+
+#schedule-grid table { border-collapse: collapse; border: 1px solid #ccc; empty-cells: show; }
+#schedule-grid td, #schedule-grid th { padding: 2px 4px; border: 1px solid #000; }
+#schedule-grid th { background: #dddddd; color: #3399cc; border: 1px solid #000; }
+#schedule-grid td p { padding: 0; margin: 0; }
+#schedule-grid td.title { font-size: 120%; font-weight: bold; text-align: center; padding: 4px 2em; }
+
+#schedule-grid .time { font-family: monospace; /*font-size: 80%;*/ text-align: right; vertical-align: top; }
+#schedule-grid .hour td { border-top: 2px solid #3399cc !important; }
+#schedule-grid table { border-spacing: 1px; }
+#schedule-grid table td, #schedule-grid table th { margin: 0 1px 1px 0; }
+#schedule-grid .empty { background: #ccc; }
+#schedule-grid .room p { margin: 0px; padding: 0px; }
+#schedule-grid td { border: 1px solid #ccc; }
+
+#schedule-grid tr.separator,
+#schedule-grid tr.separator td {
+    border: 1px solid #000 !important;
+    border-left: 1px solid white !important;
+    border-right: 1px solid white !important;
+}
+#schedule-grid .schedule-day {
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 2em;
+}
+#schedule-grid .event-grid-detail { text-align: left; }
+#schedule-grid .event-grid-detail a { font-weight: normal; font-size: 90%; font-variant: normal; }
+
+#schedule-grid a.trackref { font-variant: small-caps; font-style: normal !important; }

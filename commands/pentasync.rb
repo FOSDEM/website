@@ -225,7 +225,15 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
         raise "unsupported render flag \"#{x}\""
       end
     end
-    tf = File.join("templates", "#{template}.html")
+    tf = if tf =~ /\..+$/
+           tf
+         else
+           mask = File.join("templates", "#{template}.*")
+           candidates = Dir.glob(mask)
+           raise "found more than one template that matches #{mask}: #{candidates.inspect}" if candidates.size > 1
+           raise "failed to find a template that matches #{mask}" if candidates.empty?
+           candidates.first
+         end
     t = Erubis::Eruby.new(File.read(tf), :filename => tf)
 
     context = Context.new(vars)
@@ -389,6 +397,14 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
     begin
       puts "Compiling schedule pages..."
 
+      # render the day grids
+      $days.each do |day|
+        render_to('day', File.join('day', PentaHelpers::slug(day)),
+                  :day => day,
+                  :grid_max_columns => 7,
+                  :grid_max_title_length => 25)
+      end
+
       # and here we do the actual rendering
       # simply render all the templates that end in 's'
       Dir.glob(File.join('templates', '*s.html')).reject{|f| File.directory? f}.each do |template|
@@ -509,15 +525,18 @@ EOF
         render_to('event', File.join('event', PentaHelpers::slug(event)), :e => event, :speakers => speakers)
       end
 
+      # render the tracks
       $tracks.each do |track|
         events = $track_events[track.conference_track_id]
         render_to('track', File.join('track', PentaHelpers::slug(track)), :t => track, :events => events)
       end
 
+      # render the rooms
       $rooms.each do |room|
         events = $room_events[room.conference_room_id]
         render_to('room', File.join('room', PentaHelpers::slug(room)), :r => room, :events => events)
       end
+
     end
 
     # remove dead files
