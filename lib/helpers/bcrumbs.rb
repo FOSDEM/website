@@ -60,8 +60,7 @@ module BCrumbs
                       when 'event'
                         ['/schedule/events/', 'Events']
                       when 'speaker'
-                        #['/schedule/speakers/', 'Speakers']
-                        [ nil, 'Speakers']
+                        ['/schedule/speakers/', 'Speakers']
                       when 'room'
                         [ '/schedule/rooms/', 'Rooms' ]
                       else
