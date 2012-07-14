@@ -377,6 +377,11 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
         events = $track_events[track.conference_track_id]
         render_to('track', File.join('track', PentaHelpers::slug(track)), :t => track, :events => events)
       end
+
+      $rooms.each do |room|
+        events = $room_events[room.conference_room_id]
+        render_to('room', File.join('room', PentaHelpers::slug(room)), :r => room, :events => events)
+      end
     end
 
     # remove dead files

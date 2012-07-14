@@ -12,6 +12,8 @@ end: <%= @e.start_datetime.to_time.strftime('%H:%M') %>
 event_id: <%= @e.event_id %>
 ---
 
+<p>Track: <%= l($track_by_id[@e.conference_track_id]) %></p>
+
 <% if @e.abstract or @e.description %>
 <% if @e.abstract %>
 <p><%= markup(@e.abstract) %></p>

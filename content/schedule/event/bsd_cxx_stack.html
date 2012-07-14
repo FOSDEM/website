@@ -10,6 +10,8 @@ end: 11:00
 event_id: 399
 ---
 
+<p>Track: <a href="/schedule/track/bsd_devroom">BSD Devroom</a></p>
+
 <p><p>FreeBSD 10 is expected to have a completely new C++ stack.  The reasons for this are partly legal and partly technical.  The existing stack is covered by version 2 of the GPL, but newer versions from upstream are GPLv3.  The new C++11 standard means that shipping an old version of the GNU stack is no longer acceptable.  This talk will cover the various parts that were required for replacing this stack, the challenges and missing pieces that needed implementing and the advantages of the new stack.</p></p>
 <p><p>Most of the Free Software world currently uses the C++ stack provided by the GNU project, including the C++ front end to the GNU Compiler Collection and libstdc++, the GNU implementation of the C++ standard library.  In 2007, these projects switched to version 3 of the GNU General Public License.  As a result, newer versions have not been imported into FreeBSD and other projects with similar licensing conditions.  GCC 4.2.1 and the associated libstdc++ release are the most recent that can be shipped with these platforms.</p>
 

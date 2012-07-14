@@ -10,6 +10,8 @@ end: 17:00
 event_id: 492
 ---
 
+<p>Track: <a href="/schedule/track/lightning_talks">Lightning Talks</a></p>
+
 <p><p>Dynamic taint analysis is a powerful technique to detect memory corruption attacks. Yet with typical overheads of an order of magnitude, it is not something you would choose to deploy in any production environment.  Minemu is a fast taint-tracking emulator for Linux which aims to be fast enough to be run on production systems.</p></p>
 <p><p>Minemu is a fast, process-based taint-tracking emulator for Linux (x86, 32bit).  By keeping track of where untrusted data (such as data from the network) is copied to inside your program, and by subsequently checking whether this data is used to take control of the program, Minemu effectively protects against most memory corruption attacks, both for known and unknown vulnerabilities.  Tracking the flow of untrusted data during the execution of a program is slow because we effectively have to do an extra memory operation for each original memory operation.  However, by using a special memory layout and utilizing SSE registers, Minemu tries to keep the overhead to a minimum.</p></p>
 
