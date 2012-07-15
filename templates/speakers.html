@@ -1,9 +1,10 @@
+<% speakers = $speaker_person_by_id.values.sort_by{|s| name(s) } %>
 ---
 title: Speakers
 no_sponsors: true
+speakers: <%= speakers.size %>
 ---
 <% columns = 3 %>
-<% speakers = $speaker_person_by_id.values.sort_by{|s| name(s) } %>
 <div class="row-fluid">
 <% (1..columns).map{|f| speakers.select.with_index{|s,i| i % columns == f - 1}}.each do |list| %>
 <div class="span<%= 9 / columns %>">

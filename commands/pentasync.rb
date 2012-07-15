@@ -9,6 +9,36 @@ YAML::ENGINE.yamler = 'psych'
 require 'erubis'
 
 module ::PentaHelpers
+  def PentaHelpers.track_type(t)
+    case t
+    when Track
+      track_type(t.conference_track)
+    when ScheduleEvent
+      track_type(t.conference_track)
+    when Event
+      track_type(t.conference_track)
+    when String
+      case t
+      when /^keynotes?$/i
+        'keynote'
+      when /^lightning\s*talk/i
+        'lightningtalk'
+      when /\s+devroom$/i
+        'devroom'
+      when /\s+track$/i
+        'main'
+      when /^main\s*tracks?/i
+        'main'
+      when /^(certifications?|cacert)$/i
+        'certification'
+      else
+        raise "cannot determine track type for #{t}"
+      end
+    else
+      raise "unsupported type #{t.class.to_s} for track_type()"
+    end
+  end
+
   # Determine the "name" attribute depending on the object type
   def PentaHelpers.name(o)
     case o
@@ -124,6 +154,15 @@ module ::PentaHelpers
     end
   end
 
+  # Render a Date, DateTime or Time object in a YAML-safe
+  # way, in order to have it parsed and loaded as a DateTime
+  # object by nanoc's YAML parsing
+  def PentaHelpers.yd(o)
+    # don't use %z or %Z for the actual timezone here, we always work
+    # with absolute times (that's the short explanation)
+    o.strftime('%Y-%m-%d %T.000000000 +00:00')
+  end
+
   def PentaHelpers.t(o)
     return '' if o.nil?
     o.to_time.strftime('%H:%M')
@@ -135,6 +174,9 @@ end
 class Context < Erubis::Context
   def markup(text)
     PentaHelpers::markup(text)
+  end
+  def track_type(t)
+    PentaHelpers::track_type(t)
   end
   def idattr(o)
     PentaHelpers::idattr(o)
@@ -156,6 +198,9 @@ class Context < Erubis::Context
   end
   def y(o)
     PentaHelpers::y(o)
+  end
+  def yd(o)
+    PentaHelpers::yd(o)
   end
   def t(o)
     PentaHelpers::t(o)
@@ -299,7 +344,6 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       :Track            => 'conference_track',
       :Person           => 'persons',
       :EventPerson      => 'event_persons',
-      :ConferencePerson => 'c_persons',
     }.each do |klass, table|
       f = Class.new(OpenStruct) do
       end
@@ -330,7 +374,6 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       $tracks = yl(Track, 'tracks').sort_by{|t| t.rank}
       $persons = yl(Person, 'persons')
       $event_persons = yl(EventPerson, 'event_persons')
-      $conference_persons = yl(ConferencePerson, 'c_persons')
       duration = Time.now - time_before
       Nanoc::CLI::Logger.instance.log(:high, "%s%12s%s  [%2.2fs]  %s" % [ "\e[1m", "cache", "\e[0m", duration, "loaded from #{$cache}" ])
     end
@@ -353,7 +396,6 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       $event_by_id = byid($events, :event_id)
       $track_by_id = byid($tracks, :conference_track_id)
       $person_by_id = byid($persons, :person_id)
-      $conference_person_by_person_id = byid($conference_persons, :person_id)
 
       $room_events = earr($rooms, :conference_room_id)
       $track_events = earr($tracks, :conference_track_id)
@@ -370,20 +412,16 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       speaker_roles = ['coordinator', 'moderator', 'speaker']
       speaker_states = ['confirmed', 'offer']
       $speaker_persons = {}
-      $speaker_conference_persons = {}
       $speaker_person_by_id = {}
       $speaker_for = earr($persons, :person_id)
       $event_speakers = earr($events, :event_id)
 
       $events.each do |e|
         $speaker_persons[e.event_id] = []
-        $speaker_conference_persons[e.event_id] = []
 
         $event_persons_by_event_id.fetch(e.event_id, []).select{|ep| speaker_roles.include? ep.event_role and speaker_states.include? ep.event_role_state }.each do |ep|
           person = $person_by_id.fetch(ep.person_id)
-          confperson = $conference_person_by_person_id[ep.person_id]
           $speaker_persons[ep.event_id] << person
-          $speaker_conference_persons[ep.event_id] << confperson unless confperson.nil?
           $speaker_person_by_id[person.person_id] = person
           $speaker_for[person.person_id] << e
           $event_speakers[e.event_id] << person
@@ -405,10 +443,9 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
 
       # render the speakers
       $speaker_person_by_id.values.each do |person|
-        confperson = $conference_person_by_person_id[person.person_id]
         events = $speaker_for[person.person_id]
         slug = PentaHelpers::slug(person)
-        render_to('speaker', File.join('speaker', slug), :p => person, :cp => confperson, :events => events)
+        render_to('speaker', File.join('speaker', slug), :p => person, :events => events)
 
         image_files = Dir.glob(File.join($cache, 'person_images', "#{person.person_id}.*"))
         raise "found more than one image for person #{person.person_id}: #{image_files.join(', ')}" if image_files.size > 1
@@ -522,11 +559,19 @@ EOF
       # render the events
       $events.each do |event|
         speakers = $event_speakers.fetch(event.event_id, [])
-        render_to('event', File.join('event', PentaHelpers::slug(event)), :e => event, :speakers => speakers)
+        render_to('event', File.join('event', PentaHelpers::slug(event)),
+                  :e => event,
+                  :speakers => speakers,
+                  :track => $track_by_id[event.conference_track_id],
+                  :day => $day_by_id[event.conference_day_id],
+                  :room => $room_by_id[event.conference_room_id])
       end
 
       # render the tracks
       $tracks.each do |track|
+        ### XXX this is a temporary hack for the conference data from 2012
+        next if track.conference_track == 'Main Tracks'
+
         events = $track_events[track.conference_track_id]
         render_to('track', File.join('track', PentaHelpers::slug(track)), :t => track, :events => events)
       end

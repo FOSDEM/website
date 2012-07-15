@@ -13,14 +13,23 @@ person_id: <%= @p.person_id %>
 <img src="<%%= photo.path %>" width="<%%= photo[:width] %>" height="<%%= photo[:height] %>"/>
 <%% end %>
 
-<% if @cp %>
+<% if @p.abstract or @p.description %>
 <h3>Bio</h3>
-<% if @cp.abstract %>
-<p><%= markup(@cp.abstract) %></p>
+<% if @p.abstract %>
+<%= markup(@p.abstract) %>
 <% end %>
-<% if @cp.description %>
-<p><%= markup(@cp.description) %></p>
+<% if @p.description %>
+<%= markup(@p.description) %>
 <% end %>
+<% end %>
+
+<% unless @p.links.nil? or @p.links.empty? %>
+<h3>Links</h3>
+<ul>
+    <% @p.links.select{|l| l['url']}.each do |l| %>
+    <li><a href="<%= l['url'] %>"<% if l['title'] %> title="<%= l['title'] %>"<% end %>><%= l['title'] ? l['title'] : l['url'] %></a></li>
+    <% end %>
+</ul>
 <% end %>
 
 <% unless @events.empty? %>

@@ -1,5 +1,7 @@
+<% tracks = $tracks.reject{|t| $track_events[id(t)].empty?}.sort_by{|t| t.rank} %>
 ---
 title: Tracks
+tracks: <%= tracks.size %>
 ---
 <table class="table table-striped table-bordered table-condensed">
     <thead>
@@ -12,7 +14,7 @@ title: Tracks
         </tr>
     </thead>
     <tbody>
-        <% $tracks.reject{|t| $track_events[id(t)].empty?}.sort_by{|t| t.rank}.each do |t| %>
+        <% tracks.each do |t| %>
         <% events = $track_events[id(t)] %>
         <tr>
             <td><%= l(t) %></td>

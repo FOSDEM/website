@@ -55,8 +55,7 @@ module BCrumbs
                       when 'track'
                         ['/schedule/tracks/', 'Tracks']
                       when 'schedule'
-                        #['/schedule/', 'Schedule']
-                        [ nil, 'Schedule' ]
+                        ['/schedule/', 'Schedule']
                       when 'event'
                         ['/schedule/events/', 'Events']
                       when 'speaker'

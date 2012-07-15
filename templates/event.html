@@ -9,32 +9,37 @@ speakers:
     url: <%= url(s) %>
 <% end %>
 slug: <%= slug(@e) %>
-day: <%= @e.start_datetime.to_date.strftime('%a') %>
-start: <%= t(@e.start_datetime) %>
-end: <%= t(@e.start_datetime) %>
+track: <%= name(@track) %>
+track_url: <%= url(@track) %>
+track_rank: <%= @track.rank %>
+room: <%= name(@room) %>
+room_url: <%= url(@room) %>
+day: <%= name(@day) %>
+day_url: <%= url(@day) %>
+shortday: <%= @e.start_datetime.to_date.strftime('%a') %>
 event_id: <%= @e.event_id %>
+event_type: <%= track_type(@e) %>
+start: <%= yd @e.start_datetime %>
+end: <%= yd @e.end_datetime %>
 ---
-
 <dl class="dl-horizontal">
     <dt>Track:</dt>
-    <dd><%= l($track_by_id[@e.conference_track_id]) %></dd>
+    <dd><%= l(@track) %></dd>
     <dt>Room:</dt>
-    <dd><%= l($room_by_id[@e.conference_room_id]) %></dd>
+    <dd><%= l(@room) %></dd>
     <dt>Day:</dt>
-    <dd><%= name($day_by_id[@e.conference_day_id]) %></dd>
+    <dd><%= l(@day) %></dd>
     <dt>Start:</dt>
     <dd><%= t(@e.start_datetime) %></dd>
     <dt>End:</dt>
     <dd><%= t(@e.end_datetime) %></dd>
 </dl>
 
-<% if @e.abstract or @e.description %>
 <% if @e.abstract %>
 <%= markup(@e.abstract) %>
 <% end %>
 <% if @e.description %>
 <%= markup(@e.description) %>
-<% end %>
 <% end %>
 
 <% unless @speakers.empty? %>

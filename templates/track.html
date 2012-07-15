@@ -1,8 +1,45 @@
 ---
 title: <%= y @t.conference_track %>
 kind: track
+name: <%= y name(@t) %>
 slug: <%= slug @t %>
+url: <%= url @t %>
 track_id: <%= id @t %>
+track_type: <%= track_type(@t) %>
+rooms:
+<% @events.map(&:conference_room_id).uniq.map{|id| $room_by_id[id]}.sort_by{|r| r.rank}.each do |r| %>
+  -
+    room: <%= name(r) %>
+    slug: <%= slug(r) %>
+    url: <%= url(r) %>
+    size: <%= r.size %>
+<% end %>
+days:
+<%
+@events.map(&:conference_day_id).uniq.map{|id| $day_by_id[id]}.sort_by{|d| d.conference_day}.each do |d|
+dayevents = @events.select{|e| e.conference_day_id == d.conference_day_id}
+firstevent = dayevents.sort_by{|e| e.start_datetime}.first
+lastevent = dayevents.sort_by{|e| e.end_datetime}.last
+%>
+  -
+    day: <%= name d %>
+    date: <%= yd d.conference_day %>
+    slug: <%= slug d %>
+    url: <%= url d %>
+    start: <%= yd firstevent.start_datetime %>
+    end: <%= yd lastevent.end_datetime %>
+    rooms:
+      <% dayevents.map(&:conference_room_id).uniq.map{|id| $room_by_id[id]}.sort_by{|r| r.rank}.each do |r| %>
+      -
+        room: <%= name(r) %>
+        slug: <%= slug(r) %>
+        url: <%= url(r) %>
+        size: <%= r.size %>
+        start: <%= yd dayevents.select{|e| e.conference_room_id == r.conference_room_id}.sort_by(&:start_datetime).first.start_datetime %>
+        end: <%= yd dayevents.select{|e| e.conference_room_id == r.conference_room_id}.sort_by(&:end_datetime).last.end_datetime %>
+      <% end %>
+<% end %>
+rank: <%= @t.rank %>
 ---
 
 <% rooms = @events.map{|e| e.conference_room_id}.uniq.map{|i| $room_by_id[i]}.sort{|r| r.rank} %>

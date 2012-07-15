@@ -21,9 +21,9 @@
 					<a class="brand" href="#">FOSDEM</a>
 					<div class="nav-collapse">
 						<ul class="nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#contact">Contact</a></li>
+							<li class="active"><a href="/">Home</a></li>
+							<li><a href="/about/">About</a></li>
+							<li><a href="/schedule/">Schedule</a></li>
 						</ul>
 					</div>
 				</div>
@@ -37,9 +37,23 @@
                         <ul class="nav nav-list">
                             <%= @item.identifier =~ %r{^/schedule/} ? $schedule_navigation_item.compiled_content : navigation(@item_rep.path) %>
 						</ul>
-					</ul>
+                    </ul>
+                    <% if @item[:sponsors_under_navigation] %>
+                    <ul class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Support</li>
+                            <li>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-primary">Donate</a>
+                                <a href="#" class="btn btn-success">Promote</a>
+                            </div>
+                            </li>
+                            <%= $sponsors_navigation_item.compiled_content %>
+                        </ul>
+                    </ul>
+                    <% end %>
 				</div>
-                <div class="<%= @item[:no_sponsors] ? 'span9' : 'span6' %>">
+                <div class="<%= @item[:no_sponsors] or @item[:sponsors_under_navigation] ? 'span9' : 'span6' %>">
                     <% if not @item[:nohead] %>
 					<ul class="breadcrumb">
                         <%= bcrumbs %>
@@ -48,7 +62,7 @@
                     <% end %>
 					<%= yield %>
                 </div>
-                <% unless @item[:no_sponsors] %>
+                <% unless @item[:no_sponsors] or @item[:sponsors_under_navigation] %>
 				<div class="span3">
 					<ul class="well sidebar-nav">
 						<ul class="nav nav-list">

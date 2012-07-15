@@ -4,7 +4,11 @@ usage       'pentacache'
 summary     'loads the Pentabarf database and stores it as a cache file'
 aliases     :pc
 
+require 'ostruct'
+
 module PentaDB
+end
+module PentaModel
 end
 
 class PentabarfCache < ::Nanoc::CLI::CommandRunner
@@ -92,10 +96,42 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     end
 
     def yc(file, v)
-      yf(file, v.attributes.to_yaml)
+      if v.is_a? OpenStruct
+        yf(file, v.to_hash.to_yaml)
+      elsif v.respond_to? :attributes
+        yf(file, v.attributes.to_yaml)
+      else
+        yf(file, v.to_yaml)
+      end
     end
 
     puts "Rendering cache to #{$cache}..."
+    {
+      :Person           => 'persons',
+    }.each do |klass, table|
+      f = Class.new(OpenStruct) do
+        yaml_as "!pentabarf,0/#{table}"
+        def self.yamlname=(v)
+          @@yamlname = v
+        end
+        def to_yaml_type
+          "!pentabarf,0/#{@@yamlname}"
+        end
+        def to_hash
+          h = {}
+          @table.each do |k,v|
+            h[k.to_s] = v
+          end
+          h
+        end
+      end
+      f.yamlname = table
+      PentaModel.const_set klass.to_s, f
+      YAML::add_domain_type("pentabarf,0", table) do |type, val|
+        f.new(val)
+      end
+    end
+
     {
       :Room             => [ 'conference_room',     'rooms',    :conference_room_id,    :cid,       ],
       :ScheduleEvent    => [ 'view_schedule_event', 'events',   :event_id,              :cid, :tr,  ],
@@ -105,6 +141,7 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       :Person           => 'person',
       :EventPerson      => 'event_person',
       :ConferencePerson => 'conference_person',
+      :ConferencePersonLink => 'conference_person_link',
       :PersonImage      => 'person_image',
     }.each do |klass, info|
       if info.is_a? Array and info.size > 1 then
@@ -172,9 +209,27 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     .where(:event_role_state => ['confirmed', 'offer'])
     .find(:all)
 
-    # And eventually, we get to the list of person and conference_person records
-    persons = PentaDB::Person.find(:all)
+    # And eventually, we get to the list of person and conference_person records.
+    # We are also converting the Person records to PentaModel::Person objects, which
+    # are OpenStruct with a custom to_hash method which makes the output suitable
+    # for to_yaml (and compliant with the other exported objects).
+    # At the same time, we are going to only copy certain attributes into the
+    # PentaModel::Person objects, as we don't even want to export things link
+    # people's bank account (we don't need it on the website, and we want to be able
+    # to make the exported transient data public).
+    persons = PentaDB::Person.find(:all).map do |db|
+      h = {}
+      [:person_id, :title, :gender, :first_name, :last_name, :public_name, :nickname].each do |a|
+        h[a] = db.send(a)
+      end
+      PentaModel::Person.new(h)
+    end
+
     conference_persons = PentaDB::ConferencePerson.where(:conference_id => $cid).find(:all)
+    conference_person_links = PentaDB::ConferencePersonLink.find(:all)
+    conference_person_links_by_id = {}
+    conference_person_links.each{|l| conference_person_links_by_id[l.conference_person_id] = []}
+    conference_person_links.each{|l| conference_person_links_by_id[l.conference_person_id] << l}
 
     # Now, let's filter them out in order to export only the ones we'll need, as
     # explained above, but in order to make that a little faster too, we'll sacrifice
@@ -203,6 +258,18 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
         # now let's retrieve the person
         person = persons_by_person_id[ep.person_id]
         raise "event #{e.event_id} references a person #{ep.person_id} which doesn't exist" unless person
+
+        # as well as the conference_person, if available
+        conference_person = conference_persons_by_person_id[person.person_id]
+        # decorate person with the fields of its conference_person, if applicable
+        if conference_person
+          [:abstract, :description].each do |attr|
+            person.send(attr.to_s.concat("=").intern, conference_person.send(attr.to_s))
+          end
+          # as well as with links
+          person.links = conference_person_links_by_id.fetch(conference_person.conference_person_id, []).map{|l| l.attributes}
+        end
+
         # and export it
         yc(File.join('persons', person.person_id.to_s), person)
 
@@ -222,11 +289,6 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
           content = i.image
           yf(filename, content) unless content.size < 1
         end
-
-        # as well as the conference_person, if available
-        conference_person = conference_persons_by_person_id[person.person_id]
-        # and export it
-        yc(File.join('c_persons', conference_person.conference_person_id.to_s), conference_person) if conference_person
 
       end #event_persons
     end #events
