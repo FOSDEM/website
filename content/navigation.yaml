@@ -6,7 +6,7 @@ navigation:
     - /about/fosdem/
     - /about/sponsors/
     - /about/faq/
-  - Schedule:
+  - /schedule/:
     - /schedule/events/
     - /schedule/tracks/
   - Practical Information:
