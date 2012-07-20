@@ -140,6 +140,7 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       :Track            => [ 'conference_track',    'tracks',   :conference_track_id,   :cid,       ],
       :Person           => 'person',
       :EventPerson      => 'event_person',
+      :EventLink        => 'event_link',
       :ConferencePerson => 'conference_person',
       :ConferencePersonLink => 'conference_person_link',
       :PersonImage      => 'person_image',
@@ -245,6 +246,18 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     event_persons.each{|ep| event_persons_by_event_id[ep.event_id] = []}
     event_persons.each{|ep| event_persons_by_event_id[ep.event_id] << ep}
 
+    # faster to fetch them all and filter them out later
+    event_links = begin
+                    event_by_id = {}
+                    events.each{|e| event_by_id[e.event_id] = e}
+                    links = {}
+                    PentaDB::EventLink.find(:all).each do |link|
+                      links[link.event_id] = [] unless links.has_key? link.event_id
+                      links[link.event_id] << link
+                    end
+                    links
+                  end
+
     # Now let's pick out the ones we are interested in and export those:
     events.each do |e|
       # Cautious here: it's possible that we don't have any event_person records
@@ -291,6 +304,14 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
         end
 
       end #event_persons
+
+      #PentaDB::EventLink.where(:event_id => e.event_id).find(:all).each do |link|
+      #  yc(File.join('event_links', link.event_link_id.to_s), link)
+      #end
+      event_links.fetch(e.event_id, []).each do |link|
+        yc(File.join('event_links', link.event_link_id.to_s), link)
+      end
+
     end #events
 
     # now let's compute which files and dirs we need to remove
