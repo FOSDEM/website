@@ -1,0 +1,430 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Legal Issues at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>629@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>629</pentabarf:event-id>
+      <pentabarf:event-slug>legal_issues</pentabarf:event-slug>
+      <pentabarf:event-tag>legal_issues</pentabarf:event-tag>
+      <pentabarf:title>Welcome to the Legal Issues DevRoom</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:05:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:05:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T110500</dtend>
+      <duration>00H05M00S</duration>
+      <summary>Welcome to the Legal Issues DevRoom</summary>
+      <description>Brief Welcome to the new Legal Issues DevRoom</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/legal_issues</url>
+      <location>AW1.125</location>
+      <attendee>Tom Marble</attendee>
+      <attendee>Karen Sandler</attendee>
+      <attendee>Bradley Kuhn</attendee>
+      <attendee>Richard Fontana</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>640@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>640</pentabarf:event-id>
+      <pentabarf:event-slug>open_licences_before_european_courts</pentabarf:event-slug>
+      <pentabarf:event-tag>open_licences_before_european_courts</pentabarf:event-tag>
+      <pentabarf:title>Open Licences before European Courts</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:05:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T110500</dtstart>
+      <dtend>20120204T113000</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Open Licences before European Courts</summary>
+      <description>Open content licences are tools at the disposal of creative people who want to use their copyrights in a permissive manner. 
+Their first aim is to allow the sharing and spreading of works, by granting rights to the users on a royalty-free basis. 
+However, these licences remain binding legal documents, according to which licensees must respect some obligations, and which are enforceable before courts. 
+The proposed presentation aims at providing an analysis of interesting court decisions where open content licences were at issue.
+
+Please review the links below for background information:</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/open_licences_before_european_courts</url>
+      <location>AW1.125</location>
+      <attendee>Philippe Laurent</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>641@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>641</pentabarf:event-id>
+      <pentabarf:event-slug>methods_of_foss_activism</pentabarf:event-slug>
+      <pentabarf:event-tag>methods_of_foss_activism</pentabarf:event-tag>
+      <pentabarf:title>The Methods of FOSS Activism</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T113000</dtstart>
+      <dtend>20120204T120000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>The Methods of FOSS Activism</summary>
+      <description>When changing laws threaten the FOSS community, it pushes back with activist campaigns lead by NGOs and non-profits.  These campaigns look much like the ones conducted by other groups of activists such as the human rights network.  When FOSS gets political, it typically uses a handful of common strategies.  This talk will build on information gathered from interviews and other research to describe what techniques free software advocates use when they try to influence government policy.  It will briefly evaluate their effect, taking examples from the ACTA campaign and from the reaction to proliferating three-strikes laws aimed at enforcing IP policy.  Then it will compare with other activist projects in other fields: FOSS advocates might expand their vocabulary of political action by borrowing the approaches used in other issue areas.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/methods_of_foss_activism</url>
+      <location>AW1.125</location>
+      <attendee>Ambjörn Elder</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>642@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>642</pentabarf:event-id>
+      <pentabarf:event-slug>what_goes_into_an_executable</pentabarf:event-slug>
+      <pentabarf:event-tag>what_goes_into_an_executable</pentabarf:event-tag>
+      <pentabarf:title>What Goes into an Executable? Identifying a Binary's Sources by Tracing Build Processes </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T120000</dtstart>
+      <dtend>20120204T123000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>What Goes into an Executable? Identifying a Binary's Sources by Tracing Build Processes </summary>
+      <description>Modern software is typically composed of numerous components, such as third-party open source packages. To prevent legal or security problems, software vendors must identify the components (including their licenses) used to create the binaries they ship. This requires knowing exactly which source code files and other artifacts are used to create a given binary, and how they are used (e.g.whether libraries are statically or dynamically linked). In this talk I will we show a generic method to reverse-engineer this information from the build processes of software products. The method traces system calls to determine the composition graph of sources and binaries involved in build processes. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/what_goes_into_an_executable</url>
+      <location>AW1.125</location>
+      <attendee>Armijn Hemel</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>643@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>643</pentabarf:event-id>
+      <pentabarf:event-slug>grey_areas_of_software_licensing</pentabarf:event-slug>
+      <pentabarf:event-tag>grey_areas_of_software_licensing</pentabarf:event-tag>
+      <pentabarf:title>Grey Areas of Software Licensing</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T123000</dtstart>
+      <dtend>20120204T130000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Grey Areas of Software Licensing</summary>
+      <description>Stories on complications of combing works under different software licenses.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/grey_areas_of_software_licensing</url>
+      <location>AW1.125</location>
+      <attendee>Dave Neary</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>644@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>644</pentabarf:event-id>
+      <pentabarf:event-slug>flossing_for_good_legal_hygiene</pentabarf:event-slug>
+      <pentabarf:event-tag>flossing_for_good_legal_hygiene</pentabarf:event-tag>
+      <pentabarf:title>FLOSSing for Good Legal Hygiene: Stories from the Trenches</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T143000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>FLOSSing for Good Legal Hygiene: Stories from the Trenches</summary>
+      <description>The legal structures of free software projects go through phases of
+popularity reminiscent of fashion trends. The early days of free
+software were decentralized and individualistic, partially inspired by
+the "free culture" movements of the '60s. Over time, centralization and
+incorporated non-profit organizations grew popular, parallel with a
+period of time where FLOSS was struggling for recognition as a viable
+alternative to proprietary solutions. As FLOSS crested that wave, and
+won the recognition of the business world, people began to recognize an
+over-proliferation of special-purpose foundations, and the conservancies
+(foundations that host multiple independent projects) came to the fore.
+In the past year we've seen a movement back toward decentralized
+individualism, questioning the need of any formal legal structures. The
+fact of the matter is that free software and international law work just
+fine for a whole gamut of legal structures, from the lone individual
+hacker to the largest of incorporated entities. It's a free choice for
+each project. The important thing is for every project to think through
+their legal strategy. Not just the "What?" (-license? -contribution
+policy? -legal documentation?) but "Why?" (-pick option X over option Y?
+-are we doing this? -do we care?) and "How?" (-can we make this work for
+us? -will this affect our users and developers?).</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/flossing_for_good_legal_hygiene</url>
+      <location>AW1.125</location>
+      <attendee>Allison Randal</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>645@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>645</pentabarf:event-id>
+      <pentabarf:event-slug>risks_vs_benefits_on_copyright_assignment</pentabarf:event-slug>
+      <pentabarf:event-tag>risks_vs_benefits_on_copyright_assignment</pentabarf:event-tag>
+      <pentabarf:title>Risks vs. Benefits on Copyright Assignment</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T143000</dtstart>
+      <dtend>20120204T150000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Risks vs. Benefits on Copyright Assignment</summary>
+      <description>A quick analysis of the risks and benefits that copyright assignment
+can bring to the Free Software ecosystem. I'll take a qualitative look
+at the side-effects of assignment on the diversity of project
+participants, and the knock-on impact that decisions in this area can
+have on the economics of supporting Free Software development. Come and
+find out how you can avoid making a mess of your community for some
+rather dubiuous legal advantages.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/risks_vs_benefits_on_copyright_assignment</url>
+      <location>AW1.125</location>
+      <attendee>Michael Meeks</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>646@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>646</pentabarf:event-id>
+      <pentabarf:event-slug>enforce_copyleft_without_becoming_corrupt</pentabarf:event-slug>
+      <pentabarf:event-tag>enforce_copyleft_without_becoming_corrupt</pentabarf:event-tag>
+      <pentabarf:title>Can for-profit companies enforce copyleft without becoming corrupt like MySQL AB?</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T150000</dtstart>
+      <dtend>20120204T153000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Can for-profit companies enforce copyleft without becoming corrupt like MySQL AB?</summary>
+      <description>When a company authors free software under the GNU GPL, it is likely that it will discover license violations. Non profit like FSF or Software Freedom Conservancy will try to resolve such violations amicably, because their mission is to further Free Software. They will only go to court as a last resort, if the infringer refuses to comply with the licenses and keeps distributing the software. The primary goal of a company is to generate profit, it will therefore take advantage of violations to this end. For instance, part of the former MySQL AB company business model was to threaten infringers and require that they buy a proprietary license to be redeemed. However, most of the infringements are honest mistakes and such methods are not in the best interest of the Free Software community. They are even counter productive for the company who makes short term profits but eventually scare their customers away.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/enforce_copyleft_without_becoming_corrupt</url>
+      <location>AW1.125</location>
+      <attendee>Loïc Dachary</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>653@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>653</pentabarf:event-id>
+      <pentabarf:event-slug>is_copyleft_being_framed</pentabarf:event-slug>
+      <pentabarf:event-tag>is_copyleft_being_framed</pentabarf:event-tag>
+      <pentabarf:title>Is copyleft being framed?</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T160000</dtstart>
+      <dtend>20120204T163000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Is copyleft being framed?</summary>
+      <description>This short talk will address the following questions, to inspire
+discussion and contemplation about how we frame descriptions of the
+state of licensing in free software.
+
+* Numbers are increasingly being cited to show that the use of copyleft licenses, specifically the GPL, is declining. What do these numbers actually show, who is propagating them, and why? What do or might other numbers show?
+* Is the "percentage of free software projects which use copyleft licenses" a useful way to judge the success of copyleft? Does an increase in the percentage of projects using non-copyleft permissive licenses indicate a failure of copyleft?
+* As a small related case study, what role have the licensing terms of popular mobile application stores played in this debate, and how have those terms changed the frame of the discussion?
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/is_copyleft_being_framed</url>
+      <location>AW1.125</location>
+      <attendee>John Sullivan</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>655@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>655</pentabarf:event-id>
+      <pentabarf:event-slug>the_decline_of_the_gpl</pentabarf:event-slug>
+      <pentabarf:event-tag>the_decline_of_the_gpl</pentabarf:event-tag>
+      <pentabarf:title>The (possible) decline of the GPL, and what to do about it</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T163000</dtstart>
+      <dtend>20120204T170000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>The (possible) decline of the GPL, and what to do about it</summary>
+      <description>Discussion of the possible decline of copyleft licensing.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/the_decline_of_the_gpl</url>
+      <location>AW1.125</location>
+      <attendee>Richard Fontana</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>656@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>656</pentabarf:event-id>
+      <pentabarf:event-slug>app_store_panel</pentabarf:event-slug>
+      <pentabarf:event-tag>app_store_panel</pentabarf:event-tag>
+      <pentabarf:title>Panel on Application Stores</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T173000</dtstart>
+      <dtend>20120204T180000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Panel on Application Stores</summary>
+      <description>So-called "app stores" are becoming a popular means of distributing
+software, particularly for mobile devices. However, the rise of app
+stores has been accompanied by tensions with free software/open source
+legal norms. Companies controlling official app distribution channels
+for their platforms typically place restrictive terms on both users
+and developers in ways that may be difficult or impossible to
+harmonize with requirements and expectations around FLOSS
+licensing. Moreover, there is a perception that noncompliance with
+FLOSS licenses is prevalent in app store distribution. This panel will
+explore some of the problems arising out of the intersection between
+app stores and FLOSS, under EU as well as US law, and will discuss
+possible solutions.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/app_store_panel</url>
+      <location>AW1.125</location>
+      <attendee>Giovanni Battista Gallus</attendee>
+      <attendee>Bradley Kuhn</attendee>
+      <attendee>Richard Fontana</attendee>
+      <attendee>Hugo Roy</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>657@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>657</pentabarf:event-id>
+      <pentabarf:event-slug>software_patent_panel</pentabarf:event-slug>
+      <pentabarf:event-tag>software_patent_panel</pentabarf:event-tag>
+      <pentabarf:title>Panel on Software Patents</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T180000</dtstart>
+      <dtend>20120204T183000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Panel on Software Patents</summary>
+      <description>Discussion on issues of Free Software with Software Patents</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/software_patent_panel</url>
+      <location>AW1.125</location>
+      <attendee>Karen Sandler</attendee>
+      <attendee>Benjamin Henrion</attendee>
+      <attendee>Deb Nicholson</attendee>
+      <attendee>Ciarán O'Riordan</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>658@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>658</pentabarf:event-id>
+      <pentabarf:event-slug>creative_commons_4</pentabarf:event-slug>
+      <pentabarf:event-tag>creative_commons_4</pentabarf:event-tag>
+      <pentabarf:title>Creative Commons 4.0 licenses and other opportunities for FLOSS/free culture legal/policy intersections</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Legal Issues Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 19:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T183000</dtstart>
+      <dtend>20120204T190000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Creative Commons 4.0 licenses and other opportunities for FLOSS/free culture legal/policy intersections</summary>
+      <description>Creative Commons has since its launch in 2002 acknowledged free
+software as an inspiration, but in-depth communication and understanding
+across the "free culture" (and education, science, government...) and
+free software movements has been thin, resulting in missed opportunities
+(at least on the free culture side).  Two developments make early 2012 an
+opportune and necessary time to address this. First, Creative Commons has
+kicked off a process which will eventually lead to the release of version
+4.0 of various CC licenses, which ought incorporate the best wisdom about
+public licenses (most of which resides in the free software community)
+and not need to be versioned again for a decade. Additionally, among the
+issues under discussion for CC 4.0 licenses are ones of direct import to
+the free software community, including how DRM and license compatibility
+are addressed. Second, CC licenses have become fairly widely adopted as
+policy for public sector and publicly interested materials and funding,
+especially in education. Free software and even open standards are
+inadequately accounted for these developments, presenting a significant and
+unappreciated threat to the realization of public benefit from such --
+a continuation of the tendency of free culture (with the exception of
+Wikimedia) being dependent on proprietary web silos. This talk will very
+briefly summarize the relevant history, describe the pertinent CC 4.0
+licenses and policy issues, and hopefully provoke solutions and actions
+benefiting free software and free culture.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Legal Issues Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/creative_commons_4</url>
+      <location>AW1.125</location>
+      <attendee>Mike Linksvayer</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

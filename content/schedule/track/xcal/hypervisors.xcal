@@ -1,0 +1,128 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Hypervisors at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>427@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>427</pentabarf:event-id>
+      <pentabarf:event-slug>ganeti</pentabarf:event-slug>
+      <pentabarf:event-tag>ganeti</pentabarf:event-tag>
+      <pentabarf:title>Ganeti: "how we did it"</pentabarf:title>
+      <pentabarf:subtitle>A look inside the Virtualization Cluster Management system</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Hypervisors Track</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T145000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Ganeti: "how we did it"- A look inside the Virtualization Cluster Management system</summary>
+      <description>Ganeti is a sophisticated system (~60,000 lines of python code and ~6,000 lines of haskell code) for managing clusters of virtual machines (based on KVM, Xen or LXC). In this talk we'll describe the internal subsystems and how they interact with the open source virtualization software it manages. Attendees will gain insights on how Ganeti works and how it can be customized to fit their environment.
+
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Hypervisors Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/ganeti</url>
+      <location>Janson</location>
+      <attendee>Guido Trotter</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>444@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>444</pentabarf:event-id>
+      <pentabarf:event-slug>virt_kvm</pentabarf:event-slug>
+      <pentabarf:event-tag>virt_kvm</pentabarf:event-tag>
+      <pentabarf:title>Virtualization with KVM: bottom to top, past to future</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Hypervisors Track</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T150000</dtstart>
+      <dtend>20120204T155000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Virtualization with KVM: bottom to top, past to future</summary>
+      <description>The KVM hypervisor entered the Linux kernel at the beginning of 2007 and, since then, it has progressed a lot in terms of scalability, performance and features.  Together with it, an entirely open-source stack of user-mode virtualization tools has come into existence and seen vigorous development.  Its components include management tools (libvirt, oVirt), guest rescue and inspection tools (guestfish), desktop virtualization (spice), user interfaces (virt-manager and now Boxes).  The stability of the hypervisor and the fast-paced development of the tools created a virtuous circle that is quickly bridging the gap between proprietary and open-source virtualization.
+
+In this talk, I will highlight the recent additions to KVM and the accompanying tools, and present features that are new or in the works.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Hypervisors Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/virt_kvm</url>
+      <location>Janson</location>
+      <attendee>Paolo Bonzini</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>398@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>398</pentabarf:event-id>
+      <pentabarf:event-slug>hypervisors_openvz</pentabarf:event-slug>
+      <pentabarf:event-tag>hypervisors_openvz</pentabarf:event-tag>
+      <pentabarf:title>Linux Containers and OpenVZ</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Hypervisors Track</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T160000</dtstart>
+      <dtend>20120204T165000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Linux Containers and OpenVZ</summary>
+      <description>The talk is about operating system virtualization technology known as OpenVZ. This is an effective way of partitioning a Linux machine into multiple isolated Linux containers. All containers are running on top of one single Linux kernel, which results in excellent density, performance and manageability. 
+
+The talk gives an overall description of OpenVZ building blocks, such as namespaces, cgroups and various resource controllers. A few features, notably live migration and virtual swap, are described in greater details. Results of some performance measurements against VMware, Xen and KVM are given. Finally, we will provide a status update on merging bits and pieces of OpenVZ kernel to upstream Linux kernel, and share our plans for the future.
+
+The talk is suitable for general audience, but will be of most interest to people interested in Linux kernel, resource management, virtualization, and cloud computing.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Hypervisors Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/hypervisors_openvz</url>
+      <location>Janson</location>
+      <attendee>Kir Kolyshkin</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>360@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>360</pentabarf:event-id>
+      <pentabarf:event-slug>native_kvm</pentabarf:event-slug>
+      <pentabarf:event-tag>native_kvm</pentabarf:event-tag>
+      <pentabarf:title>Native KVM Tool</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Hypervisors Track</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T170000</dtstart>
+      <dtend>20120204T175000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Native KVM Tool</summary>
+      <description>The goal of the Native Linux KVM Tool is to provide a clean, from-scratch, lightweight
+KVM host tool implementation that can boot Linux guest images with no 
+BIOS dependencies and with only the minimal amount of legacy device
+emulation.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Hypervisors Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/native_kvm</url>
+      <location>Janson</location>
+      <attendee>Sasha Levin</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

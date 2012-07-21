@@ -1,0 +1,299 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for GNUstep at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>559@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>559</pentabarf:event-id>
+      <pentabarf:event-slug>gnustep_dev_meeting</pentabarf:event-slug>
+      <pentabarf:event-tag>gnustep_dev_meeting</pentabarf:event-tag>
+      <pentabarf:title>GNUstep Developer's Meeting</pentabarf:title>
+      <pentabarf:subtitle>Meet the GNUstep developers face to face</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T111500</dtend>
+      <duration>00H15M00S</duration>
+      <summary>GNUstep Developer's Meeting- Meet the GNUstep developers face to face</summary>
+      <description>Meet the GNUstep developers face to face, discuss current afairs of GNUstep, share news about the latest development and plans on GNUstep, improve collaboration between the several GNUstep related projects</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gnustep_dev_meeting</url>
+      <location>AW1.126</location>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>728@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>728</pentabarf:event-id>
+      <pentabarf:event-slug>openbsd_gnustep_ports</pentabarf:event-slug>
+      <pentabarf:event-tag>openbsd_gnustep_ports</pentabarf:event-tag>
+      <pentabarf:title>OpenBSD GNUstep ports update</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:45:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T111500</dtstart>
+      <dtend>20120204T114500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>OpenBSD GNUstep ports update</summary>
+      <description>Topics covered:
+* Why the hell on OpenBSD
+* How easy it is to create a new GNUstep port
+* What's new compared to last year
+* Problems I encountered over the last year
+* Goals for the next year</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/openbsd_gnustep_ports</url>
+      <location>AW1.126</location>
+      <attendee>Sebastian Reitenbach</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>729@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>729</pentabarf:event-id>
+      <pentabarf:event-slug>opengroupware</pentabarf:event-slug>
+      <pentabarf:event-tag>opengroupware</pentabarf:event-tag>
+      <pentabarf:title>OpenGroupware - Phoenix from the ashes</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T120000</dtstart>
+      <dtend>20120204T123000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>OpenGroupware - Phoenix from the ashes</summary>
+      <description>* short history of OpenGroupware, overview of its features
+* porting effort from gnustep-make 1 to gnustep-make 2, and from libFoundation to gnustep-base
+* OpenGroupware is now based on SOPE fork from the SOGo team, lots of bugs in SOPE got fixed
+* talk about some new features
+* OpenGroupware-5.5rc1 (I hope to agree with Adam to release it even before the FOSDEM)
+* short Demo</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/opengroupware</url>
+      <location>AW1.126</location>
+      <attendee>Sebastian Reitenbach</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>730@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>730</pentabarf:event-id>
+      <pentabarf:event-slug>gnustep_applications_overview</pentabarf:event-slug>
+      <pentabarf:event-tag>gnustep_applications_overview</pentabarf:event-tag>
+      <pentabarf:title>A GNUstep Applications Overview</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T124500</dtstart>
+      <dtend>20120204T133000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>A GNUstep Applications Overview</summary>
+      <description>* it will feature GAP (GNUstep Application Project)
+  * introduce the project, and its goals
+  * cover some of the applications found there
+* it will also include the usual known suspects: GWorkspace, ProjectCenter, Gorm, ...
+* it will also cover some other nice GNUstep applications found scattered all over the web, for example:
+  * CDPlayer, Burn, GNUMail, SimpleAgenda, Zipper and more
+* show/demonstrate some of the applications live</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gnustep_applications_overview</url>
+      <location>AW1.126</location>
+      <attendee>Sebastian Reitenbach</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>894@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>894</pentabarf:event-id>
+      <pentabarf:event-slug>gnustep_gui_news</pentabarf:event-slug>
+      <pentabarf:event-tag>gnustep_gui_news</pentabarf:event-tag>
+      <pentabarf:title>GNUstep GUI</pentabarf:title>
+      <pentabarf:subtitle>Recent Developments - Graphics and Text</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T134500</dtstart>
+      <dtend>20120204T141500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>GNUstep GUI- Recent Developments - Graphics and Text</summary>
+      <description>* New features in the text system this year
+* Resolution Independence/scale factor support
+* Other graphics improvements
+* Demo</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gnustep_gui_news</url>
+      <location>AW1.126</location>
+      <attendee>Fred Kiefer</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>606@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>606</pentabarf:event-id>
+      <pentabarf:event-slug>etoile_status_talk</pentabarf:event-slug>
+      <pentabarf:event-tag>etoile_status_talk</pentabarf:event-tag>
+      <pentabarf:title>Étoilé: What has been done over the past year and what's next?</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T143000</dtstart>
+      <dtend>20120204T150000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Étoilé: What has been done over the past year and what's next?</summary>
+      <description>In this presentation, we will take a look at the Étoilé progresses over the past year. We will summarize our work on both our core frameworks and GNUstep. We will also discuss the project status in a broader way, and what can be expected in 2012.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/etoile_status_talk</url>
+      <location>AW1.126</location>
+      <attendee>Quentin Mathé</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>732@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>732</pentabarf:event-id>
+      <pentabarf:event-slug>gnustep_in_enterprise</pentabarf:event-slug>
+      <pentabarf:event-tag>gnustep_in_enterprise</pentabarf:event-tag>
+      <pentabarf:title>Enterprise Control, Configuration and Logging/Alarming using GNUstep-base</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T151500</dtstart>
+      <dtend>20120204T160000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>Enterprise Control, Configuration and Logging/Alarming using GNUstep-base</summary>
+      <description>1. An overview of the problem of dealing with multiple server processes on multiple hosts and sites.  How to provide fault tolerance and how to scale up without losing control.
+2. A discussion of the use of the basic technologies such as Distributed Objects and property lists etc to implement these systems.
+3. Control ... how we start/stop server processes, prevent duplication of processes, support automated restart, and query the state of processes.
+4. Configuration ... how we provide specific configuration to each process under central control, yet allow those servers to operate independently.
+5. Logging/Alarming ... how we provide and manage simple and consistent audit/debug logging facilities for server processes, and how we integrate with SNMP.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gnustep_in_enterprise</url>
+      <location>AW1.126</location>
+      <attendee>Richard Frith-Macdonald</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>731@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>731</pentabarf:event-id>
+      <pentabarf:event-slug>coreobject</pentabarf:event-slug>
+      <pentabarf:event-tag>coreobject</pentabarf:event-tag>
+      <pentabarf:title>CoreObject </pentabarf:title>
+      <pentabarf:subtitle>An Object Store built for Revision Control and Desktop Environment Needs</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T161500</dtstart>
+      <dtend>20120204T170000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>CoreObject - An Object Store built for Revision Control and Desktop Environment Needs</summary>
+      <description>to be written</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/coreobject</url>
+      <location>AW1.126</location>
+      <attendee>Quentin Mathé</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>558@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>558</pentabarf:event-id>
+      <pentabarf:event-slug>new_objc_features</pentabarf:event-slug>
+      <pentabarf:event-tag>new_objc_features</pentabarf:event-tag>
+      <pentabarf:title>New Features of Objective-C</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T171500</dtstart>
+      <dtend>20120204T180000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>New Features of Objective-C</summary>
+      <description>With iOS 5 and OS X 10.7, Apple introduced a number of new Objective-C features. With the release of version 1.6 of the GNUstep Objective-C runtime and version 3.0 of clang these are now all available to GNUstep developers. The new features include better data hiding, automatic reference counting, and a number of other features. This talk will cover these features, as well as some of the extensions beyond Apple's version and the improvements in Objective-C performance since FOSDEM last year.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/new_objc_features</url>
+      <location>AW1.126</location>
+      <attendee>David Chisnall</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>868@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>868</pentabarf:event-id>
+      <pentabarf:event-slug>quantumstep_future</pentabarf:event-slug>
+      <pentabarf:event-tag>quantumstep_future</pentabarf:event-tag>
+      <pentabarf:title>QuantumSTEP</pentabarf:title>
+      <pentabarf:subtitle>new frameworks and future directions</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>GNUstep Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 19:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T181500</dtstart>
+      <dtend>20120204T190000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>QuantumSTEP- new frameworks and future directions</summary>
+      <description>QuantumSTEP is a technology study framework and application
+suite that is partially based on GNUstep. It aims at consequently
+using Objective-C on embedded and portable devices. This talk
+describes the latest additions to the frameworks: CoreLocation,
+MKMapKit, CoreWLAN, CoreTelephony and demonstrates how
+they work on the new GTA04 hardware.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>GNUstep Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/quantumstep_future</url>
+      <location>AW1.126</location>
+      <attendee>Nikolaus Schaller</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

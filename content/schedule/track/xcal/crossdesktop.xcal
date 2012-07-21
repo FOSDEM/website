@@ -1,0 +1,789 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for CrossDesktop at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>725@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>725</pentabarf:event-id>
+      <pentabarf:event-slug>welcome</pentabarf:event-slug>
+      <pentabarf:event-tag>welcome</pentabarf:event-tag>
+      <pentabarf:title>Welcome!</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:10:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:10:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T111000</dtend>
+      <duration>00H10M00S</duration>
+      <summary>Welcome!</summary>
+      <description>Welcome to the crossdesktop devroom!</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/welcome</url>
+      <location>H.1308</location>
+      <attendee>Christophe Fergeau</attendee>
+      <attendee>Pau Garcia i Quiles</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>609@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>609</pentabarf:event-id>
+      <pentabarf:event-slug>gstreamer1_0</pentabarf:event-slug>
+      <pentabarf:event-tag>gstreamer1_0</pentabarf:event-tag>
+      <pentabarf:title>GStreamer 1.0 - the next generation of your favourite multimedia framework</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:20:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:10:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T112000</dtstart>
+      <dtend>20120204T121000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>GStreamer 1.0 - the next generation of your favourite multimedia framework</summary>
+      <description>GStreamer is a highly versatile plugin-based multimedia framework that
+provides abstractions to cater for a whole range of multimedia needs,
+whether desktop applications, streaming servers or multimedia
+middleware; embedded systems, desktops or server farms.
+
+GStreamer 1.0 is the next generation of the successful GStreamer 0.10.x
+API series where some of the core API has got a complete overhaul to
+address many of the limitations we have run into over the years with the
+old API. In many respects, 1.0 will be pretty much the same as 0.10, but
+in others it will be radically different.
+
+This talk is a high-level overview of what's been happening in the world
+of GStreamer as of late, with a special focus on the status of GStreamer
+1.0, highlighting some of the improvements it will bring.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gstreamer1_0</url>
+      <location>H.1308</location>
+      <attendee>Tim-Philipp Müller</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>610@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>610</pentabarf:event-id>
+      <pentabarf:event-slug>cmakemorethanyouthink</pentabarf:event-slug>
+      <pentabarf:event-tag>cmakemorethanyouthink</pentabarf:event-tag>
+      <pentabarf:title>CMake the build tool that does more than you think it can</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:20:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:40:00</pentabarf:duration>
+      <dtstart>20120204T122000</dtstart>
+      <dtend>20120204T130000</dtend>
+      <duration>00H40M00S</duration>
+      <summary>CMake the build tool that does more than you think it can</summary>
+      <description>Bill Hoffman, the original CMake developer, and Alexander Neundorf the
+architect of the KDE CMake Build system will talk about the full capabilities of CMake as a
+build tool. They will cover both the basics of getting started with CMake, and some really cool
+features that allow for the cross platform building of entire packages of software. This will be
+demonstrated with example projects using the gtk as well as the Qt toolkit. They will also give
+some interesting historical notes on CMake. Covered topics will include:
+* The basics
+* Debugging your CMake build system
+* Integrating 3rd party packages in the build using ExternalProject
+* Creating source and binary packages using CPack
+* Continuous Integration testing with CDash/CTest and cdash@home
+* Installing your CMake-based library - exporting and importing targets
+* Cross-platform scripting with CMake (cmake -E, cmake -P, file(DOWNLOAD ...) )
+* Lots of fun historical notes on the development of CMake and the KDE CMake build
+system
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/cmakemorethanyouthink</url>
+      <location>H.1308</location>
+      <attendee>Alexander Neundorf</attendee>
+      <attendee>Bill Hoffman</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>611@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>611</pentabarf:event-id>
+      <pentabarf:event-slug>javalinuxapps</pentabarf:event-slug>
+      <pentabarf:event-tag>javalinuxapps</pentabarf:event-tag>
+      <pentabarf:title>Why Java for Linux Applications?</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T134500</dtstart>
+      <dtend>20120204T141500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Why Java for Linux Applications?</summary>
+      <description>I've written a modest desktop application to manage my Altus Metrum
+rocketry electronics. The first implementation used C and Gtk+. I
+eventually gave up on that implementation and started over using Java
+and Swing. The application now consists of about 25kloc using a
+collection of external java packages for things like speech synthesis,
+graphing and mapping. This presentation will describe what my experience
+with Gtk+ was like and why I was motivated to start over.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/javalinuxapps</url>
+      <location>H.1308</location>
+      <attendee>Keith Packard</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>624@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>624</pentabarf:event-id>
+      <pentabarf:event-slug>sustainablementorship</pentabarf:event-slug>
+      <pentabarf:event-tag>sustainablementorship</pentabarf:event-tag>
+      <pentabarf:title>Sustainable mentorship</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:20:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T142000</dtstart>
+      <dtend>20120204T145000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Sustainable mentorship</summary>
+      <description>The talk will cover a variety of topics including:
+* Measuring success - and the success rates of mentoring programs
+* Preventing mentor burn-out, recruiting new mentors
+* Roping them in - turning interns into community members
+* Recruiting for diversity (Women's Outreach Program case study)
+* Keeping momentum - how to avoid ghost-towns</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/sustainablementorship</url>
+      <location>H.1308</location>
+      <attendee>Dave Neary</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>724@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>724</pentabarf:event-id>
+      <pentabarf:event-slug>openadvice</pentabarf:event-slug>
+      <pentabarf:event-tag>openadvice</pentabarf:event-tag>
+      <pentabarf:title>Open Advice</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:50:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:05:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T145000</dtstart>
+      <dtend>20120204T150500</dtend>
+      <duration>00H15M00S</duration>
+      <summary>Open Advice</summary>
+      <description>Come and join us for the release of the Open Advice book.
+Open Advice is a collaboration of people from many different Free
+Software projects answering one question: What's one key thing you
+would have liked to know when you started contributing. We will give a
+short tour of the book and talk about some of the lessons learned from
+taking a large-scale book project from idea to publishing.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/openadvice</url>
+      <location>H.1308</location>
+      <attendee>Lydia Pintscher</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>621@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>621</pentabarf:event-id>
+      <pentabarf:event-slug>trollsdramagossip</pentabarf:event-slug>
+      <pentabarf:event-tag>trollsdramagossip</pentabarf:event-tag>
+      <pentabarf:title>Trolls, Drama and Gossip</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:05:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:35:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T150500</dtstart>
+      <dtend>20120204T153500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Trolls, Drama and Gossip</summary>
+      <description>Being a part of a number of large Free Software projects over the last
+years has been a wonderful time in so many ways. But over those years
+I have also gotten to know another side of Free Software: trolls,
+drama and gossip. Let me take you down the rabbit hole and show you
+where it comes from, what you can do about it and why it's sometimes
+even useful.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/trollsdramagossip</url>
+      <location>H.1308</location>
+      <attendee>Lydia Pintscher</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>614@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>614</pentabarf:event-id>
+      <pentabarf:event-slug>tumbler</pentabarf:event-slug>
+      <pentabarf:event-tag>tumbler</pentabarf:event-tag>
+      <pentabarf:title>Tumbler - A Modern D-Bus Thumbnail Service</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:40:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:10:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T154000</dtstart>
+      <dtend>20120204T161000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Tumbler - A Modern D-Bus Thumbnail Service</summary>
+      <description>Tumbler is a D-Bus service that generates thumbnails for various kinds
+of applications. Clients can pick from several schedulers and thumbnail
+flavors depending on their needs. Tumbler provides a plugin interface
+via which the list of supported file types can be extended. It already
+ships thumbnail plugins for videos, fonts, images, ODF documents, 
+PDF/PS documents and RAW images. Thanks to its support for delegating 
+thumbnail request to specialized third-party services, Tumbler can also
+be used with closed source thumbnail generators.
+
+Originally written for Xfce and its Thunar file manager, Tumbler was
+later integrated in MeeGo and is now used on the N9 as well. In this
+talk, I will explain the features, design, and usage of Tumbler as well
+as its current limitations. The ultimate goal is to make application and
+desktop developers aware of it and motivate them to adopt Tumbler in
+their software. The talk will include a live demonstration.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/tumbler</url>
+      <location>H.1308</location>
+      <attendee>Jannis Pohlmann</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>726@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>726</pentabarf:event-id>
+      <pentabarf:event-slug>group_picture</pentabarf:event-slug>
+      <pentabarf:event-tag>group_picture</pentabarf:event-tag>
+      <pentabarf:title>Crossdesktop group picture</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T161500</dtstart>
+      <dtend>20120204T170000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>Crossdesktop group picture</summary>
+      <description>Crossdesktop devroom group picture and mid-day break</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/group_picture</url>
+      <location>H.1308</location>
+      <attendee>Pau Garcia i Quiles</attendee>
+      <attendee>Christophe Fergeau</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>625@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>625</pentabarf:event-id>
+      <pentabarf:event-slug>everydetailsmatters</pentabarf:event-slug>
+      <pentabarf:event-tag>everydetailsmatters</pentabarf:event-tag>
+      <pentabarf:title>GNOME 3: Every Detail Matters</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T170000</dtstart>
+      <dtend>20120204T173000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>GNOME 3: Every Detail Matters</summary>
+      <description>Every Detail Matters is a new initiative that aims to focus attention
+on improving specific areas of the GNOME 3 user experience. It also
+aims to provide an easy way for people to make a valuable contribution
+to GNOME by identifying development tasks that would make a real
+difference.
+
+The initiative involves designers working closely with both new and
+experienced developers to refine GNOME 3. We are working towards
+delivering a major and tangible improvement to the next release,
+version 3.4.
+
+In this talk I will describe the key features of Every Detail Matters,
+demo some of the progress that has been made thanks to the initiative,
+and will show how you can participate to make GNOME 3 better than
+ever.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/everydetailsmatters</url>
+      <location>H.1308</location>
+      <attendee>Allan Day</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>627@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>627</pentabarf:event-id>
+      <pentabarf:event-slug>telepathykde</pentabarf:event-slug>
+      <pentabarf:event-tag>telepathykde</pentabarf:event-tag>
+      <pentabarf:title>Telepathy in KDE</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:35:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:20:00</pentabarf:duration>
+      <dtstart>20120204T173500</dtstart>
+      <dtend>20120204T175500</dtend>
+      <duration>00H20M00S</duration>
+      <summary>Telepathy in KDE</summary>
+      <description>Telepathy is an instant messaging, Voice over IP and videoconferencing
+cross-desktop framework with backends for today's most popular protocols.
+Its modular and flexible architecture built around D-Bus enables developers
+to easily create communications applications with interchangeable
+components. A small team inside the KDE community is working on Telepathy
+integration into KDE Workspaces. This talk should provide an insight into
+the current state of KDE-Telepathy development, its plans and possibilities.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/telepathykde</url>
+      <location>H.1308</location>
+      <attendee>David Edmundson</attendee>
+      <attendee>Martin Klapetek</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>613@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>613</pentabarf:event-id>
+      <pentabarf:event-slug>eflnewbie</pentabarf:event-slug>
+      <pentabarf:event-tag>eflnewbie</pentabarf:event-tag>
+      <pentabarf:title>How can a newbie start and succeed in developing an application with EFL</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:40:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:40:00</pentabarf:duration>
+      <dtstart>20120204T180000</dtstart>
+      <dtend>20120204T184000</dtend>
+      <duration>00H40M00S</duration>
+      <summary>How can a newbie start and succeed in developing an application with EFL</summary>
+      <description>This talk is centered on Elementary and Edje for nice applications.
+
+I will explain my experience with EFL and show some code with some results.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/eflnewbie</url>
+      <location>H.1308</location>
+      <attendee>Tom Hacohen</attendee>
+      <attendee>Philippe Caseiro</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>617@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>617</pentabarf:event-id>
+      <pentabarf:event-slug>gnome3a11y</pentabarf:event-slug>
+      <pentabarf:event-tag>gnome3a11y</pentabarf:event-tag>
+      <pentabarf:title>GNOME 3.4 accessible: Status, news, future</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 09:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 09:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:40:00</pentabarf:duration>
+      <dtstart>20120205T091500</dtstart>
+      <dtend>20120205T095500</dtend>
+      <duration>00H40M00S</duration>
+      <summary>GNOME 3.4 accessible: Status, news, future</summary>
+      <description>In GNOME, accessibility is a core value that touches all aspects of
+the system. [1]
+
+From the infrastructure, to the graphical toolkit, to the
+applications, to the assistive technologies, accessibility has been a
+central consideration from the very early days.
+
+On April 2011 GNOME 3.0 was released, and although GNOME and the
+accessibility made a huge effort, the accessibility support was not
+ideal. But not are bad news. Finally the accessibility technologies
+are starting to be used from the two main free desktops. AT-SPI is
+starting to be used on KDE distros, and Orca is starting to be
+functional with Qt apps. Since GNOME 3.0 a big effort was done in
+order to improve the situation. At the moment of this proposal writing
+an ATK/AT-SPI2 hackfest is being organized, in order to fix the issues
+from the framework itself.
+
+The purpose of this presentation is explaining:
+  * Introduce accessibility on GNOME.
+  * Briefly explain the status towards GNOME 3.4
+  * Summarize the output of the ATK/AT-SPI2 hackfest
+  * Compare GNOME 3.0 vs GNOME 3.4
+  * KDE status and cooperation
+  * Future
+
+[1] http://library.gnome.org/devel/accessibility-devel-guide/nightly/gad-how-it-works.html.en</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gnome3a11y</url>
+      <location>H.1308</location>
+      <attendee>Alejandro Piñeiro Iglesias</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>618@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>618</pentabarf:event-id>
+      <pentabarf:event-slug>waylandtk</pentabarf:event-slug>
+      <pentabarf:event-tag>waylandtk</pentabarf:event-tag>
+      <pentabarf:title>Toolkits on Wayland - how we're doing!</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 10:40:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:40:00</pentabarf:duration>
+      <dtstart>20120205T100000</dtstart>
+      <dtend>20120205T104000</dtend>
+      <duration>00H40M00S</duration>
+      <summary>Toolkits on Wayland - how we're doing!</summary>
+      <description>Wayland is a next generation display manager that is hopefully the
+future for graphics in the Free Desktop. It provides an opportunity to
+avoid some of the historical baggage associated with X - and enable
+smoother and more flexible user experiences.
+
+In this talk i'll show of the status quo of various toolkits running
+on Wayland - including GTK+, Clutter, Mx and with a special guest
+appearance from Tiago Vignatti to show off the state of the QT port.
+
+We'll talk about what works and what doesn't and what application
+level programmers need to think about when porting their application
+to run under Wayland. In particular input is a field where X has
+lagged behind current technology - Tiago will show how the exemplary
+input architecture in Wayland can be exploited to create compelling
+modern user experiences.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/waylandtk</url>
+      <location>H.1308</location>
+      <attendee>Rob Bradford</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>616@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>616</pentabarf:event-id>
+      <pentabarf:event-slug>gnomeboxes</pentabarf:event-slug>
+      <pentabarf:event-tag>gnomeboxes</pentabarf:event-tag>
+      <pentabarf:title>Boxes, use other systems with ease</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T104500</dtstart>
+      <dtend>20120205T111500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Boxes, use other systems with ease</summary>
+      <description>Boxes is a new GNOME application to create and access local and
+remote systems, such as virtual machines or remote desktop. A local
+machine is powered by KVM &amp; Spice, and you can access remote desktop
+via libvirt, SPICE and VNC (and more coming). Boxes is made for you,
+developers, contributors, and users of application running on other systems.
+During this talk we will demo latest version and describe the design of
+Boxes. We will discuss the importance of Boxes as part of the
+GNOME project. Finally, a list of missing features and the roadmap
+for the next cycle will be presented.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gnomeboxes</url>
+      <location>H.1308</location>
+      <attendee>Marc-André Lureau</attendee>
+      <attendee>Zeeshan Ali (Khattak)</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>626@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>626</pentabarf:event-id>
+      <pentabarf:event-slug>amarok</pentabarf:event-slug>
+      <pentabarf:event-tag>amarok</pentabarf:event-tag>
+      <pentabarf:title>Amarok</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:20:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:35:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120205T112000</dtstart>
+      <dtend>20120205T113500</dtend>
+      <duration>00H15M00S</duration>
+      <summary>Amarok</summary>
+      <description>Amarok is the old fart among the Free Desktop music players by now.
+Newfangled software with "social" and "distributed" in their summeries
+has come and taken some of the buzz from our old wolf.
+But Amarok is still kicking! The recently released version 2.5 is
+better then ever and even comes officially supported on Windows. But a
+project is one foot in the grave if it does not have plans for the
+future. Come gather around the warm buzzing projector kids, to hear
+the story of Amarok's future on small pocketable devices and large
+clumsy desktops.
+
+&lt;/deliberate comedic effect&gt;</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/amarok</url>
+      <location>H.1308</location>
+      <attendee>Bart Cerneels</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>612@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>612</pentabarf:event-id>
+      <pentabarf:event-slug>qtprojectorg</pentabarf:event-slug>
+      <pentabarf:event-tag>qtprojectorg</pentabarf:event-tag>
+      <pentabarf:title>qt-project.org and Qt 5</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:40:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T114000</dtstart>
+      <dtend>20120205T123000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>qt-project.org and Qt 5</summary>
+      <description>The Qt project was established in October to drive further development of
+Qt as an open source project. The main development effort of
+qt-project.org goes into Qt 5, the next major version of Qt that is
+currently being developed. The talk will explain the setup of
+qt-project.org, and how people can participate and contribute to the
+project. It'll also give an overview over Qt 5.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/qtprojectorg</url>
+      <location>H.1308</location>
+      <attendee>Lars Knoll</attendee>
+      <attendee>Thiago Macieira</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>619@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>619</pentabarf:event-id>
+      <pentabarf:event-slug>trickdevintodesigner</pentabarf:event-slug>
+      <pentabarf:event-tag>trickdevintodesigner</pentabarf:event-tag>
+      <pentabarf:title>How to trick a developer into being a designer?</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 13:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:10:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:40:00</pentabarf:duration>
+      <dtstart>20120205T133000</dtstart>
+      <dtend>20120205T141000</dtend>
+      <duration>00H40M00S</duration>
+      <summary>How to trick a developer into being a designer?</summary>
+      <description>We can't get anywhere with free software if the developers don't do
+design. They always did. It just sucked because they went with whatever
+the first iteration was. The focal point changed and "we'll add some UI
+later" is not design. Interaction with the software is key. 
+
+Design requires you to have a general idea about the interaction
+upfront, but not everything. Once a general idea is out there an agreed
+upon, the second part of the design process kicks in.
+
+"Prototyping"
+
+Prototypes help you see the flaws of a design more clearly, and missing
+features can be added to accelerate the design/development of the
+project. Frequent and agile iterations between visual designing &amp;
+prototyping is part of a healthy design process.
+
+Since developers can write code they can also prototype, (as long as
+they don't get attached to their code).
+
+This talk is about how designers tricked a developer to be one of
+them...</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/trickdevintodesigner</url>
+      <location>H.1308</location>
+      <attendee>Seif Lotfy</attendee>
+      <attendee>Allan Day</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>620@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>620</pentabarf:event-id>
+      <pentabarf:event-slug>calligra</pentabarf:event-slug>
+      <pentabarf:event-tag>calligra</pentabarf:event-tag>
+      <pentabarf:title>Calligra - Free Office Everywhere</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:40:00</pentabarf:duration>
+      <dtstart>20120205T141500</dtstart>
+      <dtend>20120205T145500</dtend>
+      <duration>00H40M00S</duration>
+      <summary>Calligra - Free Office Everywhere</summary>
+      <description>The world's oldest free office suite, now under its new name Calligra,
+is deployed over many different devices. It's engine is used in
+various places, and greatly varying applications throughout the world.
+Come and see what we do, and witness, perhaps, some things you didn't
+know it did, and places you had no idea it would be found.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/calligra</url>
+      <location>H.1308</location>
+      <attendee>Dan Leinir Turthra Jensen</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>623@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>623</pentabarf:event-id>
+      <pentabarf:event-slug>webkit2</pentabarf:event-slug>
+      <pentabarf:event-tag>webkit2</pentabarf:event-tag>
+      <pentabarf:title>WebKitGTK+ status and roadmap to WebKit2</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 15:40:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:40:00</pentabarf:duration>
+      <dtstart>20120205T150000</dtstart>
+      <dtend>20120205T154000</dtend>
+      <duration>00H40M00S</duration>
+      <summary>WebKitGTK+ status and roadmap to WebKit2</summary>
+      <description>In the talk we will talk about WebKitGTK+ [1] current status
+and work done in the last months since last desktop summit. A
+lot of things have happened in these months, we will summarize
+the various WebKitGTK+ improvements in rendering (accelerated
+compositing), accessibility, networking, etc. Also we will cover
+WebKit2 architecture and initial version of the API, we will detail
+the roadmap for WebKit2 support for WebKitGTK+. And or course some
+nice demos :).
+
+The talk should be interesting for embedders and those considering
+integration of the web with the free desktop
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/webkit2</url>
+      <location>H.1308</location>
+      <attendee>Mario Sánchez Prada</attendee>
+      <attendee>Philippe Normand</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>727@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>727</pentabarf:event-id>
+      <pentabarf:event-slug>getting_into_gnome</pentabarf:event-slug>
+      <pentabarf:event-tag>getting_into_gnome</pentabarf:event-tag>
+      <pentabarf:title>Getting into GNOME - Impressions of a new maintainer</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 15:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T154500</dtstart>
+      <dtend>20120205T161500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Getting into GNOME - Impressions of a new maintainer</summary>
+      <description>* Where to start as a novice
+* Mentoring programmes (Google Summer of Code and Code-In, Outreach Program for Women, GNOME Love) for those who want to commit to a longer-term involvement
+* Guest appearance by Ekaterina Gerasimova to talk about the Outreach Program for Women, and her experience as both an intern and mentor in the GNOME Documentation Project
+* GNOME-specific entry routes, both through GNOME technology and GNOME Foundation initiatives
+* Becoming a module maintainer, the responsibilities and benefits
+* Examples of the above topics , with specific references to the Vinagre, Vino and Cheese projects, which I maintain
+* Alternative ways to contribute to GNOME, such as translation or volunteering to help organise GNOME events
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/getting_into_gnome</url>
+      <location>H.1308</location>
+      <attendee>Ekaterina Gerasimova</attendee>
+      <attendee>David King</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>622@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>622</pentabarf:event-id>
+      <pentabarf:event-slug>webappsgnome</pentabarf:event-slug>
+      <pentabarf:event-tag>webappsgnome</pentabarf:event-tag>
+      <pentabarf:title>Web Applications in GNOME</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDesktop Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 16:20:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T162000</dtstart>
+      <dtend>20120205T165000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Web Applications in GNOME</summary>
+      <description>In this talk we'll see how web applications are being integrated into the
+new GNOME 3 experience. We'll cover both the current status of the
+specifications and its support in GNOME 3.2 through the Epiphany
+application mode and the new developments in the multiple emerging
+standards (Mozilla OpenWebApps, Chrome applications, WAC applications, W3C
+widgets, etc) and how we plan to support them in future versions of GNOME.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDesktop Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/webappsgnome</url>
+      <location>H.1308</location>
+      <attendee>Xan López</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

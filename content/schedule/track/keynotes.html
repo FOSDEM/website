@@ -20,6 +20,11 @@ days:
     url: /schedule/day/saturday
     start: 2012-02-04 10:30:00.000000000 +00:00
     end: 2012-02-04 13:20:00.000000000 +00:00
+    events:
+      - keynotes_model_success
+      - new_osi
+      - rethinking
+      - keynotes_welcome
     rooms:
       -
         room: Janson
@@ -35,6 +40,9 @@ days:
     url: /schedule/day/sunday
     start: 2012-02-05 17:00:00.000000000 +00:00
     end: 2012-02-05 18:00:00.000000000 +00:00
+    events:
+      - freedom_ootb
+      - closing_fosdem
     rooms:
       -
         room: Janson
@@ -43,7 +51,23 @@ days:
         size: 1400
         start: 2012-02-05 17:00:00.000000000 +00:00
         end: 2012-02-05 18:00:00.000000000 +00:00
+events:
+  - freedom_ootb
+  - keynotes_model_success
+  - new_osi
+  - closing_fosdem
+  - rethinking
+  - keynotes_welcome
 rank: 10
+alternative_representations:
+  -
+    title: iCal
+    mime: text/calendar
+    url: /schedule/track/keynotes.ics
+  -
+    title: xCal
+    mime: text/xml
+    url: /schedule/track/keynotes.xcs
 ---
 
 <p>Room: <a href="/schedule/room/janson">Janson</a></p>

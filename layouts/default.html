@@ -5,8 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="generator" content="nanoc">
 		<meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <link type="text/css" rel="stylesheet" media="screen" href="<%= relpath(@item_rep.path, locate_item_by_identifier('/assets/style/fosdem/')) %>"/>
-        <link href="<%= relpath(@item_rep.path, locate_item_by_identifier('/atom/')) %>" type="application/atom+xml" rel="alternate" title="FOSDEM ATOM Feed"/>
+        <link type="text/css" rel="stylesheet" media="screen" href="<%= $item_by_id['/assets/style/fosdem/'].path %>"/>
+        <link href="<%= $item_by_id['/atom/'].path %>" type="application/atom+xml" rel="alternate" title="FOSDEM ATOM Feed"/>
+        <% (@item[:alternative_representations] or []).each do |alt| %>
+        <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= alt[:url] %>" />
+        <% end %>
 		<title>FOSDEM - <%= @item[:title] %></title>
 	</head>
 	<body>
@@ -37,6 +40,9 @@
                         <ul class="nav nav-list">
                             <%= @item.identifier =~ %r{^/schedule/} ? $schedule_navigation_item.compiled_content : navigation(@item_rep.path) %>
 						</ul>
+                    </ul>
+                    <ul class="well">
+                        <a href="/schedule/xml">XML</a> - <a href="/schedule/ical">iCal</a> - <a href="/schedule/xcal">xCal</a>
                     </ul>
                     <% if @item[:sponsors_under_navigation] %>
                     <ul class="well sidebar-nav">

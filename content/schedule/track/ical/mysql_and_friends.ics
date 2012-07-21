@@ -1,0 +1,251 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for MySQL and Friends at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:934@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T091000
+DTEND:20120205T093000
+SUMMARY:New Features in MySQL 5.6
+DESCRIPTION: Many MySQL users have already put MySQL 5.5 in place and soon (2012) MySQL 5.6 will be GA! In this talk we will have a look at the New MySQL 5.6 Features which will come: InnoDB enhancements, Partitioning, Performance Schema and the new even more stable binary logging... 
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/new_features_in_mysql56
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Oli Sennhauser":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:660@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T093500
+DTEND:20120205T100000
+SUMMARY:Sphinx User stories
+DESCRIPTION: Different users stories like delcampe and Pierre & vacances
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/sphinx_user_stories
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Stéphane Varoqui ":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:661@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T100000
+DTEND:20120205T102500
+SUMMARY:MySQL HA reloaded - old tricks and cool new tools to guarantee high availability to your MySQL Servers
+DESCRIPTION: Do you think that High Availability is all about MySQL Replication? Have you tried to alter your tables to NDB to drink at the holy grail of the shared nothing architectures? High Availability is #1 request for MySQL Servers, even more popular than scalability and performance. In this presentation we will talk about old and new tools to provide HA, automatic failover and disaster recovery for MySQL - there is a solution for every need.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/mysql_ha_reloaded
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ivan Zoratti":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:635@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T103000
+DTEND:20120205T105500
+SUMMARY:MariaDB 5.3's query optimizer: taking the dolphin to where he's never been before
+DESCRIPTION: A typical recent version of a MySQL-based product focuses on letting you run the same queries on more CPU cores, or having better replication. MariaDB 5.3 is very different: its focus is the new query optimizer features that let you run queries that were traditionally considered off-limits for MySQL.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/mariadb_optimizer
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Sergey Petrunya":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:662@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T110000
+DTEND:20120205T112500
+SUMMARY:How to offload MySQL server with Sphinx
+DESCRIPTION: We’ll take close look on how to offload MySQL server with queries which might be efficiently handled on the Sphinx side. Real-world examples for handling non-Full-Text queries including geodistance search, time segments implementation, using multi-value attributes and more. We’ll also learn how to keep massive text collections away from MySQL databases and how to utilize power of Sphinx on Full-text queries.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/offload_mysql_with_sphinx
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Vladimir Fedorkov":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:630@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T113000
+DTEND:20120205T115500
+SUMMARY:Build simple and complex replication clusters with Tungsten Replicator
+DESCRIPTION: Tired of the intricacies of circular replication? Dreaming of real multiple masters solutions for MySQL replication? Dream no more. Tungsten Replicator, a free and open source replacement for MySQL replication, can build clusters of asynchronous nodes in a matter of minutes. This workshop will explain the basics of Tungsten Replicator, and it will show how to start your multiple master cluster in a few minutes. There will be examples of several topologies: from the simplest bi-directional replication to the ambitious all-to-all (every node is a master), fan-in (multiple masters to a single slave), the star (a central hub connected to several bi-directional masters)
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/replication_cluster_with_tungsten
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Giuseppe Maxia":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:663@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T120000
+DTEND:20120205T122500
+SUMMARY:Cluster internals
+DESCRIPTION: This talk will go through the components of the MySQL Cluster architecture. How MySQL Cluster fits into the standard MySQL through the storage engine interface, as well as the different node types in the MySQL Cluster and how they work internally to guarantee high availability. We will also take a look at the resource utilisation within the nodes and how that is managed and configured.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/cluster_internals
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ralf Gebhardt ":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:664@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T123000
+DTEND:20120205T125500
+SUMMARY:Optimising SQL applications by using client side tools
+DESCRIPTION: Much is discussed regarding query optimisers within database server, attention is not always paid however to the actual queries that are passed to a database server to execute and the value of those queries within an application context.No matter how good a query optimiser is it can not match the performance improvement that can be gained by not running a particular query at all, retrieving smaller result sets or running queries less frequently.We will discuss some methods to investigate the SQL your application is sending to your MySQL server, and examine some techniques to visualise the cost of the interactions your application has with the MySQL database.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/optimising_sql_applications_using_client_side_tools
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Mark Riddoch":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:944@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T130000
+DTEND:20120205T132500
+SUMMARY:MySQL synchronous replication in practice with Galera
+DESCRIPTION: Everywhere here and there you hear about MySQL synchronous Replication with Galera as a replacement for MySQL Master-Master Replication. But nobody has seen it yet in practice. In this talk we look at the architecture, the installation, the configuration and the pitfalls you have to expect with synchronous Galera Replication for MySQL during operation
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/mysql_synchronous_replication_galera
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Oli Sennhauser":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:938@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T133000
+DTEND:20120205T135500
+SUMMARY:Practical indexing guidelines
+DESCRIPTION: In many production systems, indexes are designed empirically and without instrumentation to check their efficiency, resulting in poor performance and increased hardware needs. Learn in this talk the fundamental ideas behind indexing, the errors you should avoid and the tools that can help you harness the full power of indexes. The following topics will be covered: - strengths and limitations of indexes in MySQL - performance degradation caused by bad indexes - guidelines to design efficient indexes - tools and methods to identify and remove unnecessary indexes.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/pratical_indexing_guidelines
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Stéphane Combaudon":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:936@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T140000
+DTEND:20120205T142500
+SUMMARY:Optimizing your innodb buffer pool usage
+DESCRIPTION: Many of the MySQL servers now support inspection of the InnoDB buffer pool contents. Since effective usage of the InnoDB buffer pool is critical to good MySQL performance, a look into what is in your buffer pool is an effective tool to optimize your table layout and index usage for optimal performance. The presentation shows how to use this information to create efficient tables and indexes by looking at your buffer pool contents.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/optimiizing_innodb_buffer_pool_usage
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Steve Hardy":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:632@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T143000
+DTEND:20120205T145500
+SUMMARY:MySQL creatively in a sandbox
+DESCRIPTION: Problem: you want to test many different builds of MySQL. There is a proliferation of MySQL versions and builds. Working as a DBA or as a consultant, you will find large installations of MySQL 5.0 to 5.5, with subtle variations among them. In the same company there may several versions of MySQL 5.1, or you may find a mix of vanilla MySQL and Percona or MariaDB builds. For all these version, you often need to reproduce a problem using the same version being used in production, and often you need to install several test servers in the same host for this purpose. Then there are the work-in-progress versions that Oracle and other companies are producing. And you want to test them before adopting them. For all the above needs, there is MySQL Sandbox, a versatile tool that allows you to install multiple servers in the same host, no matter if they are the same version or different ones. This workshop will explain quickly how MySQL Sandbox works, and then show with practical examples how to test several combinations of servers in a single host quickly and painlessly. It will also show examples of how to use MySQL Sandbox to solve practical administration tasks, such as re-playing binary logs or producing a filtered binlog.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/mysql_creatively_in_a_sandbox
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Giuseppe Maxia":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:636@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T150000
+DTEND:20120205T152500
+SUMMARY:Replication features of 2011: what they were, how to get and how to use them
+DESCRIPTION: The year 2011 saw a lot of work being done on replication in MySQL world. Different implementations of the same feature were produced, compared, and put into releases.This talk present an easy-to-understand summary of the results: - What exactly are the new features - Where they have/will be released - What are the differences between implementations in various MySQL branchesWe will also discuss how the new improvements relate to alternative replication solutions like Galera or Tungsten.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/replication_2011
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Sergey Petrunya":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:937@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T153000
+DTEND:20120205T155500
+SUMMARY:Virtualized Databases
+DESCRIPTION: Let's have a look at the why and how of virtualization and see how it impacts applications with a big hunger for resources. We will run through the different layers of a virtualized environment and examine their impact. Can we tune MySQL to be better adapted to a virtual environment?
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/vrit_db
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Liz van Dijk":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:633@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T160000
+DTEND:20120205T162500
+SUMMARY:Managing MySQL with Percona Toolkit
+DESCRIPTION: Percona Toolkit is an indispensable set of opensource command-line tools for managing and administering MySQL servers. This session will introduce the toolkit and the available tools, then demonstrate how to use some of the tools to manage replication, analyze queries, perform common DBA tasks, analyze disk I/O usage, and more.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/percona_toolkit
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Frédéric Descamps":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:634@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T163000
+DTEND:20120205T165500
+SUMMARY:Choosing Hardware for MySQL
+DESCRIPTION: In this session you'll learn how to choose hardware that helps MySQL execute queries the most quickly, while providing the best price-to-performance ratio. This includes choosing and configuring CPUs, RAM, network, and storage systems. We'll also discuss what performance you can expect from various Amazon EC2 instance sizes, including EBS volumes and Amazon's RDS service for MySQL.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:MySQL and Friends
+URL:https:/fosdem.org/2012/schedule/event/choosing_hw_for_mysql
+LOCATION:H.1309
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Kenny Gryp":invalid:nomail
+END:VEVENT
+END:VCALENDAR

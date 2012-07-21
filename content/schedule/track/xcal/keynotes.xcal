@@ -1,0 +1,207 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Keynotes at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>448@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>448</pentabarf:event-id>
+      <pentabarf:event-slug>keynotes_welcome</pentabarf:event-slug>
+      <pentabarf:event-tag>keynotes_welcome</pentabarf:event-tag>
+      <pentabarf:title>Welcome to FOSDEM 2012</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Keynotes</pentabarf:track>
+      <pentabarf:start>2012-02-04 10:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 10:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T103000</dtstart>
+      <dtend>20120204T105500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Welcome to FOSDEM 2012</summary>
+      <description>FOSDEM welcome and opening talk.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Keynotes</categories>
+      <url>https://fosdem.org/2012//schedule/event/keynotes_welcome</url>
+      <location>Janson</location>
+      <attendee>FOSDEM Staff</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>449@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>449</pentabarf:event-id>
+      <pentabarf:event-slug>keynotes_model_success</pentabarf:event-slug>
+      <pentabarf:event-tag>keynotes_model_success</pentabarf:event-tag>
+      <pentabarf:title>Free Software: A viable model for Commercial Success</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Keynotes</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T115000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Free Software: A viable model for Commercial Success</summary>
+      <description>This talk will discuss our experience at [AdaCore](http://www.adacore.com/), one of only a handful of 100% Free Software companies. All of our commercial products are licensed under the GPL and other Free Software Licenses.
+People often assume that there is a conflict between the use of such licenses and the needs of a commercial software company. Our experience at AdaCore shows that on the contrary, the Free Software model can be very successful both for us as a company and for our customers.
+We think this model can be used in many other circumstances, and want to encourage free software enthusiasts to consider this model in other circumstances.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Keynotes</categories>
+      <url>https://fosdem.org/2012//schedule/event/keynotes_model_success</url>
+      <location>Janson</location>
+      <attendee>Robert Dewar</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>526@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>526</pentabarf:event-id>
+      <pentabarf:event-slug>new_osi</pentabarf:event-slug>
+      <pentabarf:event-tag>new_osi</pentabarf:event-tag>
+      <pentabarf:title>A New OSI For A New Decade</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Keynotes</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T120000</dtstart>
+      <dtend>20120204T123000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>A New OSI For A New Decade</summary>
+      <description>The OSI (Open Source Initiative) is reorganizing its governance from a board-only organization into a member-based structure in 2012.
+
+Simon will give us a brief explanation of what that is, what it means, and how to join.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Keynotes</categories>
+      <url>https://fosdem.org/2012//schedule/event/new_osi</url>
+      <location>Janson</location>
+      <attendee>Simon Phipps</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>443@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>443</pentabarf:event-id>
+      <pentabarf:event-slug>rethinking</pentabarf:event-slug>
+      <pentabarf:event-tag>rethinking</pentabarf:event-tag>
+      <pentabarf:title>Re-thinking system and distro development</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Keynotes</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:20:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T123000</dtstart>
+      <dtend>20120204T132000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Re-thinking system and distro development</summary>
+      <description>We believe system (and distribution) development needs to be
+re-thought from the basic concepts upwards. We've implemented some
+ideas for streamlining development, reducing development friction,
+speeding up system upgrades and adding support for downgrades and
+rollbacks, and generally making development of entire systems faster
+and more fun.
+
+At the level of individual, atomic projects, several great tools and
+development methods have been developed over the past decade or so.
+Few of them are applied at the system or distribution level. The Linux
+kernel development, for example, greatly benefits from the ease of
+branching and merging that git provides, but it is not possible to branch
+and merge the whole system, or distribution, consisting of hundreds
+or tens of thousands of individual projects.
+
+From the agile development worlds, automated testing, test driven
+development, and continuous integration are common-place for individual
+projects, but not so much for complete systems development. Would it not
+be nice to have them?
+
+Packages have been the darling child of Linux distribution development
+since the early days. They are a natural, modular concept, and have been
+one of the key factors behind the success of the distribution concept.
+Package managers have made it easy to install and remove and upgrade
+each piece of software separately, and to upgrade the whole system by
+upgrading each installed package. However, a modern distribution consists
+of tens of thousands of packages, and the combinatorial explosion of
+dependencies and interaction may be getting out of hand. In this talk
+we explore another way of approaching the packaging problem.
+
+We believe these and other changes are useful for bridging the current
+gap between upstream development and end users, to speed up system
+and distribution development, and to let system builders bravely
+hack what no-one has hacked before.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Keynotes</categories>
+      <url>https://fosdem.org/2012//schedule/event/rethinking</url>
+      <location>Janson</location>
+      <attendee>Lars Wirzenius</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>380@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>380</pentabarf:event-id>
+      <pentabarf:event-slug>freedom_ootb</pentabarf:event-slug>
+      <pentabarf:event-tag>freedom_ootb</pentabarf:event-tag>
+      <pentabarf:title>Freedom, Out of the Box!</pentabarf:title>
+      <pentabarf:subtitle>Update on activites at the FreedomBox Foundation</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Keynotes</pentabarf:track>
+      <pentabarf:start>2012-02-05 17:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 17:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T170000</dtstart>
+      <dtend>20120205T175000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Freedom, Out of the Box!- Update on activites at the FreedomBox Foundation</summary>
+      <description>FreedomBox is a personal server running a free software operating system and free applications, designed to create and preserve personal privacy by providing a secure platform upon which federated social networks can be constructed.  Eben Moglen articulated the need for FreedomBox in his 2011 FOSDEM keynote, this presentation is a status update on the work done to turn Eben's vision into reality over the past year.  Software for FreedomBox is being assembled by volunteer programmers around the world who believe in Free Software and Free Society, with Bdale coordinating development of a reference implementation on behalf of the non-profit FreedomBox Foundation.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Keynotes</categories>
+      <url>https://fosdem.org/2012//schedule/event/freedom_ootb</url>
+      <location>Janson</location>
+      <attendee>Bdale Garbee</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>958@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>958</pentabarf:event-id>
+      <pentabarf:event-slug>closing_fosdem</pentabarf:event-slug>
+      <pentabarf:event-tag>closing_fosdem</pentabarf:event-tag>
+      <pentabarf:title>Closing FOSDEM 2012</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Keynotes</pentabarf:track>
+      <pentabarf:start>2012-02-05 17:50:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 18:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:10:00</pentabarf:duration>
+      <dtstart>20120205T175000</dtstart>
+      <dtend>20120205T180000</dtend>
+      <duration>00H10M00S</duration>
+      <summary>Closing FOSDEM 2012</summary>
+      <description>Some closing words, and the not-to-be-missed mythical FOSDEM dance.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Keynotes</categories>
+      <url>https://fosdem.org/2012//schedule/event/closing_fosdem</url>
+      <location>Janson</location>
+      <attendee>FOSDEM Staff</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

@@ -1,0 +1,921 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for CrossDistribution at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>816@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>816</pentabarf:event-id>
+      <pentabarf:event-slug>distro_wide_impact_changes</pentabarf:event-slug>
+      <pentabarf:event-tag>distro_wide_impact_changes</pentabarf:event-tag>
+      <pentabarf:title>Coping with wide-impact changes in a distribution</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T120000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Coping with wide-impact changes in a distribution</summary>
+      <description>One part of the integration of upstream software in a distribution is to correctly deal with changes that have a wide impact, either because they affect a lot of other software, or because the changes will be highly visible to the users. And it is easy to feel that such changes are always going wrong: some applications stop working, many users complain about the change they feel was uncalled for, nearly nobody shares a thank you note.
+
+Such wide-impact changes always come with controversies, and being the bridge between users and upstreams, distributions are the place where all the rage is going on, with a social aspect that is usually at least as important as the technical side of things.
+
+The recent years have not been exempt of controversies, and we will share our experiences with user-visible changes such as the move to KDE 4, GNOME 3 and systemd.
+
+This talk will be co-presented by the SUSE Gang: Frédéric Crozat, Will Stephenson, Vincent Untz.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/distro_wide_impact_changes</url>
+      <location>H.1301</location>
+      <attendee>Will Stephenson</attendee>
+      <attendee>Vincent Untz</attendee>
+      <attendee>Frédéric Crozat</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>942@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>942</pentabarf:event-id>
+      <pentabarf:event-slug>embracing_nontech</pentabarf:event-slug>
+      <pentabarf:event-tag>embracing_nontech</pentabarf:event-tag>
+      <pentabarf:title>Embracing Non-Technical Users: Celebrations and Challenges</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T113000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Embracing Non-Technical Users: Celebrations and Challenges</summary>
+      <description>tba</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/embracing_nontech</url>
+      <location>H.1302</location>
+      <attendee>Allison Randal</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>839@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>839</pentabarf:event-id>
+      <pentabarf:event-slug>debian_dep9</pentabarf:event-slug>
+      <pentabarf:event-tag>debian_dep9</pentabarf:event-tag>
+      <pentabarf:title>How to replace a legacy tool with 100k installations</pentabarf:title>
+      <pentabarf:subtitle>... and 50 reverse package dependencies in Debian</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T113000</dtstart>
+      <dtend>20120204T120000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>How to replace a legacy tool with 100k installations- ... and 50 reverse package dependencies in Debian</summary>
+      <description>Debian has a number of legacy tools (that's a euphemism for ugly hacks) that are not addressed due to inertia, fear of breaking stuff, and the difficulty of reaching consensus for changes with cross-package impact. I'll talk about dealing with the above issues in the context of ongoing work as part of Debian Enhancement Proposal 9.
+
+Specifically, the talk will cover how (not) to make proposals for cross-package changes, and how to map behaviour in a technical spec to feature-centered assertions in a test suite.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/debian_dep9</url>
+      <location>H.1302</location>
+      <attendee>Serafeim Zanikolas</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>819@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>819</pentabarf:event-id>
+      <pentabarf:event-slug>multiarch</pentabarf:event-slug>
+      <pentabarf:event-tag>multiarch</pentabarf:event-tag>
+      <pentabarf:title>Multiarch - why it's important</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120204T130000</dtstart>
+      <dtend>20120204T140000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Multiarch - why it's important</summary>
+      <description>Multiarch is a properly generic solution to the installation and use of library packages from one than one architecture at a time, which changes the way running non-native binaries and crossbuilding are dealt with in a fundamental way. It is both powerful and intrusive and has taken a long time to make happen.
+
+This talk explains what it is, how it works, and what you can do with it. We will also discuss future adoption by other distros.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/multiarch</url>
+      <location>H.1302</location>
+      <attendee>Wookey</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>821@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>821</pentabarf:event-id>
+      <pentabarf:event-slug>univention_corporate_server</pentabarf:event-slug>
+      <pentabarf:event-tag>univention_corporate_server</pentabarf:event-tag>
+      <pentabarf:title>Univention Corporate Server</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T131500</dtstart>
+      <dtend>20120204T140000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>Univention Corporate Server</summary>
+      <description>Univention Corporate Server (UCS) is a Debian-derived distribution focused on enterprise environments and heavily based on LDAP.
+In contrast to most other Debian-derived distributions it is based on Debian stable instead of snapshots from Debian unstable.
+
+With it's earliest development roots dating back ten years, UCS is now used in approx. 700 installations with the biggest having 80,000 users.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/univention_corporate_server</url>
+      <location>H.1301</location>
+      <attendee>Moritz Muehlenhoff</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>828@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>828</pentabarf:event-id>
+      <pentabarf:event-slug>illumian</pentabarf:event-slug>
+      <pentabarf:event-tag>illumian</pentabarf:event-tag>
+      <pentabarf:title>Illumian, a new illumos based distribution</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T150000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Illumian, a new illumos based distribution</summary>
+      <description>Nexenta has had their own distribution since their inception. Now with the move to an illumos core we are launching a new distribution with an illumos kernel and debian packaging.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/illumian</url>
+      <location>H.1301</location>
+      <attendee>Linda Kateley</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>827@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>827</pentabarf:event-id>
+      <pentabarf:event-slug>projectbuilder</pentabarf:event-slug>
+      <pentabarf:event-tag>projectbuilder</pentabarf:event-tag>
+      <pentabarf:title>Multi-OS Continuous Packaging with Project-Builder.org</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T150000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Multi-OS Continuous Packaging with Project-Builder.org</summary>
+      <description>Project-Builder.org is a GPL v2 tool designed to help projects developers producing easily packages for multiple OS and architectures, on a regular basis, from
++a single source repository.
+
+The various aspects covered by the tool are:
+- only produce software packages (ease integration in deployment servers, provide inheritance mecanisms, ...)
+- ease the various steps of solution life cycle (controlled impact of installation/uninstallation, dependencies management, identical deliveries up to customer,
++announce management, web site delivery, metadata management)
+- help projects packages provisioning (templates/skeletons, generated structure)
+- Avoid code/metadata duplication (macro system, separate repository)
+- Neutral (repository, system, package type agnostic)
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/projectbuilder</url>
+      <location>H.1302</location>
+      <attendee>Bruno Cornec</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>831@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>831</pentabarf:event-id>
+      <pentabarf:event-slug>debian_packaging</pentabarf:event-slug>
+      <pentabarf:event-tag>debian_packaging</pentabarf:event-tag>
+      <pentabarf:title>Debian packaging for beginners</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:45:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T150000</dtstart>
+      <dtend>20120204T154500</dtend>
+      <duration>00H45M00S</duration>
+      <summary>Debian packaging for beginners</summary>
+      <description>An introduction for creating Debian packages.
+The lecture is meant for people who want to package for Debian (or any Debian based distribution) with no prior experience or people during their first steps in packaging.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/debian_packaging</url>
+      <location>H.1302</location>
+      <attendee>Lior Kaplan</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>822@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>822</pentabarf:event-id>
+      <pentabarf:event-slug>gnuk</pentabarf:event-slug>
+      <pentabarf:event-tag>gnuk</pentabarf:event-tag>
+      <pentabarf:title>Gnuk - OpenPGP USB Token implementation</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:45:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T150000</dtstart>
+      <dtend>20120204T154500</dtend>
+      <duration>00H45M00S</duration>
+      <summary>Gnuk - OpenPGP USB Token implementation</summary>
+      <description>Gnuk is software implementation of a USB token for GNU Privacy Guard.
+Gnuk supports OpenPGP card protocol version 2, and it runs on STM32F103 processor.
+Gnuk supports RSA 2048-bit key and it takes a second and a half for computation of digital signing.
+Gnuk Token is useful for GnuPG users and Debian developers.
+The talk explains current status of Gnuk and its future, supported boards, and how to use Gnuk with GnuPG and OpenSSH.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gnuk</url>
+      <location>H.1301</location>
+      <attendee>Niibe Yutaka</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>817@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>817</pentabarf:event-id>
+      <pentabarf:event-slug>openqa</pentabarf:event-slug>
+      <pentabarf:event-tag>openqa</pentabarf:event-tag>
+      <pentabarf:title>OpenQA</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T154500</dtstart>
+      <dtend>20120204T163000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>OpenQA</summary>
+      <description>Testing is an important task. But testing daily development-snapshots of a Linux-distribution would mean testing the same things every day, which would be pretty tiresome to testers. Yet, no one likes to break his system with untested code.
+
+This presentation will be about my solution to this problem, using automated testing with KVM or VirtualBox for openQA.openSUSE.org to guarantee some minimum quality.  This will show some unique features like audio-testing, GUI-testing, and support for multiple distributions like Debian, Archlinux and Fedora. It will also have installation videos which are cool, fun and useful.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/openqa</url>
+      <location>H.1301</location>
+      <attendee>Bernhard M. Wiedemann</attendee>
+      <attendee>Dominik Heidler</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>818@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>818</pentabarf:event-id>
+      <pentabarf:event-slug>succeeding_gsoc</pentabarf:event-slug>
+      <pentabarf:event-tag>succeeding_gsoc</pentabarf:event-tag>
+      <pentabarf:title>Succeeding in the Google Summer of Code as a large project</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T154500</dtstart>
+      <dtend>20120204T163000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>Succeeding in the Google Summer of Code as a large project</summary>
+      <description>The Google Summer of Code (GSoC) has been a huge boon to the world of free and open-source software, and to Gentoo Linux in particular. In this talk, I'm going to share some of our successes, like how we manage 15–20 simultaneous internships and how we recruit a very large proportion of our students to continue as Gentoo developers.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/succeeding_gsoc</url>
+      <location>H.1302</location>
+      <attendee>Donnie Berkholz</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>844@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>844</pentabarf:event-id>
+      <pentabarf:event-slug>gentoo_ruby</pentabarf:event-slug>
+      <pentabarf:event-tag>gentoo_ruby</pentabarf:event-tag>
+      <pentabarf:title>Gentoo ruby packaging</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T163000</dtstart>
+      <dtend>20120204T170000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Gentoo ruby packaging</summary>
+      <description>Gentoo currently has 400+ natively packaged ruby packages for 5 different ruby implementations. We'd like to share some of the unique things we did to bring ruby code and applications to our users in a true Gentoo fashion.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gentoo_ruby</url>
+      <location>H.1302</location>
+      <attendee>Hans de Graaff</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>843@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>843</pentabarf:event-id>
+      <pentabarf:event-slug>distro_qa_tools</pentabarf:event-slug>
+      <pentabarf:event-tag>distro_qa_tools</pentabarf:event-tag>
+      <pentabarf:title>QA tools for FOSS distributions</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120204T163000</dtstart>
+      <dtend>20120204T173000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>QA tools for FOSS distributions</summary>
+      <description>FOSS distributions are increasingly over pressure to deliver stable releases including the most up to date upstream software. Time-based release strategies has exacerbated this problem putting even more pressure on QA teams.
+
+The recently concluded Mancoosi project has developed a number of tools to automatically analyse large packages collections for a range of problems, from
+installability checks to speculative analysis of software repositories.
+
+In this talk I'll present four command line tools to identify and correct potential problems as soon as possible during the release cycle.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/distro_qa_tools</url>
+      <location>H.1301</location>
+      <attendee>Pietro Abate</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>835@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>835</pentabarf:event-id>
+      <pentabarf:event-slug>gentoo_hardened</pentabarf:event-slug>
+      <pentabarf:event-tag>gentoo_hardened</pentabarf:event-tag>
+      <pentabarf:title>Introduction to hardening, the Gentoo Hardened approach</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120204T170000</dtstart>
+      <dtend>20120204T180000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Introduction to hardening, the Gentoo Hardened approach</summary>
+      <description>In this talk we will explain how some common attacks against vulnerable software work and will explain how the security measures used by the Gentoo Hardened project act against them along with the drawbacks they impose.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gentoo_hardened</url>
+      <location>H.1302</location>
+      <attendee>Francisco Blas Izquierdo Riera</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>841@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>841</pentabarf:event-id>
+      <pentabarf:event-slug>btrfs_snapper</pentabarf:event-slug>
+      <pentabarf:event-tag>btrfs_snapper</pentabarf:event-tag>
+      <pentabarf:title>Btrfs and Snapper - Overview and Future</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T173000</dtstart>
+      <dtend>20120204T181500</dtend>
+      <duration>00H45M00S</duration>
+      <summary>Btrfs and Snapper - Overview and Future</summary>
+      <description>Snapper is a new tool introduced first in openSUSE 12.1 to manage btrfs snapshots. It has received great attention from the press.
+In this talk we will give an overview of btrfs capabilities and how snapper integrates btrfs snapshots into the system for easy use by the user. We will explain how other software can use the power of snapper. Finally we will give an outlook of future development.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/btrfs_snapper</url>
+      <location>H.1301</location>
+      <attendee>Arvin Schnell</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>834@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>834</pentabarf:event-id>
+      <pentabarf:event-slug>gentoo_eapi5</pentabarf:event-slug>
+      <pentabarf:event-tag>gentoo_eapi5</pentabarf:event-tag>
+      <pentabarf:title>Gentoo EAPI 5</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 19:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120204T180000</dtstart>
+      <dtend>20120204T190000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Gentoo EAPI 5</summary>
+      <description>Gentoo uses versioning in the package manager script format. EAPI is the contract between ebuilds (Gentoo's packaging scripts) and the package manager. The version currently in use is 4.
+
+This session is about looking over features in the pipeline for the next version and hopefully having a discussion on them and others. Traditionally multiple council members have attended FOSDEM so this is your chance to influence the technical direction of Gentoo package management.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gentoo_eapi5</url>
+      <location>H.1302</location>
+      <attendee>Petteri Räty</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>823@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>823</pentabarf:event-id>
+      <pentabarf:event-slug>distromatch</pentabarf:event-slug>
+      <pentabarf:event-tag>distromatch</pentabarf:event-tag>
+      <pentabarf:title>I wrote Distromatch, shall we use it?</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 19:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T181500</dtstart>
+      <dtend>20120204T190000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>I wrote Distromatch, shall we use it?</summary>
+      <description>At the [AppInstaller2011](http://distributions.freedesktop.org/wiki/Meetings/AppInstaller2011) meeting I started writing [Distromatch](http://www.enricozini.org/2011/debian/distromatch/) which is able to map binary package names across different distribution using a wide set of euristics.
+
+Distromatch has the potential of being a radical change in cross-distro cooperation, enabling exchange of package screenshots, categories, ratings, reviews and many other interesting kinds of metadata.
+
+Since distromatch has existed for almost a year and (afaik) so far none of this has happened, I am taking advantage of the cross-distro room to show how it works and discuss how to move on from here.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/distromatch</url>
+      <location>H.1301</location>
+      <attendee>Enrico Zini</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>836@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>836</pentabarf:event-id>
+      <pentabarf:event-slug>opensuse_arm</pentabarf:event-slug>
+      <pentabarf:event-tag>opensuse_arm</pentabarf:event-tag>
+      <pentabarf:title>openSUSE on ARM</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 10:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T100000</dtstart>
+      <dtend>20120205T103000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>openSUSE on ARM</summary>
+      <description>The openSUSE community started to revive its ARM port recently.
+
+This talk will show how do we work on our ARM, what troubles we were facing so far and what is the current status of the port and what our hopes are for the future.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/opensuse_arm</url>
+      <location>H.1301</location>
+      <attendee>Michal Hrusecky</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>869@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>869</pentabarf:event-id>
+      <pentabarf:event-slug>debtags_reloaded</pentabarf:event-slug>
+      <pentabarf:event-tag>debtags_reloaded</pentabarf:event-tag>
+      <pentabarf:title>Debtags.debian.net reloaded!</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T100000</dtstart>
+      <dtend>20120205T110000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Debtags.debian.net reloaded!</summary>
+      <description>I have just finished redesigning the Debtags website, consolidating a 9 years long history of bringing categories to a large and complex distribution like Debian.
+
+There is more to Debtags than meets the eye: interesting library science concepts, anonymous submissions, an efficient review workflow, a fully automated tagging engine, dynamically generated tagging hints, fancy tag search algorithms.
+
+On top of that, there is not much that is Debian-specific in the new codebase, so if you are interested in implementing categories on your distribution of choice, this could give you quite a head start.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/debtags_reloaded</url>
+      <location>H.1302</location>
+      <attendee>Enrico Zini</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>825@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>825</pentabarf:event-id>
+      <pentabarf:event-slug>obs_cross_build</pentabarf:event-slug>
+      <pentabarf:event-tag>obs_cross_build</pentabarf:event-tag>
+      <pentabarf:title>OBS Cross Build</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T103000</dtstart>
+      <dtend>20120205T113000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>OBS Cross Build</summary>
+      <description>How to build a distribution on foreign hardware without to add support cross compile support in each package.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/obs_cross_build</url>
+      <location>H.1301</location>
+      <attendee>Adrian Schröter</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>840@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>840</pentabarf:event-id>
+      <pentabarf:event-slug>good_upstream_syslogng</pentabarf:event-slug>
+      <pentabarf:event-tag>good_upstream_syslogng</pentabarf:event-tag>
+      <pentabarf:title>Being a good upstream - the syslog-ng PoV</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:45:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120205T110000</dtstart>
+      <dtend>20120205T114500</dtend>
+      <duration>00H45M00S</duration>
+      <summary>Being a good upstream - the syslog-ng PoV</summary>
+      <description>For many years, syslog-ng was part of many distributions but stuck at ancient software versions. My task was to help distributions to update their syslog-ng packages and now to keep them updated. This is a two way process, as while distros receive many help, we also get a lot of useful feedback and ideas, which influence the development of syslog-ng.
+Using syslog-ng as an example, I'll try to show how upstream can work with distributions for the benefit of both sides.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/good_upstream_syslogng</url>
+      <location>H.1302</location>
+      <attendee>Peter Czanik</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>824@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>824</pentabarf:event-id>
+      <pentabarf:event-slug>contributor_communities</pentabarf:event-slug>
+      <pentabarf:event-tag>contributor_communities</pentabarf:event-tag>
+      <pentabarf:title>Working with contributor communities (round table)</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T113000</dtstart>
+      <dtend>20120205T123000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Working with contributor communities (round table)</summary>
+      <description>Several distribution projects have existing initiatives and programs in order to coordinate and/or fund local communities as well as shipping or producing promotional material, going to events to promote the project, etc...
+Some projects are currently looking into setting up something like this, and others are rethinking their current model.
+Those programs all have their differences, but achieve pretty similar goals.
+
+In this session, we will bring together a bunch of people from different projects who are in charge or actively participating in such initiatives, in order to briefly present what they are currently doing in their project and, more importantly, share experience about what has worked well and what hasn't in an open discussion session.
+Let's learn from each others' ideas and mistakes.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/contributor_communities</url>
+      <location>H.1301</location>
+      <attendee>Petteri Räty</attendee>
+      <attendee>Oliver Burger</attendee>
+      <attendee>Kostas Koudaras</attendee>
+      <attendee>Christoph Wickert</attendee>
+      <attendee>Stefano Zacchiroli</attendee>
+      <attendee>Donnie Berkholz</attendee>
+      <attendee>Laura Czajkowski</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>820@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>820</pentabarf:event-id>
+      <pentabarf:event-slug>releasing_debian</pentabarf:event-slug>
+      <pentabarf:event-tag>releasing_debian</pentabarf:event-tag>
+      <pentabarf:title>29,000 packages in 24 hours - Releasing Debian</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 12:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 13:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120205T121500</dtstart>
+      <dtend>20120205T130000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>29,000 packages in 24 hours - Releasing Debian</summary>
+      <description>This talk is to give an overview of what is involved in releasing Debian.
+It will cover policy, tools and an insight into what it takes to release the largest linux distribution.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/releasing_debian</url>
+      <location>H.1302</location>
+      <attendee>Neil McGovern</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>829@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>829</pentabarf:event-id>
+      <pentabarf:event-slug>centos_dist_engineering</pentabarf:event-slug>
+      <pentabarf:event-tag>centos_dist_engineering</pentabarf:event-tag>
+      <pentabarf:title>CentOS Distribution Engineering and how you can help</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 13:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T130000</dtstart>
+      <dtend>20120205T140000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>CentOS Distribution Engineering and how you can help</summary>
+      <description>
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/centos_dist_engineering</url>
+      <location>H.1302</location>
+      <attendee>Karanbir Singh</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>837@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>837</pentabarf:event-id>
+      <pentabarf:event-slug>distro_sysadmin</pentabarf:event-slug>
+      <pentabarf:event-tag>distro_sysadmin</pentabarf:event-tag>
+      <pentabarf:title>Distributions' infrastructure system administration (round table/Q&amp;A)</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 13:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T130000</dtstart>
+      <dtend>20120205T140000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Distributions' infrastructure system administration (round table/Q&amp;A)</summary>
+      <description></description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/distro_sysadmin</url>
+      <location>H.1301</location>
+      <attendee>Martin Zobel-Helas</attendee>
+      <attendee>Michael Scherer</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>838@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>838</pentabarf:event-id>
+      <pentabarf:event-slug>account_database_for_distro</pentabarf:event-slug>
+      <pentabarf:event-tag>account_database_for_distro</pentabarf:event-tag>
+      <pentabarf:title>Adventure of setting common account database for a distribution infrastructure</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T140000</dtstart>
+      <dtend>20120205T150000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Adventure of setting common account database for a distribution infrastructure</summary>
+      <description>The talk will be a summary of the motivation and problem encountered while setting a global shared account database for the Mageia distribution infrastructure, focusing on LDAP and the issues around software integration, patches and directory synchronisation.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/account_database_for_distro</url>
+      <location>H.1301</location>
+      <attendee>Michael Scherer</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>842@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>842</pentabarf:event-id>
+      <pentabarf:event-slug>automated_distro_dev</pentabarf:event-slug>
+      <pentabarf:event-tag>automated_distro_dev</pentabarf:event-tag>
+      <pentabarf:title>Automated Distribution Development and Maintenance</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T140000</dtstart>
+      <dtend>20120205T150000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Automated Distribution Development and Maintenance</summary>
+      <description>Presenting tools and workflows used via Open Build Service by various distributions to develop the distribution. This includes automated source processing, validation, QA, automated and manual reviews.
+
+Additional focus point on maintenance handling, means updates after a distribution is released which are usually done in a complete different way.
+
+I like to have a discussion about the question how distributions should validate trustable sources and how the trust can be increased by a common distro effort.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/automated_distro_dev</url>
+      <location>H.1302</location>
+      <attendee>Adrian Schröter</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>826@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>826</pentabarf:event-id>
+      <pentabarf:event-slug>obs_sub_review</pentabarf:event-slug>
+      <pentabarf:event-tag>obs_sub_review</pentabarf:event-tag>
+      <pentabarf:title>Submission Review with Open Build Service</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T150000</dtstart>
+      <dtend>20120205T160000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Submission Review with Open Build Service</summary>
+      <description>A reliable and transparent, high volume package review infrastructure was implemented with the [Open Build Service (OBS)](http://openbuildservice.org/). In OBS, a software package can travel through several projects. Submission Review is done at project specific gates to control such travel.
+The openSUSE:Factory project currently defines review gates for license compliance, security and packaging. Together with an issue tracking system we create a community friendly ecosystem that implements project policies. Centralized gatekeepers or dedicated review periods are eliminated. Propagation delay is minimized.
+With OBS providing the hooks to add review authorities, we were able to code most of the respective business logic with python scripts, reusing and extending the osc command line tool as a feature-rich layer ontop of the OBS API.
+This talk describes the openSUSE project review process and how it helps various stakeholders to excercise their control, using the legal team as a non-trivial example.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/obs_sub_review</url>
+      <location>H.1302</location>
+      <attendee>Jürgen Weigert</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>830@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>830</pentabarf:event-id>
+      <pentabarf:event-slug>arm_bof</pentabarf:event-slug>
+      <pentabarf:event-tag>arm_bof</pentabarf:event-tag>
+      <pentabarf:title>ARM BoF</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T150000</dtstart>
+      <dtend>20120205T160000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>ARM BoF</summary>
+      <description>More and more distributions are porting their software to run on ARM CPUs. This is a session for people working on or otherwise interested in those ports to share progress reports, problems and ideas.
+
+Steve will start the discussion with the current status of the two ARM ports in Debian ("armel" and "armhf"), but is not planning on spending the whole session on that!
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/arm_bof</url>
+      <location>H.1301</location>
+      <attendee>Steve McIntyre</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>832@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>832</pentabarf:event-id>
+      <pentabarf:event-slug>debian_secrets</pentabarf:event-slug>
+      <pentabarf:event-tag>debian_secrets</pentabarf:event-tag>
+      <pentabarf:title>Debian Secrets - what I wish I knew before joining Debian</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 17:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T160000</dtstart>
+      <dtend>20120205T170000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Debian Secrets - what I wish I knew before joining Debian</summary>
+      <description>Debian is usually advertised as a volunteer project with a subtle mix of democracy and do-ocracy. While this is correct, implementation details are mostly undocumented, and it is often difficult for prospective or relatively new contributors to really understand the inner workings of the project.
+
+This talk will detail some useful lessons, and also some secrets about Debian learned over the years. It is hoped that it will be helpful to people willing to get things done in Debian.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/debian_secrets</url>
+      <location>H.1301</location>
+      <attendee>Lucas Nussbaum</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>833@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>833</pentabarf:event-id>
+      <pentabarf:event-slug>ci_distro</pentabarf:event-slug>
+      <pentabarf:event-tag>ci_distro</pentabarf:event-tag>
+      <pentabarf:title>Continuous Integration / Continuous Delivery within a Linux Distribution</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>CrossDistribution Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 17:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T160000</dtstart>
+      <dtend>20120205T170000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Continuous Integration / Continuous Delivery within a Linux Distribution</summary>
+      <description>
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>CrossDistribution Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/ci_distro</url>
+      <location>H.1302</location>
+      <attendee>Karanbir Singh</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

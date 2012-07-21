@@ -55,6 +55,12 @@ route '/assets/style/parts/*' do;end
 compile '/navigation/' do;end
 route '/navigation/' do;end
 
+compile '/schedule/pentabarf/' do;end
+compile '/schedule/xcal/' do;end
+compile '/schedule/ical/' do;end
+compile '/schedule/track/xcal/*' do;end
+compile '/schedule/track/ical/*' do;end
+
 compile '/assets/style/*' do
   # merge all content/assets/style/parts/*.css files into one
   # in content/assets/style/*.css (see the ERB/ruby code there)
@@ -165,6 +171,22 @@ route '/sponsors_navigation/' do;end
 route '/static/*' do
   # /static/foo.html/ -> /foo.html
   item.identifier[7..-2]
+end
+
+route '/schedule/pentabarf/' do
+  '/schedule/xml'
+end
+route '/schedule/xcal/' do
+  '/schedule/xcal'
+end
+route '/schedule/ical/' do
+  '/schedule/ical'
+end
+route '/schedule/track/xcal/*' do
+  '/schedule/track/' + @item.identifier.split('/')[-1] + ".xcs"
+end
+route '/schedule/track/ical/*' do
+  '/schedule/track/' + @item.identifier.split('/')[-1] + ".ics"
 end
 
 # route /headlines/* into oblivion as they don't really exist on

@@ -1,0 +1,134 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for Mono at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:735@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T110000
+DTEND:20120204T114500
+SUMMARY:Enough Debian packaging knowledge to hurt yourselves slightly less than you do already
+DESCRIPTION: There are millions of users running a Debian-based Linux distribution. Increase distribution of your hottest Mono apps by making them available in .deb format. Learn the basics, caveats, gotchas, and fastest shortcuts involved in making distribution-integrated packages for Debian and Ubuntu
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Mono
+URL:https:/fosdem.org/2012/schedule/event/mono_debian_packaging
+LOCATION:K.3.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jo Shields":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:778@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T120000
+DTEND:20120204T130000
+SUMMARY:Mono — State of the Union
+DESCRIPTION: The state of the Mono project in the year 2012.Will give an update on the progress of Mono and the Mono 2.12 release, which is a major release containing a year worth of improving
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Mono
+URL:https:/fosdem.org/2012/schedule/event/mono_stateoftheunion
+LOCATION:K.3.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Miguel De Icaza":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:776@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T140000
+DTEND:20120204T143000
+SUMMARY:Gluon
+DESCRIPTION: Gluon is an open source database schema analysis and entity/relationship mapper that easily integrates into MonoDevelop. Using the MonoDevelop addin you can browse databases, select tables, generate entities (including bulk rename operations) and add the generated C# code to your project with a couple of clicks. If my cats will help with the coding it will probably support schema migration (from inside MonoDevelop) well before the FOSDEM. If they don't help there will be enough to talk anyway (and nice catfur dolls for everybody).
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Mono
+URL:https:/fosdem.org/2012/schedule/event/mono_gluon
+LOCATION:K.3.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Federico Di Gregorio":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:774@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T144000
+DTEND:20120204T152500
+SUMMARY:Banshee: Past, Present, Future and the Crazy stuff
+DESCRIPTION: After reminding you what Banshee is and why you love it, we’ll gothrough some of the features that have been added recently, and giveyou a glimpse of what we’re working on these days. We’ll then lookinto the future and try to guess what it might bring to Banshee. We’llalso show you how can be part of that future, by contributing a patch,filling bugs or writing an extension.When you develop a major multi-platform desktop application that isused by millions of people, you sometimes have to do some crazy stuff.So we’ll share with you some of those things. Some of them will makeyou laugh, some of them will make you cry, but all of them qualify forat least one of the following adjectives : crazy, ridiculous, insane,unreasonable, awesome.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Mono
+URL:https:/fosdem.org/2012/schedule/event/mono_banshee
+LOCATION:K.3.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bertrand Lorentz":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Olivier Dufour":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:736@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T154000
+DTEND:20120204T162500
+SUMMARY:IronPython: Bringing the dynamic world to the CLR
+DESCRIPTION: "IronPython is a member of the relatively new family of dynamic languages running on top of .Net platform, aimed to be a fully compatible implementation of the Python language, and released by Microsoft under the Apache licence, making it one hundred percent free.The Python platform itself has a big and vibrant community, and stands as one of the best and most used dynamic languages int the FOSS world.  IronPython thus lets the .Net developers try this amazing language -being possible to smoothly invoke it from C# using the new dynamic features implemented as part of the 4.0 version-, and also lets the Python developers try the sweet bits behind the Mono and .Net platforms.I would be talking about the basics of IronPython, how it related to the standard implementation, how it interacts with C#, how to use the hosting API, and finally would take about a new IronPython addin for MonoDevelop I've been working in."
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Mono
+URL:https:/fosdem.org/2012/schedule/event/mono_ironpython
+LOCATION:K.3.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Carlos Alberto Cortez Guevara":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:773@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T164000
+DTEND:20120204T173000
+SUMMARY:MonoGame
+DESCRIPTION: 1. Talk covering a the history of MonoGame, where we are at and where we want to go. We will show some demos of things running on Mac, PC and iOS/Android devices. This will be presented by Dean Ellis, Kenneth Pouncey  and Me.2. Using advertising within iOS/Android. This will be presented by Dean Ellis & Me.3. Networking within MonoGame. This will be presented by Dean Ellis, and Kenneth Pouncey.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Mono
+URL:https:/fosdem.org/2012/schedule/event/mono_monogame
+LOCATION:K.3.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Dominique Louis":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Dean Ellis":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Kenneth Pouncey":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:775@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T174500
+DTEND:20120204T181500
+SUMMARY:XWT
+DESCRIPTION: XWT is a new cross platform GUI toolkit for Mono and .NET, which is based on the idea of building an abstract widget library on top of platform-specific native widgets. This toolkit is still in a very early development stage, but there are already backends for GTK+, MonoMac and some initial work on WPF. The talk will explain the goals of the project and some details about design principles and internal architecture.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Mono
+URL:https:/fosdem.org/2012/schedule/event/mono_xwt
+LOCATION:K.3.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Lluis Sanchez":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:777@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T183000
+DTEND:20120204T190000
+SUMMARY:MonoMac
+DESCRIPTION: This talk will cover the basics of MonoMac and how the Mono runtime was integrated with the Objective-C runtime.Although MonoMac is actively being developed on OSX, there are efforts to make it run also out of the box with two open source Objective-C/AppKit Stacks.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Mono
+URL:https:/fosdem.org/2012/schedule/event/mono_monomac
+LOCATION:K.3.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Miguel De Icaza":invalid:nomail
+END:VEVENT
+END:VCALENDAR

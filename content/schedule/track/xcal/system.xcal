@@ -1,0 +1,124 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for System at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>445@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>445</pentabarf:event-id>
+      <pentabarf:event-slug>coapp</pentabarf:event-slug>
+      <pentabarf:event-tag>coapp</pentabarf:event-tag>
+      <pentabarf:title>CoApp: Packaging Open Source software for Windows</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>System Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 10:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T100000</dtstart>
+      <dtend>20120205T105000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>CoApp: Packaging Open Source software for Windows</summary>
+      <description>Open Source Software has long enjoyed the ability to be trivially acquired, installed and maintained on Linux via packages, where each package contains within it all the information required to find and configure the necessary dependencies.
+    
+However, in many situations there is a strong need to install OSS on Windows,where traditional package management systems like RPM and DPKG are not only unavailable--but couldn't support the platform in a manner consistent with the other software.
+
+This presentation looks into the technical details of CoApp, a new fully-open source package management system fills this gap by providing all the tools to easily create, publish, discover, and install software packages, including automatically handling dependencies, managing updates and providing a frictionless end-user experience, all in a method that is well supported by the platform. 
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>System Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/coapp</url>
+      <location>Janson</location>
+      <attendee>Garrett Serack</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>370@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>370</pentabarf:event-id>
+      <pentabarf:event-slug>cache_tune_fun</pentabarf:event-slug>
+      <pentabarf:event-tag>cache_tune_fun</pentabarf:event-tag>
+      <pentabarf:title>Caching and Tuning fun for high scalability</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>System Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T110000</dtstart>
+      <dtend>20120205T115000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Caching and Tuning fun for high scalability</summary>
+      <description>Caching has been a 'hot' topic for a few years. But caching takes more than merely taking data and putting it in a cache : the right caching techniques can improve performance and reduce load significantly. But we'll also look at some major pitfalls, showing that caching the wrong way can bring down your site. If you're looking for a clear explanation about various caching techniques and tools like Memcached, Nginx and Varnish, as well as ways to deploy them in an efficient way, this talk is for you. In this talk, we'll start from a Zend Framework (PHP) based site. We'll add caching, begin to add servers and replace the standard LAMP stack, all while performing live benchmarks.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>System Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/cache_tune_fun</url>
+      <location>Janson</location>
+      <attendee>Wim Godden</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>439@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>439</pentabarf:event-id>
+      <pentabarf:event-slug>coreboot_laptops</pentabarf:event-slug>
+      <pentabarf:event-tag>coreboot_laptops</pentabarf:event-tag>
+      <pentabarf:title>coreboot - The last frontier: Laptops</pentabarf:title>
+      <pentabarf:subtitle>Bringing free firmware to a laptop near you</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>System Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 12:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T120000</dtstart>
+      <dtend>20120205T125000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>coreboot - The last frontier: Laptops- Bringing free firmware to a laptop near you</summary>
+      <description>coreboot is a free firmware for x86 computers. It is designed as an extremely fast and lightweight alternative to BIOS and EFI (poweron to OS in &lt;500 ms) while retaining the flexibility to boot any operating system. A few hundred desktop/server/embedded mainboards are supported, but supported laptops were unavailable in shops until now.
+
+The coreboot developers are proud to present the first working mainstream laptop here at FOSDEM.
+We'll tell you how we did it, and how you can enjoy coreboot on your hardware as well.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>System Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/coreboot_laptops</url>
+      <location>Janson</location>
+      <attendee>Carl-Daniel Hailfinger</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>407@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>407</pentabarf:event-id>
+      <pentabarf:event-slug>monitoring</pentabarf:event-slug>
+      <pentabarf:event-tag>monitoring</pentabarf:event-tag>
+      <pentabarf:title>Bringing monitoring into the 21st century</pentabarf:title>
+      <pentabarf:subtitle>How to predict problems before they arise</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>System Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 13:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 13:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T130000</dtstart>
+      <dtend>20120205T135000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Bringing monitoring into the 21st century- How to predict problems before they arise</summary>
+      <description>We stumbled upon ancient (circa 1960) scrolls of wisdom in the field of statistics and applied it to modern day monitoring systems. The result is a monitoring system that detects anomalies instead of relying on statically defined thresholds as well as predicts failures long before they become problems.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>System Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/monitoring</url>
+      <location>Janson</location>
+      <attendee>Soren Hansen</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

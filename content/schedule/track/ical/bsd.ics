@@ -1,0 +1,190 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for BSD at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:853@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T090000
+DTEND:20120205T091500
+SUMMARY:Welcome to the BSD-licensed OS Devroom
+DESCRIPTION: Operating systems distributed under the BSD or other permissive licenses such as the BSD family, Haiku, and Minix share many things in common with other FOSS licensed OSes like Linux, but also face different challenges. These challenges include the need for alternatives to widely used GNU tools and the often surprising discovery of users of our systems.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/bsd_welcome
+LOCATION:K.4.201
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:846@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T091500
+DTEND:20120205T100000
+SUMMARY:MINIX 3 and BSD
+DESCRIPTION: MINIX 3 is a BSD-licensed operating system focused on dependability. To improve the user experience, the MINIX team has been working to provide a more BSD-like environment on MINIX 3. This talk will describe our current progress on this front and our plans for the future.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/minux3_and_bsd
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Arun Thomas":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:847@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T100000
+DTEND:20120205T104500
+SUMMARY:Introduction to pkgng
+DESCRIPTION: Pkgng is a completely new package manager rewritten from scratch. It aims at replacing the old pkg_install. It is developed on top of new libpkg which is the high level library that does all the package management, it brings new features such as safe upgrade, (multi) repository support, integrity checking and more. It has been designed to be extensible while remaining fully compatible with the current FreeBSD ports tree.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/intro_to_pkgng
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Baptiste Daroussin":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:399@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T110000
+DTEND:20120205T114500
+SUMMARY:Towards a BSD C++11 Stack 
+DESCRIPTION: FreeBSD 10 is expected to have a completely new C++ stack.  The reasons for this are partly legal and partly technical.  The existing stack is covered by version 2 of the GPL, but newer versions from upstream are GPLv3.  The new C++11 standard means that shipping an old version of the GNU stack is no longer acceptable.  This talk will cover the various parts that were required for replacing this stack, the challenges and missing pieces that needed implementing and the advantages of the new stack.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/bsd_cxx_stack
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="David Chisnall":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:845@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T114500
+DTEND:20120205T123000
+SUMMARY:Integrating LLVM into FreeBSD
+DESCRIPTION: The FreeBSD Project has been actively working to incorporate tools from the LLVM project into our base system including clang, libc++, and possibly lldb. This talk will cover our efforts so far including our plans to ship FreeBSD 9.0 with clang in the base system. I will cover both our current work to replace GPL licensed components with BSD(ish) licensed components and future or experimental work to incorporate new technologies made possible by LLVM.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/integrating_llvm_freebsd
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Brooks Davis":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:892@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T131500
+DTEND:20120205T134500
+SUMMARY:The Lua Scripting Language in the NetBSD Kernel
+DESCRIPTION: The Lua scripting language has been designed to be embedded into software written in C to allow for scripting and extending of such software. Lua is popular because it is easy to integrate and the language itself is simple and easy to learn. The compact code size and small memory footprint make it a candidate for embedded use.Most Lua use cases are to extend end-user software, like e.g. the popular game "World of Warcraft" or the photo editing and archiving software "Adobe Lightroom". In this presentation, however, the author will show how Lua can be used in an operating system kernel. An actual implementation will be presented based on the NetBSD Unix-like open source operating system.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/lua_in_the_kernel
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Marc Balmer":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:943@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T134500
+DTEND:20120205T141500
+SUMMARY:Touch your NetBSD
+DESCRIPTION: The AFUL, a French non-profit organization, has launched a contest called AFULTab to challenge developers to propose a FOSS tablet environment with the hardware of their choice. NetBSD enthusiast and DeforaOS developer is currently working on his own proposal, both adapting NetBSD for tablet hardware and polishing the user interface from the DeforaOS desktop environment.This talk will summarize the work done, in progress and planned before the official release date on May 1st.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/touch_your_netbsd
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pierre Pronchery":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:849@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T141500
+DTEND:20120205T144500
+SUMMARY:pkgsrc on MirBSD
+DESCRIPTION: pkgsrc is a collection of over 11,000 packages available for a variety of operating systems, developed by the NetBSD project. Since the end of 2010, there is an ongoing effort to port pkgsrc to MirOS BSD, an operating system derived from OpenBSD. This talk gives a short overview over pkgsrc, comparing its usage and features to MirPorts, the older "native" packages system on MirOS. Compared to MirPorts, pkgsrc has many more and newer packages, a more active community of developers and a very responsive security team that identifies and patches vulnerable packages. Some more practical aspects will also be treated: how to get a new platform supported in pkgsrc (both on the technical and on the administrative side) and which are the principal challenges in doing so.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/pkgsrc_on_mirbsd
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Benny Siegert":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:848@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T150000
+DTEND:20120205T153000
+SUMMARY:Introduction to pkgsrc, and to package creation in NetBSD
+DESCRIPTION: pkgsrc is a cross systems packaging system, used in NetBSD, but also DragonflyBSD, MirBSD, Minix3 and a lot more. Through the example of shotwell, a digital pictures management application, this talk will give an introduction to pkgsrc for users and packagers.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/intro_to_pkgsrc
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Emile Heitor":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Guillaume Lasmayous":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:850@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T153000
+DTEND:20120205T160000
+SUMMARY:pkgin, a binary package manager for pkgsrc
+DESCRIPTION: pkgin is aimed at being an /apt / yum/ like tool for managing pkgsrc binary packages. Many so-called GNU/Linux distributions provide a convenient way of searching, installing and upgrading software by using binary archives found on "repositories". NetBSD, and more widely, all operating systems relying on pkgsrc have tools like pkg_add and pkg_delete, but those are unable to correctly handle binary upgrades, and sometimes even installation itself.This is the purpose of /pkgin/, to provide the user a convenient way to handle binary packages, using the same working mechanisms than tools like /apt-get/.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/pkgin
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Emile Heitor":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:851@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T160000
+DTEND:20120205T163000
+SUMMARY:Automated package building
+DESCRIPTION: With binary package management tools such as pkgin or nih, building sets of packages and maintaining a repository becomes a need, mostly when managing multiple servers. This talk presents the setup of different bulk build solutions in pkgsrc.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/automated_pkg_building
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nicolas Thauvin":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:852@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T163000
+DTEND:20120205T170000
+SUMMARY:Cross-distro Collaboration Brainstorming and Closing
+DESCRIPTION: The various BSD licensed operating systems have many things in common.  We should use our time at FOSDEM to find new ways to collaborate.  This session will give us an opportunity to do so before we go our separate ways.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:BSD
+URL:https:/fosdem.org/2012/schedule/event/bsd_closing
+LOCATION:K.4.201
+END:VEVENT
+END:VCALENDAR

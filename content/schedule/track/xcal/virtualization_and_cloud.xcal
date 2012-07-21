@@ -1,0 +1,653 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Virtualization and Cloud at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>552@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>552</pentabarf:event-id>
+      <pentabarf:event-slug>openstack_news</pentabarf:event-slug>
+      <pentabarf:event-tag>openstack_news</pentabarf:event-tag>
+      <pentabarf:title>OpenStack News: Last year retrospective</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T112500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>OpenStack News: Last year retrospective</summary>
+      <description>OpenStack is a common effort to produce open source software to implement scalable Infrastructure as a Service providers. What happened in the project since FOSDEM 2011 presentation ? This talk will quickly introduce what OpenStack is about and the changes over the last year: Growth, new core projects, continuous integration changes and what's coming up in the Essex release.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/openstack_news</url>
+      <location>Chavanne</location>
+      <attendee>Thierry Carrez</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>553@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>553</pentabarf:event-id>
+      <pentabarf:event-slug>hacking_on_nova</pentabarf:event-slug>
+      <pentabarf:event-tag>hacking_on_nova</pentabarf:event-tag>
+      <pentabarf:title>Hacking on OpenStack Compute (Nova) - A beginner's guide</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T113000</dtstart>
+      <dtend>20120204T115500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Hacking on OpenStack Compute (Nova) - A beginner's guide</summary>
+      <description>This talk will include an introduction to OpenStack Nova's overall network architecture, as well as an introduction to the anatomy of one of the services that make up Nova. Finally, I'll give a give an introduction to Eventlet, the event library we use in all of OpenStack. In short, this talk should help you dive into most parts of Nova and not feel like too much of a stranger.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/hacking_on_nova</url>
+      <location>Chavanne</location>
+      <attendee>Soren Hansen</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>560@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>560</pentabarf:event-id>
+      <pentabarf:event-slug>libguestfs</pentabarf:event-slug>
+      <pentabarf:event-tag>libguestfs</pentabarf:event-tag>
+      <pentabarf:title>libguestfs - tools for modifying virtual machine disk images</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T123000</dtstart>
+      <dtend>20120204T125500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>libguestfs - tools for modifying virtual machine disk images</summary>
+      <description>libguestfs is a set of tools for accessing and modifying virtual machine (VM) disk images.  You can use this to inject files, resize, rescue, create, view or audit disks.  libguestfs is also a library that you can link to management programs written in C, Perl, Python, Ruby, Java and other languages.  In this talk, Richard Jones will
+introduce the tools and give live demonstrations.  He also talks about how they work behind the scenes.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libguestfs</url>
+      <location>Chavanne</location>
+      <attendee>Richard Jones</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>562@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>562</pentabarf:event-id>
+      <pentabarf:event-slug>pacemaker_cloud</pentabarf:event-slug>
+      <pentabarf:event-tag>pacemaker_cloud</pentabarf:event-tag>
+      <pentabarf:title>Cloud high availability with pacemaker-cloud</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T130000</dtstart>
+      <dtend>20120204T132500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Cloud high availability with pacemaker-cloud</summary>
+      <description>"Pacemaker Cloud" is a High availability manager for cloud providers, which detects and isolates failures, restarting components when required.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/pacemaker_cloud</url>
+      <location>Chavanne</location>
+      <attendee>Pádraig Brady</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>563@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>563</pentabarf:event-id>
+      <pentabarf:event-slug>opennebula</pentabarf:event-slug>
+      <pentabarf:event-tag>opennebula</pentabarf:event-tag>
+      <pentabarf:title>OpenNebula Project</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T133000</dtstart>
+      <dtend>20120204T135500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>OpenNebula Project</summary>
+      <description>The presentation will describe the state of the OpenNebula project for  data center virtualization, with a focus on the different innovative projects and infrastructures using OpenNebula as a platform for innovation and interoperability. We will show how OpenNebula integrates with other projects in the cloud and virtualization ecosystem and the potential areas for collaboration.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/opennebula</url>
+      <location>Chavanne</location>
+      <attendee>Carlos Martín Sánchez</attendee>
+      <attendee>Daniel Molina Aranda</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>564@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>564</pentabarf:event-id>
+      <pentabarf:event-slug>aeolus</pentabarf:event-slug>
+      <pentabarf:event-tag>aeolus</pentabarf:event-tag>
+      <pentabarf:title>The Aeolus Project</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T142500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>The Aeolus Project</summary>
+      <description>Aeolus Project is a Red Hat sponsored project released under Apache License. It's purpose is to help people to have their own solution to manage and create cloud system hybrid and then run their instances on their own in-house infrastructure (VMware vSphere, RHEV, IBM's Smart Business Cloud, Eucalyptus) and also copy/run/manage their instances in multiple public cloud places (Amazon EC2, Rackspace, GOGrid,etc)
+
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/aeolus</url>
+      <location>Chavanne</location>
+      <attendee>Francesco Vollero</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>561@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>561</pentabarf:event-id>
+      <pentabarf:event-slug>compatibleone</pentabarf:event-slug>
+      <pentabarf:event-tag>compatibleone</pentabarf:event-tag>
+      <pentabarf:title>Open Cloud Interoperability with CompatibleOne</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T143000</dtstart>
+      <dtend>20120204T145500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Open Cloud Interoperability with CompatibleOne</summary>
+      <description>This talk will detail the architecture the CompatibleOne open source collaborative project and will conclude with a live demonstration of what seems to be the first open source cloud broker. CompatibleOne develops interoperable middleware for the description and federation of heterogeneous clouds comprising resources provisioned by different vendors. The aim of CompatibleOne is break vendor-lock-in for developers and users by providing interoperability with most platforms. The project contributes to the cloud stack of the OW2 Open Source Cloudware initiative (OSCi). </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/compatibleone</url>
+      <location>Chavanne</location>
+      <attendee>Jamie Marshall</attendee>
+      <attendee>Fabio Mancinelli</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>565@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>565</pentabarf:event-id>
+      <pentabarf:event-slug>deltacloud</pentabarf:event-slug>
+      <pentabarf:event-tag>deltacloud</pentabarf:event-tag>
+      <pentabarf:title>Open Clouds with Deltacloud API</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T150000</dtstart>
+      <dtend>20120204T152500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Open Clouds with Deltacloud API</summary>
+      <description>Start an instance on an internal cloud, then with the same code start another on EC2 or Rackspace. Deltacloud protects your apps from cloud API changes and incompatibilities, so you can concentrate on managing cloud instances the way you want. Deltacloud API prosper from natural open-source evolution and use community driven
+API design instead of vendor enforced one.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/deltacloud</url>
+      <location>Chavanne</location>
+      <attendee>Michal Fojtik</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>566@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>566</pentabarf:event-id>
+      <pentabarf:event-slug>dmtf_deltacloud</pentabarf:event-slug>
+      <pentabarf:event-tag>dmtf_deltacloud</pentabarf:event-tag>
+      <pentabarf:title>DMTF CIMI and Apache Deltacloud</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T153000</dtstart>
+      <dtend>20120204T155500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>DMTF CIMI and Apache Deltacloud</summary>
+      <description>The DMTF CIMI specification describes the model and protocol for management interactions between a cloud Infrastructure as a Service (IaaS) provider and the consumers of an IaaS service. The basic entities of IaaS (machines, storage, and networks) are modeled with the goal of providing consumer management access to an implementation of IaaS and facilitating portability between cloud implementations that support the specification. This talk will introduce the current work-in-progress CIMI specification and the initial implementation of that spec. as part of the Apache Deltacloud project. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/dmtf_deltacloud</url>
+      <location>Chavanne</location>
+      <attendee>Marios Andreou</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>567@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>567</pentabarf:event-id>
+      <pentabarf:event-slug>wikimedia_infra</pentabarf:event-slug>
+      <pentabarf:event-tag>wikimedia_infra</pentabarf:event-tag>
+      <pentabarf:title>Infrastructure as an open-source project</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:55:00</pentabarf:duration>
+      <dtstart>20120204T160000</dtstart>
+      <dtend>20120204T165500</dtend>
+      <duration>00H55M00S</duration>
+      <summary>Infrastructure as an open-source project</summary>
+      <description>I've been moving the site operations model of the Wikimedia infrastructure from being a closed, mainly staff-only, model to an open to all model of contributions. I'm treating operations like an open source project, using Puppet, OpenStack and Git. The bottleneck of the operations team is greatly lessened, allowing volunteer contributions to be accepted and implemented much faster.
+
+In this presentation, I'll describe the architecture of the Wikimedia Labs project, and how we are utilizing it to allow anyone to push changes from ideas to production. I'll also describe how this same model can apply to other open source projects, and also how it could apply more generally in private cloud implementations.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/wikimedia_infra</url>
+      <location>Chavanne</location>
+      <attendee>Ryan Lane</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>568@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>568</pentabarf:event-id>
+      <pentabarf:event-slug>openstack_xcp_ubuntu</pentabarf:event-slug>
+      <pentabarf:event-tag>openstack_xcp_ubuntu</pentabarf:event-tag>
+      <pentabarf:title>Deploying OpenStack with the XCP toolstack on Ubuntu</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T170000</dtstart>
+      <dtend>20120204T172500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Deploying OpenStack with the XCP toolstack on Ubuntu</summary>
+      <description>The Xen Cloud Platform (XCP) is an open source virtualization platform based on the Xen hypervisor. XCP isn't a server application which you install alongside of Xen, but rather an "embedded" appliance, which manages your host. While this gives XCP developers the ability to provide a tightly controlled, well integrated system, it makes it more difficult for FOSS developers to use and modify our software. To correct this, we have recently ported the XCP toolstack to run on Debian; it is currently in Debian unstable and will be in the next release of Ubuntu.
+
+In this presentation, we would like to demonstrate the XCP toolstack running on Ubuntu. We will show how easy it is to use the toolstack to create and manage virtual machines, and how you can use XCP and XenServer management tools with the XCP toolstack on Ubuntu. We will also demo our software running OpenStack.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/openstack_xcp_ubuntu</url>
+      <location>Chavanne</location>
+      <attendee>Mike McClurg</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>569@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>569</pentabarf:event-id>
+      <pentabarf:event-slug>cloud_orchestration</pentabarf:event-slug>
+      <pentabarf:event-tag>cloud_orchestration</pentabarf:event-tag>
+      <pentabarf:title>Orchestration for the cloud</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T173000</dtstart>
+      <dtend>20120204T175500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Orchestration for the cloud</summary>
+      <description>In this presentation we will use Orchestra (including juju) to deploy an openstack powered cloud. We will dive into the components and how they fit together to orchestrate an openstack cloud deployment.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/cloud_orchestration</url>
+      <location>Chavanne</location>
+      <attendee>Dave Walker</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>570@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>570</pentabarf:event-id>
+      <pentabarf:event-slug>osdem</pentabarf:event-slug>
+      <pentabarf:event-tag>osdem</pentabarf:event-tag>
+      <pentabarf:title>OpenStack developers meeting &amp; Distribution panel</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:55:00</pentabarf:duration>
+      <dtstart>20120204T180000</dtstart>
+      <dtend>20120204T185500</dtend>
+      <duration>00H55M00S</duration>
+      <summary>OpenStack developers meeting &amp; Distribution panel</summary>
+      <description>The OpenStack developers ecosystem consists of OpenStack core developers, but also upstream project developers and downstream distribution packagers, producers of compatible tools... In this town hall meeting, we will all gather for an informal workshop where we'll openly discuss issues and how we can solve them as a community. In particular, we'll have a panel discussion with packagers from various distributions, but we also expect themes like project policies, QA or governance to be addressed. Come and join us !</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/osdem</url>
+      <location>Chavanne</location>
+      <attendee>Thierry Carrez</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>573@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>573</pentabarf:event-id>
+      <pentabarf:event-slug>spice</pentabarf:event-slug>
+      <pentabarf:event-tag>spice</pentabarf:event-tag>
+      <pentabarf:title>Spice "Open remote computing" introduction</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 09:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 09:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120205T090000</dtstart>
+      <dtend>20120205T092500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Spice "Open remote computing" introduction</summary>
+      <description>In one sentence: "The Spice project aims to provide a complete open source solution for interaction with virtualized desktop services". This talk will give an overview of:
+* What Spice is
+* How Spice works (globally)
+* What makes it better then using ie vnc to access a remote virtual machine
+* Future features</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/spice</url>
+      <location>Chavanne</location>
+      <attendee>Hans de Goede</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>572@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>572</pentabarf:event-id>
+      <pentabarf:event-slug>usb_network_redirect</pentabarf:event-slug>
+      <pentabarf:event-tag>usb_network_redirect</pentabarf:event-tag>
+      <pentabarf:title>USB redirection over the network</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 09:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 09:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120205T093000</dtstart>
+      <dtend>20120205T095500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>USB redirection over the network</summary>
+      <description>USB redirection is using USB devices attached to a real machine inside a virtual machine (guest).
+The focus of the talk will be the special case where the USB device being redirected is not attached
+to the physical machine hosting the virtual machine, but to some other machine. The talk will present
+and discuss the ongoing work to create an FOSS solution for this, getting this merged into upstream
+qemu, as well is integrating this into Spice and the Spice-client.
+
+The intended audience are people who are interested in usb in virtual machines (vusb) both
+developers and users. The audience is expected to be familiar with generic virtualization concepts,
+but no deep technical knowledge is required.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/usb_network_redirect</url>
+      <location>Chavanne</location>
+      <attendee>Hans de Goede</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>574@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>574</pentabarf:event-id>
+      <pentabarf:event-slug>ganeti_news</pentabarf:event-slug>
+      <pentabarf:event-tag>ganeti_news</pentabarf:event-tag>
+      <pentabarf:title>Ganeti: "how you can use it"</pentabarf:title>
+      <pentabarf:subtitle>News, deployment suggestions, crash course</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 10:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:55:00</pentabarf:duration>
+      <dtstart>20120205T100000</dtstart>
+      <dtend>20120205T105500</dtend>
+      <duration>00H55M00S</duration>
+      <summary>Ganeti: "how you can use it"- News, deployment suggestions, crash course</summary>
+      <description>Brief introduction to the Ganeti cluster virtual machine manager, latest features and suggestion for creating a production environment.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/ganeti_news</url>
+      <location>Chavanne</location>
+      <attendee>Guido Trotter</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>575@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>575</pentabarf:event-id>
+      <pentabarf:event-slug>ovirt_intro</pentabarf:event-slug>
+      <pentabarf:event-tag>ovirt_intro</pentabarf:event-tag>
+      <pentabarf:title>Virtualization Management the oVirt way</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120205T110000</dtstart>
+      <dtend>20120205T112500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Virtualization Management the oVirt way</summary>
+      <description>The oVirt Project is an open virtualization project providing a feature-rich server virtualization management system with advanced capabilities for hosts and guests, including high availability, live migration, storage management, system scheduler, and more. oVirt provides an integration point for several open source virtualization technologies, including kvm, libvirt, spice and oVirt node. oVirt was launched in November 2011 as a fully open source project, based on assets from Red Hat Enterprise Virtualization Manager platform. The project has an open governance model, and initial board has members from IBM, Cisco, Netapp, Red Hat and SUSE.
+
+The session will introduce the project principles, scope, demo and architecture.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/ovirt_intro</url>
+      <location>Chavanne</location>
+      <attendee>Itamar Heim</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>576@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>576</pentabarf:event-id>
+      <pentabarf:event-slug>ovirt_engine_core</pentabarf:event-slug>
+      <pentabarf:event-tag>ovirt_engine_core</pentabarf:event-tag>
+      <pentabarf:title>oVirt Engine Core: Internals and Infrastructure</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120205T113000</dtstart>
+      <dtend>20120205T115500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>oVirt Engine Core: Internals and Infrastructure</summary>
+      <description>The oVirt project is an open virtualization project providing virtualization management with advanced capabilities. The oVirt Engine Core is the main component responsible of managing all business logic and entities from physical hosts, data-centers, users and virtual machines.
+
+In the session, an overview of the the engine infrastructure will be given, with explanations of the internals – main components that build the engine, their roles and how they work together. The session should make the audience familiar with the project and give a basic understanding of the building blocks.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/ovirt_engine_core</url>
+      <location>Chavanne</location>
+      <attendee>Omer Frenkel</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>577@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>577</pentabarf:event-id>
+      <pentabarf:event-slug>ovirt_vdsm</pentabarf:event-slug>
+      <pentabarf:event-tag>ovirt_vdsm</pentabarf:event-tag>
+      <pentabarf:title>VDSM - The oVirt Node Management Agent</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 12:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120205T120000</dtstart>
+      <dtend>20120205T122500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>VDSM - The oVirt Node Management Agent</summary>
+      <description>VDSM, the cluster node agent, is in charge of executing, managing and monitoring all the virtualization tasks needed in a large scale deployment. This session will give an overview of the project, including:
+
+* VDSM and its responsibilities
+* Who should use VDSM
+* Architecture, packages and infrastructure
+* Short description of interesting APIs and use cases
+* Roadmap and how to contribute</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/ovirt_vdsm</url>
+      <location>Chavanne</location>
+      <attendee>Federico Simoncelli</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>578@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>578</pentabarf:event-id>
+      <pentabarf:event-slug>rump_kernels</pentabarf:event-slug>
+      <pentabarf:event-tag>rump_kernels</pentabarf:event-tag>
+      <pentabarf:title>Ultralightweight Kernel Service Virtualization with Rump Kernels</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 13:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 13:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:55:00</pentabarf:duration>
+      <dtstart>20120205T130000</dtstart>
+      <dtend>20120205T135500</dtend>
+      <duration>00H55M00S</duration>
+      <summary>Ultralightweight Kernel Service Virtualization with Rump Kernels</summary>
+      <description>Existing virtualization solutions such as Xen, QEMU and usermode operating systems virtualize the entire OS.  While this is useful in a machine room type of use case, it is unnecessarily heavyweight when the interest is in virtualizing only one kernel driver or one kernel service.
+
+This talk introduces the anykernel architecture and rump kernels, which allow to safely virtualize individual drivers and subsystems from a monolithic kernel. Rump kernels can be used in a variety of different configurations, such as an application library, a microkernel style server, or as a server over the Internet.
+
+We will go over a number of real world use cases and present results which show that in their application domain rump kernels are faster, smaller and more agile than full OS virtualization technologies.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/rump_kernels</url>
+      <location>Chavanne</location>
+      <attendee>Antti Kantee</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>579@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>579</pentabarf:event-id>
+      <pentabarf:event-slug>tracing_virt_workshop</pentabarf:event-slug>
+      <pentabarf:event-tag>tracing_virt_workshop</pentabarf:event-tag>
+      <pentabarf:title>Tracing and virtualization workshop, millikernels and anykernels</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:55:00</pentabarf:duration>
+      <dtstart>20120205T140000</dtstart>
+      <dtend>20120205T145500</dtend>
+      <duration>00H55M00S</duration>
+      <summary>Tracing and virtualization workshop, millikernels and anykernels</summary>
+      <description>There are tons of virtualization projects based on tracing: user-mode linux, umview/kmview, fakeroot-ng, cde.
+Ptrace is ugly and old but fundamentals tools rely on it: gdb, strace. New tracing facilities like uprobes, lttng and systemtap have been designed mainly (only) for debugging, not for virtualization. In the meanwhile there are new efforts to create more flexible kernels: anykernels and millikernels. These new approaches need a specific support: hooks, hypercall or tracing. It does not matter how we call it. Utrace is (was) an option, with some minor effort at kernel level, even classic ptrace could be implemented at user level for back compatibility.
+The workshop wants to be a technologically agnostic discussion on tracing supports for virtualization and for new flexible kernels.
+All contributors of new ideas are welcome to the open discussion.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/tracing_virt_workshop</url>
+      <location>Chavanne</location>
+      <attendee>Renzo Davoli</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>580@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>580</pentabarf:event-id>
+      <pentabarf:event-slug>libvirt_lxc_kvm_sandboxes</pentabarf:event-slug>
+      <pentabarf:event-tag>libvirt_lxc_kvm_sandboxes</pentabarf:event-tag>
+      <pentabarf:title>Building app sandboxes on top of LXC and KVM with libvirt</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 15:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:55:00</pentabarf:duration>
+      <dtstart>20120205T150000</dtstart>
+      <dtend>20120205T155500</dtend>
+      <duration>00H55M00S</duration>
+      <summary>Building app sandboxes on top of LXC and KVM with libvirt</summary>
+      <description>The libvirt library provides a hypervisor agnostic API for interacting with &amp; managing virtualization hosts. Traditional uses of virtualization have focused on running entire operating systems in virtual machines or containers. The libvirt-sandbox library builds on libvirt, LXC &amp; KVM, providing an API which facilitates the use of virtualization as a tool for building secure application sandboxes, without the additional burden of maintaining additional OS installations.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libvirt_lxc_kvm_sandboxes</url>
+      <location>Chavanne</location>
+      <attendee>Daniel Berrange</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>581@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>581</pentabarf:event-id>
+      <pentabarf:event-slug>xen</pentabarf:event-slug>
+      <pentabarf:event-tag>xen</pentabarf:event-tag>
+      <pentabarf:title>Deploying Xen: troubleshooting surgery &amp; discussion with Xen.org developers</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Virtualization and Cloud Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:55:00</pentabarf:duration>
+      <dtstart>20120205T160000</dtstart>
+      <dtend>20120205T165500</dtend>
+      <duration>00H55M00S</duration>
+      <summary>Deploying Xen: troubleshooting surgery &amp; discussion with Xen.org developers</summary>
+      <description>Recent developments in the Xen community mean that installing and configuring a Xen host has never been easier. However Xen remains both powerful and complex which can prevent a barrier to those wishing to deploy Xen.
+
+In this panel discussion we will briefly present recent user facing changes to the way in which Xen is deployed (e.g. xend to xl toolstack migration, Project Kronos, pvops Linux kernel domain 0 support).
+
+The bulk of the session will be an opportunity for users to describe problems which they are having deploying Xen and discuss the solution and possible future directions with a panel of Xen developers.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Virtualization and Cloud Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/xen</url>
+      <location>Chavanne</location>
+      <attendee>Ian Campbell</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

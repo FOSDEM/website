@@ -28,6 +28,10 @@ lastevent = dayevents.sort_by{|e| e.end_datetime}.last
     url: <%= url d %>
     start: <%= yd firstevent.start_datetime %>
     end: <%= yd lastevent.end_datetime %>
+    events:
+    <% dayevents.map{|e| slug(e)}.each do |e| %>
+      - <%= e %>
+    <% end %>
     rooms:
       <% dayevents.map(&:conference_room_id).uniq.map{|id| $room_by_id[id]}.sort_by{|r| r.rank}.each do |r| %>
       -
@@ -39,7 +43,20 @@ lastevent = dayevents.sort_by{|e| e.end_datetime}.last
         end: <%= yd dayevents.select{|e| e.conference_room_id == r.conference_room_id}.sort_by(&:end_datetime).last.end_datetime %>
       <% end %>
 <% end %>
+events:
+<% @events.each do |e| %>
+  - <%= slug(e) %>
+<% end %>
 rank: <%= @t.rank %>
+alternative_representations:
+  -
+    title: iCal
+    mime: text/calendar
+    url: /schedule/track/<%= slug(@t) %>.ics
+  -
+    title: xCal
+    mime: text/xml
+    url: /schedule/track/<%= slug(@t) %>.xcs
 ---
 
 <% rooms = @events.map{|e| e.conference_room_id}.uniq.map{|i| $room_by_id[i]}.sort{|r| r.rank} %>

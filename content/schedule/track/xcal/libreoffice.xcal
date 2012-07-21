@@ -1,0 +1,483 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for LibreOffice at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>739@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>739</pentabarf:event-id>
+      <pentabarf:event-slug>liboa11y</pentabarf:event-slug>
+      <pentabarf:event-tag>liboa11y</pentabarf:event-tag>
+      <pentabarf:title>Accessibility in LibreOffice</pentabarf:title>
+      <pentabarf:subtitle>the way forward</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T111500</dtend>
+      <duration>00H15M00S</duration>
+      <summary>Accessibility in LibreOffice- the way forward</summary>
+      <description>LibreOffice has many features for accessible authoring: it provides functionality to use the accessibility features of the OpenDocument Format (ODF), it supports export to tagged PDF (unlike most other free and open-source tools), it has extensions for exporting to digital audio books (odt2daisy) and Braille (odt2braille), and an extension for evaluating and repairing accessibility issues in ODT, DOC and DOCX (AccessODF). It also implements accessibility APIs to enable users of assistive technologies to use the office suite. However, there is room for improvement, both with regard to the creation of accessible content and with regard to the accessibility of LibreOffice itself. This presentation will discuss both types of issues. It will highlight bugs and feature requests that could be addressed to make it easier to create accessible content, and issues related to the support for accessibility APIs. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboa11y</url>
+      <location>H.1309</location>
+      <attendee>Christopher Strobbe</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>740@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>740</pentabarf:event-id>
+      <pentabarf:event-slug>liboupdate</pentabarf:event-slug>
+      <pentabarf:event-tag>liboupdate</pentabarf:event-tag>
+      <pentabarf:title>LibreOffice Development Directions</pentabarf:title>
+      <pentabarf:subtitle>an update on our progress</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:45:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T111500</dtstart>
+      <dtend>20120204T114500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>LibreOffice Development Directions- an update on our progress</summary>
+      <description>Where we have started from, where we are going to. For hackers, and for mere mortals.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboupdate</url>
+      <location>H.1309</location>
+      <attendee>Italo Vignoli</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>741@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>741</pentabarf:event-id>
+      <pentabarf:event-slug>liboimport</pentabarf:event-slug>
+      <pentabarf:event-tag>liboimport</pentabarf:event-tag>
+      <pentabarf:title>Import filters for LibreOffice</pentabarf:title>
+      <pentabarf:subtitle>Join the journey</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T114500</dtstart>
+      <dtend>20120204T121500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Import filters for LibreOffice- Join the journey</summary>
+      <description>A 45 (or less) minutes session dedicated on explaining how we proceeded in writing our Visio import filter and showing a methodology how to write an import filter for LibreOffice efficiently. Part of the session will be dedicated to get interested developers started. If you want to join our exciting journey, this is the door wide open for you into our community. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboimport</url>
+      <location>H.1309</location>
+      <attendee>Fridrich Strba</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>742@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>742</pentabarf:event-id>
+      <pentabarf:event-slug>libolayout</pentabarf:event-slug>
+      <pentabarf:event-tag>libolayout</pentabarf:event-tag>
+      <pentabarf:title>Widget Layout</pentabarf:title>
+      <pentabarf:subtitle>towards a beautiful UI</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T121500</dtstart>
+      <dtend>20120204T123000</dtend>
+      <duration>00H15M00S</duration>
+      <summary>Widget Layout- towards a beautiful UI</summary>
+      <description>Dialogs in LibreOffice are horrifically ugly, mostly because all widgets contained within them and the dialog themselves are typically fixed size and sized to contain the text of the longest translation. The other reason they are ugly is because they are so painful to edit. There's been plenty of proposals and attempts to fix them. Here's another one.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libolayout</url>
+      <location>H.1309</location>
+      <attendee>Caolan McNamara</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>743@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>743</pentabarf:event-id>
+      <pentabarf:event-slug>liboeasy</pentabarf:event-slug>
+      <pentabarf:event-tag>liboeasy</pentabarf:event-tag>
+      <pentabarf:title>Easy Hacks</pentabarf:title>
+      <pentabarf:subtitle>how to get stuck into LibreOffice</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T123000</dtstart>
+      <dtend>20120204T130000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Easy Hacks- how to get stuck into LibreOffice</summary>
+      <description>Looking at some easy hacks - some worked examples in getting started in the LibreOffice project. We have a ton of entry level tasks, all of them useful that we'd love to get people involved with. We also have some more juicy, but still really useful things we need to get done too.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboeasy</url>
+      <location>H.1309</location>
+      <attendee>Michael Meeks</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>744@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>744</pentabarf:event-id>
+      <pentabarf:event-slug>liboqa</pentabarf:event-slug>
+      <pentabarf:event-tag>liboqa</pentabarf:event-tag>
+      <pentabarf:title>LibreOffice QA</pentabarf:title>
+      <pentabarf:subtitle>as handy and joyful as possible</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:45:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T131500</dtstart>
+      <dtend>20120204T134500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>LibreOffice QA- as handy and joyful as possible</summary>
+      <description>Come and hear how the LibreOffice QA team works, get hands on experience with bugzilla, find out where our daily snapshots are, and how to use them, and chat with fellow QA guys. See some feedback on the progress of bug tracking and some pretty graphs.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboqa</url>
+      <location>H.1309</location>
+      <attendee>Cor Nouws</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>745@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>745</pentabarf:event-id>
+      <pentabarf:event-slug>liboextntempl</pentabarf:event-slug>
+      <pentabarf:event-tag>liboextntempl</pentabarf:event-tag>
+      <pentabarf:title>Improving the Extensions and Template Center</pentabarf:title>
+      <pentabarf:subtitle>our beautiful new infrastructure</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T143000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Improving the Extensions and Template Center- our beautiful new infrastructure</summary>
+      <description>Explaining the upcoming hacks / improvements in the extensions- and specially the template-center.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboextntempl</url>
+      <location>H.1309</location>
+      <attendee>Andreas Mantke</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>746@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>746</pentabarf:event-id>
+      <pentabarf:event-slug>liboimpress</pentabarf:event-slug>
+      <pentabarf:event-tag>liboimpress</pentabarf:event-tag>
+      <pentabarf:title>Impress Hacking</pentabarf:title>
+      <pentabarf:subtitle>The What &amp; The Where</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T143000</dtstart>
+      <dtend>20120204T150000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Impress Hacking- The What &amp; The Where</summary>
+      <description>Want to hack some nice graphics algorithms, or just fix the most annoying bug your MBA friends keep nagging you with for Impress? Here's the place to get directions &amp; ideas for that, plus some war stories from 10+ years of Impress hacking.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboimpress</url>
+      <location>H.1309</location>
+      <attendee>Thorsten Behrens</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>747@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>747</pentabarf:event-id>
+      <pentabarf:event-slug>liboautotest</pentabarf:event-slug>
+      <pentabarf:event-tag>liboautotest</pentabarf:event-tag>
+      <pentabarf:title>Test concepts for automated Libreoffice testing</pentabarf:title>
+      <pentabarf:subtitle>how we're making your suite more reliable</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T150000</dtstart>
+      <dtend>20120204T153000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Test concepts for automated Libreoffice testing- how we're making your suite more reliable</summary>
+      <description>Showing new concepts for in-build tests and subsequenttests and how these concepts make automated testing easier and more reliable.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboautotest</url>
+      <location>H.1309</location>
+      <attendee>Markus Mohrhard</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>748@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>748</pentabarf:event-id>
+      <pentabarf:event-slug>libowriter</pentabarf:event-slug>
+      <pentabarf:event-tag>libowriter</pentabarf:event-tag>
+      <pentabarf:title>Hacking Writer</pentabarf:title>
+      <pentabarf:subtitle>what to know to get started</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T153000</dtstart>
+      <dtend>20120204T160000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Hacking Writer- what to know to get started</summary>
+      <description>Here is the starter pack for the Writer hacker. Document model, layout and UI bits will be presented here to help you fix your pet bug or add cool new features.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libowriter</url>
+      <location>H.1309</location>
+      <attendee>Cedric Bosdonnat</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>749@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>749</pentabarf:event-id>
+      <pentabarf:event-slug>liboinfra</pentabarf:event-slug>
+      <pentabarf:event-tag>liboinfra</pentabarf:event-tag>
+      <pentabarf:title>The Infrastructure behind TDF</pentabarf:title>
+      <pentabarf:subtitle>the inside of the sausage machine</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:45:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T161500</dtstart>
+      <dtend>20120204T164500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>The Infrastructure behind TDF- the inside of the sausage machine</summary>
+      <description>TDF provides not only a stable and reliable software to its users, but also a stable and reliable infrastructure for its community. Contrary to what we had before, most of the knowledge is now inside the community, giving a flexible and scalable solution that grows with the demands of the project. This talk gives an overview on the infrastructure that drives the LibreOffice community, including technical details on server administration and management. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboinfra</url>
+      <location>H.1309</location>
+      <attendee>Florian Effenberger</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>750@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>750</pentabarf:event-id>
+      <pentabarf:event-slug>libocalc</pentabarf:event-slug>
+      <pentabarf:event-tag>libocalc</pentabarf:event-tag>
+      <pentabarf:title>Calc Hacking</pentabarf:title>
+      <pentabarf:subtitle>What you need to know to get into it</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T164500</dtstart>
+      <dtend>20120204T171500</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Calc Hacking- What you need to know to get into it</summary>
+      <description>Calc has been described by some as a cross between a programming language and a brick factory; come and see how it fits together and how you can get stuck into torturing it into doing what you really wanted all along.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libocalc</url>
+      <location>H.1309</location>
+      <attendee>Eike Rathke</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>751@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>751</pentabarf:event-id>
+      <pentabarf:event-slug>libodebug</pentabarf:event-slug>
+      <pentabarf:event-tag>libodebug</pentabarf:event-tag>
+      <pentabarf:title>LibreOffice debugging tips</pentabarf:title>
+      <pentabarf:subtitle>how to get the bonnet open while it's running</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T171500</dtstart>
+      <dtend>20120204T173000</dtend>
+      <duration>00H15M00S</duration>
+      <summary>LibreOffice debugging tips- how to get the bonnet open while it's running</summary>
+      <description>How to find your way through the complexities of LibreOffice, or any other large project; or "Find the needle in the haystack effectively", hear about our sexy new python debugging tools and techniques.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libodebug</url>
+      <location>H.1309</location>
+      <attendee>Jan Holesovsky</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>752@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>752</pentabarf:event-id>
+      <pentabarf:event-slug>libobase</pentabarf:event-slug>
+      <pentabarf:event-tag>libobase</pentabarf:event-tag>
+      <pentabarf:title>Base Hacking</pentabarf:title>
+      <pentabarf:subtitle>please join us</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T173000</dtstart>
+      <dtend>20120204T180000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Base Hacking- please join us</summary>
+      <description>The database component is one of the pieces most in need of love in LibreOffice. Come and hear how one noble, lone hacker has made a huge difference to this component, and how you can get stuck into improving this key piece of the suite.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libobase</url>
+      <location>H.1309</location>
+      <attendee>Lionel Elie Mamane</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>753@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>753</pentabarf:event-id>
+      <pentabarf:event-slug>libosharep</pentabarf:event-slug>
+      <pentabarf:event-tag>libosharep</pentabarf:event-tag>
+      <pentabarf:title>LibreOffice extension for Sharepoint</pentabarf:title>
+      <pentabarf:subtitle>connect to that pure evilness, easily</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:15:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T180000</dtstart>
+      <dtend>20120204T181500</dtend>
+      <duration>00H15M00S</duration>
+      <summary>LibreOffice extension for Sharepoint- connect to that pure evilness, easily</summary>
+      <description>LPSP stands for LibreOffice extension providing connection to SharePoint. This Java extension is a great solution for users needing SharePoint support right now and/or don't consider upgrading (yet) to newer SharePoint versions supporting CMIS.
+
+We'll also take a short time to explain about the CMIS connection and why it is a cool thing to hack on. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libosharep</url>
+      <location>H.1309</location>
+      <attendee>Miklos Vajna</attendee>
+      <attendee>Cedric Bosdonnat</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>754@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>754</pentabarf:event-id>
+      <pentabarf:event-slug>liboacchelp</pentabarf:event-slug>
+      <pentabarf:event-tag>liboacchelp</pentabarf:event-tag>
+      <pentabarf:title>AccessODF &amp; Hacking Help</pentabarf:title>
+      <pentabarf:subtitle>two talks crammed into fifteen minutes of fun</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:15:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T181500</dtstart>
+      <dtend>20120204T183000</dtend>
+      <duration>00H15M00S</duration>
+      <summary>AccessODF &amp; Hacking Help- two talks crammed into fifteen minutes of fun</summary>
+      <description>AccessODF is an extension for evaluating and repairing accessibility issues in ODT, DOC and DOCX. In addition to providing a list of errors and warnings (and repair suggestions), it also provides some functionality for automatic and semi-automatic repair.
+Hacking LibreOffice Help files, to improve contents and make them more suitable to user needs. Hacking for human beings, because help file should not be handled by developers.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/liboacchelp</url>
+      <location>H.1309</location>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>755@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>755</pentabarf:event-id>
+      <pentabarf:event-slug>libocompiler</pentabarf:event-slug>
+      <pentabarf:event-tag>libocompiler</pentabarf:event-tag>
+      <pentabarf:title>Analysing LibreOffice with Compiler plugins</pentabarf:title>
+      <pentabarf:subtitle>what does the compiler see that we cannot ?</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:45:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T183000</dtstart>
+      <dtend>20120204T184500</dtend>
+      <duration>00H15M00S</duration>
+      <summary>Analysing LibreOffice with Compiler plugins- what does the compiler see that we cannot ?</summary>
+      <description>Above all else, LibreOffice is a vast corpus of C++ source code of varying quality. Static analysis of that giant code base guarantees a constant stream of interesting findings. The talk will look at how plugin architectures of modern C++ compilers allow to tap that stream. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libocompiler</url>
+      <location>H.1309</location>
+      <attendee>Stephan Bergmann</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>756@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>756</pentabarf:event-id>
+      <pentabarf:event-slug>libocontribute</pentabarf:event-slug>
+      <pentabarf:event-tag>libocontribute</pentabarf:event-tag>
+      <pentabarf:title>10 reasons to contribute to LibreOffice today</pentabarf:title>
+      <pentabarf:subtitle>why you should get hacking now</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>LibreOffice Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:45:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 19:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:15:00</pentabarf:duration>
+      <dtstart>20120204T184500</dtstart>
+      <dtend>20120204T190000</dtend>
+      <duration>00H15M00S</duration>
+      <summary>10 reasons to contribute to LibreOffice today- why you should get hacking now</summary>
+      <description>Ten quick reasons why LibreOffice is a great place to make your blow for Free Software, with some detail about how we make this a fun place for you to get involved.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>LibreOffice Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/libocontribute</url>
+      <location>H.1309</location>
+      <attendee>Björn Michaelsen </attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

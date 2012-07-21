@@ -1,0 +1,71 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for System at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:445@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T100000
+DTEND:20120205T105000
+SUMMARY:CoApp: Packaging Open Source software for Windows
+DESCRIPTION: Open Source Software has long enjoyed the ability to be trivially acquired, installed and maintained on Linux via packages, where each package contains within it all the information required to find and configure the necessary dependencies.    However, in many situations there is a strong need to install OSS on Windows,where traditional package management systems like RPM and DPKG are not only unavailable--but couldn't support the platform in a manner consistent with the other software.This presentation looks into the technical details of CoApp, a new fully-open source package management system fills this gap by providing all the tools to easily create, publish, discover, and install software packages, including automatically handling dependencies, managing updates and providing a frictionless end-user experience, all in a method that is well supported by the platform. 
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:System
+URL:https:/fosdem.org/2012/schedule/event/coapp
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Garrett Serack":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:370@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T110000
+DTEND:20120205T115000
+SUMMARY:Caching and Tuning fun for high scalability
+DESCRIPTION: Caching has been a 'hot' topic for a few years. But caching takes more than merely taking data and putting it in a cache : the right caching techniques can improve performance and reduce load significantly. But we'll also look at some major pitfalls, showing that caching the wrong way can bring down your site. If you're looking for a clear explanation about various caching techniques and tools like Memcached, Nginx and Varnish, as well as ways to deploy them in an efficient way, this talk is for you. In this talk, we'll start from a Zend Framework (PHP) based site. We'll add caching, begin to add servers and replace the standard LAMP stack, all while performing live benchmarks.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:System
+URL:https:/fosdem.org/2012/schedule/event/cache_tune_fun
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Wim Godden":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:439@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T120000
+DTEND:20120205T125000
+SUMMARY:coreboot - The last frontier: Laptops
+DESCRIPTION: coreboot is a free firmware for x86 computers. It is designed as an extremely fast and lightweight alternative to BIOS and EFI (poweron to OS in <500 ms) while retaining the flexibility to boot any operating system. A few hundred desktop/server/embedded mainboards are supported, but supported laptops were unavailable in shops until now.The coreboot developers are proud to present the first working mainstream laptop here at FOSDEM.We'll tell you how we did it, and how you can enjoy coreboot on your hardware as well.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:System
+URL:https:/fosdem.org/2012/schedule/event/coreboot_laptops
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Carl-Daniel Hailfinger":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:407@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T130000
+DTEND:20120205T135000
+SUMMARY:Bringing monitoring into the 21st century
+DESCRIPTION: We stumbled upon ancient (circa 1960) scrolls of wisdom in the field of statistics and applied it to modern day monitoring systems. The result is a monitoring system that detects anomalies instead of relying on statically defined thresholds as well as predicts failures long before they become problems.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:System
+URL:https:/fosdem.org/2012/schedule/event/monitoring
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Soren Hansen":invalid:nomail
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,161 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for Telephony and Communications at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:582@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T090000
+DTEND:20120205T094000
+SUMMARY:LTE is here, and ModemManager is (almost) ready for it
+DESCRIPTION: An overview of LTE/LTE-advanced technologies, and how ModemManager will work with LTE devices.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/lte_modemmanager
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Aleksander Morgado":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:583@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T094500
+DTEND:20120205T102500
+SUMMARY:Asterisk 10: New Features, New Testing
+DESCRIPTION: Asterisk 10 added many new features, and includes substantial automated testing.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/asterisk_10
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Matt Jordan":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:590@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T103000
+DTEND:20120205T111000
+SUMMARY:Mobicents TelScale and RestComm
+DESCRIPTION: RestComm and TelScale make it possible for application developers to easily connect voice applications to Web 2.0 services and networks.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/mobicents
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jean Deruelle":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:585@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T111500
+DTEND:20120205T115500
+SUMMARY:From zero to VoIP provider in 15 minutes
+DESCRIPTION: By using the sip:provider Community Edition, an open source VoIP soft-switchleveraging powerful and widely used open source components, we will in 15minutes create a VoIP deployment from scratch in order to provide future-proofvoice and video communication services, preceded by an introduction into thesystem architecture.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/zero_to_voip_provider
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Andreas Granig":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:586@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T123500
+DTEND:20120205T131500
+SUMMARY:Session Border Control with SEMS
+DESCRIPTION: The SIP Express Media Server can be used to provide SBC-like functionality in various ways, and this presentation will demonstrate two of them.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/sbc_sems
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Stefan Sayer":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:584@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T132000
+DTEND:20120205T140000
+SUMMARY:Enhancing FreePBX with Adhearsion
+DESCRIPTION: Demonstration of building applications with the Adhearsion voice application development framework.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/adhearsion_freepbx
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Luca Pradovera":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:588@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T140500
+DTEND:20120205T144500
+SUMMARY:A real Skype alternative using standards compliant FLOSS
+DESCRIPTION: The University of Strasbourg has built a 'Skype replacement' for ~60,000 users using open source standards and software.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/skype_alternative_floss
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Emil Ivov":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:589@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T145000
+DTEND:20120205T153000
+SUMMARY:Secure SIP Communications with Kamailio
+DESCRIPTION: With SIP networks being used for more than just Voice/Video calls, it has become important that the SIP infrastructure provide secure signaling channels; this talk will present features of Kamailio and how they can be used to provide this security.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/secure_sip_kamailio
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Daniel-Constantin Mierla":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:587@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T153500
+DTEND:20120205T161500
+SUMMARY:SIP beyond VoIP
+DESCRIPTION: SIP can be used for much more than 'plain phone calls', and this talk will demonstrate chat, file transfer, contact lists and more!
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/sip_beyond_voip
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Saúl Ibarra Corretgé":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:738@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T162000
+DTEND:20120205T170000
+SUMMARY:Telephony and Communications Roundtable
+DESCRIPTION: A round-table discussion about VoIP and related topics with the day's speakers.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Telephony and Communications
+URL:https:/fosdem.org/2012/schedule/event/tel_comm_roundtable
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Kevin Fleming":invalid:nomail
+END:VEVENT
+END:VCALENDAR

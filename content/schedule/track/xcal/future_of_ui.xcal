@@ -1,0 +1,123 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Future of UI at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>391@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>391</pentabarf:event-id>
+      <pentabarf:event-slug>mobile_beyond</pentabarf:event-slug>
+      <pentabarf:event-tag>mobile_beyond</pentabarf:event-tag>
+      <pentabarf:title>Beyond Traditional Mobile Linux</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Future of UI Track</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T145000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Beyond Traditional Mobile Linux</summary>
+      <description>The last few years has seen many different Mobile Linux projects come and go, both big and small, commercial and open source. This talk seeks to present about the current state of Mobile Linux and future challenges of the platforms that drive our mobile devices. The angle of attack is to identify and explain tendencies in technology about moving beyond Mobile Linux as defined by Linux handsets, netbooks and tablets - towards more unified and more connected experiences of interaction. The talk will center around the problems and challenges that open source efforts will have in such a world of connected experiences and describe what current efforts exist within the open source community that recognise this shift beyond traditional Mobile Linux.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Future of UI Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/mobile_beyond</url>
+      <location>K.1.105</location>
+      <attendee>Carsten Munk</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>383@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>383</pentabarf:event-id>
+      <pentabarf:event-slug>efl</pentabarf:event-slug>
+      <pentabarf:event-tag>efl</pentabarf:event-tag>
+      <pentabarf:title>EFL, the toolkit for up and coming Linux mobile devices</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Future of UI Track</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T150000</dtstart>
+      <dtend>20120204T155000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>EFL, the toolkit for up and coming Linux mobile devices</summary>
+      <description>## EFL, the toolkit for up and coming mobile devices ##
+
+EFL (The Enlightenment Foundation Libraries) were written to support the development of Enlightenment, and ultimately became a complete toolkit for making applications for desktops and especially lower powered devices like phones and tablets. The focus on achieving great effects, ease of programming and lean efficiency has attracted some major players to EFL, such as Samsung Electronics. EFL is being used in development for their next generation devices. Find out about EFL.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Future of UI Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/efl</url>
+      <location>K.1.105</location>
+      <attendee>Carsten Haitzler</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>378@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>378</pentabarf:event-id>
+      <pentabarf:event-slug>lo_online</pentabarf:event-slug>
+      <pentabarf:event-tag>lo_online</pentabarf:event-tag>
+      <pentabarf:title>LibreOffice: on-line and in your pocket</pentabarf:title>
+      <pentabarf:subtitle>cool and new things in LibreOffice</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Future of UI Track</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T160000</dtstart>
+      <dtend>20120204T165000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>LibreOffice: on-line and in your pocket- cool and new things in LibreOffice</summary>
+      <description>Hear how LibreOffice is tackling our users demands both for an 'app', a web office suite, and a traditional fat client, and how we have fun while improving the software.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Future of UI Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/lo_online</url>
+      <location>K.1.105</location>
+      <attendee>Michael Meeks</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>436@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>436</pentabarf:event-id>
+      <pentabarf:event-slug>wayland</pentabarf:event-slug>
+      <pentabarf:event-tag>wayland</pentabarf:event-tag>
+      <pentabarf:title>Wayland</pentabarf:title>
+      <pentabarf:subtitle>A new graphics architecture</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Future of UI Track</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T170000</dtstart>
+      <dtend>20120204T175000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Wayland- A new graphics architecture</summary>
+      <description>Wayland is a new window system architecture aiming to be a good fit for everything from embedded and mobile devices to full-blown desktop environments. Wayland builds on most of the graphics driver, desktop and UI infrastructure we have today, but distills out just the display server functionality we actually use today. The toolkits, device
+drivers, compositors and desktop environments we use today all play their parts, but the X server is essentially reduced to an awkward, 500kloc IPC mechanism.
+In the talk we will look at where Wayland comes from, how our graphics stack has evolved to make Wayland feasible and the basics of how Wayland works. We are working towards a 1.0 release of the protocol libraries and the reference compositor, Weston, and we'll take a look at what will be in the release.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Future of UI Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/wayland</url>
+      <location>K.1.105</location>
+      <attendee>Kristian Høgsberg</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

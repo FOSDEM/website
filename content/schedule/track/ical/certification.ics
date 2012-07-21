@@ -1,0 +1,145 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for Certification at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:556@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T140000
+DTEND:20120204T160000
+SUMMARY:BSDA certification exams
+DESCRIPTION: BSDA certification exams. Further details are on [the FOSDEM website](https://fosdem.org/2012/certification/)
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/cert_bsdsa
+LOCATION:UA2.114
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="BSDCG":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:557@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T140000
+DTEND:20120204T160000
+SUMMARY:TYPO3 certification exams
+DESCRIPTION: TYPO3 certification exams. Further details are on [the FOSDEM website](https://fosdem.org/2012/certification/)
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/cert_typo3
+LOCATION:UA2.114
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="TYPO3":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:520@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T140000
+DTEND:20120204T154500
+SUMMARY:LPI Exam Session 1
+DESCRIPTION: See https://fosdem.org/certification
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/lpi_1
+LOCATION:Guillissen
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Klaus Behrla":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:521@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T160000
+DTEND:20120204T174500
+SUMMARY:LPI Exam Session 2
+DESCRIPTION: See https://fosdem.org/certification
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/lpi_2
+LOCATION:Guillissen
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Klaus Behrla":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:522@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T103000
+DTEND:20120205T121500
+SUMMARY:LPI Exam Session 3
+DESCRIPTION: See https://fosdem.org/certification
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/lpi_3
+LOCATION:Guillissen
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Klaus Behrla":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:939@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T110000
+DTEND:20120205T170000
+SUMMARY:LPI Item Writing Workshop
+DESCRIPTION: LPI holds an open attendance item development workshop for the new exam "Linux Essentials". G. Matthew Rice, Director of Product Development at LPI, will guide this workshop. Participants are invited to write real exam questions and answers for this new exam during the workshop. The purpose of the Linux Essentials Program is to define the basic knowledge required to competently use a desktop or mobile device using a Linux Operating System. The program will guide and encourage youth and those new to Linux and Open Sourceto understand the place of Linux and Open Source in the context of the broader IT industry. More information about the Linux Essentials Program are at http://wiki.lpi.org/wiki/LinuxEssentials and at http://wiki.lpi.org/wiki/LinuxEssentialsProgramme
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/lpi_workshop
+LOCATION:UA2.114
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="G. Matthew Rice":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:954@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T120000
+DTEND:20120205T120500
+SUMMARY:OpenPGP keysigning
+DESCRIPTION: The key signing event will take place at the main entrance of the H building, near the primary Infodesk. It will be outside, so dress accordingly.Be sure to bring an official ID and the keylist (of which you verified the checksums).
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/openpgp_keysigning
+LOCATION:Ferrer
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:523@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T130000
+DTEND:20120205T144500
+SUMMARY:LPI Exam Session 4
+DESCRIPTION: See https://fosdem.org/certification
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/lpi_4
+LOCATION:Guillissen
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Klaus Behrla":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:524@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T150000
+DTEND:20120205T164500
+SUMMARY:LPI Exam Session 5
+DESCRIPTION: See https://fosdem.org/certification
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Certification
+URL:https:/fosdem.org/2012/schedule/event/lpi_5
+LOCATION:Guillissen
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Klaus Behrla":invalid:nomail
+END:VEVENT
+END:VCALENDAR

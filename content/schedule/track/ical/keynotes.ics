@@ -1,0 +1,101 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for Keynotes at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:448@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T103000
+DTEND:20120204T105500
+SUMMARY:Welcome to FOSDEM 2012
+DESCRIPTION: FOSDEM welcome and opening talk.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Keynotes
+URL:https:/fosdem.org/2012/schedule/event/keynotes_welcome
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="FOSDEM Staff":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:449@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T110000
+DTEND:20120204T115000
+SUMMARY:Free Software: A viable model for Commercial Success
+DESCRIPTION: This talk will discuss our experience at [AdaCore](http://www.adacore.com/), one of only a handful of 100% Free Software companies. All of our commercial products are licensed under the GPL and other Free Software Licenses.People often assume that there is a conflict between the use of such licenses and the needs of a commercial software company. Our experience at AdaCore shows that on the contrary, the Free Software model can be very successful both for us as a company and for our customers.We think this model can be used in many other circumstances, and want to encourage free software enthusiasts to consider this model in other circumstances.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Keynotes
+URL:https:/fosdem.org/2012/schedule/event/keynotes_model_success
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Robert Dewar":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:526@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T120000
+DTEND:20120204T123000
+SUMMARY:A New OSI For A New Decade
+DESCRIPTION: The OSI (Open Source Initiative) is reorganizing its governance from a board-only organization into a member-based structure in 2012.Simon will give us a brief explanation of what that is, what it means, and how to join.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Keynotes
+URL:https:/fosdem.org/2012/schedule/event/new_osi
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Simon Phipps":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:443@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T123000
+DTEND:20120204T132000
+SUMMARY:Re-thinking system and distro development
+DESCRIPTION: We believe system (and distribution) development needs to bere-thought from the basic concepts upwards. We've implemented someideas for streamlining development, reducing development friction,speeding up system upgrades and adding support for downgrades androllbacks, and generally making development of entire systems fasterand more fun.At the level of individual, atomic projects, several great tools anddevelopment methods have been developed over the past decade or so.Few of them are applied at the system or distribution level. The Linuxkernel development, for example, greatly benefits from the ease ofbranching and merging that git provides, but it is not possible to branchand merge the whole system, or distribution, consisting of hundredsor tens of thousands of individual projects.From the agile development worlds, automated testing, test drivendevelopment, and continuous integration are common-place for individualprojects, but not so much for complete systems development. Would it notbe nice to have them?Packages have been the darling child of Linux distribution developmentsince the early days. They are a natural, modular concept, and have beenone of the key factors behind the success of the distribution concept.Package managers have made it easy to install and remove and upgradeeach piece of software separately, and to upgrade the whole system byupgrading each installed package. However, a modern distribution consistsof tens of thousands of packages, and the combinatorial explosion ofdependencies and interaction may be getting out of hand. In this talkwe explore another way of approaching the packaging problem.We believe these and other changes are useful for bridging the currentgap between upstream development and end users, to speed up systemand distribution development, and to let system builders bravelyhack what no-one has hacked before.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Keynotes
+URL:https:/fosdem.org/2012/schedule/event/rethinking
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Lars Wirzenius":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:380@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T170000
+DTEND:20120205T175000
+SUMMARY:Freedom, Out of the Box!
+DESCRIPTION: FreedomBox is a personal server running a free software operating system and free applications, designed to create and preserve personal privacy by providing a secure platform upon which federated social networks can be constructed.  Eben Moglen articulated the need for FreedomBox in his 2011 FOSDEM keynote, this presentation is a status update on the work done to turn Eben's vision into reality over the past year.  Software for FreedomBox is being assembled by volunteer programmers around the world who believe in Free Software and Free Society, with Bdale coordinating development of a reference implementation on behalf of the non-profit FreedomBox Foundation.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Keynotes
+URL:https:/fosdem.org/2012/schedule/event/freedom_ootb
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bdale Garbee":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:958@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T175000
+DTEND:20120205T180000
+SUMMARY:Closing FOSDEM 2012
+DESCRIPTION: Some closing words, and the not-to-be-missed mythical FOSDEM dance.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Keynotes
+URL:https:/fosdem.org/2012/schedule/event/closing_fosdem
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="FOSDEM Staff":invalid:nomail
+END:VEVENT
+END:VCALENDAR

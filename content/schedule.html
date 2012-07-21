@@ -41,7 +41,15 @@ during the event.</p>
         <% keynotes.each do |e| %>
         <tr>
             <td><a href="<%= e.path %>"><%= e[:title] %></a></td>
-            <td><%= e[:speakers].map{|s| "<a href=\"#{s[:url]}\">#{s[:name]}</a>"}.join(", ") %></td>
+            <td><%=
+                e[:speakers].map do |s|
+                photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"]
+                text = ""
+                text << "<img src=\"#{photo.path}\" width=\"#{photo[:width]}\" height=\"#{photo[:height]}\"/>" if photo
+                text << "<a href=\"#{s[:url]}\">#{s[:name]}</a>"
+                text
+                end.join(", ")
+                %></td>
             <td><a href="<%= e[:day_url] %>"><%= e[:day] %></a></td>
             <td><%= e[:start].strftime('%H:%M') %> - <%= e[:end].strftime('%H:%M') %></td>
             <td><a href="<%= e[:room_url] %>"><%= e[:room] %></a></td>

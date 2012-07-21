@@ -1,0 +1,485 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for CrossDistribution at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:816@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T110000
+DTEND:20120204T120000
+SUMMARY:Coping with wide-impact changes in a distribution
+DESCRIPTION: One part of the integration of upstream software in a distribution is to correctly deal with changes that have a wide impact, either because they affect a lot of other software, or because the changes will be highly visible to the users. And it is easy to feel that such changes are always going wrong: some applications stop working, many users complain about the change they feel was uncalled for, nearly nobody shares a thank you note.Such wide-impact changes always come with controversies, and being the bridge between users and upstreams, distributions are the place where all the rage is going on, with a social aspect that is usually at least as important as the technical side of things.The recent years have not been exempt of controversies, and we will share our experiences with user-visible changes such as the move to KDE 4, GNOME 3 and systemd.This talk will be co-presented by the SUSE Gang: Frédéric Crozat, Will Stephenson, Vincent Untz.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/distro_wide_impact_changes
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Will Stephenson":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Vincent Untz":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Frédéric Crozat":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:942@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T110000
+DTEND:20120204T113000
+SUMMARY:Embracing Non-Technical Users: Celebrations and Challenges
+DESCRIPTION: tba
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/embracing_nontech
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Allison Randal":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:839@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T113000
+DTEND:20120204T120000
+SUMMARY:How to replace a legacy tool with 100k installations
+DESCRIPTION: Debian has a number of legacy tools (that's a euphemism for ugly hacks) that are not addressed due to inertia, fear of breaking stuff, and the difficulty of reaching consensus for changes with cross-package impact. I'll talk about dealing with the above issues in the context of ongoing work as part of Debian Enhancement Proposal 9.Specifically, the talk will cover how (not) to make proposals for cross-package changes, and how to map behaviour in a technical spec to feature-centered assertions in a test suite.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/debian_dep9
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Serafeim Zanikolas":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:819@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T130000
+DTEND:20120204T140000
+SUMMARY:Multiarch - why it's important
+DESCRIPTION: Multiarch is a properly generic solution to the installation and use of library packages from one than one architecture at a time, which changes the way running non-native binaries and crossbuilding are dealt with in a fundamental way. It is both powerful and intrusive and has taken a long time to make happen.This talk explains what it is, how it works, and what you can do with it. We will also discuss future adoption by other distros.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/multiarch
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Wookey":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:821@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T131500
+DTEND:20120204T140000
+SUMMARY:Univention Corporate Server
+DESCRIPTION: Univention Corporate Server (UCS) is a Debian-derived distribution focused on enterprise environments and heavily based on LDAP.In contrast to most other Debian-derived distributions it is based on Debian stable instead of snapshots from Debian unstable.With it's earliest development roots dating back ten years, UCS is now used in approx. 700 installations with the biggest having 80,000 users.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/univention_corporate_server
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Moritz Muehlenhoff":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:828@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T140000
+DTEND:20120204T150000
+SUMMARY:Illumian, a new illumos based distribution
+DESCRIPTION: Nexenta has had their own distribution since their inception. Now with the move to an illumos core we are launching a new distribution with an illumos kernel and debian packaging.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/illumian
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Linda Kateley":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:827@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T140000
+DTEND:20120204T150000
+SUMMARY:Multi-OS Continuous Packaging with Project-Builder.org
+DESCRIPTION: Project-Builder.org is a GPL v2 tool designed to help projects developers producing easily packages for multiple OS and architectures, on a regular basis, from+a single source repository.The various aspects covered by the tool are:- only produce software packages (ease integration in deployment servers, provide inheritance mecanisms, ...)- ease the various steps of solution life cycle (controlled impact of installation/uninstallation, dependencies management, identical deliveries up to customer,+announce management, web site delivery, metadata management)- help projects packages provisioning (templates/skeletons, generated structure)- Avoid code/metadata duplication (macro system, separate repository)- Neutral (repository, system, package type agnostic)
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/projectbuilder
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bruno Cornec":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:831@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T150000
+DTEND:20120204T154500
+SUMMARY:Debian packaging for beginners
+DESCRIPTION: An introduction for creating Debian packages.The lecture is meant for people who want to package for Debian (or any Debian based distribution) with no prior experience or people during their first steps in packaging.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/debian_packaging
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Lior Kaplan":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:822@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T150000
+DTEND:20120204T154500
+SUMMARY:Gnuk - OpenPGP USB Token implementation
+DESCRIPTION: Gnuk is software implementation of a USB token for GNU Privacy Guard.Gnuk supports OpenPGP card protocol version 2, and it runs on STM32F103 processor.Gnuk supports RSA 2048-bit key and it takes a second and a half for computation of digital signing.Gnuk Token is useful for GnuPG users and Debian developers.The talk explains current status of Gnuk and its future, supported boards, and how to use Gnuk with GnuPG and OpenSSH.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/gnuk
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Niibe Yutaka":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:817@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T154500
+DTEND:20120204T163000
+SUMMARY:OpenQA
+DESCRIPTION: Testing is an important task. But testing daily development-snapshots of a Linux-distribution would mean testing the same things every day, which would be pretty tiresome to testers. Yet, no one likes to break his system with untested code.This presentation will be about my solution to this problem, using automated testing with KVM or VirtualBox for openQA.openSUSE.org to guarantee some minimum quality.  This will show some unique features like audio-testing, GUI-testing, and support for multiple distributions like Debian, Archlinux and Fedora. It will also have installation videos which are cool, fun and useful.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/openqa
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bernhard M. Wiedemann":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Dominik Heidler":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:818@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T154500
+DTEND:20120204T163000
+SUMMARY:Succeeding in the Google Summer of Code as a large project
+DESCRIPTION: The Google Summer of Code (GSoC) has been a huge boon to the world of free and open-source software, and to Gentoo Linux in particular. In this talk, I'm going to share some of our successes, like how we manage 15–20 simultaneous internships and how we recruit a very large proportion of our students to continue as Gentoo developers.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/succeeding_gsoc
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Donnie Berkholz":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:844@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T163000
+DTEND:20120204T170000
+SUMMARY:Gentoo ruby packaging
+DESCRIPTION: Gentoo currently has 400+ natively packaged ruby packages for 5 different ruby implementations. We'd like to share some of the unique things we did to bring ruby code and applications to our users in a true Gentoo fashion.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/gentoo_ruby
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Hans de Graaff":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:843@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T163000
+DTEND:20120204T173000
+SUMMARY:QA tools for FOSS distributions
+DESCRIPTION: FOSS distributions are increasingly over pressure to deliver stable releases including the most up to date upstream software. Time-based release strategies has exacerbated this problem putting even more pressure on QA teams.The recently concluded Mancoosi project has developed a number of tools to automatically analyse large packages collections for a range of problems, frominstallability checks to speculative analysis of software repositories.In this talk I'll present four command line tools to identify and correct potential problems as soon as possible during the release cycle.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/distro_qa_tools
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pietro Abate":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:835@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T170000
+DTEND:20120204T180000
+SUMMARY:Introduction to hardening, the Gentoo Hardened approach
+DESCRIPTION: In this talk we will explain how some common attacks against vulnerable software work and will explain how the security measures used by the Gentoo Hardened project act against them along with the drawbacks they impose.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/gentoo_hardened
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Francisco Blas Izquierdo Riera":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:841@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T173000
+DTEND:20120204T181500
+SUMMARY:Btrfs and Snapper - Overview and Future
+DESCRIPTION: Snapper is a new tool introduced first in openSUSE 12.1 to manage btrfs snapshots. It has received great attention from the press.In this talk we will give an overview of btrfs capabilities and how snapper integrates btrfs snapshots into the system for easy use by the user. We will explain how other software can use the power of snapper. Finally we will give an outlook of future development.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/btrfs_snapper
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Arvin Schnell":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:834@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T180000
+DTEND:20120204T190000
+SUMMARY:Gentoo EAPI 5
+DESCRIPTION: Gentoo uses versioning in the package manager script format. EAPI is the contract between ebuilds (Gentoo's packaging scripts) and the package manager. The version currently in use is 4.This session is about looking over features in the pipeline for the next version and hopefully having a discussion on them and others. Traditionally multiple council members have attended FOSDEM so this is your chance to influence the technical direction of Gentoo package management.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/gentoo_eapi5
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Petteri Räty":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:823@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T181500
+DTEND:20120204T190000
+SUMMARY:I wrote Distromatch, shall we use it?
+DESCRIPTION: At the [AppInstaller2011](http://distributions.freedesktop.org/wiki/Meetings/AppInstaller2011) meeting I started writing [Distromatch](http://www.enricozini.org/2011/debian/distromatch/) which is able to map binary package names across different distribution using a wide set of euristics.Distromatch has the potential of being a radical change in cross-distro cooperation, enabling exchange of package screenshots, categories, ratings, reviews and many other interesting kinds of metadata.Since distromatch has existed for almost a year and (afaik) so far none of this has happened, I am taking advantage of the cross-distro room to show how it works and discuss how to move on from here.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/distromatch
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Enrico Zini":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:836@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T100000
+DTEND:20120205T103000
+SUMMARY:openSUSE on ARM
+DESCRIPTION: The openSUSE community started to revive its ARM port recently.This talk will show how do we work on our ARM, what troubles we were facing so far and what is the current status of the port and what our hopes are for the future.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/opensuse_arm
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Michal Hrusecky":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:869@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T100000
+DTEND:20120205T110000
+SUMMARY:Debtags.debian.net reloaded!
+DESCRIPTION: I have just finished redesigning the Debtags website, consolidating a 9 years long history of bringing categories to a large and complex distribution like Debian.There is more to Debtags than meets the eye: interesting library science concepts, anonymous submissions, an efficient review workflow, a fully automated tagging engine, dynamically generated tagging hints, fancy tag search algorithms.On top of that, there is not much that is Debian-specific in the new codebase, so if you are interested in implementing categories on your distribution of choice, this could give you quite a head start.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/debtags_reloaded
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Enrico Zini":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:825@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T103000
+DTEND:20120205T113000
+SUMMARY:OBS Cross Build
+DESCRIPTION: How to build a distribution on foreign hardware without to add support cross compile support in each package.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/obs_cross_build
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Adrian Schröter":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:840@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T110000
+DTEND:20120205T114500
+SUMMARY:Being a good upstream - the syslog-ng PoV
+DESCRIPTION: For many years, syslog-ng was part of many distributions but stuck at ancient software versions. My task was to help distributions to update their syslog-ng packages and now to keep them updated. This is a two way process, as while distros receive many help, we also get a lot of useful feedback and ideas, which influence the development of syslog-ng.Using syslog-ng as an example, I'll try to show how upstream can work with distributions for the benefit of both sides.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/good_upstream_syslogng
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Peter Czanik":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:824@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T113000
+DTEND:20120205T123000
+SUMMARY:Working with contributor communities (round table)
+DESCRIPTION: Several distribution projects have existing initiatives and programs in order to coordinate and/or fund local communities as well as shipping or producing promotional material, going to events to promote the project, etc...Some projects are currently looking into setting up something like this, and others are rethinking their current model.Those programs all have their differences, but achieve pretty similar goals.In this session, we will bring together a bunch of people from different projects who are in charge or actively participating in such initiatives, in order to briefly present what they are currently doing in their project and, more importantly, share experience about what has worked well and what hasn't in an open discussion session.Let's learn from each others' ideas and mistakes.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/contributor_communities
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Petteri Räty":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Oliver Burger":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Kostas Koudaras":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Christoph Wickert":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Stefano Zacchiroli":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Donnie Berkholz":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Laura Czajkowski":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:820@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T121500
+DTEND:20120205T130000
+SUMMARY:29,000 packages in 24 hours - Releasing Debian
+DESCRIPTION: This talk is to give an overview of what is involved in releasing Debian.It will cover policy, tools and an insight into what it takes to release the largest linux distribution.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/releasing_debian
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Neil McGovern":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:829@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T130000
+DTEND:20120205T140000
+SUMMARY:CentOS Distribution Engineering and how you can help
+DESCRIPTION: 
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/centos_dist_engineering
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Karanbir Singh":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:837@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T130000
+DTEND:20120205T140000
+SUMMARY:Distributions' infrastructure system administration (round table/Q&A)
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/distro_sysadmin
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Martin Zobel-Helas":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Michael Scherer":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:838@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T140000
+DTEND:20120205T150000
+SUMMARY:Adventure of setting common account database for a distribution infrastructure
+DESCRIPTION: The talk will be a summary of the motivation and problem encountered while setting a global shared account database for the Mageia distribution infrastructure, focusing on LDAP and the issues around software integration, patches and directory synchronisation.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/account_database_for_distro
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Michael Scherer":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:842@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T140000
+DTEND:20120205T150000
+SUMMARY:Automated Distribution Development and Maintenance
+DESCRIPTION: Presenting tools and workflows used via Open Build Service by various distributions to develop the distribution. This includes automated source processing, validation, QA, automated and manual reviews.Additional focus point on maintenance handling, means updates after a distribution is released which are usually done in a complete different way.I like to have a discussion about the question how distributions should validate trustable sources and how the trust can be increased by a common distro effort.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/automated_distro_dev
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Adrian Schröter":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:826@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T150000
+DTEND:20120205T160000
+SUMMARY:Submission Review with Open Build Service
+DESCRIPTION: A reliable and transparent, high volume package review infrastructure was implemented with the [Open Build Service (OBS)](http://openbuildservice.org/). In OBS, a software package can travel through several projects. Submission Review is done at project specific gates to control such travel.The openSUSE:Factory project currently defines review gates for license compliance, security and packaging. Together with an issue tracking system we create a community friendly ecosystem that implements project policies. Centralized gatekeepers or dedicated review periods are eliminated. Propagation delay is minimized.With OBS providing the hooks to add review authorities, we were able to code most of the respective business logic with python scripts, reusing and extending the osc command line tool as a feature-rich layer ontop of the OBS API.This talk describes the openSUSE project review process and how it helps various stakeholders to excercise their control, using the legal team as a non-trivial example.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/obs_sub_review
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jürgen Weigert":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:830@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T150000
+DTEND:20120205T160000
+SUMMARY:ARM BoF
+DESCRIPTION: More and more distributions are porting their software to run on ARM CPUs. This is a session for people working on or otherwise interested in those ports to share progress reports, problems and ideas.Steve will start the discussion with the current status of the two ARM ports in Debian ("armel" and "armhf"), but is not planning on spending the whole session on that!
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/arm_bof
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Steve McIntyre":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:832@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T160000
+DTEND:20120205T170000
+SUMMARY:Debian Secrets - what I wish I knew before joining Debian
+DESCRIPTION: Debian is usually advertised as a volunteer project with a subtle mix of democracy and do-ocracy. While this is correct, implementation details are mostly undocumented, and it is often difficult for prospective or relatively new contributors to really understand the inner workings of the project.This talk will detail some useful lessons, and also some secrets about Debian learned over the years. It is hoped that it will be helpful to people willing to get things done in Debian.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/debian_secrets
+LOCATION:H.1301
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Lucas Nussbaum":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:833@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T160000
+DTEND:20120205T170000
+SUMMARY:Continuous Integration / Continuous Delivery within a Linux Distribution
+DESCRIPTION: 
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:CrossDistribution
+URL:https:/fosdem.org/2012/schedule/event/ci_distro
+LOCATION:H.1302
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Karanbir Singh":invalid:nomail
+END:VEVENT
+END:VCALENDAR

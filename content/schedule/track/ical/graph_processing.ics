@@ -1,0 +1,193 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for Graph Processing at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:604@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T091000
+DTEND:20120205T092500
+SUMMARY:Opening talk
+DESCRIPTION: Room opening talk
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/opening_talk
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Achim Friedland":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pere  Urbón-Bayes":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:605@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T093000
+DTEND:20120205T101500
+SUMMARY:Apache Giraph: distributed graph processing in the cloud
+DESCRIPTION: Web and online social graphs have been rapidly growing in size and scale during the past decade. In 2008, Google estimated that the number of web pages reached over a trillion. Online social networking and email sites, including Yahoo!, Google, Microsoft, Facebook, LinkedIn, and Twitter, have hundreds of millions of users and are expected to grow much more in the future. Processing these graphs plays a big role in relevant and personalized information for users, such as results from a search engine or news in an online social networking site.The Apache Giraph [1] project is a fault-tolerant in-memory distributed graph processing system which runs on top of a standard Hadoop [2] cluster and is capable of running any standard Bulk Synchronous Parallel (BSP) operation over any large generic data set which can be represented as a graph. Apache Giraph is a loose implementation of Google Pregel but can be added to any Hadoop job pipeline as a normal MapReduce job. Giraph entered the ASF Incubator in July 2011, where it has enlisted the aid of committers from Yahoo!, Facebook, LinkedIn, and Twitter.The talk will describe why running iterative MapReduce jobs for graph processing is not well suited for typical MapReduce jobs, introducing the reason why Google designed Pregel at first place. Next, the BSP model and how it is applied to graph processing will be explained. The last part of the talk will be dedicated to Apache Giraph, with a description of the programming model (i.e. the API, some typical examples such as PageRank and Single Source Shortest Path) along with a technical overview of how the architecture of Giraph works and how it leverages the Hadoop infrastructure.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/apache_giraph_distributed_graph
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Claudio Martella":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:684@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T102000
+DTEND:20120205T110500
+SUMMARY:Using Cascalog and Hadoop for rapid graph processing and exploration 
+DESCRIPTION: Graphs are becoming increasingly popular as ways of modeling a wide variety of systems. As such, the label "graph processing" also covers a range of objectives and architectural constraints.At [Linkfluence][http://us.linkfluence.net/], we use graph processing on datasets produced with very different systems (Web crawler, Twitter and Facebook API, feed aggregator, etc.) We spend a lot of time doing exploratory programming, trying to use our eclectic datasets in interesting ways, and processing our data in asynchronous workflows.We have come to see [Hadoop][http://hadoop.apache.org/] and the processing framework [Cascalog][https://github.com/nathanmarz/cascalog] as essential tools in our toolbox when dealing with graphs, since it gives us architectural flexibility, scalability and the possibility of rapid prototyping.Cascalog is an open source framework built on top of Hadoop and [Cascading][http://www.cascading.org/]. Its syntactic and semantic roots come from Datalog and Prolog, which have been succesfully applied for a long time in the manipulation of graphs. Also, its ability to directly embed the expressive [Clojure][http://clojure.org/] language allows to very easily definecustom operations and ad-hoc processing.In this talk, we will present the framework, consider its advantages and drawbacks when compared to other approaches, show concrete exemples of usage for graph processing and how we use them to complement graph databases.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/cascalog_hadoop_graph
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nils Grunwald":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:686@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T111000
+DTEND:20120205T115500
+SUMMARY:Birds of a feather - Graph processing, future trends!
+DESCRIPTION: Du to recent late flu of Pablo Parega catch he is not able to attend FOSDEM this year. In substitution of that, we are going to have a Birds of a feather.Thanks to the awesome A-Team, the organisers of this room aim to have a Birds of a feather, with the following agenda, but totally open to contributions.- State of the art.- Things that can, or have, to be improved.- Future trends on Graph Processing.Take the chance to attend if interested on Graph Processing, or if you are working and contributing to the community! I am sure this discussion can give all of us great ides to work on!See you there!A-Team
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/graph_processing_trends
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pere Urbon-Bayes":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:687@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T120000
+DTEND:20120205T123500
+SUMMARY:Works with persistent graphs using OrientDB 
+DESCRIPTION: This talk will present OrientDB open source project and its capability to handle persistent graphs in different ways. OrientDB presentation Java Graph Native API SQL+graph extensions HTTP API Blueprints API Gremlin usage Console tool Studio web tool 
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/graphdb_orientdb
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Luca Molino":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:688@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T124500
+DTEND:20120205T131500
+SUMMARY:Graphity: an efficient neo4j based graph model for retrieving the top k news feeds for users in social networks 
+DESCRIPTION: You can find more information about it in my blog article: http://www.rene-pickhardt.de/graphity-an-efficient-graph-model-for-retrieving-the-top-k-news-feeds-for-users-in-social-networks/ and a demo can be found at http://gwt.metalcon.de/GWT-Modelling/#Home A key challenge of web platforms like social networking sites and services for news feed aggregation is the efficient and targeted distribution of new content items to the users. This can be formulated as the problem of retrieving the top-k news items out of the d-degree ego network of each given user, where the set of all users producing feeds is of size n, with n ≫ d ≫ k and typically k < 20. Existing approaches employ either expensive join operations on global indices or suffer from high redundancy through denormalization. This makes retrieving of different top-k news item sets for thousands of users per second very inefficient in a large network. In this paper, we propose a novel index GRAPHITY to remedy this problem. The GRAPHITY index is based on neo4j and allows retrieval of the top-k news items from a user’s ego network independent of the node degree of his ego network, thus reducing join efforts. In addition to efficient top-k retrieval, GRAPHITY does not introduce any redundancies in the content data.We prove that updates of the index are in O(1) and adding a new content item is linear in the user’s indegree. We compare the theoretical run time complexity of GRAPHITY against several baselines on two data sets of different characteristics and size. Our evaluation confirms that GRAPHITY is independent of the node degree d and network size n. In addition, GRAPHITY significantly outperforms the baselines in retrieving the news feeds as our theoretical examination predicted.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/graphity_neo4j_social_nets
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Rene Pickhardt ":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:718@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T140000
+DTEND:20120205T143500
+SUMMARY:Cypher Query Language 
+DESCRIPTION: Cypher is a declarative query language recently added to the Neo4j graph database. In this talk we explain the motivations for creating this language, describe its current features and design, and dive a little into its implementation. Finally, we discuss the future direction of how we expect the language to evolve.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/neo4j_cypher
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Andrés Taylor":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:719@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T144000
+DTEND:20120205T151500
+SUMMARY:Ontological Conjunctive Query Answering over large, semi-structured knowledge bases 
+DESCRIPTION: Ontological Conjunctive Query Answering knows today a renewed interest in knowledge systems that allow for expressive inferences. Most notably in the Semantic Web domain, this problem is known as Ontology-Based Data Access. The problem consists in, given a knowledge base with some factual knowledge (very often a relational database) and universal knowledge (ontology), to check if there is an answer to a conjunctive query in the knowledge base. This problem has been successfully studied in the past, however the emergence of large and semi-structured knowledge bases and the increasing interest on non-relational databases have slightly changed its nature. This presentation will highlight the following aspects. First, we introduce the problem and the manner we have chosen to address it. We then discuss how the size of the knowledge base impacts our approach. In a second time, we introduce the ALASKA platform, a framework for performing knowledge representation & reasoning operations over heterogeneously stored data. Finally we present preliminary results obtained by comparing efficiency of existing storage systems when storing knowledge bases of different sizes on disk and future implications. 
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/conjunctive_query_answering
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bruno Paiva Lima da Silva":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:720@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T152000
+DTEND:20120205T153500
+SUMMARY:An example graph visualization with Processing.js 
+DESCRIPTION: Visualizing a directed property graph with Processing.js and Neo4j. A short introduction to Processing.js, followed by a high level overview of an example visualization and finally how to connect it to Neo4j via their REST API to populate it. Example: http://getvouched.com/visualizations 
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/graph_visualization_js
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Max De Marzi":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:721@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T154000
+DTEND:20120205T155500
+SUMMARY:NoSQL/Graph Database Visualization, The case of Gephi and Neo4j 
+DESCRIPTION: We are recently witnesses of the significant movement and adoption of NoSQL databases. In particular, the graph databases become an important technology as we deal with a high increase of relational data. They not only store graph data structures much more efficiently, but also provide powerful graph traversal capabilities that make them suitable for this kind of data. However we need to ease the exploration and understanding of these large amount of data. Visualizing the graph structure (relationships between nodes and edges) is critical to many situations like: verifying the reliability of new data input, optimizing an architecture based on the shape of the data, and even creating new services based on facts discovered in the data. In this talk, you will learn how to understand the graph structure easily using Gephi & Neo4j! We will go through the installation and showcase of visualization capabilities of Neo4j graph database in Gephi. The talk will cover exploration of general useful features of Gephi applying them on imported Neo4j database.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/neo4j_gephi_visualization
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Martin Skurla":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:722@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T160000
+DTEND:20120205T164000
+SUMMARY:Challenges in the Design of a Graph Database Benchmark 
+DESCRIPTION: Graph databases are one of the leading drivers in the emerging, highly heterogeneous landscape of database management systems for non-relational data management and processing. The recent interest and success of graph databases arises mainly from the growing interest in social media analysis and the exploration and mining of relationships in social media data. However, with a graph-based model as a very flexible underlying data model, a graph database can serve a large variety of scenarios from different domains such as travel planning, supply chain management and package routing.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/graph_database_benchmark
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Marcus Paradies ":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:723@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T164500
+DTEND:20120205T170000
+SUMMARY:Closing talk
+DESCRIPTION: Saying proper good bye to our attendees plus with a resume of the sessions with resources, links, videos, etc where you will be able to extend and continue accessing the talks we made after Fosdem.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Graph Processing
+URL:https:/fosdem.org/2012/schedule/event/closing_graph_proc_room
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Achim Friedland":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pere  Urbón-Bayes":invalid:nomail
+END:VEVENT
+END:VCALENDAR

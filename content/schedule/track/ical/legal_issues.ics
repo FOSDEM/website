@@ -1,0 +1,215 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for Legal Issues at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:629@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T110000
+DTEND:20120204T110500
+SUMMARY:Welcome to the Legal Issues DevRoom
+DESCRIPTION: Brief Welcome to the new Legal Issues DevRoom
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/legal_issues
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Tom Marble":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Karen Sandler":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bradley Kuhn":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Richard Fontana":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:640@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T110500
+DTEND:20120204T113000
+SUMMARY:Open Licences before European Courts
+DESCRIPTION: Open content licences are tools at the disposal of creative people who want to use their copyrights in a permissive manner. Their first aim is to allow the sharing and spreading of works, by granting rights to the users on a royalty-free basis. However, these licences remain binding legal documents, according to which licensees must respect some obligations, and which are enforceable before courts. The proposed presentation aims at providing an analysis of interesting court decisions where open content licences were at issue.Please review the links below for background information:
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/open_licences_before_european_courts
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Philippe Laurent":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:641@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T113000
+DTEND:20120204T120000
+SUMMARY:The Methods of FOSS Activism
+DESCRIPTION: When changing laws threaten the FOSS community, it pushes back with activist campaigns lead by NGOs and non-profits.  These campaigns look much like the ones conducted by other groups of activists such as the human rights network.  When FOSS gets political, it typically uses a handful of common strategies.  This talk will build on information gathered from interviews and other research to describe what techniques free software advocates use when they try to influence government policy.  It will briefly evaluate their effect, taking examples from the ACTA campaign and from the reaction to proliferating three-strikes laws aimed at enforcing IP policy.  Then it will compare with other activist projects in other fields: FOSS advocates might expand their vocabulary of political action by borrowing the approaches used in other issue areas.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/methods_of_foss_activism
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ambjörn Elder":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:642@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T120000
+DTEND:20120204T123000
+SUMMARY:What Goes into an Executable? Identifying a Binary's Sources by Tracing Build Processes 
+DESCRIPTION: Modern software is typically composed of numerous components, such as third-party open source packages. To prevent legal or security problems, software vendors must identify the components (including their licenses) used to create the binaries they ship. This requires knowing exactly which source code files and other artifacts are used to create a given binary, and how they are used (e.g.whether libraries are statically or dynamically linked). In this talk I will we show a generic method to reverse-engineer this information from the build processes of software products. The method traces system calls to determine the composition graph of sources and binaries involved in build processes. 
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/what_goes_into_an_executable
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Armijn Hemel":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:643@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T123000
+DTEND:20120204T130000
+SUMMARY:Grey Areas of Software Licensing
+DESCRIPTION: Stories on complications of combing works under different software licenses.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/grey_areas_of_software_licensing
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Dave Neary":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:644@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T140000
+DTEND:20120204T143000
+SUMMARY:FLOSSing for Good Legal Hygiene: Stories from the Trenches
+DESCRIPTION: The legal structures of free software projects go through phases ofpopularity reminiscent of fashion trends. The early days of freesoftware were decentralized and individualistic, partially inspired bythe "free culture" movements of the '60s. Over time, centralization andincorporated non-profit organizations grew popular, parallel with aperiod of time where FLOSS was struggling for recognition as a viablealternative to proprietary solutions. As FLOSS crested that wave, andwon the recognition of the business world, people began to recognize anover-proliferation of special-purpose foundations, and the conservancies(foundations that host multiple independent projects) came to the fore.In the past year we've seen a movement back toward decentralizedindividualism, questioning the need of any formal legal structures. Thefact of the matter is that free software and international law work justfine for a whole gamut of legal structures, from the lone individualhacker to the largest of incorporated entities. It's a free choice foreach project. The important thing is for every project to think throughtheir legal strategy. Not just the "What?" (-license? -contributionpolicy? -legal documentation?) but "Why?" (-pick option X over option Y?-are we doing this? -do we care?) and "How?" (-can we make this work forus? -will this affect our users and developers?).
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/flossing_for_good_legal_hygiene
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Allison Randal":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:645@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T143000
+DTEND:20120204T150000
+SUMMARY:Risks vs. Benefits on Copyright Assignment
+DESCRIPTION: A quick analysis of the risks and benefits that copyright assignmentcan bring to the Free Software ecosystem. I'll take a qualitative lookat the side-effects of assignment on the diversity of projectparticipants, and the knock-on impact that decisions in this area canhave on the economics of supporting Free Software development. Come andfind out how you can avoid making a mess of your community for somerather dubiuous legal advantages.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/risks_vs_benefits_on_copyright_assignment
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Michael Meeks":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:646@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T150000
+DTEND:20120204T153000
+SUMMARY:Can for-profit companies enforce copyleft without becoming corrupt like MySQL AB?
+DESCRIPTION: When a company authors free software under the GNU GPL, it is likely that it will discover license violations. Non profit like FSF or Software Freedom Conservancy will try to resolve such violations amicably, because their mission is to further Free Software. They will only go to court as a last resort, if the infringer refuses to comply with the licenses and keeps distributing the software. The primary goal of a company is to generate profit, it will therefore take advantage of violations to this end. For instance, part of the former MySQL AB company business model was to threaten infringers and require that they buy a proprietary license to be redeemed. However, most of the infringements are honest mistakes and such methods are not in the best interest of the Free Software community. They are even counter productive for the company who makes short term profits but eventually scare their customers away.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/enforce_copyleft_without_becoming_corrupt
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Loïc Dachary":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:653@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T160000
+DTEND:20120204T163000
+SUMMARY:Is copyleft being framed?
+DESCRIPTION: This short talk will address the following questions, to inspirediscussion and contemplation about how we frame descriptions of thestate of licensing in free software.* Numbers are increasingly being cited to show that the use of copyleft licenses, specifically the GPL, is declining. What do these numbers actually show, who is propagating them, and why? What do or might other numbers show?* Is the "percentage of free software projects which use copyleft licenses" a useful way to judge the success of copyleft? Does an increase in the percentage of projects using non-copyleft permissive licenses indicate a failure of copyleft?* As a small related case study, what role have the licensing terms of popular mobile application stores played in this debate, and how have those terms changed the frame of the discussion?
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/is_copyleft_being_framed
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="John Sullivan":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:655@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T163000
+DTEND:20120204T170000
+SUMMARY:The (possible) decline of the GPL, and what to do about it
+DESCRIPTION: Discussion of the possible decline of copyleft licensing.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/the_decline_of_the_gpl
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Richard Fontana":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:656@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T173000
+DTEND:20120204T180000
+SUMMARY:Panel on Application Stores
+DESCRIPTION: So-called "app stores" are becoming a popular means of distributingsoftware, particularly for mobile devices. However, the rise of appstores has been accompanied by tensions with free software/open sourcelegal norms. Companies controlling official app distribution channelsfor their platforms typically place restrictive terms on both usersand developers in ways that may be difficult or impossible toharmonize with requirements and expectations around FLOSSlicensing. Moreover, there is a perception that noncompliance withFLOSS licenses is prevalent in app store distribution. This panel willexplore some of the problems arising out of the intersection betweenapp stores and FLOSS, under EU as well as US law, and will discusspossible solutions.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/app_store_panel
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Giovanni Battista Gallus":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bradley Kuhn":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Richard Fontana":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Hugo Roy":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:657@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T180000
+DTEND:20120204T183000
+SUMMARY:Panel on Software Patents
+DESCRIPTION: Discussion on issues of Free Software with Software Patents
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/software_patent_panel
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Karen Sandler":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Benjamin Henrion":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Deb Nicholson":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ciarán O'Riordan":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:658@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T183000
+DTEND:20120204T190000
+SUMMARY:Creative Commons 4.0 licenses and other opportunities for FLOSS/free culture legal/policy intersections
+DESCRIPTION: Creative Commons has since its launch in 2002 acknowledged freesoftware as an inspiration, but in-depth communication and understandingacross the "free culture" (and education, science, government...) andfree software movements has been thin, resulting in missed opportunities(at least on the free culture side).  Two developments make early 2012 anopportune and necessary time to address this. First, Creative Commons haskicked off a process which will eventually lead to the release of version4.0 of various CC licenses, which ought incorporate the best wisdom aboutpublic licenses (most of which resides in the free software community)and not need to be versioned again for a decade. Additionally, among theissues under discussion for CC 4.0 licenses are ones of direct import tothe free software community, including how DRM and license compatibilityare addressed. Second, CC licenses have become fairly widely adopted aspolicy for public sector and publicly interested materials and funding,especially in education. Free software and even open standards areinadequately accounted for these developments, presenting a significant andunappreciated threat to the realization of public benefit from such --a continuation of the tendency of free culture (with the exception ofWikimedia) being dependent on proprietary web silos. This talk will verybriefly summarize the relevant history, describe the pertinent CC 4.0licenses and policy issues, and hopefully provoke solutions and actionsbenefiting free software and free culture.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Legal Issues
+URL:https:/fosdem.org/2012/schedule/event/creative_commons_4
+LOCATION:AW1.125
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Mike Linksvayer":invalid:nomail
+END:VEVENT
+END:VCALENDAR

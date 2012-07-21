@@ -1,0 +1,770 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Free Java at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>677@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>677</pentabarf:event-id>
+      <pentabarf:event-slug>free_java</pentabarf:event-slug>
+      <pentabarf:event-tag>free_java</pentabarf:event-tag>
+      <pentabarf:title>Welcome to the Free Java DevRoom</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:05:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:05:00</pentabarf:duration>
+      <dtstart>20120204T110000</dtstart>
+      <dtend>20120204T110500</dtend>
+      <duration>00H05M00S</duration>
+      <summary>Welcome to the Free Java DevRoom</summary>
+      <description>Brief Welcome to the Free Java DevRoom</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/free_java</url>
+      <location>K.4.401</location>
+      <attendee>Martijn Verburg</attendee>
+      <attendee>Mark Wielaard</attendee>
+      <attendee>Tom Marble</attendee>
+      <attendee>Ben Evans</attendee>
+      <attendee>Andrew Hughes</attendee>
+      <attendee>Andrew Haley</attendee>
+      <attendee>Mario Torre</attendee>
+      <attendee>Dalibor Topić</attendee>
+      <attendee>Sylvestre Ledru</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>678@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>678</pentabarf:event-id>
+      <pentabarf:event-slug>state_of_openjdk</pentabarf:event-slug>
+      <pentabarf:event-tag>state_of_openjdk</pentabarf:event-tag>
+      <pentabarf:title>The state of OpenJDK</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:05:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 11:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T110500</dtstart>
+      <dtend>20120204T113000</dtend>
+      <duration>00H25M00S</duration>
+      <summary>The state of OpenJDK</summary>
+      <description>A review of the recent past, a summary of current work on JDK 7 and JDK 8, and a look ahead to upcoming improvements in both governance and infrastructure.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/state_of_openjdk</url>
+      <location>K.4.401</location>
+      <attendee>Mark Reinhold</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>679@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>679</pentabarf:event-id>
+      <pentabarf:event-slug>jdk_7_updates_in_openjdk</pentabarf:event-slug>
+      <pentabarf:event-tag>jdk_7_updates_in_openjdk</pentabarf:event-tag>
+      <pentabarf:title>JDK 7 Updates in OpenJDK </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 11:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T113000</dtstart>
+      <dtend>20120204T120000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>JDK 7 Updates in OpenJDK </summary>
+      <description>In this talk you'll learn how the JDK 7 Updates Project in OpenJDK works,
+and how to work within it, how to track changes, get your fixes in, and follow along 
+as for example the Mac OS X Port gets integrated into future JDK 7 update releases.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/jdk_7_updates_in_openjdk</url>
+      <location>K.4.401</location>
+      <attendee>Edvard Wendelin</attendee>
+      <attendee>Dalibor Topić</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>680@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>680</pentabarf:event-id>
+      <pentabarf:event-slug>implementing_jsr_292_in_ikvm_net</pentabarf:event-slug>
+      <pentabarf:event-tag>implementing_jsr_292_in_ikvm_net</pentabarf:event-tag>
+      <pentabarf:title>Implementing JSR 292 in IKVM.NET</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T120000</dtstart>
+      <dtend>20120204T123000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Implementing JSR 292 in IKVM.NET</summary>
+      <description>IKVM.NET is an implementation of a Java VM on top of Microsoft .NET and Mono. In this talk I'll describe how Java 7's JSR 292 invokedynamic and MethodHandles have been implemented in IKVM.NET.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/implementing_jsr_292_in_ikvm_net</url>
+      <location>K.4.401</location>
+      <attendee>Jeroen Frijters</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>683@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>683</pentabarf:event-id>
+      <pentabarf:event-slug>java_lambda_for_hackers</pentabarf:event-slug>
+      <pentabarf:event-tag>java_lambda_for_hackers</pentabarf:event-tag>
+      <pentabarf:title>Java Lambda for Hackers </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T123000</dtstart>
+      <dtend>20120204T130000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Java Lambda for Hackers </summary>
+      <description>Lambdas in Java 8 will be the first major addition to the Java language since the Generics in Java 5,
+while programming with a language that support lambdas/closures is way cool,
+there are several traps and pitfalls to their introduction in Java.
+This talk will explain the VM modifications already done and that will be done to support lambda in the JDK 8. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/java_lambda_for_hackers</url>
+      <location>K.4.401</location>
+      <attendee>Rémi Forax</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>685@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>685</pentabarf:event-id>
+      <pentabarf:event-slug>openjdk_covariance</pentabarf:event-slug>
+      <pentabarf:event-tag>openjdk_covariance</pentabarf:event-tag>
+      <pentabarf:title>Using the OpenJDK to investigate covariance in Java</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T143000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Using the OpenJDK to investigate covariance in Java</summary>
+      <description>The Java type system is unsafe since it allows covariant use of arrays. For example, an array of Bananas can be used where an array of Fruit is expected, given that Banana is a subclass of Fruit. This allows the following unsafe code:
+
+    Banana[] bananas = new Banana[5];
+    Fruit[] fruits = bananas;
+    fruits[0] = new Apple();  // runtime exception
+    bananas[0];  //  Apple?
+
+In the above example, the programmer gets back an Apple where he was expecting Bananas, causing an undesired runtime exception.
+
+We investigate the covariant use of arrays in open source Java programs to see whether programmers use this problematic feature of Java. We make use of the freely available OpenJDK, modifying its Java compiler to disallow covariant use of arrays, thus reporting any such uses as compile errors. We apply this compiler to a code corpus of 106 open source programs, including large and well-known programs such as Eclipse, JUnit and Ant. 
+
+Initial results of our investigation show that covariance is rarely used outside the context of legacy code and Java libraries. This leads us to question its relevance in the Java language.
+
+In our talk, we also discuss solutions to covariance taken by other languages such as Scala and Google Dart, explain our modifications to the OpenJDK Java compiler and report the full results of our study.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/openjdk_covariance</url>
+      <location>K.4.401</location>
+      <attendee>Janina Voigt</attendee>
+      <attendee>Raoul-Gabriel Urma</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>690@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>690</pentabarf:event-id>
+      <pentabarf:event-slug>our_year_to_date_in_the_jcp</pentabarf:event-slug>
+      <pentabarf:event-tag>our_year_to_date_in_the_jcp</pentabarf:event-tag>
+      <pentabarf:title>Politics, Positives, Paperwork and Pain - Our year to date in the JCP</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T143000</dtstart>
+      <dtend>20120204T150000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Politics, Positives, Paperwork and Pain - Our year to date in the JCP</summary>
+      <description>In 2011 the London Java Community (LJC) stood for, and overwhelmingly
+won a seat in the open elections for a seat on the JCP Executive
+Committee (JCP EC), enough acronyms yet?  We haven't even started!
+It's been a whirlwind trip so far with a great deal learned about
+politics, acronyms, the due diligence required on a JSR, flights to
+exotic places (Jersey City!?), wrangling over the wording of a
+sentence and of course launching some developer lead initiatives.
+
+There have of course been some great successes in moving Free Java
+forward such as the JSR-348 which is the start of reforming the JCP
+and JSRs towards a truly open and transparent model.  This talk covers
+the good works done so far, some anecdotes of what it's like to work
+as a developer amongst a mix of technologists and bearucrats and what
+we think is left to be done.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/our_year_to_date_in_the_jcp</url>
+      <location>K.4.401</location>
+      <attendee>Martijn Verburg</attendee>
+      <attendee>Ben Evans</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>689@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>689</pentabarf:event-id>
+      <pentabarf:event-slug>java_in_the_age_of_the_jvm</pentabarf:event-slug>
+      <pentabarf:event-tag>java_in_the_age_of_the_jvm</pentabarf:event-tag>
+      <pentabarf:title>Java in the Age of the JVM</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T153000</dtstart>
+      <dtend>20120204T160000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Java in the Age of the JVM</summary>
+      <description>By now, it's become well understood that Java is far from dead, and that rumors of its demise have been greatly exaggerated. The language once written off maintains its truly unique role as the power behind the legacy enterprise applications as well as the foundation for some of the biggest and most influential next generation companies on the web. 
+
+What is less clear, however, is the future of Java the language versus Java the platform.  JVM based languages are proliferating wildly: Scala, Clojure and its brethren are household names, and even established specialized languages like R are being ported to the JVM. What does this mean for the future of Java? Will they carry it forward into the future, or relegate it to the role of lower level component? 
+
+We'll explore this question through a mix of quantitative data derived from sources like GitHub, HackerNews and StackOverflow, as well as qualitative research on technology developments and directions. 
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/java_in_the_age_of_the_jvm</url>
+      <location>K.4.401</location>
+      <attendee>Steve O'Grady</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>692@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>692</pentabarf:event-id>
+      <pentabarf:event-slug>introducing_mutability_detector</pentabarf:event-slug>
+      <pentabarf:event-tag>introducing_mutability_detector</pentabarf:event-tag>
+      <pentabarf:title>Introducing Mutability Detector</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T160000</dtstart>
+      <dtend>20120204T163000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Introducing Mutability Detector</summary>
+      <description>Mutability Detector is a lightweight static analysis tool for Java which
+allows you to unit test for immutability. Using immutable objects is regarded as
+improving readability of your Java code, and greatly simplifying multithreaded
+code. However, without language support, it's all to easy to render classes
+mutable, and introduce the potential for subtle, hard to detect bugs. Mutability
+Detector gives developers a way to write immutable classes, and help keep them
+immutable. 
+ 
+  Mutability Detector uses and depends on several free, open-source Java
+libraries, such as Objectweb ASM. Also, being able to look at the source of the
+JDK, has greatly helped in improving the analysis.
+ 
+ The audience will learn of a simple little utility that may just help them in
+their day-to-day development of Java. People can help out in the usual FLOSS way
+- using it, reporting bugs, giving feedback (especially the ways in which I
+suck).</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/introducing_mutability_detector</url>
+      <location>K.4.401</location>
+      <attendee>Graham Allan</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>703@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>703</pentabarf:event-id>
+      <pentabarf:event-slug>caciocavallo_caciotest_cacioweb_and_deployment</pentabarf:event-slug>
+      <pentabarf:event-tag>caciocavallo_caciotest_cacioweb_and_deployment</pentabarf:event-tag>
+      <pentabarf:title>Caciocavallo: CacioTest, CacioWeb &amp; Deployment</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T163000</dtstart>
+      <dtend>20120204T170000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Caciocavallo: CacioTest, CacioWeb &amp; Deployment</summary>
+      <description>CacioCavallo is an award winning project sponsored by the OpenJDK porters group.
+
+The main project was about refactoring of the graphics stack of OpenJDK to allow of easy porting on various platform.
+
+It’s the abstract backend behind most ports and it has been used on field by commercial projects for companies in the embedded and automotive market.
+
+During the last year, two new projects have landed in the official Caciocavallo repositories: CacioWeb and Cacio Testing Framework.
+
+The first project allows for easy deployment even on platforms without any Java support (like Apple iPad) and makes extremely easy the deployment even without any Java plugin.
+
+CacioTest aims to make easy the testing of Graphics stack, providing a reliable, unobtrusive way to run UI and graphics related tests.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/caciocavallo_caciotest_cacioweb_and_deployment</url>
+      <location>K.4.401</location>
+      <attendee>Mario Torre</attendee>
+      <attendee>Roman Kennke</attendee>
+      <attendee>Clemens Eisserer</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>705@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>705</pentabarf:event-id>
+      <pentabarf:event-slug>gc_visualization_gcspy_netbeans</pentabarf:event-slug>
+      <pentabarf:event-tag>gc_visualization_gcspy_netbeans</pentabarf:event-tag>
+      <pentabarf:title>Garbage Collection Visualization, GCSpy and NetBeans in tandem</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T173000</dtstart>
+      <dtend>20120204T180000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Garbage Collection Visualization, GCSpy and NetBeans in tandem</summary>
+      <description>We are recently witnesses of continuous performance improvements both in hardware and software worlds. However for systems with millions requests and users, performance is still very important. One of not that obvious performance optimizations is Garbage Collection selection and tuning. Garbage Collectors save us a lot of time and shield us from low level memory problems.
+
+However to take full advantage of Garbage Collection, we need to make the exploration process easy. Visualizing the Garbage Collection techniques (visualizing events, understanding memory abstraction and fragmentation, history observation) is critical for mentioned performance tuning, lowering the memory allocation, consumption and GC pauses.
+
+This talk will introduce Garbage Collection in nutshell, but especially abstractions and terms defined in GCSpy project and summarize the porting process of GCSpy to NetBeans platform. We will look at advantages of NetBeans platform, summarize faced challenges and current status of the project and further ideas.
+
+I am looking for ideas to improve the GC visualization even more, other VM support (at least partial) and architecture overview.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gc_visualization_gcspy_netbeans</url>
+      <location>K.4.401</location>
+      <attendee>Martin Skurla</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>706@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>706</pentabarf:event-id>
+      <pentabarf:event-slug>thermostat</pentabarf:event-slug>
+      <pentabarf:event-tag>thermostat</pentabarf:event-tag>
+      <pentabarf:title>Thermostat: Taking over the Java tooling world with Open Source Software</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T180000</dtstart>
+      <dtend>20120204T183000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Thermostat: Taking over the Java tooling world with Open Source Software</summary>
+      <description>One area in which proprietary JDK releases have traditionally showed superiority over OpenJDK is in monitoring and instrumentation tools.  We aim to overcome this shortcoming and even reverse the trend by introducing a new, scalable tool to the the ecosystem: Thermostat.  During the last half year, we've been quietly coming up with a plan for how this tool should work, and we're now ready to share what we've come up with.  By working with others in the open Java community, we believe that we can make the most useful, most comprehensive, and all around best application of its kind.
+
+In our presentation, we will describe our extensible model for collecting JVM and system monitoring data side by side.  Attendees will learn about the features we have planned, see a short demo of what is already working, and hopefully be inspired to join us in in making this awesome tool a reality.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/thermostat</url>
+      <location>K.4.401</location>
+      <attendee>Jon VanAlten</attendee>
+      <attendee>Omair Majid</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>707@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>707</pentabarf:event-id>
+      <pentabarf:event-slug>byteman</pentabarf:event-slug>
+      <pentabarf:event-tag>byteman</pentabarf:event-tag>
+      <pentabarf:title>Tracing, Debugging and Testing With Byteman </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 19:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T183000</dtstart>
+      <dtend>20120204T190000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Tracing, Debugging and Testing With Byteman </summary>
+      <description>The Hotspot/OpenJDK Java agent capability and its associated java.lang.instrument API provide support for runtime bytecode transformation, either initially at class load time or, since JDK6, retrospectively after classes have been loaded and instantiated. This API has been adopted as a de facto standard by several other industrial strength JVMs. The uses of this API extend far beyond simple code instrumentation and suggest that more widespread adoption of the OpenJDK Java agent model and use of Java agents is highly desirable.
+
+Byteman is a Java agent program and suite of associated tools which supports tracing, monitoring and testing of Java applications via bytecode transformation. This has many advantages over conventional approaches, in particular being much more flexible and far less invasive. This talk will demonstrate Byteman in action showing you how to install and run it both standalone from the java command line and integrated with the JUnit and TestNG test frameworks driven from ant or maven. The examples progress from injecting simple debug trace to displaying a timing bug in a multi-threaded application.
+
+Along the way you should learn how Java agent programs work and how much freedom they have to manipulate the JVM runtime. I hope to encourage many of you to use Byteman and to contribute suggestions for new features. Also, maybe a few of you will be inspired to implement your own agent programs or to provide support for agents in other JVMs.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/byteman</url>
+      <location>K.4.401</location>
+      <attendee>Andrew Dinn</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>708@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>708</pentabarf:event-id>
+      <pentabarf:event-slug>apache_cassandra</pentabarf:event-slug>
+      <pentabarf:event-tag>apache_cassandra</pentabarf:event-tag>
+      <pentabarf:title>Dealing with JVM limitations in Apache Cassandra </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 10:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T100000</dtstart>
+      <dtend>20120205T103000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Dealing with JVM limitations in Apache Cassandra </summary>
+      <description>The Cassandra distributed database runs on the JVM, which in many ways
+is a huge productivity boost. However, the more you care about
+performance, the less you can afford to let abstractions like i/o and
+memory management exist as black boxes.
+
+This talk will cover how Cassandra has gone beyond the interfaces
+provided by the JVM to achieve higher performance in three areas.
+First, how Cassandra uses platform-specific features such as
+posix_fadvise, munmap, and mlock.  Second, how we tune memory
+management to avoid pain points in common garbage collection designs,
+including in OpenJDK. Third, how Cassandra uses the JDK's
+instrumentation hooks to measure the real size of on-heap structures
+and make better decisions about what to keep in memory without
+error-prone manual adjustments.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/apache_cassandra</url>
+      <location>K.4.401</location>
+      <attendee>Jonathan Ellis</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>709@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>709</pentabarf:event-id>
+      <pentabarf:event-slug>jruby</pentabarf:event-slug>
+      <pentabarf:event-tag>jruby</pentabarf:event-tag>
+      <pentabarf:title>JRuby</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T103000</dtstart>
+      <dtend>20120205T110000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>JRuby</summary>
+      <description>JRuby is Ruby on the JVM, and the first mainstream JVM
+language to make use of invokedynamic. We also have worked around
+limitations in OpenJDK's APIs (process mgmt, IO, native POSIX support)
+in many clever ways. Lots to talk about here.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/jruby</url>
+      <location>K.4.401</location>
+      <attendee>Charles Nutter</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>710@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>710</pentabarf:event-id>
+      <pentabarf:event-slug>can_i_legally_do_that</pentabarf:event-slug>
+      <pentabarf:event-tag>can_i_legally_do_that</pentabarf:event-tag>
+      <pentabarf:title>Can I legally do that?</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 12:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T113000</dtstart>
+      <dtend>20120205T120000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Can I legally do that?</summary>
+      <description>Often when people ask the question "Can I legally do that?", they mean
+"Will someone sue me if I do...?". Sadly the answer is that if something
+is successful, no matter what and how you did things, at some point
+someone will just try and sue, just to see if they can get some part of
+the success/money.
+
+This talk will describe some of the copyright, trademark and patent
+issues a Free Software hacker dealing with the core java platform may
+encounter. And some techniques we as a community can employ to make the
+chances of individual hackers being the target of a lawsuit smaller and
+how to make it harder for someone to take down one of our core java
+platform projects.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/can_i_legally_do_that</url>
+      <location>K.4.401</location>
+      <attendee>Mark Wielaard</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>711@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>711</pentabarf:event-id>
+      <pentabarf:event-slug>how_eclipse_works</pentabarf:event-slug>
+      <pentabarf:event-tag>how_eclipse_works</pentabarf:event-tag>
+      <pentabarf:title>How Eclipse Works</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T120000</dtstart>
+      <dtend>20120205T123000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>How Eclipse Works</summary>
+      <description>By any measure, Eclipse has been a very successful open source community, and it has certainly contributed immensely to the worldwide success of Java. It has also been for many years, one of best examples of a vendor-neutral, free Java community.
+
+But there is one thing in particular that sets Eclipse apart: it ALWAYS ships on time. For eight straight years, the Eclipse community has shipped its major release on time to the day. How the heck does that work? This talk will focus on the processes, community interactions, and most importantly, the cultural aspects of Eclipse that makes this possible. The not-so-subliminal message is that OpenJDK would be well served to emulate Eclipse in its predictability.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/how_eclipse_works</url>
+      <location>K.4.401</location>
+      <attendee>Mike Milinkovich</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>712@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>712</pentabarf:event-id>
+      <pentabarf:event-slug>openjdk_on_arm</pentabarf:event-slug>
+      <pentabarf:event-tag>openjdk_on_arm</pentabarf:event-tag>
+      <pentabarf:title>OpenJDK on ARM: Quo vadis?</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 12:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 13:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T123000</dtstart>
+      <dtend>20120205T130000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>OpenJDK on ARM: Quo vadis?</summary>
+      <description>This talk will cover progress with OpenJDK on ARM.  It's
+basically a progress report, but with some technical detail
+about the changes needed for:
+
+* The new Hard FP ABI.
+* ARM 7.
+
+I'll also discuss the issues that arise from the Java Memory Model
+(also known as JSR 233.)  The talk will then be in two
+halves, one part being very specific to Ed Nevill's ARM Assembler
+interpreter and JIT, and the other part will cover the ARM more
+generally.
+
+If there's any time left I'll also cover the upcoming ARM8
+architecture.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/openjdk_on_arm</url>
+      <location>K.4.401</location>
+      <attendee>Andrew Haley</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>713@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>713</pentabarf:event-id>
+      <pentabarf:event-slug>gervill_beyond_midi</pentabarf:event-slug>
+      <pentabarf:event-tag>gervill_beyond_midi</pentabarf:event-tag>
+      <pentabarf:title>Gervill - Beyond MIDI</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T140000</dtstart>
+      <dtend>20120205T143000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Gervill - Beyond MIDI</summary>
+      <description>Gervill is a MIDI Synthesizer which supports digital instruments like SoundFonts and DLS (Downloadable Sounds). The audio processing  code in the project has many other uses beyond MIDI, for example as a sound effects engine in games. In order to further evolve the project the plan is to seperate the audio processing code from the MIDI engine.
+
+This talk will be about the internal of Gervill audio synthesis, some of the problems in there and how we are going to  improve upon them in mind to make it easer to extend and separate the engine.
+
+At the and of talk there will demostration on how Gervill can be used for real-life peformance by Teun de Lange.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/gervill_beyond_midi</url>
+      <location>K.4.401</location>
+      <attendee>Karl Helgason</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>714@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>714</pentabarf:event-id>
+      <pentabarf:event-slug>the_icedrobot_of_dawn</pentabarf:event-slug>
+      <pentabarf:event-tag>the_icedrobot_of_dawn</pentabarf:event-tag>
+      <pentabarf:title>The IcedRobot of Dawn, a one year long Free Sofware journey</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 15:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T143000</dtstart>
+      <dtend>20120205T150000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>The IcedRobot of Dawn, a one year long Free Sofware journey</summary>
+      <description>IcedRobot is an attempt to bring the Android API on OpenJDK.
+
+It was first announced at Fosdem 2011, and after only two months of development and a team assembled during the customary Fosdem Free Java Hackers dinner, it was already able to translate most Android bytecode format to Java.
+
+This presentation will review the last year of development and will explain future direction and plans for the project.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/the_icedrobot_of_dawn</url>
+      <location>K.4.401</location>
+      <attendee>Mario Torre</attendee>
+      <attendee>Roman Kennke</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>715@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>715</pentabarf:event-id>
+      <pentabarf:event-slug>icedtea_and_icedteaweb</pentabarf:event-slug>
+      <pentabarf:event-tag>icedtea_and_icedteaweb</pentabarf:event-tag>
+      <pentabarf:title>IcedTea and IcedTea-Web</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 15:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T153000</dtstart>
+      <dtend>20120205T160000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>IcedTea and IcedTea-Web</summary>
+      <description>If you are using the default Java/Java plug-in on a major Linux distribution,
+chances are, you are using IcedTea and IcedTea-Web. This talk will focus on
+those projects. It will cover what IcedTea and IcedTea-Web are, the many
+improvements have gone in over the past year, and where the two projects are
+headed over the next year.
+
+In short:
+* Want to know what IcedTea/IcedTea-Web are? Come to this talk!
+* Wondering what we did over the past year? Come to this talk!
+* Wondering where IcedTea/IcedTea-Web are headed? Come to this talk!
+* Don't care about Java and want to fall asleep? Come to this talk!
+
+Well maybe not the last one, but you will leave satisfied about #s 1, 2
+and 3 :)</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/icedtea_and_icedteaweb</url>
+      <location>K.4.401</location>
+      <attendee>Deepak Bhole</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>716@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>716</pentabarf:event-id>
+      <pentabarf:event-slug>jdk_8</pentabarf:event-slug>
+      <pentabarf:event-tag>jdk_8</pentabarf:event-tag>
+      <pentabarf:title>JDK 8</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T160000</dtstart>
+      <dtend>20120205T163000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>JDK 8</summary>
+      <description>Discussion about features of the next Java SE Platform, JDK 8.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/jdk_8</url>
+      <location>K.4.401</location>
+      <attendee>Mark Reinhold</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>717@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>717</pentabarf:event-id>
+      <pentabarf:event-slug>free_java_future</pentabarf:event-slug>
+      <pentabarf:event-tag>free_java_future</pentabarf:event-tag>
+      <pentabarf:title>Discussion on the Future of Free Java</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Free Java Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 16:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 17:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T163000</dtstart>
+      <dtend>20120205T170000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Discussion on the Future of Free Java</summary>
+      <description>Open community discussion on the future of Free Java we would like to see.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Free Java Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/free_java_future</url>
+      <location>K.4.401</location>
+      <attendee>Andrew Haley</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

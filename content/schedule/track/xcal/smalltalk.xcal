@@ -1,0 +1,250 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Smalltalk at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>867@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>867</pentabarf:event-id>
+      <pentabarf:event-slug>take_a_small_rest</pentabarf:event-slug>
+      <pentabarf:event-tag>take_a_small_rest</pentabarf:event-tag>
+      <pentabarf:title>Take a small REST, Simple approaches for REST in smalltalk</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Smalltalk Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 09:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 10:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T093000</dtstart>
+      <dtend>20120205T100000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Take a small REST, Simple approaches for REST in smalltalk</summary>
+      <description>Showing simple ways to realize REST services in smalltalk. Combining routing, media type handling and meta tools to make REST an easy thing to do.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Smalltalk Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/take_a_small_rest</url>
+      <location>AW1.126</location>
+      <attendee>Norbert Hartl</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>882@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>882</pentabarf:event-id>
+      <pentabarf:event-slug>pharo_next_steps</pentabarf:event-slug>
+      <pentabarf:event-tag>pharo_next_steps</pentabarf:event-tag>
+      <pentabarf:title>The Next Steps for the Pharo Vision</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Smalltalk Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 10:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 11:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T100000</dtstart>
+      <dtend>20120205T110000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>The Next Steps for the Pharo Vision</summary>
+      <description>Pharo is slowly but steadily emerging. A more robust and cleaner infrastructure has been put in place. In this session we will describe the steps achieved so far in Pharo and the next ones we want to achieve: like having a better FFI, integration process, smaller kernel, new scalable canvas API. In addition we want to give the opportunity to pharoers to ask questions, raise points of discussions. </description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Smalltalk Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/pharo_next_steps</url>
+      <location>AW1.126</location>
+      <attendee>Marcus Denker</attendee>
+      <attendee>Stéphane Ducasse</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>883@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>883</pentabarf:event-id>
+      <pentabarf:event-slug>amber</pentabarf:event-slug>
+      <pentabarf:event-tag>amber</pentabarf:event-tag>
+      <pentabarf:title>Amber, the Smalltalk for web developers</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Smalltalk Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 11:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 12:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>01:00:00</pentabarf:duration>
+      <dtstart>20120205T110000</dtstart>
+      <dtend>20120205T120000</dtend>
+      <duration>01H00M00S</duration>
+      <summary>Amber, the Smalltalk for web developers</summary>
+      <description>Amber is an implementation of the Smalltalk-80 language that runs on
+top of the JavaScript runtime. Amber brings client side scripting to
+the next level. Imagine developing directly in an IDE in your web
+browser: write unit tests, debug, inspect, save and run your code
+without hitting the refresh button.
+
+In this session, we will:
+
+   - Show how to get started with Amber
+   - Show how the JavaScript integration works
+   - Show examples of how to access and quickly wrap existing JavaScript libraries (e.g. Google Maps, Ace editor)
+   - Discuss how Amber can be easily incorporated into existing webapplications - regardless of the back-end (Ruby, PHP, Seaside, etc) and how it can co-exist with existing client-side JavaScript
+   - Show some nice applications written in Amber</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Smalltalk Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/amber</url>
+      <location>AW1.126</location>
+      <attendee>John Thornton</attendee>
+      <attendee>Laurent Laffont</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>884@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>884</pentabarf:event-id>
+      <pentabarf:event-slug>jquery_mobile</pentabarf:event-slug>
+      <pentabarf:event-tag>jquery_mobile</pentabarf:event-tag>
+      <pentabarf:title>An introduction to jQuery Mobile</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Smalltalk Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 12:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T120000</dtstart>
+      <dtend>20120205T123000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>An introduction to jQuery Mobile</summary>
+      <description>An overview of jQueryMobile, how it allows rapid development of mobile sites and some of the key pitfalls to be avoided. Examples showing how Seaside's component model and #show/#answer facilities map well onto a mobile site. What it takes to turn a mobile web application into a mobile application suitable for a mobile app store.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Smalltalk Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/jquery_mobile</url>
+      <location>AW1.126</location>
+      <attendee>Nick Ager</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>885@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>885</pentabarf:event-id>
+      <pentabarf:event-slug>roarvm</pentabarf:event-slug>
+      <pentabarf:event-tag>roarvm</pentabarf:event-tag>
+      <pentabarf:title>RoarVM, Sly</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Smalltalk Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 12:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 13:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T123000</dtstart>
+      <dtend>20120205T130000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>RoarVM, Sly</summary>
+      <description>Recent developments in using many cores and parallel programming that embraces non-determinism for performance</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Smalltalk Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/roarvm</url>
+      <location>AW1.126</location>
+      <attendee>Stefan Marr</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>886@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>886</pentabarf:event-id>
+      <pentabarf:event-slug>native_smalltalk</pentabarf:event-slug>
+      <pentabarf:event-tag>native_smalltalk</pentabarf:event-tag>
+      <pentabarf:title>Compiling Smalltalk to fast native Code</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Smalltalk Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 13:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 13:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T130000</dtstart>
+      <dtend>20120205T133000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Compiling Smalltalk to fast native Code</summary>
+      <description>Compiling Smalltalk to fast native Code</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Smalltalk Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/native_smalltalk</url>
+      <location>AW1.126</location>
+      <attendee>David Chisnall</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>887@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>887</pentabarf:event-id>
+      <pentabarf:event-slug>spoon</pentabarf:event-slug>
+      <pentabarf:event-tag>spoon</pentabarf:event-tag>
+      <pentabarf:title>Spoon, a minimal object programming system</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Smalltalk Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 13:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120205T133000</dtstart>
+      <dtend>20120205T140000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Spoon, a minimal object programming system</summary>
+      <description>      Spoon? 
+Spoon! It's a minimal object programming system derived from Squeak, with new approaches to organization, collaboration, and deployment. 
+
+Spoon is the system I want for writing and distributing software. Initially, it has only that needed for a new programmer to start and extend it easily. This includes a module system, with which any Spoon system may provide code and data to others. Each module is a live object, and coordinates the direct synchronization of providing and consuming systems. 
+
+The very smallest object memory snapshot I've made is 1,337 bytes long. An interesting intermediate result of this work has been "session imprinting", the transfer of compiled methods directly from one system to another as a side-effect of running them, without needing to compile source code. 
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Smalltalk Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/spoon</url>
+      <location>AW1.126</location>
+      <attendee>Craig Latta</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>888@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>888</pentabarf:event-id>
+      <pentabarf:event-slug>learn_smalltalk</pentabarf:event-slug>
+      <pentabarf:event-tag>learn_smalltalk</pentabarf:event-tag>
+      <pentabarf:title>Back to the future, (re) learn smalltalk</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Smalltalk Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>02:30:00</pentabarf:duration>
+      <dtstart>20120205T140000</dtstart>
+      <dtend>20120205T163000</dtend>
+      <duration>02H30M00S</duration>
+      <summary>Back to the future, (re) learn smalltalk</summary>
+      <description>A lot of the things in software engineering we take for granted these days are rooted in Smalltalk. 
+But most people do not program in Smalltalk. Do you wonder if there are more pieces of brilliance in Smalltalk waiting to be picked up by
+the general computing community? Come and experience yourself.
+
+We'll work with you through an exercise showing Seaside, Glamour and other little known treasures, fully exploiting the 'objects-all-the-way'
+attitude visible in the Pharo open source Smalltalk environment. 
+
+Bring your laptop to pair through the exercises. Take home a web application, deployed on your laptop.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Smalltalk Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/learn_smalltalk</url>
+      <location>AW1.126</location>
+      <attendee>Stephan Eggermont</attendee>
+      <attendee>Willem van den Ende</attendee>
+      <attendee>Diego Lont</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

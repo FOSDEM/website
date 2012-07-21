@@ -1,0 +1,101 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Community at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>555@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>555</pentabarf:event-id>
+      <pentabarf:event-slug>why_welcome_average_jane_and_joe</pentabarf:event-slug>
+      <pentabarf:event-tag>why_welcome_average_jane_and_joe</pentabarf:event-tag>
+      <pentabarf:title>Why the community should welcome Average Jane and Joe</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Community Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T140000</dtstart>
+      <dtend>20120205T145000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Why the community should welcome Average Jane and Joe</summary>
+      <description>Clarissa would like to convince "geeks" that they need "normal people". She wants to convince geeks about what an Average Jane or Joe can bring to FLOSS, because she wants geeks to make some efforts to welcome them.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Community Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/why_welcome_average_jane_and_joe</url>
+      <location>K.1.105</location>
+      <attendee>Claire Corgnou</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>404@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>404</pentabarf:event-id>
+      <pentabarf:event-slug>really_grow_community</pentabarf:event-slug>
+      <pentabarf:event-tag>really_grow_community</pentabarf:event-tag>
+      <pentabarf:title>You're doing it wrong!</pentabarf:title>
+      <pentabarf:subtitle>Or how to really grow a community</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Community Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 15:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T150000</dtstart>
+      <dtend>20120205T155000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>You're doing it wrong!- Or how to really grow a community</summary>
+      <description>Based on his experiences with aggressively growing and maintaining the Exherbo community Bryan dives into the secrets and experience leading to this success.
+
+Exherbo averages 5 new contributors every month despite being a small and relatively unknown project. The contributors stay quite active within the project and stay with the project for years.
+
+Bryan drives straight into the heart of his community management techniques and explains how you can easily achieve a similar success for your project, be it open source or a otherwise peer driven project. He'll also turn it on it's head and explain how users can benefit from the exact same techniques to get faster and much better responses when dealing with developers. And how to get the upper hand when dealing with the system administrators at the office..
+
+Secrets revealed includes:
+* why you should only be looking for inexperienced developers
+* why you should openly apply social engineering techniques when dealing with developers
+* what makes inexperienced developers such a big asset for Exherbo
+* how users can manipulate developers into fixing their bugs and many more.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Community Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/really_grow_community</url>
+      <location>K.1.105</location>
+      <attendee>Bryan Østergaard</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>403@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>403</pentabarf:event-id>
+      <pentabarf:event-slug>caret_and_stick</pentabarf:event-slug>
+      <pentabarf:event-tag>caret_and_stick</pentabarf:event-tag>
+      <pentabarf:title>Caret and Stick</pentabarf:title>
+      <pentabarf:subtitle>How to motivate your developers and create a healthy community</pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Community Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T160000</dtstart>
+      <dtend>20120205T165000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Caret and Stick- How to motivate your developers and create a healthy community</summary>
+      <description>You've got the program, you've got the users but how do you make sure your community thrives? An introduction to the research on open source communities when they get more complicated then 2 developers on Github.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Community Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/caret_and_stick</url>
+      <location>K.1.105</location>
+      <attendee>Finne Boonen</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

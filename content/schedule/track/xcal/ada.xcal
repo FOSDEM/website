@@ -1,0 +1,323 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Ada at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>870@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>870</pentabarf:event-id>
+      <pentabarf:event-slug>welcome_to_ada_devroom</pentabarf:event-slug>
+      <pentabarf:event-tag>welcome_to_ada_devroom</pentabarf:event-tag>
+      <pentabarf:title>Welcome</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:05:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:05:00</pentabarf:duration>
+      <dtstart>20120204T120000</dtstart>
+      <dtend>20120204T120500</dtend>
+      <duration>00H05M00S</duration>
+      <summary>Welcome</summary>
+      <description>Welcome to the Ada Developer Room at FOSDEM 2012, which is organized by Ada-Belgium in cooperation with Ada-Europe.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/welcome_to_ada_devroom</url>
+      <location>AW1.121</location>
+      <attendee>Dirk Craeynest</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>871@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>871</pentabarf:event-id>
+      <pentabarf:event-slug>introduction_to_ada</pentabarf:event-slug>
+      <pentabarf:event-tag>introduction_to_ada</pentabarf:event-tag>
+      <pentabarf:title>An introduction to Ada 2005 and Ada 2012</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 12:05:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 12:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:45:00</pentabarf:duration>
+      <dtstart>20120204T120500</dtstart>
+      <dtend>20120204T125000</dtend>
+      <duration>00H45M00S</duration>
+      <summary>An introduction to Ada 2005 and Ada 2012</summary>
+      <description>Overview of the main features of the Ada language, with special emphasis on those features that make it especially attractive for free software development.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/introduction_to_ada</url>
+      <location>AW1.121</location>
+      <attendee>Jean-Pierre Rosen</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>872@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>872</pentabarf:event-id>
+      <pentabarf:event-slug>ada_in_game_crimeville</pentabarf:event-slug>
+      <pentabarf:event-tag>ada_in_game_crimeville</pentabarf:event-tag>
+      <pentabarf:title>Ada in the on-line multi-user game Crimeville</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T130000</dtstart>
+      <dtend>20120204T132500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Ada in the on-line multi-user game Crimeville</summary>
+      <description>Using Ada to provide business logic, and glue existing applications together.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/ada_in_game_crimeville</url>
+      <location>AW1.121</location>
+      <attendee>Jacob Sparre Andersen</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>873@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>873</pentabarf:event-id>
+      <pentabarf:event-slug>contract_model_of_ada_2012</pentabarf:event-slug>
+      <pentabarf:event-tag>contract_model_of_ada_2012</pentabarf:event-tag>
+      <pentabarf:title>The contract model of Ada 2012</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 13:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 13:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T133000</dtstart>
+      <dtend>20120204T135500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>The contract model of Ada 2012</summary>
+      <description>The basics of programming by contracts and how contracts were introduced in Ada 2012.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/contract_model_of_ada_2012</url>
+      <location>AW1.121</location>
+      <attendee>Jean-Pierre Rosen</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>874@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>874</pentabarf:event-id>
+      <pentabarf:event-slug>multicore_in_ada</pentabarf:event-slug>
+      <pentabarf:event-tag>multicore_in_ada</pentabarf:event-tag>
+      <pentabarf:title>Multicore programming support in Ada</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 14:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T140000</dtstart>
+      <dtend>20120204T145000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Multicore programming support in Ada</summary>
+      <description>A presentation of Ada's features in the parallel/multicore area, given in such a way that people can start experimenting and doing "interesting stuff".</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/multicore_in_ada</url>
+      <location>AW1.121</location>
+      <attendee>José F. Ruiz</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>875@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>875</pentabarf:event-id>
+      <pentabarf:event-slug>lovelace_ada_os</pentabarf:event-slug>
+      <pentabarf:event-tag>lovelace_ada_os</pentabarf:event-tag>
+      <pentabarf:title>Lovelace: towards a full Ada OS</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T150000</dtstart>
+      <dtend>20120204T152500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Lovelace: towards a full Ada OS</summary>
+      <description>OS Lovelace: a distributed operating system in Ada, or how to have fun with both Ada and Operating System Development at the same time.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/lovelace_ada_os</url>
+      <location>AW1.121</location>
+      <attendee>Xavier Grave</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>876@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>876</pentabarf:event-id>
+      <pentabarf:event-slug>arduinos_in_ada</pentabarf:event-slug>
+      <pentabarf:event-tag>arduinos_in_ada</pentabarf:event-tag>
+      <pentabarf:title>Programming Arduinos in Ada</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 15:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 15:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T153000</dtstart>
+      <dtend>20120204T155500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Programming Arduinos in Ada</summary>
+      <description>Programming Arduinos made even easier (and more reliable).</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/arduinos_in_ada</url>
+      <location>AW1.121</location>
+      <attendee>Jacob Sparre Andersen</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>877@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>877</pentabarf:event-id>
+      <pentabarf:event-slug>lego_mindstorms_in_ada</pentabarf:event-slug>
+      <pentabarf:event-tag>lego_mindstorms_in_ada</pentabarf:event-tag>
+      <pentabarf:title>Programming LEGO MINDSTORMS robots in Ada </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 16:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120204T160000</dtstart>
+      <dtend>20120204T165000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Programming LEGO MINDSTORMS robots in Ada </summary>
+      <description>This presentation explains and demonstrates how Ada is effectively used to control a Segway-like self-balancing robot.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/lego_mindstorms_in_ada</url>
+      <location>AW1.121</location>
+      <attendee>José F. Ruiz</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>878@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>878</pentabarf:event-id>
+      <pentabarf:event-slug>ada_on_rails</pentabarf:event-slug>
+      <pentabarf:event-tag>ada_on_rails</pentabarf:event-tag>
+      <pentabarf:title>Ada on Rails </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:25:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T170000</dtstart>
+      <dtend>20120204T172500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>Ada on Rails </summary>
+      <description>Discover how Ada catches up with web application development.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/ada_on_rails</url>
+      <location>AW1.121</location>
+      <attendee>David Sauvage</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>879@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>879</pentabarf:event-id>
+      <pentabarf:event-slug>ppetp_streaming_in_ada</pentabarf:event-slug>
+      <pentabarf:event-tag>ppetp_streaming_in_ada</pentabarf:event-tag>
+      <pentabarf:title>PPETP: a P2P streaming protocol implemented in Ada</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 17:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 17:55:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:25:00</pentabarf:duration>
+      <dtstart>20120204T173000</dtstart>
+      <dtend>20120204T175500</dtend>
+      <duration>00H25M00S</duration>
+      <summary>PPETP: a P2P streaming protocol implemented in Ada</summary>
+      <description>Ada enters into the peer-to-peer world.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/ppetp_streaming_in_ada</url>
+      <location>AW1.121</location>
+      <attendee>Riccardo Bernardini</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>880@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>880</pentabarf:event-id>
+      <pentabarf:event-slug>future_of_ada</pentabarf:event-slug>
+      <pentabarf:event-tag>future_of_ada</pentabarf:event-tag>
+      <pentabarf:title>The future of Ada: Robert Dewar looks into his cloudy crystal ball </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 18:30:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T180000</dtstart>
+      <dtend>20120204T183000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>The future of Ada: Robert Dewar looks into his cloudy crystal ball </summary>
+      <description>Looking into the future of Ada, not just as a programming language but as a basis for building highly reliable software.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/future_of_ada</url>
+      <location>AW1.121</location>
+      <attendee>Robert Dewar</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>881@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>881</pentabarf:event-id>
+      <pentabarf:event-slug>open_discussion</pentabarf:event-slug>
+      <pentabarf:event-tag>open_discussion</pentabarf:event-tag>
+      <pentabarf:title>Open discussion and networking</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Ada Devroom</pentabarf:track>
+      <pentabarf:start>2012-02-04 18:30:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-04 19:00:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:30:00</pentabarf:duration>
+      <dtstart>20120204T183000</dtstart>
+      <dtend>20120204T190000</dtend>
+      <duration>00H30M00S</duration>
+      <summary>Open discussion and networking</summary>
+      <description>Informal discussions, revisiting topics of today's presentations, etc.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Ada Devroom</categories>
+      <url>https://fosdem.org/2012//schedule/event/open_discussion</url>
+      <location>AW1.121</location>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

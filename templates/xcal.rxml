@@ -1,0 +1,48 @@
+---
+---
+<%
+# vim: set ts=2 sw=2 et ai ft=ruby:
+require 'builder'
+buffer = ''
+xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
+xml.instruct!
+xml.iCalendar(:"xmlns:xCal"=>"urn:ietf:params:xml:ns:xcal", :"xmlns:pentabarf"=>"http://pentabarf.org") do
+  xml.vcalendar do
+    xml.version "2.0"
+    xml.prodid "-//Pentabarf//Schedule 1.0//EN"
+    xml.tag! :"x-wr-caldesc", @title
+    xml.tag! :"x-wr-calname", "Schedule for sessions at #{@xcal_cal}"
+    @events.sort_by{|e| e.start_datetime}.each do | event |
+      xml.vevent do
+        xml.method( "PUBLISH" )
+        xml.uid( "#{event.event_id}@#{@acronym}@pentabarf.org")
+        xml.tag!( "pentabarf:event-id", event.event_id )
+        xml.tag!( "pentabarf:event-slug", event.slug )
+        xml.tag!( "pentabarf:event-tag", event.slug )
+        xml.tag!( "pentabarf:title", event.title )
+        xml.tag!( "pentabarf:subtitle", event.subtitle )
+        xml.tag!( "pentabarf:language", @language )
+        xml.tag!( "pentabarf:language-code", @lang )
+        xml.tag!( "pentabarf:track", event.conference_track )
+        xml.tag!( "pentabarf:start", event.start_datetime.strftime('%Y-%m-%d %H:%M:%S %z'))
+        xml.tag!( "pentabarf:end", event.end_datetime.strftime('%Y-%m-%d %H:%M:%S %z'))
+        xml.tag!( "pentabarf:duration", Time.parse(event.duration).strftime('%H:%M:%S'))
+        xml.dtstart( event.start_datetime.strftime('%Y%m%dT%H%M%S') )
+        xml.dtend( event.end_datetime.strftime('%Y%m%dT%H%M%S') )
+        xml.duration( Time.parse(event.duration).strftime('%HH%MM%SS') )
+        xml.summary( event.title + ( event.subtitle ? "- #{event.subtitle}" : "" ) )
+        xml.description( event.abstract )
+        xml.class( "PUBLIC" )
+        xml.status( "CONFIRMED" )
+        xml.categories( event.conference_track )
+        xml.url( "#{@baseurl}#{url(event)}" )
+        xml.location( event.conference_room )
+        ($event_speakers[event.event_id] or []).each do | speaker |
+          xml.attendee( name(speaker) )
+        end #speaker
+      end #vevent
+    end #events
+  end #vcalendar
+end #iCalendar
+%>
+<%= buffer %>

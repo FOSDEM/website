@@ -1,0 +1,102 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<iCalendar xmlns:xCal="urn:ietf:params:xml:ns:xcal" xmlns:pentabarf="http://pentabarf.org">
+  <vcalendar>
+    <version>2.0</version>
+    <prodid>-//Pentabarf//Schedule 1.0//EN</prodid>
+    <x-wr-caldesc>Schedule for Development at FOSDEM 2012</x-wr-caldesc>
+    <x-wr-calname>Schedule for sessions at </x-wr-calname>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>400@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>400</pentabarf:event-id>
+      <pentabarf:event-slug>dsl_llvm</pentabarf:event-slug>
+      <pentabarf:event-tag>dsl_llvm</pentabarf:event-tag>
+      <pentabarf:title>Implementing Domain-Specific Languages with LLVM </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Development Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 14:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 14:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T140000</dtstart>
+      <dtend>20120205T145000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>Implementing Domain-Specific Languages with LLVM </summary>
+      <description>Any sufficiently complex application eventually evolves its own scripting framework or domain-specific language.  These can be simple things, like a graphical scripting language for connecting pre-existing building blocks together, a domain-specific language for performing image convolutions, or a general-purpose language like a Lisp or JavaScript dialect for writing extensions.
+
+These are usually implemented as ad-hoc interpreters, which limits their utility things that are not performance critical.  With LLVM, it is very easy to turn a quick-and-dirty interpreter into a high-speed JIT or static compiler.  This talk will explain how to plug LLVM into your application and allow code in your scripting language to run (almost) as fast as compiled C.
+
+LLVM is a set of libraries that can be assembled to build compilers and related tools.  This talk will give a close look at some of the APIs, the core abstractions that they present, and how they are used.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Development Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/dsl_llvm</url>
+      <location>Janson</location>
+      <attendee>David Chisnall</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>388@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>388</pentabarf:event-id>
+      <pentabarf:event-slug>cassandra_storage</pentabarf:event-slug>
+      <pentabarf:event-tag>cassandra_storage</pentabarf:event-tag>
+      <pentabarf:title>The Apache Cassandra storage engine </pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Development Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 15:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 15:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T150000</dtstart>
+      <dtend>20120205T155000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>The Apache Cassandra storage engine </summary>
+      <description>Apache Cassandra is a distributed database built to handle massive amounts of
+data on large clusters of community servers. This talk will present the
+storage engine at the core of Cassandra, motivating the use of a structure
+akin to a Log-Structured Merge Tree rather than of a usual B-Tree and it's
+implications for the data model. We will also introduce most of the current
+features of that engine (secondary indexes, integrated caching, TTL...)
+including recent developments introduced in Cassandra 1.0 like
+compression/checksumming and the new leveled compaction.</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Development Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/cassandra_storage</url>
+      <location>Janson</location>
+      <attendee>Sylvain Lebresne</attendee>
+    </vevent>
+    <vevent>
+      <method>PUBLISH</method>
+      <uid>424@FOSDEM12@pentabarf.org</uid>
+      <pentabarf:event-id>424</pentabarf:event-id>
+      <pentabarf:event-slug>dev_to_devops</pentabarf:event-slug>
+      <pentabarf:event-tag>dev_to_devops</pentabarf:event-tag>
+      <pentabarf:title>From Dev to DevOps</pentabarf:title>
+      <pentabarf:subtitle></pentabarf:subtitle>
+      <pentabarf:language>English</pentabarf:language>
+      <pentabarf:language-code>en</pentabarf:language-code>
+      <pentabarf:track>Development Track</pentabarf:track>
+      <pentabarf:start>2012-02-05 16:00:00 +0100</pentabarf:start>
+      <pentabarf:end>2012-02-05 16:50:00 +0100</pentabarf:end>
+      <pentabarf:duration>00:50:00</pentabarf:duration>
+      <dtstart>20120205T160000</dtstart>
+      <dtend>20120205T165000</dtend>
+      <duration>00H50M00S</duration>
+      <summary>From Dev to DevOps</summary>
+      <description>If you are a developer interested on the DevOps movement, you can implement end-to-end development-to-production process taking advantage of Apache Maven and Puppet, to automate continuous delivery, from source code to any number of application servers managed with Puppet.
+</description>
+      <class>PUBLIC</class>
+      <status>CONFIRMED</status>
+      <categories>Development Track</categories>
+      <url>https://fosdem.org/2012//schedule/event/dev_to_devops</url>
+      <location>Janson</location>
+      <attendee>Carlos Sanchez</attendee>
+    </vevent>
+  </vcalendar>
+</iCalendar>
+

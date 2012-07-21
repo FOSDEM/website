@@ -261,13 +261,20 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
     require 'fileutils'
 
     vars = {}
+    eol = nil
     bindings.each do |x|
       if x.kind_of? Hash
-        x.each{|k,v| vars[k] = v}
+        x.each do |k,v|
+          if k == :eol
+            eol = v
+          else
+            vars[k] = v
+          end
+        end
       elsif x.kind_of? Array and x.empty?
         # that's fine
       else
-        raise "unsupported render flag \"#{x}\""
+        raise "unsupported render flag \"#{x}\" (#{x.class})"
       end
     end
     tf = if tf =~ /\..+$/
@@ -291,8 +298,10 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
                raise e.class, message, backtrace
              end
 
-    file = File.join($outdir, "#{target}.html")
+    output = output.gsub(/[\r\n]+/, eol) if eol
 
+    targetname = target =~ /^.+\..+$/ ? target : "#{target}.html"
+    file = File.join($outdir, targetname)
     write_to(file, output, time_before)
   end
 
@@ -344,6 +353,7 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       :Track            => 'conference_track',
       :Person           => 'persons',
       :EventPerson      => 'event_persons',
+      :EventLink        => 'event_links',
     }.each do |klass, table|
       f = Class.new(OpenStruct) do
       end
@@ -369,11 +379,13 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
 
       $conf = yl1(Conference, File.join($cache, 'conf'))
       $days = yl(ConferenceDay, 'days').sort_by{|d| d.conference_day}
+      $year = $days.sort_by{|d| d.conference_day.to_date}.first.conference_day.to_date.year
       $events = yl(ScheduleEvent, 'events')
       $rooms = yl(Room, 'rooms').sort_by{|r| r.rank}
       $tracks = yl(Track, 'tracks').sort_by{|t| t.rank}
       $persons = yl(Person, 'persons')
       $event_persons = yl(EventPerson, 'event_persons')
+      $event_links = yl(EventLink, 'event_links')
       duration = Time.now - time_before
       Nanoc::CLI::Logger.instance.log(:high, "%s%12s%s  [%2.2fs]  %s" % [ "\e[1m", "cache", "\e[0m", duration, "loaded from #{$cache}" ])
     end
@@ -416,6 +428,15 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       $speaker_for = earr($persons, :person_id)
       $event_speakers = earr($events, :event_id)
 
+      $event_links_by_event_id = begin
+                                   h = {}
+                                   $event_links.each do |link|
+                                     h[link.event_id] = [] unless h.has_key? link.event_id
+                                     h[link.event_id] << link
+                                   end
+                                   h
+                                 end
+
       $events.each do |e|
         $speaker_persons[e.event_id] = []
 
@@ -426,6 +447,9 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
           $speaker_for[person.person_id] << e
           $event_speakers[e.event_id] << person
         end
+
+        e.links = $event_links_by_event_id.fetch(e.event_id, [])
+        e.speakers = $event_speakers.fetch(e.event_id, [])
       end
 
       duration = Time.now - time_before
@@ -436,16 +460,17 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
       puts "Compiling schedule pages..."
 
       # and here we do the actual rendering
-      # simply render all the templates that end in 's'
-      Dir.glob(File.join('templates', '*s.html')).reject{|f| File.directory? f}.each do |template|
-        render(Pathname.new(template).basename.to_s.gsub(/\..+$/, ''))
-      end
-
-      # render the speakers
+      
+      # render the speakers *FIRST* as we actually decorate the
+      # person objects with additional data about their photo and
+      # thumbnail (if applicable) in the process
       $speaker_person_by_id.values.each do |person|
-        events = $speaker_for[person.person_id]
+
         slug = PentaHelpers::slug(person)
-        render_to('speaker', File.join('speaker', slug), :p => person, :events => events)
+
+        # let's render the speaker photo and thumbnail,
+        # if applicable, and decorate person objects with
+        # .photo and .thumbnail
 
         image_files = Dir.glob(File.join($cache, 'person_images', "#{person.person_id}.*"))
         raise "found more than one image for person #{person.person_id}: #{image_files.join(', ')}" if image_files.size > 1
@@ -481,6 +506,11 @@ class Pentabarf < ::Nanoc::CLI::CommandRunner
           height = image.rows
           action = write_to(target_filename, content, time_before)
 
+          person.photo = OpenStruct.new(
+            :url => "/schedule/speaker_photos/#{slug}/",
+            :width => width, :height => height, :slug => slug,
+          )
+
           begin
             time_before = Time.now
             meta_filename = "#{basename}.yaml"
@@ -498,6 +528,11 @@ EOF
           thumbnail_basename = File.join($outdir, 'speaker_thumbnails', slug)
           thumbnail_filename = "#{thumbnail_basename}#{ext}"
           thumbnail_meta_filename = "#{thumbnail_basename}.yaml"
+
+          person.thumbnail = OpenStruct.new(
+            :url => "/schedule/speaker_thumbnails/#{slug}/",
+            :width => $thumb_width, :height => $thumb_height, :slug => slug,
+          )
 
           skip_thumbnail = if action == :identical
                              if File.exists? thumbnail_filename
@@ -545,8 +580,49 @@ EOF
               identical_file thumbnail_filename
               identical_file thumbnail_meta_filename
           end
+        else
+          person.photo = nil
+          person.thumbnail = nil
         end
+
+        # now render the speaker/person
+        events = $speaker_for[person.person_id]
+        render_to('speaker', File.join('speaker', slug), :p => person, :events => events)
       end
+       
+      # render the events
+      $events.each do |event|
+        render_to('event', File.join('event', PentaHelpers::slug(event)),
+                  :e => event,
+                  :speakers => event.speakers,
+                  :track => $track_by_id[event.conference_track_id],
+                  :day => $day_by_id[event.conference_day_id],
+                  :room => $room_by_id[event.conference_room_id])
+      end
+
+      # render the Pentabarf XML file
+      render_to('xml', 'pentabarf.xml',
+                :conference => $conf,
+                :events => $events,
+               )
+
+      # render the xcal XML file
+      render_to('xcal', 'xcal.xml',
+                :title => "Schedule for #{$conf.title}",
+                :acronym => $conf.acronym,
+                :language => "English",
+                :lang => "en",
+                :events => $events,
+                :baseurl => "https://fosdem.org/#{$year}/")
+
+      # render the ical file
+      render_to('ical', 'ical.txt',
+                :eol => "\r\n",
+                :title => "Schedule for #{$conf.title}",
+                :acronym => $conf.acronym,
+                :timezone => $conf.timezone,
+                :events => $events,
+                :baseurl => "https://fosdem.org/#{$year}/")
 
       # render the day grids
       $days.each do |day|
@@ -556,17 +632,6 @@ EOF
                   :grid_max_title_length => 25)
       end
 
-      # render the events
-      $events.each do |event|
-        speakers = $event_speakers.fetch(event.event_id, [])
-        render_to('event', File.join('event', PentaHelpers::slug(event)),
-                  :e => event,
-                  :speakers => speakers,
-                  :track => $track_by_id[event.conference_track_id],
-                  :day => $day_by_id[event.conference_day_id],
-                  :room => $room_by_id[event.conference_room_id])
-      end
-
       # render the tracks
       $tracks.each do |track|
         ### XXX this is a temporary hack for the conference data from 2012
@@ -574,12 +639,36 @@ EOF
 
         events = $track_events[track.conference_track_id]
         render_to('track', File.join('track', PentaHelpers::slug(track)), :t => track, :events => events)
+
+        # render the xcal XML file for the track
+        render_to('xcal', File.join('track', 'xcal', "#{PentaHelpers::slug(track)}.xcal"),
+                                    :acronym => $conf.acronym,
+                                    :language => "English",
+                                    :lang => "en",
+                                    :events => events,
+                                    :title => "Schedule for #{PentaHelpers::name(track)} at #{$conf.title}",
+                                    :baseurl => "https://fosdem.org/#{$year}/")
+
+        # render the ical file for the track
+        render_to('ical', File.join('track', 'ical', "#{PentaHelpers::slug(track)}.ics"),
+                  :eol => "\r\n",
+                  :acronym => $conf.acronym,
+                  :timezone => $conf.timezone,
+                  :events => events,
+                  :title => "Schedule for #{PentaHelpers::name(track)} at #{$conf.title}",
+                  :baseurl => "https://fosdem.org/#{$year}/")
+
       end
 
       # render the rooms
       $rooms.each do |room|
         events = $room_events[room.conference_room_id]
         render_to('room', File.join('room', PentaHelpers::slug(room)), :r => room, :events => events)
+      end
+
+      # simply render all the templates that end in 's'
+      Dir.glob(File.join('templates', '*s.html')).reject{|f| File.directory? f}.each do |template|
+        render(Pathname.new(template).basename.to_s.gsub(/\..+$/, ''))
       end
 
     end

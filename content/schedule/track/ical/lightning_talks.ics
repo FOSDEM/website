@@ -1,0 +1,507 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for Lightning Talks at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:941@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T130000
+DTEND:20120204T131500
+SUMMARY:Q&A with the FOSDEM Staff
+DESCRIPTION: Q&A session with core organizers. *The* opportunity to get in touch with us, to ask questions about organization aspects, to tell us what you love or hate, and to discuss anything FOSDEM related.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/fosdem_qa
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="FOSDEM Staff":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:479@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T132000
+DTEND:20120204T133500
+SUMMARY:greenlight for girls
+DESCRIPTION: Greenlightforgirls.org is a Brussels-based, international NGO promoting science, technology, engineering and mathematics to girls of all ages and backgrounds. We promote female role models from technical sectors to youngsters, and run events which inspire girls to study and pursue careers in technical areas, including computers. With this knowledge, we believe girls will save the world!As EU Director and global Technology Chair of the greenlight for girls foundation I aim to:  1. Create awareness about the need to attract more youth - especially girls - to computer science-related studies and careers, and science/tech sectors, in general;  2. Showcase the global activities of our foundation (20 events around the world in just our first 1.5 years in existence); and 3. Seek support from the global FLOSS (women?) developer community for g4g initiatives specifically requiring their involvement to succeed.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/greenlight4girls
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Cheryl Miller":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:488@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T134000
+DTEND:20120204T135500
+SUMMARY:Hacking in the real world: photography from above
+DESCRIPTION: This talk is about taking pictures from above with a big latex balloon, helium,strings, duct tape and CHDK, and making a nice video with the pictures usingpython, GStreamer and OpenCV.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/balloonfreaks
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Guillaume Emont":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:453@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T140000
+DTEND:20120204T141500
+SUMMARY:Linux Kernel MultiPath TCP
+DESCRIPTION: MultiPath TCP, a major extension to TCP, allows the simultaneous use of a smartphone's 3G and WiFi interface to increase throughput and better resilience.We implement MultiPath TCP in the Linux Kernel, publicly available at http://mptcp.info.ucl.ac.be
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/multipathtcp
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Christoph Paasch":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:459@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T142000
+DTEND:20120204T143500
+SUMMARY:Dovecot: More than an email server
+DESCRIPTION: Dovecot is primarily an IMAP server, but nowadays it could also be used as a core for many other things: Rapid development of a feature rich email client, easily trying out your own IMAP protocol replacement, creating an IMAP proxy with mail filtering capabilities, and so on. Most of this is possible due to a new "imapc" mail storage backend, which makes Dovecot act as an IMAP client.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/dovecot
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Timo Sirainen":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:460@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T144000
+DTEND:20120204T145500
+SUMMARY:WebKit EFL and Testing: from 0% to 99% in 6 months
+DESCRIPTION: Early last year, the EFL port of WebKit was missing all the fun in executing over 20000 tests found in WebKit's repository. Required tools have been written, bugs were fixed, and features were implemented in 2011. Progress, important milestones and lessons learned will be shown in this talk.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/webkit_efl
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Leandro Pereira":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:489@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T150000
+DTEND:20120204T151500
+SUMMARY:Audiveris: Optical Music Recognition
+DESCRIPTION: What can you do with your collection of sheet music, when all you have is paper or plain scans?You surely may feel frustrated if you are not ready for tedious sessions of manual typing.Here, *O*ptical *M*usic *R*ecognition comes to the rescue. It transcribes sheet music images to MusicXML symbolic format. Doing so, music content gets really "usable", since it can now easily be played, printed, transposed, re-published, analyzed, searched, etc.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/audiveris
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Hervé Bitteur":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:484@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T152000
+DTEND:20120204T153500
+SUMMARY:FOSS in Broadcast
+DESCRIPTION: Broadcast has generally been the realm of expensive hardware and software and in the main quite objectionable to the use of FOSS. This presentation will talk about the challenges with developing and deploying FOSS in the broadcast environment, using the Open Broadcast Encoder as the main example.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/obe
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Kieran Kunhya":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:503@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T154000
+DTEND:20120204T155500
+SUMMARY:vcsh - manage config files in $HOME via fake bare git repositories
+DESCRIPTION: So you have your system set up to work perfectly. But moving to new machines, adding or changing configs etc is hard and takes way too much time. Thus, you hacked up a common CVS/SVN/Git/whatever repository and soft-link into $HOME. There is a better way and it's called vcsh.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/vcsh
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Richard Hartmann":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:471@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T160000
+DTEND:20120204T161500
+SUMMARY:LISPmob: enhanced network layer mobility solution
+DESCRIPTION: Wouldn't it be great if our phones, tablets, laptops and other mobile gadgets could use the same IP (v4 and/or v6) address regardless of which network they are connected to? And all that without a fixed tunnel causing path stretch, while offering some advanced traffic management features? This talk will present the LISPmob project, which implements a network layer mobility solution based on the Locator/ID Separation Protocol.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/lispmob
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Loránd Jakab":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:483@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T162000
+DTEND:20120204T163500
+SUMMARY:The ZIO Framework
+DESCRIPTION: The ZIO framework is a novel way to manage laboratory input/output.It handles both data and meta-data, and is designed for multi-MB-persecond I/O in distributed systems.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/zio
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Alessandro Rubini":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:490@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T164000
+DTEND:20120204T165500
+SUMMARY:The Self-Describing Wishbone Bus
+DESCRIPTION: The Wishbone bus is an open source hardware computer bus specification intended to let different logic blocks within an integrated circuit communicate with each other. This talk will introduce a set of memory mapped data structures that allow designers to describe their own logic blocks, thus allowing for the auto-discovery of devices on a Wishbone bus.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/wishbone
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Manohar Vanga":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:492@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T170000
+DTEND:20120204T171500
+SUMMARY:Minemu: protecting buggy programs from memory corruption attacks
+DESCRIPTION: Dynamic taint analysis is a powerful technique to detect memory corruption attacks. Yet with typical overheads of an order of magnitude, it is not something you would choose to deploy in any production environment.  Minemu is a fast taint-tracking emulator for Linux which aims to be fast enough to be run on production systems.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/minemu
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Erik Bosman":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:515@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T172000
+DTEND:20120204T173500
+SUMMARY:Wikiotics - Bridging the FOSS and Edu worlds through language instruction 
+DESCRIPTION: The people who believe in free software and open education have a lot in common, but few shared projects. Wikiotics has run for three years as a one such hybrid project and in the process spent a lot of time talking about education at free software conferences and about free software at education ones. If you have ever wondered why there aren't more projects like Wikipedia out there, come hear about some of the difficulties and opportunities for Foss/Edu collaboration.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/wikiotics
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ian Sullivan":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:468@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T174000
+DTEND:20120204T175500
+SUMMARY:Transifex: Localizing your application
+DESCRIPTION: Transifex is an open-source localization platform. It helps developers manage the localization process for their software. Especially in the open-source world, localizing the software is very important. This talk will explain briefly what localization is, what are the issues that arise and how Transifex can help projects manage the translation workflow.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/transifex
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Apostolos Bessas":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:498@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T180000
+DTEND:20120204T181500
+SUMMARY:The Growl Project: Making users happy one notification at a time
+DESCRIPTION: The Growl Project, started in 2004, is the de facto open source notification framework for Mac OS X, and it's currently used by a wide range of applications, such as Firefox, Chrome, Adium, Skype, Dropbox etc. In this talk, we will present Growl, the various Growl Extras, and the GNTP protocol used to send and receive notifications locally or over the network.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/growl
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Vasileios Georgitzikis":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:458@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T182000
+DTEND:20120204T183500
+SUMMARY:PMD5: What can it do for you ?
+DESCRIPTION: This lightning talk will be an overview of the important features of PMD 5.0, from which a beta should be release before then.Introducing briefly what PMD does (static code control and analysis) and how it does it (using XPath to query over Abstract Syntax Tree provided by pre-compilation), the talk will focus on the more important enhancement of this version: multi language support, mostly achieved by the great work of Ryan Gustavson between 2009 - 2010. With this features, PMD can be easily extend to support a large set of languages, including already XML based languages and ECMAScript (more commonly designated by the name JavaScript)
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/pmd5
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Romain Pelisse":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:463@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120204T184000
+DTEND:20120204T185500
+SUMMARY:Wazaabi - Model your UI ... live
+DESCRIPTION: UI development usually consists in building software components that rely on a business data model. But business data models need to change frequently to adapt user requirement updates. This implies to adapt frequently the UI components.Nowadays, existing solutions provide a way to support these changes by providing code generation and data binding. But, these solutions are still slow. Then, the development cost increases rapidly if you have frequently requirement updates and/or many UI components.Wazaabi aims to reduce this cost by providing a solution based on models which doesn't require code generation. Based on Eclipse EMF, Wazaabi provides an open source framework that implements a dynamic declarative UI mechanism. The Wazaabi framework is directly based on the business data model and will evolve with it.This presentation aims to give a look inside this framework.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/wazaabi
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Gregoire de Hemptinne":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:465@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T100000
+DTEND:20120205T101500
+SUMMARY:XQuery 3.0 Rocks
+DESCRIPTION: XQuery has been designed by the W3C as a general purpose XML processing language.Although XQuery is mainly known as a query language for XML collections, it is a fully fledged programming language useful in a variety of architectures and environments.With an extremely powerful support for database queries, scripting, and full-text search, XQuery is providing a unified framework for building web applications.The aim of this talk is to briefly introduce some of the new language features in XQuery 3.0 and demo how XQuery & HTML5 can work together to build applications that are 300% awesome.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/xquery
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="William Candillon":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:504@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T102000
+DTEND:20120205T103500
+SUMMARY:Threat Modeling Revolutionized!
+DESCRIPTION: Sick of ludicrous security theater?  Banish it in your organization!
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/threatmodeling
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="David Fetter":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:466@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T104000
+DTEND:20120205T105500
+SUMMARY:An introduction to EclipseRT
+DESCRIPTION: A short introduction runtime related efforts and technologies available at Eclipse.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/eclipsert
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Gunnar Wagenknecht":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:462@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T110000
+DTEND:20120205T111500
+SUMMARY:Powerful tools for Linux C/C++ developers based on Eclipse
+DESCRIPTION: The Eclipse community's support for C and C++ programmers is continuously improving.  Coupling this support for editing and debugging with integration of existing Linux tools for profiling and analysis gives C and C++ programmers a powerful, one-stop-shop environment.  Valgrind, OProfile, and RPM integration?  This isn't your grandfather's Eclipse.  Come see it in action!
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/cdt
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Andrew Overholt":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:491@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T112000
+DTEND:20120205T113500
+SUMMARY:LibrePlan: Open Web Planning
+DESCRIPTION: LibrePlan is a collaborative tool for planning, monitoring and control of different types of projects. LibrePlan is a project management tool based on Gantt diagrams. It is also a web-application. Thanks to its rich web interface, LibrePlan provides an user experience similar to desktop applications like MS Project.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/libreplan
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Diego Pino García":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:502@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T114000
+DTEND:20120205T115500
+SUMMARY:How we scaled up OpenQuake
+DESCRIPTION: Topics: partitioning of large calculations, computation networks, python, celery, rabbitmq, redis
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/openquake
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Muharem Hrnjadovic":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:470@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T140000
+DTEND:20120205T141500
+SUMMARY:EPFSUG - everybody needs a hacker!
+DESCRIPTION: The European Parliament Free Software User Group (EPFSUG) is currently a 37 person strong user group of staff, assistants, MEPs and supporters from the free software community.The mission of EPFSUG is to* Assist people interested in using free software in the European Parliament* Drive adoption of free software in the European Parliament's information infrastructure* Push for use of open standards, to ensure equal access for citizens using free software* Work in cooperation with like-minded groups in Europe and around the worldThis Lightning Talk will make you want to become a supporter too, because everybody needs a hacker to talk to sometimes, in particular the folks who work in the European Parliament!
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/epfsug
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jonatan Walck":invalid:nomail
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Camilla Bursi":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:456@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T142000
+DTEND:20120205T143500
+SUMMARY:Libre.fm and GNU FM - Supporting free culture artists with free software
+DESCRIPTION: The GNU FM software allows music lovers to share their listening habits and to discover new music. It allows artists to find new audiences for their music and to earn a little money.Libre.fm is a public installation of GNU FM which anyone can make use of, and which currently has roughly 50,000 users and over 80,000 streamable tracks by 7,500 artists. By letting Libre.fm know what music you like and dislike it's able to construct personalised radio streams filled with great freely licensed music tailored specifically to your tastes.In this talk we'll discuss what we've achieved so far, our plans for the future and how you can help out.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/librefm
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Michael Sheldon":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:506@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T144000
+DTEND:20120205T145500
+SUMMARY:Managing your network with Netmagis
+DESCRIPTION: Netmagis is a network management tool not unlike Netdot but with some original features
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/netmagis
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jean Benoit":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:475@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T150000
+DTEND:20120205T151500
+SUMMARY:mail2trac
+DESCRIPTION: Mail2trac, a Trac plug-in, presents a new interface allowing Trac users to interact with it by email.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/mail2trac
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Valentin Schmitt":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:461@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T152000
+DTEND:20120205T153500
+SUMMARY:Home Automation with Open Remote
+DESCRIPTION: OpenRemote is an open source project operating in the field of Domotics.  OpenRemote develops and distributes a standard based platform that is extensible and flexible with applications to Home Automation, Energy Management and Healthcare.  This community based project integrates varied field protocols (such as KXN, X10 and Z-Wave) in a common framework and allows for easy creation of visual panels.  Open Remote supports the leading standard platforms iOS, Android and web.  OpenRemote offers a variety of cloud-based tools which are aimed at simplifying the work of professionals as well as hobbyists.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/openremote
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Eric Bariaux":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:517@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T154000
+DTEND:20120205T155500
+SUMMARY:git-annex - manage files with git, without checking their contents into git
+DESCRIPTION: This talk gives an overview of what git-annex is, how to use it, and why.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/gitannex
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Richard Hartmann":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:469@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T160000
+DTEND:20120205T161500
+SUMMARY:Geeklog: The secure CMS.
+DESCRIPTION: Geeklog is a web content management system. The project has been around for more than 10 years now and is probably best known for powering the Groklaw website.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/geeklog
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Dirk Haun":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:493@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T162000
+DTEND:20120205T163500
+SUMMARY:Semantic MediaWiki
+DESCRIPTION: What is Semantic MediaWiki, what can it do for me, and why is it not on Wikipedia yet?
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/smw
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jeroen De Dauw":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:482@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T164000
+DTEND:20120205T165500
+SUMMARY:Unhosted
+DESCRIPTION: Unhosted is a non-profit project defining a standard to separate web applications from data storage. The web apps are pure client-side Javascript, fully inspectable and thus enable truly free software on the web. It also allows app developers to enter the web market a lot faster by not needing to care for any data storage. At the same time, users have their data in one place and can use all the apps with just one account and data storage.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Lightning Talks
+URL:https:/fosdem.org/2012/schedule/event/unhosted
+LOCATION:Ferrer
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Michiel de Jong":invalid:nomail
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,161 @@
+---
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:Schedule for Open Source Game Development at FOSDEM 2012
+X-WR-CALNAME;VALUE=TEXT:FOSDEM12
+X-WR-TIMEZONE;VALUE=TEXT:Europe/Brussels
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:538@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T090000
+DTEND:20120205T091000
+SUMMARY:Welcome to the Games Devroom
+DESCRIPTION: During this talk you will hear a short introduction what this room is about and which talks to expect during the day. In case there are any last minute changes you will hear about them during this talk.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/gamesdev_welcome
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nils Kneuper":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:532@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T091000
+DTEND:20120205T095500
+SUMMARY:Xonotic: The road to 1.0
+DESCRIPTION: This will be a introduction to what our game is all about, and a showcase of the new features we have in our latest release and what can be expected in the next release. I will also touch upon what happened with Nexuiz and our reasons to fork.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/xonotic
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Merlijn Hofstra ":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:531@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T100000
+DTEND:20120205T104500
+SUMMARY:Anatomy of a role playing game
+DESCRIPTION: This presentation will walk the audience through the design principles of an isometric role playing game engine. The specimen to be dissected is an actively developed yet fully playable game called FreedroidRPG. A general presentation of the game will be made, before the architecture of its engine is exposed. Examples of good and bad design decisions will be provided, and the way to pull out of ugly situations without compromising stability explained. The game covers most of its objectives but some open questions remain which will be exposed to the audience.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/role_playing_game
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Arthur Huillet":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:536@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T105500
+DTEND:20120205T114000
+SUMMARY:Data-Driven and Component-Based Game-Entities 
+DESCRIPTION: Game architectures used to be designed in an inheritance-based approach, which has proven to be difficult. The current state-of-the-art is a component-based architecture that allows loading all game entities from a separate data source. This enables easier testing and modularization of the code.It is also beneficial for the game designer as it weakens the game designer's dependency on the programmer. This is important for content creators of open-source games, so they can easily add their new content to the game, without relying on somebody else to help them.This talk will outline the reasons to use a data-driven and component-based architecture, give examples of architectures used in popular open-source games (Wesnoth, MegaGlest, 0AD and Unknown Horizons) and explain how Unknown Horizons moved from an inheritance-based approach to the new component-based architecture.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/game_entities
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Thomas Kinnen":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:537@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T114500
+DTEND:20120205T123000
+SUMMARY:The Dynamic Data Driven Worlds of WorldForge
+DESCRIPTION: The WorldForge Project was founded in 1998 on many dreams of online world with freedom, both in terms of price and from the constraints of proprietary software.Pulled in many different directions by often conflicting visions of what the perfect online role playing game should be, the developers have been forced to come up with novel solutions allowing unprecedented flexibility to both the game designer and the player. Using data driven and procedural technologies, systems have been developed that remove the need for gigabytes of patches that are associated with proprietary commercial titles, and allow every host to configure their own game rules in a unique world.In this talk one of the projects longest standing programs will describe some of these technologies, including the possibilities they unlock and examples of their use.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/worldforge
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Alistair Riddoch":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:535@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T124000
+DTEND:20120205T132500
+SUMMARY:Pandora - a mobile Linux computer including gaming controls
+DESCRIPTION: The Pandora is a handheld produced to run Linux. It's not only a gaming device (it features gaming controls), but basically a full Mini-Linux PC the size of a Nintendo DS. It has come a long ways and many many issues occurred during the production. The mass production will finally start in Germany in February, making it easily available for everyone. This talk will give a small introduction to those who don't know what the Pandora is, explaining a bit about the history and the community behind it as well as showing what it can do.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/open_pandora
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Michael Mrozek":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:529@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T133500
+DTEND:20120205T142000
+SUMMARY:Balancing a game: the open source way
+DESCRIPTION: Battle for Wesnoth has a reputation for being a balanced game, but it took many years to get there.This was a long learning process, not only to get a balanced game, but also to learn how to use the resources available specifically to open source software and use them in the best possible way to reach a game that is challenging without being impossible and fair to all players.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/game_balancing
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jeremy Rosen":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:534@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T143000
+DTEND:20120205T151500
+SUMMARY:Getting Started With Ogre3d For Game Development
+DESCRIPTION: Learn how to set up and use Ogre3d to provide a powerful and extensible 3d graphical engine. The focus is on explaining the core concepts and objects needed to get rendering up and running, as well as how to integrate the graphical engine with a game.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/ogre3d
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Erik Ogenvik":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:533@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T152500
+DTEND:20120205T161000
+SUMMARY:Game On - Game Creation and Distribution with Gluon
+DESCRIPTION: Building computer games is fast becoming big business, not just for the big companies, but also for the little companies. To join this vibrant world, we need tools: Ways of easily constructing the games, modern and effective distribution methods, ways of getting the users' feedback and so on.Enter the GamingFreedom.org project, whose open platform empowers everybody to create and distribute games. This talk will shortly explain the ideas behind GamingFreedom.org, and present the Gluon framework for creating games, and the GamingFreedom.org network for makers and players of games.Finally: A live, on-stage demo!
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/gluon
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Dan Leinir Turthra Jensen":invalid:nomail
+END:VEVENT
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:530@FOSDEM12@fosdem.org
+TZID:Europe-Brussels
+DTSTART:20120205T161500
+DTEND:20120205T170000
+SUMMARY:The Future of Open Web Gaming 
+DESCRIPTION: In this talk Rob will highlight the key technologies and events that are going to affect open Web game development in the near future. He will also demo some of these new technologies and show how easy it is to share your game and make money from it using the open and distributed Mozilla Labs Apps project.
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:Open Source Game Development
+URL:https:/fosdem.org/2012/schedule/event/open_web_gaming
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Rob Hawkes ":invalid:nomail
+END:VEVENT
+END:VCALENDAR
