@@ -21,6 +21,12 @@ event_id: <%= @e.event_id %>
 event_type: <%= track_type(@e) %>
 start: <%= yd @e.start_datetime %>
 end: <%= yd @e.end_datetime %>
+links:
+<% @links.sort_by{|l| (l.rank or 0).to_i}.each do |l| %>
+  -
+    title: <%= y(l.title ? l.title : l.url) %>
+    url: <%= l.url %>
+<% end %>
 ---
 <dl class="dl-horizontal">
     <dt>Track:</dt>
@@ -55,5 +61,17 @@ end: <%= yd @e.end_datetime %>
         <%% end %>
     </tbody>
 </table>
+<% end %>
+
+<% unless @links.empty? %>
+<h3>Links</h3>
+<ul>
+    <%
+    @links.sort_by{|l| (l.rank or 0).to_i}.each do |l|
+    title = l.title ? l.title : l.url
+    %>
+    <li><a href="<%= l.url %>"><%= l.title %></a></li>
+    <% end %>
+</ul>
 <% end %>
 

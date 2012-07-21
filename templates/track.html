@@ -52,11 +52,11 @@ alternative_representations:
   -
     title: iCal
     mime: text/calendar
-    url: /schedule/track/<%= slug(@t) %>.ics
+    item: /schedule/track/ical/<%= slug(@t) %>/
   -
     title: xCal
     mime: text/xml
-    url: /schedule/track/<%= slug(@t) %>.xcs
+    item: /schedule/track/xcal/<%= slug(@t) %>/
 ---
 
 <% rooms = @events.map{|e| e.conference_room_id}.uniq.map{|i| $room_by_id[i]}.sort{|r| r.rank} %>
@@ -67,6 +67,8 @@ alternative_representations:
 <% else %>
 <p>Rooms: <%= l(rooms) %></p>
 <% end %>
+
+<p><a href="<%%= $item_by_id["/schedule/track/ical/#{@item[:slug]}/"].path %>" title="iCal">iCal</a> - <a href="<%%= $item_by_id["/schedule/track/xcal/#{@item[:slug]}/"].path %>" title="xCal">xCal</a></p>
 
 <table class="table table-striped table-bordered table-condensed">
     <thead>

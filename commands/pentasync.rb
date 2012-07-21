@@ -597,7 +597,9 @@ EOF
                   :speakers => event.speakers,
                   :track => $track_by_id[event.conference_track_id],
                   :day => $day_by_id[event.conference_day_id],
-                  :room => $room_by_id[event.conference_room_id])
+                  :room => $room_by_id[event.conference_room_id],
+                  :links => $event_links_by_event_id.fetch(event.event_id, []),
+                 )
       end
 
       # render the Pentabarf XML file

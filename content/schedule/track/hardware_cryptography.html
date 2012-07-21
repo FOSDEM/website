@@ -47,14 +47,16 @@ alternative_representations:
   -
     title: iCal
     mime: text/calendar
-    url: /schedule/track/hardware_cryptography.ics
+    item: /schedule/track/ical/hardware_cryptography/
   -
     title: xCal
     mime: text/xml
-    url: /schedule/track/hardware_cryptography.xcs
+    item: /schedule/track/xcal/hardware_cryptography/
 ---
 
 <p>Room: <a href="/schedule/room/h2214">H.2214</a></p>
+
+<p><a href="<%= $item_by_id["/schedule/track/ical/#{@item[:slug]}/"].path %>" title="iCal">iCal</a> - <a href="<%= $item_by_id["/schedule/track/xcal/#{@item[:slug]}/"].path %>" title="xCal">xCal</a></p>
 
 <table class="table table-striped table-bordered table-condensed">
     <thead>
