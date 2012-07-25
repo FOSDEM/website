@@ -174,11 +174,28 @@ route '/internal/*' do;end
 route '/schedule_navigation/' do;end
 route '/sponsors_navigation/' do;end
 
-route '/photos/photo/*' do
-  "/schedule/photo/speaker/" + item.identifier.split('/')[-1]
-end
-route '/photos/thumbnail/*' do
-  "/schedule/thumbnail/speaker/" + item.identifier.split('/')[-1]
+route '/photos/*' do
+  name, ext = if item.identifier.split('/')[-1] =~ %r{^(.+)\.(.+)$}
+                [ $1, $2 ]
+              else
+                raise "photo item identifier is not supported: #{item.identifier.split('/')[-1]}"
+              end
+
+  suffix = if @site.config[:digest_assets] then
+             require 'digest/sha2'
+             sha = Digest::SHA256.new
+             if item.binary? then
+               sha << IO.read(item[:filename])
+             else
+               sha << item.raw_content
+             end
+             digest = sha.hexdigest.downcase
+             "-#{digest}"
+           else
+             ""
+           end
+
+  "/schedule/speaker/#{name}#{suffix}.#{ext}"
 end
 
 route '/schedule/xcal/track/*' do
@@ -223,21 +240,7 @@ route '/assets/*/' do
   "#{item.identifier.chop}#{suffix}.#{item[:extension]}"
 end
 
-route '/schedule/speaker_photos/*/' do
-  suffix = if @site.config[:digest_assets] then
-             require 'digest/sha2'
-             sha = Digest::SHA256.new
-             if item.binary? then
-               sha << IO.read(item[:filename])
-             else
-               sha << item.raw_content
-             end
-             digest = sha.hexdigest.downcase
-             "-#{digest}"
-           else
-             ""
-           end
-  "/schedule/speaker/#{item[:slug]}#{suffix}.#{item[:extension]}"
+route %r{^/schedule/(thumbnail|photo)/speaker/} do
 end
 
 route '/schedule/speaker_thumbnails/*/' do
