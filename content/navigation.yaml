@@ -7,8 +7,10 @@ navigation:
     - /about/sponsors/
     - /about/faq/
   - /schedule/:
-    - /schedule/events/
     - /schedule/tracks/
+    - /schedule/events/
+    - /schedule/speakers/
+    - /schedule/rooms/
   - Practical Information:
     - /practical/beerevent/
     - /practical/transportation/

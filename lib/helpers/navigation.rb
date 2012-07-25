@@ -14,11 +14,13 @@ module NavigationHelper
 		require 'builder'
 
     def title(item)
-      if item[:navtitle]
-        item[:navtitle]
-      else
-        item[:title]
-      end
+      t = if item[:navtitle]
+            item[:navtitle]
+          else
+            item[:title]
+          end
+      raise "navigation references the item #{item.identifier} but that has no :title" unless t
+      t
     end
 
     def walk(n, xml, id, current_path, level=0)

@@ -11,6 +11,11 @@
 
 ##### PREPROCESSING
 preprocess do
+
+  $sp = '/schedule'
+  #$si = '/internal/schedule'
+  $si = '/schedule'
+
   # clone items that have "aliases: foo, bar, spam" in their metadata
   make_aliases
 
@@ -19,6 +24,14 @@ preprocess do
 
   # auto-set the title of content/interviews/*
   decorate_interviews
+
+  # build a global hash of items by their identifier, much faster for lookups
+  # than having to run over all of them; needs to be a global variable
+  $item_by_id = {}
+  @items.each do |item|
+    raise "duplicate identifier #{item.identifier}" if $item_by_id.has_key? item.identifier
+    $item_by_id[item.identifier] = item
+  end
 
   # performance hack:
   # All the schedule/ pages have the same navigation and, hence, we're going
@@ -29,24 +42,17 @@ preprocess do
   # all items to find it.
   # That $schedule_navigation_item is referenced and used in
   # layouts/default.html
-  $schedule_navigation_item = @items.select{|item| item.identifier == '/schedule_navigation/'}.first
-  raise "failed to find an item with the identifier /schedule_navigation/" unless $schedule_navigation_item
+  $schedule_navigation_item = $item_by_id.fetch('/schedule_navigation/')
 
   # and the same for the sponsors block
   # (this optimization actually reduces rendering time from 4min to 30sec)
-  $sponsors_navigation_item = @items.select{|item| item.identifier == '/sponsors_navigation/'}.first
-  raise "failed to find an item with the identifier /sponsors_navigation/" unless $sponsors_navigation_item
-
-  # build a global hash of items by their identifier, much faster for lookups
-  # than having to run over all of them; needs to be a global variable
-  $item_by_id = {}
-  @items.each{|item| $item_by_id[item.identifier] = item}
+  $sponsors_navigation_item = $item_by_id.fetch('/sponsors_navigation/')
 
 end
 
 ##### COMPILING
 
-compile '/static/*' do; end
+compile '/internal/*' do;end
 
 # skip those, as they are combined into content/assets/style/fosdem.css
 compile '/assets/style/parts/*' do;end
@@ -54,12 +60,6 @@ route '/assets/style/parts/*' do;end
 
 compile '/navigation/' do;end
 route '/navigation/' do;end
-
-compile '/schedule/pentabarf/' do;end
-compile '/schedule/xcal/' do;end
-compile '/schedule/ical/' do;end
-compile '/schedule/track/xcal/*' do;end
-compile '/schedule/track/ical/*' do;end
 
 compile '/assets/style/*' do
   # merge all content/assets/style/parts/*.css files into one
@@ -87,12 +87,16 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
+    # process schedule items with their respective template from layouts/schedule/
+    # (e.g. /schedule/event/foo is processed with layouts/schedule/event.*)
+    layout "/schedule/#{$1}/" if item.identifier =~ %r{^/schedule/([^/]+)/.+}
+
     # process <% ERB %> templating
     # http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html
     filter :erb
 
-    # only run the chain of filters when it's not an .xml or .erb file
-    unless ['xml', 'erb'].include? item[:extension] then
+    # only run the chain of filters when it's not an .xml or .erb or .ics file
+    unless ['xml', 'erb', 'ics'].include? item[:extension] then
 
       unless item.identifier =~ %r{^/schedule/} or item[:kind] == 'internal'
 
@@ -149,7 +153,7 @@ compile '*' do
       # use layout/default.html for all items, except
       # sponsor pages and pages that have "layout: false"
       # in their metadata
-      if item[:layout] == false or item.sponsor?
+      if item[:layout] == false or item.sponsor? or item.identifier =~ %r{/[ix]cal/}
         # do nothing
       elsif item[:layout]
         layout item[:layout]
@@ -162,17 +166,27 @@ end
 
 ##### ROUTING
 
+route '/internal/*' do;end
+
 # send this one into oblivion, its compiled content is included in
 # layouts/default.html, but is not to be rendered as a file of its
 # own into output
 route '/schedule_navigation/' do;end
 route '/sponsors_navigation/' do;end
 
-route '/static/*' do
-  # /static/foo.html/ -> /foo.html
-  item.identifier[7..-2]
+route '/photos/photo/*' do
+  "/schedule/photo/speaker/" + item.identifier.split('/')[-1]
+end
+route '/photos/thumbnail/*' do
+  "/schedule/thumbnail/speaker/" + item.identifier.split('/')[-1]
 end
 
+route '/schedule/xcal/track/*' do
+  '/schedule/track/' + item.identifier.split('/')[-1] + ".xcs"
+end
+route '/schedule/ical/track/*' do
+  '/schedule/track/' + item.identifier.split('/')[-1] + ".ics"
+end
 route '/schedule/pentabarf/' do
   '/schedule/xml'
 end
@@ -181,12 +195,6 @@ route '/schedule/xcal/' do
 end
 route '/schedule/ical/' do
   '/schedule/ical'
-end
-route '/schedule/track/xcal/*' do
-  '/schedule/track/' + @item.identifier.split('/')[-1] + ".xcs"
-end
-route '/schedule/track/ical/*' do
-  '/schedule/track/' + @item.identifier.split('/')[-1] + ".ics"
 end
 
 # route /headlines/* into oblivion as they don't really exist on

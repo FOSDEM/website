@@ -2,7 +2,6 @@
 title: News
 kind: page
 navcat: true
-navorder: -10
 ---
 <div class="container-fluid">
 	<% @items.select {|item| item.news? }.sort_by {|item| item[:created_at]}.reverse.each do |hl| %>

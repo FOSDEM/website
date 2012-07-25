@@ -4,13 +4,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="generator" content="nanoc">
-		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link type="text/css" rel="stylesheet" media="screen" href="<%= $item_by_id['/assets/style/fosdem/'].path %>"/>
         <link href="<%= $item_by_id['/atom/'].path %>" type="application/atom+xml" rel="alternate" title="FOSDEM ATOM Feed"/>
         <% (@item[:alternative_representations] or []).each do |alt| %>
         <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= $item_by_id[alt[:item]].path %>" />
         <% end %>
-		<title>FOSDEM - <%= @item[:title] %></title>
+        <title>FOSDEM<% if @item[:title] %> - <%= @item[:title] %><% end %></title>
 	</head>
 	<body>
 		<div class="navbar navbar-fixed-top">

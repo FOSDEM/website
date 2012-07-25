@@ -1,238 +1,40 @@
 ---
 title: Tracks
-tracks: 37
+no_sponsors: true
 ---
+<%
+tracks = @items.select{|i| i.identifier =~ %r{^/schedule/track/.+}}.sort_by{|t| [t[:rank], t[:conference_track_id]]}
+days = @items.select{|i| i.identifier =~ %r{^/schedule/day/.+}}.sort_by{|d| d[:conference_day]}
+%>
 <table class="table table-striped table-bordered table-condensed">
     <thead>
         <tr>
             <th>Track</th>
             <th>Rooms</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
+            <% days.each do |d| %>
+            <th><%= d[:title] %></th>
+            <% end %>
         </tr>
     </thead>
     <tbody>
+        <%
+        tracks.each do |t|
+        events = t[:events].map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/")}
+        %>
         <tr>
-            <td><a href="/schedule/track/keynotes">Keynotes</a></td>
-            <td><a href="/schedule/room/janson">Janson</a></td>
-            <td>10:30 - 13:20</td>
-            <td>17:00 - 18:00</td>
+            <td><a href="<%= t.path %>"><%= t[:title] %></a></td>
+            <td><%= events.map{|e| e[:room]}.uniq.map{|id| $item_by_id.fetch("/schedule/room/#{id}/")}.sort_by{|r| [r[:rank], r[:conference_room_id]]}.map{|r| "<a href=\"#{r.path}\">#{r[:title]}</a>"}.join(", ") %></td>
+            <% days.each do |d| %>
+            <td><%=
+                events_that_day = events.select{|e| e[:conference_day_id] == d[:conference_day_id]}
+                if events_that_day.empty?
+                "-"
+                else
+                "#{events_that_day.sort_by{|e| e[:start_time]}.first[:start_time]} - #{events_that_day.sort_by{|e| e[:end_time]}.last[:end_time]}"
+                end
+                %></td>
+            <% end %>
         </tr>
-        <tr>
-            <td><a href="/schedule/track/lightning_talks">Lightning Talks</a></td>
-            <td><a href="/schedule/room/ferrer">Ferrer</a></td>
-            <td>13:00 - 18:55</td>
-            <td>10:00 - 16:55</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/hypervisors">Hypervisors</a></td>
-            <td><a href="/schedule/room/janson">Janson</a></td>
-            <td>14:00 - 17:50</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/community">Community</a></td>
-            <td><a href="/schedule/room/k1105">K.1.105</a></td>
-            <td>-</td>
-            <td>14:00 - 16:50</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/future_of_ui">Future of UI</a></td>
-            <td><a href="/schedule/room/k1105">K.1.105</a></td>
-            <td>14:00 - 17:50</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/system">System</a></td>
-            <td><a href="/schedule/room/janson">Janson</a></td>
-            <td>-</td>
-            <td>10:00 - 13:50</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/network_and_io">Network and IO</a></td>
-            <td><a href="/schedule/room/k1105">K.1.105</a></td>
-            <td>-</td>
-            <td>10:00 - 13:50</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/development">Development</a></td>
-            <td><a href="/schedule/room/janson">Janson</a></td>
-            <td>-</td>
-            <td>14:00 - 16:50</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/certification">Certification</a></td>
-            <td><a href="/schedule/room/ferrer">Ferrer</a>, <a href="/schedule/room/guillissen">Guillissen</a>, <a href="/schedule/room/ua2114">UA2.114</a></td>
-            <td>14:00 - 17:45</td>
-            <td>10:30 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/cacert">CAcert</a></td>
-            <td><a href="/schedule/room/ferrer">Ferrer</a></td>
-            <td>-</td>
-            <td>12:05 - 14:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/crossdistribution">CrossDistribution</a></td>
-            <td><a href="/schedule/room/h1301">H.1301</a>, <a href="/schedule/room/h1302">H.1302</a></td>
-            <td>11:00 - 19:00</td>
-            <td>10:00 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/bsd">BSD</a></td>
-            <td><a href="/schedule/room/k4201">K.4.201</a></td>
-            <td>-</td>
-            <td>09:00 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/jbossorg">JBoss.org</a></td>
-            <td><a href="/schedule/room/k3201">K.3.201</a></td>
-            <td>11:00 - 18:55</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/microkernel_os">Microkernel OS</a></td>
-            <td><a href="/schedule/room/k3201">K.3.201</a></td>
-            <td>-</td>
-            <td>09:00 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/xorg+openicc">X.org+OpenICC</a></td>
-            <td><a href="/schedule/room/k3401">K.3.401</a></td>
-            <td>11:00 - 19:00</td>
-            <td>09:00 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/mono">Mono</a></td>
-            <td><a href="/schedule/room/k3601">K.3.601</a></td>
-            <td>11:00 - 19:00</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/configuration_and_systems_management">Configuration and Systems Management</a></td>
-            <td><a href="/schedule/room/k3601">K.3.601</a></td>
-            <td>-</td>
-            <td>09:00 - 16:45</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/postgresql">PostgreSQL</a></td>
-            <td><a href="/schedule/room/k4201">K.4.201</a></td>
-            <td>11:00 - 18:50</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/free_java">Free Java</a></td>
-            <td><a href="/schedule/room/k4401">K.4.401</a></td>
-            <td>11:00 - 19:00</td>
-            <td>10:00 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/virtualization_and_cloud">Virtualization and Cloud</a></td>
-            <td><a href="/schedule/room/chavanne">Chavanne</a></td>
-            <td>11:00 - 18:55</td>
-            <td>09:00 - 16:55</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/embedded">Embedded</a></td>
-            <td><a href="/schedule/room/lameere">Lameere</a></td>
-            <td>11:00 - 19:00</td>
-            <td>10:00 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/mozilla">Mozilla</a></td>
-            <td><a href="/schedule/room/ud2218a">UD2.218A</a></td>
-            <td>11:00 - 19:00</td>
-            <td>09:30 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/crossdesktop">CrossDesktop</a></td>
-            <td><a href="/schedule/room/h1308">H.1308</a></td>
-            <td>11:00 - 18:40</td>
-            <td>09:15 - 16:50</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/libreoffice">LibreOffice</a></td>
-            <td><a href="/schedule/room/h1309">H.1309</a></td>
-            <td>11:00 - 19:00</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/mysql_and_friends">MySQL and Friends</a></td>
-            <td><a href="/schedule/room/h1309">H.1309</a></td>
-            <td>-</td>
-            <td>09:10 - 16:55</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/jabber_and_xmpp">Jabber and XMPP</a></td>
-            <td><a href="/schedule/room/h2213">H.2213</a></td>
-            <td>11:00 - 18:30</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/telephony_and_communications">Telephony and Communications</a></td>
-            <td><a href="/schedule/room/h2213">H.2213</a></td>
-            <td>-</td>
-            <td>09:00 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/security">Security</a></td>
-            <td><a href="/schedule/room/h2214">H.2214</a></td>
-            <td>-</td>
-            <td>10:00 - 15:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/hardware_cryptography">Hardware Cryptography</a></td>
-            <td><a href="/schedule/room/h2214">H.2214</a></td>
-            <td>11:00 - 16:45</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/ada">Ada</a></td>
-            <td><a href="/schedule/room/aw1121">AW1.121</a></td>
-            <td>12:00 - 19:00</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/perl">Perl</a></td>
-            <td><a href="/schedule/room/aw1121">AW1.121</a></td>
-            <td>-</td>
-            <td>09:00 - 16:40</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/legal_issues">Legal Issues</a></td>
-            <td><a href="/schedule/room/aw1125">AW1.125</a></td>
-            <td>11:00 - 19:00</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/graph_processing">Graph Processing</a></td>
-            <td><a href="/schedule/room/aw1125">AW1.125</a></td>
-            <td>-</td>
-            <td>09:10 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/open_mobile_linux">Open Mobile Linux</a></td>
-            <td><a href="/schedule/room/aw1120">AW1.120</a></td>
-            <td>11:30 - 18:30</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/open_source_game_development">Open Source Game Development</a></td>
-            <td><a href="/schedule/room/aw1120">AW1.120</a></td>
-            <td>-</td>
-            <td>09:00 - 17:00</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/gnustep">GNUstep</a></td>
-            <td><a href="/schedule/room/aw1126">AW1.126</a></td>
-            <td>11:00 - 19:00</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td><a href="/schedule/track/smalltalk">Smalltalk</a></td>
-            <td><a href="/schedule/room/aw1126">AW1.126</a></td>
-            <td>-</td>
-            <td>09:30 - 16:30</td>
-        </tr>
+        <% end %>
     </tbody>
 </table>

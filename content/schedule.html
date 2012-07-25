@@ -3,14 +3,25 @@ title: Schedule
 sponsors_under_navigation: true
 navcat: true
 ---
-<% require 'time' %>
+<%
+require 'time'
+
+days = @items.select{|i| i.identifier =~ %r{/schedule/day/.+}}
+speakers = @items.select{|i| i.identifier =~ %r{/schedule/speaker/.+}}
+events = @items.select{|i| i.identifier =~ %r{/schedule/event/.+}}
+tracks = @items.select{|i| i.identifier =~ %r{/schedule/track/.+}}
+keynotes = events.select{|e| e[:type] == 'keynote'}.sort_by{|e| e[:start]}
+maintracks = tracks.select{|t| t[:type] == 'maintrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
+devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
+lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
+ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start]}
+%>
 <p>There are several kinds of activities going on at every edition of FOSDEM,
 which are outlined here, with links to various bits of information about the
 schedule.</p>
 <p>FOSDEM is also a very busy conference, with this edition sporting
-<%= $item_by_id['/schedule/speakers/'][:speakers] %> speakers,
-<%= $item_by_id['/schedule/events/'][:events] %> sessions,
-and <%= $item_by_id['/schedule/tracks/'][:tracks] %> tracks, but
+<%= speakers.size %> speakers, <%= events.size %> sessions,
+and <%= tracks.size %> tracks, but
 we do our best to provide you with as much information and navigation
 options about the schedule as we can.</p>
 <p>There are essentially five different categories of sessions and activities
@@ -26,7 +37,6 @@ interesting topics around Free and Open Source software to get the audience
 gently started into the day, as well as a closing keynote to help everyone
 digest the vast amount of insightful information that has been collected
 during the event.</p>
-<% keynotes = @items.select{|i| i[:event_type] == 'keynote'}.sort_by{|i| i[:start]} %>
 <% unless keynotes.empty? %>
 <p>For this edition, the keynotes are as follows:</p>
 <table class="table table-striped table-bordered table-condensed">
@@ -42,17 +52,17 @@ during the event.</p>
         <tr>
             <td><a href="<%= e.path %>"><%= e[:title] %></a></td>
             <td><%=
-                e[:speakers].map do |s|
-                photo = $item_by_id["/schedule/speaker_thumbnails/#{s[:slug]}/"]
+                e[:speakers].map{|s| $item_by_id.fetch("/schedule/speaker/#{s}/")}.map do |s|
+                photo = s[:thumbnail] ? $item_by_id.fetch("/photos/thumbnail/#{s[:thumbnail][:slug]}/") : nil
                 text = ""
-                text << "<img src=\"#{photo.path}\" width=\"#{photo[:width]}\" height=\"#{photo[:height]}\"/>" if photo
-                text << "<a href=\"#{s[:url]}\">#{s[:name]}</a>"
+                text << "<img src=\"#{photo.path}\" width=\"#{s[:thumbnail]['width']}\" height=\"#{s[:thumbnail]['height']}\"/>" if photo
+                text << "<a href=\"#{s.path}\">#{s[:title]}</a>"
                 text
                 end.join(", ")
                 %></td>
-            <td><a href="<%= e[:day_url] %>"><%= e[:day] %></a></td>
-            <td><%= e[:start].strftime('%H:%M') %> - <%= e[:end].strftime('%H:%M') %></td>
-            <td><a href="<%= e[:room_url] %>"><%= e[:room] %></a></td>
+            <td><a href="/schedule/day/<%= e[:day] %>/"><%= e[:day_name] %></a></td>
+            <td><%= e[:start_time] %> - <%= e[:end_time] %></td>
+            <td><a href="/schedule/room/<%= e[:room] %>/"><%= e[:room_name] %></a></td>
         </tr>
         <% end %>
     </tbody>
@@ -65,39 +75,27 @@ during the event.</p>
 <p>The <q>Main Tracks</q> consist of series of talks that are organized by topic,
 where the FOSDEM Program Committee selects suggestions and actively invites
 speakers on those topics.</p>
-<% maintracks = @items.select{|i| i[:kind] == 'track' and i[:track_type] == 'main'}.sort_by{|i| i[:rank]} %>
 <% unless maintracks.empty? %>
-<%
-maintrack_days = begin
-  h = {}
-  maintracks.each do |t|
-    t[:days].each do |d|
-      h[d[:day]] = d
-    end
-  end
-  h.values.sort_by{|d| d[:date]}
-end
-%>
 <p>For this edition these are the main tracks:</p>
 <table class="table table-striped table-bordered table-condensed">
     <thead>
         <th>Track</th>
-        <% maintrack_days.each do |d| %>
-        <th><%= d[:day] %></th>
+        <% days.each do |d| %>
+        <th><%= d[:title] %></th>
         <% end %>
     </thead>
     <tbody>
         <% maintracks.each do |t| %>
         <tr>
-            <td><a href="<%= t[:url] %>"><%= t[:name] %></a></td>
+            <td><a href="<%= t.path %>"><%= t[:title] %></a></td>
             <%
-            maintrack_days.each do |d|
-            track_day = t[:days].select{|x| x[:day] == d[:day]}.first
+            days.each do |d|
+            rooms = t[:events_per_room_per_day].fetch(d[:slug].to_sym, {}).keys
             %>
-            <% if track_day.nil? %>
-            <td>-</td>
+            <% unless rooms.empty? %>
+            <td><%= rooms.map{|slug| $item_by_id.fetch("/schedule/room/#{slug}/")}.map{|r| "<a href=\"#{r.path}\">#{r[:title]}</a>: #{r[:occupation_by_day][d[:slug].to_sym][:start_time]}-#{r[:occupation_by_day][d[:slug].to_sym][:end_time]}"}.join(', ') %></td>
             <% else %>
-            <td><%= track_day[:rooms].map{|r| "<a href=\"#{r[:url]}\">#{r[:room]}</a> #{r[:start].strftime('%H:%M')}-#{r[:end].strftime('%H:%M')}"}.join(', ') %></td>
+            <td>-</td>
             <% end %>
             <% end %>
         </tr>
@@ -112,9 +110,10 @@ end
 <p>The vast majority of sessions (talks, hacking sessions, open discussions) are held in so-called <q>Developer Rooms</q>
 (<q>devrooms</q>), which are organized and managed by Free and Open Source projects themselves, or even associations
 between several such projects on a common topic in order to foster collaboration.</p>
-<% devrooms = @items.select{|i| i[:kind] == 'track' and i[:track_type] == 'devroom'}.sort_by{|i| i[:name]} %>
-<% unless devrooms.empty? %>
-<% columns = 3 %>
+<%
+unless devrooms.empty?
+columns = 3
+%>
 <p>Here is the list of the devrooms that are present at this edition of FOSDEM, in alphabetical order:</p>
 <div class="container-fluid">
     <div class="row-fluid">
@@ -122,7 +121,7 @@ between several such projects on a common topic in order to foster collaboration
         <div class="span<%= 9 / columns %>">
             <ul>
                 <% list.each do |t| %>
-                <li><a href="<%= t[:url] %>"><%= t[:name] %></a></li>
+                <li><a href="<%= t.path %>"><%= t[:title] %></a></li>
                 <% end %>
             </ul>
         </div>
@@ -139,15 +138,12 @@ between several such projects on a common topic in order to foster collaboration
 <p>While that brief lapse of time may seem awkward, it almost always leads the presenters to concentrate
 on the absolute essence and what is really important, which is why it is often a much appreciated approach,
 along side with the variety of the topics.</p>
-<% lt_track = @items.select{|i| i[:kind] == 'track' and i[:track_type] == 'lightningtalk'}.first %>
-<% ltalks = @items.select{|i| i[:kind] == 'event' and i[:event_type] == 'lightningtalk'} %>
 <% unless ltalks.empty? %>
-<p>There are currently <a href="<%= lt_track[:url] %>"><%= ltalks.size %> lightning talks in the schedule</a>.</p>
+<p>There are currently <a href="<%= lt_track.path %>"><%= ltalks.size %> lightning talks in the schedule</a>.</p>
 <% else %>
 <p>No lightning talks have been confirmed yet at this point of time.</p>
 <% end %>
 
 <h3><a name="certification"></a>Certification</h3>
 <p>TODO</p>
-
 

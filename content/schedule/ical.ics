@@ -1,0 +1,28 @@
+<%
+# vim: set ts=2 sw=2 et noai ft=eruby:
+conf = $item_by_id.fetch("#{$si}/conference/")
+events = @items.select{|i| i.identifier =~ %r{^/schedule/event/.+}}.sort_by{|e| [e[:start_date], e[:start_time]]}
+%>BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Pentabarf//Schedule 0.3//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC;VALUE=TEXT:<%= item[:title] %>
+X-WR-CALNAME;VALUE=TEXT:<%= item[:title] %>
+X-WR-TIMEZONE;VALUE=TEXT:<%= conf[:timezone] %><% events.each do |event| %>
+BEGIN:VEVENT
+METHOD:PUBLISH
+UID:<%= event[:event_id].to_s %>@<%= conf[:acronym] %>@fosdem.org
+TZID:<%= conf[:timezone].gsub('/', '-') %>
+DTSTART:<%= DateTime.parse(event[:start_datetime]).strftime('%Y%m%dT%H%M%S') %>
+DTEND:<%= DateTime.parse(event[:end_datetime]).strftime('%Y%m%dT%H%M%S') %>
+SUMMARY:<%= event[:title] %><% if event[:raw_abstract] %>
+DESCRIPTION: <%= event[:raw_abstract].gsub(/[\r\n]+/,'') %><% end %>
+CLASS:PUBLIC
+STATUS:CONFIRMED
+CATEGORIES:<%= event[:track_name] %>
+URL:<%= "#{conf[:export_base_url]}#{$sp}/event/#{event[:slug]}".gsub(%r{/+}, '/') %>
+LOCATION:<%= event[:room_name] %><% event[:speakers].map{|slug| $item_by_id.fetch("#{$si}/speaker/#{slug}/")}.each do |speaker| %>
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="<%= speaker[:name] %>":invalid:nomail
+<% end %>END:VEVENT
+<% end %>END:VCALENDAR

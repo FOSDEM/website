@@ -26,7 +26,7 @@ append_index_html_to_urls: false
 # A list of file extensions that nanoc will consider to be textual rather than
 # binary. If an item with an extension not in this list is found,  the file
 # will be considered as binary.
-text_extensions: [ 'css', 'erb', 'haml', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'php', 'rb', 'sass', 'scss', 'txt', 'xhtml', 'xml', 'coffee' ]
+text_extensions: [ 'css', 'erb', 'haml', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'php', 'rb', 'sass', 'scss', 'txt', 'xhtml', 'xml', 'coffee', 'ics' ]
 
 # The path to the directory where all generated files will be written to. This
 # can be an absolute path starting with a slash, but it can also be path
@@ -88,9 +88,15 @@ data_sources:
     # will have the identifier “/about/” when turned off, but when turned on
     # it will become “/about.html/” instead.
     allow_periods_in_identifiers: false
+
+  -
+    type: schedule
+    file: pentabarf.yaml
+
   -
     type: static
-    items_root: /static/
+    prefix: photos
+    items_root: /photos/
 
 # Configuration for the “watch” command, which watches a site for changes and
 # recompiles if necessary.
@@ -128,5 +134,6 @@ pentabarf:
   host:     localhost
   port:     15432
   schema:   public
-  output:   content/schedule
+  photo_export_root: photos
+  meta_export_file: pentabarf.yaml
 

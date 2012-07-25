@@ -1,0 +1,43 @@
+<% photo = item[:photo] ? $item_by_id.fetch("/photos/photo/#{item[:photo][:slug]}/") : nil%>
+<% if photo %>
+<img src="<%= photo.path %>" width="<%= item[:photo][:width] %>" height="<%= item[:photo][:height] %>"/>
+<% end %>
+
+<%= item[:abstract] %>
+<%= item[:description] %>
+
+<% unless item[:links].empty? %>
+<h3>Links</h3>
+<ul>
+    <% item[:links].each do |l| %>
+    <li><a href="<%= l[:url] %>"><%= l[:title] %></a></li>
+    <% end %>
+</ul>
+<% end %>
+
+<% unless item[:events].empty? %>
+<h3>Sessions</h3>
+<table class="table table-striped table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Day</th>
+            <th>Room</th>
+            <th>Track</th>
+            <th>Start</th>
+            <th>End</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% item[:events].map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/") }.each do |e| %>
+        <tr>
+            <td><a href="/schedule/event/<%= e[:slug] %>/"><%= e[:title] %></a></td>
+            <td><a href="/schedule/day/<%= e[:day] %>/"><%= e[:day_name] %></a></td>
+            <td><a href="/schedule/room/<%= e[:room] %>/"><%= e[:room_name] %></a></td>
+            <td><a href="/schedule/track/<%= e[:track] %>/"><%= e[:track_name] %></a></td>
+            <td><%= e[:start_time] %></td>
+            <td><%= e[:end_time] %></td>
+        <% end %>
+    </tbody>
+</table>
+<% end %>
