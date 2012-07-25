@@ -12,10 +12,6 @@
 ##### PREPROCESSING
 preprocess do
 
-  $sp = '/schedule'
-  #$si = '/internal/schedule'
-  $si = '/schedule'
-
   # clone items that have "aliases: foo, bar, spam" in their metadata
   make_aliases
 
