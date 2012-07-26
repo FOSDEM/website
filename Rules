@@ -12,6 +12,9 @@
 ##### PREPROCESSING
 preprocess do
 
+  ### CREATE ITEMS
+  # Create some items programatically
+
   # clone items that have "aliases: foo, bar, spam" in their metadata
   make_aliases
 
@@ -20,6 +23,9 @@ preprocess do
 
   # auto-set the title of content/interviews/*
   decorate_interviews
+
+  ### DO NOT CREATE ANY ITEMS BELOW THIS LINE
+  # As we are collecting, caching, optimizing...
 
   # build a global hash of items by their identifier, much faster for lookups
   # than having to run over all of them; needs to be a global variable
@@ -44,18 +50,23 @@ preprocess do
   # (this optimization actually reduces rendering time from 4min to 30sec)
   $sponsors_navigation_item = $item_by_id.fetch('/sponsors_navigation/')
 
+  # compute the timetables once and cache them, they're used in a few places
+  # (put this rule *after* computing $item_by_id as we are using $item_by_id
+  # in that helper function)
+  $timetable = timetable_from_items(@items)
+
 end
 
 ##### COMPILING
 
-compile '/internal/*' do;end
-
 # skip those, as they are combined into content/assets/style/fosdem.css
-compile '/assets/style/parts/*' do;end
+compile '/assets/style/parts/*' do
+  # but do process ours with ERB (see below about ERB)
+  # (except bootstrap.css: it's big, and it definitely doesn't have
+  # any ERB in it)
+  filter :erb unless item.identifier =~ %r{/bootstrap\.css$}
+end
 route '/assets/style/parts/*' do;end
-
-compile '/navigation/' do;end
-route '/navigation/' do;end
 
 compile '/assets/style/*' do
   # merge all content/assets/style/parts/*.css files into one
@@ -72,6 +83,12 @@ compile '/assets/style/*' do
   # minimize CSS files:
   filter :rainpress
 end
+
+# We only use the /navigation/ item (content/navigation.yaml)
+# internally and don't render it to the website as a file, hence
+# short-circuit any compilation and routing right here:
+compile '/navigation/' do;end
+route '/navigation/' do;end
 
 # don't apply any filters on the headlines/* items as they are already
 # rendered by the "make_headlines" helper at preprocessing stage
@@ -152,7 +169,11 @@ compile '*' do
       if item[:layout] == false or item.sponsor? or item.identifier =~ %r{/[ix]cal/}
         # do nothing
       elsif item[:layout]
+        # or those that explicitly specify the layout in their metadata
         layout item[:layout]
+      elsif item.identifier =~ %r{^/schedule/day/.+}
+        # and for these, we go full page
+        layout 'fullpage'
       else
         layout 'default'
       end
@@ -161,8 +182,6 @@ compile '*' do
 end
 
 ##### ROUTING
-
-route '/internal/*' do;end
 
 # send this one into oblivion, its compiled content is included in
 # layouts/default.html, but is not to be rendered as a file of its
@@ -219,17 +238,18 @@ route '/headlines/*/' do;end
 
 # deploy content/assets/style/foo.css as output/assets/style/foo.css
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
+route '/assets/style/*/' do
+  suffix = if @site.config[:digest_assets]
+             parts = @items.select{|i| i.identifier =~ %r{^/assets/style/parts/.+}}.sort_by(&:identifier)
+             "-" + digest(parts)
+           else
+             ""
+           end
+  "#{item.identifier.chop}#{suffix}.#{item[:extension]}"
+end
 route '/assets/*/' do
-  suffix = if @site.config[:digest_assets] then
-             require 'digest/sha2'
-             sha = Digest::SHA256.new
-             if item.binary? then
-               sha << IO.read(item[:filename])
-             else
-               sha << item.raw_content
-             end
-             digest = sha.hexdigest.downcase
-             "-#{digest}"
+  suffix = if @site.config[:digest_assets]
+             "-" + digest(item)
            else
              ""
            end
@@ -240,7 +260,7 @@ route %r{^/schedule/(thumbnail|photo)/speaker/} do
 end
 
 route '/schedule/speaker_thumbnails/*/' do
-  suffix = if @site.config[:digest_assets] then
+  suffix = if @site.config[:digest_assets]
              require 'digest/sha2'
              sha = Digest::SHA256.new
              if item.binary? then

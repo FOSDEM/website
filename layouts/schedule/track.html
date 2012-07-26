@@ -4,7 +4,7 @@
     <dd>No room assigned yet</dd>
     <% else %>
     <dt>Room<%= item[:rooms].size == 1 ? '' : 's' %>:</dt>
-    <dd><%= item[:rooms].map{|slug| $item_by_id.fetch("/schedule/room/#{slug}/")}.map{|r| "<a href=\"/schedule/room/#{r[:slug]}/\">#{r[:title]}</a>"}.join(", ") %></dd>
+    <dd><%= l item[:rooms].map(&$to_room) %></dd>
     <% end %>
     <dt>Calendar:</dt>
     <dd><a href="<%= $item_by_id.fetch("/schedule/ical/track/#{item[:slug]}/").path %>">iCal</a> - <a href="<%= $item_by_id.fetch("/schedule/xcal/track/#{item[:slug]}/").path %>">xCal</a></dd>
@@ -27,26 +27,21 @@
         item[:events_by_day].each do |day_slug, event_slugs|
         unless event_slugs.empty?
 
-        day = $item_by_id.fetch("/schedule/day/#{day_slug}/")
-        events = event_slugs.map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/")}
-        rooms = (item[:rooms].size > 1) ? item[:rooms].map{|slug| $item_by_id.fetch("/schedule/room/#{slug}/")} : []
-        #<
+        day = day(day_slug)
+        rooms = (item[:rooms].size > 1) ? item[:rooms].map(&$to_room) : []
         %>
         <tr>
             <td colspan="5"><h2><%= day[:title] %></h2></td>
         </tr>
-        <% events.sort_by{|e| [e[:start_time], e[:room_rank]]}.each do |e| %>
+        <% event_slugs.map(&$to_event).sort_by{|e| [e[:start_time], e[:room_rank]]}.each do |e| %>
         <tr>
             <td><a href="/schedule/event/<%= e[:slug] %>/"><%= e[:title] %></a></td>
-            <td><%= e[:speakers].map{|slug| $item_by_id.fetch("/schedule/speaker/#{slug}/")}.map{|s| "<a href=\"/schedule/speaker/#{s[:slug]}/\">#{s[:title]}</a>"}.join(", ") %>
-            <%
-            unless rooms.empty?
-            room = $item_by_id.fetch("/schedule/room/#{e[:room]}/")
-            %>
-            <td><a href="/schedule/room/<%= room[:slug] %>/"><%= room[:title] %></a></td>
+            <td><%= l e[:speakers].map(&$to_speaker) %>
+            <% unless rooms.empty?  %>
+            <td><%= l room(e[:room]) %></td>
             <% end %>
-            <td><%= e[:start_time] %></td>
-            <td><%= e[:end_time] %></td>
+            <td><%= ltt e[:day], e[:start_time] %></td>
+            <td><%= ltt e[:day], e[:end_time] %></td>
         </tr>
         <% end %>
         <% end %>

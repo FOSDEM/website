@@ -7,9 +7,9 @@ module BCrumbs
     require 'builder'
 
     rootitem = $item_by_id['/']
-    roottitle = rootitem[:name]
+    roottitle = conference :title #rootitem[:name]
 
-    $cache ||= begin
+    $_bcrumbs_cache ||= begin
       c = {}
       @items.each do |i|
         if i.binary? or i.reps.empty? then
@@ -35,7 +35,7 @@ module BCrumbs
       end
     else
       xml.li do
-        xml.a(roottitle, :href => '/') #$rootitem.navtitle, :href => relpath(@item_rep.path, $rootitem.path))
+        xml.a(roottitle, :href => '/')
       end
       xml.span("/", :class => 'divider')
     end
@@ -43,7 +43,7 @@ module BCrumbs
     parts = @item.p.split('/')
     parts.each_with_index do |part, index|
       here = '/'+parts[0,index+1].join('/')+'/'
-      ref = $cache[here]
+      ref = $_bcrumbs_cache[here]
 
       if index == parts.length - 1 then
         # active
@@ -71,7 +71,7 @@ module BCrumbs
                       end
         xml.li do
           if link then
-            xml.a(title, :href => link) #relpath(@item_rep.path, link))
+            xml.a(title, :href => link)
           else
             xml.text! title
           end

@@ -1,32 +1,28 @@
 <dl class="dl-horizontal well">
     <dt>Track:</dt>
-    <dd><a href="/schedule/track/<%= item[:track] %>/"><%= item[:track_name] %></a></dd>
+    <dd><%= l track(item[:track]) %></dd>
     <dt>Room:</dt>
-    <dd><a href="/schedule/room/<%= item[:room] %>/"><%= item[:room_name] %></a></dd>
+    <dd><%= l room(item[:room]) %></dd>
     <dt>Day:</dt>
-    <dd><a href="/schedule/day/<%= item[:day] %>/"><%= item[:day_name] %></a></dd>
+    <dd><%= l day(item[:day]) %></dd>
     <dt>Start:</dt>
-    <dd><%= item[:start_time] %></dd>
+    <dd><%= ltt item[:day], item[:start_time] %></dd>
     <dt>End:</dt>
-    <dd><%= item[:end_time] %></dd>
+    <dd><%= ltt item[:day], item[:end_time] %></dd>
 </dl>
 
-<% if item[:abstract] %>
-<%= item[:abstract] %>
-<% end %>
-<% if item[:description] %>
-<%= item[:description] %>
-<% end %>
+<% if item[:abstract] %><%= item[:abstract] %><% end %>
+<% if item[:description] %><%= item[:description] %><% end %>
 
 <% unless item[:speakers].empty? %>
 <h3>Speakers</h3>
 <table>
     <tbody>
-        <% item[:speakers].map{|slug| $item_by_id.fetch("/schedule/speaker/#{slug}/")}.each do |s| %>
+        <% item[:speakers].map(&$to_speaker).each do |s| %>
         <tr>
             <% photo = s[:thumbnail] ? $item_by_id.fetch("/photos/thumbnail/#{s[:thumbnail][:slug]}/") : nil%>
             <td><% if photo %><a href="/schedule/speaker/<%= s[:slug] %>/"><img height="<%= s[:thumbnail]['height'] %>" width="<%= s[:thumbnail]['width'] %>" src="<%= photo.path %>"/></a><% end %></td>
-            <td><a href="/schedule/speaker/<%= s[:slug] %>"><%= s[:name] %></a></td>
+            <td><%= l s %></td>
         </tr>
         <% end %>
     </tbody>

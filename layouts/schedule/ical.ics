@@ -1,6 +1,5 @@
 <%
 # vim: set ts=2 sw=2 et noai ft=eruby:
-conf = $item_by_id.fetch("/schedule/conference/")
 %>BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Pentabarf//Schedule 0.3//EN
@@ -8,12 +7,12 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALDESC;VALUE=TEXT:<%= item[:title] %>
 X-WR-CALNAME;VALUE=TEXT:<%= item[:title] %>
-X-WR-TIMEZONE;VALUE=TEXT:<%= conf[:timezone] %>
-<% item[:events].map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/")}.each do |event| %>
+X-WR-TIMEZONE;VALUE=TEXT:<%= conference :timezone %>
+<% item[:events].map(&$to_event).each do |event| %>
 BEGIN:VEVENT
 METHOD:PUBLISH
-UID:<%= event[:event_id].to_s %>@<%= conf[:acronym] %>@fosdem.org
-TZID:<%= conf[:timezone].gsub('/', '-') %>
+UID:<%= event[:event_id].to_s %>@<%= conference :acronym %>@fosdem.org
+TZID:<%= conference(:timezone).gsub('/', '-') %>
 DTSTART:<%= DateTime.parse(event[:start_datetime]).strftime('%Y%m%dT%H%M%S') %>
 DTEND:<%= DateTime.parse(event[:end_datetime]).strftime('%Y%m%dT%H%M%S') %>
 SUMMARY:<%= event[:title] %>
@@ -23,9 +22,9 @@ DESCRIPTION: <%= event[:raw_abstract].gsub(/[\r\n]+/,'') %>
 CLASS:PUBLIC
 STATUS:CONFIRMED
 CATEGORIES:<%= event[:track_name] %>
-URL:<%= "#{conf[:export_base_url]}/schedule/event/#{event[:slug]}".gsub(%r{/+}, '/') %>
+URL:<%= "#{conference(:export_base_url)}/schedule/event/#{event[:slug]}".gsub(%r{/+}, '/') %>
 LOCATION:<%= event[:room_name] %>
-<% event[:speakers].map{|slug| $item_by_id.fetch("/schedule/speaker/#{slug}/")}.each do |speaker| %>
+<% event[:speakers].map(&$to_speaker).each do |speaker| %>
 ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="<%= speaker[:name] %>":invalid:nomail
 <% end %>
 END:VEVENT

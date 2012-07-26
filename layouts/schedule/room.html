@@ -4,14 +4,14 @@
     <% item[:events_by_day].each do |day_slug, event_slugs| %>
     <% unless event_slugs.empty? %>
     <%
-        day = $item_by_id.fetch("/schedule/day/#{day_slug}/")
-        events = event_slugs.map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/")}
+        day = day(day_slug)
+        events = event_slugs.map(&$to_event)
         s = events.sort_by{|e| e[:start_datetime]}.first[:start_time]
         e = events.sort_by{|e| e[:end_datetime]}.last[:end_time]
-        tracks = events.map{|e| e[:track]}.uniq.map{|id| $item_by_id.fetch("/schedule/track/#{id}/")}.sort_by{|t| t[:rank]}
+        tracks = events.map{|e| e[:track]}.uniq.map(&$to_track).sort_by{|t| t[:rank]}
     %>
-    <dt><%= day[:name] %>:</dt>
-    <dd><%= s %>-<%= e %><% unless tracks.empty? %>: <%= tracks.map{|t| "<a href=\"/schedule/track/#{t[:slug]}/\">#{t[:name]}</a>"}.join(", ") %><% end %></dd>
+    <dt><%= l(day) %>:</dt>
+    <dd><%= s %>-<%= e %><% unless tracks.empty? %>: <%= l(tracks, :name)%><% end %></dd>
     <% end %>
     <% end %>
 </dl>
@@ -28,16 +28,16 @@
         </tr>
     </thead>
     <tbody>
-        <% item[:events].map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/")}.group_by{|e| e[:day_name]}.each do |day, dayevents| %>
+        <% item[:events].map(&$to_event).group_by{|e| e[:day_name]}.each do |day, dayevents| %>
         <tr>
             <td colspan="4"><h3><%= day %></h3></td>
         </tr>
         <% dayevents.sort_by{|e| e[:start_datetime]}.each do |e| %>
         <tr>
-            <td><a href="/schedule/event/<%= e[:slug] %>/"><%= e[:title] %></a></td>
-            <td><a href="/schedule/track/<%= e[:track] %>/"><%= e[:track_name] %></a></td>
-            <td><%= e[:start_time] %></td>
-            <td><%= e[:end_time] %></td>
+            <td><%= l e %></td>
+            <td><%= l track(e[:track]), :name %></a></td>
+            <td><%= ltt e[:day], e[:start_time] %></td>
+            <td><%= ltt e[:day], e[:end_time] %></td>
         </tr>
         <% end %>
         <% end %>

@@ -29,14 +29,14 @@
         </tr>
     </thead>
     <tbody>
-        <% item[:events].map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/") }.each do |e| %>
+        <% item[:events].map(&$to_event).each do |e| %>
         <tr>
-            <td><a href="/schedule/event/<%= e[:slug] %>/"><%= e[:title] %></a></td>
-            <td><a href="/schedule/day/<%= e[:day] %>/"><%= e[:day_name] %></a></td>
-            <td><a href="/schedule/room/<%= e[:room] %>/"><%= e[:room_name] %></a></td>
-            <td><a href="/schedule/track/<%= e[:track] %>/"><%= e[:track_name] %></a></td>
-            <td><%= e[:start_time] %></td>
-            <td><%= e[:end_time] %></td>
+            <td><%= l e %></td>
+            <td><%= l day(e[:day]) %></td>
+            <td><%= l room(e[:room]) %></td>
+            <td><%= l track(e[:track]) %></td>
+            <td><%= ltt e[:day], e[:start_time] %></td>
+            <td><%= ltt e[:day], e[:end_time] %></td>
         <% end %>
     </tbody>
 </table>

@@ -7,7 +7,7 @@ module Fosdem
     def items
       time_before = Time.now
       load_items!
-      Nanoc::CLI::Logger.instance.log(:high, "%s%12s%s  [%2.2fs]  %s" % [ "\e[1m", "schedule", "\e[0m", Time.now - time_before, "loaded from #{@file}" ])
+      Nanoc::CLI::Logger.instance.log(:low, "%s%12s%s  [%2.2fs]  %s" % [ "\e[1m", "schedule", "\e[0m", Time.now - time_before, "loaded from #{@file}" ])
       @items
     end
 

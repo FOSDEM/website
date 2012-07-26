@@ -1,16 +1,16 @@
 ---
 title: Speakers
-no_sponsors: true
+sponsors_under_navigation: true
 ---
 <%
 columns = 3
-speakers = @items.select{|s| s.identifier =~ %r{^/schedule/speaker/.+}}.sort_by{|s| s[:name] }
+speakers = speakers(:name)
 %>
 <div class="row-fluid">
 <% (1..columns).map{|f| speakers.select.with_index{|s,i| i % columns == f - 1}}.each do |list| %>
 <div class="span<%= 9 / columns %>">
     <% list.each do |s| %>
-    <a href="/schedule/speaker/<%= s[:slug] %>/"><%= s[:name] %></a><br/>
+    <%= l(s) %><br/>
     <% end %>
 </div>
 <% end %>

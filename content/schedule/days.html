@@ -1,0 +1,9 @@
+---
+title: Time tables
+---
+<p>Time tables are available for the following day<%= days.size > 1 ? "s" : "" %>:</p>
+<ul>
+    <% days.each do |day| %>
+    <li><%= l day %></li>
+    <% end %>
+</ul>

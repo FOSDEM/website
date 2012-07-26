@@ -1,3 +1,4 @@
+/* vim: set ts=4 sw=4 ft=eruby ai et: */
 #schedule-grid,
 #schedule-grid a {
     font-size: 80%;
@@ -36,3 +37,95 @@
 #schedule-grid .event-grid-detail a { font-weight: normal; font-size: 90%; font-variant: normal; }
 
 #schedule-grid a.trackref { font-variant: small-caps; font-style: normal !important; }
+
+.timetable {
+    table-layout: fixed;
+    font-size: xx-small;
+}
+
+table.timetable-head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2.1em;
+    margin: 0;
+}
+table.timetable-body {
+    /* We need some padding here because the head table uses fixed/absolute positioning */
+    padding-top: 2.5em !important;
+    margin-top: 5em !important;
+}
+
+.timetable thead {
+    background-color: #2c2c2c;
+}
+.timetable thead th {
+    background-color: #2c2c2c;
+    color: #999999;
+    font-weight: normal;
+    text-align: center;
+    padding: 0.1em;
+    border-color: #444444;
+}
+.timetable thead th a,
+.timetable thead th a:visited {
+    /* Don't underline links in event cells, we're already short on space */
+    text-decoration: none;
+    /* And use the regular text color or we can't read anything (blue text) */
+    color: inherit;
+}
+.timetable thead th a:hover {
+    /* But when hovering a link to a room in the header, paint it bla^H^H^Hwhite */
+    color: #ffffff;
+}
+
+.timetable tbody td {
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0.1em;
+    line-height: 1.1em;
+}
+.timetable tbody td.tiny {
+    white-space: nowrap;
+    padding: 0;
+    line-height: 1em;
+}
+.timetable tbody td a {
+    /* Don't underline links in event cells, we're already short on space */
+    text-decoration: none;
+    /* And use the regular text color or we can't read anything (blue text) */
+    color: inherit;
+}
+
+.timetable tbody th {
+    text-align: right;
+    padding: 0;
+    height: 2em;
+    min-height: 2em;
+    max-height: 2em;
+    font-family: monospace;
+    font-weight: normal;
+    line-height: 1.1em;
+}
+.timetable tbody th.time {
+}
+
+<% %w{69D2E7 A7DBD8 E0E4CC F38630 FA6900}.each_with_index do |color, index|%>
+.timetable .c<%= index + 1 %> { background-color: #<%= color %> !important; }
+<% end %>
+
+.timetable tbody td.event:hover {
+    background-color: pink !important;
+    font-weight: bold;
+}
+
+body.fullpage {
+    /*
+    override bootstrap setting a top padding on the body
+    when using the fullpage layout
+    */
+    padding-top: 0 !important;
+}
+

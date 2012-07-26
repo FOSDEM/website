@@ -1,10 +1,7 @@
-<%
+<%=
 # vim: set ts=2 sw=2 et ai ft=ruby:
 
-conf = $item_by_id.fetch("/schedule/conference/")
-days = @items.select{|i| i.identifier =~ %r{^/schedule/day/.+}}.sort_by{|d| d[:conference_day]}
-rooms = @items.select{|i| i.identifier =~ %r{^/schedule/room/.+}}.sort_by{|r| [r[:rank], r[:conference_room_id]]}
-events = @items.select{|i| i.identifier =~ %r{^/schedule/event/.+}}.sort_by{|e| e[:event_id]}
+conf = conference()
 
 require 'builder'
 buffer = ''
@@ -29,7 +26,7 @@ xml.schedule do
       rooms.each do | room |
 
         xml.room({:name => room[:title]}) do
-          room[:events_by_day][day[:slug].to_sym].map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/")}.each do |event|
+          room[:events_by_day][day[:slug].to_sym].map(&$to_event).each do |event|
             xml.event(:id=>event[:event_id]) do
               xml.start event[:start_time]
               xml.duration Time.parse(event[:duration]).strftime('%H:%M')
@@ -43,7 +40,7 @@ xml.schedule do
               xml.abstract event[:abstract]
               xml.description event[:description]
               xml.persons do
-                event[:speakers].map{|slug| $item_by_id.fetch("/schedule/speaker/#{slug}/")}.each do |speaker|
+                event[:speakers].map(&$to_speaker).each do |speaker|
                   xml.person( speaker[:name], {:id=>speaker[:person_id]} )
                 end
               end
@@ -61,4 +58,5 @@ xml.schedule do
   end
 
 end
-%><%= buffer %>
+buffer
+%>

@@ -1,8 +1,6 @@
 <%
 # vim: set ts=2 sw=2 et ai ft=ruby:
 
-conf = $item_by_id.fetch("/schedule/conference/")
-
 require 'builder'
 buffer = ''
 xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
@@ -16,7 +14,7 @@ xml.iCalendar(:"xmlns:xCal"=>"urn:ietf:params:xml:ns:xcal", :"xmlns:pentabarf"=>
     item[:events].map{|slug| $item_by_id.fetch("/schedule/event/#{slug}/")}.each do |event|
       xml.vevent do
         xml.method( "PUBLISH" )
-        xml.uid( "#{event[:event_id]}@#{conf[:acronym]}@pentabarf.org")
+        xml.uid( "#{event[:event_id]}@#{conference(:acronym)}@pentabarf.org")
         xml.tag!( "pentabarf:event-id", event[:event_id] )
         xml.tag!( "pentabarf:event-slug", event[:slug] )
         xml.tag!( "pentabarf:event-tag", event[:slug] )
@@ -36,9 +34,9 @@ xml.iCalendar(:"xmlns:xCal"=>"urn:ietf:params:xml:ns:xcal", :"xmlns:pentabarf"=>
         xml.class( "PUBLIC" )
         xml.status( "CONFIRMED" )
         xml.categories( event[:track_name] )
-        xml.url( "#{conf[:export_base_url]}/schedule/event/#{event[:slug]}/".gsub(%r{/+}, '/') )
+        xml.url( "#{conference(:export_base_url)}/schedule/event/#{event[:slug]}/".gsub(%r{/+}, '/') )
         xml.location( event[:room_name] )
-        event[:speakers].map{|slug| $item_by_id.fetch("/schedule/speaker/#{slug}/")}.each do |speaker|
+        event[:speakers].map(&$to_speaker).each do |speaker|
           xml.attendee( speaker[:name] )
         end #speaker
       end #vevent

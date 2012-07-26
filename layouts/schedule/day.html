@@ -1,0 +1,74 @@
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+require 'builder'
+buffer = ''
+xml = Builder::XmlMarkup.new(target: buffer, indent: 2)
+
+colors = %w{c1 c2 c3 c4 c5}
+
+source = $timetable.fetch(item[:slug])
+
+rooms = begin
+          h = source.fetch(:by_time)
+          h.fetch(h.keys.first).keys
+        end
+
+columns = rooms.size + 1 # one more for the time
+
+xml.table(class: "timetable timetable-head table table-striped table-bordered table-condensed") do
+  xml.thead do
+    xml.tr do
+      xml.th(class: 'backlink') do
+        xml.a(href: '/', title: 'Site root') do
+          xml << '&larr;&nbsp;/'
+        end
+      end
+      rooms.map{|r| $item_by_id.fetch("/schedule/room/#{r}/")}.each do |room|
+        xml.th do
+          xml.a(room[:title], href: room.path, title: room[:title])
+        end
+      end
+    end #tr
+  end #thead
+end #table
+
+xml.table(class: "timetable table table-striped table-bordered table-condensed") do
+  xml.tbody do
+    c = 0
+    source.fetch(:by_time).each do |time, by_rooms|
+      xml.tr do
+        # assuming time is HH:MM here (a bit quicker than using Time.parse)
+        if time.split(':').last.to_i % 15 == 0
+          xml.th(class: 'time') do
+            xml.a('', name: time.gsub(/:/, ''))
+            xml << time
+          end
+        else
+          xml.th do
+            xml.a('', name: time.gsub(/:/, ''))
+            xml << '&nbsp;'
+          end
+        end
+        by_rooms.values.each.map{|cells| cells.first}.each do |cell|
+          if cell.nil?
+            xml.td
+          elsif cell[:state] == :begin
+            color = colors[c % colors.size]
+            c += 1
+
+            tdclass = ["event", color]
+            tdclass << 'tiny' if cell[:slots] < 2
+
+            ww = cell[:slots] > 1 ? "normal" : "nowrap";
+            pad = cell[:slots] > 1 ? "0.1em" : "0";
+            xml.td(rowspan: cell[:slots], class: tdclass.join(" ")) do
+              xml.a(cell[:title], href: event(cell[:slug]).path, title: cell[:title])
+            end
+          end
+        end #cell
+      end #tr
+    end #time, by_rooms
+  end #tbody
+
+end #table
+%><%= buffer %>
