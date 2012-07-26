@@ -34,7 +34,7 @@ xml.iCalendar(:"xmlns:xCal"=>"urn:ietf:params:xml:ns:xcal", :"xmlns:pentabarf"=>
         xml.class( "PUBLIC" )
         xml.status( "CONFIRMED" )
         xml.categories( event[:track_name] )
-        xml.url( "#{conference(:export_base_url)}/schedule/event/#{event[:slug]}/".gsub(%r{/+}, '/') )
+        xml.url( "#{conference(:export_base_url)}/#{event(event).path}".gsub(%r{/+}, '/') )
         xml.location( event[:room_name] )
         event[:speakers].map(&$to_speaker).each do |speaker|
           xml.attendee( speaker[:name] )

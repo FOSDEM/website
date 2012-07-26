@@ -3,6 +3,21 @@
 # Various helper functions for schedule related
 # item massaging
 
+def slug(h)
+  case h
+  when Hash
+    h.fetch(:slug)
+  when Nanoc::Item
+    h[:slug] or raise "#{h.inspect} has no :slug"
+  when Symbol
+    h.to_s
+  when String
+    h
+  else
+    raise "unsupported type for slug(): #{h.class}: #{h.inspect}"
+  end
+end
+
 def l(item, title=:title, sep=", ")
   require 'builder'
   case item
@@ -85,7 +100,7 @@ def speakers(sortby=:person_id)
 end
 
 def speaker(slug)
-  $item_by_id.fetch "/schedule/speaker/#{slug}/"
+  $item_by_id.fetch "/schedule/speaker/#{slug(slug)}/"
 end
 
 def days(sortby=:conference_day)
@@ -98,7 +113,7 @@ def days(sortby=:conference_day)
 end
 
 def day(slug)
-  $item_by_id.fetch "/schedule/day/#{slug}/"
+  $item_by_id.fetch "/schedule/day/#{slug(slug)}/"
 end
 
 def tracks(sortby=[:rank, :conference_track_id])
@@ -111,7 +126,7 @@ def tracks(sortby=[:rank, :conference_track_id])
 end
 
 def track(slug)
-  $item_by_id.fetch "/schedule/track/#{slug}/"
+  $item_by_id.fetch "/schedule/track/#{slug(slug)}/"
 end
 
 def rooms(sortby=[:rank, :conference_room_id])
@@ -124,7 +139,7 @@ def rooms(sortby=[:rank, :conference_room_id])
 end
 
 def room(slug)
-  $item_by_id.fetch "/schedule/room/#{slug}/"
+  $item_by_id.fetch "/schedule/room/#{slug(slug)}/"
 end
 
 def events(sortby=[:start_date, :start_time])
@@ -137,7 +152,7 @@ def events(sortby=[:start_date, :start_time])
 end
 
 def event(slug)
-  $item_by_id.fetch "/schedule/event/#{slug}/"
+  $item_by_id.fetch "/schedule/event/#{slug(slug)}/"
 end
 
 $to_event = lambda{|slug| $item_by_id.fetch "/schedule/event/#{slug}/"}
@@ -146,4 +161,33 @@ $to_day = lambda{|slug| $item_by_id.fetch "/schedule/day/#{slug}/"}
 $to_room = lambda{|slug| $item_by_id.fetch "/schedule/room/#{slug}/"}
 $to_track = lambda{|slug| $item_by_id.fetch "/schedule/track/#{slug}/"}
 $empty_track = lambda{|t| t[:events].empty?}
+
+def event_is_upcoming_to(e1, e2, limit=15)
+  (DateTime.parse(e2[:end_datetime]) .. (DateTime.parse(e2[:end_datetime]) + (limit*60))).include? DateTime.parse(e1[:start_datetime])
+end
+
+def event_next_in_room(e1, e2)
+  e1[:conference_room_id] == e2[:conference_room_id] and e1[:conference_day_id] == e2[:conference_day_id] and e1[:start_datetime] >= e2[:end_datetime]
+end
+
+def event_sametime(e1, e2)
+  # discard e2 that starts right after e1, they're picked up by event_is_upcoming_to
+  if e1[:start_datetime] == e2[:end_datetime] then
+    return false
+  end
+  if e2[:start_datetime] <= e1[:start_datetime] and e2[:end_datetime] >= e1[:start_datetime] then
+    # e2 starts before or at the same time as e1
+    # AND
+    # e2 ends after or at the same time as e1
+    return true
+  end
+  if e2[:start_datetime] >= e1[:start_datetime] and e2[:start_datetime] < e1[:end_datetime] then
+    # e2 starts after e1
+    # AND
+    # e2 ends before e1
+    return true
+  end
+  return false
+end
+
 

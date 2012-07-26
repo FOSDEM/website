@@ -19,7 +19,7 @@ DESCRIPTION: <%= event[:raw_abstract].gsub(/[\r\n]+/,'') %><% end %>
 CLASS:PUBLIC
 STATUS:CONFIRMED
 CATEGORIES:<%= event[:track_name] %>
-URL:<%= "#{conference(:export_base_url)}/schedule/event/#{event[:slug]}".gsub(%r{/+}, '/') %>
+URL:<%= "#{conference(:export_base_url)}/#{event(event[:slug]).path}".gsub(%r{/+}, '/') %>
 LOCATION:<%= event[:room_name] %><% event[:speakers].map(&$to_speaker).each do |speaker| %>
 ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="<%= speaker[:name] %>":invalid:nomail
 <% end %>END:VEVENT

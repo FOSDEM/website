@@ -19,6 +19,10 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     require 'active_record'
     require 'fileutils'
 
+    # some helpers
+    to_slug = lambda{|x| x.fetch('slug')}
+
+    # load the configuration from the site
     require_site
     conf = site.config.fetch(:pentabarf)
     cid = conf.fetch('conference_id')
@@ -125,39 +129,6 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       PentaDB.const_set klass.to_s, c
     end
 
-    def __c(obj, attributes=nil)
-      if obj.is_a? Array
-        obj.map{|o| c(o)}
-      elsif obj.is_a? Hash
-        h = {}
-        obj.each do |k,v|
-          h[k.to_s] = c(v, attributes)
-        end
-        h
-      else
-        h = case obj
-            when ActiveRecord::Base
-              h.attributes
-            when Hash
-              obj
-            else
-              raise "unsupported object type #{obj.class} for c()"
-            end
-        result = if attributes
-                   r = {}
-                   h.each do |k,v|
-                     if attributes.include? k
-                       r[k.to_s] = v
-                     end
-                   end
-                   r
-                 else
-                   h.clone
-                 end
-        result
-      end
-    end
-
     def slug(o, attr)
       slug = if o.has_key? 'slug' and o['slug']
                o.fetch('slug')
@@ -224,17 +195,12 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       r
     end
 
-    def hcopy(from, to, attributes)
-      attributes.each do |a|
-        to[a.to_s] = from[a.to_s]
-      end
-    end
-
     def yamldate(d)
-      d.strftime('%Y-%m-%d %H:%M:%S %T.000000000 +00:00')
+      d.strftime('%Y-%m-%d %T.000000000 +00:00')
     end
 
-    conference = model PentaDB::Conference.where(conference_id: cid).find(:all).first #, [:acronym, :title, :subtitle, :timeslot_duration, :timezone, :export_base_url]
+    conference = model PentaDB::Conference.where(conference_id: cid).find(:all).first
+    raise "failed to find conference object in database with conference_id=#{cid}" if conference.nil?
 
     days = slugify!(model(PentaDB::ConferenceDay.where(conference_id: cid, :public => true).find(:all).sort_by{|d| d['conference_day'] }, [:conference_day_id, :conference_day, :name]), :name)
     day_by_day_id = byid days, :conference_day_id
@@ -447,10 +413,10 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
                            end
       tracks.each do |t|
         trackevents = events_by_track_id.fetch(t['conference_track_id'], []).sort_by{|e| e['start_datetime']}
-        t['events'] = trackevents.map{|e| e.fetch('slug')}
+        t['events'] = trackevents.map(&to_slug)
         t['events_by_day'] = begin
                                h = {}
-                               days.each{|d| h[d.fetch('slug')] = trackevents.select{|e| e['conference_day_id'] == d['conference_day_id']}.map{|e| e.fetch('slug')}}
+                               days.each{|d| h[d.fetch('slug')] = trackevents.select{|e| e['conference_day_id'] == d['conference_day_id']}.map(&to_slug)}
                                h
                              end
 
@@ -489,28 +455,13 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
                           end
       rooms.each do |r|
         roomevents = events_by_room_id.fetch(r['conference_room_id'], []).sort_by{|e| e['start_datetime']}
-        r['events'] = roomevents.map{|e| e.fetch('slug')}
+        r['events'] = roomevents.map(&to_slug)
         # also set the events by day
         r['events_by_day'] = begin
                                h = {}
-                               days.each{|d| h[d.fetch('slug')] = roomevents.select{|e| e['conference_day_id'] == d['conference_day_id']}.map{|e| e.fetch('slug')}}
+                               days.each{|d| h[d.fetch('slug')] = roomevents.select{|e| e['conference_day_id'] == d['conference_day_id']}.map(&to_slug)}
                                h
                              end
-        r['occupation_by_day'] = begin
-                                   h = {}
-                                   days.each do |d|
-                                     roomdayevents = roomevents.select{|e| e['conference_room_id'] == r['conference_room_id']}
-                                     unless roomdayevents.empty?
-                                       first = roomdayevents.sort_by{|e| e['start_time']}.first
-                                       last = roomdayevents.sort_by{|e| e['end_time']}.last
-                                       h[d['slug']] = {
-                                         'start_time' => first['start_time'],
-                                         'end_time'   => last['end_time'],
-                                       }
-                                     end
-                                   end
-                                   h
-                                 end
       end
     end
 
@@ -528,7 +479,7 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     tracks.each do |t|
       trackevents = events_by_track_id.fetch(t['conference_track_id'], []).sort_by{|e| e['start_datetime']}
       trackrooms = trackevents.map{|e| e['conference_room_id']}.uniq.map{|id| room_by_room_id[id]}.sort_by{|r| [r['rank'], r['conference_room_id']]}
-      t['rooms'] = trackrooms.map{|r| r.fetch('slug')}
+      t['rooms'] = trackrooms.map(&to_slug)
 
       t['events_per_room_per_day'] = begin
                                        by_day_hash = {}
@@ -551,19 +502,106 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       events.each do |e|
         event_speakers = eventpersons_by_event_id.fetch(e['event_id'], []).map{|ep| speaker_by_person_id[ep['person_id']]}.reject{|s| s.nil?}.sort_by{|p| p['person_id']}.uniq{|p| p['person_id']}
 
-        e['speakers'] = event_speakers.map{|p| p.fetch('slug')}
+        e['speakers'] = event_speakers.map(&to_slug)
       end
       speakers.each do |s|
         speaker_events = eventpersons_by_person_id.fetch(s['person_id'], []).map{|ep| event_by_event_id[ep['event_id']]}.reject{|e| e.nil?}.sort_by{|e| e['event_id']}.uniq{|e| e['event_id']}
-        ##oset s, :events, speaker_events
-        s['events'] = speaker_events.map{|e| e.fetch('slug')}
-        ##oset s, :events_by_day, begin
+        s['events'] = speaker_events.map(&to_slug)
         s['events_by_day'] = begin
                                h = {}
-                               days.each{|d| h[d.fetch('slug')] = speaker_events.select{|e| e['conference_day_id'] == d['conference_day_id']}.map{|e| e.fetch('slug')}}
+                               days.each{|d| h[d.fetch('slug')] = speaker_events.select{|e| e['conference_day_id'] == d['conference_day_id']}.map(&to_slug)}
                                h
                              end
       end
+    end
+
+    # compute start_time and end_time for various schedule items
+    begin
+      events_per_day = begin
+                         h = {}
+                         days.each do |d|
+                           cdi = d.fetch('conference_day_id')
+                           h[d.fetch('slug')] = events.select{|e| e.fetch('conference_day_id') == cdi}
+                         end
+                         h
+                       end
+
+      days.each do |d|
+        earliest = events_per_day.fetch(d['slug']).sort_by{|e| e.fetch 'start_time'}.first
+        latest   = events_per_day.fetch(d['slug']).sort_by{|e| e.fetch 'end_time'}.last
+        d['start_time'] = earliest.fetch('start_time') if earliest
+        d['end_time'] = latest.fetch('end_time') if latest
+      end
+    
+      {
+        conference_track_id: tracks,
+        conference_room_id:  rooms,
+      }.each do |a, list|
+        k = a.to_s
+        raise "nil list? (#{a})" if list.nil?
+        raise "empty list? (#{a})" if list.empty?
+        list.each do |item|
+          kv = item.fetch(k)
+          ['start_time', 'end_time'].each{|x| item[x] = {}}
+          days.each do |d|
+            matching_events = events_per_day.fetch(d['slug']).select{|e| e.fetch(k) == kv}
+            earliest = matching_events.sort_by{|e| e.fetch 'start_time'}.first
+            latest   = matching_events.sort_by{|e| e.fetch 'end_time'  }.last
+            item['start_time'][d['slug']] = earliest ? earliest.fetch('start_time') : nil
+            item['end_time'  ][d['slug']] = latest   ?   latest.fetch('end_time')   : nil
+          end
+        end
+      end
+    end
+
+    # compute start_time_index and end_time_index where applicable
+    begin
+      # compute time slot interval in minutes from timeslot_duration on the conference object
+      tsim = begin
+               require 'time'
+               td = conference['timeslot_duration']
+               t = Time.parse(td)
+               raise "conference :timeslot_duration has seconds" unless t.sec == 0
+               raise "conference :timeslot_duration is less than 5 minutes" unless t.min >= 5
+               t.min + t.hour * 60
+             end
+
+      [
+        events,
+        days,
+      ].each do |list|
+        list.each do |item|
+          [ 'start_time', 'end_time' ].each do |a|
+            time = item.fetch(a)
+            h, m = time.split(':').map(&:to_i)[0,2]
+            raise "time with granularity != 5 min: #{time} for item #{item.inspect}" if m % tsim != 0
+            index = (h * 60 + m) / tsim
+
+            item[a + '_index'] = index
+          end
+        end
+      end
+
+      # same here, except that the start_time, end_time attributes are
+      # hashes (key = day slug)
+      [ tracks, rooms].each do |list|
+        list.each do |item|
+          [ 'start_time', 'end_time' ].each do |a|
+            item[a + '_index'] = {}
+            item.fetch(a).each do |dayslug, time|
+              unless time.nil?
+                h, m = time.split(':').map(&:to_i)[0,2]
+                raise "time with granularity != 5 min: #{time} for item #{item.inspect}" if m % tsim != 0
+                index = (h * 60 + m) / tsim
+                item[a + '_index'][dayslug] = index
+              else
+                item[a + '_index'][dayslug] = nil
+              end
+            end
+          end
+        end
+      end
+
     end
 
     # add photos to speakers

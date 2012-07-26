@@ -17,6 +17,8 @@ module Fosdem
       require 'psych'
       YAML::ENGINE.yamler = 'psych'
 
+      require 'time'
+
       file = @config.fetch(:file)
 
       if @items.nil?
@@ -30,9 +32,20 @@ module Fosdem
         @mtime = mtime
         @file = file
 
+        def fix!(meta)
+          # fix dates here
+          #[:start_datetime, :end_datetime, :conference_date].each do |n|
+          #  k = n.to_s
+          #  if meta.has_key? k
+          #    meta[k] = DateTime.parse(meta[k])
+          #  end
+          #end
+        end
+
         def to_items(hash, name)
           l = []
           hash.each do |id, meta|
+            fix! meta
             ["/schedule/#{name}/#{id}/"].each do |identifier|
               l << Nanoc3::Item.new('', meta, identifier, @mtime)
             end
@@ -45,9 +58,11 @@ module Fosdem
           if k[-1] == 's'
             name = k[0..-2]
             v.each do |id, meta|
+              fix! meta
               r << Nanoc3::Item.new('', meta, "/schedule/#{name}/#{id}/", mtime)
             end
           else
+            fix! v
             r << Nanoc3::Item.new('', v, "/schedule/#{k}/", mtime)
           end
         end

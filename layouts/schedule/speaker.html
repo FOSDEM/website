@@ -34,7 +34,7 @@
             <td><%= l e %></td>
             <td><%= l day(e[:day]) %></td>
             <td><%= l room(e[:room]) %></td>
-            <td><%= l track(e[:track]) %></td>
+            <td><%= l track(e[:track]), :name %></td>
             <td><%= ltt e[:day], e[:start_time] %></td>
             <td><%= ltt e[:day], e[:end_time] %></td>
         <% end %>

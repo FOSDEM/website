@@ -8,7 +8,7 @@ speakers = speakers(:name)
 %>
 <div class="row-fluid">
 <% (1..columns).map{|f| speakers.select.with_index{|s,i| i % columns == f - 1}}.each do |list| %>
-<div class="span<%= 9 / columns %>">
+<div class="span<%= 12 / columns %>">
     <% list.each do |s| %>
     <%= l(s) %><br/>
     <% end %>

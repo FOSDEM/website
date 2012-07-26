@@ -12,7 +12,8 @@
         <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= $item_by_id[alt[:item]].path %>" />
         <% end %>
         <title><%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %></title>
-	</head>
+    </head>
+    <% sponsors_under_navigation = ((@item[:sponsors_under_navigation] == true) or (@item.identifier =~ %r{^/schedule/event/.+})) %>
 	<body>
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
@@ -42,10 +43,7 @@
                             <%= @item.identifier =~ %r{^/schedule/[^/]+/.+} ? $schedule_navigation_item.compiled_content : navigation(@item.path) %>
 						</ul>
                     </ul>
-                    <ul class="well">
-                        <a href="/schedule/xml">XML</a> - <a href="/schedule/ical">iCal</a> - <a href="/schedule/xcal">xCal</a>
-                    </ul>
-                    <% if @item[:sponsors_under_navigation] %>
+                    <% if sponsors_under_navigation and @item[:no_sponsors] != true%>
                     <ul class="well sidebar-nav">
                         <ul class="nav nav-list">
                             <li class="nav-header">Support</li>
@@ -59,8 +57,11 @@
                         </ul>
                     </ul>
                     <% end %>
+                    <ul class="well">
+                        <a href="/schedule/xml">XML</a> - <a href="/schedule/ical">iCal</a> - <a href="/schedule/xcal">xCal</a>
+                    </ul>
 				</div>
-                <div class="<%= @item[:no_sponsors] or @item[:sponsors_under_navigation] ? 'span9' : 'span6' %>">
+                <div class="<%= sponsors_under_navigation ? 'span9' : 'span6' %>">
                     <% if not @item[:nohead] %>
 					<ul class="breadcrumb">
                         <%= bcrumbs %>
@@ -69,7 +70,7 @@
                     <% end %>
 					<%= yield %>
                 </div>
-                <% unless @item[:no_sponsors] or @item[:sponsors_under_navigation] %>
+                <% unless sponsors_under_navigation or (@item[:no_sponsors] == true) %>
 				<div class="span3">
 					<ul class="well sidebar-nav">
 						<ul class="nav nav-list">
@@ -85,13 +86,8 @@
 					</ul>
                 </div>
                 <% end #no_sponsors %>
-                <% if @item[:infoblock] %>
-                <div class="span3 well" id="infoblock">
-                    <%= @item[:infoblock] %>
-                </div>
-                <% end #infoblock %>
 			</div>
-		</div>
+        </div>
 
 	</body>
 </html>
