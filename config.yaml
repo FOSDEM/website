@@ -121,7 +121,7 @@ deploy:
     kind: rsync
     dst:  "achanes.fosdem.org:/var/www/new.fosdem.org/public"
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
-  staging:
+  default:
     kind: rsync
     dst:  "achanes.fosdem.org:/var/www/staging.fosdem.org/public"
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
