@@ -5,13 +5,81 @@ sponsors_under_navigation: true
 <%
 columns = 3
 speakers = speakers(:name)
+
+require 'active_support/inflector/transliterate'
+require 'active_support/inflector/methods'
+
+h = {}
+speakers.each do |s|
+  indexes = begin
+              l = if s[:public_name]
+                    n = s[:public_name].split(/\s+/)
+                    if n.size > 1
+                      n[1..-1].join(" ")
+                    else
+                      n[0]
+                    end
+                  elsif s[:last_name]
+                    s[:last_name]
+                  else
+                    s[:name]
+                  end.upcase.gsub(/\s+/, ' ')
+
+              if l[0] == '('
+                n = l.split(/\s+/)
+                if n.size > 1
+                  l = n[1][0]
+                else
+                  l = l[1]
+                end
+              end
+
+              normalforms = [l[0]]
+
+              ['de', 'van de', 'van den', 'van', 'von'].map{|s| Regexp.new("^#{s}\\s+(.+)$")}.each do |r|
+                if l =~ r
+                  normalforms << $1
+                  break
+                end
+              end
+
+              r = normalforms.map{|n| n[0]}
+
+              normalforms.each do |l|
+                lf = l[0]
+                alt = ActiveSupport::Inflector.transliterate(lf)
+                r << alt if alt != lf
+              end
+              r
+            end
+
+  indexes.each do |i|
+    h[i] = [] unless h.has_key? i
+    h[i] << s
+  end
+end
+keys = h.keys.sort
 %>
 <div class="row-fluid">
-<% (1..columns).map{|f| speakers.select.with_index{|s,i| i % columns == f - 1}}.each do |list| %>
+  <div class="span12">
+    <ul class="horizontal-list">
+      <% keys.each do |k| %>
+        <li><a href="#<%= k %>"><%= k %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="row-fluid">
+<% (1..columns).map{|f| keys.select.with_index{|s,i| i % columns == f - 1}}.each do |list| %>
 <div class="span<%= 12 / columns %>">
-    <% list.each do |s| %>
-    <%= l(s) %><br/>
-    <% end %>
+  <% list.each do |k| %>
+    <a name="<%= k %>"></a><h3><%= k %></h3>
+    <ul>
+      <% h[k].each do |s| %>
+        <li><%= l(s) %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
 <% end %>
 </div>

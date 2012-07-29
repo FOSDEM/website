@@ -21,3 +21,17 @@ table#sponsors td {
 table#sponsors img {
     padding-left: 2em;
 }
+ul.horizontal-list {
+  margin: 0;
+  padding: 0;
+}
+ul.horizontal-list li {
+  list-style-type: none;
+  display: inline;
+}
+ul.horizontal-list li:before {
+  content: " | ";
+}
+ul.horizontal-list li:first-child:before {
+  content: none;
+}
