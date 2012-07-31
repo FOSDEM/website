@@ -35,3 +35,6 @@ ul.horizontal-list li:before {
 ul.horizontal-list li:first-child:before {
   content: none;
 }
+.sidebar-nav {
+  margin-left: 0 !important;
+}

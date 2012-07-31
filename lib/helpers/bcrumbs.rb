@@ -35,7 +35,7 @@ module BCrumbs
       end
     else
       xml.li do
-        xml.a(roottitle, :href => '/')
+        xml.a(roottitle, :href => "#{$prefix}/")
       end
       xml.span("/", :class => 'divider')
     end
@@ -71,7 +71,7 @@ module BCrumbs
                       end
         xml.li do
           if link then
-            xml.a(title, :href => link)
+            xml.a(title, :href => "#{$prefix}/#{link}")
           else
             xml.text! title
           end

@@ -14,13 +14,18 @@ module NavigationHelper
 		require 'builder'
 
     def title(item)
-      t = if item[:navtitle]
-            item[:navtitle]
-          else
-            item[:title]
-          end
-      raise "navigation references the item #{item.identifier} but that has no :title" unless t
-      t
+      case item.path
+      when '/'
+        "Home"
+      else
+        t = if item[:navtitle]
+              item[:navtitle]
+            else
+              item[:title]
+            end
+        raise "navigation references the item #{item.identifier} but that has no :title" unless t
+        t
+      end
     end
 
     def walk(n, xml, id, current_path, level=0)
@@ -32,21 +37,8 @@ module NavigationHelper
       elsif n.is_a? Hash
         n.each do |ks,v|
           k = ks.to_s
-          if k == '/'
-            classes = []
-            classes << 'active' if current_path == '/'
-            classes << 'nav-header'
-            c = {}
-            c[:class] = classes.join(" ") unless classes.empty?
-
-            xml.li(c) do
-              xml.a('Home', :href => '/')
-              walk(v, xml, id, current_path, level + 1)
-            end
-
-          elsif k[0,1] == '/'
-            item = $item_by_id[k]
-            raise "failed to find the item with identifier #{k} that is referenced in #{id}" unless item
+          if k.start_with? '/'
+            item = $item_by_id.fetch k
             raise "navigation references an item #{k} without a representation in #{id}" unless item.path
 
             classes = []
@@ -56,6 +48,7 @@ module NavigationHelper
             c[:class] = classes.join(" ") unless classes.empty?
 
             xml.li(c) do
+              raise "navigation: path to item #{item.inspect} does not start with #{$prefix}" unless item.path.start_with? $prefix
               xml.a(title(item), :href => item.path)
               walk(v, xml, id, current_path, level + 1)
             end
@@ -67,12 +60,7 @@ module NavigationHelper
           end
         end
 
-      elsif n == '/'
-        xml.li do
-          xml.a('Home', :href => '/')
-        end
-
-      elsif n[0,1] == '/'
+      elsif n.start_with? '/'
         item = $item_by_id[n]
         raise "failed to find the item with identifier #{n} that is referenced in #{id}" unless item
         raise "navigation references an item #{n} without a representation in #{id}" unless item.path
@@ -83,8 +71,14 @@ module NavigationHelper
         c = {}
         c[:class] = classes.join(" ") unless classes.empty?
 
-        xml.li do
+        xml.li(c) do
+          raise "navigation: path to item #{item.inspect} does not start with #{$prefix}" unless item.path.start_with? $prefix
           xml.a(title(item), :href => item.path)
+        end
+
+      elsif n == '/'
+        xml.li do
+          xml.a('Home', :href => $prefix + '/')
         end
 
       else

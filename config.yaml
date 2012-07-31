@@ -12,14 +12,6 @@ digest_assets: true
 # Same thing as above but for sponsor logos:
 digest_sponsor_logos: true
 
-# Whether to append "/index.html" to links to pages:
-# this looks really ugly and silly on the HTTP served website, but is
-# needed when looking at the output locally before pushing changes, as
-# browsers don't look for index.html in the local filesystem ;)
-# Normally, this SHOULD be left to "false", as we can use "nanoc view" to
-# start a tiny local web server to browse the locally rendered content
-append_index_html_to_urls: false
-
 #########################################################################
 # everything below is standard nanoc configuration stuff
 
@@ -33,6 +25,12 @@ text_extensions: [ 'css', 'erb', 'haml', 'htm', 'html', 'js', 'less', 'markdown'
 # relative to the site directory.
 output_dir: output
 
+# Leave this commented out to use the year of the first conference day from
+# the Pentabarf database as the prefix (e.g. 2013-02-01 => /2013), or set it
+# here to enforce a specific value -- if so, make sure it starts with a /
+# and does not end with a /
+prefix: /2013
+
 # A list of index filenames, i.e. names of files that will be served by a web
 # server when a directory is requested. Usually, index files are named
 # “index.html”, but depending on the web server, this may be something else,
@@ -44,7 +42,7 @@ index_filenames: [ 'index.html' ]
 # before and after the last site compilation.
 enable_output_diff: false
 
-base_url: 'http://fosdem.org'
+base_url: 'https://staging.fosdem.org/2013'
 
 # configure auto_prune here because of a bug in the configuration lookup
 # in nanoc <= 3.5 (reported upstream)
@@ -119,11 +117,11 @@ watcher:
 deploy:
   public:
     kind: rsync
-    dst:  "achanes.fosdem.org:/var/www/new.fosdem.org/public"
+    dst:  "achanes.fosdem.org:/var/www/new.fosdem.org/public/2013"
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
   default:
     kind: rsync
-    dst:  "achanes.fosdem.org:/var/www/staging.fosdem.org/public"
+    dst:  "achanes.fosdem.org:/var/www/staging.fosdem.org/public/2013"
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
 
 pentabarf:

@@ -26,7 +26,7 @@ def l(item, title=:title, sep=", ")
   when Nanoc::Item
     text = case title
            when Symbol
-             raise "item has no title attribute #{title}" unless item[title]
+             raise "item \"#{item.inspect}\" has no title attribute \"#{title}\"" unless item[title]
              item[title]
            when String
              title
@@ -76,7 +76,7 @@ def ltt(d, time)
 
   buffer = ''
   xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
-  xml.a(time, href: "/schedule/day/#{d}/" + '#' + anchor)
+  xml.a(time, href: "#{$prefix}/schedule/day/#{d}/" + '#' + anchor)
   buffer
 end
 
@@ -155,12 +155,27 @@ def event(slug)
   $item_by_id.fetch "/schedule/event/#{slug(slug)}/"
 end
 
+$to_item = lambda{|slug| $item_by_id.fetch slug}
 $to_event = lambda{|slug| $item_by_id.fetch "/schedule/event/#{slug}/"}
 $to_speaker = lambda{|slug| $item_by_id.fetch "/schedule/speaker/#{slug}/"}
 $to_day = lambda{|slug| $item_by_id.fetch "/schedule/day/#{slug}/"}
 $to_room = lambda{|slug| $item_by_id.fetch "/schedule/room/#{slug}/"}
 $to_track = lambda{|slug| $item_by_id.fetch "/schedule/track/#{slug}/"}
 $empty_track = lambda{|t| t[:events].empty?}
+
+def pathof(item)
+  item = case item
+         when Nanoc::Item
+           item
+         when String
+           $item_by_id.fetch item
+         else
+           raise "unsupported object of type #{item.class} in pathof(): #{item.inspect}"
+         end
+  item.path
+end
+
+$to_path = lambda{|item| pathof item}
 
 def event_is_upcoming_to(e1, e2, limit=15)
   (DateTime.parse(e2[:end_datetime]) .. (DateTime.parse(e2[:end_datetime]) + (limit*60))).include? DateTime.parse(e1[:start_datetime])

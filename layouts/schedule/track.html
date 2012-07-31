@@ -7,7 +7,13 @@
     <dd><%= l item[:rooms].map(&$to_room) %></dd>
     <% end %>
     <dt>Calendar:</dt>
-    <dd><a href="<%= $item_by_id.fetch("/schedule/ical/track/#{item[:slug]}/").path %>">iCal</a> - <a href="<%= $item_by_id.fetch("/schedule/xcal/track/#{item[:slug]}/").path %>">xCal</a></dd>
+    <dd>
+        <ul class="horizontal-list">
+            <% [ "/schedule/ical/track/#{item[:slug]}/", "/schedule/xcal/track/#{item[:slug]}/" ].map(&$to_item).each do |cal| %>
+            <li><%= l cal %></li>
+            <% end %>
+        </ul>
+    </dd>
 </dl>
 
 <table class="table table-striped table-bordered table-condensed">
@@ -35,7 +41,7 @@
         </tr>
         <% event_slugs.map(&$to_event).sort_by{|e| [e[:start_time], e[:room_rank]]}.each do |e| %>
         <tr>
-            <td><a href="/schedule/event/<%= e[:slug] %>/"><%= e[:title] %></a></td>
+            <td><%= l e %></td>
             <td><%= l e[:speakers].map(&$to_speaker) %>
             <% unless rooms.empty?  %>
             <td><%= l room(e[:room]) %></td>

@@ -27,7 +27,6 @@ def relpath(from, to)
   else
     balise = nil
   end
-  rp << 'index.html' if rp[-1,1] == '/' and @site.config[:append_index_html_to_urls]
   rp << balise unless balise.nil?
   rp
 end

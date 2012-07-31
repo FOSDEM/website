@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="generator" content="nanoc">
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="<%= $item_by_id['/favicon/'].path %>" type="image/x-icon" />
         <link type="text/css" rel="stylesheet" media="screen" href="<%= $item_by_id['/assets/style/fosdem/'].path %>"/>
         <link href="<%= $item_by_id['/atom/'].path %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed"/>
         <% (@item[:alternative_representations] or []).each do |alt| %>
@@ -26,9 +26,17 @@
 					<a class="brand" href="#">FOSDEM</a>
 					<div class="nav-collapse">
 						<ul class="nav">
-							<li class="active"><a href="/">Home</a></li>
-							<li><a href="/about/">About</a></li>
-							<li><a href="/schedule/">Schedule</a></li>
+              <%
+              ['/', '/about/', '/schedule/'].map(&$to_item).each do |item|
+                active = if item.identifier == '/'
+                           @item.path == item.path
+                         else
+                           @item.path.start_with? item.identifier
+                         end
+                cls = active ? ' class="active"' : ''
+              %>
+              <li<%= cls %>><%= l(item) %></li>
+              <% end %>
 						</ul>
 					</div>
 				</div>
@@ -37,57 +45,74 @@
 
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<div class="span3">
+				<div class="span2">
 					<ul class="well sidebar-nav">
-                        <ul class="nav nav-list">
-                            <%= @item.identifier =~ %r{^/schedule/[^/]+/.+} ? $schedule_navigation_item.compiled_content : navigation(@item.path) %>
-						</ul>
-                    </ul>
-                    <% if sponsors_under_navigation and @item[:no_sponsors] != true%>
-                    <ul class="well sidebar-nav">
-                        <ul class="nav nav-list">
-                            <li class="nav-header">Support</li>
-                            <li>
-                            <div class="btn-group">
-                                <a href="#" class="btn btn-primary">Donate</a>
-                                <a href="#" class="btn btn-success">Promote</a>
-                            </div>
-                            </li>
-                            <%= $sponsors_navigation_item.compiled_content %>
-                        </ul>
-                    </ul>
-                    <% end %>
-                    <ul class="well">
-                        <a href="/schedule/xml">XML</a> - <a href="/schedule/ical">iCal</a> - <a href="/schedule/xcal">xCal</a>
-                    </ul>
-				</div>
-                <div class="<%= sponsors_under_navigation ? 'span9' : 'span6' %>">
-                    <% if not @item[:nohead] %>
-					<ul class="breadcrumb">
-                        <%= bcrumbs %>
-					</ul>
-                    <h1><%= @item[:title] %></h1>
-                    <% end %>
-					<%= yield %>
+            <ul class="nav nav-list">
+              <%=
+                case @item.identifier
+                when %r{^/schedule/$}
+                  $schedule_navigation ||= navigation($item_by_id.fetch('/schedule/').path)
+                when %r{^/schedule/track}
+                  $track_navigation ||= navigation($item_by_id.fetch('/schedule/tracks/').path)
+                when %r{^/schedule/event}
+                  $event_navigation ||= navigation($item_by_id.fetch('/schedule/events/').path)
+                when %r{^/schedule/speaker}
+                  $speaker_navigation ||= navigation($item_by_id.fetch('/schedule/speakers/').path)
+                when %r{^/schedule/room}
+                  $room_navigation ||= navigation($item_by_id.fetch('/schedule/rooms/').path)
+                else
+                  navigation(@item.path)
+                end
+              %>
+            </ul>
+          </ul>
+          <% if sponsors_under_navigation and @item[:no_sponsors] != true%>
+            <ul class="well sidebar-nav">
+              <ul class="nav nav-list">
+                <li class="nav-header">Support</li>
+                <li>
+                <div class="btn-group">
+                  <a href="<%= pathof '/support/donate/' %>" class="btn btn-primary">Donate</a>
+                  <a href="#" class="btn btn-success">Promote</a>
                 </div>
-                <% unless sponsors_under_navigation or (@item[:no_sponsors] == true) %>
-				<div class="span3">
-					<ul class="well sidebar-nav">
-						<ul class="nav nav-list">
-							<li class="nav-header">Support</li>
-							<li>
-							<div class="btn-group">
-								<a href="#" class="btn btn-primary">Donate</a>
-								<a href="#" class="btn btn-success">Promote</a>
-							</div>
-							</li>
-                            <%= $sponsors_navigation_item.compiled_content %>
-						</ul>
-					</ul>
-                </div>
-                <% end #no_sponsors %>
-			</div>
+                </li>
+                <%= $sponsors_navigation_item.compiled_content %>
+              </ul>
+            </ul>
+          <% end %>
+          <ul class="well horizontal-list">
+            <% [ '/schedule/', '/schedule/ical/', '/schedule/xcal/' ].map(&$to_item).each do |item| %> 
+              <li><%= l(item) %></li>
+            <% end %>
+          </ul>
         </div>
+        <div class="<%= sponsors_under_navigation ? 'span10' : 'span8' %>">
+          <% if not @item[:nohead] %>
+            <ul class="breadcrumb">
+              <%= bcrumbs %>
+            </ul>
+            <h1><%= @item[:title] %></h1>
+          <% end %>
+          <%= yield %>
+        </div>
+        <% unless sponsors_under_navigation or (@item[:no_sponsors] == true) %>
+          <div class="span2">
+            <ul class="well sidebar-nav">
+              <ul class="nav nav-list">
+                <li class="nav-header">Support</li>
+                <li>
+                <div class="btn-group">
+                  <a href="<%= pathof '/support/donate/' %>" class="btn btn-primary">Donate</a>
+                  <a href="#" class="btn btn-success">Promote</a>
+                </div>
+                </li>
+                <%= $sponsors_navigation_item.compiled_content %>
+              </ul>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-	</body>
+  </body>
 </html>

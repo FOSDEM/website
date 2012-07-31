@@ -50,19 +50,19 @@ during the event.</p>
     <tbody>
         <% keynotes.each do |e| %>
         <tr>
-            <td><a href="<%= e.path %>"><%= e[:title] %></a></td>
+          <td><%= l e %></td>
             <td><%=
                 e[:speakers].map{|s| $item_by_id.fetch("/schedule/speaker/#{s}/")}.map do |s|
                 photo = s[:thumbnail] ? $item_by_id.fetch("/photos/thumbnail/#{s[:thumbnail][:slug]}/") : nil
                 text = ""
                 text << "<img src=\"#{photo.path}\" width=\"#{s[:thumbnail]['width']}\" height=\"#{s[:thumbnail]['height']}\"/>" if photo
-                text << "<a href=\"#{s.path}\">#{s[:title]}</a>"
+                text << l(s)
                 text
                 end.join(", ")
                 %></td>
-            <td><a href="/schedule/day/<%= e[:day] %>/"><%= e[:day_name] %></a></td>
+            <td><%= l(day(e[:day])) %></td>
             <td><%= e[:start_time] %> - <%= e[:end_time] %></td>
-            <td><a href="/schedule/room/<%= e[:room] %>/"><%= e[:room_name] %></a></td>
+            <td><%= l(room(e[:room])) %></td>
         </tr>
         <% end %>
     </tbody>
@@ -87,13 +87,13 @@ speakers on those topics.</p>
     <tbody>
         <% maintracks.each do |t| %>
         <tr>
-            <td><a href="<%= t.path %>"><%= t[:title] %></a></td>
+            <td><%= l t %></td>
             <%
             days.each do |d|
             rooms = t[:events_per_room_per_day].fetch(d[:slug].to_sym, {}).keys
             %>
             <% unless rooms.empty? %>
-            <td><%= rooms.map{|slug| $item_by_id.fetch("/schedule/room/#{slug}/")}.map{|r| "<a href=\"#{r.path}\">#{r[:title]}</a>: #{r[:occupation_by_day][d[:slug].to_sym][:start_time]}-#{r[:occupation_by_day][d[:slug].to_sym][:end_time]}"}.join(', ') %></td>
+            <td><%= rooms.map(&$to_room).map{|r| l(r) + ": #{r[:occupation_by_day][d[:slug].to_sym][:start_time]}-#{r[:occupation_by_day][d[:slug].to_sym][:end_time]}"}.join(', ') %></td>
             <% else %>
             <td>-</td>
             <% end %>
@@ -121,7 +121,7 @@ columns = 3
         <div class="span<%= 9 / columns %>">
             <ul>
                 <% list.each do |t| %>
-                <li><a href="<%= t.path %>"><%= t[:title] %></a></li>
+                <li><%= l t %></li>
                 <% end %>
             </ul>
         </div>

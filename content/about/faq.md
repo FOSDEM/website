@@ -15,11 +15,11 @@ Entrance is free, including access to all talks and facilities.
 
 Q: If entrance to FOSDEM is free, who pays the expenses?
 
-We have 2 sources of income: [Donations](/support/donate) from our visitors and [sponsorship](@/about/sponsors/).
+We have 2 sources of income: [Donations](page:/support/donate) from our visitors and [sponsorship](@page:/about/sponsors/).
 
 Q: My company loves FOSDEM, what are the sponsoring possibilities?
 
-Have a look at the [sponsor](/about/sponsors/) page.
+Have a look at the [sponsor](page:/about/sponsors/) page.
 
 Q: I need a formal invitation for a VISA request
 

@@ -19,11 +19,11 @@ xml.table(class: "timetable timetable-head table table-striped table-bordered ta
   xml.thead do
     xml.tr do
       xml.th(class: 'backlink') do
-        xml.a(href: '/', title: 'Site root') do
+        xml.a(href: pathof('/'), title: 'Site root') do
           xml << '&larr;&nbsp;/'
         end
       end
-      rooms.map{|r| $item_by_id.fetch("/schedule/room/#{r}/")}.each do |room|
+      rooms.map(&$to_room).each do |room|
         xml.th do
           xml.a(room[:title], href: room.path, title: room[:title])
         end

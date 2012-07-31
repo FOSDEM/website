@@ -32,7 +32,7 @@ class PageLinks < LinkProcessor
 
     raise "Failed to resolve \"#{url}\" URL" if results.empty?
     raise "Found more than one item that resolves the URL \"#{url}\": #{results}" if results.length > 1
-    return results[0].identifier
+    return results[0].path
   end
 
   def match_basename(item, q)
