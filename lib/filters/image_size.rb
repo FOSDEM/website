@@ -8,7 +8,7 @@ class ImageSizeFilter < Nanoc::Filter
   type :text
   identifier :imagesize
 
-  @@SELECTORS = [ 'img' ]
+  @@SELECTORS = [ '//img' ]
 
   def run(content, params={})
     # Set assigns so helper function can be used
@@ -33,6 +33,8 @@ class ImageSizeFilter < Nanoc::Filter
       doc.xpath(selector, namespaces)
       .select { |node| node.is_a? Nokogiri::XML::Element }
       .select { |img| img.has_attribute?('src') }
+      .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
+      .select { |img| img['src'] =~ %r{^/|\.\.\/} }
       .each do |img|
         path = img['src']
         dimensions = image_size(path)
@@ -47,8 +49,15 @@ class ImageSizeFilter < Nanoc::Filter
   def image_size(path)
     require 'image_size'
     path = '/' + path unless path[0, 1] == '/'
-    img = ImageSize.new(IO.read("output#{path}"))
-    { :height => img.height, :width => img.width }
+    height, width = begin
+                      hit = $_image_size_cache[path.to_sym]
+                      unless hit
+                        img = ImageSize.new(IO.read("output#{path}"))
+                        hit = [img.height, img.width]
+                        $_image_size_cache[path.to_sym] = hit
+                      end
+                      hit
+                    end
   end
 
 end

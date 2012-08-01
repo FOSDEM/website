@@ -170,7 +170,7 @@ compile '*' do
         # URLs with their actual URLs as they will be rendered, including
         # e.g. speaker:2012/foobar that will point to archive.fosdem.org/...
         filter :schedulelinks
-
+       
         # retrieve the image width and height from the image files that
         # are referenced in <img/> tags to speed up browser rendering
         # performance, see
@@ -178,8 +178,9 @@ compile '*' do
         # for inspiration, as well as
         # https://developers.google.com/speed/docs/best-practices/rendering#SpecifyImageDimensions
         filter :imagesize
-      end
 
+      end
+      
       # transform absolute paths in URLs with relative paths using the
       # relativize_paths filter (that is shipped with nanoc)
       # ***

@@ -27,7 +27,7 @@ sponsors_under_navigation: true
             <%
             first = dayevents.map{|e| e[:start_time]}.sort.first
             last  = dayevents.map{|e| e[:end_time]}.sort.last
-            daytracks = dayevents.map{|e| e[:track]}.uniq.map(&$to_track).sort_by{|t| [t[:rank], t[:conference_track_id]]}
+            daytracks = dayevents.map{|e| e[:track]}.uniq.map(&$to_track).sort_by{|t| [t[:start_time].fetch(d[:slug].to_sym), t[:rank], t[:conference_track_id]]}
             %>
             <td><%= first %>-<%= last %><% unless daytracks.empty? %>: <%= l daytracks, :name %><% end %></td>
             <% end %>

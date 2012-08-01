@@ -5,8 +5,23 @@ relativize: false
 <li class="nav-header">Cornerstone Sponsors</li>
 <% sponsors.select{|s| s.include_in_toplevel? and s.cornerstone?}.each do |s| %>
     <a href="<%= s.path %>">
-        <% if s.logo? %>
-            <img src="<%= s.logo %>" alt="<%= s.name %>" title="<%= s.name %>"/>
+        <%
+        if s.logo?
+          h, w = begin
+                   path = s.logo
+                   path = '/' + path unless path[0, 1] == '/'
+                   $_sponsors_navigation_photo_cache ||= {}
+                   hit = $_sponsors_navigation_photo_cache[path.to_sym]
+                   unless hit
+                     require 'image_size'
+                     img = ImageSize.new(IO.read("output#{path}"))
+                     hit = [img.height, img.width]
+                     $_sponsors_navigation_photo_cache[path.to_sym] = hit
+                   end
+                   hit
+                 end
+        %>
+        <img src="<%= s.logo %>" height="<%= h %>" width="<%= w %>" alt="<%= s.name %>" title="<%= s.name %>"/>
         <% else %>
             <%= s.name %>
         <% end %>
@@ -15,8 +30,24 @@ relativize: false
 <li class="nav-header">Other Sponsors</li>
 <% sponsors.select{|s| s.include_in_toplevel? and (not s.cornerstone?)}.each do |s| %>
     <a href="<%= s.path %>">
-        <% if s.thumb? %>
-            <img src="<%= s.thumb %>" alt="<%= s.name %>" title="<%= s.name %>"/>
+        <%
+        if s.thumb?
+          h, w = begin
+                   path = s.thumb
+                   path = '/' + path unless path[0, 1] == '/'
+                   $_sponsors_navigation_thumb_cache ||= {}
+                   hit = $_sponsors_navigation_photo_cache[path.to_sym]
+                   unless hit
+                     require 'image_size'
+                     img = ImageSize.new(IO.read("output#{path}"))
+                     hit = [img.height, img.width]
+                     $_sponsors_navigation_thumb_cache[path.to_sym] = hit
+                   end
+                   hit
+                 end
+        %>
+
+        <img src="<%= s.thumb %>" width="<%= w %>" height="<%= h %>" alt="<%= s.name %>" title="<%= s.name %>"/>
         <% else %>
             <%= s.name %>
         <% end %>

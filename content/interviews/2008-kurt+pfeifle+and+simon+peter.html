@@ -343,7 +343,6 @@ At this point, it may be of the foremost interest to our readers to get a
 "helicopter view" of how klik works under the hood.
 </p>
 <p>
-<img src="../../../florisla.be/fosdem/images/klik1.png" height="298" width="460" alt="klik screenshot: Download and run flock?"></p>
 <p>If a user executes "klik get coolapp", the klik client contacts the klik server.
 The klik server then looks if it has a ready-made coolapp.xml recipe in its
 database already and sends back that in case it has. Otherwise, it looks if the
@@ -440,7 +439,6 @@ maximum of 7 concurrent mounts at a time. klik2 does take advantage of FUSE
 (since FUSE is now widespread enough) and can therefore run practically an unlimited
 number of klik applications concurrently.
 </p>
-<p><img src="../../../florisla.be/fosdem/images/klik2.png" height="182" width="468" alt="Screenshot: Fuse filesystem on Ubuntu"></p>
 <p>klik1 based itself on Debian Stable, and only could guarantee to work on Debian.
 klik2 relies on LSB-3.2/4.x, will fully work on all LSB-compliant distros, and
 will even work for many applications on most other distros.
