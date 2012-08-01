@@ -1,6 +1,6 @@
-<% photo = item[:photo] ? $item_by_id.fetch("/photos/photo/#{item[:photo][:slug]}/") : nil%>
+<% photo = item[:photo] ? $item_by_id.fetch("/photos/photo/#{item[:photo].fetch(:slug)}/") : nil%>
 <% if photo %>
-<img src="<%= photo.path %>" width="<%= item[:photo][:width] %>" height="<%= item[:photo][:height] %>"/>
+<img src="<%= photo.path %>" width="<%= item[:photo].fetch(:width) %>" height="<%= item[:photo].fetch(:height) %>"/>
 <% end %>
 
 <%= item[:abstract] %>
