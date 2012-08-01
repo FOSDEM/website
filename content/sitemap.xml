@@ -1,1 +1,1 @@
-<%= xml_sitemap :items => @items.reject{|i| i.binary?} %>
+<%= xml_sitemap :items => @items.reject{|i| i.binary?}.sort_by{|i| i.identifier} %>
