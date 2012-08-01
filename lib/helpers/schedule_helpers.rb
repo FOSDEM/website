@@ -205,4 +205,30 @@ def event_sametime(e1, e2)
   return false
 end
 
+def navtitle(item)
+  if item[:navtitle] then
+    item[:navtitle]
+  elsif item[:title] then
+    item[:title]
+  else
+    id(item).capitalize
+  end
+end
+
+def id(item)
+  item.identifier.gsub(%r{/+$}, '').split('/')[-1]
+end
+
+def interview?(item)
+  item[:kind] == 'interview' or item.identifier =~ %r{^/interviews?/.+}
+end
+def page?(item)
+  item[:kind] == 'page' or item.identifier.match(%r{^/(news|headlines|assets|sponsors?|schedule)/}).nil?
+end
+def news?(item)
+  item[:kind] == 'news' or item.identifier.match(%r{^/news/.+}).nil? ? false : true
+end
+def sponsor?(item)
+  item[:kind] == 'sponsor' or (item[:kind] != 'page' and not item.binary? and item.identifier.match(%r{^/sponsors?/.+/}).nil? ? false : true)
+end
 

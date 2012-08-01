@@ -9,7 +9,7 @@ def sub(here=@item)
   xml.ul do
     @items.select{|item| (not item.parent.nil?) and item.parent.identifier == here.identifier}.each do |item|
       xml.li do
-        xml.a(item.navtitle, :href => relpath(here.identifier, item.identifier))
+        xml.a(navtitle(item), :href => item.path)
       end #li
     end #items
   end #ul

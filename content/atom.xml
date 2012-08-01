@@ -1,8 +1,8 @@
 <%= atom_feed(
     :limit => 10,
-    :articles => @items.select{|i| i.news?}.sort_by{|i| i[:created_at]}.reverse,
+    :articles => @items.select{|i| news?(i)}.sort_by{|i| [i[:created_at], i[:mtime]]}.reverse,
     :excerpt_proc => lambda {|i| i[:headline]},
-    :title => "FOSDEM",
+    :title => conference()[:title],
     :author_name => "FOSDEM team",
-    :author_uri => @site.config[:base_url]
+    :author_uri => @site.config.fetch(:base_url)
     ) %>

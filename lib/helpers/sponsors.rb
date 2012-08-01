@@ -107,7 +107,7 @@ class Sponsor
   def self.list(items)
     if @@cache.nil? then
       @@items_cache = items.select{|item| item[:disabled].nil? or not item[:disabled]}
-      @@cache = @@items_cache.select{|item| item.sponsor? }.map{|item| Sponsor.new(item)}.sort_by{|s| [s.order, s.name]}
+      @@cache = @@items_cache.select{|item| sponsor?(item) }.map{|item| Sponsor.new(item)}.sort_by{|s| [s.order, s.name]}
       begin
         l = @@items_cache.select{|item| item[:sponsors_root]}
         raise "failed to find item with attribute :sponsors_root" if l.empty?

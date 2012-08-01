@@ -14,11 +14,11 @@ module BCrumbs
       @items.each do |i|
         if i.binary? or i.reps.empty? then
           c[i.identifier] = {
-            :title => i.id
+            :title => id(i)
           }
         else
           c[i.identifier] = {
-            :title => i.navtitle,
+            :title => navtitle(i),
             :link => i.identifier
           }
         end
@@ -40,7 +40,7 @@ module BCrumbs
       xml.span("/", :class => 'divider')
     end
 
-    parts = @item.p.split('/')
+    parts = @item.identifier.gsub(%r{^/}, '').gsub(%r{/$}, '').split('/')
     parts.each_with_index do |part, index|
       here = '/'+parts[0,index+1].join('/')+'/'
       ref = $_bcrumbs_cache[here]
@@ -48,7 +48,7 @@ module BCrumbs
       if index == parts.length - 1 then
         # active
         xml.li(:class => 'active') do
-          xml.text! @item.navtitle
+          xml.text! navtitle(@item)
         end
       else
         link, title = case part
@@ -81,6 +81,11 @@ module BCrumbs
     end
 
     buffer
+  end
+
+  private
+  def p(item)
+    item.identifier.gsub(%r{^/}, '').gsub(%r{/$}, '')
   end
 
 end

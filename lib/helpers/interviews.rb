@@ -1,7 +1,7 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 
 def decorate_interviews
-  @items.select{|item| item.interview? }.each do |item|
+  @items.select{|item| interview?(item) }.each do |item|
     item[:kind] = 'interview'
     item[:nonav] = true
 

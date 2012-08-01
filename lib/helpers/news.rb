@@ -1,8 +1,8 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 
 def make_headlines
-  @items.select{|item| item.news? }.each do |item|
-    fqid = item.id
+  @items.select{|item| news?(item) }.each do |item|
+    fqid = id(item)
     if item.identifier =~ %r,(^/news/)(\d{4}-\d{2}-\d{2})-(.+)$, then
       #item.identifier = $1 + $3
       item[:kind] = 'article'
@@ -38,7 +38,7 @@ def make_headlines
       # add the headline item to the list of items
       @items << headline
     else
-      raise "news file name does not start with a date (YYYY-MM-DD-...): #{item.id}"
+      raise "news file name does not start with a date (YYYY-MM-DD-...): #{item.identifier}"
     end
   end
 end

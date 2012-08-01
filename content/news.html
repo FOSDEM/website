@@ -4,7 +4,7 @@ kind: page
 navcat: true
 ---
 <div class="container-fluid">
-	<% @items.select {|item| item.news? }.sort_by {|item| item[:created_at]}.reverse.each do |hl| %>
+	<% @items.select {|item| news?(item) }.sort_by {|item| [item[:created_at], item[:mtime]]}.reverse.each do |hl| %>
 	<%= render('news', :item => hl) %>
 	<hr />
 	<% end %>

@@ -142,7 +142,7 @@ compile '*' do
         # run the custom interview filter (lib/helpers/interview_filter.rb)
         # on content/interviews/* -- it adds a CC license footer and
         # converts "Q: ..." lines to styled HTML markup
-        filter :interview if item.interview?
+        filter :interview if interview?(item)
 
         # do the same as above for items that have "qa: true" in their
         # metadata, but without adding the license footer
@@ -153,7 +153,7 @@ compile '*' do
         # from the beginning of the content until "---FULL---" lines
         # (analog to the make_headlines function from lib/helpers/news.rb
         # which does the "opposite" (kindof) to generate headline items)
-        filter :news if item.news?
+        filter :news if news?(item)
 
         # run the custom pagelinks filter (lib/filters/pagelinks.rb) on
         # all items to replace page:... URLs with their actual URLs as
@@ -192,7 +192,7 @@ compile '*' do
       # use layout/default.html for all items, except
       # sponsor pages and pages that have "layout: false"
       # in their metadata
-      if item[:layout] == false or item.sponsor? or item.identifier =~ %r{/[ix]cal/}
+      if item[:layout] == false or sponsor?(item) or item.identifier =~ %r{/[ix]cal/}
         # do nothing
       elsif item[:layout]
         # or those that explicitly specify the layout in their metadata
