@@ -156,6 +156,8 @@ def event(slug)
 end
 
 $to_item = lambda{|slug| $item_by_id.fetch slug}
+$to_slug = lambda{|item| slug(item)}
+
 $to_event = lambda{|slug| $item_by_id.fetch "/schedule/event/#{slug}/"}
 $to_speaker = lambda{|slug| $item_by_id.fetch "/schedule/speaker/#{slug}/"}
 $to_day = lambda{|slug| $item_by_id.fetch "/schedule/day/#{slug}/"}
