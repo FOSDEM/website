@@ -26,11 +26,11 @@ we do our best to provide you with as much information and navigation
 options about the schedule as we can.</p>
 
 <p>Activities take place in all of
-<a href="<%= $item_by_id.fetch('/schedule/rooms/').path %>"> the <%= rooms.size %> rooms</a>
+<a href="<%= pathof '/schedule/rooms/' %>"> the <%= rooms.size %> rooms</a>
 that are spread across several buildings or clusters of rooms of
-<a href="<%= $item_by_id.fetch('/practical/transportation/').path %>">the Campus Solbosch of the ULB (Université Libre de Bruxelles)</a>
+<a href="<%= pathof '/practical/transportation/' %>">the Campus Solbosch of the ULB (Université Libre de Bruxelles)</a>
 .<br/>
-An <a href="<%= $item_by_id.fetch('/schedule/roomtracks/').path %>">overview of the room occupation by track</a>
+An <a href="<%= pathof '/schedule/roomtracks/' %>">overview of the room occupation by track</a>
 is available, too.</p>
 
 <p>There are essentially five different categories of sessions and activities
