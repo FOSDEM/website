@@ -113,7 +113,7 @@ table.timetable-body {
 }
 
 <% %w{69D2E7 A7DBD8 E0E4CC F38630 FA6900}.each_with_index do |color, index|%>
-.timetable .c<%= index + 1 %> { background-color: #<%= color %> !important; }
+.timetable .c<%= index + 1 %>, .roomtracks .c<%= index + 1 %> { background-color: #<%= color %> !important; }
 <% end %>
 
 .timetable tbody td.event:hover {
@@ -127,5 +127,48 @@ body.fullpage {
     when using the fullpage layout
     */
     padding-top: 0 !important;
+}
+
+.roomtracks {
+    table-layout: fixed;
+}
+
+.roomtracks td {
+    line-height: 1.2em;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0.1em 0.2em;
+}
+.roomtracks td a {
+    color: inherit;
+}
+
+.roomtracks tbody th {
+    width: 30%;
+    text-align: right;
+    padding: 0.1em;
+    line-height: 1em;
+    font-weight: normal;
+}
+.roomtracks tbody th a {
+    color: inherit;
+}
+
+body.wide p {
+    width: 70%;
+}
+
+img.thumb {
+    padding-right: 1em;
+}
+
+th.building {
+    vertical-align: middle;
+    text-align: right;
+    font-weight: bold;
+    font-size: large;
 }
 

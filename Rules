@@ -77,6 +77,38 @@ preprocess do
   # in that helper function)
   $timetable = timetable_from_items(@items)
 
+  # compute room to building associations programatically and using
+  # the metadata in content/buildings.yaml
+  # (note that the ranking/order of buildings also stems from the order
+  # of buildings as defined in content/buildings.yaml
+  $buildings = begin
+                 buildings = {}
+                 $item_by_id.fetch('/buildings/')[:map].each do |building, roomlist|
+                   roomlist = [] if roomlist.nil?
+
+                   bcode = building.to_s.upcase
+                   list = []
+                   roomlist.map(&$to_room).each do |r|
+                     list << r
+                   end
+                   rooms.select{|r| r[:slug].upcase.start_with? bcode}.each do |r|
+                     list << r
+                   end
+                   buildings[bcode] = list.uniq{|r| r[:slug]}.sort_by{|r| [r[:rank], r[:conference_room_id]]}
+                   buildings[bcode].each do |r|
+                     r[:building] = bcode
+                   end
+                 end
+
+                 # make sure there are no rooms left without a :building meta attribute
+                 begin
+                   errors = rooms.select{|r| r[:building].nil? }
+                   raise "there are #{errors.size} room(s) without a building assignment, please put them into content/building.yaml: #{errors.map{|r| r[:slug]}.join(", ")}" unless errors.empty?
+                 end
+
+                 buildings
+               end
+
 end
 
 ##### COMPILING
@@ -110,7 +142,10 @@ end
 # internally and don't render it to the website as a file, hence
 # short-circuit any compilation and routing right here:
 compile '/navigation/' do;end
-route '/navigation/' do;end
+route   '/navigation/' do;end
+# Same applies to /buildings/:
+compile '/buildings/'  do;end
+route   '/buildings/'  do;end
 
 # don't apply any filters on the headlines/* items as they are already
 # rendered by the "make_headlines" helper at preprocessing stage

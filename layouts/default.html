@@ -13,7 +13,7 @@
         <title><%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %></title>
     </head>
     <% sponsors_under_navigation = ((@item[:sponsors_under_navigation] == true) or (@item.identifier =~ %r{^/schedule/event/.+})) %>
-	<body>
+    <body<% if sponsors_under_navigation %> class="wide"<% end %>>
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container-fluid">

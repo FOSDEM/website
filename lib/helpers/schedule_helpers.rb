@@ -18,8 +18,12 @@ def slug(h)
   end
 end
 
-def l(item, title=:title, sep=", ")
+def l(item, title=:title, sep=", ", detail=nil)
   require 'builder'
+  if item.is_a? String and item.start_with? '/'
+    item = $item_by_id.fetch(item)
+  end
+
   case item
   when Array
     item.map{|i| l(i)}.join(sep)
@@ -40,7 +44,20 @@ def l(item, title=:title, sep=", ")
     # encoded properly in Pentabarf)
     buffer = ''
     xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
-    xml.a(text, href: item.path)
+    title = if detail
+              if detail.is_a? Symbol
+                item[detail]
+              else
+                detail.to_s
+              end
+            else
+              nil
+            end
+    if title
+      xml.a(text, href: item.path, title: title, longdesc: title)
+    else
+      xml.a(text, href: item.path)
+    end
     buffer
   else
     raise "unsupported object of type #{item.class}"

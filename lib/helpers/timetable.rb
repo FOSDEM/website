@@ -138,11 +138,6 @@ def timetable(rooms, events)
     (0..slots-1).each do |slot|
       key = now.strftime("%H:%M")
 
-      cells = [
-        table_by_room.fetch(event[:room]).fetch(key),
-        table_by_time.fetch(key).fetch(event[:room]),
-      ]
-
       state = case slot
               when 0
                 :begin
@@ -156,12 +151,17 @@ def timetable(rooms, events)
         event_id: event[:event_id],
         title: event[:title],
         slug: event[:slug],
+        track: event[:track],
+        track_name: event[:track_name],
         state: state,
       }
       meta[:slots] = slots if slot == 0
 
-      cells.each do |cell|
-        cell << meta
+      [
+        table_by_room.fetch(event[:room]).fetch(key),
+        table_by_time.fetch(key).fetch(event[:room]),
+      ].each do |cells|
+        cells << meta
       end
 
       now += step
