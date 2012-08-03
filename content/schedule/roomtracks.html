@@ -88,7 +88,8 @@ days.each do |d|
   %>
   <thead>
     <tr>
-      <th style="width: 8%;">Room</th>
+      <th class="building"></th>
+      <th class="room">Room</th>
       <%
         (0..num_cells-1).each do |i|
       %>
@@ -99,9 +100,18 @@ days.each do |d|
     </tr>
   </thead>
   <tbody>
-    <% flatlist_by_room.each do |room_slug, cells| %>
-      <tr>
-        <th><%= l(room(room_slug)) %></th>
+    <%
+      $buildings.each do |building, brooms|
+        brooms.each_with_index do |room, bri|
+          cells = flatlist_by_room.fetch(room[:slug])
+    %>
+      <tr<% if bri == 0 %> class="building_start"<% end %>>
+        <%
+          if bri == 0
+        %>
+        <th rowspan="<%= brooms.size %>" class="building"><%= room[:building] %></th>
+        <% end %>
+        <th class="room"><%= l(room) %></th>
         <% (0..start_offset_slots-1).each do |x| %>
           <td></td>
         <% end %>
@@ -119,12 +129,12 @@ days.each do |d|
                      c += 1
                      c %= colors
                      last_track = cell[:track]
-                     c
+                     c + 1
                    else
-                     c
+                     c + 1
                    end
             %>
-            <td class="c<%= c + 1 %>" colspan="<%= cell[:slots] %>"><%= l(track(cell[:track]), :name, '', :title) %></td>
+            <td class="c<%= cv %>" colspan="<%= cell[:slots] %>"><%= l(track(cell[:track]), :name, '', :title) %></td>
           <% end %>
           <%
           end
@@ -134,6 +144,7 @@ days.each do |d|
           <td></td>
           <%
           end
+        end
         %>
       </tr>
     <% end %>

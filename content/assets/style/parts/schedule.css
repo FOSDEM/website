@@ -146,15 +146,32 @@ body.fullpage {
     color: inherit;
 }
 
-.roomtracks tbody th {
-    width: 30%;
+.roomtracks th.building {
+    width: 2%;
+    text-align: right;
+    padding: 0.1em;
+    line-height: 1em;
+    font-weight: bold;
+    font-size: large;
+    text-align: right;
+    vertical-align: middle;
+}
+.roomtracks th.room {
+    width: 8%;
     text-align: right;
     padding: 0.1em;
     line-height: 1em;
     font-weight: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .roomtracks tbody th a {
     color: inherit;
+}
+.roomtracks tbody tr.building_start th,
+.roomtracks tbody tr.building_start td {
+    border-top: 2px solid #000;
 }
 
 body.wide p {
