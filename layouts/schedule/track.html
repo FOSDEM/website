@@ -9,8 +9,12 @@
     <dt>Calendar:</dt>
     <dd>
         <ul class="horizontal-list">
-            <% [ "/schedule/ical/track/#{item[:slug]}/", "/schedule/xcal/track/#{item[:slug]}/" ].map(&$to_item).each do |cal| %>
-            <li><%= l cal %></li>
+            <%
+[
+{ name: 'iCal', identifier: "/schedule/ical/track/#{item[:slug]}/" },
+{ name: 'xCal', identifier: "/schedule/xcal/track/#{item[:slug]}/" },
+].each do |cal| %>
+            <li><%= l($item_by_id.fetch(cal[:identifier]), cal[:name]) %></li>
             <% end %>
         </ul>
     </dd>
