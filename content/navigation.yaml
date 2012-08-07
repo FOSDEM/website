@@ -11,6 +11,7 @@ navigation:
     - /schedule/day/sunday/
     - /schedule/tracks/
     - /schedule/events/
+    - /distrominiconf/
   - Practical Information:
     - /practical/beerevent/
     - /practical/transportation/
