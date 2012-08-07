@@ -212,7 +212,11 @@ compile '*' do
         # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
         # for inspiration, as well as
         # https://developers.google.com/speed/docs/best-practices/rendering#SpecifyImageDimensions
-        filter :imagesize
+        ##filter :imagesize
+        # ^^ disabled for now, Nokogiri is buggy on HTML fragments, need to replace it
+        #    with an XML parser in lib/filters/imagesize.rb -- try to use img() instead
+        #    as it creates <img/> elements with width and height attributes directly,
+        #    which is faster than running a filter on everything
 
       end
       
@@ -311,6 +315,14 @@ end
 route '/assets/img/*/' do
   "#{$prefix}#{item.identifier.chop}.#{item[:extension]}"
 end
+
+# don't add a digest to the badge filenames: as they are linked to
+# on external sites, we need meaningful and stable names here, even
+# if the content is changing
+route '/assets/badge/*/' do
+  "#{$prefix}/support/promote/badge/#{item.identifier.chop.split('/').last}.#{item[:extension]}"
+end
+
 route '/assets/*/' do
   suffix = if @site.config[:digest_assets]
              "-" + digest(item)

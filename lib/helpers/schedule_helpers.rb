@@ -18,6 +18,26 @@ def slug(h)
   end
 end
 
+def img(item, attr={})
+  height, width = image_size(item)
+
+  buffer = ''
+  xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
+  a = attr.clone
+  a[:src] = case item
+            when Nanoc::Item
+              item.path
+            when String
+              item
+            else
+              raise "unsupported object of type #{item.class}: #{item.inspect}"
+            end
+  a[:width] = width
+  a[:height] = height
+  xml.img(a)
+  buffer
+end
+
 def l(item, title=:title, sep=", ", detail=nil)
   require 'builder'
   if item.is_a? String and item.start_with? '/'
@@ -182,6 +202,10 @@ $to_room = lambda{|slug| $item_by_id.fetch "/schedule/room/#{slug}/"}
 $to_track = lambda{|slug| $item_by_id.fetch "/schedule/track/#{slug}/"}
 $empty_track = lambda{|t| t[:events].empty?}
 
+def _i(identifier)
+  $item_by_id.fetch(identifier)
+end
+
 def pathof(item)
   item = case item
          when Nanoc::Item
@@ -195,6 +219,27 @@ def pathof(item)
 end
 
 $to_path = lambda{|item| pathof item}
+
+KILO_SIZE = 1024.0
+MEGA_SIZE = 1024.0 * 1024.0
+GIGA_SIZE = 1024.0 * 1024.0 * 1024.0
+
+def filesize(item)
+  raise "item #{item.inspect} is not binary" unless item.binary?
+  raise "item #{item.inspect} is binary but has no filename" unless item[:filename]
+  size = File.size item[:filename]
+  case
+  when size == 1
+    "1 byte"
+  when size < KILO_SIZE
+    "%d bytes" % size
+  when size < MEGA_SIZE
+    "%.2f KiB" % (size / KILO_SIZE)
+  when size < GIGA_SIZE
+    "%.2f GiB" % (size / MEGA_SIZE)
+  else "%.2f GiB" % (size / GIGA_SIZE)
+  end
+end
 
 def event_is_upcoming_to(e1, e2, limit=15)
   (DateTime.parse(e2[:end_datetime]) .. (DateTime.parse(e2[:end_datetime]) + (limit*60))).include? DateTime.parse(e1[:start_datetime])

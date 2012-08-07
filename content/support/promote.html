@@ -1,0 +1,73 @@
+---
+title: Promote
+---
+<h2>Flyers, ads and banners for <%= conference[:name] %></h2>
+
+<p>These are some <a href="#flyers">flyers</a> to print and <a href="#banners">banners</a> to add
+to your personal (or Free or Open Source project) website in order to reference FOSDEM.</p>
+
+<p>Feel free to use them to promote the event and <a href="page:contact">contact us</a> so
+we can talk about you as well !</p>
+
+<p>Our news page has an <a href="page:atom">RSS feed</a>. Feel free to aggregate it !</p>
+
+<a name="flyers"></a><h2>Flyers</h2>
+<p>A flyer for you to print and distribute. We usually print 2 flyers per A4 format page.</p>
+<table class="table">
+    <tbody>
+        <tr>
+            <%
+            [
+            { name: 'flyer', colour: 'colour' },
+            { name: 'flyer_bw', colour: 'black and white' },
+            ].each do |flyer|
+            %>
+            <td>
+                <h3><%= flyer[:colour].capitalize %> version</h3>
+                <a href="<%= asset(flyer[:name] + '.pdf').path %>" title="FOSDEM flyer PDF (<%= flyer[:colour] %>)"><%= img asset(flyer[:name] + '-thumb.png') %></a><br/>
+                (<%= filesize asset(flyer[:name] + '.pdf') %>)<br/>
+                <ul>
+                    <li><a href="<%= asset(flyer[:name] + '.pdf').path %>">PDF</a></li>
+                    <% ['600', '300', '90'].each do |dpi| %>
+                    <li><a href="<%= asset(flyer[:name] + '-' + dpi + 'dpi.png').path %>">PNG (<%= dpi %>dpi)</a></li>
+                    <% end %>
+                </ul>
+            </td>
+            <% end %>
+        </tr>
+    </tbody>
+</table>
+<p>Some good ideas of places to spam are:</p>
+<ul>
+    <li>Computer store</li>
+    <li>Geek friends and fellow hackers</li>
+    <li>University and school</li>
+    <li>At work (yes yes, don't be shy)</li>
+    <li>Hang one on your car</li>
+    <li>&hellip;</li>
+</ul>
+
+<a name="badges"></a><h2>Web Badges</h2>
+<table class="table table-striped table-bordered">
+    <tbody>
+        <%
+        files = Dir.entries('content/assets/badge') - %w{ . .. }
+        files.select{|f| ['png', 'gif', 'jpg', 'jpeg'].include? f.split('.').last}
+        .sort
+        .each do |filename|
+        name = filename.split('.')[0..-2].join('.')
+        badge = asset(filename)
+        link = @config[:base_url] + badge.path
+        %>
+        <tr>
+            <td>
+                <p><a href="<%= link %>"><%= img badge %></a></p>
+                <p>Link: <a href="<%= link %>"><%= link %></a></p>
+                <p>HTML markup:<br/>
+                <code>&lt;a href="http://fosdem.org"&gt;&lt;img src="<%= link %>" alt="FOSDEM, the Free and Open Source Software Developers' European Meeting"/&gt;&lt;/a&gt;</code></p>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+

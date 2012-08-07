@@ -42,7 +42,7 @@ index_filenames: [ 'index.html' ]
 # before and after the last site compilation.
 enable_output_diff: false
 
-base_url: 'https://staging.fosdem.org/2013'
+base_url: 'https://staging.fosdem.org'
 
 # configure auto_prune here because of a bug in the configuration lookup
 # in nanoc <= 3.5 (reported upstream)

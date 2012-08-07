@@ -3,61 +3,57 @@
 # Idea from here:
 # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
 
+def image_size(s)
+  path = case s
+         when String
+           s
+         when ::Nanoc::Item
+           s.path
+         when ::Nokogiri::XML::Element
+           s['src']
+         else
+           raise "unsupported object of type #{s.class}: #{s.inspect}"
+         end
+
+  filepath = if path.start_with? '/'
+               "output" + path
+             else
+               "output/" + path
+             end
+
+  $_image_size_cache ||= {}
+  hit = $_image_size_cache[path.to_sym]
+  unless hit
+    require 'image_size'
+    i = ImageSize.new(IO.read(filepath))
+    hit = [i.height.to_s, i.width.to_s]
+    $_image_size_cache[path.to_sym] = hit
+  end
+  hit
+end
+
 class ImageSizeFilter < Nanoc::Filter
 
   type :text
   identifier :imagesize
 
-  @@SELECTORS = [ '//img' ]
-
   def run(content, params={})
-    # Set assigns so helper function can be used
-    @item_rep = assigns[:item_rep] if @item_rep.nil?
-
-    selectors  = params.fetch(:select) { @@SELECTORS }
-    namespaces = params[:namespaces] || {}
-
     require 'nokogiri'
-    klass = ::Nokogiri::HTML
-
-    add_image_size(content, selectors, namespaces, klass, 'xhtml')
-  end
-
-  protected
-  def add_image_size(content, selectors, namespaces, klass, type)
-    # Ensure that all prefixes are strings
-    namespaces = namespaces.inject({}) { |new, (prefix, uri)| new.merge(prefix.to_s => uri) }
-
-    doc = content =~ /<html[\s>]/ ? klass.parse(content) : klass.fragment(content)
-    selectors.map { |sel| "#{sel}" }.each do |selector|
-      doc.xpath(selector, namespaces)
-      .select { |node| node.is_a? Nokogiri::XML::Element }
-      .select { |img| img.has_attribute?('src') }
-      .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
-      .select { |img| img['src'] =~ %r{^/|\.\.\/} }
-      .each do |img|
-        path = img['src']
-        dimensions = image_size(path)
-        dimensions.each{|k,v| img[k.to_s] = v.to_s}
-      end
+    doc = if content =~ %r{^\s*(<!DOCTYPE.+>\s*)?<html}
+            ::Nokogiri::HTML.parse(content)
+          else
+            ::Nokogiri::HTML.fragment(content)
+          end
+    doc.xpath('//img', {})
+    .select { |node| node.is_a? Nokogiri::XML::Element }
+    .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
+    .select { |img| img.has_attribute?('src') and img['src'] =~ %r{^/|\.\.\/} }
+    .each do |img|
+      height, width = image_size(img)
+      img['height'] = height
+      img['width'] = width
     end
-    result = doc.send("to_#{type}")
-
-    result
-  end
-
-  def image_size(path)
-    require 'image_size'
-    path = '/' + path unless path[0, 1] == '/'
-    height, width = begin
-                      hit = $_image_size_cache[path.to_sym]
-                      unless hit
-                        img = ImageSize.new(IO.read("output#{path}"))
-                        hit = [img.height, img.width]
-                        $_image_size_cache[path.to_sym] = hit
-                      end
-                      hit
-                    end
+    doc.to_xhtml
   end
 
 end

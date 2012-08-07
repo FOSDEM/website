@@ -13,7 +13,7 @@ Thank you very much!
     <% sponsors.select{|s| s.include_in_toplevel? }.reverse.each do |s| %>
 	<a href="#<%= s.id %>">
 		<% if s.thumb? then %>
-        <img src="<%= s.thumb %>" alt="<%= s.name %>"/>
+        <%= img s.thumb, {alt: s.name} %>
 		<% else %>
 		<%= s.name %>
 		<% end %>
@@ -60,7 +60,7 @@ Thank you very much!
                 <% if s.url? then %>
                 <a href="<%= s.url %>" alt="<%= s.url %>" title="<%= s.name %> website">
                 <% end %>
-                <img src="<%= s.logo %>"/>
+                <%= img s.logo %>
                 <% if s.url? then %>
                 </a>
                 <% end %>
