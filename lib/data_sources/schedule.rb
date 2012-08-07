@@ -32,20 +32,9 @@ module Fosdem
         @mtime = mtime
         @file = file
 
-        def fix!(meta)
-          # fix dates here
-          #[:start_datetime, :end_datetime, :conference_date].each do |n|
-          #  k = n.to_s
-          #  if meta.has_key? k
-          #    meta[k] = DateTime.parse(meta[k])
-          #  end
-          #end
-        end
-
         def to_items(hash, name)
           l = []
           hash.each do |id, meta|
-            fix! meta
             ["/schedule/#{name}/#{id}/"].each do |identifier|
               l << Nanoc3::Item.new('', meta, identifier, @mtime)
             end
@@ -58,11 +47,9 @@ module Fosdem
           if k[-1] == 's'
             name = k[0..-2]
             v.each do |id, meta|
-              fix! meta
               r << Nanoc3::Item.new('', meta, "/schedule/#{name}/#{id}/", mtime)
             end
           else
-            fix! v
             r << Nanoc3::Item.new('', v, "/schedule/#{k}/", mtime)
           end
         end
@@ -78,8 +65,6 @@ module Fosdem
             { title: 'iCal', mime: 'text/calendar', item: "/schedule/ical/track/#{track_slug}/" },
             { title: 'xCal', mime: 'text/xml',      item: "/schedule/xcal/track/#{track_slug}/" },
           ].each do |alt|
-            #meta = track.clone
-            #meta[:layout] = false
             r << Nanoc3::Item.new('', track, alt[:item], mtime)
             track[:alternative_representations] = [] unless track.has_key? :alternative_representations
             track[:alternative_representations] << alt

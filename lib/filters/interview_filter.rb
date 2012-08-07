@@ -1,12 +1,13 @@
-# vim: set ts=2 sw=2 et ai ft=ruby:
-#
-class InterviewFilter < Nanoc::Filter
-  identifier :interview
-  type :text
-  def run(content, params={})
-    content = content.gsub(%r{^<p>Q:\s*(.+?)</p>}m, '<h5><span class="label label-info">Q:</span> \1</h5>')
+# vim: set ts=2 sw=2 et ai ft=ruby fileencoding=utf-8:
 
-    unless params[:nolicense] then
+module Fosdem
+  class InterviewFilter < Nanoc::Filter
+    identifier :interview
+    type :text
+    def run(content, params={})
+      content = content.gsub(%r{^<p>Q:\s*(.+?)</p>}m, '<h5><span class="label label-info">Q:</span> \1</h5>')
+
+      unless params[:nolicense]
         content << '
 <div class="interview-license">
 <a rel="license" href="http://creativecommons.org/licenses/by/2.0/be/">
@@ -31,18 +32,20 @@ class InterviewFilter < Nanoc::Filter
 -->
 </div>
 '
-    end
+      end
 
-    # post-process questions by adding numbered anchors for direct URLs
-    # to individual questions
-    require 'nokogiri'
-    doc = Nokogiri::HTML(content)
-    doc.xpath(%#//h5#).each_with_index do |q, index|
-      q.children.first.add_previous_sibling(%|<a name="q#{index + 1}"/>|)
-      q.xpath(%#span[text()='Q:']#).wrap(%|<a href="#q#{index + 1}"></a>|)
-    end
-    content = doc.send("to_html")
+      # post-process questions by adding numbered anchors for direct URLs
+      # to individual questions
+      require 'nokogiri'
+      doc = Nokogiri::HTML(content)
+      doc.xpath(%#//h5#).each_with_index do |q, index|
+        q.children.first.add_previous_sibling(%|<a name="q#{index + 1}"/>|)
+        q.xpath(%#span[text()='Q:']#).wrap(%|<a href="#q#{index + 1}"></a>|)
+      end
+      content = doc.send("to_html")
 
-    content
+      content
+    end
   end
+
 end
