@@ -54,6 +54,12 @@ class ImageSizeFilter < Nanoc::Filter
       height, width = image_size(img)
       img['height'] = height
       img['width'] = width
+      style = "width:#{width}px; height=#{height}px; min-width:#{width}px; min-height:#{height}px;"
+      if img.has_attribute? 'style'
+        img['style'] = img['style'] + " " + style
+      else
+        img['style'] = style
+      end
     end
     doc.to_xhtml
   end

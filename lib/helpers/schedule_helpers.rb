@@ -34,6 +34,12 @@ def img(item, attr={})
             end
   a[:width] = width
   a[:height] = height
+  style = "width:#{width}px; height:#{height}px; min-width:#{width}px; min-height:#{height}px;"
+  if a.has_key? :style
+    a[:style] = a[:style] + " " + style
+  else
+    a[:style] = style
+  end
   xml.img(a)
   buffer
 end

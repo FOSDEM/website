@@ -24,51 +24,25 @@ Thank you very much!
 <hr />
 
 <% [
-{
-:title => '<h3>In alphabetical order</h3>',
-:id => 'sponsors',
-:section => '',
-},
-{
-:title => '<h1>Thanks</h1>',
-:id => 'thanks',
-:section => 'thanks',
-},
+{ title: '<h3>In alphabetical order</h3>', id: 'sponsors', section: '' },
+{ title: '<h1>Thanks</h1>',                id: 'thanks',   section: 'thanks' },
 ].each_with_index do |section, index|
 %>
-<% unless index == 0 %>
-<hr />
+<% unless index == 0 %><hr /><% end %>
+<a name="<%= section[:id] %>"></a><%= section[:title] %>
+<%
+sponsors.select{|s| section[:section] == s.section }.each do |s|
+%>
+<a name="<%= s.id %>"></a>
+<h2><a href="<%= s.url %>" title="<%= s.name %> website"><%= s.name %></a></h2>
+<div class="sponsor-block">
+<% if s.logo? %>
+<% if s.url? %><a href="<%= s.url %>" title="<%= s.name %> website"><% end %>
+<%= img s.logo, {class: "sponsor-logo"} %>
+<% if s.url? %></a><% end %>
+<% end %>
+<%= s.propaganda %>
+</div>
+<% end %>
 <% end %>
 
-<%= section[:title] %>
-
-<table id="<%= section[:id] %>">
-	<tbody>
-        <%
-        sponsors
-        .select{|s| section[:section] == s.section }
-        .each do |s| %>
-		<tr>
-			<td colspan="2">
-                <h2><a name="#<%= s.id %>" id="<%= s.id %>"></a><a href="<%= s.url %>"><%= s.name %></a></h2>
-			</td>
-		</tr>
-		<tr>
-            <td><%= s.propaganda %><br/><br/></td>
-            <td>
-                <% if s.logo? then %>
-                <% if s.url? then %>
-                <a href="<%= s.url %>" alt="<%= s.url %>" title="<%= s.name %> website">
-                <% end %>
-                <%= img s.logo %>
-                <% if s.url? then %>
-                </a>
-                <% end %>
-                <% end %>
-            </td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
-
-<% end %>

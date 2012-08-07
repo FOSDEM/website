@@ -1,6 +1,7 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 
-def digest(items)
+module Fosdem
+  def digest(items)
     items = if items.is_a? Array
               items
             else
@@ -21,5 +22,6 @@ def digest(items)
     end
 
     sha.hexdigest.downcase
+  end
 end
 

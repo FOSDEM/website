@@ -38,3 +38,13 @@ ul.horizontal-list li:first-child:before {
 .sidebar-nav {
   margin-left: 0 !important;
 }
+img.sponsor-logo {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+div.sponsor-block {
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px dashed #ccc;
+}

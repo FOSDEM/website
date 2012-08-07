@@ -1,7 +1,5 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
-module BCrumbs
-
-  class Error < RuntimeError; end
+module Fosdem
 
   def bcrumbs
     require 'builder'
