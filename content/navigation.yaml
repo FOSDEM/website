@@ -7,8 +7,7 @@ navigation:
     - /about/sponsors/
     - /about/faq/
   - /schedule/:
-    - /schedule/day/saturday/
-    - /schedule/day/sunday/
+    - /schedule/days/
     - /schedule/tracks/
     - /schedule/events/
     - /distrominiconf/
