@@ -1,0 +1,130 @@
+---
+title: Accommodation
+---
+
+<p>FOSDEM does not recommend any particular hotel or hostel. However, here is a
+list of popular accommodations for FOSDEM visitors to get you started. You can
+also check <a href="http://lists.fosdem.org/mailman/listinfo">the mailing
+list</a> for more information. <a target="_blank"
+href="http://wikitravel.org/en/Brussels#Sleep">wikitravel</a> also lists some
+places to stay.</p>
+
+<a name="hotels"></a><h2>Hotels</h2>
+<p>Brussels has a large selection of hotels in every pricerange. Check out
+hotel reviews and prices at
+<a href="http://www.booking.com/searchresults.html?city=-1955538">booking.com</a>
+or
+<a href="http://www.tripadvisor.com/Hotels-g188644-Brussels-Hotels.html">tripadvisor.com</a>.
+</p>
+
+<h2>CouchSurfing / BeWelcome</h2>
+<p>Are you looking for a couch or do you maybe have one to offer?
+Join the FOSDEM <a target="_new" href="http://www.couchsurfing.com/group.html?gid=16380">CouchSurfing</a>
+or <a target="_new" href="http://www.bewelcome.org/groups/524">BeWelcome</a> group and find fellow visitors!</p>
+
+<%
+{
+    'Bed & Breakfast' => {
+        'Bed & Brussels' => {
+            street: 'Main Office: Rue Kindermans, 9',
+            pcode: '1050',
+            tel: '2 6460737',
+            fax: '2 6440114',
+            url: 'http://www.bnb-brussels.be/en/index.html',
+            map: 'http://goo.gl/maps/kV4GK',
+        },
+    },
+    'Youth Hostels' => {
+        'Bruegel Youth Hostel' => {
+            street: 'Heilig Geeststraat, 2',
+            pcode: '1000',
+            tel: '2 5110436',
+            fax: '2 5120711',
+            email: 'brussel@vjh.de',
+            url: 'http://www.jeugdherbergen.be/',
+            map: 'http://goo.gl/maps/BfJZz',
+        },
+        'Sleep Well Youth Hostel' => {
+            street: 'Rue du Damier, 23',
+            pcode: '1000',
+            tel: '2 2185050',
+            fax: '2 2181313',
+            email: 'info@sleepwell.be',
+            url: 'http://www.sleepwell.be',
+            map: 'http://goo.gl/maps/DQGlH',
+        },
+        'Youth Hostel Génération Europe' => {
+            street: "Rue de l'Elephant, 4",
+            pcode: '1080',
+            tel: '2 4103858',
+            fax: '2 4103905',
+            url: 'http://www.lesaubergesdejeunesse.be/',
+            map: 'http://goo.gl/maps/HTUem',
+        },
+        'Youth Hostel Jacques Brel' => {
+            street: 'Rue de la Sablonniere, 30',
+            pcode: '1000',
+            tel: '2 2180187',
+            fax: '2 2172005',
+            email: 'brussels.brel@laj.be',
+            url: 'http://www.lesaubergesdejeunesse.be/',
+            map: 'http://goo.gl/maps/2Jydm',
+        },
+        '2GO4 Quality Hostel' => {
+            street: 'Avenue Emile Jacqmain, 99',
+            pcode: '1000',
+            tel: '2 2193019',
+            fax: '2 2193009',
+            email: 'info@2go4.be',
+            url: 'http://www.2go4.be/',
+            map: 'http://goo.gl/maps/mJybH',
+        },
+        'CHEB: Centre Van Gogh' => {
+            street: 'Rue Traversiere, 8',
+            pcode: '1210',
+            tel: '2 2170158',
+            fax: '2 2197995',
+            email: 'info@chab.be',
+            url: 'http://www.chab.be/',
+            map: 'http://goo.gl/maps/95VBf',
+        },
+        'Auberge des 3 Fontaines' => {
+            street: 'Chaussée de Wavre, 2057',
+            pcode: '1160',
+            tel: '2 6632432',
+            fax: '2 6721939',
+            email: 'contact@auberge3fontaines.be',
+            url: 'http://www.auberge3fontaines.be/en/',
+        },
+    },
+}.each do |section, hotels|
+%>
+<h2><%= section.to_s %></h2>
+<p>In alphabetical order:</p>
+<%
+hotels.keys.sort.each_with_index do |name, i|
+hotel = hotels[name]
+%>
+<% if i%2==0 %>
+<div class="row-fluid">
+<% end %>
+<div class="vcard hotel span6">
+    <h3 class="n org"><%= name %></h3>
+    <span class="adr">
+        <span class="street-address"><%= hotel[:street] %></span>
+        <% if hotel[:map] %><a href="<%= hotel[:map] %>" title="<%= name %> on Google Maps"><i class="icon-map-marker"></i></a><% end %>
+        <br/>
+        <span class="postal-code"><%= hotel[:pcode] %></span>
+        <span class="locality"><%= hotel.fetch(:loc, 'Brussels') %></span><br/>
+        <span class="country-name">Belgium</span><br/>
+        <% if hotel[:email] %><i class="icon-envelope"></i> Email: <a class="email" href="mailto:<%= hotel[:email] %>"><%= hotel[:email] %></a><br/><% end %>
+        <% if hotel[:tel] %><i class="icon-info-sign"></i> Tel: <a class="tel" href="tel:<%= ("+32"+hotel[:tel]).gsub(/[\s\.]+/,'') %>">+32 <%= hotel[:tel] %></a><br/><% end %>
+        <% if hotel[:fax] %><i class="icon-print"></i> Fax: <span class="fax">+32 <%= hotel[:fax] %></span><br/><% end %>
+        <i class="icon-globe"></i> <a class="url" href="<%= hotel[:url] %>"><%= hotel[:url].gsub(%r{^https.://},'') %></a>
+    </span>
+</div>
+<% if i%2==1 or i>=hotels.size-1%>
+</div> <!-- row -->
+<% end %>
+<% end %>
+<% end %>
