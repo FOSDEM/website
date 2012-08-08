@@ -228,10 +228,6 @@ module Fosdem
 
   $to_path = lambda{|item| pathof item}
 
-  KILO_SIZE = 1024.0
-  MEGA_SIZE = 1024.0 * 1024.0
-  GIGA_SIZE = 1024.0 * 1024.0 * 1024.0
-
   def filesize(item)
     raise "item #{item.inspect} is not binary" unless item.binary?
     raise "item #{item.inspect} is binary but has no filename" unless item[:filename]
@@ -239,13 +235,13 @@ module Fosdem
     case
     when size == 1
       "1 byte"
-    when size < KILO_SIZE
+    when size < 1024
       "%d bytes" % size
-    when size < MEGA_SIZE
-      "%.2f KiB" % (size / KILO_SIZE)
-    when size < GIGA_SIZE
-      "%.2f GiB" % (size / MEGA_SIZE)
-    else "%.2f GiB" % (size / GIGA_SIZE)
+    when size < 1024 * 1024
+      "%.2f KiB" % (size / 1024.0)
+    when size < 1024 * 1024 * 1024
+      "%.2f GiB" % (size / 1024.0 * 1024)
+    else "%.2f GiB" % (size / 1024.0 * 1024 * 1024)
     end
   end
 
