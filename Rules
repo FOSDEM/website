@@ -361,7 +361,7 @@ route '/sponsors/*/' do
   end
 end
 
-# and this is for everything else
+# and this is for everything else:
 route '*' do
   if item.binary? or ['xml'].include? item[:extension]
     # Write binary item and XML files with identifier /foo/ to /foo.ext
