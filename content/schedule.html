@@ -104,13 +104,14 @@ speakers on those topics.</p>
             rooms = t[:events_per_room_per_day].fetch(d[:slug].to_sym, {}).keys
             %>
             <% unless rooms.empty? %>
-            <td><%= rooms.map(&$to_room).map{|r| l(r) + ": #{r[:occupation_by_day][d[:slug].to_sym][:start_time]}-#{r[:occupation_by_day][d[:slug].to_sym][:end_time]}"}.join(', ') %></td>
+            <td><%= rooms.map(&$to_room).map{|r| l(r) + (r[:occupation_by_day] ? ": #{r[:occupation_by_day][d[:slug].to_sym][:start_time]}-#{r[:occupation_by_day][d[:slug].to_sym][:end_time]}" : "")}.join(', ') %></td>
             <% else %>
             <td>-</td>
             <% end %>
             <% end %>
         </tr>
         <% end %>
+        <% puts "after block 1" %>
     </tbody>
 </table>
 <% else %>
