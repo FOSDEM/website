@@ -81,37 +81,14 @@ preprocess do
   # the metadata in content/buildings.yaml
   # (note that the ranking/order of buildings also stems from the order
   # of buildings as defined in content/buildings.yaml
-  $buildings = begin
-                 buildings = {}
-                 $item_by_id.fetch('/buildings/')[:map].each do |building, roomlist|
-                   roomlist = [] if roomlist.nil?
-
-                   bcode = building.to_s.upcase
-                   list = []
-                   roomlist.map(&$to_room).each do |r|
-                     list << r
-                   end
-                   rooms.select{|r| r[:slug].upcase.start_with? bcode}.each do |r|
-                     list << r
-                   end
-                   buildings[bcode] = list.uniq{|r| r[:slug]}.sort_by{|r| [r[:rank], r[:conference_room_id]]}
-                   buildings[bcode].each do |r|
-                     r[:building] = bcode
-                   end
-                 end
-
-                 # make sure there are no rooms left without a :building meta attribute
-                 begin
-                   errors = rooms.select{|r| r[:building].nil? }
-                   raise "there are #{errors.size} room(s) without a building assignment, please put them into content/building.yaml: #{errors.map{|r| r[:slug]}.join(", ")}" unless errors.empty?
-                 end
-
-                 buildings
-               end
+  # (defined in lib/helpers/schedule_helpers.rb)
+  $buildings = build_room_buildings()
 
 end
 
 ##### COMPILING
+
+### CSS STYLESHEETS
 
 # skip those, as they are combined into content/assets/style/fosdem.css
 compile '/assets/style/parts/*' do
@@ -120,6 +97,8 @@ compile '/assets/style/parts/*' do
   # any ERB in it)
   filter :erb unless item.identifier =~ %r{/bootstrap\.css$}
 end
+# route them into oblivion, as we will only deploy the aggregated
+# CSS file:
 route '/assets/style/parts/*' do;end
 
 compile '/assets/style/*' do
@@ -138,6 +117,8 @@ compile '/assets/style/*' do
   filter :rainpress
 end
 
+### NAVIGATION
+
 # We only use the /navigation/ item (content/navigation.yaml)
 # internally and don't render it to the website as a file, hence
 # short-circuit any compilation and routing right here:
@@ -147,11 +128,15 @@ route   '/navigation/' do;end
 compile '/buildings/'  do;end
 route   '/buildings/'  do;end
 
+### NEWS AND HEADLINES
+
 # don't apply any filters on the headlines/* items as they are already
 # rendered by the "make_headlines" helper at preprocessing stage
 # (they do not exist in the filesystem under content/ -- instead, they
 # are items that are created on-the-fly as headlines from content/news/*)
 compile '/headlines/*' do;end
+
+### EVERYTHING ELSE (real content)
 
 compile '*' do
   if item.binary?
@@ -168,6 +153,8 @@ compile '*' do
     # only run the chain of filters when it's not an .xml or .erb or .ics file
     unless ['xml', 'erb', 'ics'].include? item[:extension] then
 
+      # don't process content that is generated from Pentabarf, or content
+      # pages that have "kind: internal" in their metadata
       unless item.identifier =~ %r{^/schedule/} or item[:kind] == 'internal'
 
         # convert .md and .markdown files to HTML using the
@@ -248,8 +235,10 @@ end
 # layouts/default.html, but is not to be rendered as a file of its
 # own into output
 route '/schedule_navigation/' do;end
+# same here:
 route '/sponsors_navigation/' do;end
 
+# Speaker photos:
 route '/photos/*' do
   name, ext = if item.identifier.split('/')[-1] =~ %r{^(.+)\.(.+)$}
                 [ $1, $2 ]
@@ -258,15 +247,7 @@ route '/photos/*' do
               end
 
   suffix = if @site.config[:digest_assets] then
-             require 'digest/sha2'
-             sha = Digest::SHA256.new
-             if item.binary? then
-               sha << IO.read(item[:filename])
-             else
-               sha << item.raw_content
-             end
-             digest = sha.hexdigest.downcase
-             "-#{digest}"
+             "-#{digest item}"
            else
              ""
            end
@@ -274,6 +255,7 @@ route '/photos/*' do
   "#{$prefix}/schedule/speaker/#{name}#{suffix}.#{ext}"
 end
 
+# iCal, xCal, XML stuff from Pentabarf:
 route '/schedule/xcal/track/*' do
   "#{$prefix}/schedule/track/#{item.identifier.split('/')[-1]}.xcs"
 end
@@ -308,6 +290,10 @@ route '/assets/style/*/' do
            end
   "#{$prefix}#{item.identifier.chop}#{suffix}.#{item[:extension]}"
 end
+# do the same with assets/img/*, but do NOT append a digest, as they are referenced
+# by their original name in the CSS files (e.g. in bootstrap.css); while we could also
+# process those to replace the filenames with the ones that include the digest, that is
+# quite a lot of hassle, and we already optimize a lot of things on the website anyway
 route '/assets/img/*/' do
   "#{$prefix}#{item.identifier.chop}.#{item[:extension]}"
 end
@@ -319,6 +305,7 @@ route '/assets/badge/*/' do
   "#{$prefix}/support/promote/badge/#{item.identifier.chop.split('/').last}.#{item[:extension]}"
 end
 
+# everything else in assets/* gets a digest suffix
 route '/assets/*/' do
   suffix = if @site.config[:digest_assets]
              "-" + digest(item)
@@ -328,20 +315,13 @@ route '/assets/*/' do
   "#{$prefix}#{item.identifier.chop}#{suffix}.#{item[:extension]}"
 end
 
-route %r{^/schedule/(thumbnail|photo)/speaker/} do
-end
+# don't deploy these anywhere, they are only used internally
+route %r{^/schedule/(thumbnail|photo)/speaker/} do;end
 
+# this is where they are processed to, and these ones get to be deployed:
 route '/schedule/speaker_thumbnails/*/' do
   suffix = if @site.config[:digest_assets]
-             require 'digest/sha2'
-             sha = Digest::SHA256.new
-             if item.binary? then
-               sha << IO.read(item[:filename])
-             else
-               sha << item.raw_content
-             end
-             digest = sha.hexdigest.downcase
-             "-#{digest}"
+             "-#{digest item}"
            else
              ""
            end
@@ -358,11 +338,7 @@ route '/sponsors/*/' do
       name = $2
       size = $3
       suffix = if @site.config[:digest_sponsor_logos] then
-                 require 'digest/sha2'
-                 sha = Digest::SHA256.new
-                 sha << IO.read(item[:filename])
-                 digest = sha.hexdigest.downcase
-                 "-#{digest}"
+                 "-#{digest item}"
                else
                  ""
                end
@@ -385,6 +361,7 @@ route '/sponsors/*/' do
   end
 end
 
+# and this is for everything else
 route '*' do
   if item.binary? or ['xml'].include? item[:extension]
     # Write binary item and XML files with identifier /foo/ to /foo.ext

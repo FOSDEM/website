@@ -300,4 +300,36 @@ module Fosdem
     item[:kind] == 'sponsor' or (item[:kind] != 'page' and not item.binary? and item.identifier.match(%r{^/sponsors?/.+/}).nil? ? false : true)
   end
 
+  # compute room to building associations programatically and using
+  # the metadata in content/buildings.yaml
+  # (note that the ranking/order of buildings also stems from the order
+  # of buildings as defined in content/buildings.yaml
+  def build_room_buildings()
+    buildings = {}
+    $item_by_id.fetch('/buildings/')[:map].each do |building, roomlist|
+      roomlist = [] if roomlist.nil?
+
+      bcode = building.to_s.upcase
+      list = []
+      roomlist.map(&$to_room).each do |r|
+        list << r
+      end
+      rooms.select{|r| r[:slug].upcase.start_with? bcode}.each do |r|
+        list << r
+      end
+      buildings[bcode] = list.uniq{|r| r[:slug]}.sort_by{|r| [r[:rank], r[:conference_room_id]]}
+      buildings[bcode].each do |r|
+        r[:building] = bcode
+      end
+    end
+
+    # make sure there are no rooms left without a :building meta attribute
+    begin
+      errors = rooms.select{|r| r[:building].nil? }
+      raise "there are #{errors.size} room(s) without a building assignment, please put them into content/building.yaml: #{errors.map{|r| r[:slug]}.join(", ")}" unless errors.empty?
+    end
+
+    buildings
+  end
+
 end
