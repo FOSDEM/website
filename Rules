@@ -46,7 +46,18 @@ preprocess do
   # auto-set the title of content/interviews/*
   decorate_interviews
 
-  ### DO NOT CREATE ANY ITEMS BELOW THIS LINE
+  # duplicate favicon.ico to also deploy it under output/ and not just
+  # under e.g. ouput/2013/
+  begin
+    favicon = @items.select{|i| i.identifier == '/favicon/'}.first
+    if favicon
+      @items << dup_item(favicon, '/root_favicon/')
+    else
+      raise "no favicon!"
+    end
+  end
+
+  ### DO NOT CREATE ANY ITEMS BELOW THIS LINE #######################################################
   # As we are collecting, caching, optimizing...
 
   # build a global hash of items by their identifier, much faster for lookups
@@ -359,6 +370,12 @@ route '/sponsors/*/' do
   else
     # do nothing with the non-binary files
   end
+end
+
+# we duplicated the favicon.ico to also route one into the content
+# root (output/), rather than in e.g. output/2013/
+route '/root_favicon/' do
+  "/favicon.#{item[:extension]}"
 end
 
 # and this is for everything else:

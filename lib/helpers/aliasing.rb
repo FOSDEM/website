@@ -1,6 +1,24 @@
 # vim: set ts=2 sw=2 et ai ft=ruby fileencoding=utf-8:
 
 module Fosdem
+
+  def dup_item(item, new_identifier)
+    new_identifier.insert(0, '/') unless new_identifier[0,1] == '/'
+    new_identifier << '/' unless new_identifier[-1,1] == '/'
+    a = {
+      :mtime => item.mtime,
+      :binary => item.binary?,
+    }
+    if item.binary?
+      a[:filename] = item[:filename]
+      content = item[:filename]
+    else
+      content = item.raw_content
+    end
+
+    Nanoc::Item.new(content, item.attributes, new_identifier, a)
+  end
+
   def make_aliases
     @items.each do |item|
       unless item[:aliases].nil? then
