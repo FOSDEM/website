@@ -1,0 +1,160 @@
+---
+title: FOSDEM Mobile
+layout: mobile
+---
+<div data-role="page">
+	<div data-role="header">
+        <h1><%= conference()[:title] %></h1>
+	</div>
+	<div data-role="content">	
+        <ul data-role="listview" data-inset="false">
+            <li><a href="#tracks">Tracks</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#talks">Talks</a></li>
+        </ul>
+	</div>
+</div>
+
+<div data-role="page" id="tracks">
+    <div data-role="header">
+        <h1><%= conference()[:title] %>: Tracks</h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-inset="false">
+            <li><a href="#keynotes">Keynotes</a></li>
+            <li><a href="#maintracks">Main Tracks</a></li>
+            <li><a href="#lightningtalks">Lightning Talks</a></li>
+            <li><a href="#devrooms">Devrooms</a></li>
+        </ul>
+    </div>
+</div>
+
+<%
+more_tracks = []
+
+[
+    {id: "keynotes",       heading: "Keynotes",        type: "keynote"      },
+    {id: "lightningtalks", heading: "Lightning Talks", type: "lightningtalk"},
+    {id: "certifications", heading: "Certifications",  type: "certification"},
+    {id: "maintracks",     heading: "Main Tracks",     type: "maintrack"    },
+    {id: "devrooms",       heading: "Devrooms",        type: "devroom"      },
+].each do |duty|
+    list = tracks.select{|t| t[:type] == duty[:type]}
+    count = list.size
+%>
+<div data-role="page" id="<%= duty[:id] %>">
+    <div data-role="header">
+        <h1>Tracks: <%= duty[:heading] %></h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-inset="false">
+        <%
+            if count < 2
+                events = list.first[:events].map &$to_event
+                events.each do |event|
+        %>
+            <li><a href="#event-<%= event[:slug] %>"><%= event[:title] %></a></li>
+        <%
+                end #event
+            else
+                list.each do |track|
+                    more_tracks << track
+        %>
+            <li><a href="#track-<%= track[:slug] %>"><%= track[:name] %></a></li>
+        <%
+                end #list
+            end #if count
+        %>
+        </ul>
+    </div>
+</div>
+<%
+end #duty
+%>
+
+<%
+more_tracks.each do |track|
+%>
+<div data-role="page" id="track-<%= track[:slug] %>">
+    <div data-role="header">
+        <h1>Tracks: <%= track[:name] %></h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-inset="false">
+        <%
+            track[:events_by_day].each do |d, eventslugs|
+                day = $item_by_id.fetch "/schedule/day/#{d}/"
+                eventcount = eventslugs.map(&$to_event).size
+        %>
+            <li><a href="#track-<%= track[:slug] %>-<%= day[:slug] %>"><%= day[:title] %> (<%= eventcount %>)</a></li>
+        <%
+            end #track.each
+        %>
+        </ul>
+    </div>
+</div>
+
+<%
+    slices = []
+
+    track[:events_by_day].each do |d, eventslugs|
+        day = $item_by_id.fetch "/schedule/day/#{d}/"
+        events = eventslugs.map(&$to_event)
+        if events.size > 8
+            start_times = events.map{|event| event[:start_time]}.uniq
+%>
+<div data-role="page" id="track-<%= track[:slug] %>-<%= day[:slug] %>">
+    <div data-role="header">
+        <h1><%= track[:name] %>: <%= day[:title] %></h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-inset="false">
+        <%
+            start_times.each_slice(2).each_cons(2) do |p|
+                start_times_slice = p.first
+                next_up = p.last
+                s = start_times_slice.first
+                e = next_up.first
+                id = s.gsub /:/, ''
+
+                slice_events = events.select{|event| start_times_slice.include? event[:start_time]}
+
+                slices << { id: id, start: s, :end => e, events: slice_events }
+        %>
+            <li><a href="#track-<%= track[:slug] %>-<%= day[:slug] %>-<%= id %>"><%= s %> - <%= e %> (<%= slice_events.size %>)</a></li>
+        <%
+            end #start_times_slice
+        %>
+        </ul>
+    </div>
+</div>
+<%
+        else
+%>
+<div data-role="page" id="track-<%= track[:slug] %>-<%= day[:slug] %>">
+    <div data-role="header">
+        <h1><%= track[:name] %>: <%= day[:title] %></h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-inset="false">
+        <%
+            events.sort_by{|event| [event[:start_time], event[:room_rank]]}.each do |event|
+        %>
+            <li><a href="#event-<%= event[:slug] %>"><%= event[:start_time] %>: <%= event[:room_name] %>: <%= event[:title] %></a></li>
+        <%
+            end #events
+        %>
+        </ul>
+    </div>
+</div>
+<%
+        end #if
+    end #track.each
+%>
+<%
+end #more_track.each
+%>
+
+</body>
+</html>
