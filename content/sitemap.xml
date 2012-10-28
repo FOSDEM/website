@@ -1,8 +1,8 @@
 <%=
-xml_sitemap :items => @items.reject do |i|
+xml_sitemap :items => @items.reject{|i|
   i.binary? or
   i[:kind] == 'internal' or
   i.reps.empty? or
   i.reps.first.raw_paths.empty?
-end.sort_by{|i| i.identifier}
+}.sort_by{|i| i.identifier}
 %>
