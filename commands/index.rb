@@ -5,11 +5,12 @@ summary     'loads the content (in output/) into the Solr search index'
 aliases     :i, :solr
 flag        :l, :live, "operate on a live Solr instance"
 option      :o, :output, "output file for the Solr add XML document", :argument => :required
+option      :u, :url, "override Solr instance URL (defaults to http://localhost:8983/solr)", :argument => :required
 
 class SolrIndex < ::Nanoc::CLI::CommandRunner
   def run
     total_time = start_time = Time.now
-    if options[:live]
+    if options[:live] or options[:url]
       require 'rsolr'
     end
     require 'builder'
@@ -21,9 +22,15 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
     self.site.compiler.load
 
     solr = begin
-             if options[:live]
-               conf = site.config.fetch :solr, {}
-               url = conf.fetch 'url', 'http://localhost:8983/solr/'
+             url = if options[:url]
+                     options[:url]
+                   elsif options[:live]
+                     conf = site.config.fetch :solr, {}
+                     url = conf.fetch 'url', 'http://localhost:8983/solr/'
+                   else
+                     nil
+                   end
+             if url
                RSolr.connect :url => url
              else
                nil
@@ -70,11 +77,16 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
                       [:schedule]
                     when %r{^/news/}
                       [:news]
-                    when %r{^/interview/}
+                    when %r{^/interviews/}
                       [:interview]
                     else
                       [:content]
                     end
+            interview_year = if item.identifier =~ %r{^/interviews/(\d{4})-}
+                               $1
+                             else
+                               nil
+                             end
             #content = Nokogiri::HTML(item.raw_content).text
             raise "item #{item.identifier} has #{item.reps.size}, can't decide which one to use" unless item.reps.size == 1
             #raw_content = item.compiled_content(:snapshot => :pre)
@@ -82,17 +94,22 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
             content = Nokogiri::HTML(item.reps.first.content[:last]).text.strip
             #content = Hpricot(raw_content).scrub.to_s.strip
 
-            docs << {
+            doc = {
               :id => item.path,
               :title => item[:title],
               :type => types.map(&:to_s),
               :content => content,
             }
 
+            doc[:interview_year] = interview_year if interview_year
+
+
+            docs << doc
+
             xml.doc do
               xml.field(item.path, :name => "id")
               if item[:title]
-                xml.field(item[:title], :name => "title")
+                xml.field(item[:title], :name => "title", :boost => "10.0")
               else
                 $stderr.puts "HUH, no title for #{item.path} ?"
               end
@@ -121,7 +138,9 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
       begin
         start = Time.now
         begin
-          solr.add docs
+          solr.add docs do |doc|
+            doc.field_by_name(:title).attrs[:boost] = 10.0
+          end
         rescue RSolr::Error::Http => e
           body = eval e.response[:body]
           raise "Solr responded with HTTP code #{e.response[:status]}: #{body['error']['msg']}"

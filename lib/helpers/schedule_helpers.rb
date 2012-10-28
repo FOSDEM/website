@@ -54,7 +54,7 @@ module Fosdem
 
     case item
     when Array
-      item.map{|i| l(i)}.join(sep)
+      item.map{|i| l(i, title, sep, detail)}.join(sep)
     when Nanoc::Item
       text = case title
              when Symbol

@@ -10,6 +10,7 @@
         <% (@item[:alternative_representations] or []).each do |alt| %>
         <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= $item_by_id[alt[:item]].path %>" />
         <% end %>
+        <% if @item[:head_erb_injection] %><%%= <%= @item[:head_erb_injection] %> %><% end %>
         <title><%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %></title>
     </head>
     <% sponsors_under_navigation = ((@item[:sponsors_under_navigation] == true) or (@item.identifier =~ %r{^/schedule/event/.+})) %>
@@ -36,6 +37,15 @@
               %>
               <li<%= cls %>><%= l(item) %></li>
               <% end %>
+              <% unless item[:no_search] %>
+              <li class="divider-vertical"></li>
+              <form class="navbar-form pull-right" action="/search/" method="get">
+                <div class="input-prepend">
+                  <span class="add-on"><i class="icon-search"></i></span>
+                  <input type="text" name="q" id="q" class="span2" value="" placeholder="Search" />
+                </div>
+              </form>
+              <% end %>
 						</ul>
 					</div>
 				</div>
@@ -44,46 +54,58 @@
 
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<div class="span2">
-					<ul class="well sidebar-nav">
+        <div class="span2">
+          <% unless item[:no_navigation] %>
+          <ul class="well sidebar-nav" id="navigation">
             <ul class="nav nav-list">
+              <% if item[:navigation_erb_injection_before] %>
+                <%%= <%= item[:navigation_erb_injection_before] %> %>
+              <% end %>
+              <% if item[:navigation_erb_injection] %>
+                <%%= <%= item[:navigation_erb_injection] %> %>
+              <% else %>
               <%=
-                case @item.identifier
-                when %r{^/schedule/$}
-                  $schedule_navigation ||= navigation($item_by_id.fetch('/schedule/').path)
-                when %r{^/schedule/track}
-                  $track_navigation ||= navigation($item_by_id.fetch('/schedule/tracks/').path)
-                when %r{^/schedule/event}
-                  $event_navigation ||= navigation($item_by_id.fetch('/schedule/events/').path)
-                when %r{^/schedule/speaker}
-                  $speaker_navigation ||= navigation($item_by_id.fetch('/schedule/speakers/').path)
-                when %r{^/schedule/room}
-                  $room_navigation ||= navigation($item_by_id.fetch('/schedule/rooms/').path)
-                else
-                  navigation(@item.path)
-                end
-              %>
+                   case @item.identifier
+                   when %r{^/schedule/$}
+                     $schedule_navigation ||= navigation($item_by_id.fetch('/schedule/').path)
+                   when %r{^/schedule/track}
+                     $track_navigation ||= navigation($item_by_id.fetch('/schedule/tracks/').path)
+                   when %r{^/schedule/event}
+                     $event_navigation ||= navigation($item_by_id.fetch('/schedule/events/').path)
+                   when %r{^/schedule/speaker}
+                     $speaker_navigation ||= navigation($item_by_id.fetch('/schedule/speakers/').path)
+                   when %r{^/schedule/room}
+                     $room_navigation ||= navigation($item_by_id.fetch('/schedule/rooms/').path)
+                   else
+                     navigation(@item.path)
+                   end
+               %>
+               <% end %>
+               <li class="divider"></li>
+               <% unless item[:navigation_erb_injection] %>
+                 <% [ '/schedule/' ].map(&$to_item).each do |item| %> 
+                   <li><a href="<%= pathof item %>"><i class="icon-download"></i>&nbsp;<%= item[:title] %></a></li>
+                 <% end %>
+                 <% [ '/schedule/ical/', '/schedule/xcal/' ].map(&$to_item).each do |item| %> 
+                   <li><a href="<%= pathof item %>"><i class="icon-calendar"></i>&nbsp;<%= item[:title] %></a></li>
+                 <% end %>
+               <% end %>
             </ul>
           </ul>
           <% if sponsors_under_navigation and @item[:no_sponsors] != true%>
-            <ul class="well sidebar-nav">
+            <ul class="well sidebar-nav" id="sponsor-box">
               <ul class="nav nav-list">
-                <li class="nav-header">Support</li>
                 <li>
-                <div class="btn-group">
-                  <a href="<%= pathof '/support/donate/' %>" class="btn btn-primary">Donate</a>
-                  <a href="<%= pathof '/support/promote/' %>" class="btn btn-success">Promote</a>
-                </div>
+                  <a href="<%= pathof '/support/donate/' %>"><i class="icon-gift"></i>&nbsp;Donate</a>
+                </li>
+                <li>
+                  <a href="<%= pathof '/support/promote/' %>"><i class="icon-bullhorn"></i>&nbsp;Promote</a>
                 </li>
                 <%= $sponsors_navigation_item.compiled_content %>
               </ul>
             </ul>
           <% end %>
-          <ul class="well horizontal-list">
-            <% [ '/schedule/', '/schedule/ical/', '/schedule/xcal/' ].map(&$to_item).each do |item| %> 
-              <li><%= l(item) %></li>
-            <% end %>
-          </ul>
+          <% end %> <!-- navigation -->
         </div>
         <div class="<%= sponsors_under_navigation ? 'span10' : 'span8' %>">
           <% if not @item[:nohead] %>
@@ -96,14 +118,14 @@
         </div>
         <% unless sponsors_under_navigation or (@item[:no_sponsors] == true) %>
           <div class="span2">
-            <ul class="well sidebar-nav">
+            <ul class="well sidebar-nav" id="sponsor-box">
               <ul class="nav nav-list">
                 <li class="nav-header">Support</li>
                 <li>
-                <div class="btn-group">
-                  <a href="<%= pathof '/support/donate/' %>" class="btn btn-primary">Donate</a>
-                  <a href="<%= pathof '/support/promote/' %>" class="btn btn-success">Promote</a>
-                </div>
+                  <a href="<%= pathof '/support/donate/' %>"><i class="icon-gift"></i>&nbsp;Donate</a>
+                </li>
+                <li>
+                  <a href="<%= pathof '/support/promote/' %>"><i class="icon-bullhorn"></i>&nbsp;Promote</a>
                 </li>
                 <%= $sponsors_navigation_item.compiled_content %>
               </ul>

@@ -1,25 +1,32 @@
+html {
+  height: 100%;
+}
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
+  height: 100%;
+}
+#navigation .nav-header {
+  margin-top: 0 !important;
 }
 .sidebar-nav {
 	padding: 9px 0;
 }
 .interview-license {
-    margin-top: 3em;
+  margin-top: 3em;
 }
 .interview-license img, #infoblock img {
-    float: left;
-    margin: 0.3em 1em 0.3em 0.3em;
+  float: left;
+  margin: 0.3em 1em 0.3em 0.3em;
 }
 #infoblock {
-    background: inherit;
+  background: inherit;
 }
 table#sponsors td {
-    vertical-align: top;
+  vertical-align: top;
 }
 table#sponsors img {
-    padding-left: 2em;
+  padding-left: 2em;
 }
 ul.horizontal-list {
   margin: 0;
@@ -43,6 +50,22 @@ img.sponsor-logo {
   margin-left: 1em;
   margin-bottom: 0.5em;
 }
+img.sponsor-box-logo {
+  padding: 0.1em 0.05em;
+}
+#sponsor-box {
+  padding: 0;
+  border-top: none;
+  background: #fff;
+}
+#sponsor-box .nav-header {
+  padding: 0 0.2em 0 0.2em !important;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  background-color: #eee;
+}
 div.sponsor-block {
   margin-bottom: 2em;
   padding-bottom: 2em;
@@ -51,3 +74,38 @@ div.sponsor-block {
 div.hotel {
   margin-bottom: 1.5em;
 }
+#refine-search {
+  padding: 0;
+}
+ul.search-results {
+  padding: 0;
+  margin: 0;
+}
+.search-results li {
+  padding-bottom: 0.1em;
+  list-style: none;
+  padding-bottom: 1em;
+}
+.search-results li.odd {
+  background-color: #f9f9f9;
+}
+.search-results em {
+  font-style: normal;
+  background-color: yellow;
+  font-weight: bold;
+}
+.search-results p {
+  color: #999;
+  padding: 0 0 0 3em;
+  margin: 0;
+}
+.search-results p em {
+  color: #000;
+  padding: 0 0.1em;
+}
+.search-results .shiny-stars { color: orange; font-size: small; }
+.search-results .dead-stars { color: #ccc; font-size: small; }
+.search-results .search-result-kind {
+  color: #999;
+  text-decoration: underline;
+} 

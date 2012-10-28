@@ -50,13 +50,13 @@ module Fosdem
             xml.li(c) do
               raise "navigation: path to item #{item.inspect} does not start with #{$prefix}" unless item.path.start_with? $prefix
               xml.a(title(item), :href => item.path)
-              walk(v, xml, id, current_path, level + 1)
             end
+            walk(v, xml, id, current_path, level + 1)
           else
             xml.li(:class => 'nav-header') do
               xml.text! k
-              walk(v, xml, id, current_path, level + 1)
             end
+            walk(v, xml, id, current_path, level + 1)
           end
         end
 

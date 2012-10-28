@@ -249,6 +249,10 @@ route '/schedule_navigation/' do;end
 # same here:
 route '/sponsors_navigation/' do;end
 
+route '/searcherview/' do
+  "/searcher/layout.rhtml"
+end
+
 # Speaker photos:
 route '/photos/*' do
   name, ext = if item.identifier.split('/')[-1] =~ %r{^(.+)\.(.+)$}
