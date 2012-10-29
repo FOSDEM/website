@@ -1,0 +1,105 @@
+#!/bin/bash
+#vim: set ts=4 sw=4 et ai:
+
+S="searcher"
+
+rvm gemset use staging >/dev/null || { echo "ERROR: no rvm?" >&2; exit 1; }
+
+function _thin {
+    thin -C ./config.yml -R ./config.ru "$@"
+    return $?
+}
+
+_rc=0
+cmd="$1"
+function rc_status {
+    local rc=$1
+    _rc=$rc
+    echo -n ": "
+    if [ "$cmd" = "status" ]; then
+        if [ "$rc" = "0" ]; then
+            echo -en "\e[32;1mrunning"
+        elif [ "$rc" = "3" ]; then
+            echo -en "\e[34;1mnot running"
+        else
+            echo -en "\e[31;1mdead"
+        fi
+    else
+        if [ "$rc" = "0" ]; then
+            echo -en "\e[32;1mOK"
+        else
+            echo -en "\e[31;1mFAILED"
+        fi
+    fi
+    echo -e "\e[0m"
+    return $rc
+}
+
+case $1 in
+    start)
+        echo -n "Starting $S"
+        if [ -e thin.pid ]; then
+            pid="$(cat thin.pid)"
+            if kill -0 "$pid"; then
+                echo -en ": \e[33;1malready running\e[0m"
+                exit 1
+            fi
+        fi
+        _thin start
+        rc=$?
+        if [ "$rc" = "0" ]; then
+            for x in 1 2 3; do
+                if [ -e thin.pid ]; then
+                    pid="$(cat thin.pid)"
+                    kill -0 "$pid"
+                    rc=$?
+                    if [ "$rc" != "0" ]; then
+                        rc_status $rc
+                        break
+                    fi
+                fi
+                echo -n "."
+                sleep 1
+            done
+            if [ -e thin.pid ]; then
+                pid="$(cat thin.pid)"
+                kill -0 "$pid"
+                rc_status $rc
+            else
+                rc_status 1
+            fi
+        else
+            rc_status $rc
+        fi
+        ;;
+    stop)
+        echo -n "Stopping $S"
+        _thin stop
+        rc_status $?
+        ;;
+    status)
+        echo -n "Checking for service $S"
+        if [ -e thin.pid ]; then
+            pid="$(cat thin.pid)"
+            if kill -0 "$pid"; then
+                rc_status 0
+            else
+                rc_status 1
+            fi
+        else
+            rc_status 3
+        fi
+        ;;
+    restart)
+        echo -n "Restarting $S"
+        _thin restart
+        rc_status $?
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
+
+exit $_rc
+
