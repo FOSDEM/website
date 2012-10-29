@@ -176,8 +176,8 @@ body.fullpage {
 .roomtracks tbody th a {
     color: inherit;
 }
-.roomtracks tbody tr.building_start th,
-.roomtracks tbody tr.building_start td {
+.roomtracks tbody tr.section_start th,
+.roomtracks tbody tr.section_start td {
     border-top: 2px solid #000;
 }
 

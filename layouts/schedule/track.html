@@ -50,11 +50,13 @@
     d = $to_day.call(dayslug)
     track_rooms_that_day = item[:events_per_room_per_day][dayslug.to_sym].keys
     last_track = nil
+    i = 0
     flatlist_by_room.select{|r, cells| track_rooms_that_day.include? r.to_sym}.each do |roomslug, cells|
       start_offset_slots = (((Time.parse(d[:start_time]) - start) / 60) / interval).to_i
       fillup_slots = (((dayend - Time.parse(d[:end_time])) / 60) / interval).to_i
+      i += 1
 %>
-    <tr>
+    <tr<% if i < 2 %> class="section_start"<% end %>>
       <%
         if last_day.nil? or last_day != dayslug
           last_day = dayslug

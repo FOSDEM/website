@@ -40,7 +40,7 @@ $compressed_flatlist.each do |dayslug, flatlist_by_room|
         brooms.each_with_index do |room, bri|
           cells = flatlist_by_room.fetch(room[:slug])
     %>
-      <tr<% if bri == 0 %> class="building_start"<% end %>>
+      <tr<% if bri == 0 %> class="section_start"<% end %>>
         <%
           if bri == 0
         %>
