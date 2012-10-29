@@ -1,18 +1,26 @@
-<dl class="dl-horizontal well">
-    <dt>Track:</dt>
-    <dd><%= l track(item[:track]) %></dd>
-    <dt>Room:</dt>
-    <dd><%= l room(item[:room]) %></dd>
-    <dt>Day:</dt>
-    <dd><%= l day(item[:day]) %></dd>
-    <dt>Start:</dt>
-    <dd><%= ltt item[:day], item[:start_time] %></dd>
-    <dt>End:</dt>
-    <dd><%= ltt item[:day], item[:end_time] %></dd>
-</dl>
+<%
+# vim: set ft=eruby ts=2 sw=2 et ai:
+%>
+<p>
+<i class="icon-road"></i> <strong>Track</strong>: <%= l track(item[:track]) %></br>
+<i class="icon-home"></i> <strong>Room</strong>: <%= l room(item[:room]) %></br>
+<i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></br>
+<i class="icon-play"></i> <strong>Start</strong>: <%= ltt item[:day], item[:start_time] %></br>
+<i class="icon-stop"></i> <strong>End</strong>: <%= ltt item[:day], item[:start_time] %>
+</p>
 
-<% if item[:abstract] %><%= item[:abstract] %><% end %>
-<% if item[:description] %><%= item[:description] %><% end %>
+<br style="clear: both;"/>
+
+<% if item[:abstract] or item[:description] %>
+<div class="event-blurb">
+<% if item[:abstract] %>
+<div class="event-abstract"><%= item[:abstract] %></div>
+<% end %>
+<% if item[:description] %>
+<div class="event-description"><%= item[:description] %></div>
+<% end %>
+</div>
+<% end %>
 
 <% unless item[:speakers].empty? %>
 <h3>Speakers</h3>
@@ -39,6 +47,7 @@
 <% end %>
 
 <%
+if false
   table = $timetable.fetch(item[:day]).fetch(:by_index)
   interval = $timetable.fetch(item[:day]).fetch(:interval)
 
@@ -106,5 +115,6 @@
         <% end %>
     </tbody>
 </table>
+<% end %>
 <% end %>
 <% end %>
