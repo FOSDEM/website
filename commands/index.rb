@@ -109,7 +109,8 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
             xml.doc do
               xml.field(item.path, :name => "id")
               if item[:title]
-                xml.field(item[:title], :name => "title", :boost => "10.0")
+                #xml.field(item[:title], :name => "title", :boost => "10.0")
+                xml.field(item[:title], :name => "title")
               else
                 $stderr.puts "HUH, no title for #{item.path} ?"
               end
