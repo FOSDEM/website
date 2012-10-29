@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
+	<head profile="http://a9.com/-/spec/opensearch/1.1/">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="generator" content="nanoc">
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
         <link rel="shortcut icon" href="<%= $item_by_id['/favicon/'].path %>" type="image/x-icon" />
         <link type="text/css" rel="stylesheet" media="screen" href="<%= $item_by_id['/assets/style/fosdem/'].path %>"/>
-        <link href="<%= $item_by_id['/atom/'].path %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed"/>
+        <link href="<%= pathof '/atom/' %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed"/>
+        <link href="<%= pathof '/opensearch/' %>" type="application/opensearchdescription+xml" title="<%= conference()[:title] %> Search"/>
         <% (@item[:alternative_representations] or []).each do |alt| %>
         <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= $item_by_id[alt[:item]].path %>" />
         <% end %>
