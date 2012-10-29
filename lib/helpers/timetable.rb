@@ -176,5 +176,75 @@ module Fosdem
       interval: interval,
     }
   end
+
+  def flatlist(compress=true)
+    by_day = {}
+    days.each do |d|
+      interval = $timetable.fetch(d[:slug]).fetch(:interval)
+
+      h = {}
+      $timetable.fetch(d[:slug]).fetch(:by_room).each do |room, time_cells|
+        h[room] = begin
+                    clusters = []
+                    cells = time_cells.values.map(&:first)
+                    cells.each do |cell|
+                      if cell.nil?
+                        clusters << nil
+                      elsif cell[:state] == :begin
+                        clusters << cell
+                      end
+                    end
+
+                    if compress
+                      cc = []
+                      i = 0
+                      while i < clusters.size
+                        cell = clusters[i]
+                        if cell.nil?
+                          cc << nil
+                          i += 1
+                        else
+                          j = i + 1
+                          xs = 0
+                          xn = 0
+                          xm = 0
+                          while j < clusters.size and xn < (60 / interval)
+                            fcell = clusters[j]
+                            if fcell.nil?
+                              xn += 1
+                            elsif fcell[:track] == cell[:track]
+                              xm += 1
+                              xs += fcell[:slots]
+                              xs += xn
+                              xn = 0
+                            else
+                              break
+                            end
+                            j += 1
+                          end
+                          if xm > 0
+                            cc << { track: cell[:track], slots: cell[:slots] + xs}
+                            (0..xn-1).each do |n|
+                              cc << nil
+                            end
+                            i = j
+                          else
+                            cc << cell
+                            i += 1
+                          end
+                        end
+                      end
+                      cc
+                    else
+                      clusters
+                    end
+                  end
+      end #room, time_cells
+      by_day[d[:slug]] = h
+    end
+
+    by_day
+  end
+
 end
 

@@ -14,7 +14,15 @@
         <title><%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %></title>
     </head>
     <% sponsors_under_navigation = ((@item[:sponsors_under_navigation] == true) or (@item.identifier =~ %r{^/schedule/event/.+})) %>
-    <body<% if sponsors_under_navigation %> class="wide"<% end %>>
+    <body<%=
+        classes = []
+        classes << "wide" if sponsors_under_navigation
+        classes << "schedule-#{$1}" if @item.identifier =~ %r{^/schedule/([^/]+)/}
+        if classes.empty?
+          ""
+        else
+          %Q! class="#{classes.join(" ")}"!
+        end %>>
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container-fluid">
@@ -83,8 +91,8 @@
                <% end %>
                <li class="divider"></li>
                <% unless item[:navigation_erb_injection] %>
-                 <% [ '/schedule/' ].map(&$to_item).each do |item| %> 
-                   <li><a href="<%= pathof item %>"><i class="icon-download"></i>&nbsp;<%= item[:title] %></a></li>
+                 <% [ '/schedule/pentabarf/' ].map(&$to_item).each do |item| %> 
+                   <li><a href="<%= pathof item %>"><i class="icon-download"></i>&nbsp;Schedule (XML)</a></li>
                  <% end %>
                  <% [ '/schedule/ical/', '/schedule/xcal/' ].map(&$to_item).each do |item| %> 
                    <li><a href="<%= pathof item %>"><i class="icon-calendar"></i>&nbsp;<%= item[:title] %></a></li>
@@ -112,7 +120,7 @@
             <ul class="breadcrumb">
               <%= bcrumbs %>
             </ul>
-            <h1><%= @item[:title] %></h1>
+            <h1 class="title"><%= @item[:title] %></h1>
           <% end %>
           <%= yield %>
         </div>

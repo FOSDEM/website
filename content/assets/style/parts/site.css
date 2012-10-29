@@ -2,15 +2,18 @@ html {
   height: 100%;
 }
 body {
-	padding-top: 60px;
-	padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
   height: 100%;
+}
+table tbody h3 {
+  margin: 0;
 }
 #navigation .nav-header {
   margin-top: 0 !important;
 }
 .sidebar-nav {
-	padding: 9px 0;
+  padding: 9px 0;
 }
 .interview-license {
   margin-top: 3em;
@@ -108,4 +111,12 @@ ul.search-results {
 .search-results .search-result-kind {
   color: #999;
   text-decoration: underline;
-} 
+}
+.side-box {
+  float: right;
+  padding-left: 0.5em;
+  border-left: 1px dotted #000;
+}
+.schedule-track h1.title {
+  float: left;
+}

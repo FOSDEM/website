@@ -116,6 +116,11 @@ table.timetable-body {
 .timetable .c<%= index + 1 %>, .roomtracks .c<%= index + 1 %> { background-color: #<%= color %> !important; }
 <% end %>
 
+.roomtracks .other-track {
+  color: #999;
+  background-color: #f9f9f9;
+}
+
 .timetable tbody td.event:hover {
     background-color: pink !important;
     font-weight: bold;
@@ -156,15 +161,17 @@ body.fullpage {
     text-align: right;
     vertical-align: middle;
 }
-.roomtracks th.room {
+.roomtracks th.room, .roomtracks th.day {
     width: 8%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.roomtracks tbody th.room, .roomtracks tbody th.day {
     text-align: right;
     padding: 0.1em;
     line-height: 1em;
     font-weight: normal;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 .roomtracks tbody th a {
     color: inherit;

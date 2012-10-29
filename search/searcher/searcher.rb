@@ -5,7 +5,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'rsolr'
 
-$solr_url = "http://localhost:8983/solr"
+$solr_url = "http://127.0.0.1:8983/solr"
 $display_rating = false
 $results_per_page = 15
 $type_label = {
@@ -116,6 +116,9 @@ set(:has_parameter) do |parameter|
   end
 end
 
+puts ARGV[0]
+exit 99
+
 set :views, File.join(settings.root, '../../output/searcher')
 
 $solr ||= begin
@@ -124,8 +127,6 @@ $solr ||= begin
           rescue
             $stderr.puts "failed to connect to Solr on #{$solr_url}"
             raise
-          else
-            puts "Successfully connected to Solr on #{$solr_url}"
           end
 
 $known_types ||= begin

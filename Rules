@@ -88,6 +88,8 @@ preprocess do
   # in that helper function)
   $timetable = timetable_from_items(@items)
 
+  $compressed_flatlist = flatlist(true)
+
   # compute room to building associations programatically and using
   # the metadata in content/buildings.yaml
   # (note that the ranking/order of buildings also stems from the order
@@ -153,9 +155,12 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-    # process schedule items with their respective template from layouts/schedule/
-    # (e.g. /schedule/event/foo is processed with layouts/schedule/event.*)
-    layout "/schedule/#{$1}/" if item.identifier =~ %r{^/schedule/([^/]+)/.+}
+
+    unless item.identifier =~ %r{^/schedule/devrooms/.+}
+      # process schedule items with their respective template from layouts/schedule/
+      # (e.g. /schedule/event/foo is processed with layouts/schedule/event.*)
+      layout "/schedule/#{$1}/" if item.identifier =~ %r{^/schedule/([^/]+)/.+}
+    end
 
     # process <% ERB %> templating
     # http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html
@@ -225,7 +230,7 @@ compile '*' do
       # use layout/default.html for all items, except
       # sponsor pages and pages that have "layout: false"
       # in their metadata
-      if item[:layout] == false or sponsor?(item) or item.identifier =~ %r{/[ix]cal/}
+      if item[:layout] == false or sponsor?(item) or item.identifier =~ %r{/[ix]cal/} or item.identifier =~ %r{^/schedule/devrooms/.+}
         # do nothing
       elsif item[:layout]
         # or those that explicitly specify the layout in their metadata
@@ -293,6 +298,10 @@ end
 # defined in lib/helpers/news.rb) and only intended to be gathered
 # in content/index.html
 route '/headlines/*/' do;end
+
+# partials, are included somewhere else, don't create files in
+# output for these:
+route '/schedule/devrooms/*/' do;end
 
 # deploy content/assets/style/foo.css as output/assets/style/foo.css
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
