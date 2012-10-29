@@ -12,7 +12,41 @@ $type_label = {
   interview: 'inverse',
 }
 
-template :results do
+template :atom do
+  <<-EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <title>FOSDEM Search: <%= @q %></title>
+  <link href="<%= @page_link %>"/>
+  <opensearch:totalResults><%= @num_results %></opensearch:totalResults>
+  <opensearch:startIndex><%= @current_page %></opensearch:startIndex>
+  <opensearch:itemsPerPage><%= settings.results_per_page %></opensearch:itemsPerPage>
+  <opensearch:Query role="request" searchTerms="<%= @q %> startPage="<%= @current_page %>"/>
+  <link rel="alternate" href="<%= @page_link %>page=<%= @current_page %>" type="text/html"/>
+  <link rel="self" href="<%= @page_link %>page=<%= @current_page %>" type="application/atom+xml"/>
+  <link rel="first" href="<%= @page_link %>page=1" type="application/atom+xml"/>
+  <% if @prev_page %>
+  <link rel="previous" href="<%= @prev_page %>" type="application/atom+xml"/>
+  <% end %>
+  <% if @next_page %>
+  <link rel="next" href="<%= @next_page %>" type="application/atom+xml"/>
+  <% end %>
+  <link rel="last" href="<%= @page_link %>page=<%= @last_page %>" type="application/atom+xml"/>
+  <% @results.each do |r| %>
+  <entry>
+    <title><%= r[:title_nohl] %></title>
+    <link href="<%= r[:href] %>"/>
+    <% if r[:text_nohl] %>
+    <content type="text"><%= r[:text_nohl] %></content>
+    <% end %>
+  </entry>
+  <% end %>
+</feed>
+EOF
+end
+
+template :html do
   <<-EOF
 <%
   case @num_results
@@ -143,20 +177,12 @@ $known_types ||= begin
                     nil
                   end
 
-get '*', :has_parameter => :q do
-  search
+get '*', :has_parameter => :q, :provides => 'html' do
+  search :html
 end
 
-get '/search/:q' do
-  search
-end
-
-get '/search/:q/:page' do
-  search
-end
-
-get '/search', :has_parameter => :q do
-  search
+get '*', :has_parameter => :q, :provides => 'atom' do
+  search :atom, false
 end
 
 error do
@@ -169,7 +195,7 @@ error do
   erb :error
 end
 
-def search(q=nil, page=nil)
+def search(template=:html, layout=:layout)
   q = params[:q] unless q
   page = params[:page] unless page
 
@@ -303,7 +329,17 @@ def search(q=nil, page=nil)
              end
            end
 
-    { title: title, href: doc['id'], kind: kind, rating: rating, text: text, types: doc['type'], interview_year: doc['interview_year']}
+    {
+      title: title,
+      title_nohl: doc['title'],
+      href: doc['id'],
+      kind: kind,
+      rating: rating,
+      text: text,
+      text_nohl: doc['content'],
+      types: doc['type'],
+      interview_year: doc['interview_year'],
+    }
   end
 
   @q = q
@@ -338,6 +374,7 @@ def search(q=nil, page=nil)
       @current_page = page
       @prev_page = page > 1 ? page - 1 : nil
       @next_page = page < pages ? page + 1 : nil
+      @last_page = pages
 
       @head = begin
                 # http://googlewebmastercentral.blogspot.be/2011/09/pagination-with-relnext-and-relprev.html
@@ -354,7 +391,7 @@ def search(q=nil, page=nil)
 
     @title = "Search results for #{q}"
     @search_navigation = erb :facets, :layout => false
-    erb :results
+    erb template, :layout => layout
   end
 end
 
