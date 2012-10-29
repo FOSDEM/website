@@ -5,9 +5,6 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'rsolr'
 
-$solr_url = "http://127.0.0.1:8983/solr"
-$display_rating = false
-$results_per_page = 15
 $type_label = {
   speaker: 'success',
   event: 'important',
@@ -29,14 +26,13 @@ template :results do
 <%
   else
 %>
-<p class="search-result-count">Found <%= @num_results %> matches for your query:</p>
+<p class="search-result-count">Found <%= @num_results %> matches for your query, with up to #{settings.results_per_page} results per page:</p>
 <%
   end
 %>
 <ul class="search-results">
 <% @results.each_with_index do |r, i| %>
   <li style="padding-bottom: 1em;" class="<%= i % 2 == 0 ? 'even' : 'odd' %>">
-    <% if $display_rating %><span class="shiny-stars"><%= "\u{2605}" * r[:rating] %></span><span class="dead-stars"><%= "\u{2606}" * (5 - r[:rating]) %></span>&nbsp;<% end %>
     <a href="<%= r[:href] %>"><% if r[:kind] %><span class="search-result-kind"><%= r[:kind].to_s.capitalize %>:</span> <% end %><%= r[:title] %></a>
     <% unless r[:types].reject{|t| t == 'schedule'}.empty? %>
     <span class="pull-right">
@@ -89,7 +85,8 @@ template :error do
 EOF
 end
 
-$facets_template = <<-EOF
+template :facets do
+  <<-EOF
 <form id="refine-search" class="nav nav-list" action="<%= @base_uri %>" method="get">
   <div class="input-prepend">
     <span class="add-on"><i class="icon-search"></i></span>
@@ -109,6 +106,7 @@ $facets_template = <<-EOF
 </form>
 <li class="divider"></li>
 EOF
+end
 
 set(:has_parameter) do |parameter|
   condition do
@@ -116,16 +114,13 @@ set(:has_parameter) do |parameter|
   end
 end
 
-puts ARGV[0]
-exit 99
-
-set :views, File.join(settings.root, '../../output/searcher')
+#set :views, File.join(settings.root, '../../output/searcher')
 
 $solr ||= begin
-            puts "Connecting to Solr on #{$solr_url}"
-            RSolr.connect :url => $solr_url
+            puts "Connecting to Solr on #{settings.solr_url}"
+            RSolr.connect :url => settings.solr_url
           rescue
-            $stderr.puts "failed to connect to Solr on #{$solr_url}"
+            $stderr.puts "failed to connect to Solr on #{settings.solr_url}"
             raise
           end
 
@@ -149,7 +144,6 @@ $known_types ||= begin
                   end
 
 get '*', :has_parameter => :q do
-  puts uri()
   search
 end
 
@@ -189,7 +183,7 @@ def search(q=nil, page=nil)
   solr_params = {
     :q => q,
     :qf => 'title^10',
-    :rows => $results_per_page,
+    :rows => settings.results_per_page,
     :fl => '*,score',
     :hl => 'true',
     'hl.fl' => ['title', 'content'],
@@ -224,7 +218,7 @@ def search(q=nil, page=nil)
   types << 'interview' unless interview_years.empty? or types.include? 'interview'
 
   solr_params[:fq] = fq
-  solr_params[:start] = (page - 1) * $results_per_page if page
+  solr_params[:start] = (page - 1) * settings.results_per_page if page
 
   @error = nil
   raise "Solr is not running" unless $solr
@@ -324,19 +318,19 @@ def search(q=nil, page=nil)
     @base_uri = request.path_info.to_s
     @abs_uri = uri()
 
-    if found > $results_per_page
+    if found > settings.results_per_page
       @pagination = true
-      pages = ((found / ($results_per_page * 1.0)) + 0.9).to_i
+      pages = ((found / (settings.results_per_page * 1.0)) + 0.9).to_i
       # normalize the value of page to avoid users injecting ridiculous values:
       page = pages if page > pages
       page = 1 if page < 1
 
       @page_link = begin
                      require 'uri'
-                     uri = "#{@base_uri}/?q=#{URI.escape q}"
-                     types.each do |type|
-                       uri << "&#{URI.escape type}"
-                     end
+                     uri = "#{@base_uri}"
+                     uri << '/' unless uri.end_with? '/'
+                     uri << "?q=#{URI.escape q}"
+                     uri << "&" << types.map{|type| URI.escape type}.join('&')
                      uri
                    end
 
@@ -359,7 +353,7 @@ def search(q=nil, page=nil)
     end
 
     @title = "Search results for #{q}"
-    @search_navigation = erb $facets_template, :layout => false
+    @search_navigation = erb :facets, :layout => false
     erb :results
   end
 end

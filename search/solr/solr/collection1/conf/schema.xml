@@ -131,9 +131,9 @@
 
     <fields>
         <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
-        <field name="title" type="text_general" indexed="false" stored="true" multiValued="false" />
-        <field name="type" type="string" indexed="true" stored="true" required="true" multiValued="true" />
-        <field name="content" type="text_general" indexed="true" stored="true" multiValued="false" />
+        <field name="title" type="text_general" indexed="true" stored="true" multiValued="false" termVectors="true" omitNorms="false" />
+        <field name="type" type="string" indexed="true" stored="true" required="true" multiValued="true" omitNorms="false" />
+        <field name="content" type="text_general" indexed="true" stored="true" multiValued="false" termVectors="true" omitNorms="false" />
         <field name="interview_year" type="int" indexed="true" stored="true" multiValued="false" />
         <field name="text" type="text_general" indexed="true" stored="false" multiValued="true" />
         <field name="text_rev" type="text_general_rev" indexed="true" stored="false" multiValued="true" />

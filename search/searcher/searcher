@@ -1,17 +1,20 @@
 #!/bin/bash
 #vim: set ts=4 sw=4 et ai:
 
-S="searcher"
+e="$1"
+S="searcher [\e[36;1m$e\e[0m]"
+cmd="$2"
 
-rvm gemset use staging >/dev/null || { echo "ERROR: no rvm?" >&2; exit 1; }
+if [ "$e" = "staging" -o "$e" = "production" ]; then
+    rvm gemset use staging >/dev/null || { echo "ERROR: no rvm?" >&2; exit 1; }
+fi
 
-function _thin {
-    thin -C ./config.yml -R ./config.ru "$@"
+function run_thin {
+    thin -C "./$e.yml" -R "./$e.ru" "$@"
     return $?
 }
 
 _rc=0
-cmd="$1"
 function rc_status {
     local rc=$1
     _rc=$rc
@@ -35,9 +38,9 @@ function rc_status {
     return $rc
 }
 
-case $1 in
+case $cmd in
     start)
-        echo -n "Starting $S"
+        echo -en "Starting $S"
         if [ -e thin.pid ]; then
             pid="$(cat thin.pid)"
             if kill -0 "$pid"; then
@@ -45,7 +48,7 @@ case $1 in
                 exit 1
             fi
         fi
-        _thin start
+        run_thin start
         rc=$?
         if [ "$rc" = "0" ]; then
             for x in 1 2 3; do
@@ -73,12 +76,12 @@ case $1 in
         fi
         ;;
     stop)
-        echo -n "Stopping $S"
-        _thin stop
+        echo -en "Stopping $S"
+        run_thin stop
         rc_status $?
         ;;
     status)
-        echo -n "Checking for service $S"
+        echo -en "Checking for service $S"
         if [ -e thin.pid ]; then
             pid="$(cat thin.pid)"
             if kill -0 "$pid"; then
@@ -91,12 +94,12 @@ case $1 in
         fi
         ;;
     restart)
-        echo -n "Restarting $S"
-        _thin restart
+        echo -en "Restarting $S"
+        run_thin restart
         rc_status $?
         ;;
     *)
-        echo "Usage: $0 {start|stop|status|restart}"
+        echo "Usage: $0 [environment] {start|stop|status|restart}"
         exit 1
         ;;
 esac

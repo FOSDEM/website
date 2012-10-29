@@ -4,7 +4,7 @@
     address: 127.0.0.1
     port: 4567
     pid: /home/search/thin.pid
-    rackup: /home/search/config.ru
+    rackup: /home/search/staging.ru
     log: /home/search/thin.log
     max_conns: 200
     timeout: 30
