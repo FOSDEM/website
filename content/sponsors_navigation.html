@@ -11,19 +11,7 @@ relativize: false
     <a href="<%= s.path %>">
         <%
         if s.logo?
-          h, w = begin
-                   path = s.logo
-                   path = '/' + path unless path[0, 1] == '/'
-                   $_sponsors_navigation_photo_cache ||= {}
-                   hit = $_sponsors_navigation_photo_cache[path.to_sym]
-                   unless hit
-                     require 'image_size'
-                     img = ImageSize.new(IO.read("output#{path}"))
-                     hit = [img.height, img.width]
-                     $_sponsors_navigation_photo_cache[path.to_sym] = hit
-                   end
-                   hit
-                 end
+          h, w = image_size s.logo
         %>
         <img src="<%= s.logo %>" class="sponsor-box-logo" height="<%= h %>" width="<%= w %>" alt="<%= s.name %>" title="<%= s.name %>"/>
         <% else %>
@@ -38,21 +26,8 @@ relativize: false
     <a href="<%= s.path %>">
         <%
         if s.thumb?
-          h, w = begin
-                   path = s.thumb
-                   path = '/' + path unless path[0, 1] == '/'
-                   $_sponsors_navigation_thumb_cache ||= {}
-                   hit = $_sponsors_navigation_photo_cache[path.to_sym]
-                   unless hit
-                     require 'image_size'
-                     img = ImageSize.new(IO.read("output#{path}"))
-                     hit = [img.height, img.width]
-                     $_sponsors_navigation_thumb_cache[path.to_sym] = hit
-                   end
-                   hit
-                 end
+          h, w = image_size s.thumb
         %>
-
         <img src="<%= s.thumb %>" class="sponsor-box-logo" width="<%= w %>" height="<%= h %>" alt="<%= s.name %>" title="<%= s.name %>"/>
         <% else %>
             <%= s.name %>
