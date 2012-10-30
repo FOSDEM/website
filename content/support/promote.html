@@ -24,7 +24,7 @@ we can talk about you as well !</p>
             %>
             <td>
                 <h3><%= flyer[:colour].capitalize %> version</h3>
-                <a href="<%= asset(flyer[:name] + '.pdf').path %>" title="FOSDEM flyer PDF (<%= flyer[:colour] %>)"><%= img asset(flyer[:name] + '-thumb.png') %></a><br/>
+                <a href="<%= asset(flyer[:name] + '.pdf').path %>" title="FOSDEM flyer PDF (<%= flyer[:colour] %>)"><%= img $item_by_id.fetch("/assets/#{flyer[:name]}-thumb/") %></a><br/>
                 (<%= filesize asset(flyer[:name] + '.pdf') %>)<br/>
                 <ul>
                     <li><a href="<%= asset(flyer[:name] + '.pdf').path %>">PDF</a></li>
