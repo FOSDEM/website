@@ -22,6 +22,51 @@
 </div>
 <% end %>
 
+<%
+  videos = []
+  videos.push *((item[:attachments] or []).select{|a| a[:mime] == 'video/webm'}.map{|a| $attachments_by_export[a[:filename]][:localname]})
+  videos.push *((item[:links] or []).select{|l| l[:url] =~ /\.webm$/}.map{|l| l[:url]})
+  videos
+  .each do |video|
+    mime = case video
+           when /\.webm$/
+             'video/webm; codecs="vp8, vorbis"'
+           when /\.og[gv]$/
+             'video/ogg; codecs="theora, vorbis"'
+           when /\.(mp4|mpeg)$/
+             'video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+           else
+             next
+           end
+
+    if false
+      # hack workaround that plays together with the .htaccess in
+      # /var/www/video.fosdem.org
+      # on achanes.fosdem.org, as our video mirrors *STILL* haven't
+      # fixed their Content-Type (MIME type configuration) to
+      # send back video/webm for .webm files -- not doing so
+      # makes it impossible for HTML5 videos to play in the browser;
+      # passing ?nomirror in the URI bypasses the automatic mirror
+      # redirection on video.fosdem.org:
+      url = case video
+            when %r{^https?://video\.fosdem\.org\/}
+              video + '?nomirror'
+            else
+              video
+            end
+    else
+      url = video
+    end
+%>
+<div class="video">
+  <video src="<%= url %>" type='#{mime}'>
+    <div class="alert alert-info">
+      Video tag not supported. Download the video <a href="<%= video %>">here</a>.
+    </div>
+  </video>
+</div>
+<% end %>
+
 <% unless item[:speakers].empty? %>
 <h3>Speakers</h3>
 <table>
