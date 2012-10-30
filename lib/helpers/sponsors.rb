@@ -74,7 +74,7 @@ module Fosdem
 
     def thumb
       raise "sponsor #{@name} has no thumb logo" unless self.thumb?
-      $item_by_id.fetch(@logo[:small]).path
+      $item_by_id.fetch(@logo[:small])
     end
 
     def logo?
@@ -83,7 +83,7 @@ module Fosdem
 
     def logo
       raise "sponsor #{@name} has no logo" unless self.logo?
-      $item_by_id.fetch(@logo[:big]).path
+      $item_by_id.fetch(@logo[:big])
     end
 
     def order
