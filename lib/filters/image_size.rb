@@ -6,20 +6,21 @@
 module Fosdem
   def image_size(s)
     path = case s
-           when String
-             s
-           when ::Nanoc::Item
-             s.path
+           when Nanoc::Item
+             s.identifier.chop + "." + s[:extension]
            when ::Nokogiri::XML::Element
              s['src']
+           when String
+             raise "wtf, a string? #{s.inspect}"
+             s
            else
              raise "unsupported object of type #{s.class}: #{s.inspect}"
            end
 
     filepath = if path.start_with? '/'
-                 "output" + path
+                 "content" + path
                else
-                 "output/" + path
+                 "content/" + path
                end
 
     $_image_size_cache ||= {}
