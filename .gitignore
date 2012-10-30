@@ -1,5 +1,6 @@
 output
 photos
+attachments
 tmp
 .*.swp
 *.log

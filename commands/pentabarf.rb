@@ -36,7 +36,10 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
                                   end
 
     $image_export_root = conf.fetch 'photo_export_root', "photos"
+    $attachment_export_root = conf.fetch 'attachment_export_root', "attachments"
     $meta_export_file = conf.fetch 'meta_export_file', "pentabarf.yaml"
+
+    $export_roots = [$image_export_root, $attachment_export_root]
 
     begin
       h = conf.fetch('host', 'localhost')
@@ -58,7 +61,9 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       raise "Failed to connect to the Pentabarf database"
     end
 
-    FileUtils.mkdir_p($image_export_root) unless File.exists? $image_export_root
+    $export_roots.each do |d|
+      FileUtils.mkdir_p(d) unless File.exists? d
+    end
 
     # crawl the current cache directory and keep a tree of all files
     # that are in there in order to detect the files we need to delete
@@ -67,8 +72,10 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     $cache_tree_before = begin
                            require 'find'
                            r = []
-                           Find.find($image_export_root) do |f|
-                             r << f unless File.directory? f
+                           $export_roots.each do |d|
+                             Find.find(d) do |f|
+                               r << f unless File.directory? f
+                             end
                            end
                            r.sort
                          end
@@ -123,6 +130,8 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       :ConferencePerson => 'conference_person',
       :ConferencePersonLink => 'conference_person_link',
       :PersonImage      => 'person_image',
+      :EventRelated     => 'event_related',
+      :EventAttachment  => 'event_attachment',
     }.each do |klass, table|
       c = Class.new(ActiveRecord::Base)
       c.table_name = table
@@ -137,11 +146,14 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
              end
       raise "slug: o[#{attr}] is nil" if o.nil?
 
-      require 'active_support/inflector/transliterate'
-      require 'active_support/inflector/methods'
-      # Inflector takes care of replacing locale specific symbols to
-      # something "safe" for URLs without requiring symbol gibberish
-      ActiveSupport::Inflector.transliterate(slug).downcase.gsub(/[\s\-\+]+/, '_').gsub(/[\.']+/, '')
+      sanitized = begin
+                    require 'active_support/inflector/transliterate'
+                    require 'active_support/inflector/methods'
+                    # Inflector takes care of replacing locale specific symbols to
+                    # something "safe" for URLs without requiring symbol gibberish
+                    ActiveSupport::Inflector.transliterate(slug).downcase.gsub(/[\s\-\+]+/, '_').gsub(/[\.']+/, '')
+                  end
+      sanitized
     end
 
     def slugify!(o, attr)
@@ -369,6 +381,32 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
           l['title'] = l.fetch('url') unless l['title']
         end
         e['links'] = links
+      end
+    end
+
+    # post-process events with event_related
+    begin
+      # fetch all event_related into a cache, faster
+      eventrelated = PentaDB::EventRelated.find(:all).select{|r| event_by_event_id.has_key? r['event_id1']}
+      h = begin
+            require 'set'
+
+            h = {}
+            eventrelated.each do |r|
+              [
+                [ r['event_id1'], r['event_id2'] ],
+                [ r['event_id2'], r['event_id1'] ],
+              ].each do |a|
+                h[a.first] = Set.new unless h.has_key? a.first
+                h[a.first] << a.last
+              end
+            end
+            h
+          end
+
+      h.each do |from_id, to_ids|
+        from = event_by_event_id.fetch(from_id)
+        from['related'] = to_ids.map{|id| event_by_event_id.fetch(id)['slug']}
       end
     end
 
@@ -603,6 +641,35 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       end
 
     end
+
+    # event attachments
+    before_attachments = Time.now
+    events.each do |event|
+      PentaDB::EventAttachment.where(:public => true, event_id: event['event_id']).find(:all).each do |a|
+        time_before = Time.now
+        f = a.filename.gsub(/[\s\-]+/, '_').gsub(%r{/+}, '')
+        filename = File.join(
+          'event',
+          event['slug'],
+          a.attachment_type,
+          a.event_attachment_id.to_s,
+          f
+        )
+        file = File.join($attachment_export_root, filename)
+        action = yf(file, a.data, time_before)
+
+        meta = { 'filename' => filename, }
+        meta['mime'] = a['mime_type'] if a['mime_type']
+        meta['title'] = a['title'] if a['title']
+        meta['pages'] = a['pages'].to_i if a['pages']
+        meta['size'] = File.size(file)
+
+        event['attachments'] = [] unless event.has_key? 'attachments'
+        event['attachments'] << meta
+      end #a
+    end #events
+    after_attachments = Time.now
+    start_time += (after_attachments - before_attachments)
 
     # add photos to speakers
     before_photos = Time.now

@@ -97,6 +97,19 @@ preprocess do
   # (defined in lib/helpers/schedule_helpers.rb)
   $buildings = build_room_buildings()
 
+  # attachments by their 'export' name, which is what's created by
+  # commands/pentabarf.rb as a reference (filename) and which we need
+  # to look up in layouts/schedule/event.html to find the matching
+  # Nanoc item and its metadata, which is added by lib/data_sources/attachments.rb:
+  $attachments_by_export = begin
+                             h = {}
+                             @items.select{|item| item[:kind] == :attachment}
+                             .each do |item|
+                               h[item[:export]] = item
+                             end
+                             h
+                           end
+
 end
 
 ##### COMPILING
@@ -148,6 +161,9 @@ route   '/buildings/'  do;end
 # (they do not exist in the filesystem under content/ -- instead, they
 # are items that are created on-the-fly as headlines from content/news/*)
 compile '/headlines/*' do;end
+
+# don't modify anything on attachments
+compile '/attachments/*' do;end
 
 ### EVERYTHING ELSE (real content)
 
@@ -256,6 +272,16 @@ route '/sponsors_navigation/' do;end
 
 route '/searcherview/' do
   "/searcher/layout.rhtml"
+end
+
+# attachments
+route '/attachments/*' do
+  case item[:type]
+  when :event
+    "#{$prefix}/schedule/event/#{item[:event]}/attachments/#{item[:localname]}"
+  else
+    raise "unsupported type of attachment: #{item.identifier}"
+  end
 end
 
 # Speaker photos:

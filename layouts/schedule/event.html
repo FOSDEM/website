@@ -37,13 +37,27 @@
 </table>
 <% end %>
 
-<% unless item[:links].empty? %>
-<h3>Links</h3>
-<ul>
-    <% item[:links].each do |l| %>
-    <li><a href="<%= l[:url] %>"><%= l[:title] %></a></li>
+<% if item[:attachments] and not item[:attachments].empty? %>
+  <h3>Attachments</h3>
+  <ul class="event-attachments unstyled">
+    <%
+      item[:attachments].each do |a|
+        ai = $attachments_by_export[a[:filename]]
+        raise "failed to find attachment item for export name #{a[:filename]}" unless ai
+        title = a[:title] ? a[:title] : ai[:title]
+      %>
+      <li><i class="icon-download"></i> <a href="attachments/<%= ai[:localname] %>"><%= title %> (<%= ai[:media] %>)</a></li>
     <% end %>
-</ul>
+  </ul>
+<% end %>
+
+<% unless item[:links].empty? %>
+  <h3>Links</h3>
+  <ul>
+    <% item[:links].each do |l| %>
+      <li><a href="<%= l[:url] %>"><%= l[:title] %></a></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <%

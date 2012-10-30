@@ -95,6 +95,10 @@ data_sources:
     type: static
     prefix: photos
     items_root: /photos/
+  -
+    type: attachments
+    prefix: attachments
+    items_root: /attachments/
 
 # Configuration for the “watch” command, which watches a site for changes and
 # recompiles if necessary.
