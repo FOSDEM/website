@@ -21,10 +21,6 @@ module Fosdem
   end
 
   def img(item, attr={})
-    height, width = image_size(item)
-
-    buffer = ''
-    xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
     a = attr.clone
     a[:src] = case item
               when Nanoc::Item
@@ -34,9 +30,15 @@ module Fosdem
               else
                 raise "unsupported object of type #{item.class}: #{item.inspect}"
               end
-    a[:width] = width
-    a[:height] = height
-    style = "width:#{width}px; height:#{height}px; min-width:#{width}px; min-height:#{height}px;"
+
+    buffer = ''
+    xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
+    style = begin
+              height, width = image_size(item)
+              a[:width] = width
+              a[:height] = height
+              "width:#{width}px; height:#{height}px; min-width:#{width}px; min-height:#{height}px;"
+            end
     if a.has_key? :style
       a[:style] = a[:style] + " " + style
     else
