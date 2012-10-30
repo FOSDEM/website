@@ -11,24 +11,48 @@ module Nanoc3::DataSources
       filenames = Dir[prefix + '/**/*'].select { |f| File.file?(f) }
 
       # Convert filenames to items
-      filenames.map do |filename|
+      filenames.map do |fs_filename|
+        filename, extension, mime = begin
+                                      n = normalize(fs_filename)
+                                      extension = File.extname(fs_filename[1..-1])
+                                      if extension != n[:ext].to_s
+                                        extension = n[:ext].to_s
+                                        filename = begin
+                                                     dot_index = fs_filename.rindex '.'
+                                                     if dot_index
+                                                       fs_filename[0, dot_index] + "." + extension
+                                                     else
+                                                       fs_filename + "." + extension
+                                                     end
+                                                   end
+                                      else
+                                        filename = fs_filename
+                                      end
+                                      [ filename, extension, n[:mime] ]
+                                    end
+
         attributes = {
-          :extension => File.extname(filename)[1..-1],
+          :extension => extension,
           :filename  => filename,
         }
-        f = filename[(prefix.length+1)..-1]
-        identifier = f + '/'
-        export = f
+        identifier, export = begin
+                               ext = File.extname(fs_filename)
+                               unprefixed = fs_filename[(prefix.length+1)..-1]
+                               [ unprefixed[0..-(ext.size + 1)], unprefixed ]
+                             end
 
-        mtime      = File.mtime(filename)
-        checksum   = checksum_for(filename)
+        mtime      = File.mtime(fs_filename)
+        checksum   = checksum_for(fs_filename)
 
         item = Nanoc3::Item.new(
-          filename,
+          fs_filename,
           attributes,
           identifier,
-          :binary => true, :mtime => mtime, :checksum => checksum
+          :binary => true,
+          :mtime => mtime,
+          :checksum => checksum
         )
+        item[:filesystem] = fs_filename
         item[:title] = begin
                          require 'pathname'
                          Pathname.new(item[:filename]).basename.to_s
@@ -38,15 +62,61 @@ module Nanoc3::DataSources
                                                          when %r{^attachments/event/([^/]+)/([^/]+)/(.+)$}
                                                            [ :event, $1, $2, $2 + '/' + $3 ]
                                                          else
-                                                           raise "unsupported type of attachment: #{filename}"
+                                                           raise "unsupported type of attachment: #{fs_filename}"
                                                          end
         item[item[:type]] = v
         item[:export] = export
+        item[:mime] = mime
         item
       end
     end
 
   private
+    def normalize(filename)
+      mime, ext = begin
+                    require 'filemagic'
+                    magic = FileMagic.new.file(filename)
+                    case magic
+                    when /^html document/i
+                      ['text/html', :html]
+                    when /^ogg.*\btheora video/i
+                      ['video/ogg', :ogv]
+                    when /^opendocument presentation$/i
+                      ['application/vnd.oasis.opendocument.presentation', :odp]
+                    when /^pdf document/i
+                      ['application/pdf', :pdf]
+                    when /\btar archive/i
+                      ['application/x-tar', :tar]
+                    when /^apple quicktime movie/i
+                      ['video/quicktime', :mov]
+                    when /^webm$/i
+                      ['video/webm', :webm]
+                    when /^iso media, mpeg v4 system/i
+                      ['video/mp4', :mpeg]
+                    when /^zip archive/i
+                      case filename
+                      when /\.zip$/
+                        ['application/zip', :zip]
+                      when /\.odp$/
+                        ['application/vnd.oasis.opendocument.presentation', :odp]
+                      else
+                        raise "unsupported file extension for filename \"#{filename}\" for magic \"#{magic}\""
+                      end
+                    when /^(gzip|bzip2) compressed data/
+                      case filename
+                      when /\.(tar\.gz|tgz)$/
+                        ['application/x-compressed-tar', :"tar.gz"]
+                      when /\.(tar\.bz2|tbz|tbz2)$/
+                        ['application/x-bzip-compressed-tar', :"tar.bz2"]
+                      else
+                        raise "unsupported filename \"#{filename}\" for magic type \"#{magic}\""
+                      end
+                    else
+                      raise "unsupported magic type \"#{magic}\" for attachment #{filename}"
+                    end
+                  end
+      { mime: mime, ext: ext }
+    end
 
     # Returns a checksum of the given filenames
     # TODO un-duplicate this somewhere

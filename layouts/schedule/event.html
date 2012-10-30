@@ -45,8 +45,20 @@
         ai = $attachments_by_export[a[:filename]]
         raise "failed to find attachment item for export name #{a[:filename]}" unless ai
         title = a[:title] ? a[:title] : ai[:title]
+        icon = case ai[:media]
+               when 'slides'
+                 'list'
+               when 'video'
+                 'facetime-video'
+               when 'audio'
+                 'music'
+               when 'paper'
+                 'book'
+               else
+                 'download'
+               end
       %>
-      <li><i class="icon-download"></i> <a href="attachments/<%= ai[:localname] %>"><%= title %> (<%= ai[:media] %>)</a></li>
+      <li><i class="icon-<%= icon %>"></i> <a href="attachments/<%= ai[:localname] %>"><%= title %> (<%= ai[:media] %>)</a></li>
     <% end %>
   </ul>
 <% end %>
