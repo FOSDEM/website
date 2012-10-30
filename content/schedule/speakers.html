@@ -6,9 +6,6 @@ sponsors_under_navigation: true
 columns = 3
 speakers = speakers(:name)
 
-require 'active_support/inflector/transliterate'
-require 'active_support/inflector/methods'
-
 h = {}
 speakers.each do |s|
   indexes = begin
@@ -47,7 +44,11 @@ speakers.each do |s|
 
               normalforms.each do |l|
                 lf = l[0]
-                alt = ActiveSupport::Inflector.transliterate(lf)
+                alt = begin
+                          require 'active_support/inflector/transliterate'
+                          require 'active_support/inflector/methods'
+                          ActiveSupport::Inflector.transliterate(lf)
+                      end
                 r << alt if alt != lf
               end
               r
