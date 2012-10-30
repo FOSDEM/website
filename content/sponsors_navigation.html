@@ -3,35 +3,28 @@ layout: false
 relativize: false
 ---
 <%
-  cornerstone_sponsors, other_sponsors = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?}
+# vim: set ts=2 sw=2 et ai ft=eruby:
+cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?}
+[
+  { list: cornerstone, title: "Cornerstone Sponsors", check: :logo? , get: :logo,  },
+  { list: other,       title: "Other Sponsors",       check: :thumb?, get: :thumb, },
+].each do |x|
 %>
-<% unless cornerstone_sponsors.empty? %>
-<li class="nav-header">Cornerstone Sponsors</li>
-<% cornerstone_sponsors.each do |s| %>
+<% unless x[:list].empty? %>
+  <li class="nav-header"><%= x[:title] %></li>
+<% x[:list].each do |s| %>
     <a href="<%= s.path %>">
-        <%
-        if s.logo?
-          h, w = image_size s.logo
+      <%
+        if s.method(x[:check]).call()
+          logo = s.method(x[:get]).call()
+          h, w = image_size logo
+          path = logo.path
         %>
-        <img src="<%= s.logo %>" class="sponsor-box-logo" height="<%= h %>" width="<%= w %>" alt="<%= s.name %>" title="<%= s.name %>"/>
+        <img src="<%= path %>" class="sponsor-box-logo" height="<%= h %>" width="<%= w %>" alt="<%= s.name %>" title="<%= s.name %>"/>
         <% else %>
             <%= s.name %>
         <% end %>
     </a>
 <% end %>
-<% end %>
-<% unless other_sponsors.empty? %>
-<li class="nav-header">Other Sponsors</li>
-<% other_sponsors.each do |s| %>
-    <a href="<%= s.path %>">
-        <%
-        if s.thumb?
-          h, w = image_size s.thumb
-        %>
-        <img src="<%= s.thumb %>" class="sponsor-box-logo" width="<%= w %>" height="<%= h %>" alt="<%= s.name %>" title="<%= s.name %>"/>
-        <% else %>
-            <%= s.name %>
-        <% end %>
-    </a>
 <% end %>
 <% end %>
