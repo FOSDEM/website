@@ -645,6 +645,9 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     # event attachments
     before_attachments = Time.now
     events.each do |event|
+      # add an attachments array to each event, even if it turns out empty
+      event['attachments'] = []
+
       PentaDB::EventAttachment.where(:public => true, event_id: event['event_id']).find(:all).each do |a|
         time_before = Time.now
         f = a.filename.gsub(/[\s\-]+/, '_').gsub(%r{/+}, '')
@@ -664,7 +667,6 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
         meta['pages'] = a['pages'].to_i if a['pages']
         meta['size'] = File.size(file)
 
-        event['attachments'] = [] unless event.has_key? 'attachments'
         event['attachments'] << meta
       end #a
     end #events
