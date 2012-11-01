@@ -48,7 +48,7 @@ module Fosdem
     buffer
   end
 
-  def l(item, title=:title, sep=", ", detail=nil)
+  def l(item, title=:title, sep=", ", detail=nil, klass=nil)
     require 'builder'
     if item.is_a? String and item.start_with? '/'
       item = $item_by_id.fetch(item)
@@ -56,7 +56,7 @@ module Fosdem
 
     case item
     when Array
-      item.map{|i| l(i, title, sep, detail)}.join(sep)
+      item.map{|i| l(i, title, sep, detail, klass)}.join(sep)
     when Nanoc::Item
       text = case title
              when Symbol
@@ -83,18 +83,25 @@ module Fosdem
               else
                 nil
               end
+      args = {
+        href: item.path,
+      }
       if title
-        xml.a(text, href: item.path, title: title, longdesc: title)
-      else
-        xml.a(text, href: item.path)
+        args[:title] = title
+        args[:longdesc] = title
       end
+      if klass
+        args[:class] = (klass.is_a? Array) ? klass.join(" ") : klass
+      end
+      xml.a(text, args)
+
       buffer
     else
       raise "unsupported object of type #{item.class}"
     end
   end
 
-  def ltt(d, time)
+  def ltt(d, time, klass=nil)
     require 'builder'
     d = if d.is_a? Nanoc::Item
           d[:day]
@@ -123,7 +130,15 @@ module Fosdem
 
     buffer = ''
     xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
-    xml.a(time, href: "#{$prefix}/schedule/day/#{d}/" + '#' + anchor)
+    args = {
+      href: "#{$prefix}/schedule/day/#{d}/" + '#' + anchor,
+    }
+    if klass
+      args[:class] = (klass.is_a? Array) ? klass.join(" ") : klass
+    end
+
+    xml.a(time, args)
+
     buffer
   end
 

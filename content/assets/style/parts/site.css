@@ -120,3 +120,6 @@ ul.search-results {
 .schedule-track h1.title {
   float: left;
 }
+a.quiet {
+  color: inherit;
+}
