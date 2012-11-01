@@ -88,7 +88,9 @@ preprocess do
   # in that helper function)
   $timetable = timetable_from_items(@items)
 
-  $compressed_flatlist = flatlist(true)
+  $compressed_flatlist = timetable_to_track_cells($timetable, true)
+
+  $event_flatlist = timetable_to_event_cells($timetable, true)
 
   # compute room to building associations programatically and using
   # the metadata in content/buildings.yaml

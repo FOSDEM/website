@@ -1,4 +1,11 @@
 # vim: set ts=2 sw=2 et ai ft=ruby fileencoding=utf-8:
+# encoding: UTF-8
+
+# This module does moderately complex computations with event and track
+# information to come up with a hash and list structure that provides
+# detailed information about the schedule timetables.
+# It is used by a few other templates to render graphical information
+# about which talk or track takes place when and where.
 
 module Fosdem
   def interval_minutes
@@ -33,6 +40,92 @@ module Fosdem
     (h * 60 + m) / interval_minutes
   end
 
+  # Computes a timetable hash for all conference days.
+  # The resulting structure is like this:
+  # 
+  #{
+  #    "saturday" => {
+  #         :by_time => {
+  #            "10:30" => {
+  #                    "janson" => [
+  #                    [0] {
+  #                          :event_id => 448,
+  #                             :title => "Welcome to FOSDEM 2012",
+  #                              :slug => "keynotes_welcome",
+  #                             :track => "keynotes",
+  #                        :track_name => "Keynotes",
+  #                             :state => :begin,
+  #                             :slots => 5
+  #                    }
+  #                ],
+  #                     "k1105" => [],
+  #                    "ferrer" => [],
+  #  ...
+  #                     "k4401" => []
+  #            },
+  #            "10:35" => {
+  #                    "janson" => [
+  #                    [0] {
+  #                          :event_id => 448,
+  #                             :title => "Welcome to FOSDEM 2012",
+  #                              :slug => "keynotes_welcome",
+  #                             :track => "keynotes",
+  #                        :track_name => "Keynotes",
+  #                             :state => :inprogress
+  #                    }
+  #                ],
+  #                     "k1105" => [],
+  #                    "ferrer" => [],
+  # ...
+  #                     "k4401" => []
+  #            },
+  #            "10:40" => {
+  #                    "janson" => [
+  #                    [0] {
+  #                          :event_id => 448,
+  #                             :title => "Welcome to FOSDEM 2012",
+  #                              :slug => "keynotes_welcome",
+  #                             :track => "keynotes",
+  #                        :track_name => "Keynotes",
+  #                             :state => :inprogress
+  #                    }
+  #                ],
+  #                     "k1105" => [],
+  #                    "ferrer" => [],
+  # ...
+  #                     "k4401" => []
+  #            },
+  # ...
+  #         :by_room => {
+  #                "janson" => {
+  #                "10:30" => [
+  #                    [0] {
+  #                          :event_id => 448,
+  #                             :title => "Welcome to FOSDEM 2012",
+  #                              :slug => "keynotes_welcome",
+  #                             :track => "keynotes",
+  #                        :track_name => "Keynotes",
+  #                             :state => :begin,
+  #                             :slots => 5
+  #                    }
+  #                ],
+  #                "10:35" => [
+  #                    [0] {
+  #                          :event_id => 448,
+  #                             :title => "Welcome to FOSDEM 2012",
+  #                              :slug => "keynotes_welcome",
+  #                             :track => "keynotes",
+  #                        :track_name => "Keynotes",
+  #                             :state => :inprogress
+  #                    }
+  #                ],
+  #
+  # ...
+  #
+  # Note that :state is either :begin, :inprogress or :end
+  # It's a pretty large hash that needs some computation to create,
+  # and should hence best be cached.
+  #
   def timetable_from_items(items)
     h = {}
     items.select{|i| i.identifier =~ %r{^/schedule/day/.+}}.sort_by{|d| d[:conference_day]}.map do |day|
@@ -177,7 +270,39 @@ module Fosdem
     }
   end
 
-  def flatlist(compress=true)
+  #
+  # This method computes a grid of cells from the timetable,
+  # with the resulting hash looking like this:
+  #
+  #  {
+  #    "saturday" => {
+  #            "janson" => [
+  #            [ 0] {
+  #                :track => "keynotes",
+  #                :slots => 34
+  #            },
+  #            [ 1] nil,
+  #            [ 2] nil,
+  #            [ 3] nil,
+  #            [ 4] nil,
+  #            [ 5] nil,
+  #            [ 6] nil,
+  #            [ 7] nil,
+  #            [ 8] nil,
+  #            [ 9] {
+  #                :track => "hypervisors",
+  #                :slots => 46
+  #            },
+  #            [10] nil,
+  # ...
+  #
+  # day -> room -> array
+  #   and that array only contains an item (not nil) when a
+  #   track *starts*, but it does also contain the number of
+  #   interval slots that track lasts for (:slots), a slot
+  #   being one cell in a resulting table row
+  #
+  def timetable_to_track_cells(timetable, compress=true)
     by_day = {}
     days.each do |d|
       interval = $timetable.fetch(d[:slug]).fetch(:interval)
@@ -224,6 +349,117 @@ module Fosdem
                           end
                           if xm > 0
                             cc << { track: cell[:track], slots: cell[:slots] + xs}
+                            (0..xn-1).each do |n|
+                              cc << nil
+                            end
+                            i = j
+                          else
+                            cc << cell
+                            i += 1
+                          end
+                        end
+                      end
+                      cc
+                    else
+                      clusters
+                    end
+                  end
+      end #room, time_cells
+      by_day[d[:slug]] = h
+    end
+
+    by_day
+  end
+
+  #
+  # This method computes a grid of cells from the timetable,
+  # listing the events, with the resulting hash looking like this:
+  #
+  #{
+  #    "saturday" => {
+  #            "janson" => [
+  #            [ 0] {
+  #                  :event_id => 448,
+  #                     :title => "Welcome to FOSDEM 2012",
+  #                      :slug => "keynotes_welcome",
+  #                     :track => "keynotes",
+  #                :track_name => "Keynotes",
+  #                     :state => :begin,
+  #                     :slots => 5
+  #            },
+  #            [ 1] nil,
+  #            [ 2] {
+  #                  :event_id => 449,
+  #                     :title => "Free Software: A viable model for Commercial Success",
+  #                      :slug => "keynotes_model_success",
+  #                     :track => "keynotes",
+  #                :track_name => "Keynotes",
+  #                     :state => :begin,
+  #                     :slots => 10
+  #            },
+  #            [ 3] nil,
+  #            [ 4] nil,
+  #
+  # day -> room -> array
+  #   and that array only contains an item (not nil) when an
+  #   event *starts*, but it does also contain the number of
+  #   interval slots that event lasts for (:slots), a slot
+  #   being one cell in a resulting table row
+  #
+  def timetable_to_event_cells(timetable, compress=true)
+    by_day = {}
+    days.each do |d|
+      interval = $timetable.fetch(d[:slug]).fetch(:interval)
+
+      h = {}
+      $timetable.fetch(d[:slug]).fetch(:by_room).each do |room, time_cells|
+        h[room] = begin
+                    clusters = []
+                    cells = time_cells.values.map(&:first)
+                    cells.each do |cell|
+                      if cell.nil?
+                        clusters << nil
+                      elsif cell[:state] == :begin
+                        clusters << cell
+                      end
+                    end
+
+                    if compress
+                      cc = []
+                      i = 0
+                      while i < clusters.size
+                        cell = clusters[i]
+                        if cell.nil?
+                          cc << nil
+                          i += 1
+                        else
+                          j = i + 1
+                          xs = 0
+                          xn = 0
+                          xm = 0
+                          while j < clusters.size and xn < (60 / interval)
+                            fcell = clusters[j]
+                            if fcell.nil?
+                              xn += 1
+                            elsif fcell[:event_id] == cell[:event_id]
+                              xm += 1
+                              xs += fcell[:slots]
+                              xs += xn
+                              xn = 0
+                            else
+                              break
+                            end
+                            j += 1
+                          end
+                          if xm > 0
+                            cc << {
+                              event_id: cell[:event_id],
+                              title: cell[:title],
+                              slug: cell[:slug],
+                              track: cell[:track],
+                              track_name: cell[:track_name],
+                              slots: cell[:slots] + xs
+                            }
                             (0..xn-1).each do |n|
                               cc << nil
                             end

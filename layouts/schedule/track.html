@@ -19,6 +19,8 @@
 </p>
 <br style="clear: both;"/>
 <%
+  colors = 5
+
   interval = $timetable.first.last.fetch(:interval)
   
   days = $compressed_flatlist.keys.map(&$to_day)
@@ -44,12 +46,13 @@
   <tbody>
 <%
   last_day = nil
-  $compressed_flatlist
+  c = 1
+  $event_flatlist
   .select{|dayslug, list| item[:events_by_day].has_key? dayslug.to_sym and not item[:events_by_day][dayslug.to_sym].empty? }
   .each do |dayslug, flatlist_by_room|
     d = $to_day.call(dayslug)
     track_rooms_that_day = item[:events_per_room_per_day][dayslug.to_sym].keys
-    last_track = nil
+    last_event = nil
     i = 0
     flatlist_by_room.select{|r, cells| track_rooms_that_day.include? r.to_sym}.each do |roomslug, cells|
       start_offset_slots = (((Time.parse(d[:start_time]) - start) / 60) / interval).to_i
@@ -79,18 +82,20 @@
           <%
             else
               slots += cell[:slots]
-              color_class = if last_track.nil? or cell[:track] != last_track
-                              last_track = cell[:track]
+              color_class = if last_event.nil? or cell[:event_id] != last_event
+                              last_event = cell[:event_id]
                               if cell[:track] == item[:slug]
-                                "c1"
+                                c += 1
+                                c %= colors
+                                "c#{c + 1}"
                               else
                                 "other-track"
                               end
                             else
-                              "c1"
+                              "c#{c + 1}"
                             end
           %>
-          <td<% if color_class %> class="<%= color_class %>"<% end %> colspan="<%= cell[:slots] %>"><%= l(track(cell[:track]), :name, '', :title) %></td>
+          <td<% if color_class %> class="<%= color_class %>"<% end %> colspan="<%= cell[:slots] %>"><%= l(event(cell[:slug]), :title, '', :title) %></td>
         <%
           end #cell.nil?
         end #cells
@@ -104,7 +109,7 @@
       </tr>
     <%
       end #flatlist_by_room
-    end #compressed_flatlist
+    end #event_flatlist
   %>
   </tbody>
 </table>
