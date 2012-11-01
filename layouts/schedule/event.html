@@ -38,31 +38,18 @@
            else
              next
            end
-
-    if false
-      # hack workaround that plays together with the .htaccess in
-      # /var/www/video.fosdem.org
-      # on achanes.fosdem.org, as our video mirrors *STILL* haven't
-      # fixed their Content-Type (MIME type configuration) to
-      # send back video/webm for .webm files -- not doing so
-      # makes it impossible for HTML5 videos to play in the browser;
-      # passing ?nomirror in the URI bypasses the automatic mirror
-      # redirection on video.fosdem.org:
-      url = case video
-            when %r{^https?://video\.fosdem\.org\/}
-              video + '?nomirror'
-            else
-              video
-            end
-    else
-      url = video
-    end
+    require 'uri'
+    url = URI.encode video
 %>
 <div class="video">
-  <video src="<%= url %>" type='#{mime}'>
-    <div class="alert alert-info">
-      Video tag not supported. Download the video <a href="<%= video %>">here</a>.
-    </div>
+  <video preload="none" controls="controls">
+    <source src="<%= url %>" type='video/webm; codecs="vp8, vorbis"' />
+    <object type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.15.swf">
+      <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.15.swf"/>
+      <param name="allowfullscreen" value="true"/>
+      <param name="flashvars" value="config={'clip': {'url': '<%= url %>', 'autoPlay':false, 'autoBuffering':false}}"/>
+      <p>Video tag not supported. Download the video <a href="<%= url %>">here</a>.</p>
+    </object> 
   </video>
 </div>
 <% end %>
