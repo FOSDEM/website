@@ -33,38 +33,49 @@ Or if you prefer GPS coordinates:
 </p>
 
 <hr />
-
-<table>
-<tbody>
-<tr>
-<td>
-<h2>By Bus and/or Tram</h2>
+<a name="bus"></a><h3>By Bus and/or Tram</h3>
 <p>From Sunday afternoon till Sunday evening, FOSDEM provides free transportation by bus from the conference site (ULB Campus Solbosch) to the <a href="http://en.wikipedia.org/wiki/Brussels-South_railway_station">Brussels-South railway station</a> which has the best connections to Brussels Airport and neighboring countries.</p>
 <p>The FOSDEM bus will pick up people at the main bus stop on the 'Avenue de l'Université' road facing the ULB. You'll find the exact location on <a href="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=&amp;daddr=50.813987,4.384887&amp;hl=en&amp;geocode=&amp;mra=dme&amp;mrcr=0&amp;mrsp=1&amp;sz=20&amp;sll=50.813967,4.384828&amp;sspn=0.000759,0.002064&amp;ie=UTF8&amp;t=h&amp;z=20">this map</a> or simply follow the signalization on the venue.</p>
 <p>The 2 FOSDEM <a href="http://en.wikipedia.org/wiki/Articulated_bus">articulated buses</a> each have a capacity of 140 travelers. From the statistics of last year, we know that the bus will be at maximum capacity between 17:10 and 18:45. If you don't want to risk having to wait for the next bus in that time frame, we advise to leave <del>earlier</del> later. There are plenty of bars in the neighborhood to pass the time.</p>
-<p>We hope you enjoy this free service! Here is the bus schedule:
+<p>We hope you enjoy this free service!</p>
+<p>Here is the bus schedule:</p>
 
-<table border="1" width="60%">
-<tr><td><b>Departure at FOSDEM</b></td><td><b>Arrival at Brussels-South</b></td></tr>
-<tr><td>15:05</td><td>15:30</td></tr>
-<tr><td>15:30</td><td>15:55</td></tr>
-<tr><td>15:55</td><td>16:20</td></tr>
-<tr><td>16:20</td><td>16:45</td></tr>
-<tr><td>16:45</td><td>17:10</td></tr>
-<tr><td>17:10</td><td>17:35</td></tr>
-<tr><td>17:55</td><td>18:20</td></tr>
-<tr><td>18:20</td><td>18:45</td></tr>
-<tr><td>18:45</td><td>19:10</td></tr>
-<tr><td>19:15</td><td>19:40</td></tr>
-<tr><td>19:35</td><td>20:00</td></tr>
-<tr><td>20:05</td><td>20:30</td></tr>
+<table style="max-width: 40% !important;" class="table table-condensed table-hover" -->
+    <thead>
+        <tr>
+            <th>Departure at FOSDEM</th>
+            <th></th>
+            <th>Arrival at Brussels-South</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%
+        [
+            %w(15:05 15:30),
+            %w(15:30 15:55),
+            %w(15:55 16:20),
+            %w(16:20 16:45),
+            %w(16:45 17:10),
+            %w(17:10 17:35),
+            %w(17:55 18:20),
+            %w(18:20 18:45),
+            %w(18:45 19:10),
+            %w(19:15 19:40),
+            %w(19:35 20:00),
+            %w(20:05 20:30),
+        ].each do |t|
+        %>
+        <tr>
+            <td style="text-align: right;"><%= t.first %></td>
+            <td>&nbsp;&rarr;&nbsp;</td>
+            <td><%= t.last %></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
-</p>
 
-<h3>Regular transport</h3>
+<a name="regular"></a><h3>Regular transport</h3>
 <p>Metro/Tram/Bus lines provided by the public transport company, STIB/MIVB.</p>
-
-
 <dl>
 <dt><strong>
   <a href="http://www.stib.be/horaires-dienstregeling2.html?linecode=71&amp;x=14&amp;y=12&amp;l=en&amp;fmodule=s&amp;results=s" 
@@ -95,19 +106,14 @@ Or if you prefer GPS coordinates:
 <p>
 All of them stop at "ULB".<br/>
 </p>
-</td>
-</tr>
 
-<tr>
-<td>
-<p>
-<h2>By Train</h2>
+<a name="train"></a><h3>By Train</h3>
 <p>From <strong>Brussels South</strong> (a.k.a. "<strong>Bruxelles Midi</strong>", "<strong>Brussel Zuid</strong>" or "<strong>Gare du Midi</strong>") Station (about <strong>30 minutes</strong>):
 <ul style="margin-top:0">
 <li>Take the <a href="http://stib.be/appl/EN/40000Eng/M/40002E.htm">Metro line 2</a>, direction Simonis (elisabeth)</li>
 <li>Get off at station <u>Louise</u></li>
 <li>Take the <a href="http://stib.be/appl/EN/40000Eng/T/40094E.htm">tram 94</a>, direction Herrmann-Debroux</li>
-<li>get off at stop <u>ULB</u>.</li></ul></p>
+<li>Get off at stop <u>ULB</u>.</li></ul></p>
 <br />
 <p>From <strong>Brussels Central</strong> ("<strong>Bruxelles Central</strong>", "<strong>Brussel Centraal</strong>" or "<strong>Gare Centrale</strong>") station (about <strong>20 minutes</strong>):
 <ul style="margin-top:0">
@@ -124,14 +130,9 @@ All of them stop at "ULB".<br/>
 <li><a href="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=Paul+H%C3%A9gerlaan&amp;daddr=50.817107,4.392364+to:Etterbeek+station&amp;geocode=Fb9WBwMdntZCAA%3B%3B&amp;hl=en&amp;mra=dme&amp;mrcr=0&amp;mrsp=1&amp;sz=16&amp;via=1&amp;dirflg=w&amp;sll=50.816104,4.387987&amp;sspn=0.010087,0.01442&amp;ie=UTF8&amp;t=h&amp;z=16">directions from ULB/FOSDEM to the Etterbeek train station</a></li>
 <li><a href="http://hari.b-holding.be/hafas/bin/query.exe/en?seqnr=1&amp;ident=fh.0180413.1232584630&amp;OK#focus">time table for Etterbeek to Bruxelles midi on Sunday at 18:30</a>, takes 25min to Brussels South station, only a train every hour</li></ul></p>
 </p>
-</td>
-</tr>
 
-<tr>
-<td>
+<a name="plane"></a><h3>By Plane</h3>
 <p>
-<h2>By Plane</h2>
-
 From Brussels International Airport, located in <b>Zaventem</b> (about 50 minutes):
 <ul style="margin-top:0">
 <li>Take the <u>train</u> to Brussels</li>
@@ -140,22 +141,14 @@ From Brussels International Airport, located in <b>Zaventem</b> (about 50 minute
 <li>Get off at stop <u>ULB</u>.</li>
 </ul>
 </p>
-</td>
-</tr>
 
-<tr>
-<td>
+<a name="fsfe"></a><h3>Bus from Berlin via Hannover, Dortmund and D&uuml;sseldorf</h3>
 <p>
-<h2>Bus from Berlin via Hannover, Dortmund and D&uuml;sseldorf</h2>
-
 Some people are organizing a bus service from parts of Germany.  More information at<br/>
 <a href="http://wiki.fsfe.org/FellowshipProjects/FreedomTours">http://wiki.fsfe.org/FellowshipProjects/FreedomTours</a>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
 
+<hr />
 <h2>Related Resources</h2>
 <ul>
 <li><a target="_blank" href="http://wikitravel.org/en/Brussels#Get_in"
