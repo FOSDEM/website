@@ -17,7 +17,7 @@ gem "systemu"
 gem "adsf"
 gem "builder"
 gem "activesupport"
-gem "activerecord"
+gem "activerecord", "~>3.1.0"
 gem "pg"
 gem "erubis", "~>2.7.0"
 gem "psych", "~>1.3.3"
@@ -28,6 +28,8 @@ gem "rsolr"
 gem "sinatra"
 gem "sinatra-contrib"
 gem "thin"
+gem "net-ssh"
+gem "net-ssh-gateway"
 
 group :development do
     gem "awesome_print"
@@ -36,7 +38,7 @@ group :development do
 
     # guard plugins:
     gem "guard-bundler"
-    gem "guard-nanoc", :git => "https://github.com/davidrichards/guard-nanoc.git", :branch => "master"
+    gem "guard-nanoc", :git => "https://github.com/pbleser/guard-nanoc.git", :branch => "master"
 
     # for guard filesystem event monitoring, see here:
     # https://github.com/guard/guard
@@ -46,5 +48,7 @@ group :development do
 
     # for Growl notifications
     gem 'ruby_gntp'
+
+    gem "libnotify", "~>0.1.3"
 
 end

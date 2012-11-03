@@ -6,6 +6,7 @@ module Nanoc3::DataSources
     def items
       # Get prefix
       prefix = config[:prefix] || 'attachments'
+      id_prefix = config[:identifier_prefix] || prefix
 
       # Get all files under prefix dir
       filenames = Dir[prefix + '/**/*'].select { |f| File.file?(f) }
@@ -18,11 +19,27 @@ module Nanoc3::DataSources
                                       if extension != n[:ext].to_s
                                         extension = n[:ext].to_s
                                         filename = begin
-                                                     dot_index = fs_filename.rindex '.'
-                                                     if dot_index
-                                                       fs_filename[0, dot_index] + "." + extension
+                                                     dirname = begin
+                                                                 d = File.dirname fs_filename
+                                                                 if d.nil? or d.empty? or d == '.'
+                                                                   nil
+                                                                 else
+                                                                   d
+                                                                 end
+                                                               end
+                                                     basename = File.basename fs_filename
+
+                                                     dot_index = basename.index '.'
+                                                     new_basename = if dot_index
+                                                                      basename[0, dot_index] + "." + extension
+                                                                    else
+                                                                      basename + "." + extension
+                                                                    end
+
+                                                     if dirname
+                                                       File.join(dirname, new_basename)
                                                      else
-                                                       fs_filename + "." + extension
+                                                       new_basename
                                                      end
                                                    end
                                       else
@@ -38,7 +55,20 @@ module Nanoc3::DataSources
         identifier, export = begin
                                ext = File.extname(fs_filename)
                                unprefixed = fs_filename[(prefix.length+1)..-1]
-                               [ unprefixed[0..-(ext.size + 1)], unprefixed ]
+
+                               normalized_id = begin
+                                                 basename = unprefixed[0..-(ext.size + 1)]
+                                                 .gsub(/\s+/, '_')
+
+                                                 require 'active_support/inflector/transliterate'
+                                                 require 'active_support/inflector/methods'
+                                                 ActiveSupport::Inflector.transliterate basename
+                                               end
+
+                               [
+                                 '/' + id_prefix + '/' + normalized_id + '/',
+                                 unprefixed
+                               ]
                              end
 
         mtime      = File.mtime(fs_filename)
@@ -53,10 +83,7 @@ module Nanoc3::DataSources
           :checksum => checksum
         )
         item[:filesystem] = fs_filename
-        item[:title] = begin
-                         require 'pathname'
-                         Pathname.new(item[:filename]).basename.to_s
-                       end
+        item[:title] = File.basename item[:filename]
         item[:kind] = :attachment
         item[:type], v, item[:media], item[:localname] = case filename
                                                          when %r{^attachments/event/([^/]+)/([^/]+)/(.+)$}

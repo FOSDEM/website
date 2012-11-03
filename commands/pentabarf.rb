@@ -12,54 +12,127 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
   def run
     total_time = start_time = Time.now
 
+    # load the configuration from the site
+    require_site
+    conf = site.config.fetch :pentabarf
+    $thumb_width, $thumb_height = begin
+                                    t = conf.fetch :thumbnail
+                                    [ t.fetch(:width), t.fetch(:height) ]
+                                  end
+
+    $image_export_root = conf.fetch :photo_export_root
+    $attachment_export_root = conf.fetch :attachment_export_root
+    $meta_export_file = conf.fetch :meta_export_file
+
+    $export_roots = [$image_export_root, $attachment_export_root]
+
+    gateway, port = begin
+                      s = conf.fetch :tunnel
+                      tunnel_enabled = s.fetch :enabled
+                      if s and tunnel_enabled
+                        require 'net/ssh'
+                        require 'net/ssh/gateway'
+
+                        h = s.fetch :remote_host
+                        p = s.fetch :remote_port
+                        lp = conf.fetch :port
+
+                        sc = Net::SSH::Config.for h
+                        h = sc ? sc.fetch(:host_name, h) : nil
+                        u = sc ? sc[:user] : nil
+
+                        unless sc and u
+                          if sc
+                          $stderr.puts <<EOF
+FATAL ERROR: failed to find "User" in the SSH configuration entry for the host #{h}
+EOF
+                          else
+                          $stderr.puts <<EOF
+FATAL ERROR: failed to find an SSH configuration entry for the host #{h}
+EOF
+                          end
+                          $stderr.puts <<EOF
+
+In order for nanoc to establish the ssh tunnel to the Pentabarf database
+on #{h}:#{p}, it needs to know which remote user name to use.
+That information is expected to be found in one of the following files:
+#{Net::SSH::Config.default_files.join($\)}
+
+Example:
+
+Host #{h}
+  HostName penta.fosdem.org
+  User=MY_USERNAME_ON_#{h.upcase}
+  ForwardX11=no
+  ConnectTimeout=30
+  ConnectionAttempts=5
+  ServerAliveInterval=60
+
+EOF
+                          raise "missing configuration information for SSH tunneling"
+                        end
+
+                        time_before = Time.now
+                        gateway = Net::SSH::Gateway.new(h, u)
+                        port = gateway.open('127.0.0.1', p, lp)
+                        log(:high, "connected SSH tunnel #{u}@#{h} :#{lp} -> :#{p}", Time.now - time_before)
+                        [ gateway, port ]
+                      else
+                        [ nil, nil ]
+                      end
+                    end
+
+    begin
+      run_internal(conf, total_time)
+    ensure
+      if gateway and port
+        log(:high, "disconnected SSH tunnel")
+        gateway.close(port)
+      end
+    end
+
+  end
+
+  private
+  def run_internal(conf, total_time)
     require 'yaml'
     require 'psych'
     YAML::ENGINE.yamler = 'psych'
     require 'json'
+    require 'time'
     require 'active_record'
     require 'fileutils'
 
-    # some helpers
-    to_slug = lambda{|x| x.fetch('slug')}
+    connection = begin
+                   time_before = Time.now
 
-    # load the configuration from the site
-    require_site
-    conf = site.config.fetch(:pentabarf)
-    cid = conf.fetch('conference_id')
-    $thumb_width, $thumb_height = begin
-                                    t = conf[:thumbnail]
-                                    if t
-                                      [ t.fetch(:width, 32), t.fetch(:height, 32) ]
-                                    else
-                                      [ 32, 32 ]
-                                    end
-                                  end
+                   h = conf.fetch :host
+                   p = conf.fetch :port
+                   begin
+                     d = conf.fetch :database
+                     u = conf.fetch :username
+                     pw = conf.fetch :password
+                     s = conf.fetch :schema
+                     log(:high, "connecting to Pentabarf database //#{h}:#{p}/#{d} with user #{u}")
 
-    $image_export_root = conf.fetch 'photo_export_root', "photos"
-    $attachment_export_root = conf.fetch 'attachment_export_root', "attachments"
-    $meta_export_file = conf.fetch 'meta_export_file', "pentabarf.yaml"
+                     ActiveRecord::Base.establish_connection(
+                       :adapter => 'postgresql',
+                       :username => u,
+                       :password => pw,
+                       :database => d,
+                       :host => h,
+                       :port => p,
+                       :schema_search_path => s,
+                     )
+                     connection = ActiveRecord::Base.connection
+                     log(:high, "connected to Pentabarf database #{h}:#{p}", Time.now - time_before)
+                     connection
+                   rescue
+                     raise "Failed to connect to the Pentabarf database //#{h}:#{p}/#{d} with user #{u}"
+                   end
+                 end
 
-    $export_roots = [$image_export_root, $attachment_export_root]
-
-    begin
-      h = conf.fetch('host', 'localhost')
-      p = conf.fetch('port', '5432')
-      puts "Connecting to Pentabarf database at #{h}:#{p} ..."
-      ActiveRecord::Base.establish_connection(
-        :adapter => 'postgresql',
-        :username => conf.fetch('username'),
-        :password => conf.fetch('password'),
-        :database => conf.fetch('database'),
-        :host => conf.fetch('host', 'localhost'),
-        :port => conf.fetch('port', '5432'),
-        :schema_search_path => conf.fetch('schema', 'public'),
-      )
-    end
-    begin
-      ActiveRecord::Base.connection
-    rescue
-      raise "Failed to connect to the Pentabarf database"
-    end
+    cid = conf.fetch :conference_id
 
     $export_roots.each do |d|
       FileUtils.mkdir_p(d) unless File.exists? d
@@ -82,6 +155,9 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
 
     # obviously, we haven't created/updated any files yet
     $cache_tree_after = []
+   
+    # some helpers
+    to_slug = lambda{|x| x.fetch('slug')}
 
     def yf(file, content, time_before=nil)
       require 'pathname'
@@ -114,7 +190,7 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       action
     end
 
-    puts "Rendering cache..."
+    log(:high, "rendering cache")
     start_time = Time.now
 
     {
@@ -222,12 +298,17 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       d['title'] = d['name']
     end
 
-    events = slugify!(model(
-      PentaDB::Event.where(conference_id: cid, event_state: 'accepted').where("language='en' OR language IS NULL").find(:all).select do |e|
-      e.duration and e.conference_track_id and e.conference_room_id and e.conference_day_id and e.public == true and %w{confirmed reconfirmed}.include? e.event_state_progress
-      end,
-        [:event_id, :conference_id, :slug, :title, :subtitle, :conference_track_id, :event_type, :duration, :event_state, :event_state_progress, :language, :conference_room_id, :conference_day_id, :start_time, :abstract, :description ]
-    ), :title)
+    events = begin
+               time_before = Time.now
+               events = slugify!(model(
+                 PentaDB::Event.where(conference_id: cid, event_state: 'accepted').where("language='en' OR language IS NULL").find(:all).select do |e|
+                 e.duration and e.conference_track_id and e.conference_room_id and e.conference_day_id and e.public == true and %w{confirmed reconfirmed}.include? e.event_state_progress
+                 end,
+                   [:event_id, :conference_id, :slug, :title, :subtitle, :conference_track_id, :event_type, :duration, :event_state, :event_state_progress, :language, :conference_room_id, :conference_day_id, :start_time, :abstract, :description ]
+               ), :title)
+               log(:high, "loaded #{events.size} events", Time.now - time_before)
+               events
+             end
 
     # render the event markup (abstract and description)
     events.each do |e|
@@ -279,11 +360,18 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
                           h
                         end
 
-    eventpersons = PentaDB::EventPerson
-    .where(event_role: ['coordinator', 'moderator', 'speaker'])
-    .where(event_role_state: ['confirmed', 'offer'])
-    .find(:all)
-    .select{|ep| event_by_event_id.has_key? ep.event_id}
+    eventpersons = begin
+                     time_before = Time.now
+
+                     eventpersons = PentaDB::EventPerson
+                     .where(event_role: ['coordinator', 'moderator', 'speaker'])
+                     .where(event_role_state: ['confirmed', 'offer'])
+                     .find(:all)
+                     .select{|ep| event_by_event_id.has_key? ep.event_id}
+
+                     log(:high, "loaded #{eventpersons.size} eventpersons", Time.now - time_before)
+                     eventpersons
+                   end
     eventpersons_by_event_id = begin
                                  h = {}
                                  eventpersons.each{|ep| h[ep['event_id']] = []}
@@ -298,6 +386,8 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
                                 end
 
     speakers = begin
+                 time_before = Time.now
+
                  list = model PentaDB::Person.find(:all).reject{|p| eventpersons_by_person_id.fetch(p['person_id'], []).empty?}, [:person_id, :title, :gender, :first_name, :last_name, :public_name, :nickname]
                  # decorate speakers with a 'name'
                  list.each do |p|
@@ -311,6 +401,8 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
                  end
                  # inject a slug
                  slugify! list, :name
+
+                 log(:high, "loaded #{list.size} speakers", Time.now - time_before)
                  list
                end
 
@@ -364,6 +456,8 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
 
     # post-process events with event_link
     begin
+      time_before = Time.now
+
       # fetch all event_link rows into a cache, faster
       # (don't run model() on all of them, we'll discard most as the query returns the
       # event_link rows for all conferences)
@@ -382,10 +476,14 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
         end
         e['links'] = links
       end
+
+      log(:high, "loaded #{eventlinks.size} event links", Time.now - time_before)
     end
 
     # post-process events with event_related
     begin
+      time_before = Time.now
+
       # fetch all event_related into a cache, faster
       eventrelated = PentaDB::EventRelated.find(:all).select{|r| event_by_event_id.has_key? r['event_id1']}
       h = begin
@@ -408,10 +506,14 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
         from = event_by_event_id.fetch(from_id)
         from['related'] = to_ids.map{|id| event_by_event_id.fetch(id)['slug']}
       end
+
+      log(:high, "loaded #{eventrelated.size} event relations", Time.now - time_before)
     end
 
     # tracks
     tracks = begin
+               time_before = Time.now
+
                list = model(PentaDB::Track.where(conference_id: cid).find(:all).sort_by{|t| [t.rank, t.conference_track_id]}, [:conference_track_id, :conference_track, :rank])
 
                # XXX hack because of broken 2012 database
@@ -437,6 +539,8 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
                end
                # inject slugs
                slugify!(list, :name)
+
+               log(:high, "loaded #{list.size} tracks", Time.now - time_before)
                list
              end
 
@@ -475,7 +579,13 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
     end
 
     # rooms
-    rooms = slugify!(model(PentaDB::Room.where(conference_id: cid, :public => true).find(:all).sort_by{|r| [r.rank, r.conference_room_id]}, [:conference_room_id, :conference_room, :size, :rank]), :conference_room)
+    rooms = begin
+              time_before = Time.now
+              rooms = slugify!(model(PentaDB::Room.where(conference_id: cid, :public => true).find(:all).sort_by{|r| [r.rank, r.conference_room_id]}, [:conference_room_id, :conference_room, :size, :rank]), :conference_room)
+              log(:high, "loaded #{rooms.size} rooms", Time.now - time_before)
+              rooms
+            end
+
     room_by_room_id = byid rooms, :conference_room_id
 
     # decorate rooms with a title
@@ -644,97 +754,111 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
 
     # event attachments
     before_attachments = Time.now
-    events.each do |event|
-      # add an attachments array to each event, even if it turns out empty
-      event['attachments'] = []
+    begin
+      log(:high, 'processing attachments')
+      counter = 0
+      events.each do |event|
+        # add an attachments array to each event, even if it turns out empty
+        event['attachments'] = []
 
-      PentaDB::EventAttachment.where(:public => true, event_id: event['event_id']).find(:all).each do |a|
-        time_before = Time.now
-        f = a.filename.gsub(/[\s\-]+/, '_').gsub(%r{/+}, '')
-        filename = File.join(
-          'event',
-          event['slug'],
-          a.attachment_type,
-          a.event_attachment_id.to_s,
-          f
-        )
-        file = File.join($attachment_export_root, filename)
-        action = yf(file, a.data, time_before)
+        PentaDB::EventAttachment.where(:public => true, event_id: event['event_id']).find(:all).each do |a|
+          counter += 1
 
-        meta = { 'filename' => filename, }
-        meta['mime'] = a['mime_type'] if a['mime_type']
-        meta['title'] = a['title'] if a['title']
-        meta['pages'] = a['pages'].to_i if a['pages']
-        meta['size'] = File.size(file)
+          time_before = Time.now
+          f = a.filename.gsub(/[\s\-]+/, '_').gsub(%r{/+}, '')
+          filename = File.join(
+            'event',
+            event['slug'],
+            a.attachment_type,
+            a.event_attachment_id.to_s,
+            f
+          )
+          file = File.join($attachment_export_root, filename)
+          action = yf(file, a.data, time_before)
 
-        event['attachments'] << meta
-      end #a
+          meta = { 'filename' => filename, }
+          meta['mime'] = a['mime_type'] if a['mime_type']
+          meta['title'] = a['title'] if a['title']
+          meta['pages'] = a['pages'].to_i if a['pages']
+          meta['size'] = File.size(file)
+
+          event['attachments'] << meta
+        end #a
+      end
+      log(:high, "loaded #{counter} attachments", Time.now - before_attachments)
     end #events
     after_attachments = Time.now
+
     start_time += (after_attachments - before_attachments)
 
     # add photos to speakers
     before_photos = Time.now
-    speakers.each do |speaker|
-      PentaDB::PersonImage.where(:public => true, person_id: speaker['person_id']).find(:all).each do |i|
-        time_before = Time.now
-        if i.image.size > 0
-          extension = case i.mime_type
-                      when 'image/png'
-                        'png'
-                      when 'image/gif'
-                        'gif'
-                      when 'image/jpeg'
-                        'jpg'
-                      else
-                        raise "unsupported image MIME type \"#{i.mime_type}\" for person #{person.person_id}"
-                      end
+    begin
+      counter = 0
+      log(:high, 'processing photos')
+      speakers.each do |speaker|
+        PentaDB::PersonImage.where(:public => true, person_id: speaker['person_id']).find(:all).each do |i|
+          counter += 1
+          time_before = Time.now
+          if i.image.size > 0
+            extension = case i.mime_type
+                        when 'image/png'
+                          'png'
+                        when 'image/gif'
+                          'gif'
+                        when 'image/jpeg'
+                          'jpg'
+                        else
+                          raise "unsupported image MIME type \"#{i.mime_type}\" for person #{person.person_id}"
+                        end
 
-          require 'RMagick'
-          require 'base64'
+            require 'RMagick'
+            require 'base64'
 
-          image = begin
-                    Magick::Image::from_blob(i.image).first
-                  rescue Exception => e
-                    puts "WARNING: failed to read photo for person #{speaker['person_id']}: #{e.message}"
-                    nil
-                  end
+            image = begin
+                      Magick::Image::from_blob(i.image).first
+                    rescue Exception => e
+                      puts "WARNING: failed to read photo for person #{speaker['person_id']}: #{e.message}"
+                      nil
+                    end
 
-          unless image.nil?
-            image_filename = File.join($image_export_root, 'photo', speaker['slug'] + "." + extension)
-            action = yf(image_filename, i.image, time_before)
-            time_before = Time.now
+            unless image.nil?
+              image_filename = File.join($image_export_root, 'photo', speaker['slug'] + "." + extension)
+              action = yf(image_filename, i.image, time_before)
+              time_before = Time.now
 
-            speaker['photo'] = {
-              'slug' => "#{speaker['slug']}.#{extension}",
-              'mime' => i.mime_type,
-              'width' => image.columns,
-              'height' => image.rows,
-            }
+              speaker['photo'] = {
+                'slug' => "#{speaker['slug']}",
+                'mime' => i.mime_type,
+                'width' => image.columns,
+                'height' => image.rows,
+              }
 
-            thumb_filename = File.join($image_export_root, 'thumbnail', speaker['slug'] + "." + extension)
+              thumb_filename = File.join($image_export_root, 'thumbnail', speaker['slug'] + "." + extension)
 
-            tw, th = if action == :identical and File.exists? thumb_filename
-                       content = IO.read(thumb_filename)
-                       t = Magick::Image::from_blob(content).first
-                       $cache_tree_after << thumb_filename
-                       [t.columns, t.rows]
-                     else
-                       t = image.resize_to_fill($thumb_width, $thumb_height)
-                       yf(thumb_filename, t.to_blob, time_before)
-                       [t.columns, t.rows]
-                     end
+              tw, th = if action == :identical and File.exists? thumb_filename
+                         content = IO.read(thumb_filename)
+                         t = Magick::Image::from_blob(content).first
+                         $cache_tree_after << thumb_filename
+                         [t.columns, t.rows]
+                       else
+                         t = image.resize_to_fill($thumb_width, $thumb_height)
+                         yf(thumb_filename, t.to_blob, time_before)
+                         [t.columns, t.rows]
+                       end
 
-            speaker['thumbnail'] = {
-              'slug' => "#{speaker['slug']}.#{extension}",
-              'mime' => i.mime_type,
-              'width' => tw,
-              'height' => th,
-            }
-          end #image.nil?
-        end #if
-      end #each i
-    end #each speaker
+              speaker['thumbnail'] = {
+                'slug' => "#{speaker['slug']}",
+                'mime' => i.mime_type,
+                'width' => tw,
+                'height' => th,
+              }
+            end #image.nil?
+          end #if
+        end #each i
+      end #each speaker
+      log(:high, "loaded #{counter} speaker photos", Time.now - before_photos)
+    end
     after_photos = Time.now
     start_time += (after_photos - before_photos)
 
@@ -813,17 +937,31 @@ class PentabarfCache < ::Nanoc::CLI::CommandRunner
       end
     end
 
-    puts
-    puts "Pentabarf cache built in #{format('%.2f', Time.now - total_time)}s."
+    log(:high, "cache rendered", Time.now - total_time)
+
+  ensure
+    if connection
+      connection.disconnect!
+      log(:high, "disconnected from Pentabarf database")
+    end
 
   end
 
-  private
   def sha(content)
     require 'digest/sha2'
     sha = Digest::SHA256.new
     sha << content
     sha.hexdigest.downcase
+  end
+
+  def log(prio, message, duration=nil)
+    t = if duration
+          "[%2.2fs]" % duration
+        else
+          " " * 7
+        end
+
+    Nanoc::CLI::Logger.instance.log(prio, "%s%12s%s  %s  %s" % [ "\e[36;1m", "pentabarf", "\e[0m", t, message ])
   end
 
 end

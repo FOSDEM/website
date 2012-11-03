@@ -92,13 +92,10 @@ data_sources:
     file: pentabarf.yaml
 
   -
-    type: static
-    prefix: photos
-    items_root: /photos/
+    type: photos
+
   -
     type: attachments
-    prefix: attachments
-    items_root: /attachments/
 
 # Configuration for the “watch” command, which watches a site for changes and
 # recompiles if necessary.
@@ -137,5 +134,13 @@ pentabarf:
   port:     15432
   schema:   public
   photo_export_root: photos
+  attachment_export_root: attachments
   meta_export_file: pentabarf.yaml
+  thumbnail:
+    width: 32
+    height: 32
+  tunnel:
+    enabled: false
+    remote_host: penta.fosdem.org
+    remote_port: 5432
 
