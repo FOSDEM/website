@@ -31,7 +31,9 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
                      nil
                    end
              if url
-               RSolr.connect :url => url
+               solr = RSolr.connect :url => url
+               solr.head('admin/ping').response[:status] == 200 or raise "failed to ping Solr at #{solr.url.to_s}"
+               solr
              else
                nil
              end
@@ -103,14 +105,12 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
 
             doc[:interview_year] = interview_year if interview_year
 
-
             docs << doc
 
             xml.doc do
               xml.field(item.path, :name => "id")
               if item[:title]
-                #xml.field(item[:title], :name => "title", :boost => "10.0")
-                xml.field(item[:title], :name => "title")
+                xml.field(item[:title], :name => "title", :boost => "10.0")
               else
                 $stderr.puts "HUH, no title for #{item.path} ?"
               end
@@ -146,7 +146,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
           body = eval e.response[:body]
           raise "Solr responded with HTTP code #{e.response[:status]}: #{body['error']['msg']}"
         end
-        log :low, :index, "#{docs.size} documents out of #{self.site.items.size} items", Time.now - start
+        log :high, :index, "#{docs.size}/#{self.site.items.size} items in #{solr.uri.to_s}", Time.now - start
       end
 
       [ :commit, :optimize ].each do |action|
