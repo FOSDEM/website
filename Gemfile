@@ -33,14 +33,18 @@ group :development do
     gem "awesome_print"
 
     gem "guard"
-    # for guard, see here:
+
+    # guard plugins:
+    gem "guard-bundler"
+    gem "guard-nanoc", :git => "https://github.com/davidrichards/guard-nanoc.git", :branch => "master"
+
+    # for guard filesystem event monitoring, see here:
     # https://github.com/guard/guard
     gem 'rb-inotify', :require => false
     gem 'rb-fsevent', :require => false
     gem 'rb-fchange', :require => false
 
+    # for Growl notifications
     gem 'ruby_gntp'
 
-    gem "guard-bundler"
-    gem "guard-nanoc"
 end

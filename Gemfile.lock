@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/davidrichards/guard-nanoc.git
+  revision: de4533d2b22698718f8d20d3f2c088e5be1b7f57
+  branch: master
+  specs:
+    guard-nanoc (0.1.0)
+      guard (>= 0.2.2)
+      nanoc (>= 3.1.5)
+
+GIT
   remote: https://github.com/ddfreyne/nanoc.git
   revision: 43e23e88a20b9febceacfeb28f052b291a46052f
   branch: release-3.4.x
@@ -35,9 +44,6 @@ GEM
     guard-bundler (1.0.0)
       bundler (~> 1.0)
       guard (~> 1.1)
-    guard-nanoc (0.1.0)
-      guard (>= 0.2.1)
-      nanoc (>= 3.1.5)
     i18n (0.6.1)
     image_size (1.1.1)
     kramdown (0.13.8)
@@ -102,7 +108,7 @@ DEPENDENCIES
   erubis (~> 2.7.0)
   guard
   guard-bundler
-  guard-nanoc
+  guard-nanoc!
   image_size
   kramdown (~> 0.13.6)
   nanoc!
