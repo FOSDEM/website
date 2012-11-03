@@ -25,7 +25,7 @@
 
   interval = $timetable.first.last.fetch(:interval)
   
-  days = $compressed_flatlist.keys.map(&$to_day)
+  days = $track_flatlist.keys.map(&$to_day)
   start = days.map{|d| Time.parse(d[:start_time])}.min
   start_hour = start.hour
 

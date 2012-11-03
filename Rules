@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 # vim: set ts=2 sw=2 et ai ft=ruby:
+# encoding: UTF-8
 
 #
 # fosdem.org nanoc configuration
@@ -87,9 +88,7 @@ preprocess do
   # (put this rule *after* computing $item_by_id as we are using $item_by_id
   # in that helper function)
   $timetable = timetable_from_items(@items)
-
-  $compressed_flatlist = timetable_to_track_cells($timetable, true)
-
+  $track_flatlist = timetable_to_track_cells($timetable, true)
   $event_flatlist = timetable_to_event_cells($timetable, true)
 
   # compute room to building associations programatically and using
