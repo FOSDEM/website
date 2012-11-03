@@ -28,3 +28,19 @@ gem "rsolr"
 gem "sinatra"
 gem "sinatra-contrib"
 gem "thin"
+
+group :development do
+    gem "awesome_print"
+
+    gem "guard"
+    # for guard, see here:
+    # https://github.com/guard/guard
+    gem 'rb-inotify', :require => false
+    gem 'rb-fsevent', :require => false
+    gem 'rb-fchange', :require => false
+
+    gem 'ruby_gntp'
+
+    gem "guard-bundler"
+    gem "guard-nanoc"
+end
