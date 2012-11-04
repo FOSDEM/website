@@ -1,20 +1,42 @@
-<dl class="dl-horizontal well">
-    <dt>Capacity:</dt>
-    <dd><%= item[:size] %></dd>
-    <% item[:events_by_day].each do |day_slug, event_slugs| %>
-    <% unless event_slugs.empty? %>
-    <%
+<p class="side-box">
+<i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %>
+</p>
+<br style="clear: both;"/>
+<%
+  unless item[:events_by_day].empty? or item[:events_by_day].values.map{|l| l.size}.inject(0, :+) == 0
+%>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Track(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+<%
+    item[:events_by_day].each do |day_slug, event_slugs|
+      unless event_slugs.empty?
         day = day(day_slug)
         events = event_slugs.map(&$to_event)
         s = events.sort_by{|e| e[:start_datetime]}.first[:start_time]
         e = events.sort_by{|e| e[:end_datetime]}.last[:end_time]
         tracks = events.map{|e| e[:track]}.uniq.map(&$to_track).sort_by{|t| t[:rank]}
-    %>
-    <dt><%= l(day) %>:</dt>
-    <dd><%= s %>-<%= e %><% unless tracks.empty? %>: <%= l(tracks, :name)%><% end %></dd>
-    <% end %>
-    <% end %>
-</dl>
+      %>
+      <tr>
+        <td><i class="icon-calendar"></i> <%= l(day) %></td>
+        <td><%= s %></td>
+        <td><%= e %></td>
+        <td><% unless tracks.empty? %><%= l(tracks, :name) %><% end %></td>
+      </tr>
+      <%
+      end
+    end
+%>
+  </tbody>
+</table>
+<% end %>
 
 <% unless item[:events].empty? %>
 <h3>Sessions</h3>
@@ -35,9 +57,9 @@
         <% dayevents.sort_by{|e| e[:start_datetime]}.each do |e| %>
         <tr>
             <td><%= l e %></td>
-            <td><%= l track(e[:track]), :name %></a></td>
-            <td><%= ltt e[:day], e[:start_time] %></td>
-            <td><%= ltt e[:day], e[:end_time] %></td>
+            <td><%= l track(e[:track]), :name, nil, nil, :quiet %></a></td>
+            <td><%= ltt e[:day], e[:start_time], :quiet %></td>
+            <td><%= ltt e[:day], e[:end_time], :quiet %></td>
         </tr>
         <% end %>
         <% end %>

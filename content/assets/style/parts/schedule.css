@@ -181,10 +181,12 @@ body.fullpage {
     border-top: 2px solid #000;
 }
 
-.roomtracks tbody tr.subsection_start td {
+.roomtracks tbody tr.subsection_start td,
+.roomtracks tbody tr.subsection_start th.room {
     border-top: 1px solid #000;
 }
-.roomtracks tbody tr.subsection_end td, {
+.roomtracks tbody tr.subsection_end td, 
+.roomtracks tbody tr.subsection_start th.room {
     border-bottom: 1px solid #000;
 }
 
@@ -205,5 +207,19 @@ th.building {
     text-align: right;
     font-weight: bold;
     font-size: large;
+}
+tbody th.title {
+    text-align: right;
+    padding-right: 0.5em;
+}
+
+.side-box {
+  float: right;
+  padding-left: 0.5em;
+  border-left: 1px dotted #000;
+}
+.schedule-track h1.title,
+.schedule-room h1.title {
+  float: left;
 }
 

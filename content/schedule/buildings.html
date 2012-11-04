@@ -1,0 +1,33 @@
+---
+title: Buildings
+---
+<p>
+The various sessions are spread over several buildings (clusters of rooms)
+over the campus.
+</p>
+<p>
+Here is a list of those buildings, and the rooms in each of them.
+</p>
+
+<% cols = $buildings.values.map{|list| list.size}.max %>
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <th>Building</th>
+    <th style="text-align: center;" colspan="<%= cols %>">Rooms</th>
+  </thead>
+  <tbody>
+    <% $buildings.each do |building, rooms| %>
+      <tr>
+        <th class="title"><a name="<%= building.downcase %>"></a><%= building %></th>
+        <% rooms.each do |room| %>
+          <td><%= l(room) %></td>
+        <% end %>
+        <% remainder = cols - rooms.size %>
+        <% if remainder > 0 %>
+          <td colspan="<%= remainder %>"></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
