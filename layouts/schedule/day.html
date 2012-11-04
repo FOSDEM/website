@@ -4,8 +4,6 @@ require 'builder'
 buffer = ''
 xml = Builder::XmlMarkup.new(target: buffer, indent: 2)
 
-colors = %w{c1 c2 c3 c4 c5}
-
 source = $timetable.fetch(item[:slug])
 
 rooms = begin
@@ -53,7 +51,7 @@ xml.table(class: "timetable table table-striped table-bordered table-condensed")
           if cell.nil?
             xml.td
           elsif cell[:state] == :begin
-            color = colors[c % colors.size]
+            color = $colors[c % $colors.size]
             c += 1
 
             tdclass = ["event", color]

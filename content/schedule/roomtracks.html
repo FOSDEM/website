@@ -5,7 +5,6 @@ sponsors_under_navigation: true
 <p>For a less graphical and colorful overview of the rooms and the tracks that are held in them, respectively, you may <a href="<%= pathof '/schedule/rooms/' %>">look at this page instead</a>.
 <%
 # vim: set ft=eruby ts=2 sw=2 et ai:
-colors = 5
 $track_flatlist.each do |dayslug, flatlist_by_room|
   d = $to_day.call(dayslug)
 %>
@@ -84,14 +83,14 @@ $track_flatlist.each do |dayslug, flatlist_by_room|
               slots += cell[:slots]
               cv = if last_track.nil? or cell[:track] != last_track
                      c += 1
-                     c %= colors
+                     c %= $colors.size
                      last_track = cell[:track]
-                     c + 1
+                     $colors[c]
                    else
-                     c + 1
+                     $colors[c]
                    end
             %>
-            <td class="c<%= cv %> t<%= (start + (slots_before_cell * interval * 60)).strftime("%M") %>" colspan="<%= cell[:slots] %>"><%= l(track(cell[:track]), :name, '', :title) %></td>
+            <td class="<%= cv %> t<%= (start + (slots_before_cell * interval * 60)).strftime("%M") %>" colspan="<%= cell[:slots] %>"><%= l(track(cell[:track]), :name, '', :title) %></td>
           <% end %>
           <%
           end

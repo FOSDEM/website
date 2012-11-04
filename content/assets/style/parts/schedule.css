@@ -112,8 +112,8 @@ table.timetable-body {
 .timetable tbody th.time {
 }
 
-<% %w{69D2E7 A7DBD8 E0E4CC F38630 FA6900}.each_with_index do |color, index|%>
-.c<%= index + 1 %> { background-color: #<%= color %> !important; }
+<% $colormap.each do |css_class, color| %>
+.<%= css_class %> { background-color: <%= color %> !important; }
 <% end %>
 
 .roomtracks .other-track {

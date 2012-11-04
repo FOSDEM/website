@@ -19,8 +19,6 @@
 </p>
 <br style="clear: both;"/>
 <%
-  colors = 5
-
   event_color = {}
 
   interval = $timetable.first.last.fetch(:interval)
@@ -105,13 +103,13 @@
                                     last_event = cell[:event_id]
                                     if cell[:track] == item[:slug]
                                       c += 1
-                                      c %= colors
-                                      [ "c#{c + 1}", l(event(cell[:slug]), :title, '', :title) ]
+                                      c %= $colors.size
+                                      [ $colors[c], l(event(cell[:slug]), :title, '', :title) ]
                                     else
                                       [ nil, nil ]
                                     end
                                   else
-                                    [ "c#{c + 1}", l(event(cell[:slug]), :title, '', :title) ]
+                                    [ $colors[c], l(event(cell[:slug]), :title, '', :title) ]
                                   end
 
               classes = []

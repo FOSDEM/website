@@ -117,6 +117,26 @@ preprocess do
                              h
                            end
 
+  $colors, $colormap = begin
+                         c = config.fetch(:colors)
+                         list = case c
+                                when String
+                                  c.split /\s+/
+                                when Array
+                                  c
+                                else
+                                  raise "invalid type for config.colors: #{c.class}"
+                                end
+                         result = []
+                         map = {}
+                         list.each_with_index do |color, index|
+                           css = "c#{index + 1}"
+                           result << css
+                           map[css] = '#' + color
+                         end
+                         [ result, map ]
+                       end
+
 end
 
 ##### COMPILING
