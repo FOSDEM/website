@@ -98,6 +98,12 @@
                  <% [ '/schedule/ical/', '/schedule/xcal/' ].map(&$to_item).each do |item| %> 
                    <li><a href="<%= pathof item %>"><i class="icon-calendar"></i>&nbsp;<%= item[:title] %></a></li>
                  <% end %>
+                 <%
+                 pdf = $item_by_id['/schedule/pdf/a4/']
+                 if pdf
+                 %>
+                 <li><a href="<%= pdf.path %>"><i class="icon-print"></i>&nbsp;PDF&nbsp;(<%= pdf[:page_size] %>)</a></li>
+                 <% end %>
                <% end %>
             </ul>
           </ul>

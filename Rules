@@ -192,6 +192,23 @@ compile '/headlines/*' do;end
 # don't modify anything on attachments
 compile '/attachments/*' do;end
 
+### Schedule PDF grids
+# handling is a bit special here, as they go through a specific
+# layout
+compile '/schedule/pdf/*' do
+  filter :erb
+  layout "/schedule/pdf_grid/"
+end
+route '/schedule/pdf/*' do
+  suffix = if @site.config[:digest_pdfs] then
+             "-#{digest item}"
+           else
+             ""
+           end
+
+  "#{$prefix}/schedule/pdf/#{item[:page_size].to_s.downcase}#{suffix}.pdf"
+end
+
 ### EVERYTHING ELSE (real content)
 
 compile '*' do

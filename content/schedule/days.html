@@ -1,12 +1,46 @@
 ---
 title: Time Tables
 ---
-<p>Time tables are available for the following day<%= days.size > 1 ? "s" : "" %>:</p>
-<ul>
-    <% days.each do |day| %>
-    <li><%= l day %></li>
-    <% end %>
-</ul>
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+%>
 
-<p>The following page gives a graphical overview of which tracks are taking place when and where:
-<%= l '/schedule/roomtracks/' %></p>
+<h2>Overview Grids</h2>
+<div class="row-fluid">
+  <div class="span8">
+    <p>Time tables are available for the following day<%= days.size > 1 ? "s" : "" %>:</p>
+    <ul class="unstyled">
+      <% days.each do |day| %>
+        <li><i class="icon-calendar"></i> <%= l day %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<%
+  pdfs = items.select{|x| x.identifier =~ %r{^/schedule/pdf/[^/]+/$}}.sort_by{|x| x[:page_size]}
+  unless pdfs.empty?
+%>
+<h2>Printable</h2>
+<div class="row-fluid">
+  <div class="span8">
+    <p>The complete schedule is also available as a PDF for printing,<br/>
+    in the following page sizes:</p>
+    <ul class="unstyled">
+      <% pdfs.each do |pdf| %>
+        <li><i class="icon-print"></i> <%= l(pdf, pdf[:page_size].to_s.upcase) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
+
+<h2>By Room</h2>
+<div class="row-fluid">
+  <div class="span8">
+    <p>The following page gives a graphical overview of which tracks are taking place when and where:</p>
+    <ul class="unstyled">
+      <li><i class="icon-road"></i> <%= l '/schedule/roomtracks/' %></li>
+    </ul>
+  </div>
+</div>

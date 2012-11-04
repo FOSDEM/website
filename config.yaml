@@ -12,6 +12,11 @@ digest_assets: true
 # Same thing as above but for sponsor logos:
 digest_sponsor_logos: true
 
+# Should we also include the digest of the schedule grid PDFs in their
+# filenames? Makes it good for caching, but also means that there is no
+# direct URL to them.. so probably not, but it is a flag anyway:
+digest_pdfs: false
+
 #########################################################################
 # everything below is standard nanoc configuration stuff
 

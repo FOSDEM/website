@@ -9,7 +9,7 @@ source "http://rubygems.org"
 gem "cri", "~>2.3.0"
 gem "kramdown", "~>0.13.6"
 #gem "nanoc", "~>3.4.0"
-gem "nanoc", :git => "https://github.com/ddfreyne/nanoc.git", :branch => "release-3.4.x"
+gem "nanoc", git: "https://github.com/ddfreyne/nanoc.git", branch: "release-3.4.x"
 gem "nokogiri"
 gem "image_size"
 gem "rainpress"
@@ -23,6 +23,8 @@ gem "erubis", "~>2.7.0"
 gem "psych", "~>1.3.3"
 gem "ruby-filemagic"
 gem "bluecloth"
+# we need git master here, implements colspan in tables:
+gem "prawn", git: "git://github.com/prawnpdf/prawn", branch: "master"
 gem "rmagick"
 gem "rsolr"
 gem "sinatra"
@@ -38,7 +40,7 @@ group :development do
 
     # guard plugins:
     gem "guard-bundler"
-    gem "guard-nanoc", :git => "https://github.com/pbleser/guard-nanoc.git", :branch => "master"
+    gem "guard-nanoc", git: "https://github.com/pbleser/guard-nanoc.git", branch: "master"
 
     # for guard filesystem event monitoring, see here:
     # https://github.com/guard/guard
