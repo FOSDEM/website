@@ -181,11 +181,16 @@ body.fullpage {
     border-top: 2px solid #000;
 }
 
-.roomtracks tbody tr.subsection_start th,
 .roomtracks tbody tr.subsection_start td {
     border-top: 1px solid #000;
 }
+.roomtracks tbody tr.subsection_end td, {
+    border-bottom: 1px solid #000;
+}
 
+.roomtracks td.t00 {
+    border-left: 1px dashed #000;
+}
 
 body.wide p {
     width: 70%;

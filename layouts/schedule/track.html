@@ -54,18 +54,31 @@
   .each do |dayslug, flatlist_by_room|
     d = $to_day.call(dayslug)
     track_rooms_that_day = item[:events_per_room_per_day][dayslug.to_sym].keys
+    
+    day_row_height = flatlist_by_room
+    .select{|roomslug, cells_list| track_rooms_that_day.include? roomslug.to_sym}
+    .map{|roomslug, cells_list| cells_list.size}
+    .inject(0, :+)
+
     last_event = nil
     i = 0
-    flatlist_by_room.select{|r, cellrows| track_rooms_that_day.include? r.to_sym}.each do |roomslug, cellrows|
+    grid = flatlist_by_room.select{|r, cellrows| track_rooms_that_day.include? r.to_sym}
+    grid.each do |roomslug, cellrows|
       start_offset_slots = (((Time.parse(d[:start_time]) - start) / 60) / interval).to_i
       fillup_slots = (((dayend - Time.parse(d[:end_time])) / 60) / interval).to_i
       i += 1
 
-      cellrows.each_with_index do |cellsrow, row|
+      cellrows.each_with_index do |cells, row|
+        tr_classes = []
+        tr_classes << "section_start" if i == 1
+        if cellrows.size > 1
+          tr_classes << "subsection_start" if row == 0
+          tr_classes << "subsection_end" if row == cellrows.size - 1 and i < grid.keys.size
+        end
     %>
-    <tr<% if i < 2 %> class="section_start"<% end %>>
+    <tr<% unless tr_classes.empty? %> class="<%= tr_classes.join(" ") %>"<% end %>>
       <% if last_day.nil? or last_day != dayslug %>
-      <th class="day"<% if track_rooms_that_day.size * cellrows.size > 1 %> rowspan="<%= track_rooms_that_day.size * cellrows.size %>" style="vertical-align: middle;"<% end %>><%= l(d) %></th>
+      <th class="day"<% if day_row_height > 1 %> rowspan="<%= day_row_height %>" style="vertical-align: middle;"<% end %>><%= l(d) %></th>
       <% last_day = dayslug %>
       <% end %>
       <% if item[:rooms].size > 1 %>
@@ -74,17 +87,19 @@
         <% end %>
       <% end %>
       <% (0..start_offset_slots-1).each do |x| %>
-        <td></td>
+        <td class="t<%= (start + (x * interval * 60)).strftime("%M") %>"></td>
       <% end %>
       <%
         slots = 0
-        cellsrow.each do |cell|
+        cells.each do |cell|
           if cell.nil?
+            slots_before_cell = slots
             slots += 1
           %>
-          <td></td>
+          <td class="t<%= (start + ((slots_before_cell + start_offset_slots) * interval * 60)).strftime("%M") %>"></td>
           <%
             else
+              slots_before_cell = slots
               slots += cell[:slots]
               color_class, link = if last_event.nil? or cell[:event_id] != last_event
                                     last_event = cell[:event_id]
@@ -93,20 +108,32 @@
                                       c %= colors
                                       [ "c#{c + 1}", l(event(cell[:slug]), :title, '', :title) ]
                                     else
-                                      [ "other-track", "" ]
+                                      [ nil, nil ]
                                     end
                                   else
                                     [ "c#{c + 1}", l(event(cell[:slug]), :title, '', :title) ]
                                   end
+
+              classes = []
+              classes << color_class if color_class
+              if link
+                classes << "t#{(start + ((slots_before_cell + start_offset_slots) * interval * 60)).strftime("%M")}"
           %>
-          <td<% if color_class %> class="<%= color_class %>"<% end %> colspan="<%= cell[:slots] %>"><%= link %></td>
+          <td class="<%= classes.join(" ") %>" colspan="<%= cell[:slots] %>"><%= link %></td>
           <% event_color[cell[:event_id]] = color_class %>
+          <%  else
+                (0..cell[:slots]-1).each do |x|
+          %>
+          <td class="t<%= (start + ((slots_before_cell + x) * interval * 60)).strftime("%M") %>"></td>
+          <%
+                end
+              end %>
         <%
           end #cell.nil?
         end #cells
-        (1..fillup_slots).each do |x|
+        (0..fillup_slots - 1).each do |x|
       %>
-      <td></td>
+      <td class="t<%= (start + ((slots + x) * interval * 60)).strftime("%M") %>">:</td>
       <%
         end #x
       %>

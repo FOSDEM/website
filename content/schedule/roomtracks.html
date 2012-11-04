@@ -37,28 +37,50 @@ $track_flatlist.each do |dayslug, flatlist_by_room|
   <tbody>
     <%
       $buildings.each do |building, brooms|
-        brooms.each_with_index do |room, bri|
-          cells = flatlist_by_room.fetch(room[:slug])
+        building_row_height = flatlist_by_room
+        .select{|roomslug, cells_list| brooms.map{|room| room[:slug]}.include? roomslug}
+        .map{|roomslug, cells_list| cells_list.size}
+        .inject(0, :+)
+
+        bri = 0
+        brooms.each_with_index do |room|
+          cells_list = flatlist_by_room.fetch(room[:slug])
+
+          cells_list.each_with_index do |cells, row|
+            bri += 1
+
+            tr_classes = []
+            tr_classes << "section_start" if bri == 1
+            if cells_list.size > 1
+              tr_classes << "subsection_start" if row == 0
+              tr_classes << "subsection_end" if row == cells_list.size - 1
+            end
     %>
-      <tr<% if bri == 0 %> class="section_start"<% end %>>
-        <%
-          if bri == 0
-        %>
-        <th rowspan="<%= brooms.size %>" class="building"><%= room[:building] %></th>
+      <tr<% unless tr_classes.empty? %> class="<%= tr_classes.join(" ") %>"<% end %>>
+        <% if bri == 1 %>
+        <th rowspan="<%= building_row_height %>" class="building"><%= room[:building] %></th>
         <% end %>
+        <% if cells_list.size > 1 %>
+        <% if row < 1 %>
+        <th class="room subsection_start" style="vertical-align: middle;" rowspan="<%= cells_list.size %>"><%= l(room) %></th>
+        <% end %>
+        <% else %>
         <th class="room"><%= l(room) %></th>
+        <% end %>
         <% (0..start_offset_slots-1).each do |x| %>
-          <td></td>
+          <td class="t<%= (start + (x * interval * 60)).strftime("%M") %>"></td>
         <% end %>
         <%
           slots = 0
           cells.each do |cell|
             if cell.nil?
+              slots_before_cell = slots
               slots += 1
           %>
-          <td></td>
+          <td class="t<%= (start + (slots_before_cell * interval * 60)).strftime("%M") %>"></td>
           <%
             else
+              slots_before_cell = slots
               slots += cell[:slots]
               cv = if last_track.nil? or cell[:track] != last_track
                      c += 1
@@ -69,20 +91,23 @@ $track_flatlist.each do |dayslug, flatlist_by_room|
                      c + 1
                    end
             %>
-            <td class="c<%= cv %>" colspan="<%= cell[:slots] %>"><%= l(track(cell[:track]), :name, '', :title) %></td>
+            <td class="c<%= cv %> t<%= (start + (slots_before_cell * interval * 60)).strftime("%M") %>" colspan="<%= cell[:slots] %>"><%= l(track(cell[:track]), :name, '', :title) %></td>
           <% end %>
           <%
           end
 
           (0..num_slots-start_offset_slots-slots - 1).each do |x|
           %>
-          <td></td>
+          <td class="t<%= (start + ((num_slots + x) * interval * 60)).strftime("%M") %>"></td>
           <%
           end
         end
         %>
       </tr>
-    <% end %>
+    <%
+      end
+     end
+    %>
   </tbody>
 </table>
 <% end %>
