@@ -1,5 +1,13 @@
 <p class="side-box">
-<i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %>
+<i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %><br/>
+<%
+  building = $buildings.select{|b, rooms| rooms.map{|r| r[:slug]}.include? item[:slug]}.map{|b, rooms| b}.first
+  if building
+    building_path = $item_by_id.fetch('/schedule/buildings/').path
+  %>
+  <i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a>
+<% end %>
+
 </p>
 <br style="clear: both;"/>
 <%
@@ -8,9 +16,10 @@
 <table class="table table-condensed">
   <thead>
     <tr>
-      <th>Day</th>
-      <th>Start</th>
-      <th>End</th>
+      <th style="width: 8em;">Day</th>
+      <th style="width: 4em; text-align: right;">Start</th>
+      <th style="width: 1em;"></th>
+      <th style="width: 4em; text-align: left;">End</th>
       <th>Track(s)</th>
     </tr>
   </thead>
@@ -26,8 +35,9 @@
       %>
       <tr>
         <td><i class="icon-calendar"></i> <%= l(day) %></td>
-        <td><%= s %></td>
-        <td><%= e %></td>
+        <td style="text-align: right;"><%= s %></td>
+        <td style="width: 1em; text-align: center;"><%= "\u{2192}" %></td>
+        <td style="text-align: left;"><%= e %></td>
         <td><% unless tracks.empty? %><%= l(tracks, :name) %><% end %></td>
       </tr>
       <%
@@ -38,12 +48,112 @@
 </table>
 <% end %>
 
+<%
+  event_color = {}
+
+  interval = $timetable.first.last.fetch(:interval)
+  
+  days = $track_flatlist.keys.map(&$to_day)
+  start = days.map{|d| Time.parse(d[:start_time])}.min
+  start_hour = start.hour
+
+  dayend = days.map{|d| Time.parse(d[:end_time])}.max
+  num_cells = dayend.hour - start_hour
+  num_slots = num_cells * (60 / interval)
+%>
+<table class="table table-striped table-bordered table-condensed roomtracks">
+  <thead>
+    <tr>
+      <th class="day"></th>
+      <% (0..num_cells-1).each do |i| %>
+      <th colspan="<%= 60 / interval %>" style="text-align: left;"><%= format("%02d", start_hour + i) %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+<%
+  last_day = nil
+  c = 1
+  $event_flatlist
+  .select{|dayslug, list| item[:events_by_day].has_key? dayslug.to_sym and not item[:events_by_day][dayslug.to_sym].empty? }
+  .each do |dayslug, flatlist_by_room|
+    d = $to_day.call(dayslug)
+    start_offset_slots = (((Time.parse(d[:start_time]) - start) / 60) / interval).to_i
+    fillup_slots = (((dayend - Time.parse(d[:end_time])) / 60) / interval).to_i
+    
+    day_row_height = flatlist_by_room.fetch(item[:slug], []).size
+
+    last_event = nil
+    i = 0
+    cellrows = flatlist_by_room.fetch(item[:slug], [])
+    cellrows.each_with_index do |cells, row|
+      i += 1
+
+      tr_classes = []
+      tr_classes << "section_start" if i == 1
+      if cellrows.size > 1
+        tr_classes << "subsection_start" if row == 0
+        tr_classes << "subsection_end" if row == cellrows.size - 1
+      end
+    %>
+    <tr<% unless tr_classes.empty? %> class="<%= tr_classes.join(" ") %>"<% end %>>
+      <% if last_day.nil? or last_day != dayslug %>
+      <th class="day"<% if day_row_height > 1 %> rowspan="<%= day_row_height %>" style="vertical-align: middle;"<% end %>><%= l(d) %></th>
+      <% last_day = dayslug %>
+      <% end %>
+      <% (0..start_offset_slots-1).each do |x| %>
+        <td class="t<%= (start + (x * interval * 60)).strftime("%M") %>"></td>
+      <% end %>
+      <%
+        slots = 0
+        cells.each do |cell|
+          if cell.nil?
+            slots_before_cell = slots
+            slots += 1
+          %>
+          <td class="t<%= (start + ((slots_before_cell + start_offset_slots) * interval * 60)).strftime("%M") %>"></td>
+          <%
+            else
+              slots_before_cell = slots
+              slots += cell[:slots]
+              color_class, link = begin
+                                    if last_event.nil? or cell[:event_id] != last_event
+                                      last_event = cell[:event_id]
+                                      c += 1
+                                      c %= $colors.size
+                                    end
+                                    [ $colors[c], l(event(cell[:slug])) ]
+                                  end
+
+              classes = []
+              classes << color_class if color_class
+              classes << "t#{(start + ((slots_before_cell + start_offset_slots) * interval * 60)).strftime("%M")}"
+          %>
+          <td class="<%= classes.join(" ") %>" colspan="<%= cell[:slots] %>"><%= link %></td>
+          <% event_color[cell[:event_id]] = color_class
+          end #cell.nil?
+        end #cells
+        (0..fillup_slots - 1).each do |x|
+      %>
+      <td class="t<%= (start + ((slots + x) * interval * 60)).strftime("%M") %>">:</td>
+      <%
+        end #x
+      %>
+      </tr>
+    <%
+      end #flatlist_by_room
+    end #event_flatlist
+  %>
+  </tbody>
+</table>
+
+
 <% unless item[:events].empty? %>
 <h3>Sessions</h3>
 <table class="table table-striped table-bordered table-condensed">
     <thead>
         <tr>
-            <th>Title</th>
+            <th colspan="2">Title</th>
             <th>Track</th>
             <th>Start</th>
             <th>End</th>
@@ -52,11 +162,12 @@
     <tbody>
         <% item[:events].map(&$to_event).group_by{|e| e[:day_name]}.each do |day, dayevents| %>
         <tr>
-            <td colspan="4"><h3><%= day %></h3></td>
+            <td colspan="5"><h3><%= day %></h3></td>
         </tr>
         <% dayevents.sort_by{|e| e[:start_datetime]}.each do |e| %>
         <tr>
-            <td><%= l e %></td>
+            <td class="<%= event_color.fetch e[:event_id] %>">&nbsp;</td>
+            <td><a name="<%= e[:slug] %>"></a><%= l e %></td>
             <td><%= l track(e[:track]), :name, nil, nil, :quiet %></a></td>
             <td><%= ltt e[:day], e[:start_time], :quiet %></td>
             <td><%= ltt e[:day], e[:end_time], :quiet %></td>
