@@ -145,10 +145,7 @@ end
 
 # skip those, as they are combined into content/assets/style/fosdem.css
 compile '/assets/style/parts/*' do
-  # but do process ours with ERB (see below about ERB)
-  # (except bootstrap.css: it's big, and it definitely doesn't have
-  # any ERB in it)
-  filter :erb unless item.identifier =~ %r{/bootstrap\.css$}
+  filter :erb
 end
 # route them into oblivion, as we will only deploy the aggregated
 # CSS file:
@@ -162,12 +159,16 @@ compile '/assets/style/*' do
   # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
   # for inspiration
 
-  # process those using ERB:
-  filter :erb
-  # then relativize any resource paths (to images and such):
-  filter :relativize_paths, :type => :css
-  # minimize CSS files:
-  filter :rainpress
+  if (not item.binary?) and item[:extension] == 'css'
+    # process those using ERB:
+    filter :erb
+    # then relativize any resource paths (to images and such):
+    filter :relativize_paths, :type => :css
+
+    filter :csslinks
+    # minimize CSS files:
+    filter :rainpress
+  end
 end
 
 ### NAVIGATION
