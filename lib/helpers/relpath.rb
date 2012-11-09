@@ -31,4 +31,19 @@ module Fosdem
     rp << balise unless balise.nil?
     rp
   end
+
+  def expand_path(path)
+    parts = path.split %r{/+}
+    result = []
+    parts.each do |part|
+      if part == '.'
+      elsif part == '..'
+        result.pop
+      else
+        result << part
+      end
+    end
+    result.join '/'
+  end
+
 end
