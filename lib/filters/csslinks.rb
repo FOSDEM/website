@@ -34,7 +34,6 @@ module Fosdem
         end
         fail "#{@item.identifier}: references \"#{raw}\" and the matching identifier \"#{id}\" exists, but the extension does not match: item has #{target[:extension]}" unless target[:extension] == e
 
-        puts "url(#{target.path})"
         "url(#{target.path})"
       end
 
