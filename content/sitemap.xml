@@ -1,8 +1,10 @@
 <%=
+# vim: set ts=2 sw=2 et ai ft=eruby:
 xml_sitemap :items => @items.reject{|i|
   i.binary? or
   i[:kind] == 'internal' or
   i.reps.empty? or
-  i.reps.first.raw_paths.empty?
+  i.reps.first.raw_paths.empty? or
+  %w(css xml pdf ics xcs).any? {|e| i[:extension] == e or File.extname(i.path) == ".#{e}"}
 }.sort_by{|i| i.identifier}
 %>
