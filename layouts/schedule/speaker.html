@@ -1,10 +1,14 @@
 <% photo = item[:photo] ? $item_by_id.fetch("/photo/#{item[:photo].fetch(:slug)}/") : nil%>
 <% if photo %>
-<img src="<%= photo.path %>" width="<%= item[:photo].fetch(:width) %>" height="<%= item[:photo].fetch(:height) %>"/>
+<img src="<%= photo.path %>" width="<%= item[:photo].fetch(:width) %>" height="<%= item[:photo].fetch(:height) %>" class="speaker-photo" />
 <% end %>
 
 <%= item[:abstract] %>
 <%= item[:description] %>
+
+<% if photo %>
+<br style="clear: both;"/>
+<% end %>
 
 <% unless item[:links].empty? %>
 <h3>Links</h3>

@@ -1,10 +1,12 @@
 ---
 title: Speakers
 sponsors_under_navigation: true
+titlehead: false
 ---
+<% speakers = speakers(:name) %>
+<h1><%= speakers.size %> Speakers</h1>
 <%
 columns = 3
-speakers = speakers(:name)
 
 h = {}
 speakers.each do |s|
@@ -84,4 +86,3 @@ keys = h.keys.sort
 </div>
 <% end %>
 </div>
-<p>Speakers: <%= speakers.size %></p>

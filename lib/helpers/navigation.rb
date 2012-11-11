@@ -51,6 +51,8 @@ module Fosdem
                "4"
              when "/faq/"
                "5"
+             when "/schedule/"
+               "s"
              else
                nil
              end

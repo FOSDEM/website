@@ -102,7 +102,7 @@ preprocess do
   # (note that the ranking/order of buildings also stems from the order
   # of buildings as defined in content/buildings.yaml
   # (defined in lib/helpers/schedule_helpers.rb)
-  $buildings = build_room_buildings()
+  $buildings, $room_to_building = build_room_buildings()
 
   # attachments by their 'export' name, which is what's created by
   # commands/pentabarf.rb as a reference (filename) and which we need

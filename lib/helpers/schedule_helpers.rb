@@ -348,7 +348,14 @@ module Fosdem
       raise "there are #{errors.size} room(s) without a building assignment, please put them into content/building.yaml: #{errors.map{|r| r[:slug]}.join(", ")}" unless errors.empty?
     end
 
-    buildings
+    room_to_building = {}
+    buildings.each do |bcode, rooms|
+      rooms.each do |r|
+        room_to_building[r[:slug]] = bcode
+      end
+    end
+
+    [ buildings, room_to_building ]
   end
 
 end

@@ -116,3 +116,10 @@ ul.search-results {
 a.quiet {
   color: inherit;
 }
+.speaker-photo {
+  float: left;
+}
+
+.degraded-hint {
+  display: none;
+}

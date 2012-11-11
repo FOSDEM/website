@@ -4,96 +4,112 @@ module Fosdem
   def bcrumbs(opts={})
     require 'builder'
 
-    dividier = opts.fetch(:divider, false)
+    divider = opts.fetch(:divider, false)
 
-    rootitem = $item_by_id['/']
-    roottitle = conference :title #rootitem[:name]
+    # smarter breadcrumbs, preprocess here
+    path = case @item.identifier
+           when %r{^/schedule/room/(.+)/$}
+             building = $room_to_building.fetch($1)
+             [
+               { title: conference()[:title], id: '/' },
+               { title: 'Schedule', id: '/schedule/' },
+               { title: 'Rooms', id: '/schedule/rooms/' },
+               { title: building, id: '/schedule/buildings/' },
+               { id: @item.identifier }
+             ]
+           when %r{^/schedule/track/(.+)/$}
+             t = case (@item[:type] or :undefined).to_sym
+                 when :maintrack
+                   { title: "Main Tracks" }
+                 when :devroom
+                   { title: "Devrooms" }
+                 else
+                   nil
+                 end
+             [
+               { title: conference()[:title], id: '/' },
+               { title: 'Schedule', id: '/schedule/' },
+               { title: 'Tracks', id: '/schedule/tracks/' },
+               t,
+               { id: @item.identifier }
+             ].reject(&:nil?)
+           when %r{^/schedule/event/(.+)/$}
+             t = case (@item[:type] or :undefined).to_sym
+                 when :devroom
+                   { title: "Devrooms" }
+                 when :maintrack
+                   { title: "Main Tracks" }
+                 else
+                   nil
+                 end
+             [
+               { title: conference()[:title], id: '/' },
+               { title: 'Schedule', id: '/schedule/' },
+               { title: 'Events', id: '/schedule/events/' },
+               t,
+               { id: "/schedule/track/#{@item[:track]}/" },
+               { id: @item.identifier }
+             ].reject(&:nil?)
+           else
+             accumulator = ''
+             @item.identifier.chop.split('/').map do |p|
+               title, id, a = case p
+                              when ''
+                                [ conference()[:title], '/' ]
+                              when '/'
+                                [ conference()[:title], '/' ]
+                              when 'track'
+                                [ 'Tracks', '/schedule/tracks/', '/schedule/track/' ]
+                              when 'schedule'
+                                [ 'Schedule', '/schedule/' ]
+                              when 'speaker'
+                                [ 'Speakers', '/schedule/speakers/', '/schedule/speaker/' ]
+                              when 'room'
+                                [ 'Rooms', '/schedule/rooms/', '/schedule/room/' ]
+                              else
+                                [ nil, accumulator + p + '/' ]
+                              end
+               accumulator = a ? a : id
+               { title: title, id: id }
+             end
+           end
 
-    $_bcrumbs_cache ||= begin
-      c = {}
-      @items.each do |i|
-        if i.binary? or i.reps.empty? then
-          c[i.identifier] = {
-            :title => id(i)
-          }
-        else
-          c[i.identifier] = {
-            :title => navtitle(i),
-            :link => i.identifier
-          }
-        end
-      end
-      c
-    end
+    list = path.each_with_index.map do |p, i|
+      title, uri = if p[:id]
+                     item = $item_by_id[p[:id]]
+                     if item
+                       title = if p[:title]
+                                 p[:title]
+                               elsif item[:navtitle]
+                                 item[:navtitle]
+                               else
+                                 item[:title]
+                               end
+                       [ title, item.path ]
+                     elsif p[:title]
+                       [ p[:title], nil ]
+                     else
+                       [ p[:id].capitalize, nil ]
+                     end
+                   elsif p[:title]
+                     [ p[:title], nil ]
+                   else
+                     fail "breadcrumbs item for #{@item.identifier} has neither identifier nor title: #{p.inspect}"
+                   end
 
-    buffer = ''
-		xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
+      title = $1 if title =~ /^(.+)\s+devroom$/i
+      title = $1 if title =~ /^(.+)\s+track$/i and uri =~ %r{^/schedule/track/.+}
 
-    if @item.identifier == '/' then
-      xml.li(:class => 'active home') do
-        if roottitle.start_with? '<%'
-          xml << roottitle
-        else
-          xml.text! roottitle
-        end
-      end
-    else
-      xml.li(:class => 'home') do
-        xml.a(roottitle, :href => "#{$prefix}/")
-      end
-      xml.span("/", :class => 'divider') if divider
-    end
-
-    parts = @item.identifier[1..-2].split('/')
-    parts.each_with_index do |part, index|
-      here = '/'+parts[0,index+1].join('/')+'/'
-      ref = $_bcrumbs_cache[here]
-
-      if index == parts.length - 1 then
-        # active
-        xml.li(:class => 'active') do
-          t = navtitle @item
-          if t.start_with? '<%'
-            xml << t
-          else
-            xml.text! t
-          end
-        end
+      if i == path.size - 1
+        %Q!<li class="active">#{title}</li>!
+      elsif uri
+        %Q!<li><a href="#{uri}">#{title}</a></li>!
       else
-        link, title = case part
-                      when 'track'
-                        ['/schedule/tracks/', 'Tracks']
-                      when 'schedule'
-                        ['/schedule/', 'Schedule']
-                      when 'event'
-                        ['/schedule/events/', 'Events']
-                      when 'speaker'
-                        ['/schedule/speakers/', 'Speakers']
-                      when 'room'
-                        [ '/schedule/rooms/', 'Rooms' ]
-                      else
-                        if ref
-                          [ ref[:link], ref[:title] ]
-                        else
-                          [ nil, part ]
-                        end
-                      end
-        xml.li do
-          if link then
-            xml.a(title, :href => "#{$prefix}/#{link}")
-          else
-            if title.start_with? '<%'
-              xml << title
-            else
-              xml.text! title
-            end
-          end
-          xml.span("/", :class => 'divider') if divider
-        end #li
+        %Q!<li>#{title}</li>!
       end
     end
 
-    buffer
+    list.join('')
   end
 
 end
