@@ -1,8 +1,10 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 module Fosdem
 
-  def bcrumbs
+  def bcrumbs(opts={})
     require 'builder'
+
+    dividier = opts.fetch(:divider, false)
 
     rootitem = $item_by_id['/']
     roottitle = conference :title #rootitem[:name]
@@ -39,10 +41,10 @@ module Fosdem
       xml.li(:class => 'home') do
         xml.a(roottitle, :href => "#{$prefix}/")
       end
-      #xml.span("/", :class => 'divider')
+      xml.span("/", :class => 'divider') if divider
     end
 
-    parts = @item.identifier.gsub(%r{^/}, '').gsub(%r{/$}, '').split('/')
+    parts = @item.identifier[1..-2].split('/')
     parts.each_with_index do |part, index|
       here = '/'+parts[0,index+1].join('/')+'/'
       ref = $_bcrumbs_cache[here]
@@ -78,7 +80,7 @@ module Fosdem
                       end
         xml.li do
           if link then
-            xml.a(title.to_sym, :href => "#{$prefix}/#{link}")
+            xml.a(title, :href => "#{$prefix}/#{link}")
           else
             if title.start_with? '<%'
               xml << title
@@ -86,7 +88,7 @@ module Fosdem
               xml.text! title
             end
           end
-          #xml.span("/", :class => 'divider')
+          xml.span("/", :class => 'divider') if divider
         end #li
       end
     end
