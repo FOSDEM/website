@@ -138,7 +138,7 @@ deploy:
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
 
 pentabarf:
-  conference_id: 2
+  conference_id: 3
   username: nanoc
   password: nanoc
   database: marius
