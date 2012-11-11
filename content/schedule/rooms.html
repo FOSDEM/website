@@ -2,50 +2,54 @@
 title: Rooms
 sponsors_under_navigation: true
 ---
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+%>
 <p>An overview of <a href="<%= $item_by_id.fetch('/schedule/roomtracks/').path %>">room occupation by track</a>
 is available, too.</p>
 <table class="table table-striped table-bordered table-condensed">
-    <thead>
-        <tr>
-            <th></th>
-            <th>Room</th>
-            <th>Seats</th>
-            <% days.each do |d| %>
-            <th><%= d[:title] %></th>
-            <% end %>
-        </tr>
-    </thead>
-    <tbody>
-        <%
-        $buildings.each do |b, brooms|
-        brooms = brooms.reject{|r| r[:events].empty?}.sort_by{|r| [r[:rank], r[:conference_room_id]]}
+  <thead>
+    <tr>
+      <th></th>
+      <th>Room</th>
+      <th>Seats</th>
+      <% days.each do |d| %>
+        <th><%= d[:title] %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <%
+      $buildings.each do |b, brooms|
+        #brooms = brooms.reject{|r| r[:events].empty?}.sort_by{|r| [r[:rank], r[:conference_room_id]]}
+        brooms = brooms.sort_by{|r| [r[:rank], r[:conference_room_id]]}
         unless brooms.empty?
-        brooms.each_with_index do |r, i|
+          brooms.each_with_index do |r, i|
         %>
         <tr>
-            <% if i == 0 %>
+          <% if i == 0 %>
             <th class="building" rowspan="<%= brooms.size %>"><%= b %></th>
-            <% end %>
-            <td><%= l(r) %>
-            <td><%= r[:size] %></td>
-            <%
+          <% end %>
+          <td><%= l(r) %></td>
+          <td><%= r[:size] %></td>
+          <%
             days.each do |d|
-            dayevents = r[:events_by_day].fetch(d[:slug].to_sym, []).map(&$to_event)
+              dayevents = r[:events_by_day].fetch(d[:slug].to_sym, []).map(&$to_event)
             %>
             <% if dayevents.empty? %>
-            <td>-</td>
+              <td>-</td>
             <% else %>
-            <%
-            first = dayevents.map{|e| e[:start_time]}.sort.first
-            last  = dayevents.map{|e| e[:end_time]}.sort.last
-            daytracks = dayevents.map{|e| e[:track]}.uniq.map(&$to_track).sort_by{|t| [t[:start_time].fetch(d[:slug].to_sym), t[:rank], t[:conference_track_id]]}
-            %>
-            <td><%= first %>-<%= last %><% unless daytracks.empty? %>: <%= l daytracks, :name %><% end %></td>
-            <% end # if %>
-            <% end # d %>
+              <%
+                first = dayevents.map{|e| e[:start_time]}.sort.first
+                last  = dayevents.map{|e| e[:end_time]}.sort.last
+                daytracks = dayevents.map{|e| e[:track]}.uniq.map(&$to_track).sort_by{|t| [t[:start_time].fetch(d[:slug].to_sym), t[:rank], t[:conference_track_id]]}
+              %>
+              <td><%= first %>-<%= last %><% unless daytracks.empty? %>: <%= l daytracks, :name %><% end %></td>
+            <% end %>
+          <% end %>
         </tr>
-        <% end # brooms %>
-        <% end # rooms %>
-        <% end # buildings %>
-    </tbody>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
 </table>

@@ -310,6 +310,27 @@ EOF
                events
              end
 
+    # validate events
+    begin
+      errors = {}
+      begin
+        events.each do |event|
+          err = []
+          err << "missing slug" unless event.has_key? 'slug'
+          err << "accepted event without start_time" unless event.has_key? 'start_time'
+          err << "accepted event without duration" unless event.has_key? 'duration'
+          errors[%Q!event #{event['event_id']} ("#{event['title']}")!] = err unless err.empty?
+        end
+      end
+
+      unless errors.empty?
+        msg = errors.map do |w, errlist|
+          errlist.map{|e| "#{w}: #{e}"}.join($/)
+        end.join($/)
+        fail "Invalid events in database:#{$/}#{msg}"
+      end
+    end
+
     # render the event markup (abstract and description)
     events.each do |e|
       [:abstract, :description].each do |a|
@@ -686,8 +707,7 @@ EOF
         conference_room_id:  rooms,
       }.each do |a, list|
         k = a.to_s
-        raise "nil list? (#{a})" if list.nil?
-        raise "empty list? (#{a})" if list.empty?
+        #raise "empty list? (#{a})" if list.empty?
         list.each do |item|
           kv = item.fetch(k)
           ['start_time', 'end_time'].each{|x| item[x] = {}}
@@ -720,12 +740,16 @@ EOF
       ].each do |list|
         list.each do |item|
           [ 'start_time', 'end_time' ].each do |a|
-            time = item.fetch(a)
-            h, m = time.split(':').map(&:to_i)[0,2]
-            raise "time with granularity != 5 min: #{time} for item #{item.inspect}" if m % tsim != 0
-            index = (h * 60 + m) / tsim
+            time = item[a]
+            # if the attribute isn't there, it just means there are no scheduled
+            # events for that day yet
+            if time
+              h, m = time.split(':').map(&:to_i)[0,2]
+              fail"time with granularity != 5 min: #{time} for item #{item.inspect}" if m % tsim != 0
+              index = (h * 60 + m) / tsim
 
-            item[a + '_index'] = index
+              item[a + '_index'] = index
+            end
           end
         end
       end
@@ -913,12 +937,14 @@ EOF
       def find_empty_dirs(dir)
         list = []
         require 'find'
-        Find.find(dir) do |d|
-          next unless File.directory? d
+        if File.exists? dir
+          Find.find(dir) do |d|
+            next unless File.directory? d
 
-          # see http://stackoverflow.com/questions/5059156/check-if-directory-is-empty-in-ruby
-          if (Dir.entries(d) - %w{ . .. }).empty?
-            list << d
+            # see http://stackoverflow.com/questions/5059156/check-if-directory-is-empty-in-ruby
+            if (Dir.entries(d) - %w{ . .. }).empty?
+              list << d
+            end
           end
         end
         list

@@ -263,6 +263,7 @@ module Fosdem
   $to_speaker = lambda{|slug| $item_by_id.fetch "/schedule/speaker/#{slug}/"}
   $to_day = lambda{|slug| $item_by_id.fetch "/schedule/day/#{slug}/"}
   $to_room = lambda{|slug| $item_by_id.fetch "/schedule/room/#{slug}/"}
+  $to_room_or_nil = lambda{|slug| $item_by_id["/schedule/room/#{slug}/"]}
   $to_track = lambda{|slug| $item_by_id.fetch "/schedule/track/#{slug}/"}
   $empty_track = lambda{|t| t[:events].empty?}
 
@@ -367,7 +368,7 @@ module Fosdem
 
       bcode = building.to_s.upcase
       list = []
-      roomlist.map(&$to_room).each do |r|
+      roomlist.map(&$to_room_or_nil).reject(&:nil?).each do |r|
         list << r
       end
       rooms.select{|r| r[:slug].upcase.start_with? bcode}.each do |r|

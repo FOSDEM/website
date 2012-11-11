@@ -8,7 +8,7 @@ sponsors_under_navigation: true
 
 buildings_path = $item_by_id.fetch('/schedule/buildings/').path
 
-$track_flatlist.each do |dayslug, flatlist_by_room|
+$track_flatlist.reject{|dayslug, list| list.empty?}.each do |dayslug, flatlist_by_room|
   d = $to_day.call(dayslug)
 %>
 <a name="<%= d[:slug] %>"></a><h2><%= d[:title] %></h2>

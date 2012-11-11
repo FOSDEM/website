@@ -78,37 +78,41 @@ module Fosdem
 
     table_by_room = begin
                       table = {}
-                      start_time = Time.parse(events.first[:start_time])
-                      end_time   = Time.parse(events.last[:end_time])
+                      unless events.empty?
+                        start_time = Time.parse(events.first[:start_time])
+                        end_time   = Time.parse(events.last[:end_time])
 
-                      rooms.each do |room|
-                        column = {}
-                        table[room[:slug]] = column
+                        rooms.each do |room|
+                          column = {}
+                          table[room[:slug]] = column
 
-                        now = start_time
-                        while now <= end_time
-                          column[now.strftime("%H:%M")] = []
-                          nb = now
-                          now += step
-                        end
-                      end #rooms
+                          now = start_time
+                          while now <= end_time
+                            column[now.strftime("%H:%M")] = []
+                            nb = now
+                            now += step
+                          end
+                        end #rooms
+                      end
                       table
                     end
 
     table_by_time = begin
                       table = {}
-                      start_time = Time.parse(events.first[:start_time])
-                      end_time   = Time.parse(events.last[:end_time])
+                      unless events.empty?
+                        start_time = Time.parse(events.first[:start_time])
+                        end_time   = Time.parse(events.last[:end_time])
 
-                      now = start_time
-                      while now <= end_time
-                        row = {}
-                        table[now.strftime("%H:%M")] = row
-                        rooms.each do |room|
-                          row[room[:slug]] = []
-                        end #room
+                        now = start_time
+                        while now <= end_time
+                          row = {}
+                          table[now.strftime("%H:%M")] = row
+                          rooms.each do |room|
+                            row[room[:slug]] = []
+                          end #room
 
-                        now += step
+                          now += step
+                        end
                       end
                       table
                     end

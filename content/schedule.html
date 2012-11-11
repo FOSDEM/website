@@ -4,6 +4,8 @@ sponsors_under_navigation: true
 navcat: true
 ---
 <%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+# encoding: utf-8
 require 'time'
 
 days = @items.select{|i| i.identifier =~ %r{/schedule/day/.+}}
@@ -20,10 +22,16 @@ ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_dat
 <p>There are several kinds of activities going on at every edition of FOSDEM,
 which are outlined here, with links to various bits of information about the
 schedule.</p>
-<p>FOSDEM is also a very busy conference, with this edition sporting
-<%= speakers.size %> speakers, <%= events.size %> sessions,
-and <%= tracks.size %> tracks, but
-we do our best to provide you with as much information and navigation
+<p>FOSDEM is also a very busy conference,
+<% if speakers.size > 100 and events.size > 100 %>
+  with this edition sporting
+  <%= speakers.size %> speakers, <%= events.size %> sessions,
+  and <%= tracks.size %> tracks,
+<% else %>
+  with recent editions sporting
+  400+ speakers, 400+ sessions and a wealth of tracks,
+<% end %>
+but we do our best to provide you with as much information and navigation
 options about the schedule as we can.</p>
 
 <p>Activities take place in all of
@@ -79,7 +87,7 @@ during the event.</p>
     </tbody>
 </table>
 <% else %>
-<p>No keynotes have been confirmed yet at this point of time.</p>
+  <p><span class="label label-info">No keynotes have been confirmed yet at this point of time.</span></p>
 <% end %>
 
 <h3><a name="maintracks"></a>Main Tracks</h3>
@@ -114,7 +122,7 @@ speakers on those topics.</p>
     </tbody>
 </table>
 <% else %>
-<p>No main tracks have been confirmed yet at this point of time.</p>
+<p><span class="label label-info">No main tracks have been confirmed yet at this point of time.</span></p>
 <% end %>
 
 <h3><a name="distrominiconf"></a>Distribution Miniconf</h3>
@@ -140,7 +148,7 @@ participants coming from many different such (open source) projects, and we dubb
 <p>The exact schedule of the <%= l '/distrominiconf/' %> currently sports <%= distroevents.size %> sessions
 and <%= l '/schedule/track/crossdistribution/' %> can be seen here</a>.</p>
 <% else %>
-<p>No distribution miniconf sessions have been confirmed yet at this point of time.</p>
+<p><span class="label label-info">No distribution miniconf sessions have been confirmed yet at this point of time.</span></p>
 <% end %>
 
 <h3><a name="devrooms"></a>Developer Rooms</h3>
@@ -166,7 +174,7 @@ columns = 3
     </div>
 </div>
 <% else %>
-<p>No devrooms have been confirmed yet at this point of time.</p>
+<p><span class="label label-info">No devrooms have been confirmed yet at this point of time.</span></p>
 <% end %>
 
 <h3><a name="lightningtalks"></a>Lightning Talks</h3>
@@ -178,9 +186,11 @@ along side with the variety of the topics.</p>
 <% unless ltalks.empty? %>
 <p>There are currently <a href="<%= lt_track.path %>"><%= ltalks.size %> lightning talks in the schedule</a>.</p>
 <% else %>
-<p>No lightning talks have been confirmed yet at this point of time.</p>
+<p><span class="label label-info">No lightning talks have been confirmed yet at this point of time.</span></p>
 <% end %>
 
 <h3><a name="certification"></a>Certification</h3>
-<p>TODO</p>
+<p>Several certification organizations provide FOSDEM visitors with the opportunity of taking certification
+exams during the conference.</p>
+<p><span class="label label-info">No certification exams have been confirmed at this point of time.</span></p>
 

@@ -8,7 +8,11 @@ source = $timetable.fetch(item[:slug])
 
 rooms = begin
           h = source.fetch(:by_time)
-          h.fetch(h.keys.first).keys
+          if h.empty?
+            []
+          else
+            h.fetch(h.keys.first).keys
+          end
         end
 
 columns = rooms.size + 1 # one more for the time

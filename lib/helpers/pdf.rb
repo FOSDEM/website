@@ -42,7 +42,11 @@ module Fosdem
                       $timetable.each do |d, source|
                         rooms = begin
                                   by_time = source.fetch(:by_time)
-                                  by_time.fetch(by_time.keys.first).keys
+                                  if by_time.empty?
+                                    []
+                                  else
+                                    by_time.fetch(by_time.keys.first).keys
+                                  end
                                 end
 
                         grids = begin

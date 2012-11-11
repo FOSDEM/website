@@ -61,21 +61,23 @@ days_tracks = []
     <div data-role="content">
         <ul data-role="listview" data-inset="false">
         <%
-            if count < 2 and days.size < 2
-              events = list.first[:events].map &$to_event
-              events.each do |event|
+            unless list.empty?
+              if count < 2 and days.size < 2
+                events = list.first[:events].map &$to_event
+                events.each do |event|
         %>
         <li><a href="#event-<%= event[:slug] %>"><%= event[:title] %></a></li>
         <%
-              end #event
-            else
-              list.each do |track|
-                more_tracks << track
+                end #event
+              else
+                list.each do |track|
+                  more_tracks << track
         %>
         <li><a href="#track-<%= track[:slug] %>"><%= track[:name] %></a></li>
         <%
-              end #list
-            end #if count
+                end #list
+              end #if count
+            end #empty
         %>
         </ul>
     </div>
