@@ -11,9 +11,11 @@ $layout_dateline ||= begin
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="nanoc">
     <link rel="shortcut icon" href="<%= pathof '/favicon/' %>" type="image/x-icon" />
+    <link href="http://fonts.googleapis.com/css?family=Signika:400,600,700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css" />
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link media="all" rel="stylesheet" type="text/css" href="<%= pathof '/assets/style/fosdem/' %>" />
-    <link href='http://fonts.googleapis.com/css?family=Signika:400,600,700' rel='stylesheet' type='text/css' />
-    <link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css' />
     <link href="<%= pathof '/atom/' %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed"/>
     <link href="<%= pathof '/opensearch/' %>" type="application/opensearchdescription+xml" title="<%= conference()[:title] %> Search"/>
     <% (@item[:alternative_representations] or []).each do |alt| %>
@@ -83,11 +85,15 @@ $layout_dateline ||= begin
               "#{$eventcount} lectures" => '/schedule/events/',
               }.each_with_index do |(label, target), i|
               url, alt = if target
-              t = $item_by_id.fetch(target)
-              [ t.path, t[:title] ]
-              else
-              [ '#', nil ]
-              end
+                           t = $item_by_id[target]
+                           if t
+                             [ t.path, t[:title] ]
+                           else
+                             [ '#', nil ]
+                           end
+                         else
+                           [ '#', nil ]
+                         end
             %>
             <li class="link<%= i + 1 %>"><a href="<%= url %>"<% if alt %> description="<%= alt %>"<% end %>><%= label %></a></li>
             <% end %>
@@ -112,7 +118,7 @@ $layout_dateline ||= begin
       <% end %>
 
       <% unless @item[:titlehead] == false or @item[:visual] == true %>
-        <h1 class="schedule-title"><%= @item[:title] %></h2>
+        <h1><%= @item[:title] %></h1>
       <% end %>
 
       <%= yield %>

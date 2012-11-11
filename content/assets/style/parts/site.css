@@ -119,7 +119,9 @@ a.quiet {
 .speaker-photo {
   float: left;
 }
-
+q { font-style: italic; }
+q:before { content: "‘"; }
+q:after { content: "’"; }
 .degraded-hint {
   display: none;
 }
