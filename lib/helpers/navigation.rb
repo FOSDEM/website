@@ -1,7 +1,10 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 module Fosdem
 
-  def navigation(list, show_active=true)
+  def navigation(list, opts={})
+    show_active = opts.fetch(:active, true)
+    accesskeys = opts.fetch(:accesskeys, false)
+
     list.map do |link|
       target_id = case link
                   when Hash
@@ -38,7 +41,26 @@ module Fosdem
                   %Q! class="#{css.map(&:to_s).join(' ')}"!
                 end
 
-      %Q!<li#{cssattr}><a href="#{target.path}">#{title}</a></li>!
+      ak = if accesskeys
+             case target.identifier
+             when '/'
+               "1"
+             when '/news/'
+               "2"
+             when '/search/'
+               "4"
+             when "/faq/"
+               "5"
+             else
+               nil
+             end
+           else
+             nil
+           end
+
+      ak = %Q! accesskey="#{ak}"! if ak
+
+      %Q!<li#{cssattr}><a#{ak} href="#{target.path}">#{title}</a></li>!
     end.join("\n")
   end
 

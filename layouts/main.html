@@ -125,7 +125,7 @@ $layout_dateline ||= begin
           <div class="panel-column">
             <h3><%= column.keys.first.to_s %></h3>
             <ul class="panel">
-              <%= navigation(column.values.first, false) %>
+              <%= navigation(column.values.first, active: false, accesskeys: true) %>
             </ul>
           </div> <!-- .panel-column -->
         <% end %>
