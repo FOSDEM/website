@@ -5,8 +5,8 @@
   <li><i class="icon-road"></i> <strong>Track</strong>: <%= l track(item[:track]) %></li>
   <li><i class="icon-home"></i> <strong>Room</strong>: <%= l room(item[:room]) %></li>
   <li><i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></li>
-  <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item[:day], item[:start_time] %></li>
-  <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item[:day], item[:start_time] %></li>
+  <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %></li>
+  <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item, :end %></li>
 </ul>
 <br style="clear: both;"/>
 

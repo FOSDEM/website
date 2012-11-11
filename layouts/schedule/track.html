@@ -184,8 +184,8 @@
               <% unless rooms.empty?  %>
                 <td><%= l room(e[:room]), :title, ", ", nil, 'quiet' %></td>
               <% end %>
-            <td><%= ltt e[:day], e[:start_time], 'quiet' %></td>
-            <td><%= ltt e[:day], e[:end_time], 'quiet' %></td>
+            <td><%= ltt e, :start, css: 'quiet' %></td>
+            <td><%= ltt e, :end, css: 'quiet' %></td>
           </tr>
         <% end %>
       <% end %>

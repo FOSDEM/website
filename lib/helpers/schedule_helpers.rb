@@ -103,13 +103,41 @@ module Fosdem
     end
   end
 
-  def ltt(d, time, klass=nil)
-    require 'builder'
-    d = if d.is_a? Nanoc::Item
-          d[:day]
-        else
-          d
-        end
+  def ltt(item, whence, opts={})
+    fail "opts must be a Hash" unless opts.is_a? Hash
+    klass = begin
+              c = opts.fetch(:css, nil)
+              case c
+              when nil
+                []
+              when Array
+                c
+              else
+                [c]
+              end
+            end
+    microformat = opts.fetch(:microformat, true)
+
+    fail "item must be a Nanoc::Item" unless item.is_a? Nanoc::Item
+
+    field, microformat = case whence
+                         when :start
+                           [ :start_time, :dtstart ]
+                         when :end
+                           [ :end_time, :dtend ]
+                         else
+                           fail "whence must be either :start or :end or a String but is #{whence.inspect}"
+                         end
+
+    case microformat
+    when :start
+      klass << :dtstart
+    when :end
+      klass << :dtend
+    end
+
+    time = item[field]
+    fail "#{item.inspect} has no field #{field.inspect}" unless time
     time = case time
            when Time
              time.strftime("%H:%M")
@@ -122,26 +150,35 @@ module Fosdem
              when 8
                time.split(/:/)[0,2].join(":")
              else
-               raise "invalid time \"#{time}\""
+               fail "invalid time \"#{time}\""
              end
            else
-             raise "unsupported object of type #{time.class}"
+             file "unsupported object of type #{time.class}"
            end
 
     anchor = time.gsub(/:/, '')
 
-    buffer = ''
-    xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
-    args = {
-      href: "#{$prefix}/schedule/day/#{d}/" + '#' + anchor,
-    }
-    if klass
-      args[:class] = (klass.is_a? Array) ? klass.join(" ") : klass
-    end
+    title = if microformat
+              klass << 'value-title'
+              require 'tzinfo'
+              tz = TZInfo::Timezone.get(conference()[:timezone])
+              offset = tz.period_for_local(DateTime.parse("#{item[:conference_day]} #{time}")).utc_total_offset
+              oh = (offset / (60*24)).to_i
+              om = (offset % (60*24)).to_i
 
-    xml.a(time, args)
+              # ISO 8601
+              %Q! title="#{item[:conference_day]}T#{time}#{'%+02d' % oh}:#{'%02d' % om}"!
+            else
+              ''
+            end
 
-    buffer
+    css = if klass.empty?
+            ""
+          else
+            %Q! class="#{klass.map(&:to_s).join(' ')}"!
+          end
+
+    %Q!<a#{css}#{title} href="#{$prefix}/schedule/day/#{item[:slug]}/###{anchor}">#{time}</a>!
   end
 
   def conference(sym=nil)

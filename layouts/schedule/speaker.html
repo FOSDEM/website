@@ -1,3 +1,7 @@
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+# encoding: utf-8
+%>
 <% photo = item[:photo] ? $item_by_id.fetch("/photo/#{item[:photo].fetch(:slug)}/") : nil%>
 <% if photo %>
 <img src="<%= photo.path %>" width="<%= item[:photo].fetch(:width) %>" height="<%= item[:photo].fetch(:height) %>" class="speaker-photo" />
@@ -39,8 +43,8 @@
             <td><%= l day(e[:day]) %></td>
             <td><%= l room(e[:room]) %></td>
             <td><%= l track(e[:track]), :name %></td>
-            <td><%= ltt e[:day], e[:start_time] %></td>
-            <td><%= ltt e[:day], e[:end_time] %></td>
+            <td><%= ltt e, :start %></td>
+            <td><%= ltt e, :end %></td>
         <% end %>
     </tbody>
 </table>

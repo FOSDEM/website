@@ -1,3 +1,7 @@
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+# encoding: utf-8
+%>
 <ul class="side-box">
     <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></LI>
 <%
@@ -161,15 +165,15 @@
     <tbody>
         <% item[:events].map(&$to_event).group_by{|e| e[:day_name]}.each do |day, dayevents| %>
         <tr>
-            <td colspan="5"><h3><%= day %></h3></td>
+            <td colspan="5"><h4><%= day %></h4></td>
         </tr>
         <% dayevents.sort_by{|e| e[:start_datetime]}.each do |e| %>
         <tr>
             <td class="<%= event_color.fetch e[:event_id] %>">&nbsp;</td>
             <td><a name="<%= e[:slug] %>"></a><%= l e %></td>
             <td><%= l track(e[:track]), :name, nil, nil, :quiet %></a></td>
-            <td><%= ltt e[:day], e[:start_time], :quiet %></td>
-            <td><%= ltt e[:day], e[:end_time], :quiet %></td>
+            <td><%= ltt e, :start, css: 'quiet' %></td>
+            <td><%= ltt e, :end, css: 'quiet' %></td>
         </tr>
         <% end %>
         <% end %>
