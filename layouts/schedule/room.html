@@ -1,14 +1,13 @@
-<p class="side-box">
-<i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %><br/>
+<ul class="side-box">
+    <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></LI>
 <%
   building = $buildings.select{|b, rooms| rooms.map{|r| r[:slug]}.include? item[:slug]}.map{|b, rooms| b}.first
   if building
     building_path = $item_by_id.fetch('/schedule/buildings/').path
   %>
-  <i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a>
+  <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
 <% end %>
-
-</p>
+</ul>
 <br style="clear: both;"/>
 <%
   unless item[:events_by_day].empty? or item[:events_by_day].values.map{|l| l.size}.inject(0, :+) == 0
@@ -135,7 +134,7 @@
         end #cells
         (0..fillup_slots - 1).each do |x|
       %>
-      <td class="t<%= (start + ((slots + x) * interval * 60)).strftime("%M") %>">:</td>
+      <td class="t<%= (start + ((slots + x) * interval * 60)).strftime("%M") %>"></td>
       <%
         end #x
       %>

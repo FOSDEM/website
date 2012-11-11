@@ -1,27 +1,78 @@
 ---
 title: Home
 navcat: true
-maxnews: 10
+maxnews: 3
 nohead: true
+breadcrumbs: false
+visual: true
 ---
-<div class="well">
-    <p>FOSDEM is a free event that offers open source communities a place to meet, share ideas and collaborate.</p>
-    <p>It is renowed for being highly developer-oriented and brings together 5000+ geeks from all over the world.</p>
-    <p><span class="label label-info">No registration necessary.</span></p>
-</div>
-<div>
-    <p>See <a href="page:about">here for details about the event</a>.
+<div id="main">
+    <div class="sponsors-block">
+        <div class="text-block">
+            <h2>FOSDEM is a free event that offers open source communities a place to meet, share ideas and collaborate.</h2>
+            <p>It is renowed for being highly developer-oriented and brings together 5000+ geeks from all over the world.</p>
+        </div>
+        <div class="logo-block">
+            <h3>SPONSORS</h3>
+            <%
+                cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?}
+                cornerstone.each do |c|
+            %>
+            <a class="logo-sponsor-cornerstone logo-<%= c.id %>" href="<%= c.path %>"><%= c.name %></a>
+            <%
+                end
+            %>
+            <% unless other.empty? %>
+                <ul class="logo-list">
+                <% other.each do |s| %>
+                    <li class="logo-sponsor-other logo-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
+                <% end %>
+                </ul>
+            <% end %>
+        </div>
+    </div>
+    <div class="news-block">
+        <h2>NEWS</h2>
+        <ul class="news-list">
+            <%
+                newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse
+                newsitems[0,item[:maxnews]].each do |hl|
+            %>
+            <li class="news">
+            <div class="date">
+                <div class="holder">
+                    <div class="frame"><%= hl[:created_at].strftime '%Y-%m-%d' %></div>
+                </div>
+            </div>
+            <h3><a href="<%= relpath(@item.path, hl[:fullpost]) %>"><%= hl[:title] %></a></h3>
+            <p><%= hl.compiled_content(:snapshot => :pre) %></p>
+            </li>
+            <% end %>
+        </ul>
+        <% if newsitems.length > item[:maxnews] %>
+            <div class="btn-news">
+                <a class="btn-purple" href="#">more news</a>
+            </div>
+        <% end %>
+        </ul>
+    </div>
+    <div class="location-block">
+        <h2>LOCATION</h2>
+        <p>FOSDEM will take place at the ULB Campus Solbosch, <strong>Brussels,</strong> <span>Belgium,</span> Europe, Earth.</p>
+        <div class="location-info">
+            <div class="map"><%= img '/assets/images/map/' %></div>
+            <div class="location-text">
+                <a class="logo-ulb-big" href="#">Université libre de bruxelles</a>
+                <ul class="location-list">
+                    <li>ULB Campus Solbosh</li>
+                    <li><address>Avenue Franklin D. Roosevelt, 50</address></li>
+                    <li>1050 Bruxelles</li>
+                </ul>
+                <div class="btn-location">
+                    <a class="btn-purple" href="<%= pathof '/practical/transportation/' %>">venue &amp; travel</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="container-fluid">
-    <%
-    newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse
-    newsitems[0,item[:maxnews]].each do |hl|
-    %>
-	<%= render('headline', :item => hl) %>
-	<hr />
-    <% end %>
-    <% if newsitems.length > item[:maxnews] %>
-    <a href="/news/">More news&#x2026;</a>
-    <% end %>
-</div>

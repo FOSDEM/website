@@ -213,13 +213,19 @@ tbody th.title {
     padding-right: 0.5em;
 }
 
+ul.side-box {
+  display: block;
+  margin-left: 0;
+  list-style: none;
+}
 .side-box {
   float: right;
   padding-left: 0.5em;
   border-left: 1px dotted #000;
 }
-.schedule-track h1.title,
-.schedule-room h1.title {
+.schedule-track #main > h1,
+.schedule-event #main > h1,
+.schedule-room  #main > h1 {
   float: left;
 }
 

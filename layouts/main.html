@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+$layout_dateline ||= begin
+                       days.map{|d| d[:conference_day].day}.join(' &amp; ') + " " + days.first[:conference_day].strftime('%B %Y')
+                     end
+%>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head profile="http://a9.com/-/spec/opensearch/1.1/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="nanoc">
+    <link rel="shortcut icon" href="<%= pathof '/favicon/' %>" type="image/x-icon" />
+    <link media="all" rel="stylesheet" type="text/css" href="<%= pathof '/assets/style/fosdem/' %>" />
+    <link href='http://fonts.googleapis.com/css?family=Signika:400,600,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css' />
+    <link href="<%= pathof '/atom/' %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed"/>
+    <link href="<%= pathof '/opensearch/' %>" type="application/opensearchdescription+xml" title="<%= conference()[:title] %> Search"/>
+    <% (@item[:alternative_representations] or []).each do |alt| %>
+      <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= $item_by_id[alt[:item]].path %>" />
+    <% end %>
+    <% if @item[:head_erb_injection] %><%%= <%= @item[:head_erb_injection] %> %><% end %>
+    <title><%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %></title>
+  </head>
+  <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
+    <div id="header">
+      <div class="header-holder">
+        <h1 class="logo"><a href="#"><%= conference()[:acronym] %> Free and open source software developer’s european meeting</a></h1>
+        <ul id="nav">
+          <%= navigation $item_by_id.fetch('/navigation/')[:top] %>
+          <% unless item[:no_search] %>
+            <li class="search-holder">
+            <form class="search-form" action="/search/" method="get">
+              <div class="input-prepend">
+                <span class="add-on"><i class="icon-search"></i></span>
+                <input type="text" name="q" id="q" class="span2" value="" placeholder="Search" />
+              </div>
+            </form>
+            </li>
+          <% end %>
+        </ul> <!-- #nav -->
+      </div> <!-- .header-holder -->
+    </div> <!-- #header -->
+    <% unless @item[:titlebox] == false or @item[:visual] == true %>
+      <div class="title-box">
+        <div class="holder">
+          <div class="frame">
+            <ul class="navbar">
+              <%= navigation $item_by_id.fetch('/navigation/')[:head] %>
+            </ul>
+            <div class="text-block">
+              <h2>Brussels <span>/</span> <strong><%= $layout_dateline %></strong></h2>
+              <a class="btn-purple" href="<%= pathof '/schedule/' %>">schedule</a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- .title-box -->
+    <% end %>
+    <% if @item[:visual] == true %>
+      <div class="visual">
+        <div class="visual-shadow">&nbsp;</div>
+        <div class="visual-image">
+          <%= img($item_by_id.fetch('/assets/style/img1/')) %>
+        </div>
+        <div class="visual-content">
+          <ul class="visual-panel">
+            <%
+              $eventcount ||= begin
+                                s = events.size
+                                if s > 400
+                                  s.to_s
+                                else
+                                  "400+"
+                                end
+                              end
+              {
+              'beer' => '/practical/beerevent/',
+              'devrooms' => '/schedule/tracks/',
+              'open source' => nil,
+              '5000+ hackers' => nil,
+              'lightning talks' => '/schedule/track/lightning_talks/',
+              "#{$eventcount} lectures" => '/schedule/events/',
+              }.each_with_index do |(label, target), i|
+              url, alt = if target
+              t = $item_by_id.fetch(target)
+              [ t.path, t[:title] ]
+              else
+              [ '#', nil ]
+              end
+            %>
+            <li class="link<%= i + 1 %>"><a href="<%= url %>"<% if alt %> description="<%= alt %>"<% end %>><%= label %></a></li>
+            <% end %>
+          </ul>
+          <div class="visual-info">
+            <div class="info-box">
+              <div class="holder">
+                <div class="frame">
+                  Brussels <span>/</span> <strong><%= $layout_dateline %></strong> <a class="btn-purple" href="#">schedule</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- #visual -->
+    <% end %>
+    <div id="main">
+      <% unless @item[:breadcrumbs] == false or @item[:visual] == true %>
+      <ul class="breadcrumbs">
+        <%= bcrumbs %>
+      </ul>
+      <% end %>
+
+      <% unless @item[:titlehead] == false or @item[:visual] == true %>
+        <h1 class="schedule-title"><%= @item[:title] %></h2>
+      <% end %>
+
+      <%= yield %>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="footer-holder">
+        <div class="panel-block">
+          <%
+            $item_by_id.fetch('/navigation/')[:footer].each do |column|
+          %>
+          <div class="panel-column">
+            <h3><%= column.keys.first.to_s %></h3>
+            <ul class="panel">
+              <%= navigation(column.values.first, false) %>
+            </ul>
+          </div> <!-- .panel-column -->
+        <% end %>
+        </div> <!-- .panel-block -->
+        <div class="company-info">
+          <strong class="logo-small"><a href="#"><%= conference()[:acronym] %></a></strong>
+          <p>Brussels <span>/</span> <strong><%= $layout_dateline %></strong></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

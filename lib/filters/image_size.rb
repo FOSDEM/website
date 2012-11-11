@@ -5,6 +5,8 @@
 
 module Fosdem
   def image_size(s)
+    s = $item_by_id.fetch(s) if s.is_a? String and s.start_with? '/' and s.end_with? '/'
+
     path = case s
            when Nanoc::Item
              s.identifier.chop + "." + s[:extension]
@@ -12,7 +14,6 @@ module Fosdem
              s['src']
            when String
              raise "wtf, a string? #{s.inspect}"
-             s
            else
              raise "unsupported object of type #{s.class}: #{s.inspect}"
            end

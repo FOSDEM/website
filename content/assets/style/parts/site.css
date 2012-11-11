@@ -2,8 +2,6 @@ html {
   height: 100%;
 }
 body {
-  padding-top: 60px;
-  padding-bottom: 40px;
   height: 100%;
 }
 table tbody h3 {
@@ -77,6 +75,9 @@ div.sponsor-block {
 div.hotel {
   margin-bottom: 1.5em;
 }
+#nav li.search-holder {
+    margin-top: -0.5em;
+} 
 #refine-search {
   padding: 0;
 }

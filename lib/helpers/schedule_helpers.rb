@@ -21,6 +21,8 @@ module Fosdem
   end
 
   def img(item, attr={})
+    item = $item_by_id.fetch(item) if item.is_a? String and item.start_with? '/' and item.end_with? '/'
+
     a = attr.clone
     a[:src] = case item
               when Nanoc::Item

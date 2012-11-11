@@ -1,6 +1,7 @@
 ---
 title: Linux Professional Institute (LPI)
 url: http://www.lpi.org/
+disabled: true
 ---
 The [Linux Professional Institute (LPI)](http://www.lpi.org/) is an
 internationally recognized, vendor-independent organization advocating and

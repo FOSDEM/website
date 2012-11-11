@@ -1,0 +1,53 @@
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+
+  require 'RMagick'
+
+  # Just use the filename here, no need to transform it into a proper URL,
+  # as the csslinks filter will take care of that
+  sprite = 'sprite.png' #/assets/style/sprite.png/' #$item_by_id.fetch('/assets/style/sprite/').path
+
+  extra = {
+    '.logo-small' => '/assets/style/fosdem-logo/',
+    '.logo-ulb-big' => '/assets/style/ulb/',
+  }
+
+  # calculate offsets
+  logos = begin
+            h = {}
+            sponsors.each do |s|
+              has_logo = if s.cornerstone?
+                           s.logo?
+                         else
+                           s.thumb?
+                         end
+              if has_logo
+                css_class, logo = if s.cornerstone?
+                                    [ ".logo-#{s.id}", s.logo ]
+                                  else
+                                    [ ".logo-list .logo-#{s.id} a", s.thumb ]
+                                  end
+                image = Magick::Image.from_blob(IO.read(logo[:filename])).first
+                h[css_class] = image
+              end
+            end
+            extra.each do |css, id|
+              target = $item_by_id.fetch id
+              image = Magick::Image.from_blob(IO.read(target[:filename])).first
+              h[css] = image
+            end
+            h
+          end
+
+  y = 0
+  logos.each do |css_class, image|
+%>
+<%= css_class %> {
+  width: <%= image.columns %>px;
+  height: <%= image.rows %>px;
+  background-position: 0 <%= -y %>px;
+}
+<%
+    y += image.rows
+  end
+%>

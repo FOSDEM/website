@@ -1,6 +1,7 @@
 ---
 title: Qualcomm
 url: http://www.qualcomm.com/
+disabled: true
 ---
 
 A heritage of innovation...

@@ -131,7 +131,7 @@
         end #cells
         (0..fillup_slots - 1).each do |x|
       %>
-      <td class="t<%= (start + ((slots + x) * interval * 60)).strftime("%M") %>">:</td>
+      <td class="t<%= (start + ((slots + x) * interval * 60)).strftime("%M") %>"></td>
       <%
         end #x
       %>

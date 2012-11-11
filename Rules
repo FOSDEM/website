@@ -84,11 +84,11 @@ preprocess do
   # all items to find it.
   # That $schedule_navigation_item is referenced and used in
   # layouts/default.html
-  $schedule_navigation_item = $item_by_id.fetch('/schedule_navigation/')
+  #$schedule_navigation_item = $item_by_id.fetch('/schedule_navigation/')
 
   # and the same for the sponsors block
   # (this optimization actually reduces rendering time from 4min to 30sec)
-  $sponsors_navigation_item = $item_by_id.fetch('/sponsors_navigation/')
+  #$sponsors_navigation_item = $item_by_id.fetch('/sponsors_navigation/')
 
   # compute the timetables once and cache them, they're used in a few places
   # (put this rule *after* computing $item_by_id as we are using $item_by_id
@@ -159,15 +159,23 @@ compile '/assets/style/*' do
   # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
   # for inspiration
 
-  if (not item.binary?) and item[:extension] == 'css'
-    # process those using ERB:
+  case File.extname(item[:filename])
+  when '.erb'
     filter :erb
-    # then relativize any resource paths (to images and such):
-    filter :relativize_paths, :type => :css
-
-    filter :csslinks
-    # minimize CSS files:
-    filter :rainpress
+  else
+    unless item.binary?
+      case item[:extension]
+      when 'css'
+        # process those using ERB:
+        filter :erb
+        # then relativize any resource paths (to images and such):
+        filter :relativize_paths, :type => :css
+        # fix url() links in CSS:
+        filter :csslinks
+        # minimize CSS files:
+        #filter :rainpress
+      end
+    end
   end
 end
 
@@ -300,7 +308,7 @@ compile '*' do
         # and for these, we go full page
         layout 'fullpage'
       else
-        layout 'default'
+        layout 'main'
       end
     end
   end
@@ -385,12 +393,15 @@ route '/assets/style/*/' do
            end
   "#{$prefix}#{item.identifier.chop}#{suffix}.#{item[:extension]}"
 end
-# do the same with assets/img/*, but do NOT append a digest, as they are referenced
-# by their original name in the CSS files (e.g. in bootstrap.css); while we could also
-# process those to replace the filenames with the ones that include the digest, that is
-# quite a lot of hassle, and we already optimize a lot of things on the website anyway
+# do the same with assets/img/*
 route '/assets/img/*/' do
-  "#{$prefix}#{item.identifier.chop}.#{item[:extension]}"
+  suffix = if @site.config[:digest_assets]
+             parts = @items.select{|i| i.identifier =~ %r{^/assets/style/parts/.+}}.sort_by(&:identifier)
+             "-" + digest(parts)
+           else
+             ""
+           end
+  "#{$prefix}#{item.identifier.chop}#{suffix}.#{item[:extension]}"
 end
 
 # don't add a digest to the badge filenames: as they are linked to

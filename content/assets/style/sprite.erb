@@ -1,0 +1,42 @@
+---
+binary: true
+extension: png
+---
+<%=
+  # vim: set ts=2 sw=2 et ai ft=eruby:
+
+require 'RMagick'
+
+logos = sponsors.select{|s| s.cornerstone? ? s.logo? : s.thumb? }.map do |s|
+  logo = if s.cornerstone?
+           s.logo
+         else
+           s.thumb
+         end
+  Magick::Image.from_blob(IO.read(logo[:filename])).first
+end
+
+# add fosdem and ULB logos to the sprite
+[
+  '/assets/style/fosdem-logo/',
+  '/assets/style/ulb/',
+].map(&$to_item).each do |i|
+  logos << Magick::Image.from_blob(IO.read(i[:filename])).first
+end
+
+height = logos.map{|l| l.rows}.inject(:+)
+width  = logos.map{|l| l.columns}.max
+
+sprite = Magick::Image.new(width, height) do
+  self.format = 'PNG'
+  self.background_color = 'transparent'
+end
+
+y = 0
+logos.each do |image|
+  sprite.composite!(image, 0, y, Magick::OverCompositeOp)
+  y += image.rows
+end
+
+sprite.to_blob
+%>

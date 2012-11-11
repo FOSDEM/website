@@ -84,7 +84,6 @@ template :html do
 </ul> <!-- search-results -->
 
 <% if @pagination %>
-<div class="pagination-positioner" style="position: relative; bottom: -6em;">
 <div class="pagination pagination-centered">
   <ul>
     <% if @prev_page %>
@@ -101,7 +100,6 @@ template :html do
     <li class="disabled"><a>Next</a></li>
     <% end %>
   </ul>
-</div>
 </div>
 <% end %>
 EOF
@@ -314,14 +312,14 @@ def search(template=:html, layout=:layout)
     title = sanitize title
 
     kind = begin
-             t = doc['type'].map{|t| t.to_sym}
-             if t.include? :speaker
+             ty = doc['type'].map{|t| t.to_sym}
+             if ty.include? :speaker
                :speaker
-             elsif t.include? :event
+             elsif ty.include? :event
                :event
-             elsif t.include? :track
+             elsif ty.include? :track
                :track
-             elsif t.include? :interview
+             elsif ty.include? :interview
                title.sub! /^interview\s*:\s*/i, ''
                :interview
              else
@@ -361,14 +359,16 @@ def search(template=:html, layout=:layout)
       page = pages if page > pages
       page = 1 if page < 1
 
-      @page_link = begin
-                     require 'uri'
-                     uri = "#{@base_uri}"
-                     uri << '/' unless uri.end_with? '/'
-                     uri << "?q=#{URI.escape q}"
-                     uri << "&" << types.map{|type| URI.escape type}.join('&')
-                     uri
-                   end
+      partial = begin
+                  require 'uri'
+                  uri = "#{@base_uri}"
+                  uri << '/' unless uri.end_with? '/'
+                  uri << "?q=#{URI.escape q}"
+                  uri << "&" << types.map{|type| URI.escape type}.join('&')
+                  uri
+                end
+
+      @page_link = @base_uri + partial
 
       @pages = pages
       @current_page = page
@@ -377,11 +377,12 @@ def search(template=:html, layout=:layout)
       @last_page = pages
 
       @head = begin
+                abs_page_uri = @abs_uri + partial
                 # http://googlewebmastercentral.blogspot.be/2011/09/pagination-with-relnext-and-relprev.html
                 l = []
-                l << %Q{<link rel="canonical" href="#{@abs_uri}?page=#{@current_page}"/>}
-                l << %Q{<link rel="prev" href="#{@abs_uri}?page=#{@prev_page}"/>} if @prev_page
-                l << %Q{<link rel="next" href="#{@abs_uri}?page=#{@next_page}"/>} if @next_page
+                l << %Q{<link rel="canonical" href="#{abs_page_uri}&page=#{@current_page}"/>}
+                l << %Q{<link rel="prev" href="#{abs_page_uri}&page=#{@prev_page}"/>} if @prev_page
+                l << %Q{<link rel="next" href="#{abs_page_uri}&page=#{@next_page}"/>} if @next_page
                 l.join("\n")
               end
 

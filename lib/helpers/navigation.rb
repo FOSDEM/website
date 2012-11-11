@@ -1,100 +1,46 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 module Fosdem
 
-	def navigation(path=nil)
-    items = @items
-    current_path = path or @item_rep.path
-
-    nav, id = begin
-                ni = $item_by_id['/navigation/']
-                raise "failed to find the /navigation/ item" unless ni
-                [ ni[:navigation], ni.identifier ]
+  def navigation(list, show_active=true)
+    list.map do |link|
+      target_id = case link
+                  when Hash
+                    link.values.first
+                  else
+                    link.to_s
+                  end
+      target_id = target_id + '/' unless target_id.end_with? '/'
+      target = $item_by_id.fetch(target_id)
+      title = case link
+              when Hash
+                link.keys.first.to_s
+              else
+                if target[:navtitle]
+                  target[:navtitle]
+                else
+                  target[:title]
+                end
               end
-
-		require 'builder'
-
-    def title(item)
-      case item.path
-      when '/'
-        "Home"
-      else
-        t = if item[:navtitle]
-              item[:navtitle]
-            else
-              item[:title]
-            end
-        raise "navigation references the item #{item.identifier} but that has no :title" unless t
-        t
+      css = []
+      if show_active
+        active = if target_id == '/'
+                   @item.path == target.path
+                 else
+                   @item.path.start_with? target.path
+                 end
+        css << :active if active
       end
-    end
+      css << :home if target.identifier == '/'
 
-    def walk(n, xml, id, current_path, level=0)
-      if n.is_a? Array
-        n.each do |c|
-          walk(c, xml, id, current_path, level)
-        end
+      cssattr = if css.empty?
+                  ""
+                else
+                  %Q! class="#{css.map(&:to_s).join(' ')}"!
+                end
 
-      elsif n.is_a? Hash
-        n.each do |ks,v|
-          k = ks.to_s
-          if k.start_with? '/'
-            item = $item_by_id.fetch k
-            raise "navigation references an item #{k} without a representation in #{id}" unless item.path
-
-            classes = []
-            classes << 'active' if current_path == item.path
-            classes << 'nav-header' if item[:navcat] == true
-            c = {}
-            c[:class] = classes.join(" ") unless classes.empty?
-
-            xml.li(c) do
-              raise "navigation: path to item #{item.inspect} does not start with #{$prefix}" unless item.path.start_with? $prefix
-              xml.a(title(item), :href => item.path)
-            end
-            walk(v, xml, id, current_path, level + 1)
-          else
-            xml.li(:class => 'nav-header') do
-              xml.text! k
-            end
-            walk(v, xml, id, current_path, level + 1)
-          end
-        end
-
-      elsif n.start_with? '/'
-        item = $item_by_id[n]
-        raise "failed to find the item with identifier #{n} that is referenced in #{id}" unless item
-        raise "navigation references an item #{n} without a representation in #{id}" unless item.path
-
-        classes = []
-        classes << 'active' if current_path == item.path
-        classes << 'nav-header' if item[:navcat] == true
-        c = {}
-        c[:class] = classes.join(" ") unless classes.empty?
-
-        xml.li(c) do
-          raise "navigation: path to item #{item.inspect} does not start with #{$prefix}" unless item.path.start_with? $prefix
-          xml.a(title(item), :href => item.path)
-        end
-
-      elsif n == '/'
-        xml.li do
-          xml.a('Home', :href => $prefix + '/')
-        end
-
-      else
-        xml.li do
-          xml.text! n
-        end
-      end
-
-    end
-
-    buffer = ''
-		xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
-    walk(nav, xml, id, current_path)
-
-    buffer
-	end
+      %Q!<li#{cssattr}><a href="#{target.path}">#{title}</a></li>!
+    end.join("\n")
+  end
 
 end
 

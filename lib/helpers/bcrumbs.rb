@@ -28,14 +28,18 @@ module Fosdem
 		xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
 
     if @item.identifier == '/' then
-      xml.li(:class => 'active') do
-        xml.text! roottitle
+      xml.li(:class => 'active home') do
+        if roottitle.start_with? '<%'
+          xml << roottitle
+        else
+          xml.text! roottitle
+        end
       end
     else
-      xml.li do
+      xml.li(:class => 'home') do
         xml.a(roottitle, :href => "#{$prefix}/")
       end
-      xml.span("/", :class => 'divider')
+      #xml.span("/", :class => 'divider')
     end
 
     parts = @item.identifier.gsub(%r{^/}, '').gsub(%r{/$}, '').split('/')
@@ -46,7 +50,12 @@ module Fosdem
       if index == parts.length - 1 then
         # active
         xml.li(:class => 'active') do
-          xml.text! navtitle(@item)
+          t = navtitle @item
+          if t.start_with? '<%'
+            xml << t
+          else
+            xml.text! t
+          end
         end
       else
         link, title = case part
@@ -69,21 +78,20 @@ module Fosdem
                       end
         xml.li do
           if link then
-            xml.a(title, :href => "#{$prefix}/#{link}")
+            xml.a(title.to_sym, :href => "#{$prefix}/#{link}")
           else
-            xml.text! title
+            if title.start_with? '<%'
+              xml << title
+            else
+              xml.text! title
+            end
           end
-          xml.span("/", :class => 'divider')
+          #xml.span("/", :class => 'divider')
         end #li
       end
     end
 
     buffer
-  end
-
-  private
-  def p(item)
-    item.identifier.gsub(%r{^/}, '').gsub(%r{/$}, '')
   end
 
 end

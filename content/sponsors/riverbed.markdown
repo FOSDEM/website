@@ -1,6 +1,7 @@
 ---
 title: Riverbed
 url: http://www.riverbed.com/
+disabled: true
 ---
 
 Riverbed delivers performance for the globally connected enterprise.

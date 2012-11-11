@@ -1,23 +1,33 @@
 ---
-navigation:
-  - /
-  - /news/
-  - /about/:
-    - /about/fosdem/
-    - /about/sponsors/
-    - /about/faq/
-  - /schedule/:
-    - /schedule/days/
-    - /schedule/tracks/
-    - /schedule/events/
-    - /distrominiconf/
+top:
+  - Home: /
+  - /schedule
+  - Practical: /practical
+  - /news
+head:
+  - /about
+  - /about/sponsors
+  - /contact
+footer:
+  - FOSDEM:
+    - Home: /
+    - /news
+    - About: /about
+    - /about/sponsors
+    - /faq
+  - Schedule:
+    - Information: /schedule
+    - /schedule/days
+    - /schedule/tracks
+    - /schedule/events
+    - /distrominiconf
   - Practical Information:
-    - /practical/beerevent/
-    - /practical/transportation/
-    - /practical/accommodation/
-    - /practical/catering/
-    - /practical/services/
-    - /practical/jobcorner/
-  - Media and press:
-    - /interviews/
-
+    - /practical/beerevent
+    - /practical/transportation
+    - /practical/accommodation
+    - /practical/catering
+    - /practical/services
+    - /practical/jobcorner
+    - /support/promote
+  - Media and Press:
+    - /interviews

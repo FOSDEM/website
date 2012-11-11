@@ -1,1 +1,10 @@
-<% @items.select{|i| i.identifier =~ %r{^/assets/style/parts/.+/$}}.sort_by{|i| i.identifier}.each do |css| %><%= css.compiled_content %><% end %>
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+%>
+<%=
+  @items
+  .select{|i| i.identifier =~ %r{^/assets/style/parts/.+/$}}
+  .sort_by{|i| i.identifier}
+  .map{|css| css.compiled_content}
+  .join("\n")
+%>

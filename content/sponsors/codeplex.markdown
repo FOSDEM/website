@@ -1,6 +1,7 @@
 ---
 title: Codeplex
 url: http://www.codeplex.com
+disabled: true
 ---
 CodePlex is Microsoft's open source project hosting web site.
 

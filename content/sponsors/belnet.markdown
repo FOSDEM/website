@@ -1,6 +1,7 @@
 ---
 title: Belnet
 url: http://www.belnet.be
+disabled: true
 ---
 
 Belnet is the federal governmental organisation that has been responsible,
