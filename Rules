@@ -173,7 +173,7 @@ compile '/assets/style/*' do
         # fix url() links in CSS:
         filter :csslinks
         # minimize CSS files:
-        #filter :rainpress
+        filter :rainpress
       end
     end
   end
