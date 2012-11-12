@@ -168,10 +168,10 @@ compile '/assets/style/*' do
       when 'css'
         # process those using ERB:
         filter :erb
-        # then relativize any resource paths (to images and such):
-        filter :relativize_paths, :type => :css
         # fix url() links in CSS:
         filter :csslinks
+        # then relativize any resource paths (to images and such):
+        filter :relativize_paths, :type => :css
         # minimize CSS files:
         filter :rainpress
       end
