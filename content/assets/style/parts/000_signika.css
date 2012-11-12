@@ -1,0 +1,19 @@
+/* vim: set ts=2 sw=2 et ai: */
+@font-face {
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Signika-Semibold'), url(/assets/style/fonts/Signika-Semibold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Signika'), local('Signika-Regular'), url(/assets/style/fonts/Signika-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Signika-Bold'), url(/assets/style/fonts/Signika-Bold.ttf) format('truetype');
+}

@@ -44,11 +44,11 @@ fieldset{
 .logo{
 	margin:0;
 	float:left;
-	background:url(logo.gif) no-repeat;
+	background:url(logo-compact.gif) no-repeat;
 	text-indent:-9999px;
 	overflow:hidden;
-	width:360px;
-	height:47px;
+    width:161px;
+    height:28px;
 }
 .logo a{
 	display:block;
@@ -98,6 +98,7 @@ fieldset{
 	top:0;
 	min-width:1280px !important;
 	width:100%;
+    text-align: center;
 }
 .visual-image img{
 	vertical-align:top;

@@ -11,10 +11,6 @@ $layout_dateline ||= begin
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="nanoc">
     <link rel="shortcut icon" href="<%= pathof '/favicon/' %>" type="image/x-icon" />
-    <link href="http://fonts.googleapis.com/css?family=Signika:400,600,700" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css" />
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link media="all" rel="stylesheet" type="text/css" href="<%= pathof '/assets/style/fosdem/' %>" />
     <link href="<%= pathof '/atom/' %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed"/>
     <link href="<%= pathof '/opensearch/' %>" type="application/opensearchdescription+xml" title="<%= conference()[:title] %> Search"/>
@@ -27,7 +23,7 @@ $layout_dateline ||= begin
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
     <div id="header">
       <div class="header-holder">
-        <h1 class="logo"><a href="#"><%= conference()[:acronym] %> Free and open source software developer’s european meeting</a></h1>
+        <h1 class="logo"><a href="/"><%= conference()[:acronym] %> Free and open source software developer’s european meeting</a></h1>
         <ul id="nav">
           <%= navigation $item_by_id.fetch('/navigation/')[:top] %>
           <% unless item[:no_search] %>

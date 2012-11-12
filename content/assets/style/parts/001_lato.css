@@ -1,0 +1,7 @@
+/* vim: set ts=2 sw=2 et ai: */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(/assets/style/fonts/Lato-Bold.ttf) format('truetype');
+}
