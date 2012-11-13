@@ -9,7 +9,7 @@ $layout_dateline ||= begin
   <head profile="http://a9.com/-/spec/opensearch/1.1/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="generator" content="nanoc">
+    <meta name="generator" content="nanoc"/>
     <link rel="shortcut icon" href="<%= pathof '/favicon/' %>" type="image/x-icon" />
     <link media="all" rel="stylesheet" type="text/css" href="<%= pathof '/assets/style/fosdem/' %>" />
     <link href="<%= pathof '/atom/' %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed"/>
@@ -98,7 +98,7 @@ $layout_dateline ||= begin
             <div class="info-box">
               <div class="holder">
                 <div class="frame">
-                  Brussels <span>/</span> <strong><%= $layout_dateline %></strong> <a class="btn-purple" href="#">schedule</a>
+                  Brussels <span>/</span> <strong><%= $layout_dateline %></strong> <a class="btn-purple" href="<%= pathof '/schedule/' %>">schedule</a>
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@ $layout_dateline ||= begin
         <% end %>
         </div> <!-- .panel-block -->
         <div class="company-info">
-          <strong class="logo-small"><a href="#"><%= conference()[:acronym] %></a></strong>
+          <strong class="logo-small"><a href="<%= pathof '/schedule/' %>"><%= conference()[:acronym] %></a></strong>
           <p>Brussels <span>/</span> <strong><%= $layout_dateline %></strong></p>
         </div>
       </div>

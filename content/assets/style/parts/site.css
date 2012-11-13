@@ -23,10 +23,10 @@ table tbody h3 {
 #infoblock {
   background: inherit;
 }
-table#sponsors td {
+table#s td {
   vertical-align: top;
 }
-table#sponsors img {
+table#s img {
   padding-left: 2em;
 }
 ul.horizontal-list {
@@ -46,20 +46,20 @@ ul.horizontal-list li:first-child:before {
 .sidebar-nav {
   margin-left: 0 !important;
 }
-img.sponsor-logo {
+img.s-logo {
   float: right;
   margin-left: 1em;
   margin-bottom: 0.5em;
 }
-img.sponsor-box-logo {
+img.s-box-logo {
   padding: 0.1em 0.05em;
 }
-#sponsor-box {
+#s-box {
   padding: 0;
   border-top: none;
   background: #fff;
 }
-#sponsor-box .nav-header {
+#s-box .nav-header {
   padding: 0 0.2em 0 0.2em !important;
   text-align: center;
   border: 1px solid #ddd;
@@ -67,7 +67,7 @@ img.sponsor-box-logo {
   border-right: none;
   background-color: #eee;
 }
-div.sponsor-block {
+div.s-block {
   margin-bottom: 2em;
   padding-bottom: 2em;
   border-bottom: 1px dashed #ccc;

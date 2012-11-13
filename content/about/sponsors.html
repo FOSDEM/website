@@ -9,7 +9,7 @@ FOSDEM would not be possible without the generous help of our sponsors.
 <p>
 Thank you very much!
 </p>
-<div id="sponsors-quick-links">
+<div id="s-quick-links">
     <% sponsors.select{|s| s.include_in_toplevel? }.reverse.each do |s| %>
 	<a href="#<%= s.id %>">
 		<% if s.thumb? then %>
@@ -24,7 +24,7 @@ Thank you very much!
 <hr />
 
 <% [
-{ title: '<h3>In alphabetical order</h3>', id: 'sponsors', section: '' },
+{ title: '<h3>In alphabetical order</h3>', id: 'support', section: '' },
 { title: '<h1>Thanks</h1>',                id: 'thanks',   section: 'thanks' },
 ].each_with_index do |section, index|
 %>
@@ -35,10 +35,10 @@ sponsors.select{|s| section[:section] == s.section }.each do |s|
 %>
 <a name="<%= s.id %>"></a>
 <h2><a href="<%= s.url %>" title="<%= s.name %> website"><%= s.name %></a></h2>
-<div class="sponsor-block">
+<div class="s-block">
 <% if s.logo? %>
 <% if s.url? %><a href="<%= s.url %>" title="<%= s.name %> website"><% end %>
-<%= img s.logo, {class: "sponsor-logo"} %>
+<%= img s.logo, {class: "s-logo"} %>
 <% if s.url? %></a><% end %>
 <% end %>
 <%= s.propaganda %>
