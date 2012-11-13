@@ -22,6 +22,7 @@ gem "pg"
 gem "erubis", "~>2.7.0"
 gem "psych", "~>1.3.3"
 gem "ruby-filemagic"
+gem "htmlentities"
 gem "bluecloth"
 # we need git master here, implements colspan in tables:
 gem "prawn", git: "git://github.com/prawnpdf/prawn", branch: "master"

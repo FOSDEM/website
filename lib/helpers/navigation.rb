@@ -62,6 +62,11 @@ module Fosdem
 
       ak = %Q! accesskey="#{ak}"! if ak
 
+      title = begin
+                require 'htmlentities'
+                HTMLEntities.new.encode title
+              end
+
       %Q!<li#{cssattr}><a#{ak} href="#{target.path}">#{title}</a></li>!
     end.join("\n")
   end
