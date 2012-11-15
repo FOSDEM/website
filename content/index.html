@@ -13,7 +13,7 @@ visual: true
             <p>It is renowned for being highly developer-oriented and brings together 5000+ geeks from all over the world.</p>
         </div>
         <div class="logo-block">
-            <h3><a href="/about/sponsors/">SPONSORS</a></h3>
+            <h3><a href="page:/about/sponsors/">SPONSORS</a></h3>
             <%
                 cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?}
                 cornerstone.each do |c|
