@@ -2,11 +2,16 @@
 # vim: set ts=2 sw=2 et ai ft=eruby:
 # encoding: utf-8
 %>
-<% photo = item[:photo] ? $item_by_id.fetch("/photo/#{item[:photo].fetch(:slug)}/") : nil%>
+<% photo = item[:photo] ? $item_by_id.fetch(item[:photo][:identifier]) : nil%>
 <% if photo %>
-<img src="<%= photo.path %>" width="<%= item[:photo].fetch(:width) %>" height="<%= item[:photo].fetch(:height) %>" class="speaker-photo" />
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>" class="speaker-photo" />
 <% end %>
 
+<% if item[:abstract_old] or item[:description_old] %>
+  <p class="label label-info">
+  The speaker description is potentially outdated as it is from a previous FOSDEM edition.
+  </p>
+<% end %>
 <%= item[:abstract] %>
 <%= item[:description] %>
 

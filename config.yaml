@@ -101,13 +101,6 @@ data_sources:
 
   -
     type: schedule
-    file: pentabarf.yaml
-
-  -
-    type: photos
-
-  -
-    type: attachments
 
 # Configuration for the “watch” command, which watches a site for changes and
 # recompiles if necessary.
@@ -138,19 +131,28 @@ deploy:
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
 
 pentabarf:
-  conference_id: 3
+  conference_id: 2
   username: nanoc
   password: nanoc
   database: marius
   host:     localhost
   port:     15432
   schema:   public
-  photo_export_root: photos
-  attachment_export_root: attachments
-  meta_export_file: pentabarf.yaml
+  meta_export_file: export/pentabarf.yaml
+  export_roots:
+    photos:      export/speaker/photos
+    thumbnails:  export/speaker/thumbnails
+    attachments: export/events/attachments
+    eventlogos:  export/events/logo
   thumbnail:
     width: 32
     height: 32
+  photo:
+    width: 220
+    height: 180
+  eventlogo:
+    width: 200
+    height: 200
   tunnel:
     enabled: false
     remote_host: penta.fosdem.org

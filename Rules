@@ -104,19 +104,6 @@ preprocess do
   # (defined in lib/helpers/schedule_helpers.rb)
   $buildings, $room_to_building = build_room_buildings()
 
-  # attachments by their 'export' name, which is what's created by
-  # commands/pentabarf.rb as a reference (filename) and which we need
-  # to look up in layouts/schedule/event.html to find the matching
-  # Nanoc item and its metadata, which is added by lib/data_sources/attachments.rb:
-  $attachments_by_export = begin
-                             h = {}
-                             @items.select{|item| item[:kind] == :attachment}
-                             .each do |item|
-                               h[item[:export]] = item
-                             end
-                             h
-                           end
-
   $colors, $colormap = begin
                          c = config.fetch(:colors)
                          list = case c
@@ -199,7 +186,10 @@ route   '/buildings/'  do;end
 compile '/headlines/*' do;end
 
 # don't modify anything on attachments
-compile '/attachments/*' do;end
+compile '/schedule/event/*/attachments/*' do;end
+compile '/schedule/event/*/logo/' do;end
+compile '/schedule/speaker/*/photo/' do;end
+compile '/schedule/speaker/*/thumbnail/' do;end
 
 ### Schedule PDF grids
 # handling is a bit special here, as they go through a specific
@@ -327,31 +317,35 @@ route '/searcherview/' do
   "/searcher/layout.rhtml"
 end
 
-# attachments
-route '/attachments/*' do
-  case item[:type]
-  when :event
-    "#{$prefix}/schedule/event/#{item[:event]}/attachments/#{item[:localname]}"
-  else
-    raise "unsupported type of attachment: #{item.identifier}"
-  end
+route '/404/' do
+  "/404.html"
 end
 
-# Speaker photos:
-route '/photos/*' do
-  name, ext = if item.identifier.split('/')[-1] =~ %r{^(.+)\.(.+)$}
-                [ $1, $2 ]
-              else
-                raise "photo item identifier is not supported: #{item.identifier.split('/')[-1]}"
-              end
-
+# attachments and such
+route '/schedule/event/*/attachments/*' do
+  "#{$prefix}/schedule/event/#{item[:event_slug]}/attachments/#{item[:type]}/#{item[:id]}/#{item[:filename]}"
+end
+route '/schedule/event/*/logo/*' do
   suffix = if @site.config[:digest_assets] then
              "-#{digest item}"
            else
              ""
            end
-
-  "#{$prefix}/schedule/speaker/#{name}#{suffix}.#{ext}"
+  "#{$prefix}/schedule/event/#{item[:event_slug]}/#{item[:event_slug]}#{suffix}.#{item[:extension]}"
+end
+route '/schedule/speaker/*/photo/' do
+  if @site.config[:digest_assets] then
+    "#{$prefix}/schedule/speaker/#{item[:speaker_slug]}/#{digest item}.#{item[:extension]}"
+  else
+    "#{$prefix}/schedule/speaker/#{item[:speaker_slug]}/#{item[:speaker]}.#{item[:extension]}"
+  end
+end
+route '/schedule/speaker/*/thumbnail/' do
+  if @site.config[:digest_assets] then
+    "#{$prefix}/schedule/speaker/#{item[:speaker_slug]}/#{digest item}.#{item[:extension]}"
+  else
+    "#{$prefix}/schedule/speaker/#{item[:speaker_slug]}/#{item[:speaker]}-thumbnail.#{item[:extension]}"
+  end
 end
 
 # iCal, xCal, XML stuff from Pentabarf:

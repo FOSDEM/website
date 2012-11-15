@@ -36,7 +36,7 @@ module Fosdem
     buffer = ''
     xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
     style = begin
-              height, width = image_size(item)
+              height, width = html_image_size(item)
               a[:width] = width
               a[:height] = height
               "width:#{width}px; height:#{height}px; min-width:#{width}px; min-height:#{height}px;"
@@ -178,7 +178,7 @@ module Fosdem
             %Q! class="#{klass.map(&:to_s).join(' ')}"!
           end
 
-    %Q!<a#{css}#{title} href="#{$prefix}/schedule/day/#{item[:slug]}/###{anchor}">#{time}</a>!
+    %Q!<a#{css}#{title} href="#{$prefix}/schedule/day/#{item[:day]}/##{anchor}">#{time}</a>!
   end
 
   def conference(sym=nil)
@@ -191,9 +191,9 @@ module Fosdem
     end
   end
 
-  def speakers(sortby=:person_id)
-    list = $_speakers ||= @items.select{|i| i.identifier =~ %r{^/schedule/speaker/.+}}.sort_by{|x| x[:person_id]}
-    if sortby == :person_id or sortby == [:person_id]
+  def speakers(sortby=nil)
+    list = $_speakers ||= @items.select{|i| i.identifier =~ %r{^/schedule/speaker/[^/]+/$}}.sort_by{|x| x[:person_id]}
+    if sortby.nil? or (sortby.is_a? Symbol and sortby == :person_id) or (sortby.size == 1 and sortby[0] == :person_id)
       list
     else
       list.sort_by{|x| [sortby].flatten.map{|z| x[z]}}
@@ -243,9 +243,11 @@ module Fosdem
     $item_by_id.fetch "/schedule/room/#{slug(slug)}/"
   end
 
-  def events(sortby=[:start_date, :start_time])
-    list = $_events ||= @items.select{|i| i.identifier =~ %r{^/schedule/event/.+}}.sort_by{|x| [x[:start_date], x[:start_time]]}
-    if sortby == [:start_date, :start_time]
+  def events(sortby=nil)
+    list = $_events ||= begin
+                          @items.select{|i| i.identifier =~ %r{^/schedule/event/[^/]+/$}}.sort_by{|x| [x[:start_date], x[:start_time]]}
+                        end
+    if sortby.nil? or (sortby.size == 2 and sortby[0] == :start_date and sortby[1] == :start_time)
       list
     else
       list.sort_by{|x| [sortby].flatten.map{|z| x[z]}}

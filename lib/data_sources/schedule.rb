@@ -11,6 +11,10 @@ module Fosdem
       @items
     end
 
+    def update
+      Fosdem::Pentabarf.update(@site.config)
+    end
+
     private
     def load_items!
       require 'yaml'
@@ -19,7 +23,7 @@ module Fosdem
 
       require 'time'
 
-      file = @config.fetch(:file)
+      file = @site.config.fetch(:pentabarf).fetch(:meta_export_file)
 
       if @items.nil?
         time_before = Time.now
@@ -33,13 +37,9 @@ module Fosdem
         @file = file
 
         def to_items(hash, name)
-          l = []
-          hash.each do |id, meta|
-            ["/schedule/#{name}/#{id}/"].each do |identifier|
-              l << Nanoc3::Item.new('', meta, identifier, @mtime)
-            end
+          hash.map do |id, meta|
+            Nanoc3::Item.new('', meta, "/schedule/#{name}/#{id}/", @mtime)
           end
-          l
         end
 
         r = []
@@ -71,9 +71,49 @@ module Fosdem
           end
         end
 
+        memory = {}
+        {
+          attachments: 'attachment',
+          eventlogos: 'eventlogo',
+          photos: 'photo',
+          thumbnails: 'thumbnail',
+        }.each do |key, kind|
+            crawl(key, :kind => kind.to_sym) do |filename, meta|
+              id = meta.delete('identifier')
+              fail "#{id}\n#{memory[id].inspect}" if memory[id]
+              i = Nanoc3::Item.new(filename, meta, id, {binary: true})
+              memory[id] = i
+              i
+            end.each{|x| r << x}
+        end
+
         @items = r
 
       end
     end
+
+    def crawl(dir, opts={}, &block)
+      fail "no block?" unless block_given?
+
+      dir = @site.config.fetch(:pentabarf).fetch(:export_roots).fetch(dir) if dir.is_a? Symbol
+
+      Dir[File.join(dir, '/**/*')]
+      .select{|f| File.file?(f)}
+      .reject{|f| f =~ /\.(hash|meta)$/}
+      .map do |filename|
+        d, s, name, ext = sanitize_filename filename
+
+        meta_filename = File.join([d, "#{name}.meta"].reject(&:nil?))
+        meta = YAML.load_file(meta_filename)
+        meta[:checksum] = sha_file(filename)
+        meta[:mtime] = File.mtime(filename)
+        meta[:extension] = ext
+        meta[:filename] = File.join(d, s)
+        opts.each{|k,v| meta[k] = v}
+
+        yield filename, meta
+      end
+    end
+
   end
 end

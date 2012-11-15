@@ -1,4 +1,134 @@
-/* vim: set ts=4 sw=4 ft=eruby ai et: */
+/* vim: set ts=4 sw=4 ft=css ai et: */
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+table tbody h3 {
+  margin: 0;
+}
+#navigation .nav-header {
+  margin-top: 0 !important;
+}
+.sidebar-nav {
+  padding: 9px 0;
+}
+.interview-license {
+  margin-top: 3em;
+}
+.interview-license img, #infoblock img {
+  float: left;
+  margin: 0.3em 1em 0.3em 0.3em;
+}
+#infoblock {
+  background: inherit;
+}
+table#s td {
+  vertical-align: top;
+}
+table#s img {
+  padding-left: 2em;
+}
+ul.horizontal-list {
+  margin: 0;
+  padding: 0;
+}
+ul.horizontal-list li {
+  list-style-type: none;
+  display: inline;
+}
+ul.horizontal-list li:before {
+  content: " | ";
+}
+ul.horizontal-list li:first-child:before {
+  content: none;
+}
+.sidebar-nav {
+  margin-left: 0 !important;
+}
+img.s-logo {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+img.s-box-logo {
+  padding: 0.1em 0.05em;
+}
+#s-box {
+  padding: 0;
+  border-top: none;
+  background: #fff;
+}
+#s-box .nav-header {
+  padding: 0 0.2em 0 0.2em !important;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  background-color: #eee;
+}
+div.s-block {
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px dashed #ccc;
+}
+div.hotel {
+  margin-bottom: 1.5em;
+}
+#nav li.search-holder {
+    margin-top: -0.5em;
+} 
+#refine-search {
+  padding: 0;
+}
+ul.search-results {
+  padding: 0;
+  margin: 0;
+}
+.search-results li {
+  padding-bottom: 0.1em;
+  list-style: none;
+  padding-bottom: 1em;
+}
+.search-results li.odd {
+  background-color: #f9f9f9;
+}
+.search-results em {
+  font-style: normal;
+  background-color: yellow;
+  font-weight: bold;
+}
+.search-results p {
+  color: #999;
+  padding: 0 0 0 3em;
+  margin: 0;
+}
+.search-results p em {
+  color: #000;
+  padding: 0 0.1em;
+}
+.search-results .shiny-stars { color: orange; font-size: small; }
+.search-results .dead-stars { color: #ccc; font-size: small; }
+.search-results .search-result-kind {
+  color: #999;
+  text-decoration: underline;
+}
+a.quiet {
+  color: inherit;
+}
+.speaker-photo {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.3em;
+}
+q { font-style: italic; }
+q:before { content: "‘"; }
+q:after { content: "’"; }
+.degraded-hint {
+  display: none;
+}
 #schedule-grid,
 #schedule-grid a {
     font-size: 80%;
@@ -229,3 +359,6 @@ ul.side-box {
   float: left;
 }
 
+#main p {
+    line-height: 1.4;
+}

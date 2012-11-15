@@ -3,6 +3,7 @@
 xml_sitemap :items => @items.reject{|i|
   i.binary? or
   i[:kind] == 'internal' or
+  i[:sitemap] == false or
   i.reps.empty? or
   i.reps.first.raw_paths.empty? or
   %w(css xml pdf ics xcs).any? {|e| i[:extension] == e or File.extname(i.path) == ".#{e}"}

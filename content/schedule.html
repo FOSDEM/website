@@ -72,11 +72,15 @@ during the event.</p>
           <td><%= l e %></td>
             <td><%=
                 e[:speakers].map{|s| $item_by_id.fetch("/schedule/speaker/#{s}/")}.map do |s|
-                photo = s[:thumbnail] ? $item_by_id.fetch("/thumbnail/#{s[:thumbnail].fetch(:slug)}/") : nil
-                text = ""
-                text << "<img class=\"thumb\" src=\"#{photo.path}\" width=\"#{s[:thumbnail].fetch(:width)}\" height=\"#{s[:thumbnail].fetch(:height)}\"/>" if photo
-                text << l(s)
-                text
+                  photo = if s[:thumbnail]
+                            $item_by_id.fetch(s[:thumbnail].fetch(:identifier))
+                          else
+                            nil
+                          end
+                  text = ""
+                  text << "<img class=\"thumb\" src=\"#{photo.path}\" width=\"#{photo[:width]}\" height=\"#{photo[:height]}\"/>" if photo
+                  text << l(s)
+                  text
                 end.join(", ")
                 %></td>
             <td><%= l(day(e[:day])) %></td>

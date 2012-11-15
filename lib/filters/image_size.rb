@@ -4,7 +4,40 @@
 # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
 
 module Fosdem
-  def image_size(s)
+  class ImageSizeFilter < Nanoc::Filter
+    type :text
+    identifier :imagesize
+
+    def run(content, params={})
+      require 'nokogiri'
+      doc, selector = if content =~ %r{^\s*(<!DOCTYPE.+>\s*)?<html}
+                        [ ::Nokogiri::HTML.parse(content), '//img[@src]' ]
+                      else
+                        # needs using .//img here instead of //img because fragments don't have
+                        # a root element:
+                        # http://stackoverflow.com/questions/8552534/how-can-i-iterate-through-child-nodes-of-a-particular-name-in-a-nokogiri-xml-doc
+                        [ ::Nokogiri::HTML.fragment(content), './/img[@src]' ]
+                      end
+      doc.xpath(selector)
+      .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
+      .select { |img| img['src'] =~ %r{^/|\.\.\/} }
+      .each do |img|
+        height, width = html_image_size(img)
+        img['height'] = height
+        img['width'] = width
+        style = "width:#{width}px; height=#{height}px; min-width:#{width}px; min-height:#{height}px;"
+        if img.has_attribute? 'style'
+          img['style'] = img['style'] + " " + style
+        else
+          img['style'] = style
+        end
+      end
+      doc.to_xhtml
+    end
+  end
+
+  private
+  def html_image_size(s)
     s = $item_by_id.fetch(s) if s.is_a? String and s.start_with? '/' and s.end_with? '/'
 
     path = case s
@@ -27,44 +60,11 @@ module Fosdem
     $_image_size_cache ||= {}
     hit = $_image_size_cache[path.to_sym]
     unless hit
-      require 'image_size'
-      i = ImageSize.new(IO.read(filepath))
-      hit = [i.height.to_s, i.width.to_s]
+      w, h = image_size(filepath)
+      hit = [w, h]
       $_image_size_cache[path.to_sym] = hit
     end
     hit
-  end
-
-  class ImageSizeFilter < Nanoc::Filter
-    type :text
-    identifier :imagesize
-
-    def run(content, params={})
-      require 'nokogiri'
-      doc, selector = if content =~ %r{^\s*(<!DOCTYPE.+>\s*)?<html}
-                        [ ::Nokogiri::HTML.parse(content), '//img[@src]' ]
-                      else
-                        # needs using .//img here instead of //img because fragments don't have
-                        # a root element:
-                        # http://stackoverflow.com/questions/8552534/how-can-i-iterate-through-child-nodes-of-a-particular-name-in-a-nokogiri-xml-doc
-                        [ ::Nokogiri::HTML.fragment(content), './/img[@src]' ]
-                      end
-      doc.xpath(selector)
-      .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
-      .select { |img| img['src'] =~ %r{^/|\.\.\/} }
-      .each do |img|
-        height, width = image_size(img)
-        img['height'] = height
-        img['width'] = width
-        style = "width:#{width}px; height=#{height}px; min-width:#{width}px; min-height:#{height}px;"
-        if img.has_attribute? 'style'
-          img['style'] = img['style'] + " " + style
-        else
-          img['style'] = style
-        end
-      end
-      doc.to_xhtml
-    end
   end
 
 end
