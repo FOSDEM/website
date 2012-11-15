@@ -3,6 +3,33 @@
 
 module Fosdem
   module Pdf
+    private
+
+    $PDF_FONT = 'DejaVuSansCondensed'
+    $PDF_TIME_FONT = 'DejaVuSansMono'
+    $PDF_TIME_COLOR = '444444'
+    $PDF_HEADING_FONT = 'Delicious'
+    $PDF_EMPTY_CELL_COLOR = 'EEEEEE'
+    $PDF_ROOM_CELL_COLOR = 'DDDDDD'
+
+    $PARAMS = {
+      a4: {
+        page_size: 'A4',
+        cell_text_length_threshold: 20,
+        rooms_per_page: 8,
+        rows_per_page: 40,
+        font_size: 8,
+      },
+      a3: {
+        page_size: 'A3',
+        cell_text_length_threshold: 20,
+        rooms_per_page: 8,
+        rows_per_page: 40,
+        font_size: 8,
+      },
+    }
+
+    public
     def self.pdf_grid(size)
       params = PARAMS[size]
       raise "invalid size: must be one of [#{PARAMS.keys.join(", ")}]" unless params
@@ -31,7 +58,7 @@ module Fosdem
           bold:   File.join('pdf', 'Delicious-Heavy.ttf'),
         },
         )
-        font(PDF_FONT)
+        font($PDF_FONT)
 
         sections = []
         page = 0
@@ -90,7 +117,7 @@ module Fosdem
                          total_page += 1
 
                          day = day(d)
-                         font(PDF_HEADING_FONT) do
+                         font($PDF_HEADING_FONT) do
                            text "#{conference()[:title]} - #{day[:title]} #{day[:conference_day]} (#{page}/#{pages})"
                          end
 
@@ -124,38 +151,12 @@ module Fosdem
 
     private
 
-    PDF_FONT = 'DejaVuSansCondensed'
-    PDF_TIME_FONT = 'DejaVuSansMono'
-    PDF_TIME_COLOR = '444444'
-    PDF_HEADING_FONT = 'Delicious'
-    PDF_EMPTY_CELL_COLOR = 'EEEEEE'
-    PDF_ROOM_CELL_COLOR = 'DDDDDD'
-
-    PARAMS = {
-      a4: {
-        page_size: 'A4',
-        cell_text_length_threshold: 20,
-        rooms_per_page: 8,
-        rows_per_page: 40,
-        font_size: 8,
-      },
-      a3: {
-        page_size: 'A3',
-        cell_text_length_threshold: 20,
-        rooms_per_page: 8,
-        rows_per_page: 40,
-        font_size: 8,
-      },
-    }
-
-    private
-
     def self.build_grids(by_rooms, rows_per_page, cell_text_length_threshold)
       grid = begin
                rows = []
                Hash[*by_rooms.first.values].keys.map do |time|
                  t = if time.split(':').last.to_i % 15 == 0
-                       { content: time, size: 6, single_line: true, text_color: PDF_TIME_COLOR, valign: :top, font: PDF_TIME_FONT }
+                       { content: time, size: 6, single_line: true, text_color: $PDF_TIME_COLOR, valign: :top, font: $PDF_TIME_FONT }
                      else
                        { content: ' ', size: 6 }
                      end
@@ -187,7 +188,7 @@ module Fosdem
               row += 1
             end
           else
-            grid[row][col] = { content: ' ', background_color: PDF_EMPTY_CELL_COLOR }
+            grid[row][col] = { content: ' ', background_color: $PDF_EMPTY_CELL_COLOR }
             row += 1
           end
         end
@@ -203,7 +204,7 @@ module Fosdem
                      cell[:borders] = [:bottom, :right]
                    else
                      cell[:borders] = [:bottom, :right, :top]
-                     cell[:background_color] = PDF_ROOM_CELL_COLOR
+                     cell[:background_color] = $PDF_ROOM_CELL_COLOR
                      cell[:font_style] = :bold
                      cell[:size] = 10
                    end
