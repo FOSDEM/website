@@ -160,7 +160,7 @@ compile '/assets/style/*' do
         # then relativize any resource paths (to images and such):
         filter :relativize_paths, :type => :css
         # minimize CSS files:
-        filter :rainpress
+        filter :rainpress if @site.config.fetch(:minify_css, true)
       end
     end
   end
@@ -195,8 +195,10 @@ compile '/schedule/speaker/*/thumbnail/' do;end
 # handling is a bit special here, as they go through a specific
 # layout
 compile '/schedule/pdf/*' do
-  filter :erb
-  layout "/schedule/pdf_grid/"
+  if @site.config.fetch(:pdf_grid)
+    filter :erb
+    layout "/schedule/pdf_grid/"
+  end
 end
 route '/schedule/pdf/*' do
   suffix = if @site.config[:digest_pdfs] then
@@ -379,7 +381,7 @@ route '/schedule/devrooms/*/' do;end
 # deploy content/assets/style/foo.css as output/assets/style/foo.css
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
 route '/assets/style/*/' do
-  suffix = if @site.config[:digest_assets]
+  suffix = if @site.config[:digest_css]
              parts = @items.select{|i| i.identifier =~ %r{^/assets/style/parts/.+}}.sort_by(&:identifier)
              "-" + digest(parts)
            else

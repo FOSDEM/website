@@ -9,6 +9,12 @@
 # aggressive caching of larger files where the URLs don't matter
 digest_assets: true
 
+# Same, for the CSS file(s) -- useful on false for development/design
+# changes and experimentations, should be true for production:
+digest_css: false
+# Same as above: false is convenient for hacking, true for production:
+minify_css: false
+
 # Same thing as above but for sponsor logos:
 digest_sponsor_logos: true
 
@@ -16,6 +22,8 @@ digest_sponsor_logos: true
 # filenames? Makes it good for caching, but also means that there is no
 # direct URL to them.. so probably not, but it is a flag anyway:
 digest_pdfs: false
+
+pdf_grid: false
 
 #########################################################################
 # everything below is standard nanoc configuration stuff
