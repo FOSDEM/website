@@ -10,6 +10,10 @@
 </ul>
 <br style="clear: both;"/>
 
+<%if item[:logo] %>
+  <img src="<%= pathof item[:logo].fetch(:identifier) %>" class="event-logo"/>
+<% end %>
+
 <% if item[:abstract] or item[:description] %>
 <div class="event-blurb">
 <% if item[:abstract] %>

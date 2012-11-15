@@ -362,3 +362,9 @@ ul.side-box {
 #main p {
     line-height: 1.4;
 }
+
+.event-logo {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.3em;
+}
