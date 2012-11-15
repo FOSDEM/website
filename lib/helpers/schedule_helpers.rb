@@ -36,7 +36,7 @@ module Fosdem
     buffer = ''
     xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
     style = begin
-              height, width = html_image_size(item)
+              width, height = html_image_size(item)
               a[:width] = width
               a[:height] = height
               "width:#{width}px; height:#{height}px; min-width:#{width}px; min-height:#{height}px;"
