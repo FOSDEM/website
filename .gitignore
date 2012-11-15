@@ -1,7 +1,5 @@
 output
-photos
-attachments
+export
 tmp
 .*.swp
 *.log
-pentabarf.yaml
