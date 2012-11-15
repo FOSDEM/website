@@ -11,9 +11,11 @@ module Fosdem
     end
 
     def resolve(url)
-      raise "URL #{url} does not match page:" unless url =~ /^page:(.+)$/
-        require 'pathname'
-      curl = $1
+      curl = if url =~ /^page:(.+)$/
+               $1
+             else
+               url
+             end
       curl.insert(0, '/') unless curl[0,1] == '/'
       curl << '/' unless curl[-1,1] == '/'
 
@@ -31,23 +33,20 @@ module Fosdem
         end
       end
 
-      raise "Failed to resolve \"#{url}\" URL" if results.empty?
-      raise "Found more than one item that resolves the URL \"#{url}\": #{results}" if results.length > 1
+      fail "#{@item.identifier}: failed to resolve \"#{url}\" URL" if results.empty?
+      fail "#{@item.identifier}: found more than one item that resolves the URL \"#{url}\": #{results}" if results.length > 1
       return results[0].path
     end
 
     def match_basename(item, q)
-      require 'pathname'
-      Pathname.new(item.path.nil? ? item.identifier : item.path).basename.to_s == Pathname.new(q).basename.to_s
+      File.basename(item.path.nil? ? item.identifier : item.path) == File.basename(q)
     end
 
     def match_filename(item, q)
       return false if item[:filename].nil?
-      require 'pathname'
-      p = Pathname.new(item[:filename])
-      b = p.basename
-      n = b.to_s.chomp(b.extname.to_s)
-      return n == q
+      b = File.basename item[:filename]
+      n = b.chomp(File.extname item[:filename])
+      n == q
     end
 
   end
