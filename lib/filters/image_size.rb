@@ -22,7 +22,7 @@ module Fosdem
       .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
       .select { |img| img['src'] =~ %r{^/|\.\.\/} }
       .each do |img|
-        height, width = html_image_size(img)
+        width, height = html_image_size(img)
         img['height'] = height
         img['width'] = width
         style = "width:#{width}px; height=#{height}px; min-width:#{width}px; min-height:#{height}px;"
