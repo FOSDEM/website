@@ -246,12 +246,6 @@ a.btn-purple:hover {
 	font-size:16px;
 	line-height:20px;
 }
-.logo-oreilly{
-	display:block;
-	overflow:hidden;
-	text-indent:-9999px;
-	background:url(sprite.png) no-repeat;
-}
 .logo-list{
 	margin:0;
 	padding:0;
@@ -272,17 +266,6 @@ a.btn-purple:hover {
 	background:url(sprite.png) no-repeat;
 }
 .logo-list li {padding-right: 5px;}
-/*
-.logo-list .logo-belnet{padding-right:8px;}
-.logo-list .logo-cisco{padding-right:7px;}
-.logo-list .logo-codeplex{padding-right:8px;}
-.logo-list .logo-google{padding-right:8px;}
-.logo-list .logo-hp{padding-right:4px;}
-.logo-list .logo-lpi{padding-right:8px;}
-.logo-list .logo-quallcomm{padding-right:6px;}
-.logo-list .logo-riverbed{padding-right:7px;}
-.logo-list .logo-ulb{padding-right:5px;}
-*/
 .news-block{
 	margin:0 0 32px;
 	padding:28px 11px 27px;
