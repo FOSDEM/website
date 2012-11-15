@@ -40,6 +40,23 @@ hotel = hotels[name]
     <span class="adr">
         <span class="street-address"><%= hotel[:street] %></span>
         <% if hotel[:map] %><a href="<%= hotel[:map] %>" title="<%= name %> on Google Maps"><i class="icon-map-marker"></i></a><% end %>
+        <%
+          if hotel[:maps]
+          hotel[:maps].each do |url|
+          tag = case url
+            when %r{/goo\.gl/}
+            ' on Google Maps'
+            when %r{/osm\.org/}
+            'on OSM'
+            else
+            ''
+            end
+        %>
+        <a href="<%= url %>" title="<%= name %><%= tag %>"><i class="icon-map-marker"></i></a>
+        <%
+          end
+          end
+        %>
         <br/>
         <span class="postal-code"><%= hotel[:zip] %></span>
         <span class="locality"><%= hotel.fetch(:loc, 'Brussels') %></span><br/>

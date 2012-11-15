@@ -8,8 +8,9 @@ hotels:
       tel: '2 6460737'
       fax: '2 6440114'
       url: 'http://www.bnb-brussels.be/en/index.html'
-      map: 'http://osm.org/go/0EoS2qlnn--'
-      #map: 'http://goo.gl/maps/kV4GK'
+      maps:
+      - 'http://osm.org/go/0EoS2qlnn--'
+      - 'http://goo.gl/maps/kV4GK'
 
   'Youth Hostels':
     'Bruegel Youth Hostel':
@@ -19,8 +20,9 @@ hotels:
       fax: '2 5120711'
       email: 'brussel@vjh.de'
       url: 'http://www.jeugdherbergen.be/brusselE.htm'
-      map: 'http://osm.org/go/0EoS1F2gC--'
-      #map: 'http://goo.gl/maps/BfJZz'
+      maps:
+      - 'http://osm.org/go/0EoS1F2gC--'
+      - 'http://goo.gl/maps/BfJZz'
     'Sleep Well Youth Hostel':
       street: 'Rue du Damier, 23'
       zip: '1000'
@@ -28,8 +30,9 @@ hotels:
       fax: '2 2181313'
       email: 'info@sleepwell.be'
       url: 'http://www.sleepwell.be/'
-      map: 'http://osm.org/go/0EoThy3a3-'
-      #map: 'http://goo.gl/maps/DQGlH'
+      maps:
+      - 'http://osm.org/go/0EoThy3a3-'
+      - 'http://goo.gl/maps/DQGlH'
     'Youth Hostel Génération Europe':
       street: "Rue de l'Elephant, 4"
       zip: '1080'
@@ -37,8 +40,9 @@ hotels:
       fax: '2 4103905'
       email: 'brussels.europe@lesaubergesdejeunesse.be'
       url: 'http://www.lesaubergesdejeunesse.be/Brussels-Europe-Introduction?lang=en'
-      map: 'http://osm.org/go/0EoTJlZ0E--'
-      #map: 'http://goo.gl/maps/HTUem'
+      maps:
+      - 'http://osm.org/go/0EoTJlZ0E--'
+      - 'http://goo.gl/maps/HTUem'
     'Youth Hostel Jacques Brel':
       street: 'Rue de la Sablonniere, 30'
       zip: '1000'
@@ -46,8 +50,9 @@ hotels:
       fax: '2 2172005'
       email: 'brussels.brel@lesaubergesdejeunesse.be'
       url: 'http://www.lesaubergesdejeunesse.be/Bruxelles-Brel-Presentation,24?lang=en'
-      map: 'http://osm.org/go/0EoTjkBRj--'
-      #map: 'http://goo.gl/maps/2Jydm'
+      maps:
+      - 'http://osm.org/go/0EoTjkBRj--'
+      - 'http://goo.gl/maps/2Jydm'
     '2GO4 Quality Hostel':
       street: 'Avenue Emile Jacqmain, 99'
       zip: '1000'
@@ -55,8 +60,9 @@ hotels:
       fax: '2 2193009'
       email: 'info@2go4.be'
       url: 'http://www.2go4.be/'
-      map: 'http://osm.org/go/0EoThZltx-'
-      #map: 'http://goo.gl/maps/mJybH'
+      maps:
+      - 'http://osm.org/go/0EoThZltx-'
+      - 'http://goo.gl/maps/mJybH'
     'CHAB: Centre Van Gogh':
       street: 'Rue Traversiere, 8'
       zip: '1210'
@@ -64,8 +70,9 @@ hotels:
       fax: '2 2197995'
       email: 'info@chab.be'
       url: 'http://www.chab.be/'
-      map: 'http://osm.org/go/0EoTj0jzK-'
-      #map: 'http://goo.gl/maps/wG8yY'
+      maps:
+      - 'http://osm.org/go/0EoTj0jzK-'
+      - 'http://goo.gl/maps/wG8yY'
     'Auberge des 3 Fontaines':
       street: 'Chaussée de Wavre, 2057'
       zip: '1160'
@@ -73,7 +80,8 @@ hotels:
       fax: '2 6721939'
       email: 'contact@auberge3fontaines.be'
       url: 'http://www.auberge3fontaines.be/en/'
-      map: 'http://osm.org/go/0EoYhwkm'
-      #map: 'http://goo.gl/maps/nKtWF'
+      maps:
+      - 'http://osm.org/go/0EoYhwkm'
+      - 'http://goo.gl/maps/nKtWF'
 
 ---
