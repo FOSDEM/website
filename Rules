@@ -259,17 +259,6 @@ compile '*' do
         # they will be rendered
         filter :pagelinks
 
-        # run the custom assetlinks filter (lib/filters/assetlinks.rb)
-        # on all items to replace asset:... URLs with their actual URLs
-        # as they will be rendered
-        filter :assetlinks
-
-        # run the custom schedulelinks filter (lib/filters/schedulelinks.rb)
-        # on all items to replace speaker:..., event:... and track:...
-        # URLs with their actual URLs as they will be rendered, including
-        # e.g. speaker:2012/foobar that will point to archive.fosdem.org/...
-        filter :schedulelinks
-       
         # retrieve the image width and height from the image files that
         # are referenced in <img/> tags to speed up browser rendering
         # performance, see

@@ -36,31 +36,24 @@ module Fosdem
     end
   end
 
-  private
   def html_image_size(s)
     s = $item_by_id.fetch(s) if s.is_a? String and s.start_with? '/' and s.end_with? '/'
 
     path = case s
            when Nanoc::Item
-             s.identifier.chop + "." + s[:extension]
+             s[:filename] #.identifier.chop + "." + s[:extension]
            when ::Nokogiri::XML::Element
-             s['src']
+             "content/#{s['src']}"
            when String
              raise "wtf, a string? #{s.inspect}"
            else
              raise "unsupported object of type #{s.class}: #{s.inspect}"
            end
 
-    filepath = if path.start_with? '/'
-                 "content" + path
-               else
-                 "content/" + path
-               end
-
     $_image_size_cache ||= {}
     hit = $_image_size_cache[path.to_sym]
     unless hit
-      w, h = image_size(filepath)
+      w, h = image_size(path)
       hit = [w, h]
       $_image_size_cache[path.to_sym] = hit
     end

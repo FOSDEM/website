@@ -9,7 +9,7 @@ pastry with butter/raisins/chocolate. Can you imagine a better start of the
 day?</p>
 
 <% %w{ croissant butter chocolat raisins }.each do |a| %>
-<img src="<%= asset(a).path %>"%>
+<img src="asset:<%= a %>"%>
 <% end %>
 
 <h2>Lunch</h2>

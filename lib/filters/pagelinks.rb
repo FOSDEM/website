@@ -1,54 +1,97 @@
 # vim: set ts=2 sw=2 et ai ft=ruby fileencoding=utf-8:
 
 module Fosdem
-  class PageLinks < LinkProcessor
+  class PageLinks < Nanoc::Filter
+    type :text
     identifier :pagelinks
 
-    protected
+    def run(content, params={})
+      @item_rep = assigns[:item_rep] if @item_rep.nil?
+      require 'nokogiri'
 
-    def qualifies?(url)
-      url =~ /^page:/
-    end
+      doc = if content =~ /<html[\s>]/
+              Nokogiri::HTML.parse(content)
+            else
+              Nokogiri::HTML.fragment(content)
+            end
 
-    def resolve(url)
-      curl = if url =~ /^page:(.+)$/
-               $1
-             else
-               url
-             end
-      curl.insert(0, '/') unless curl[0,1] == '/'
-      curl << '/' unless curl[-1,1] == '/'
+      {
+        a:      { href: [ :page, :asset, :event, :track, :speaker, :day, :room ], child: true, },
+        img:    { src:  [ :asset ], title: true, alt: true, image: true, },
+        link:   { src:  [ :asset ] },
+        script: { src:  [ :src ] },
+      }.each do |tag, x|
+        tag = tag.to_s
+        attr = x.keys.first.to_s
+        types = x.values.first
+        options = x
 
-      results = @items.select do |item|
-        if item.identifier == curl then
-          true
-        elsif (not item[:title].nil?) and (item[:title].casecmp(curl) == 0) then
-          true
-        elsif self.match_filename(item, curl) then
-          true
-        elsif self.match_basename(item, curl) then
-          true
-        else
-          false
+        doc.xpath(".//#{tag}")
+        .select{|a| a.has_attribute? attr}.each do |elem|
+          orig = elem[attr]
+          if orig =~ /^(page|asset|event|track|speaker|day|room):(.+)$/
+            type = $1.to_sym
+            fail "#{@item.identifier} #{@item.path}: #{elem.to_xhtml} has link type #{type.to_s}, which is not supported" unless types.include? type
+
+            id, year = begin
+                         m = $2
+                         if m =~ %r{^(\d{4})[:/](.+)$}
+                           [ $2, $1 ]
+                         else
+                           [ m, nil ]
+                         end
+                       end
+
+            link = 
+              if year
+                "https://archives.fosdem.org/#{year}/#{id}.html"
+              else
+                id = case type
+                     when :page
+                       id
+                     when :asset
+                       "/assets/#{id}"
+                     when :event
+                       "/schedule/event/#{id}"
+                     when :track
+                       "/schedule/track/#{id}"
+                     when :speaker
+                       "/schedule/speaker/#{id}"
+                     when :day
+                       "/schedule/day/#{id}"
+                     when :room
+                       "/schedule/room/#{id}"
+                     else
+                       fail "unsupported URL type #{type.to_s}"
+                     end
+              id.insert(0, '/') unless id.start_with? '/'
+              id << '/' unless id.end_with? '/'
+              id.gsub!(%r{/+}, '/')
+
+              target = $item_by_id[id]
+              fail "#{@item[:filename]} (#{@item.path}): #{elem.to_xhtml} references #{id} but there is no such identifier" unless target
+
+              if target[:title]
+                elem << target[:title] if options[:child] == true and not elem.child
+                [:title, :alt].each do |k|
+                  elem[k.to_s] = target[:title] if options[k] == true and not elem.has_attribute? k.to_s
+                end
+              end
+
+              if options[:image] == true and not (elem.has_attribute? 'height' and elem.has_attribute? 'width')
+                w, h = image_size(target[:filename])
+                elem['width'] = w.to_s
+                elem['height'] = h.to_s
+              end
+
+              target.path
+            end
+            elem[attr] = link
+          end
         end
       end
-
-      fail "#{@item.identifier}: failed to resolve \"#{url}\" URL" if results.empty?
-      fail "#{@item.identifier}: found more than one item that resolves the URL \"#{url}\": #{results}" if results.length > 1
-      return results[0].path
+      doc.to_xhtml
     end
-
-    def match_basename(item, q)
-      File.basename(item.path.nil? ? item.identifier : item.path) == File.basename(q)
-    end
-
-    def match_filename(item, q)
-      return false if item[:filename].nil?
-      b = File.basename item[:filename]
-      n = b.chomp(File.extname item[:filename])
-      n == q
-    end
-
   end
 
 end

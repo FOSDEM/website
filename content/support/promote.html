@@ -16,20 +16,24 @@ we can talk about you as well !</p>
 <table class="table">
     <tbody>
         <tr>
-            <%
-            [
-            { name: 'flyer', colour: 'colour' },
-            { name: 'flyer_bw', colour: 'black and white' },
-            ].each do |flyer|
+          <%
+            {
+              flyer: 'color',
+              flyer_bw: 'grayscale',
+            }.each do |name, color|
+              name = name.to_s
+              flyer = $item_by_id.fetch("/assets/#{name}/")
+              thumb = $item_by_id.fetch("/assets/#{name}-thumb/")
+              w, h = image_size(thumb[:filename])
             %>
             <td>
-                <h3><%= flyer[:colour].capitalize %> version</h3>
-                <a href="<%= asset(flyer[:name] + '.pdf').path %>" title="FOSDEM flyer PDF (<%= flyer[:colour] %>)"><%= img $item_by_id.fetch("/assets/#{flyer[:name]}-thumb/") %></a><br/>
-                (<%= filesize asset(flyer[:name] + '.pdf') %>)<br/>
+                <h3><%= color.capitalize %> version</h3>
+                <a href="<%= flyer.path %>" title="FOSDEM flyer PDF (<%= color %>)"><img src="<%= thumb.path %>" width="<%= w %>" height="<%= h %>"/></a><br/>
+                (<%= filesize flyer %>)<br/>
                 <ul>
-                    <li><a href="<%= asset(flyer[:name] + '.pdf').path %>">PDF</a></li>
+                    <li><a href="<%= flyer.path %>">PDF</a></li>
                     <% ['600', '300', '90'].each do |dpi| %>
-                    <li><a href="<%= asset(flyer[:name] + '-' + dpi + 'dpi.png').path %>">PNG (<%= dpi %>dpi)</a></li>
+                        <li><a href="<%= pathof "/assets/#{name}-#{dpi}dpi/" %>">PNG (<%= dpi %>dpi)</a></li>
                     <% end %>
                 </ul>
             </td>
@@ -51,23 +55,25 @@ we can talk about you as well !</p>
 <table class="table table-striped table-bordered">
     <tbody>
         <%
-        files = Dir.entries('content/assets/badge') - %w{ . .. }
-        files.select{|f| ['png', 'gif', 'jpg', 'jpeg'].include? f.split('.').last}
-        .sort
-        .each do |filename|
-        name = filename.split('.')[0..-2].join('.')
-        badge = asset(filename)
-        link = @config[:base_url] + badge.path
+          @items.select do |i|
+            i.identifier =~ %r{^/assets/badge/[^/]+/$} and i.binary? and ['png', 'gif', 'jpg', 'jpeg'].include? i[:extension]
+          end
+          .sort_by{|i| i.identifier}
+          .each do |badge|
+            # need to include width and height attributes here or it will be processed
+            # by a filter which won't find the files as they might be routed with their
+            # digest filename later
+            w, h = image_size(badge[:filename])
         %>
         <tr>
-            <td>
-                <p><a href="<%= link %>"><%= img badge %></a></p>
-                <p>Link: <a href="<%= link %>"><%= link %></a></p>
-                <p>HTML markup:<br/>
-                <code>&lt;a href="http://fosdem.org"&gt;&lt;img src="<%= link %>" alt="FOSDEM, the Free and Open Source Software Developers' European Meeting"/&gt;&lt;/a&gt;</code></p>
-            </td>
+          <td>
+            <p><a href="<%= badge.path %>"><img width="<%= w %>" height="<%= h %>" src="<%= badge.path %>"/></a></p>
+            <p>Link: <a href="<%= badge.path %>"><%= badge.path %></a></p>
+            <p>HTML markup:<br/>
+            <code>&lt;a href="http://fosdem.org"&gt;&lt;img src="<%= badge.path %>" alt="FOSDEM, the Free and Open Source Software Developers' European Meeting"/&gt;&lt;/a&gt;</code></p>
+          </td>
         </tr>
-        <% end %>
+      <% end %>
     </tbody>
 </table>
 

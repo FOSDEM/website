@@ -3,6 +3,15 @@
 
 module Fosdem
 
+  def stripext(filename)
+    d, b, e = split_filename filename
+    if e.size > 0
+      b[0..-(e.size + 2)]
+    else
+      b
+    end
+  end
+
   def split_filename(filename)
     d = begin
           d = File.dirname filename
