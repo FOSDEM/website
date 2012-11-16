@@ -138,7 +138,7 @@ watcher:
 deploy:
   public:
     kind: rsync
-    dst:  "achanes.fosdem.org:/var/www/new.fosdem.org/public/2013"
+    dst:  "apeiron.fosdem.org:/var/www/fosdem.org/public/2013"
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
   default:
     kind: rsync
