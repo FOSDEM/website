@@ -211,6 +211,12 @@ route '/schedule/pdf/*' do
   "#{$prefix}/schedule/pdf/#{item[:page_size].to_s.downcase}#{suffix}.pdf"
 end
 
+### Searcher layout
+# don't run any filters on this one
+compile '/searcherview/' do
+  layout 'main'
+end
+
 ### EVERYTHING ELSE (real content)
 
 compile '*' do
