@@ -1,0 +1,100 @@
+---
+kind: internal
+deadlines:
+  'Cross Distro':
+    mail: 2012-October/001635
+    date: 20 Dec.
+    days: both
+  'CrossDesktop':
+    mail: 2012-October/001643
+    date: 14 Dec.
+    days: both
+  'Embedded and Mobile':
+    mail: 2012-November/001650
+    date: 25 Dec.
+    days: both
+  'Free Java':
+    mail: 2012-November/001653
+    date: 21 Dec.
+    days: both
+  'Legal Issues':
+    mail: 2012-November/001652
+    date: 21 Dec.
+    days: both
+  'Mozilla':
+    mail: 2012-November/001654
+    date: 20 Dec.
+    days: both
+  'Apache OpenOffice':
+    days: sat
+  'Community Development and Marketing':
+    days: sat
+    mail: 2012-November/001656
+    date: 23 Dec.
+  'FOSS for Scientists':
+    days: sat
+    mail: 2012-November/001651
+    date: 16 Dec.
+  'Graph Processing':
+    days: sat
+    mail: 2012-October/001636
+    date: 23 Dec.
+  'Jabber/XMPP':
+    days: sat
+  'Microkernels / Component-based OSes':
+    days: sat
+    mail: 2012-October/001639
+    date: 22 Dec.
+  'Mono':
+    days: sat
+  'PHP and Friends':
+    days: sat
+    mail: 2012-October/001640
+    date: 14 Dec.
+  'Testing and Automation':
+    days: sat
+  'The Wine Project':
+    days: sat
+    mail: 'http://www.winehq.org/pipermail/wine-devel/2012-November/097669.html'
+  'Virtualization':
+    days: sat
+  'X.org':
+    days: sat
+  'Ada':
+    days: sun
+    mail: 2012-November/001647
+  'BSD':
+    days: sun
+  'Cloud':
+    days: sun
+    mail: 2012-November/001649
+    date: 14 Dec.
+  'Configuration/Systems Management':
+    days: sun
+  'LibreOffice':
+    days: sun
+    mail: 2012-November/001645
+    date: 14 Dec.
+  'MySQL & Friends':
+    days: sun
+    mail: 'http://lists.mysql.com/community/393'
+    date: 21 Dec.
+  'NoSQL':
+    days: sun
+    mail: 2012-November/001648
+    date: 14 Dec.
+  'Open Source Game Development':
+    days: sun
+    mail: 2012-October/001634
+    date: 16 Dec.
+  'PostgreSQL':
+    days: sun
+    mail: 2012-November/001658
+    date: 21 Dec.
+  'Python':
+    days: sun
+  'Smalltalk':
+    days: sun
+  'Telephony':
+    days: sun
+

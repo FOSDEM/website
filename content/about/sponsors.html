@@ -35,7 +35,7 @@ sponsors.select{|s| section[:section] == s.section }.each do |s|
 %>
 <a name="<%= s.id %>"></a>
 <h2><a href="<%= s.url %>" title="<%= s.name %> website"><%= s.name %></a></h2>
-<div class="s-block">
+<div class="s-unit">
 <% if s.logo? %>
 <% if s.url? %><a href="<%= s.url %>" title="<%= s.name %> website"><% end %>
 <%= img s.logo, {class: "s-logo"} %>

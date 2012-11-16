@@ -5,6 +5,9 @@ module Fosdem
     def self.update(config)
       total_time = start_time = Time.now
 
+      $meta_extension = 'yaml'
+      $hash_extension = 'hash'
+
       # load the configuration from the site
       conf = config.fetch :pentabarf
       $thumb_width, $thumb_height = begin
@@ -166,7 +169,7 @@ EOF
               if t.to_s =~ /^\d+$/
                 t
               else
-                Conference.where(acronym: t).select('conference_id').first.to_i
+                Conference.where(acronym: t).select('conference_id').first['conference_id'].to_i
               end
             end
 
@@ -307,6 +310,14 @@ EOF
 
       conference = model Conference.where(conference_id: cid).find(:all).first
       raise "failed to find conference object in database with conference_id=#{cid}" if conference.nil?
+      event_time_offset = begin
+                            dc = conference['day_change']
+                            if dc
+                              dc.hour * 3600 + dc.min * 60 + dc.sec
+                            else
+                              0
+                            end
+                          end
 
       days = slugify!(model(ConferenceDay.where(conference_id: cid, :public => true).find(:all).sort_by{|d| d['conference_day'] }, [:conference_day_id, :conference_day, :name]), :name)
       day_by_day_id = byid days, :conference_day_id
@@ -321,15 +332,27 @@ EOF
                  events = slugify!(model(
                    Event
                    .where(conference_id: cid, event_state: 'accepted')
+                   .where("(event_state_progress='confirmed' OR event_state_progress='reconfirmed')")
                    .where("language='en' OR language IS NULL")
                    .order(:event_id)
                    .find(:all)
                    .select do |e|
-                   e.duration and e.conference_track_id and e.conference_room_id and e.conference_day_id and e.public == true and %w{confirmed reconfirmed}.include? e.event_state_progress
+                     e.duration and e.conference_track_id and e.conference_room_id and e.conference_day_id and e.public == true and %w{confirmed reconfirmed}.include? e.event_state_progress
                    end,
                      [:event_id, :conference_id, :slug, :title, :subtitle, :conference_track_id, :event_type, :duration, :event_state, :event_state_progress, :language, :conference_room_id, :conference_day_id, :start_time, :abstract, :description ]
                  ), :title)
+
+                 if event_time_offset > 0
+                   # post-process event start times
+                   events.each do |e|
+                     if e['start_time']
+                       e['start_time'] = (Time.parse(e['start_time']) + event_time_offset).strftime('%H:%M:%S')
+                     end
+                   end
+                 end
+
                  log(:high, "loaded #{events.size} events", Time.now - time_before)
+
                  events
                end
 
@@ -342,6 +365,13 @@ EOF
             err << "missing slug" unless event.has_key? 'slug'
             err << "accepted event without start_time" unless event.has_key? 'start_time'
             err << "accepted event without duration" unless event.has_key? 'duration'
+            if event['start_time']
+              t = Time.parse(event['start_time'])
+              err << "event starts before 09:00: #{event['start_time']}" if t.hour < 9
+              err << "event starts after 19:00: #{event['start_time']}" if t.hour >= 19
+            else
+              err << "event has no start_time"
+            end
             errors[%Q!event #{event['event_id']} ("#{event['title']}")!] = err unless err.empty?
           end
         end
@@ -830,7 +860,7 @@ EOF
           # attachment filename sanitization
           d, f, b, ext = sanitize_filename a.filename
           fail "b=#{b}" if b =~ /\./
-          mf = "#{b}.meta"
+          mf = "#{b}.#{$meta_extension}"
 
           filename, meta_filename = [f, mf]
           .map{|x| File.join([d, event['slug'], a.attachment_type, a.event_attachment_id.to_s, x].reject(&:nil?))}
@@ -929,7 +959,7 @@ EOF
 
           extension = mime_to_extension(i.mime_type)
           n = event['slug']
-          filename, meta_filename, hash_filename = [extension, "meta", "hash"].map{|x| "#{n}.#{x}"}
+          filename, meta_filename, hash_filename = [extension, $meta_extension, $hash_extension].map{|x| "#{n}.#{x}"}
           file, meta_file, hash_file = [filename, meta_filename, hash_filename].map{|x| File.join($eventlogos_export_root, x)}
 
           id = "/schedule/event/#{event['slug']}/logo/"
@@ -1034,7 +1064,7 @@ EOF
           extension = mime_to_extension(i.mime_type)
           n = speaker['slug']
           filename, thumb_filename, meta_filename, thumb_meta_filename, hash_filename =
-            [extension, extension, "meta", "meta", "hash"].map{|x| "#{n}.#{x}"}
+            [extension, extension, $meta_extension, $meta_extension, $hash_extension].map{|x| "#{n}.#{x}"}
 
           file, meta_file, hash_file = [filename, meta_filename, hash_filename].map{|x| File.join($photo_export_root, x)}
           thumb_file, thumb_meta_file = [thumb_filename, thumb_meta_filename].map{|x| File.join($thumbnail_export_root, x)}
@@ -1187,6 +1217,7 @@ EOF
           require 'find'
           if File.exists? dir
             Find.find(dir) do |d|
+              next if d == dir
               next unless File.directory? d
 
               # see http://stackoverflow.com/questions/5059156/check-if-directory-is-empty-in-ruby
@@ -1205,8 +1236,10 @@ EOF
           empty_dirs = find_empty_dirs(export_root)
           until empty_dirs.empty?
             empty_dirs.each do |d|
-              FileUtils.rmdir d
-              Nanoc::CLI::Logger.instance.file(:high, :delete, d)
+              unless $export_roots.include? d
+                FileUtils.rmdir d
+                Nanoc::CLI::Logger.instance.file(:high, :delete, d)
+              end
             end
             empty_dirs = find_empty_dirs(export_root)
           end

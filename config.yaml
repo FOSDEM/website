@@ -42,7 +42,7 @@ output_dir: output
 # the Pentabarf database as the prefix (e.g. 2013-02-01 => /2013), or set it
 # here to enforce a specific value -- if so, make sure it starts with a /
 # and does not end with a /
-prefix: /2013
+#prefix: /2013
 
 # Colors to use for events and tracks in various grids.
 # These are a combination of two sets of colors from colorlovers.com,
@@ -139,7 +139,7 @@ deploy:
     options: [ '-gpPrtvzO', '--delete-after', '--chmod=ug=rwX,o=rX', '--no-perms' ]
 
 pentabarf:
-  conference_id: 2
+  conference_id: FOSDEM13
   username: nanoc
   password: nanoc
   database: marius

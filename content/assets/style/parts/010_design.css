@@ -8,6 +8,8 @@ body{
 	background:#fff;
 }
 h1, h2, h3, #footer, #header, .visual,
+#main .s-block .text-block p,
+.news-list .date .frame,
 tbody h4 {
 	font-family: Signika, "DejaVu Sans", Arial, Helvetica, sans-serif;
 }
@@ -267,8 +269,10 @@ a.btn-purple:hover {
 }
 .logo-list li {padding-right: 5px;}
 .news-block{
-	margin:0 0 32px;
-	padding:28px 11px 27px;
+	/*margin:0 0 32px;*/
+	margin:0 0 16px;
+	/*padding:28px 11px 27px;*/
+	padding:11px 11px 11px;
 	border-bottom:1px solid #ccc;
 }
 .news-block h2{
@@ -298,7 +302,8 @@ a.btn-purple:hover {
 	padding-left:0;
 	border:0;
 }
-.news-list .date{
+.news-list .date,
+.news .date{
 	width:100%;
 	margin:0 0 6px;
 	font-size:14px;
@@ -307,28 +312,35 @@ a.btn-purple:hover {
 	color:#727272;
 	text-shadow:0 1px 0 #fff;
 }
-.news-list .date:after{
+.news-list .date:after,
+.news .date:after{
 	content:"";
 	display:block;
 	clear:both;
 }
-.news-list .date .holder{
+.news-list .date .holder,
+.news .date .holder{
 	float:left;
 	margin:0 0 0 -2px;
 	background:#efefef url(bg-news-date.gif) no-repeat;
 }
-.news-list .date .frame{
+.news-list .date .frame,
+.news .date .frame{
 	float:left;
 	padding:5px 10px 3px 12px;
 	background:url(bg-news-date.gif) no-repeat 100% -25px;
 }
-.news-list h3{
+.news-list h3,
+.news h3{
 	margin:0 0 3px;
 	color:#3679c4;
 	font-size:16px;
 	line-height:20px;
 }
-.news-list h3 a{color:#3679c4;}
+.news-list h3 a,
+.news h3 a{
+  color:#3679c4;
+}
 .news-list p{margin:0;}
 .btn-news{
 	padding:0 14px 0 0;

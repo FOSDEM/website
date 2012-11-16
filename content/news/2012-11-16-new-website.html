@@ -1,0 +1,87 @@
+---
+title: New Website
+---
+<p>As everyone can see, we're going live with our new website. Hope you'll like it!</p>
+---MORE---
+<p>
+As FOSDEM is a highly technical conference, everyone expects us to give some
+technical details about our new website <tt>;)</tt>.
+</p>
+<p>
+After using <a href="http://drupal.org">Drupal</a> <a href="page:/archives">for several years</a>,
+we decided to switch to using a static website generator, for several reasons:
+</p>
+<ul>
+  <li>
+  almost all our content is static: we don't use comment forms (feedback and discussions happens through our
+  <a href="page:contact">mailing-lists or IRC channel</a>) or anything else that would require something
+  executable on the server, as all the aspects of the schedule go through our conference organization
+  application (<a href="http://pentabarf.org/">Pentabarf</a>, developed by Sven Klemm and
+  some other good folks at the <a href="http://ccc.de/">CCC</a> for the purpose of organizing
+  <a href="http://events.ccc.de/">their well known conference</a>)
+  </li>
+  <li>
+  Drupal security maintenance is quite a pain for busy people, and that also applies once the conference is over
+  and done with (although we did resort to &quot;freezing&quot; websites of past editions as a static copy,
+  but that is not an entirely smooth process)
+  </li>
+  <li>
+  after a few years, our website definitely needed an overhaul (including its looks)
+  </li>
+  <li>
+  we have a pretty repetitive workflow every year, and we felt that Drupal didn't support it very well
+  and required a lot of dirty hacks
+  </li>
+  <li>
+  we wanted <a href="http://git-scm.com/">proper version control</a> for our content
+  </li>
+</ul>
+<p>
+So the quest for the right tool for the job began, and after briefly investigating a few options
+such as <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://octopress.org/">Octopress</a>,
+we ran into <a href="http://nanoc.stoneship.org/">Nanoc</a>, and we were sold.
+</p>
+<p>
+Mind you, we're not saying that Drupal isn't fit for the job, but merely that it wasn't fitting
+our needs and workflow very well. At least, a static site generator like Nanoc definitely
+does so a lot better.
+</p>
+<p>
+While we did have to implement a lot of custom code to automate our processes and workflow as much
+as possible (also in order to make it less error-prone, and because we're lazy, obviously),
+Nanoc really turned out to be a great framework that took away a ton of nitty-gritty, trivial and
+not so trivial tasks.
+</p>
+<p>
+Most of the content of our website stems from the Pentabarf database, from which we export a lot
+of content which is then used to generate over a thousand pages (when the schedule is final or
+at least approaching the deadline of the conference).
+</p>
+<p>
+Now, there <strong>is</strong> one &quot;dynamic&quot; thing on our website, which can hardly
+be implemented in a static way: the search feature. For that, we use the stunningly brilliant
+<a href="https://lucene.apache.org/solr/">Apache Solr</a> as search and indexing server,
+with some glue code in Nanoc to feed it with content, as well as a tiny web application
+using the not less stellar <a href="http://sinatrarb.com">Sinatra</a> framework for interfacing
+with users.
+</p>
+<p>
+So, from a technical perspective, our special thanks go to the following people and projects:
+</p>
+<ul>
+  <li><strong><a href="http://stoneship.org/">Denis Defreyne</a></strong>, the main author and
+  maintainer of <a href="http://nanoc.stoneship.org/">Nanoc</a>, which we are using extensively
+  for our website (as briefly explained above), and especially for his support and his hard
+  work on such a great tool</li>
+  <li><strong><a href="https://github.com/nevs">Sven Klemm</a></strong> and other contributors
+  from the <a href="http://ccc.de">Chaos Computer Club</a>, Sven being the main author and
+  maintainer of <a href="http://pentabarf.org">Pentabarf</a>, which we rely on a lot for
+  managing the schedule of the conference (as does the CCC)</li>
+  <li>the contributors of <a href="https://lucene.apache.org/solr/">Apache Solr</a> and its
+  underlying <a href="https://lucene.apache.org/">Lucene</a></li>
+  <li>the <a href="https://github.com/sinatra/sinatra/graphs/contributors">many people
+    who contribute code to Sinatra</a> for making a web framework that is such a joy to
+  develop a web application with</li>
+
+  <li><a href="http://www.marcodascenzo.com/">Marco</a>, for the design</li>
+</ul>

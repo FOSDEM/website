@@ -1,4 +1,16 @@
-<div class="row-fluid">
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+%>
+<div class="date">
+  <div class="holder">
+    <div class="frame"><%= item[:created_at].strftime '%Y-%m-%d' %></div>
+  </div>
+</div>
+<h3><a href="page:<%= item[:fullpost] %>"><%= item[:title] %></a></h3>
+<p><%= item.compiled_content(:snapshot => :pre) %></p>
+
+
+
 	<div class="span11">
         <h5>&#x231A; <%= item[:created_at].strftime('%Y-%m-%d') %></h5>
 		<h4>&#9733; <a href="<%= relpath(@item_rep.path, item[:fullpost]) %>"><%= item[:title] %></a></h4>

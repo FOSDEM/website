@@ -1,11 +1,11 @@
 ---
 top:
   - Home: /
+  - /about
   - /schedule
   - Practical: /practical
-  - /news
 head:
-  - /about
+  - /news
   - /about/sponsors
   - /contact
 footer:
@@ -15,6 +15,7 @@ footer:
     - About: /about
     - /about/sponsors
     - /faq
+    - Archives: /archives
   - Schedule:
     - Information: /schedule
     - /schedule/days
@@ -31,3 +32,5 @@ footer:
   - Media and Press:
     - /interviews
     - /support/promote
+    - Videos: 'http://video.fosdem.org/'
+

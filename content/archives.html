@@ -1,0 +1,14 @@
+---
+title: Previous FOSDEM Editions
+---
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+%>
+<p>
+Links to the archived websites of previous FOSDEM editions:
+</p>
+<ul>
+  <% (2000..(days.first[:conference_day].year - 1)).to_a.reverse.each do |year| %>
+    <li><a href="https://archive.fosdem.org/<%= year %>/"><%= year %></a></li>
+  <% end %>
+</ul>

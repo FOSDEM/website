@@ -183,7 +183,9 @@ route   '/buildings/'  do;end
 # rendered by the "make_headlines" helper at preprocessing stage
 # (they do not exist in the filesystem under content/ -- instead, they
 # are items that are created on-the-fly as headlines from content/news/*)
-compile '/headlines/*' do;end
+#compile '/headlines/*' do
+#  filter :erb
+#end
 
 # don't modify anything on attachments
 compile '/schedule/event/*/attachments/*' do;end
@@ -216,7 +218,6 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-
     unless item.identifier =~ %r{^/schedule/devrooms/.+}
       # process schedule items with their respective template from layouts/schedule/
       # (e.g. /schedule/event/foo is processed with layouts/schedule/event.*)
@@ -280,7 +281,7 @@ compile '*' do
       # use layout/default.html for all items, except
       # sponsor pages and pages that have "layout: false"
       # in their metadata
-      if item[:layout] == false or sponsor?(item) or item.identifier =~ %r{/[ix]cal/} or item.identifier =~ %r{^/schedule/devrooms/.+}
+      if item[:layout] == false or sponsor?(item) or item.identifier =~ %r{/[ix]cal/} or item[:kind] == 'internal' or item.identifier =~ %r{^/schedule/devrooms/}
         # do nothing
       elsif item[:layout]
         # or those that explicitly specify the layout in their metadata
@@ -361,7 +362,7 @@ end
 # during preprocessing stage (by the "make_headlines" function that's
 # defined in lib/helpers/news.rb) and only intended to be gathered
 # in content/index.html
-route '/headlines/*/' do;end
+# route '/headlines/*/' do;end
 
 # partials, are included somewhere else, don't create files in
 # output for these:
@@ -460,12 +461,14 @@ end
 
 # and this is for everything else:
 route '*' do
-  if item.binary? or ['xml'].include? item[:extension]
-    # Write binary item and XML files with identifier /foo/ to /foo.ext
-    "#{$prefix}#{item.identifier.chop}.#{item[:extension]}"
-  else
-    # Write text item with identifier /foo/ to /foo/index.html
-    "#{$prefix}#{item.identifier}index.html"
+  unless item[:kind] == 'internal' or item[:hidden] == true
+    if item.binary? or ['xml'].include? item[:extension]
+      # Write binary item and XML files with identifier /foo/ to /foo.ext
+      "#{$prefix}#{item.identifier.chop}.#{item[:extension]}"
+    else
+      # Write text item with identifier /foo/ to /foo/index.html
+      "#{$prefix}#{item.identifier}index.html"
+    end
   end
 end
 

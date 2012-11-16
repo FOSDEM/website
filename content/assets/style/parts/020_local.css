@@ -69,7 +69,7 @@ img.s-box-logo {
   border-right: none;
   background-color: #eee;
 }
-div.s-block {
+div.s-unit {
   margin-bottom: 2em;
   padding-bottom: 2em;
   border-bottom: 1px dashed #ccc;
@@ -368,3 +368,13 @@ ul.side-box {
   margin-right: 1em;
   margin-bottom: 0.3em;
 }
+.readmore {
+  padding-top: 1.5em;
+  text-align: right;
+}
+.readmore:after  { content: " \2026"; }
+
+#all-news .readmore {
+  text-align: left;
+}
+

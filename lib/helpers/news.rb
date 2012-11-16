@@ -12,6 +12,8 @@ module Fosdem
         id = "/headlines/#{fqid}"
         attrs = item.attributes.reject {|k,v| k == :filename or k == :file}
         attrs[:kind] = 'headline'
+        attrs[:hidden] = true
+        attrs[:layout] = false
 
         content = item.raw_content
         headline_content = content

@@ -3,6 +3,18 @@
 
 module Fosdem
 
+  def henc(text)
+    $_html_entities_encoder ||= begin
+                                  require 'htmlentities'
+                                  HTMLEntities.new
+                                end
+    if text
+      $_html_entities_encoder.encode text
+    else
+      text
+    end
+  end
+
   def stripext(filename)
     d, b, e = split_filename filename
     if e.size > 0

@@ -28,7 +28,7 @@
 
   if start
     start_hour = start.hour
-    dayend = days.map{|d| Time.parse(d[:end_time])}.max
+    dayend = days.reject{|d| d[:end_time].nil?}.map{|d| Time.parse(d[:end_time])}.max
     num_cells = dayend.hour - start_hour
     num_slots = num_cells * (60 / interval)
 
