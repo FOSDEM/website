@@ -102,6 +102,10 @@ data_sources:
     # same as the items root, but applies to layouts rather than items.
     layouts_root: /
 
+    # Make sure it always uses UTF-8, whatever the environment, whatever
+    # the platform (actually required to function properly on nanoc.f.o)
+    encoding: UTF-8
+
     # Whether to allow periods in identifiers. When turned off, everything
     # past the first period is considered to be the extension, and when
     # turned on, only the characters past the last period are considered to
