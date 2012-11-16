@@ -41,7 +41,7 @@ end
 temp = nil
 begin
   require 'image_optim'
-  io = ImageOptim.new(pngout: false, advpng: false, jpegoptim: false, gifsicle: false)
+  io = ImageOptim.new(pngout: false, advpng: false, jpegoptim: false, gifsicle: false, jpegtran: false)
   require 'tempfile'
   temp = Tempfile.new("unoptimized-#{@item[:filename]}".gsub(%r{/+}, '_'))
   temp.write(sprite.to_blob)
