@@ -58,6 +58,8 @@ deadlines:
     mail: 'http://www.winehq.org/pipermail/wine-devel/2012-November/097669.html'
   'Virtualization':
     days: sat
+    mail: 2012-November/001660
+    date: 2012-12-16
   'X.org':
     days: sat
   'Ada':
@@ -96,6 +98,7 @@ deadlines:
   'Smalltalk':
     days: sun
     date: 2012-12-31
+    mail: 2012-November/001659
   'Telephony':
     days: sun
 
