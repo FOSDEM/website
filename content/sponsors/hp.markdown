@@ -2,8 +2,8 @@
 title: HP
 url: http://www.hp.com/go/opensource/
 ---
-As the world’s largest IT company, HP focuses on simplifying technology
-experiences for all its customers – from individual consumers to large
+As the world's largest IT company, HP focuses on simplifying technology
+experiences for all its customers - from individual consumers to large
 enterprises.
 
 HP helps businesses focus on innovation instead of IT operations by offering
