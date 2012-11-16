@@ -80,15 +80,10 @@ for the contact address.
     'both' => 'Both days',
   }
   def cfp_date(d)
-    if d.nil? or d.empty?
-      'TBA'
+    if d
+      d.strftime("%Y-%m-%d")
     else
-      case d
-      when /^(\d+)\s+(.+)\.?$/
-        d
-      else
-        fail "this is a date? #{d}"
-      end
+      'TBA'
     end
   end
   def cfp_mail_uri(m)
