@@ -33,6 +33,7 @@ gem "rsolr"
 gem "sinatra"
 gem "sinatra-contrib"
 gem "thin"
+gem "rack-contrib"
 gem "net-ssh"
 gem "net-ssh-gateway"
 

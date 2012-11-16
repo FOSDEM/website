@@ -1,0 +1,10 @@
+---
+    environment: production
+    address: 127.0.0.1
+    port: 4567
+    pid: ./thin.pid
+    rackup: ./prod.ru
+    max_conns: 200
+    timeout: 30
+    max_persistent_conns: 120
+    daemonize: true
