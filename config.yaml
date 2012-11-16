@@ -11,9 +11,9 @@ digest_assets: true
 
 # Same, for the CSS file(s) -- useful on false for development/design
 # changes and experimentations, should be true for production:
-digest_css: false
+digest_css: true
 # Same as above: false is convenient for hacking, true for production:
-minify_css: false
+minify_css: true
 
 # Same thing as above but for sponsor logos:
 digest_sponsor_logos: true
@@ -23,6 +23,9 @@ digest_sponsor_logos: true
 # direct URL to them.. so probably not, but it is a flag anyway:
 digest_pdfs: false
 
+# Whether to render the time table grids as PDFs (only to be turned
+# on for testing or when the schedule is sufficiently complete to
+# make any sense):
 pdf_grid: false
 
 #########################################################################

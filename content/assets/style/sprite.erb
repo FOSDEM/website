@@ -38,5 +38,25 @@ logos.each do |image|
   y += image.rows
 end
 
-sprite.to_blob
+temp = nil
+begin
+  require 'image_optim'
+  io = ImageOptim.new(pngout: false, advpng: false, jpegoptim: false, gifsicle: false)
+  require 'tempfile'
+  temp = Tempfile.new("unoptimized-#{@item[:filename]}".gsub(%r{/+}, '_'))
+  temp.write(sprite.to_blob)
+  temp.flush
+  io.optimize_image!(temp.path)
+  temp.rewind
+  temp.read
+ensure
+  if temp
+    begin
+      temp.close
+    ensure
+      temp.unlink
+    end
+  end
+end
+
 %>

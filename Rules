@@ -138,6 +138,10 @@ end
 # CSS file:
 route '/assets/style/parts/*' do;end
 
+compile '/assets/style/sprite/' do
+  filter :erb
+end
+
 compile '/assets/style/*' do
   # merge all content/assets/style/parts/*.css files into one
   # in content/assets/style/*.css (see the ERB/ruby code there)
@@ -146,22 +150,17 @@ compile '/assets/style/*' do
   # http://userprimary.net/posts/2011/01/10/optimizing-nanoc-based-websites/
   # for inspiration
 
-  case File.extname(item[:filename])
-  when '.erb'
-    filter :erb
-  else
-    unless item.binary?
-      case item[:extension]
-      when 'css'
-        # process those using ERB:
-        filter :erb
-        # fix url() links in CSS:
-        filter :csslinks
-        # then relativize any resource paths (to images and such):
-        filter :relativize_paths, :type => :css
-        # minimize CSS files:
-        filter :rainpress if @site.config.fetch(:minify_css, true)
-      end
+  unless item.binary?
+    case item[:extension]
+    when 'css'
+      # process those using ERB:
+      filter :erb
+      # fix url() links in CSS:
+      filter :csslinks
+      # then relativize any resource paths (to images and such):
+      filter :relativize_paths, :type => :css
+      # minimize CSS files:
+      filter :rainpress if @site.config.fetch(:minify_css, true)
     end
   end
 end

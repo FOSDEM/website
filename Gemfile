@@ -5,7 +5,7 @@
 # After modifying this file, delete Gemfile.lock
 # and run `bundle'
 
-source "http://rubygems.org"
+###source "http://rubygems.org"
 gem "cri", "~>2.3.0"
 gem "kramdown", "~>0.13.6"
 #gem "nanoc", "~>3.4.0"
@@ -27,6 +27,7 @@ gem "bluecloth"
 # we need git master here, implements colspan in tables:
 gem "prawn", git: "git://github.com/prawnpdf/prawn", branch: "master"
 gem "rmagick"
+gem "image_optim"
 gem "rsolr"
 gem "sinatra"
 gem "sinatra-contrib"
