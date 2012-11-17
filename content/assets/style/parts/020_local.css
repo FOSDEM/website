@@ -378,3 +378,20 @@ ul.side-box {
   text-align: left;
 }
 
+.stands-table-index {
+  font-family: monospace;
+  width: 3em;
+  text-align: right !important;
+}
+.stands-table-project {
+  vertical-align: middle !important;
+}
+.stands-table-project a {
+  color: inherit;
+}
+.stands-table-color-code {
+  width: 1em;
+  text-align: center;
+  border: 1px solid #000;
+}
+

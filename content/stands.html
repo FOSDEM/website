@@ -1,0 +1,118 @@
+---
+# vim: set ts=2 sw=2 et ai ft=eruby:
+title: Stands
+stands:
+  K [level 1] (22):
+  K [level 2] (17):
+  AW (10):
+  H (4):
+---
+<%
+  # parse stands meta
+  binfo, btables =
+    begin
+      binfo = {}
+      btables = {}
+      item[:stands].each do |b, list|
+        if b.to_sym =~ %r{^(\S+)\s*(\[(.+?)\])?\s*(\((\d+)\))?\s*}
+          building = {
+            name: $1,
+            anchor: $1.downcase,
+          }
+          building[:subtitle] = $3 if $3
+          building[:tables] = $5.to_i if $5
+          binfo[b] = building
+          btables[b] = []
+        else
+          fail "building spec \"#{b}\" does not match expected pattern"
+        end
+        (list or []).each do |p|
+          project, tables, link =
+            begin
+              project, link = case p
+                              when Hash
+                                [ p.keys.first, p.values.first ]
+                              else
+                                [ p.to_s, nil ]
+                              end
+              project, tables = 
+                case project
+                when %r{^(.+?)\s+\((\d+)\)$}
+                  [ $1, $2.to_i ]
+                else
+                  [ p, 1 ]
+                end
+              [ project, tables, link ]
+            end
+          x = { project: project, tables: tables }
+          x[:link] = link if link
+          btables[b] << x
+        end
+      end
+      [ binfo, btables ]
+    end
+%>
+
+<p>
+Stands can be used to share information, demo software, sell merchandising,
+give away goodies and so forth, and to present themselves to the visitors
+in a more personal fashion.
+</p>
+<p>
+There are stands in the following <%= l('/schedule/buildings/', 'buildings') %>:
+<%= binfo.values.map{|x| x[:name]}.uniq.join(", ") %>
+</p>
+
+<% buildings_per_row = 2 %>
+<div class="container-fluid">
+<% binfo.keys.each_slice(buildings_per_row) do |buildings| %>
+  <div class="row-fluid">
+    <% buildings.each do |b| %>
+      <div class="span<%= 12 / buildings_per_row %>">
+        <table class="table table-condensed table-striped table-bordered">
+          <thead>
+            <tr>
+              <th colspan="3"><h4><a href="<%= pathof '/schedule/buildings/' %>#<%= binfo[b][:anchor] %>"><%= binfo[b].fetch(:name) %><% if binfo[b][:subtitle] %> (<%= binfo[b][:subtitle] %>)<% end %></h4></a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% i = 0 %>
+            <% btables[b].each do |p| %>
+              <% (1..p[:tables]).each do |r| %>
+                <% i += 1 %>
+                <tr>
+                  <td class="stands-table-index"><%= i %></td>
+                  <% if p[:project] %>
+                    <td class="stands-table-color-code <%= $colors[(i - 1) % $colors.size] %>"></td>
+                    <% if r == 1 %>
+                      <td class="stands-table-project" rowspan="<%= p[:tables] %>">
+                        <% if p[:link] %>
+                          <a href="<%= p[:link] %>"><%= p[:project] %></a>
+                        <% else %>
+                          <%= p[:project] %>
+                        <% end %>
+                      </td>
+                    <% end %>
+                  <% else %>
+                    <td class="stands-table-color-code"></td>
+                    <td class="stands-table-project"></td>
+                  <% end %>
+                </tr>
+              <% end %>
+            <% end %>
+            <%
+              occupied_tables = btables[b].map{|p| p[:tables]}.inject(0, :+)
+            %>
+            <% ((occupied_tables+1)..(binfo[b][:tables])).each do |i| %>
+              <tr>
+                <td class="stands-table-index"><%= i %></td>
+                <td class="stands-table-color-code"></td>
+                <td class="stands-table-project">-</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+  </div> <!-- .row -->
+<% end %>

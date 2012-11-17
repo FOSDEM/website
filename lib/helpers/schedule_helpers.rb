@@ -51,7 +51,6 @@ module Fosdem
   end
 
   def l(item, title=:title, sep=", ", detail=nil, klass=nil)
-    require 'builder'
     if item.is_a? String and item.start_with? '/'
       item = $item_by_id.fetch(item)
     end
@@ -74,8 +73,6 @@ module Fosdem
       # but it is a lot safer against HTML injection (schedule item titles
       # are user input and we don't know 100% whether they are cleaned and/or
       # encoded properly in Pentabarf)
-      buffer = ''
-      xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
       title = if detail
                 if detail.is_a? Symbol
                   item[detail]
@@ -95,9 +92,7 @@ module Fosdem
       if klass
         args[:class] = (klass.is_a? Array) ? klass.join(" ") : klass
       end
-      xml.a(text, args)
-
-      buffer
+      %Q!<a#{args.map{|k,v| %Q( #{k}="#{v}")}.join('')}>#{henc text}</a>!
     else
       raise "unsupported object of type #{item.class}"
     end

@@ -10,6 +10,7 @@ body{
 h1, h2, h3, #footer, #header, .visual,
 #main .s-block .text-block p,
 .news-list .date .frame,
+thead h4,
 tbody h4 {
 	font-family: Signika, "DejaVu Sans", Arial, Helvetica, sans-serif;
 }
