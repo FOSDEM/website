@@ -6,6 +6,8 @@ module Fosdem
     $items_cache = nil
     $basepage = nil
 
+    attr_reader :id, :name, :propaganda, :section, :url
+
     def initialize(item)
       [:filename, :title, :url].each{|a| raise "sponsor item #{item.inspect} has no mandatory #{a} attribute" if item[a].nil? }
 
@@ -26,30 +28,14 @@ module Fosdem
       @name = item[:title]
       @url = item[:url]
       @propaganda = item.compiled_content(:snapshot => :pre)
-      @cornerstone = !item[:cornerstone].nil?
+      @cornerstone = item[:cornerstone] == true
       @path = item.path
       @section = item[:section].nil? ? '' : item[:section]
       @attribs = item.attributes
     end
 
-    def id
-      @id
-    end
-
-    def name
-      @name
-    end
-
-    def propaganda
-      @propaganda
-    end
-
     def include_in_toplevel?
       @section == '' or @attribs[:include_in_toplevel]
-    end
-
-    def section
-      @section
     end
 
     def path
@@ -62,10 +48,6 @@ module Fosdem
 
     def url?
       not @url.nil?
-    end
-
-    def url
-      @url
     end
 
     def thumb?
@@ -92,7 +74,7 @@ module Fosdem
 
     def self.list(items)
       $cache ||= begin
-                   $items_cache = items.select{|item| item[:disabled].nil? or not item[:disabled]}
+                   $items_cache = items.reject{|item| item[:disabled] == true or item[:enabled] == false}
                    h = $items_cache.select{|item| sponsor?(item) }.map{|item| Sponsor.new(item)}.sort_by{|s| [s.order, s.name]}
                    begin
                      l = $items_cache.select{|item| item[:sponsors_root]}
