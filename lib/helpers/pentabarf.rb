@@ -468,8 +468,12 @@ EOF
                    list.each do |p|
                      name = if p['public_name']
                               p['public_name']
-                            else
+                            elsif p['first_name'] and p['last_name']
                               "#{p['first_name']} #{p['last_name']}"
+                            elsif p['nickname']
+                              p['nickname']
+                            else
+                              %w(first_name last_name).map{|x| p[x]}.reject(&:nil?).join(' ')
                             end
                      p['name'] = name
                      p['title'] = name
