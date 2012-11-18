@@ -31,7 +31,7 @@ module Fosdem
 
     # Get sorted relevant articles
     sorted_relevant_articles = relevant_articles.sort_by do |a|
-      attribute_to_time(a[:created_at])
+      iso822(a[:created_at])
     end.reverse.first(limit)
 
     # Get most recent article
@@ -43,14 +43,17 @@ module Fosdem
 
     # Build feed
     xml.instruct!
-    xml.rss(version: '2.0') do
+    xml.rss(version: '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom') do
       xml.channel do
-        root_url = @site.config[:base_url] + '/'
-        xml.link    root_url
+        root_url = @site.config[:base_url]
+        xml.link    root_url + '/'
+        # http://validator.w3.org/appc/docs/warning/MissingAtomSelfLink.html
+        xml.method_missing :'atom:link', href: root_url + @item.path, rel: 'self', type: 'application/rss+xml'
         xml.title   title
         xml.description "#{conference()[:title]} News Feed"
-        xml.lastBuildDate(attribute_to_time(last_article[:created_at]).to_iso8601_time)
-        xml.pubDate(attribute_to_time(last_article[:created_at]).to_iso8601_time)
+        t = iso822(last_article[:created_at])
+        xml.lastBuildDate(t)
+        xml.pubDate(t)
         xml.ttl('1800')
 
         # Add articles
@@ -59,22 +62,12 @@ module Fosdem
           url = url_for(a)
           next if url.nil?
 
-          excerpt = 
-            begin
-              require 'nokogiri'
-              plain_text = Nokogiri::HTML(a.compiled_content).text
-              words = plain_text.split(/\s+/)
-              if words.size >= excerpt_limit
-                words[0..excerpt_limit].join(" ") + "\u{8230}"
-              else
-                words.join(" ")
-              end
-            end
+          excerpt = excerpt_words(html_to_text(a.compiled_content), excerpt_limit)
 
           xml.item do
             xml.title       a[:title]
-            xml.guid        rss_tag_for(a)
-            xml.pubDate     rss_attribute_to_time(a[:created_at]).to_iso8601_time
+            xml.guid        url
+            xml.pubDate     iso822(a[:created_at])
             xml.link        url
             xml.description excerpt
           end
@@ -89,15 +82,9 @@ module Fosdem
   def rss_tag_for(item)
     hostname, base_dir = %r{^.+?://([^/]+)(.*)$}.match(@site.config[:base_url])[1..2]
 
-    formatted_date = attribute_to_time(item[:created_at]).to_iso8601_date
+    formatted_date = iso822(item[:created_at])
 
     'tag:' + hostname + ',' + formatted_date + ':' + base_dir + (item.path || item.identifier)
-  end
-
-  def rss_attribute_to_time(time)
-    time = Time.local(time.year, time.month, time.day) if time.is_a?(Date)
-    time = Time.parse(time) if time.is_a?(String)
-    time
   end
 
 end

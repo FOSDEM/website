@@ -107,5 +107,34 @@ module Fosdem
     h
   end
 
+  def iso822(time)
+    require 'time'
+    time = case time
+           when Date
+             time
+           when Time
+             time
+           when String
+             Time.parse(time)
+           else
+             fail "unsupported class: #{time.class} #{time.inspect}"
+           end
+    time.strftime("%a, %d %b %Y %H:%M:%S %Z")
+  end
+
+  def excerpt_words(text, limit, more="\u{8230}")
+    words = text.split(/\s+/)
+    if words.size >= limit
+      words[0..(limit-1)].join(" ") + more
+    else
+      words.join(" ")
+    end
+  end
+
+  def html_to_text(html)
+    require 'nokogiri'
+    Nokogiri::HTML(html).text
+  end
+
 end #Fosdem
 
