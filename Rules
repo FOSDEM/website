@@ -260,6 +260,9 @@ compile '*' do
         # which does the "opposite" (kindof) to generate headline items)
         filter :news if news?(item)
 
+        filter :toc if item[:toc] == true
+        filter :semantic if item[:semantic] == true
+
         # run the custom pagelinks filter (lib/filters/pagelinks.rb) on
         # all items to replace page:... URLs with their actual URLs as
         # they will be rendered
@@ -303,13 +306,6 @@ end
 
 ##### ROUTING
 
-# send this one into oblivion, its compiled content is included in
-# layouts/default.html, but is not to be rendered as a file of its
-# own into output
-route '/schedule_navigation/' do;end
-# same here:
-route '/sponsors_navigation/' do;end
-
 route '/searcherview/' do
   "/searcher/layout.rhtml"
 end
@@ -317,6 +313,17 @@ end
 route '/404/' do
   "/404.html"
 end
+
+route '/howto/' do
+  "/howto.html"
+end
+
+# send this one into oblivion, its compiled content is included in
+# layouts/default.html, but is not to be rendered as a file of its
+# own into output
+route '/schedule_navigation/' do;end
+# same here:
+route '/sponsors_navigation/' do;end
 
 # attachments and such
 route '/schedule/event/*/attachments/*' do
