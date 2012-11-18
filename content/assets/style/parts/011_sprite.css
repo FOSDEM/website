@@ -1,11 +1,5 @@
-<%
+<%=
 # vim: set ts=2 sw=2 et ai ft=eruby:
-
-  require 'RMagick'
-
-  # Just use the filename here, no need to transform it into a proper URL,
-  # as the csslinks filter will take care of that
-  sprite = 'sprite.png' #/assets/style/sprite.png/' #$item_by_id.fetch('/assets/style/sprite/').path
 
   extra = {
     '.logo-small' => '/assets/style/fosdem-logo/',
@@ -28,26 +22,14 @@
                                     [ ".logo-list .logo-#{s.id} a", s.thumb ]
                                   end
                 image = Magick::Image.from_blob(IO.read(logo[:filename])).first
-                h[css_class] = image
+                h[css_class] = logo[:filename]
               end
             end
             extra.each do |css, id|
-              target = $item_by_id.fetch id
-              image = Magick::Image.from_blob(IO.read(target[:filename])).first
-              h[css] = image
+              h[css] = $item_by_id.fetch id
             end
             h
           end
 
-  y = 0
-  logos.each do |css_class, image|
-%>
-<%= css_class %> {
-  width: <%= image.columns %>px;
-  height: <%= image.rows %>px;
-  background-position: 0 <%= -y %>px;
-}
-<%
-    y += image.rows
-  end
+  sprite_css(logos)
 %>

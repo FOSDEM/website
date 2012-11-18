@@ -136,5 +136,114 @@ module Fosdem
     Nokogiri::HTML(html).text
   end
 
+  def sprite_css(css_rule_to_filename_hash)
+    h = {}
+
+    begin
+      h =
+        begin
+          h = {}
+          css_rule_to_filename_hash.each do |rule, filename|
+            filename = case filename
+                       when Nanoc::Item
+                         filename[:filename]
+                       when String
+                         filename
+                       else
+                         fail "unsupported #{f.class} #{f.inspect}"
+                       end
+            h[rule] = Magick::Image.from_blob(IO.read(filename)).first
+          end
+          h
+        end
+
+      y = 0
+      h.map do |rule, image|
+        %Q!#{rule} { width: #{image.columns}px; height: #{image.rows}px; background-position: 0 #{-y}px; }!
+      end
+      .join("\n")
+    ensure
+      h.each do |rule, img|
+        begin
+          img.destroy! if img
+        rescue
+        end
+      end
+    end
+
+  end
+
+  def sprite_image(filenames, format='PNG', optimize=true)
+    require 'RMagick'
+
+    images = []
+    begin
+      images = filenames
+      .map do |f|
+        case f
+        when Nanoc::Item
+          f[:filename]
+        when String
+          f
+        else
+          fail "unsupported #{f.class} #{f.inspect}"
+        end
+      end
+      .map do |f|
+        Magick::Image.from_blob(IO.read(f)).first
+      end
+
+      width  = images.map{|i| i.columns}.max
+      height = images.map{|i| i.rows}.inject(0, :+)
+
+      sprite = nil
+      begin
+        sprite = Magick::Image.new(width, height) do
+          self.format = format
+          self.background_color = 'transparent'
+        end
+
+        y = 0
+        images.each do |image|
+          sprite.composite!(image, 0, y, Magick::OverCompositeOp)
+          y += image.rows
+        end
+
+        temp = nil
+        begin
+          require 'image_optim'
+          io = ImageOptim.new(pngout: false, advpng: false, jpegoptim: false, gifsicle: false, jpegtran: false)
+          require 'tempfile'
+          temp = Tempfile.new("unoptimized-#{@item[:filename]}".gsub(%r{/+}, '_'))
+          temp.write(sprite.to_blob)
+          temp.flush
+          io.optimize_image!(temp.path)
+          temp.rewind
+          content = temp.read
+          content
+        ensure
+          if temp
+            begin
+              temp.close
+            ensure
+              temp.unlink
+            end
+          end
+        end
+
+      ensure
+        sprite.destroy! if sprite
+      end
+
+    ensure
+      images.each do |img|
+        begin
+          img.destroy! if img
+        rescue
+        end
+      end
+    end
+  end
+
 end #Fosdem
 
