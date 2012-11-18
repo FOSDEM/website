@@ -1,0 +1,6 @@
+<%= rss_feed(
+    :limit => 10,
+    :articles => @items.select{|i| news?(i)}.sort_by{|i| [i[:created_at], i[:mtime]]}.reverse,
+    :excerpt_proc => lambda {|i| i[:headline]},
+    :title => conference()[:title],
+    ) %>
