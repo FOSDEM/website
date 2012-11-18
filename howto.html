@@ -1,33 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Website Guide</title>
-    <style type="text/css">
-      html {
-        font-family: sans-serif;
-        font-size: 14px;
-      }
-      body {
-        height: 100%;
-        margin: 2em 30% 4em 10%;
-      }
-      p {
-        line-height: 1.4;
-      }
-      pre {
-        font-family: monospace;
-        font-size: 90%;
-        background: #000;
-        color: #eee;
-        padding: 0.5em 0.5em;
-        border: 2px solid #888;
-        border-left-width: 1em;
-      }
-    </style>
-  </head>
-  <body>
+---
+title: Fosdem Website Guide
+---
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span3">
+      <ul class="well nav nav-list">
+        <li class="nav-header">Documentation</li>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#nanoc">Nanoc</a></li>
+        <li><a href="#update">Updating schedule data</a></li>
+        <li class="divider"></li>
+        <li>TODO</li>
+      </ul>
+    </div>
+    <div class="span7">
+    <a name="intro"></a>
     <h1>Introduction</h1>
     <p>
     The new website uses a static content generator, which means that we have
@@ -320,11 +307,13 @@ export PATH="$PATH:$HOME/.rvm/bin"</pre>
     </p>
     <pre>nanoc deploy -t public</pre>
 
+    <a name="update"></a>
     <h1>Updating schedule data</h1>
     <p>TODO: ssh tunnel to penta.fosdem.org, run <code>nanoc update -y</code></p>
 
     <h1>Adding a new page</h1>
     <p>TODO: create new file under <code class="dir">content/</code> with HTML or Markdown</p>
+    <p>TODO: explain the metadata header sections of Nanoc, especially for the title</p>
 
     <h1>Addign a news item</h1>
     <p>TODO: create new file under <code class="dir">content/news/</code> with a specific filename pattern, with HTML or Markdown</p>
@@ -342,6 +331,31 @@ export PATH="$PATH:$HOME/.rvm/bin"</pre>
     <h1>Sponsors</h1>
     <p>TODO: <code class="dir">content/sponsors/</code>: one .html or .markdown file for the sponsor blurb, and the logo
     as ${sponsor}-big.png as well as a thumbnail of the sponsor logo as ${sponsor}-small.png in that directory.</p>
+    <p>TODO: how sponsors can be enabled and disabled (add <code>disabled: true</code> in the YAML metadata header of <code class="file">content/sponsors/foo.html</code>)</p>
 
-  </body>
-</html>
+    <h1>Stylesheets</h1>
+    <p>TODO: <code class="dir">content/assets/style/parts/</code> and how they are assembled and minified</p>
+
+    <h1>Performance</h1>
+    <p>TODO: the various actions that are taken to make the site extremely fast: digests in asset filenames, CSS minification,
+    CSS sprites, optimization of the CSS sprites, ...</p>
+
+    <h1>Schedule and Pentabarf</h1>
+    <p>TODO: how the schedule data (events, speakers, tracks, rooms, days) are pulled from the Pentabarf database into
+    a local cache (<code class="dir">./export/</code>), how attachments and photos are compared with MD5 hashes from the
+    database to only download what's needed, how thumbnails of photos are made on the fly, and how they are rendered to
+    pages using the layouts under <code class="dir">./layouts/schedule/</code></p>
+
+    <h1>Track descriptions</h1>
+    <p>TODO: how the content from <code class="dir">content/schedule/devrooms/</code> as well as logos (to be implemented)
+    are &quot;injected&quot; into the resulting schedule pages (as we cannot put that data into Pentabarf).</p>
+
+    <h1>Rules</h1>
+    <p>TODO: how the nanoc rules configuration (<code class="file">Rules</code>) works.</p>
+
+    <h1>Nanoc configuration</h1>
+    <p>TODO: explain the various bits in <code class="file">config.yaml</code>.</p>
+
+  </div>
+  </div>
+  </div>
