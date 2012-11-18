@@ -121,7 +121,7 @@ EOF
                      begin
                        d = conf.fetch :database
                        u = conf.fetch :username
-                       pw = conf.fetch :password
+                       pw = conf.fetch :password, ''
                        s = conf.fetch :schema
                        log(:high, "connecting to Pentabarf database //#{h}:#{p}/#{d} with user #{u}")
 

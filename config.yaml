@@ -148,10 +148,10 @@ deploy:
 pentabarf:
   conference_id: FOSDEM13
   username: nanoc
-  password: nanoc
+  password: 
   database: marius
-  host:     localhost
-  port:     15432
+  host:     penta.fosdem.org
+  port:     5432
   schema:   public
   meta_export_file: export/pentabarf.yaml
   export_roots:
