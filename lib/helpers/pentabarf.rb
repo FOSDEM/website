@@ -121,19 +121,21 @@ EOF
                      begin
                        d = conf.fetch :database
                        u = conf.fetch :username
-                       pw = conf.fetch :password, ''
+                       pw = conf.fetch :password, nil
                        s = conf.fetch :schema
                        log(:high, "connecting to Pentabarf database //#{h}:#{p}/#{d} with user #{u}")
 
-                       ActiveRecord::Base.establish_connection(
-                         :adapter => 'postgresql',
-                         :username => u,
-                         :password => pw,
-                         :database => d,
-                         :host => h,
-                         :port => p,
-                         :schema_search_path => s,
-                       )
+                       c = {
+                         adapter: 'postgresql',
+                         username: u,
+                         database: d,
+                         host: h,
+                         port:p,
+                         schema_search_path: s,
+                       }
+                       connection[:password] = pw if pw
+
+                       ActiveRecord::Base.establish_connection(c)
                        connection = ActiveRecord::Base.connection
                        log(:high, "connected to Pentabarf database #{h}:#{p}", Time.now - time_before)
                        connection
