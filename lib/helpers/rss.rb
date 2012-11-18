@@ -7,13 +7,13 @@ module Fosdem
     # Extract parameters
     limit             = params[:limit] || 5
     relevant_articles = params[:articles] || articles || []
-    content_proc      = params[:content_proc] || lambda { |a| a.compiled_content }
-    excerpt_proc      = params[:excerpt_proc] || lambda { |a| a[:excerpt] }
 
     # Check config attributes
     if @site.config[:base_url].nil?
       raise RuntimeError.new('Cannot build RSS feed: site configuration has no base_url')
     end
+
+    excerpt_limit = params.fetch(:excerpt_limit)
 
     # Check feed item attributes
     title = params[:title] || @item[:title] || @site.config[:title]
@@ -59,12 +59,24 @@ module Fosdem
           url = url_for(a)
           next if url.nil?
 
+          excerpt = 
+            begin
+              require 'nokogiri'
+              plain_text = Nokogiri::HTML(a.compiled_content).text
+              words = plain_text.split(/\s+/)
+              if words.size >= excerpt_limit
+                words[0..excerpt_limit].join(" ") + "\u{8230}"
+              else
+                words.join(" ")
+              end
+            end
+
           xml.item do
             xml.title       a[:title]
             xml.guid        rss_tag_for(a)
             xml.pubDate     rss_attribute_to_time(a[:created_at]).to_iso8601_time
             xml.link        url
-            xml.description a.compiled_content
+            xml.description excerpt
           end
         end
       end
