@@ -155,14 +155,8 @@ module Fosdem
 
     title = if microformat
               klass << 'value-title'
-              require 'tzinfo'
-              tz = TZInfo::Timezone.get(conference()[:timezone])
-              offset = tz.period_for_local(DateTime.parse("#{item[:conference_day]} #{time}")).utc_total_offset
-              oh = (offset / (60*24)).to_i
-              om = (offset % (60*24)).to_i
-
-              # ISO 8601
-              %Q! title="#{item[:conference_day]}T#{time}#{'%+02d' % oh}:#{'%02d' % om}"!
+              t = DateTime.parse("#{item[:conference_day]} #{time}").iso8601
+              %Q! title="#{t}"!
             else
               ''
             end

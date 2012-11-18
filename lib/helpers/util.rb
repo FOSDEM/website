@@ -119,7 +119,7 @@ module Fosdem
            else
              fail "unsupported class: #{time.class} #{time.inspect}"
            end
-    time.strftime("%a, %d %b %Y %H:%M:%S %Z")
+    time.rfc2822
   end
 
   def excerpt_words(text, limit, more="\u{8230}")
