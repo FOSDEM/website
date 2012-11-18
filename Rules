@@ -315,7 +315,7 @@ route '/404/' do
 end
 
 route '/howto/' do
-  "/howto.html"
+  "#{$prefix}/howto.html"
 end
 
 # send this one into oblivion, its compiled content is included in
