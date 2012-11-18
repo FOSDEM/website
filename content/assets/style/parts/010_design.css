@@ -567,7 +567,7 @@ a.btn-purple:hover {
 .about-us p{margin:0;}
 .info-block{
 	overflow:hidden;
-	padding:0 23px 99px 11px;
+	padding:0 23px 10px 11px;
 }
 .more-info{
 	line-height:17px;
@@ -608,7 +608,7 @@ a.btn-purple:hover {
 .info-list li{background:url(bullit-info-list.gif) no-repeat 1px 10px;}
 .developers-block{
 	overflow:hidden;
-	padding:0 47px 46px 15px;
+	padding:0 47px 0px 15px;
 }
 .developers-block .video-block{
 	float:right;
