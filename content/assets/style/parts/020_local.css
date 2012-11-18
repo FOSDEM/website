@@ -394,4 +394,13 @@ ul.side-box {
   text-align: center;
   border: 1px solid #000;
 }
+.h-number {
+  color: #999999;
+  display: inline-block;
+  text-indent: -10em;
+  text-align: right;
+}
+.h-number:after {
+  content: ".\00A0";
+}
 
