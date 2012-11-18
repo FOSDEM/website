@@ -86,6 +86,7 @@ module Fosdem
 
               target.path
             end
+            fail "link target is not a rendered page: #{target.identifier}" unless link
             elem[attr] = link
           end
         end
