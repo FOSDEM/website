@@ -314,8 +314,10 @@ route '/404/' do
   "/404.html"
 end
 
+# needs extra routing rule or it will not be rendered
+# as it is a hidden page
 route '/howto/' do
-  "#{$prefix}/howto.html"
+  "#{$prefix}/staff/howto/index.html"
 end
 
 # send this one into oblivion, its compiled content is included in
