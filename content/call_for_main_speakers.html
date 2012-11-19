@@ -1,0 +1,61 @@
+---
+title: Call for Main Track Speakers
+deadline: 2012-12-01
+deadline_extended: true
+aliases: /call_for_main_speakers.html
+---
+<p>
+The <b>main tracks</b> host high-quality seminars for a broad and technical
+audience. Every track is organized around a theme (security, kernel,
+collaboration, ...). They are held in the two biggest auditoria (800 and 1400
+seats) and last 50 minutes. Each of the talks is given by a speaker who gets
+their travel and accommodation costs reimbursed.
+</p>
+
+<p>
+You can propose a main track talk through our
+<a href="https://penta.fosdem.org/submission/<%= conference()[:acronym] %>/" target="_blank">submission system</a>.
+We will select the main track themes and accompanying talks based on the
+submissions we received.
+</p>
+
+<h3>Before applying, be aware that:</h3>
+<ul>
+<li>A speaker is given exactly 50 minutes time, include questions and answers.
+A moderator will be there showing you signs of 15, 10 and 5 minutes left.</li>
+<li>The subject should be about free or open source software development.</li>
+<li>The proposed lecture should be technical. Our visitors do not come to
+FOSDEM for a marketing talk or a simple overview of the features of some
+product.</li>
+<li>All main track talks will be recorded. The recordings and slides will be
+made available freely, shortly after the event.</li>
+</ul>
+
+<h3>Further practical considerations:</h3>
+<ul>
+<li>By sending in your abstract you acknowledge that you keep the FOSDEM dates
+free in case your proposal gets selected.</li>
+<li>The travel expenses and hotel bookings of main track speakers are covered
+by FOSDEM. Speakers are kindly asked to book their travel themselves while
+FOSDEM manages the hotel. Bringing your partner is encouraged but his/her costs
+are not covered by FOSDEM. (except the hotel)</li>
+<li>You will need to keep proof of your expenses, reimbursement will be done
+after the event.</li>
+</ul>
+
+<p>
+If you are interested in doing a Main Track talk at <%= conference()[:title] %>,
+log into our
+<a href="https://penta.fosdem.org/submission/<%= conference()[:acronym] %>/" target="_blank">submission system</a>.
+</p>
+
+<p>
+Questions or issues? Contact us at <a href="mailto:program@fosdem.org">program@fosdem.org</a>
+</p>
+
+<h2>Key Dates</h2>
+<ul>
+<li><%= @item[:deadline].strftime("%A %d %B") %>: deadline main track proposals</li>
+<li>mid November: main track announcements</li>
+<li><%= days.map{|d| d[:conference_day].day}.join(' and ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
+</ul>

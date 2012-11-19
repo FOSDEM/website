@@ -6,7 +6,7 @@ title: Call for participation at FOSDEM
 %>
 <%
   def cfp(tag)
-    item = $item_by_id.fetch("/call/for/#{tag.to_s}/")
+    item = $item_by_id.fetch("/call_for_#{tag.to_s}/")
     text = %Q!To apply, see the <a href="#{item.path}" title="#{henc item[:title]}">#{item[:title].downcase}</a>!
     if item[:deadline_extended] == true
       text << %Q!, <b>deadline extended</b> to !

@@ -1,0 +1,56 @@
+---
+title: Call for Stands
+deadline: 2012-11-28
+aliases: /call_for_stands.html
+---
+<p>
+We offer open source projects a place for <b>a stand</b> in the hallways. 
+</p>
+<p>
+Stands can be used to share information, demo software, sell merchandising,
+give away goodies and so forth. They allow projects to present themselves to
+the visitors in a more personal fashion. 
+</p>
+
+<h3>What we offer:</h3>
+<ul>
+<li>one (max. two tables) of 1m80 x 80cm each, positioned in one of the three
+buildings with devrooms,</li>
+<li>during the whole two days of the conference,</li>
+<li>two chairs per table,</li>
+<li>one power socket type C/E (bring connectors/adapters, etc... yourself),</li>
+<li>fast uplink shared wireless Internet access (a and b),</li>
+</ul>
+
+<h3>Further practical considerations:</h3>
+<ul>
+<li>The proposal should be about a free or open source software project and/or community,</li>
+<li>There is no cost or fee involved when having a stand,</li>
+<li>The stand should be manned by at least 2 persons during the duration of the conference.</li>
+</ul>
+
+<h2>Submission details:</h2>
+Send an email to <a href="mailto:stands@fosdem.org">stands@fosdem.org</a> with:
+<pre>* Project name: ...
+* Stand description
+...
+* Project URLs
+ - http://...
+* Your name and relation to the project
+* Why should FOSDEM accept this proposal?
+...
+* Optionally, if requesting 2 tables, motivation for the second table:
+... 
+</pre>
+
+<p>
+Questions or remarks? Contact us at <a href="mailto:stands@fosdem.org">stands@fosdem.org</a>
+</p>
+
+
+<h2>Key Dates</h2>
+<ul>
+<li><%= @item[:deadline].strftime("%d %B") %>: deadline for stand requests</li>
+<li>mid December: acceptance notification of stands </li>
+<li><%= days.map{|d| d[:conference_day].day}.join(' and ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
+</ul>
