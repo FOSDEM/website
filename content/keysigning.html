@@ -1,0 +1,41 @@
+---
+title: Keysigning
+---
+<p>
+  The annual keysigning event at FOSDEM is one of the largest of its kind.
+  With more than one hundred participants every year, it is an excellent
+  opportunity to strengthen the web of trust.
+</p>
+
+<p>
+  If you intend to participate in the PGP keysigning event at
+  <%= conference()[:title] %>, you must submit the keys you would like to have
+  signed to the keyserver listening on <code>ksp.fosdem.org</code>.  If you
+  are using GnuPG, this can easily be accomplished with:
+</p>
+
+<p style="margin-left: 2em;">
+  <code>% gpg --keyserver ksp.fosdem.org --send-key [keyid]</code>
+</p>
+
+<p>
+  You may want to verify that your submission made it to the keyserver by
+  checking the list of submitted keys at <a
+  href="http://ksp.fosdem.org/">http://ksp.fosdem.org/</a>.
+</p>
+
+<p>
+  The deadline for submissions is <strong>Monday 31 January 2013</strong>.
+  After this date, the keyserver will no longer accept submissions and the
+  official keylist will be published.  Further instructions on what to do with
+  the keylist and how to participate in the keysigning party itself will be
+  communicated at that time.
+</p>
+
+<h3>Submission / Web of Trust Graphs</h3>
+<p>
+  During the submission period, graphs will be generated of the density of the
+  web of trust and the rate at which keys are being submitted.  You can find
+  these graphs at: <a
+  href="https://ksp.fosdem.org/graphs/">https://ksp.fosdem.org/graphs/</a>
+</p>
