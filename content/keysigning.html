@@ -2,22 +2,11 @@
 title: Keysigning
 ---
 <%
-  submission_deadline = "Thursday, 31 January 2013"
-  homework_due = "Sunday, 9 June 2013"
-
-  # Change this when the submission window opens/closes.
-  submission_closed = "The submission period starts Sunday 9 December 2012"
-  #submission_closed = false
-  #submission_closed = "The submission deadline has passed."
-
-  # Change this when the list of keys is published.
-  list_published = false
-
-  # Change this when the hashes of the keylist have been published.
-  hashes_published = false
-
-  # Generate keylist names based on the conference name from pentabarf.yaml.
-  klist = conference()[:title].downcase.gsub(/\s+/,"")
+# vim: set ts=2 sw=2 et ai ft=eruby:
+conf = @site.config.fetch(:keysigning)
+dateformat = "%A, %d %B %Y"
+# Generate keylist names based on the conference name from pentabarf.yaml.
+klist = conference()[:title].downcase.gsub(/\s+/,"")
 %>
 
 <p>
@@ -31,13 +20,14 @@ title: Keysigning
 
 <h3>Before the event</h3>
 <h4>Submit your keys</h4>
-<% if submission_closed %>
-<p>
-  <span class="label label-info">
-    <%= submission_closed %>
-  </span>
+<span class="label label-info">
+  <% if conf.fetch(:submission_closed) %>
+    The submission deadline has passed.
+  <% else %>
+    Submission period starts <%= conf.fetch(:submission_start).strftime(dateformat) %>
+  <% end %>
+</span>
 </p>
-<% end %>
 
 <p>
   If you intend to participate in the PGP keysigning event at
@@ -64,13 +54,13 @@ title: Keysigning
 </p>
 
 <p>
-  The deadline for submissions is <strong><%= submission_deadline %></strong>.
+  The deadline for submissions is <strong><%= conf.fetch(:submission_deadline).strftime(dateformat) %></strong>.
   After this date, the keyserver will no longer accept submissions and the
   official keylist will be published.
 </p>
 
 <h4>Download the list of participants</h4>
-<% if ! list_published %>
+<% unless conf.fetch(:list_published) %>
 <p>
   <span class="label label-info">
     The list of participants has not yet been published!
@@ -85,7 +75,11 @@ title: Keysigning
 </p>
 
 <p>
+<% if conf.fetch(:list_published) %>
   The final list of participants is available from
+<% else %>
+  The final list of participants will be available from
+<% end %>
   <a href="https://ksp.fosdem.org/files/">https://ksp.fosdem.org/files/</a>.
 </p>
 
@@ -103,7 +97,7 @@ title: Keysigning
 </p>
 
 <h3>After the event</h3>
-<% if ! hashes_published %>
+<% unless conf.fetch(:hashes_published) %>
 <p>
   <span class="label label-info">
     The hashes of the keylist have not been published yet.
@@ -118,7 +112,11 @@ title: Keysigning
 </p>
 
 <p>
+<% if conf.fetch(:hashes_published) %>
   The hashes can be downloaded from
+<% else %>
+  You will be able to download the hashes from
+<% end %>
   <a href="https://ksp.fosdem.org/files/">https://ksp.fosdem.org/files/</a>.
   If there is a trust-path between you and the author, you should verify the
   file's detached signature using:
@@ -129,7 +127,8 @@ title: Keysigning
 
 <p>
   Please complete your signing homework before
-  <strong><%= homework_due %></strong>, and upload new signatures on your keys
-  to a well-connected keyserver.  New statistics of the density of the web of
-  trust at FOSDEM will be published soon after that date.
+  <strong><%= conf.fetch(:homework_due).strftime(dateformat) %></strong>, and
+  upload new signatures on your keys to a well-connected keyserver.  New
+  statistics of the density of the web of trust at FOSDEM will be published
+  soon after that date.
 </p>

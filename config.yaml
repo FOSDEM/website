@@ -173,3 +173,12 @@ pentabarf:
     remote_host: penta.fosdem.org
     remote_port: 5432
 
+keysigning:
+  submission_deadline: 2013-01-31
+  homework_due: 2013-06-09
+  submission_start: 2012-12-09
+  # Change this when the submission window opens/closes.
+  submission_closed: false
+  list_published: false
+  hashes_published: false
+
