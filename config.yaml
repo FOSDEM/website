@@ -179,6 +179,8 @@ keysigning:
   submission_start: 2012-12-09
   # Change this when the submission window opens/closes.
   submission_closed: false
+  # Change this when the list of keys is published.
   list_published: false
+  # Change this when the hashes of the keylist have been published.
   hashes_published: false
 
