@@ -36,71 +36,7 @@ module Fosdem
 
       $meta_export_file = conf.fetch :meta_export_file
 
-      gateway, port = begin
-                        s = conf.fetch :tunnel
-                        tunnel_enabled = s.fetch :enabled
-                        if s and tunnel_enabled
-                          require 'net/ssh'
-                          require 'net/ssh/gateway'
-
-                          h = s.fetch :remote_host
-                          p = s.fetch :remote_port
-                          lp = conf.fetch :port
-
-                          sc = Net::SSH::Config.for h
-                          h = sc ? sc.fetch(:host_name, h) : nil
-                          u = sc ? sc[:user] : nil
-
-                          unless sc and u
-                            if sc
-                              $stderr.puts <<EOF
-FATAL ERROR: failed to find "User" in the SSH configuration entry for the host #{h}
-EOF
-                            else
-                              $stderr.puts <<EOF
-FATAL ERROR: failed to find an SSH configuration entry for the host #{h}
-EOF
-                            end
-                            $stderr.puts <<EOF
-
-In order for nanoc to establish the ssh tunnel to the Pentabarf database
-on #{h}:#{p}, it needs to know which remote user name to use.
-That information is expected to be found in one of the following files:
-                            #{Net::SSH::Config.default_files.join($\)}
-
-Example:
-
-Host #{h}
-  HostName penta.fosdem.org
-  User=MY_USERNAME_ON_#{h.upcase}
-  ForwardX11=no
-  ConnectTimeout=30
-  ConnectionAttempts=5
-  ServerAliveInterval=60
-
-EOF
-                            raise "missing configuration information for SSH tunneling"
-                          end
-
-                          time_before = Time.now
-                          gateway = Net::SSH::Gateway.new(h, u)
-                          port = gateway.open('127.0.0.1', p, lp)
-                          log(:high, "connected SSH tunnel #{u}@#{h} :#{lp} -> :#{p}", Time.now - time_before)
-                          [ gateway, port ]
-                        else
-                          [ nil, nil ]
-                        end
-                      end
-
-      begin
-        run_internal(conf, total_time)
-      ensure
-        if gateway and port
-          log(:high, "disconnected SSH tunnel")
-          gateway.close(port)
-        end
-      end
-
+      run_internal(conf, total_time)
     end
 
     private

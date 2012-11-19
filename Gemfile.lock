@@ -56,9 +56,6 @@ GEM
     in_threads (1.1.1)
     kramdown (0.13.8)
     multi_json (1.2.0)
-    net-ssh (2.6.1)
-    net-ssh-gateway (1.1.0)
-      net-ssh (>= 1.99.1)
     nokogiri (1.5.5)
     pdf-reader (1.2.0)
       Ascii85 (~> 1.0.0)
@@ -116,8 +113,6 @@ DEPENDENCIES
   image_optim
   kramdown (~> 0.13.6)
   nanoc!
-  net-ssh
-  net-ssh-gateway
   nokogiri
   pg
   prawn!

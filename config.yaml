@@ -168,10 +168,6 @@ pentabarf:
   eventlogo:
     width: 200
     height: 200
-  tunnel:
-    enabled: false
-    remote_host: penta.fosdem.org
-    remote_port: 5432
 
 keysigning:
   submission_deadline: 2013-01-31
