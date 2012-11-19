@@ -2,8 +2,10 @@
 
 usage       'index'
 summary     'loads the content (in output/) into the Solr search index'
+description 'Default behaviour (when neither --local nor --output is specified) is
+to load the index into Solr on nanoc.fosdem.org through ssh'
 aliases     :i, :solr
-flag        :l, :live, "operate on a live Solr instance"
+flag        :l, :local, "operate on a local Solr instance"
 option      :o, :output, "output file for the Solr add XML document", :argument => :required
 option      :u, :url, "override Solr instance URL (defaults to http://localhost:8983/solr)", :argument => :required
 
@@ -15,7 +17,6 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
     end
     require 'builder'
     require 'nokogiri'
-    #require 'hpricot_scrub'
     require 'time'
     self.require_site
 
@@ -164,6 +165,21 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
       log :high, :write, "Solr <add/> written to #{options[:output]}", Time.now - total_time
     end
 
+    unless solr or options[:output]
+      start = Time.now
+      require 'open3'
+      message = []
+      Open3.popen2e('ssh', 'solr@nanoc.fosdem.org', './solrize') do |i, oe, t|
+        i.puts xml.target!
+        i.close
+        oe.each{|line| message << line}
+        fail "failed to run ssh on solr@nanoc.fosdem.org: #{message.join($/)}" unless t.value.success?
+      end
+      message = message.join($/)
+      if message =~ %r{^(\d+) documents in index$}
+        log :high, :index, "#{$1}/#{self.site.items.size} items in Solr on nanoc.fosdem.org", Time.now - start
+      end
+    end
   end
 
   private
