@@ -36,7 +36,6 @@ fieldset{
 	position:relative;
 	margin:0 0 -5px;
 	padding:0 0 5px;
-	background:url(bg-header.png) repeat-x 0 100%;
 }
 .header-holder{
 	width:937px;
@@ -178,20 +177,19 @@ fieldset{
 .info-box{
 	vertical-align:top;
 	display:inline-block;
-	background:url(bg-visual-info.png) no-repeat;
 }
 *+html .info-box{display:inline;}
 .info-box .holder{
 	float:left;
 	padding:0 5px;
-	background:url(bg-visual-info.png) no-repeat 100% -50px;
 }
 .info-box .frame{
 	text-align:left;
 	float:left;
 	height:38px;
 	padding:12px 5px 0 10px;
-	background:url(bg-visual-info-c.png) repeat-x;
+	padding:12px 14px 0 14px;
+    background: #1e1e1e;
 }
 .info-box span{
 	color:#3b3b3b;
@@ -323,13 +321,13 @@ a.btn-purple:hover {
 .news .date .holder{
 	float:left;
 	margin:0 0 0 -2px;
-	background:#efefef url(bg-news-date.gif) no-repeat;
+    background: #efefef;
 }
 .news-list .date .frame,
 .news .date .frame{
 	float:left;
 	padding:5px 10px 3px 12px;
-	background:url(bg-news-date.gif) no-repeat 100% -25px;
+    border-right: 1px solid #e2e2e2;
 }
 .news-list h3,
 .news h3{
