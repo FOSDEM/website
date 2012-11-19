@@ -148,7 +148,11 @@ module Fosdem
                        when Nanoc::Item
                          filename[:filename]
                        when String
-                         filename
+                         if filename.start_with? '/' and filename.end_with? '/'
+                           $item_by_id.fetch(filename)[:filename]
+                         else
+                           filename
+                         end
                        else
                          fail "unsupported #{f.class} #{f.inspect}"
                        end
@@ -159,7 +163,9 @@ module Fosdem
 
       y = 0
       h.map do |rule, image|
-        %Q!#{rule} { width: #{image.columns}px; height: #{image.rows}px; background-position: 0 #{-y}px; }!
+        line = %Q!#{rule} { width: #{image.columns}px; height: #{image.rows}px; background-position: 0 #{-y}px; }!
+        y += image.rows
+        line
       end
       .join("\n")
     ensure
@@ -184,7 +190,11 @@ module Fosdem
         when Nanoc::Item
           f[:filename]
         when String
-          f
+          if f.start_with? '/' and f.end_with? '/'
+            $item_by_id.fetch(f)[:filename]
+          else
+            f
+          end
         else
           fail "unsupported #{f.class} #{f.inspect}"
         end
