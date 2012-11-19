@@ -21,11 +21,13 @@ module Fosdem
                         end
                     r = f.rindex '.'
                     if r
-                      [ f[0..r-1] + '/', f[r+1..-1] ]
+                      [ f[0..r-1], f[r+1..-1] ]
                     else
-                      [ f + '/', '' ]
+                      [ f, '' ]
                     end
                   end
+
+          id << '/' unless id.end_with? '/'
 
           target = $item_by_id.fetch(id) do
             fail "#{@item.identifier}: references \"#{raw}\" but failed to find matching identifier \"#{id}\""
