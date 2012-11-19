@@ -9,10 +9,10 @@ GIT
 
 GIT
   remote: https://github.com/ddfreyne/nanoc.git
-  revision: 21b6e4dddc984982e4bac7035acaab855011dc4d
-  branch: release-3.4.x
+  revision: fe56409e739898cf73fb701d4b7dac90df56911d
+  branch: master
   specs:
-    nanoc (3.4.2)
+    nanoc (3.5.0)
       cri (~> 2.2)
 
 GEM
