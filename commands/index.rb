@@ -173,7 +173,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
         i.puts xml.target!
         i.close
         oe.each{|line| message << line}
-        fail "failed to run ssh to solr@nanoc.fosdem.org: #{message.join($/)}#{$/$/}Please contact server@fosdem.org" unless t.value.success?
+        fail "failed to run ssh to solr@nanoc.fosdem.org: #{message.join($/)}#{$/}#{$/}Please contact server@fosdem.org" unless t.value.success?
       end
       message = message.join($/)
       if message =~ %r{^(\d+) documents in index$}
