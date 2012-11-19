@@ -19,43 +19,43 @@ devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:c
 lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
 %>
-<p>There are several kinds of activities going on at every edition of FOSDEM,
-which are outlined here, with links to various bits of information about the
-schedule.</p>
+<p>Every year, FOSDEM hosts a wide variety of activities.
+An overview with links to further information about the
+schedule can be found here.</p>
 <p>FOSDEM is also a very busy conference,
 <% if speakers.size > 100 and events.size > 100 %>
   with this edition sporting
   <%= speakers.size %> speakers, <%= events.size %> sessions,
-  and <%= tracks.size %> tracks,
+  and <%= tracks.size %> tracks.
 <% else %>
   with recent editions sporting
-  400+ speakers, 400+ sessions and a wealth of tracks,
+  400+ speakers, 400+ sessions and a wealth of tracks.
 <% end %>
-but we do our best to provide you with as much information and navigation
+But we do our best to provide you with as much information and navigation
 options about the schedule as we can.</p>
 
-<p>Activities take place in all of
-<a href="<%= pathof '/schedule/rooms/' %>"> the <%= rooms.size %> rooms</a>
-that are spread across several buildings or clusters of rooms of
+<p>Activities take place across
+<a href="<%= pathof '/schedule/rooms/' %>"> <%= rooms.size %> rooms</a>
+that are spread across several buildings of
 <a href="<%= pathof '/practical/transportation/' %>">the Campus Solbosch of the ULB (Université Libre de Bruxelles)</a>
 .<br/>
 An <a href="<%= pathof '/schedule/roomtracks/' %>">overview of the room occupation by track</a>
 is available, too.</p>
 
-<p>There are essentially five different categories of sessions and activities
-held at FOSDEM, which are detailed below: <a href="#keynotes">Keynotes</a>,
-<a href="#maintracks">Main Tracks</a>, <a href="#devrooms">Developer Rooms</a>
-(amongst which the somewhat special <a href="#distrominiconf">&quot;Distro Miniconf&quot;</a>),
+<p>There are essentially five different categories of sessions and activities:
+<a href="#keynotes">Keynotes</a>,
+<a href="#maintracks">Main Tracks</a>,
+<a href="#devrooms">Developer Rooms</a> (amongst which the somewhat special
+<a href="#distrominiconf">&quot;Distro Miniconf&quot;</a>),
 <a href="#lightningtalks">Lightning Talks</a> and
 <a href="#certification">Certification exams and related activities</a>.
 
 <h3><a name="keynotes"></a>Keynotes</h3>
-<p>As with almost every other conference, the FOSDEM Program Committee
-invites a few speakers to talk about often slightly less technical but nevertheless
-interesting topics around Free and Open Source software to get the audience
-gently started into the day, as well as a closing keynote to help everyone
-digest the vast amount of insightful information that has been collected
-during the event.</p>
+<p>Like almost every other conference, FOSDEM invites speakers to gently start
+the day with talks concerning slightly less technical, but nevertheless interesting
+topics from the Free and Open Source realm. The closing keynote at the end of the
+conference helps everyone digest the vast amount of insightful information
+collected over the weekend.</p>
 <% unless keynotes.empty? %>
 <p>For this edition, the keynotes are as follows:</p>
 <table class="table table-striped table-bordered table-condensed">
@@ -91,7 +91,7 @@ during the event.</p>
     </tbody>
 </table>
 <% else %>
-  <p><span class="label label-info">No keynotes have been confirmed yet at this point of time.</span></p>
+  <p><span class="label label-info">No keynotes have been confirmed yet.</span></p>
 <% end %>
 
 <h3><a name="maintracks"></a>Main Tracks</h3>
@@ -99,7 +99,7 @@ during the event.</p>
 where the FOSDEM Program Committee selects suggestions and actively invites
 speakers on those topics.</p>
 <% unless maintracks.empty? %>
-<p>For this edition these are the main tracks:</p>
+<p>For this edition the main tracks are:</p>
 <table class="table table-striped table-bordered table-condensed">
     <thead>
         <th>Track</th>
@@ -126,25 +126,25 @@ speakers on those topics.</p>
     </tbody>
 </table>
 <% else %>
-<p><span class="label label-info">No main tracks have been confirmed yet at this point of time.</span></p>
+<p><span class="label label-info">No main tracks have been confirmed yet.</span></p>
 <% end %>
 
 <h3><a name="distrominiconf"></a>Distribution Miniconf</h3>
-<p>As the number of requests for <a href="#devrooms">developer rooms</a> grew and grew over the years,
-with having only limited (albeit quite extensive) infrastructure to put at the disposal of open source
-projects, combined with the fact that a significant fraction of those requests came from distribution
-projects (Linux and *BSD distributions), we decided to start doing a &quot;conference in the conference&quot;
+<p>As the number of requests for <a href="#devrooms">developer rooms</a> grew over the years,
+having only limited (albeit quite extensive) infrastructure to put at the disposal of open source
+projects, combined with the fact that a significant fraction of those requests came from Linux and *BSD distribution
+projects, we decided to start doing a &quot;conference in the conference&quot;
 with several goals in mind:</p>
 <ul>
     <li>avoid having almost all the developer rooms taken by distribution projects</li>
-    <li>give a change for all distribution projects that want to take part into the conference to do so</li>
-    <li>incite collaboration amongst such projects, as while do each do have
-their specificities, they also do share a lot of tasks, goals, tools and
-concepts (and, after all, fostering collaboration is the prime goal of
-FOSDEM)</li>
+    <li>give a chance for all distribution projects that want to take part into the conference to do so</li>
+    <li>incite collaboration amongst such projects. While each have
+their specificities, they also share a lot of tasks, goals, tools and
+concepts. And, after all, fostering collaboration is the prime goal of
+FOSDEM.</li>
 </ul>
 <p>Hence, in 2011, we started organising a <a href="#devrooms">developer room</a> on the topic of distributions, with
-participants coming from many different such (open source) projects, and we dubbed it
+participants coming from many different open source projects, dubbed the
 <a href="<%= pathof '/distrominiconf/' %>">&quot;distro miniconf&quot;</a>.</p>
 <p>As there are many participants and a wealth of interesting topics to talk about, present and share, the
 <%= l '/distrominiconf/' %> takes place in two rooms across both days of the conference.</p>
@@ -152,7 +152,7 @@ participants coming from many different such (open source) projects, and we dubb
 <p>The exact schedule of the <%= l '/distrominiconf/' %> currently sports <%= distroevents.size %> sessions
 and <%= l '/schedule/track/crossdistribution/' %> can be seen here</a>.</p>
 <% else %>
-<p><span class="label label-info">No distribution miniconf sessions have been confirmed yet at this point of time.</span></p>
+<p><span class="label label-info">No distribution miniconf sessions have been confirmed yet.</span></p>
 <% end %>
 
 <h3><a name="devrooms"></a>Developer Rooms</h3>
@@ -178,23 +178,23 @@ columns = 3
     </div>
 </div>
 <% else %>
-<p><span class="label label-info">No devrooms have been confirmed yet at this point of time.</span></p>
+<p><span class="label label-info">No devrooms have been confirmed yet.</span></p>
 <% end %>
 
 <h3><a name="lightningtalks"></a>Lightning Talks</h3>
-<p>Lightning Talks are a very popular format that is used at many conferences, where speakers have a mere
+<p>The Lightning Talk is a very popular format, used at many conferences, where speakers have a mere
 15 minutes at their disposal to showcase a Free or Open Source project, an idea, or a concept thereof.</p>
 <p>While that brief lapse of time may seem awkward, it almost always leads the presenters to concentrate
 on the absolute essence and what is really important, which is why it is often a much appreciated approach,
-along side with the variety of the topics.</p>
+as is the wide variety of the topics.</p>
 <% unless ltalks.empty? %>
 <p>There are currently <a href="<%= lt_track.path %>"><%= ltalks.size %> lightning talks in the schedule</a>.</p>
 <% else %>
-<p><span class="label label-info">No lightning talks have been confirmed yet at this point of time.</span></p>
+<p><span class="label label-info">No lightning talks have been confirmed yet.</span></p>
 <% end %>
 
 <h3><a name="certification"></a>Certification</h3>
 <p>Several certification organizations provide FOSDEM visitors with the opportunity of taking certification
 exams during the conference.</p>
-<p><span class="label label-info">No certification exams have been confirmed at this point of time.</span></p>
+<p><span class="label label-info">No certification exams have been confirmed yet.</span></p>
 

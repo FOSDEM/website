@@ -8,14 +8,14 @@ enterprises.
 
 HP helps businesses focus on innovation instead of IT operations by offering
 robust solutions based on HP inventions, open source software, and
-industry-standard hardware in a converged infrastructure. In fact, as the
+industry-standard hardware in a converged infrastructure. As the
 leading provider of scalable Linux platforms, HP ships one Linux server every
 minute.
 
 HP not only uses open source within the company extensively but also
-contributes our expertise to hundreds of open source projects worldwide. In
-fact, we built tools for open source governance in enterprises, then released
-them as an open source project called FOSSology. Also, HP helps lead the
+contributes their expertise to hundreds of open source projects worldwide. They
+built tools for open source governance in enterprises, then released
+them as an open source project called FOSSology. Aditionally, HP helps lead the
 thriving FOSSBazaar community focused on free and open source governance best
 practices, education, and tools.
 
