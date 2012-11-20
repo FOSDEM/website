@@ -19,6 +19,15 @@
 ##### PREPROCESSING
 preprocess do
 
+  # Check for presence of export file first:
+  begin
+    f = config.fetch(:pentabarf).fetch(:meta_export_file)
+    unless File.exists? f
+      # ... and fail if it doesn't exist
+      fail "Failed to find schedule metadata export file #{f}#{$/}Did you run \"nanoc update -y\" ?"
+    end
+  end
+
   # Determine the prefix for output paths and absolute links by using either
   # the "config" setting in config.yaml, if present, or, better, determine it
   # automatically from the schedule information that is exported from Pentabarf,
