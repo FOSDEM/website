@@ -596,14 +596,10 @@ a.btn-purple:hover {
 .info-block .text-block h2{margin:0 0 19px -4px;}
 .info-block .text-block p{margin:0 0 34px;}
 .info-list{
-	text-indent:9px;
-	margin:-3px 0 0 22px;
-	padding:0;
-	list-style:none;
+	list-style:square;
 	line-height:22px;
 	font-weight:600;
 }
-.info-list li{background:url(bullit-info-list.gif) no-repeat 1px 10px;}
 .developers-block{
 	overflow:hidden;
 	padding:0 47px 0px 15px;
