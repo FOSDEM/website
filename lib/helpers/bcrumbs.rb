@@ -4,7 +4,7 @@ module Fosdem
   def bcrumbs(opts={})
     require 'builder'
 
-    divider = opts.fetch(:divider, false)
+    separator = opts.fetch(:separator, nil)
 
     # smarter breadcrumbs, preprocess here
     path = case @item.identifier
@@ -107,6 +107,16 @@ module Fosdem
       else
         %Q!<li>#{title}</li>!
       end
+    end
+
+    if separator
+      list = list.each_with_index.map do |item, i|
+        if i > 0
+          [ %Q!<li class="separator">#{separator}</li>!, item ]
+        else
+          [ item ]
+        end
+      end.flatten
     end
 
     list.join('')

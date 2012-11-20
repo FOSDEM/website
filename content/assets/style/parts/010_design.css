@@ -407,10 +407,11 @@ a.btn-purple:hover {
 }
 .breadcrumbs li{
 	float:left;
-	margin:0 12px 0 -12px;
-	padding:0 5px 0 12px;
-	background:url(separator-breadcrumbs.gif) no-repeat;
-	line-height:15px;
+	margin:0 0.1em;
+	padding:0 0.1em;
+}
+.breadcrumbs li.separator {
+    color: #9f9f9f;
 }
 .breadcrumbs a{
     color:#3679c4;
@@ -430,56 +431,6 @@ a.btn-purple:hover {
 	background:url(btn-home-breadcrumbs.png) no-repeat;
 }
 .breadcrumbs .home a:hover{background-position:0 -11px;}
-.schedule-title{
-	margin:0 10px 4px;
-	font-size:26px;
-	line-height:30px;
-}
-.schedule-panel{
-	margin:0;
-	padding:0 22px 0 0;
-	list-style:none;
-	font-size:22px;
-	line-height:27px;
-	font-weight:bold;
-	text-align:center;
-	background:url(bg-schedule-panel.gif) repeat-x 0 14px;
-}
-.schedule-panel li{
-	vertical-align:top;
-	display:inline-block;
-	margin:0 -17px 0 0;
-	padding:0 58px 0 48px;
-	background:#fff url(separator-schedule-panel.gif) no-repeat 0 3px;
-}
-*+html .schedule-panel li{display:inline;}
-.schedule-panel li:first-child{
-	background-image:none;
-	padding-left:34px;
-}
-.schedule-panel a{color:#3579c4;}
-.schedule-panel a:hover,
-.schedule-panel .active a{
-	text-decoration:none;
-	color:#333;
-}
-.schedule-block{
-	overflow:hidden;
-	position:relative;
-	margin:-28px 0 0;
-}
-.schedule-block .holder{
-	position:relative;
-	float:left;
-	left:50%;
-}
-.schedule-block .frame{
-	padding:0 0 0 12px;
-	position:relative;
-	float:left;
-	left:-50%;
-}
-.schedule-block img{vertical-align:top;}
 .title-box{
 	position:relative;
 	z-index:5;

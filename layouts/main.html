@@ -110,7 +110,7 @@ $layout_dateline ||= begin
     <div id="main">
       <% unless @item[:breadcrumbs] == false or @item[:visual] == true %>
       <ul class="breadcrumbs">
-        <%= bcrumbs %>
+        <%= bcrumbs(separator: '/') %>
       </ul>
       <% end %>
 
