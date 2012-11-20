@@ -113,8 +113,8 @@ for the contact address.
       <tr>
         <td><%= daytext.fetch(meta.fetch(:days)) %></td>
         <td><%= devroom.to_s %></td>
-        <td><%= cfp_mail_uri(meta[:mail]) %></td>
-        <td><%= cfp_date(meta[:date]) %></td>
+        <td><%= cfp_mail_uri(meta[:ann]) %></td>
+        <td><%= cfp_date(meta[:deadline]) %></td>
       </tr>
     <% end %>
   </tbody>
