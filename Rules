@@ -9,11 +9,8 @@
 # Questions -> loki@fosdem.org
 # Documentation -> http://nanoc.stoneship.org/docs/
 #
-# Copyright (C) FOSDEM ASBL/VZW
-#
-# This code and all other code in this project are covered by the
-# GNU General Public License version 2 or later:
-# https://spdx.org/licenses/GPL-2.0+
+# Copyright (c) 2012 FOSDEM VZW
+# See the LICENSE file this this repository for licensing terms.
 #
 
 ##### PREPROCESSING

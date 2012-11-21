@@ -10,10 +10,8 @@
         template="<%= conference()[:homepage] %>/search/?q={searchTerms}&amp;page={startPage?}"/>
     <Image height="16" width="16" type="image/vnd.microsoft.icon"><%= conference()[:homepage] %>/favicon.ico</Image>
     <Query role="example" searchTerms="open source"/>
-    <Developer>FOSDEM developers</Developer>
-    <Attribution>
-        Copyright 2013, FOSDEM ASBL, published under the terms of the GNU General Public License version 3 or higher.
-    </Attribution>
+    <Developer>FOSDEM VZW</Developer>
+    <Attribution>Copyright (c) 2012 FOSDEM VZW</Attribution>
     <AdultContent>false</AdultContent>
     <Language>en-us</Language>
     <OutputEncoding>UTF-8</OutputEncoding>
