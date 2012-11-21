@@ -482,6 +482,15 @@ route '/root_favicon/' do
   "/favicon.#{item[:extension]}"
 end
 
+route '/icon/' do
+  suffix = if @site.config[:digest_assets] then
+             "-#{digest item}"
+           else
+             ""
+           end
+  "#{$prefix}/icon#{suffix}.#{item[:extension]}"
+end
+
 # and this is for everything else:
 route '*' do
   unless item[:kind] == 'internal' or item[:hidden] == true
