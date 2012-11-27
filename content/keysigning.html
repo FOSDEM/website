@@ -4,7 +4,7 @@ title: Keysigning
 <%
 # vim: set ts=2 sw=2 et ai ft=eruby:
 conf = @site.config.fetch(:keysigning)
-dateformat = "%A, %d %B %Y"
+dateformat = "%A, %e %B %Y"
 # Generate keylist names based on the conference name from pentabarf.yaml.
 klist = conference()[:title].downcase.gsub(/\s+/,"")
 %>

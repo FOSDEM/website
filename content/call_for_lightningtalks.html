@@ -34,7 +34,7 @@ Questions or remarks? Contact us at <a href="mailto:lightningtalks@fosdem.org">l
 
 <h2>Key Dates</h2>
 <ul>
-<li><%= @item[:deadline].strftime("%A %d %B") %>: deadline for lightningtalk requests</li>
+<li><%= @item[:deadline].strftime("%A, %e %B %Y") %>: deadline for lightningtalk requests</li>
 <li>mid December: acceptance notification of lightningtalks</li>
 <li><%= days.map{|d| d[:conference_day].day}.join(' and ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
 </ul>

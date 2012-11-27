@@ -6,9 +6,9 @@ at FOSDEM 2013:</p>
 ---MORE---
 <%
   daymap = {
-    'Saturday' => day('saturday')[:conference_day].strftime('%a, %b %d %Y'),
-    'Sunday' => day('sunday')[:conference_day].strftime('%a, %b %d %Y'),
-    'Both days' => day('saturday')[:conference_day].strftime('%a %d') + " + " + day('sunday')[:conference_day].strftime('%a %d %b %Y')
+    'Saturday' => day('saturday')[:conference_day].strftime('%e %B %Y'),
+    'Sunday' => day('sunday')[:conference_day].strftime('%e %B %Y'),
+    'Both days' => day('saturday')[:conference_day].strftime('%e') + " &amp; " + day('sunday')[:conference_day].strftime('%e %B %Y')
   }
   daytext = {
     'sat' => 'Saturday',
