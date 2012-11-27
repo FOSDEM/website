@@ -50,7 +50,7 @@ Questions or remarks? Contact us at <a href="mailto:stands@fosdem.org">stands@fo
 
 <h2>Key Dates</h2>
 <ul>
-<li><%= @item[:deadline].strftime("%d %B") %>: deadline for stand requests</li>
+<li><%= @item[:deadline].strftime("%e %B %Y") %>: deadline for stand requests</li>
 <li>mid December: acceptance notification of stands </li>
-<li><%= days.map{|d| d[:conference_day].day}.join(' and ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
+<li><%= days.map{|d| d[:conference_day].day}.join(' &amp; ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
 </ul>

@@ -55,7 +55,7 @@ Questions or issues? Contact us at <a href="mailto:program@fosdem.org">program@f
 
 <h2>Key Dates</h2>
 <ul>
-<li><%= @item[:deadline].strftime("%A %d %B") %>: deadline main track proposals</li>
+<li><%= @item[:deadline].strftime("%A, %e %B %Y") %>: deadline main track proposals</li>
 <li>mid November: main track announcements</li>
 <li><%= days.map{|d| d[:conference_day].day}.join(' and ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
 </ul>

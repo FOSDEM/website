@@ -13,7 +13,7 @@ title: Call for participation at FOSDEM
     else
       text << %Q!, <b>deadline</b> on !
     end
-    text << %Q!<span class="label label-info">#{item[:deadline].strftime("%a %Y-%m-%d")}</span>!
+    text << %Q!<span class="label label-info">#{item[:deadline].strftime("%A, %e %B %Y")}</span>!
 
     text
   end
@@ -70,9 +70,9 @@ for the contact address.
 
 <%
   daymap = {
-    'Saturday' => day('saturday')[:conference_day].strftime('%a, %b %d %Y'),
-    'Sunday' => day('sunday')[:conference_day].strftime('%a, %b %d %Y'),
-    'Both days' => day('saturday')[:conference_day].strftime('%a %d') + " + " + day('sunday')[:conference_day].strftime('%a %d %b %Y')
+    'Saturday' => day('saturday')[:conference_day].strftime('%e %B %Y'),
+    'Sunday' => day('sunday')[:conference_day].strftime('%e %B %Y'),
+    'Both days' => day('saturday')[:conference_day].strftime('%e') + " &amp; " + day('sunday')[:conference_day].strftime('%e %B %Y')
   }
   daytext = {
     'sat' => 'Saturday',
