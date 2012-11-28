@@ -388,6 +388,19 @@ end
 # output for these:
 route '/schedule/devrooms/*/' do;end
 
+route '/assets/style/sprite/' do
+  suffix = if @site.config[:digest_assets]
+             require 'digest/sha2'
+             sha = Digest::SHA256.new
+             Dir.entries('content/sponsors').select{|f| f =~ %r{-(big|small)\.(png|jpg|jpeg|gif)$}}.each{|f| sha << IO.read(File.join('content/sponsors', f))}
+             "-" + sha.hexdigest.downcase
+           else
+             ""
+           end
+
+  "#{$prefix}#{item.identifier.chop}#{suffix}.#{item[:extension]}"
+end
+
 # deploy content/assets/style/foo.css as output/assets/style/foo.css
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
 route '/assets/style/*/' do
@@ -397,6 +410,7 @@ route '/assets/style/*/' do
            else
              ""
            end
+
   "#{$prefix}#{item.identifier.chop}#{suffix}.#{item[:extension]}"
 end
 # do the same with assets/img/*
