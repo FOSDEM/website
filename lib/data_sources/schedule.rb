@@ -80,7 +80,7 @@ module Fosdem
         }.each do |key, kind|
             crawl(key, :kind => kind.to_sym) do |filename, meta|
               id = meta.delete('identifier')
-              fail "#{id}\n#{memory[id].inspect}" if memory[id]
+              fail "duplicate: #{id}\n#{memory[id].inspect} (#{memory[id][:filename]})" if memory[id]
               i = Nanoc3::Item.new(filename, meta, id, {binary: true})
               memory[id] = i
               i
@@ -99,11 +99,11 @@ module Fosdem
 
       Dir[File.join(dir, '/**/*')]
       .select{|f| File.file?(f)}
-      .reject{|f| f =~ /\.(hash|meta)$/}
+      .reject{|f| f =~ /\.(hash|yaml)$/}
       .map do |filename|
         d, s, name, ext = sanitize_filename filename
 
-        meta_filename = File.join([d, "#{name}.meta"].reject(&:nil?))
+        meta_filename = File.join([d, "#{name}.yaml"].reject(&:nil?))
         meta = YAML.load_file(meta_filename)
         meta[:checksum] = sha_file(filename)
         meta[:mtime] = File.mtime(filename)
