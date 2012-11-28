@@ -387,4 +387,26 @@ module Fosdem
     [ buildings, room_to_building ]
   end
 
+  def deadline(id, format='%A, %e %B %Y')
+    @site.config.fetch(:deadlines).fetch(id).sort.last.strftime(format)
+  end
+
+  def deadlines(id, format='%e %B %Y', format_current='%A, %e %B %Y')
+    deadlines = @site.config.fetch(:deadlines).fetch(id).sort
+    if deadlines.size > 1
+      current = deadlines.pop
+      (deadlines.map{|d| "<del>#{d.strftime(format)}</del>"} + ["<ins>#{current.strftime(format_current)}</ins>"]).join(" ")
+    else
+      deadlines.first.strftime(format_current)
+    end
+  end
+
+  def extended_deadline?(id)
+    if @site.config.fetch(:deadlines).fetch(id).size > 1
+      true
+    else
+      false
+    end
+  end
+
 end

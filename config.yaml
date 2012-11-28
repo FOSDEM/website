@@ -180,3 +180,13 @@ keysigning:
   # Change this when the hashes of the keylist have been published.
   hashes_published: false
 
+deadlines:
+  lightningtalks:
+    - 2012-12-01
+    - 2012-12-21
+  main_speakers:
+    - 2012-12-01
+  stands:
+    - 2012-11-28
+    - 2012-12-15
+

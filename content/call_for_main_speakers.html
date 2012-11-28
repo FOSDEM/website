@@ -1,7 +1,5 @@
 ---
 title: Call for Main Track Speakers
-deadline: 2012-12-01
-deadline_extended: true
 aliases: /call_for_main_speakers.html
 ---
 <p>
@@ -18,6 +16,12 @@ You can propose a main track talk through our
 We will select the main track themes and accompanying talks based on the
 submissions we received.
 </p>
+
+<% if extended_deadline? :main_speakers %>
+<div class="label label-info">
+  The deadline has been extended to <%= deadline :main_speakers %>.
+</div>
+<% end %>
 
 <h3>Before applying, be aware that:</h3>
 <ul>
@@ -55,7 +59,7 @@ Questions or issues? Contact us at <a href="mailto:program@fosdem.org">program@f
 
 <h2>Key Dates</h2>
 <ul>
-<li><%= @item[:deadline].strftime("%A, %e %B %Y") %>: deadline main track proposals</li>
-<li>mid November: main track announcements</li>
+<li><%= deadline :main_speakers %>: deadline main track proposals</li>
+<li>mid/end of December: main track announcements</li>
 <li><%= days.map{|d| d[:conference_day].day}.join(' and ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
 </ul>

@@ -1,6 +1,5 @@
 ---
 title: Call for Lightning Talks
-deadline: 2012-12-01
 aliases: /call_for_lightningtalks.html
 ---
 <p>
@@ -13,6 +12,12 @@ or devroom the opportunity to speak. During exactly 15 minutes, one person gets
 to present the project or any aspect of it. All the lightning talks happen in a
 large room that can host up to 300 people.
 </p>
+
+<% if extended_deadline? :lightningtalks %>
+<div class="label label-info">
+  The deadline has been extended to <%= deadline :lightningtalks %>.
+</div>
+<% end %>
 
 <h3>Before applying, note that:</h3>
 <ul>
@@ -31,10 +36,9 @@ The submission system with instructions is available at:
 Questions or remarks? Contact us at <a href="mailto:lightningtalks@fosdem.org">lightningtalks@fosdem.org</a>
 </p>
 
-
 <h2>Key Dates</h2>
 <ul>
-<li><%= @item[:deadline].strftime("%A, %e %B %Y") %>: deadline for lightningtalk requests</li>
+<li><%= deadline(:lightningtalks) %>: deadline for lightningtalk requests</li>
 <li>mid December: acceptance notification of lightningtalks</li>
 <li><%= days.map{|d| d[:conference_day].day}.join(' and ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
 </ul>

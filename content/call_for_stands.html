@@ -1,6 +1,5 @@
 ---
 title: Call for Stands
-deadline: 2012-11-28
 aliases: /call_for_stands.html
 ---
 <p>
@@ -11,6 +10,12 @@ Stands can be used to share information, demo software, sell merchandising,
 give away goodies and so forth. They allow projects to present themselves to
 the visitors in a more personal fashion. 
 </p>
+
+<% if extended_deadline? :stands %>
+<div class="label label-info">
+    The deadline has been extended to <%= deadline :stands %>.
+</div>
+<% end %>
 
 <h3>What we offer:</h3>
 <ul>
@@ -50,7 +55,7 @@ Questions or remarks? Contact us at <a href="mailto:stands@fosdem.org">stands@fo
 
 <h2>Key Dates</h2>
 <ul>
-<li><%= @item[:deadline].strftime("%e %B %Y") %>: deadline for stand requests</li>
+<li><%= deadline(:stands) %>: deadline for stand requests</li>
 <li>mid December: acceptance notification of stands </li>
 <li><%= days.map{|d| d[:conference_day].day}.join(' &amp; ') + " " + days.first[:conference_day].strftime('%B') %>: <%= conference()[:title] %></li>
 </ul>
