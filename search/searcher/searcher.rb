@@ -12,134 +12,6 @@ $type_label = {
   interview: 'inverse',
 }
 
-template :atom do
-  <<-EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"
-      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
-  <title>FOSDEM Search: <%= @q %></title>
-  <link href="<%= @page_link %>"/>
-  <opensearch:totalResults><%= @num_results %></opensearch:totalResults>
-  <opensearch:startIndex><%= @current_page %></opensearch:startIndex>
-  <opensearch:itemsPerPage><%= settings.results_per_page %></opensearch:itemsPerPage>
-  <opensearch:Query role="request" searchTerms="<%= @q %> startPage="<%= @current_page %>"/>
-  <link rel="alternate" href="<%= @page_link %>page=<%= @current_page %>" type="text/html"/>
-  <link rel="self" href="<%= @page_link %>page=<%= @current_page %>" type="application/atom+xml"/>
-  <link rel="first" href="<%= @page_link %>page=1" type="application/atom+xml"/>
-  <% if @prev_page %>
-  <link rel="previous" href="<%= @prev_page %>" type="application/atom+xml"/>
-  <% end %>
-  <% if @next_page %>
-  <link rel="next" href="<%= @next_page %>" type="application/atom+xml"/>
-  <% end %>
-  <link rel="last" href="<%= @page_link %>page=<%= @last_page %>" type="application/atom+xml"/>
-  <% @results.each do |r| %>
-  <entry>
-    <title><%= r[:title_nohl] %></title>
-    <link href="<%= r[:href] %>"/>
-    <% if r[:text_nohl] %>
-    <content type="text"><%= r[:text_nohl] %></content>
-    <% end %>
-  </entry>
-  <% end %>
-</feed>
-EOF
-end
-
-template :html do
-  <<-EOF
-<%
-  case @num_results
-  when 0
-%>
-<p class="no-search-results">Found no content that matches the query.</p>
-<%
-  when 1
-%>
-<p class="search-result-count">Found one piece of content that matches the query:</p>
-<%
-  else
-%>
-<p class="search-result-count">Found <%= @num_results %> matches for your query, with up to #{settings.results_per_page} results per page:</p>
-<%
-  end
-%>
-<ul class="search-results">
-<% @results.each_with_index do |r, i| %>
-  <li style="padding-bottom: 1em;" class="<%= i % 2 == 0 ? 'even' : 'odd' %>">
-    <a href="<%= r[:href] %>"><% if r[:kind] %><span class="search-result-kind"><%= r[:kind].to_s.capitalize %>:</span> <% end %><%= r[:title] %></a>
-    <% unless r[:types].reject{|t| t == 'schedule'}.empty? %>
-    <span class="pull-right">
-    <% r[:types].reject{|t| t == 'schedule'}.each do |t| %>
-    <span class="label label-<%= $type_label.fetch(t.to_sym, 'unknown') %>"><%= t %></span>
-    <% end %>
-    <% if r[:interview_year] %>
-    <span class="label"><%= r[:interview_year] %></span>
-    <% end %>
-    </span>
-    <% end %>
-    <% if r[:text] %><p><small><%= r[:text] %></small></p><% end %>
-  </li>
-<% end %>
-</ul> <!-- search-results -->
-
-<% if @pagination %>
-<div class="pagination pagination-centered">
-  <ul>
-    <% if @prev_page %>
-    <li><a href="<%= @page_link %>&page=<%= @prev_page %>" rel="prev">Prev</a></li>
-    <% else %>
-    <li class="disabled"><a>Prev</a></li>
-    <% end %>
-    <% (1..@pages).each do |p| %>
-    <li<% if p == @current_page %> class="active" rel="canonical"<% end %>><a href="<%= @page_link %>&page=<%= p %>"><%= p %></a></li>
-    <% end %>
-    <% if @next_page %>
-    <li><a href="<%= @page_link %>&page=<%= @next_page %>" rel="next">Next</a></li>
-    <% else %>
-    <li class="disabled"><a>Next</a></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-EOF
-end
-
-template :error do
-  <<-EOF
-<div class="alert alert-block">
-  <h4>Oops!</h4>
-  Something went booboo with the search.
-</div>
-<% if @error %>
-<pre><%= @error %></pre>
-<% end %>
-EOF
-end
-
-template :facets do
-  <<-EOF
-<form id="refine-search" class="nav nav-list" action="<%= @base_uri %>" method="get">
-  <div class="input-prepend">
-    <span class="add-on"><i class="icon-search"></i></span>
-    <input type="text" id="q" name="q" class="span10 input-medium" value="<%= @q %>" />
-  </div>
-  <% (@facets or {}).each do |facet, count| %>
-    <label class="checkbox"><%= facet.capitalize %> (<%= count %>)
-      <input type="checkbox" name="<%= facet %>" value=""<% if @types.include? facet %> checked="checked"<% end %> onclick="this.form.submit();"/>
-    </label>
-  <% end %>
-  <% (@interview_year_facets or {}).each do |value, count| %>
-    <label class="checkbox"><%= value %> (<%= count %>)
-      <input type="checkbox" name="interview_year[]" value="<%= value %>"<% if @interview_years.include? value %> checked="checked"<% end %> onclick="this.form.submit();"/>
-    </label>
-  <% end %>
-  <button type="submit" class="btn btn-small"><i class="icon-repeat"></i> Refine search</button>
-</form>
-<li class="divider"></li>
-EOF
-end
-
 set(:has_parameter) do |parameter|
   condition do
     params.has_key? parameter.to_s and not params[parameter.to_s].strip.empty?
@@ -395,4 +267,120 @@ def search(template=:html, layout=:layout)
     erb template, :layout => layout
   end
 end
+
+@@ atom
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <title>FOSDEM Search: <%= @q %></title>
+  <link href="<%= @page_link %>"/>
+  <opensearch:totalResults><%= @num_results %></opensearch:totalResults>
+  <opensearch:startIndex><%= @current_page %></opensearch:startIndex>
+  <opensearch:itemsPerPage><%= settings.results_per_page %></opensearch:itemsPerPage>
+  <opensearch:Query role="request" searchTerms="<%= @q %> startPage="<%= @current_page %>"/>
+  <link rel="alternate" href="<%= @page_link %>page=<%= @current_page %>" type="text/html"/>
+  <link rel="self" href="<%= @page_link %>page=<%= @current_page %>" type="application/atom+xml"/>
+  <link rel="first" href="<%= @page_link %>page=1" type="application/atom+xml"/>
+  <% if @prev_page %>
+  <link rel="previous" href="<%= @prev_page %>" type="application/atom+xml"/>
+  <% end %>
+  <% if @next_page %>
+  <link rel="next" href="<%= @next_page %>" type="application/atom+xml"/>
+  <% end %>
+  <link rel="last" href="<%= @page_link %>page=<%= @last_page %>" type="application/atom+xml"/>
+  <% @results.each do |r| %>
+  <entry>
+    <title><%= r[:title_nohl] %></title>
+    <link href="<%= r[:href] %>"/>
+    <% if r[:text_nohl] %>
+    <content type="text"><%= r[:text_nohl] %></content>
+    <% end %>
+  </entry>
+  <% end %>
+</feed>
+
+@@ html
+<%
+  case @num_results
+  when 0
+%>
+<p class="no-search-results">Found no content that matches the query.</p>
+<%
+  when 1
+%>
+<p class="search-result-count">Found one piece of content that matches the query:</p>
+<%
+  else
+%>
+<p class="search-result-count">Found <%= @num_results %> matches for your query, with up to #{settings.results_per_page} results per page:</p>
+<%
+  end
+%>
+<ul class="search-results">
+<% @results.each_with_index do |r, i| %>
+  <li style="padding-bottom: 1em;" class="<%= i % 2 == 0 ? 'even' : 'odd' %>">
+    <a href="<%= r[:href] %>"><% if r[:kind] %><span class="search-result-kind"><%= r[:kind].to_s.capitalize %>:</span> <% end %><%= r[:title] %></a>
+    <% unless r[:types].reject{|t| t == 'schedule'}.empty? %>
+    <span class="pull-right">
+    <% r[:types].reject{|t| t == 'schedule'}.each do |t| %>
+    <span class="label label-<%= $type_label.fetch(t.to_sym, 'unknown') %>"><%= t %></span>
+    <% end %>
+    <% if r[:interview_year] %>
+    <span class="label"><%= r[:interview_year] %></span>
+    <% end %>
+    </span>
+    <% end %>
+    <% if r[:text] %><p><small><%= r[:text] %></small></p><% end %>
+  </li>
+<% end %>
+</ul> <!-- search-results -->
+
+<% if @pagination %>
+<div class="pagination pagination-centered">
+  <ul>
+    <% if @prev_page %>
+    <li><a href="<%= @page_link %>&page=<%= @prev_page %>" rel="prev">Prev</a></li>
+    <% else %>
+    <li class="disabled"><a>Prev</a></li>
+    <% end %>
+    <% (1..@pages).each do |p| %>
+    <li<% if p == @current_page %> class="active" rel="canonical"<% end %>><a href="<%= @page_link %>&page=<%= p %>"><%= p %></a></li>
+    <% end %>
+    <% if @next_page %>
+    <li><a href="<%= @page_link %>&page=<%= @next_page %>" rel="next">Next</a></li>
+    <% else %>
+    <li class="disabled"><a>Next</a></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+@@ error
+<div class="alert alert-block">
+  <h4>Oops!</h4>
+  Something went booboo with the search.
+</div>
+<% if @error %>
+<pre><%= @error %></pre>
+<% end %>
+
+@@ facets
+<form id="refine-search" class="nav nav-list" action="<%= @base_uri %>" method="get">
+  <div class="input-prepend">
+    <span class="add-on"><i class="icon-search"></i></span>
+    <input type="text" id="q" name="q" class="span10 input-medium" value="<%= @q %>" />
+  </div>
+  <% (@facets or {}).each do |facet, count| %>
+    <label class="checkbox"><%= facet.capitalize %> (<%= count %>)
+      <input type="checkbox" name="<%= facet %>" value=""<% if @types.include? facet %> checked="checked"<% end %> onclick="this.form.submit();"/>
+    </label>
+  <% end %>
+  <% (@interview_year_facets or {}).each do |value, count| %>
+    <label class="checkbox"><%= value %> (<%= count %>)
+      <input type="checkbox" name="interview_year[]" value="<%= value %>"<% if @interview_years.include? value %> checked="checked"<% end %> onclick="this.form.submit();"/>
+    </label>
+  <% end %>
+  <button type="submit" class="btn btn-small"><i class="icon-repeat"></i> Refine search</button>
+</form>
+<li class="divider"></li>
 
