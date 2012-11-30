@@ -91,7 +91,7 @@ collected over the weekend.</p>
     </tbody>
 </table>
 <% else %>
-  <p><span class="label label-info">No keynotes have been confirmed yet.</span></p>
+  <p><span class="label label-info">The keynotes have not been confirmed yet.</span></p>
 <% end %>
 
 <h3><a name="maintracks"></a>Main Tracks</h3>
@@ -126,7 +126,7 @@ speakers on those topics.</p>
     </tbody>
 </table>
 <% else %>
-<p><span class="label label-info">No main tracks have been confirmed yet.</span></p>
+<p><span class="label label-info">Main tracks have not been confirmed yet.</span></p>
 <% end %>
 
 <h3><a name="distrominiconf"></a>Distribution Miniconf</h3>
@@ -152,7 +152,7 @@ participants coming from many different open source projects, dubbed the
 <p>The exact schedule of the <%= l '/distrominiconf/' %> currently sports <%= distroevents.size %> sessions
 and <%= l '/schedule/track/crossdistribution/' %> can be seen here</a>.</p>
 <% else %>
-<p><span class="label label-info">No distribution miniconf sessions have been confirmed yet.</span></p>
+<p><span class="label label-info">Distribution miniconf sessions have not been scheduled yet.</span></p>
 <% end %>
 
 <h3><a name="devrooms"></a>Developer Rooms</h3>
@@ -160,8 +160,9 @@ and <%= l '/schedule/track/crossdistribution/' %> can be seen here</a>.</p>
 (<q>devrooms</q>), which are organized and managed by Free and Open Source projects themselves, or even associations
 between several such projects on a common topic in order to foster collaboration.</p>
 <%
-unless devrooms.empty?
-columns = 3
+  devrooms_announcement = @items.select{|i| i.identifier =~ %r{^/news/.*announ.*devroom.*/$}}.first
+  columns = 3
+  if not devrooms.empty?
 %>
 <p>Here is the list of the devrooms that are present at this edition of FOSDEM, in alphabetical order:</p>
 <div class="container-fluid">
@@ -177,8 +178,11 @@ columns = 3
         <% end %>
     </div>
 </div>
+<% elsif devrooms_announcement %>
+  <p>While no schedule is available yet, the list of <a href="<%= devrooms_announcement.path %>">confirmed devrooms</a>
+  is available <a href="<%= devrooms_announcement.path %>">here</a>.</p>
 <% else %>
-<p><span class="label label-info">No devrooms have been confirmed yet.</span></p>
+  <p><span class="label label-info">Devrooms have not been confirmed yet.</span></p>
 <% end %>
 
 <h3><a name="lightningtalks"></a>Lightning Talks</h3>
@@ -190,11 +194,11 @@ as is the wide variety of the topics.</p>
 <% unless ltalks.empty? %>
 <p>There are currently <a href="<%= lt_track.path %>"><%= ltalks.size %> lightning talks in the schedule</a>.</p>
 <% else %>
-<p><span class="label label-info">No lightning talks have been confirmed yet.</span></p>
+<p><span class="label label-info">Lightning talks have been scheduled yet.</span></p>
 <% end %>
 
 <h3><a name="certification"></a>Certification</h3>
 <p>Several certification organizations provide FOSDEM visitors with the opportunity of taking certification
 exams during the conference.</p>
-<p><span class="label label-info">No certification exams have been confirmed yet.</span></p>
+<p><span class="label label-info">Certification exams have been scheduled yet.</span></p>
 
