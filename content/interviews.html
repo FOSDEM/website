@@ -5,7 +5,11 @@ navtitle: Interviews
 
 <p>Every edition of FOSDEM, we conduct a short interview with the main track and keynote speakers.</p>
 
-<% @items.select{|i| interview?(i) and not i[:disabled]}.sort_by{|i| i[:year]}.reverse.group_by{|i| i[:year]}.each do |year, items| %>
+<% interviews = @items.select{|i| interview?(i) and not i[:disabled]}.sort_by{|i| i[:year]}.reverse.group_by{|i| i[:year]} %>
+<% if interviews.empty? %>
+<div class="label label-info">No interviews have been conducted so far; please check back when the schedule is confirmed.</div>
+<% else %>
+<% interviews.each do |year, items| %>
 <% unless items.empty? %>
 <h2><%= year %></h2>
 <ul>
@@ -13,5 +17,6 @@ navtitle: Interviews
     <li><a href="<%= relpath(@item_rep.path, item.identifier) %>"><%= item[:person] %><% if item[:topic] %>: <%= item[:topic] %><% end %></a></li>
     <% end %>
 </ul>
+<% end %>
 <% end %>
 <% end %>
