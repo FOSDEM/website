@@ -8,6 +8,7 @@ module Fosdem
     a = {
       :mtime => item.mtime,
       :binary => item.binary?,
+      :alias_of => item.identifier,
     }
     if item.binary?
       a[:filename] = item[:filename]
