@@ -42,20 +42,24 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
 
     file_prefix = site.config.fetch 'output_dir', 'output'
 
-    items = self.site.items.reject do |item|
-      item.reps.empty? or
+    indexable_items = self.site.items.reject do |item|
       item.binary? or
+      item[:index] == false or
+      item[:alias_of] or
+      item[:kind] == 'internal' or
+      item[:filename] =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
+      item.path.nil? or
+      item.path =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
       item.reps.empty? or
       item.reps.first.raw_paths.empty? or
       item.reps.first.path.nil?
     end
-    indexable_items = items.map do |item|
+    .map do |item|
       file = File.join file_prefix, item.reps.first.path
       file << "index.html" if file.end_with? '/'
       { id: item.identifier, file: file, item: item }
-    end.reject{|item| item[:item][:kind] == 'internal'}
-    .select{|item| item[:file] =~ %r{\.html$}}
-
+    end
+    
     xml = Builder::XmlMarkup.new
     docs = []
     begin
@@ -66,22 +70,16 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
           begin
             item = i[:item]
             types = case item.identifier
-                    when %r{^/schedule/room}
-                      [:schedule, :room]
-                    when %r{^/schedule/track}
-                      [:schedule, :track]
-                    when %r{^/schedule/speaker}
-                      [:schedule, :speaker]
-                    when %r{^/schedule/event}
-                      [:schedule, :event]
-                    when %r{^/schedule/day}
-                      [:schedule, :day]
+                    when %r{^/schedule/([^/]+)/}
+                      [:schedule, $1.to_sym]
                     when %r{^/schedule/}
                       [:schedule]
                     when %r{^/news/}
                       [:news]
                     when %r{^/interviews/}
                       [:interview]
+                    when %r{^/call_}
+                      [:cfp]
                     else
                       [:content]
                     end
@@ -90,12 +88,20 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
                              else
                                nil
                              end
-            #content = Nokogiri::HTML(item.raw_content).text
             raise "item #{item.identifier} has #{item.reps.size}, can't decide which one to use" unless item.reps.size == 1
-            #raw_content = item.compiled_content(:snapshot => :pre)
-            raw_content = item.reps.first.content[:last]
-            content = Nokogiri::HTML(item.reps.first.content[:last]).text.strip
-            #content = Hpricot(raw_content).scrub.to_s.strip
+            #raw_content = item.reps.first.content[:last]
+            #raw_content = item.compiled_content
+
+            raw_content = begin
+                            f = File.join(file_prefix, item.path)
+                            if File.directory? f
+                              f = File.join(f, 'index.html')
+                            end
+                            IO.read(f)
+                          end
+            html = Nokogiri::HTML(raw_content)
+            main = html.css('#main')
+            content = main.text.strip
 
             doc = {
               :id => item.path,
