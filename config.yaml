@@ -149,8 +149,8 @@ pentabarf:
   conference_id: FOSDEM13
   username: nanoc
   #password: 
-  database: marius
-  host:     penta.fosdem.org
+  database: pentabarf
+  host:     apeiron.fosdem.org
   port:     5432
   schema:   public
   meta_export_file: export/pentabarf.yaml
