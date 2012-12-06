@@ -71,6 +71,7 @@ deadlines:
   'Ada':
     days: sun
     ann: 2012-November/001647
+    deadline: 2012-12-12
   'BSD':
     days: sun
     ann: 2012-November/001662
