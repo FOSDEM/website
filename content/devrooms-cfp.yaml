@@ -43,6 +43,8 @@ deadlines:
     deadline: 2012-12-23
   'Jabber/XMPP':
     days: sat
+    ann: 2012-December/001671
+    deadline: 2012-12-31
   'Microkernels / Component-based OSes':
     days: sat
     ann: 2012-October/001639
