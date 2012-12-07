@@ -204,17 +204,28 @@ Dec  7 11:26:00 2012    Dec  8 11:25:56 2012  krbtgt/FOSDEM.ORG@FOSDEM.ORG
 <pre>curl -L https://get.rvm.io | bash -s stable --ruby</pre>
 
 <p>
-  That will compile and install an up-to-date Ruby 1.9.x version as well as add
-  the sourcing of the <code>rvm</code> shell wrapper functions in your <code
-  class="file">~/.bashrc</code>, all under <code class="dir">~/.rvm/</code> (it
-  will <strong>not</strong> touch anything else on your system).
+  That will compile and install an up-to-date Ruby 1.9.x version under <code
+  class="dir">~/.rvm/</code>.
+</p>
+
+<p>
+  It will also add code to source the <code>rvm</code> shell wrapper functions
+  to your <code class="file">~/.bashrc</code> and <code
+  class="file">~/.zshrc</code> files.
+  This will add <strong>measurable</strong> latency to every shell you start.
+  It will also load a lot of Ruby-related code into your environment.
+  If this is unacceptable to you, undo the damage in your shell startup files
+  and use the provided <code class="file">setup-env.sh</code> script in the
+  website tree.
 </p>
 
 <p>
   Once that has been done, to avoid logging out and in again, just do this:
 </p>
-<pre>source ~/.rvm/scripts/rvm
-rt PATH="$PATH:$HOME/.rvm/bin"</pre>
+<pre>
+source ~/.rvm/scripts/rvm
+export PATH="$PATH:$HOME/.rvm/bin"
+</pre>
 
 <a name="install-nanoc"></a>
 <h3>Installing Nanoc</h3>
