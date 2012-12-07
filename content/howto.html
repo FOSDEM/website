@@ -122,6 +122,48 @@ rush optipng</pre>
 </pre>
 
 <a name="git-clone"></a>
+<h3>Kerberos infrastructure and access requirements</h3>
+<p>
+  We use Kerberos for authentication on our infrastructure.
+  Before you can edit the website, you need to have a Kerberos principal,
+  and you need to be given access to <code>git</code> and the website.
+  Please <a href="mailto:server@fosdem.org">contact the server team</a>
+  by email to get the relevant permissions.
+</p>
+
+<p>
+  If you can access the FIT wiki, you already have a Kerberos principal.
+  It will still need to be given access to <code>git</code> and the
+  website, however.
+</p>
+
+<p>
+  Before trying any <code>git clone</code>, <code>git pull</code>,
+  <code>git push</code>, <code>git fetch</code>,
+  <code>nanoc update</code> or <code>nanoc deploy</code> operation,
+  you need to have a valid Kerberos ticket.
+</p>
+
+<pre>
+% kinit philip@FOSDEM.ORG
+philip@FOSDEM.ORG's Password: 
+% klist
+Credentials cache: API:501:3
+        Principal: philip@FOSDEM.ORG
+
+  Issued                Expires               Principal
+Dec  7 11:26:00 2012    Dec  8 11:25:56 2012  krbtgt/FOSDEM.ORG@FOSDEM.ORG
+</pre>
+
+<p>
+  If <code>kinit</code> fails, or you otherwise fail to get a valid
+  Kerberos ticket, please <a href="mailto:server@fosdem.org">contact the
+  server team</a> by email to help you debug.
+  Or talk to <code>trouble</code> on IRC.
+  All instructions below assume that you have a valid Kerberos ticket.
+</p>
+
+<a name="git-clone"></a>
 <h3>Checking out the website</h3>
 <p>
   The sources of our website are kept under version control (namely, <a
