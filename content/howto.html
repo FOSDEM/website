@@ -163,6 +163,18 @@ Dec  7 11:26:00 2012    Dec  8 11:25:56 2012  krbtgt/FOSDEM.ORG@FOSDEM.ORG
   All instructions below assume that you have a valid Kerberos ticket.
 </p>
 
+<p>
+  In order to deploy the website, you should also make sure that your
+  <code>ssh</code> client uses GSSAPI authentication when connecting to
+  fosdem.org machines.
+  Add the following to your <code class="file">~/.ssh/config</code> file.
+</p>
+<pre>
+Host *.fosdem.org
+GSSAPIAuthentication yes
+PreferredAuthentications gssapi-with-mic
+</pre>
+
 <a name="git-clone"></a>
 <h3>Checking out the website</h3>
 <p>
@@ -347,70 +359,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
   Nanoc also provides built-in deployment mechanisms, of which we are using
   <code>rsync</code> and, hence, you need to have <code>rsync</code> installed
   on your system.
-</p>
-
-<p>
-  You will also need to have an account on <code
-  class="host">apeiron.fosdem.org</code> and the ability of <code>ssh</code>-ing
-  into <code class="host">apeiron.fosdem.org</code> (if not, please <a
-  href="mailto:server@fosdem.org?subject=Account on apeiron">contact our
-  server team by email</a>).
-</p>
-
-<p>
-  You will most probably want to also configure your username on <code
-  class="host">apeiron</code> in your <code class="file">~/.ssh/config</code>,
-  as the configuration of the Nanoc deployment simply uses
-  <code>apeiron.fosdem.org</code> as the remote host for <code>rsync</code> and,
-  unless your local username is the same as your username on
-  <code>apeiron</code>, you need to configure <code>ssh</code> to use another
-  username.
-</p>
-
-<p>
-  For that, add the following lines to your <code
-  class="file">~/.ssh/config</code> (or create that file if it does not exist
-  yet):
-</p>
-<pre class="content">Host apeiron.fosdem.org
-User=MY_USERNAME_ON_APEIRON
-GSSAPIAuthentication yes
-GSSAPIDelegateCredentials yes
-</pre>
-
-<p>
-  Obviously, replace <code>MY_USERNAME_ON_APEIRON</code> accordingly, e.g. with
-  <code>jdoe</code>.
-</p>
-
-<p>
-  Test your remote access first, using the following command:
-</p>
-<pre>ssh apeiron.fosdem.org</pre>
-
-<p>
-  If it does not work, run the following command in order to get a fresh
-  Kerberos ticket:
-</p>
-<pre>kinit jdoe@FOSDEM.ORG</pre>
-
-<p>
-  (where <code>jdoe</code> is to be replaced by your username on <code
-  class="host">apeiron</code> and the other FOSDEM servers)
-</p>
-<p>
-  Then try to run the <code class="cmd">ssh</code> command as above again.
-</p>
-
-<p>
-  If it still does not work, <a href="mailto:server@fosdem.org?subject=Account
-  on apeiron">contact our server team by email</a>).
-</p>
-
-<p>
-  If the <code class="cmd">ssh</code> command is successful, you may exit the
-  remote session using <code class="cmd">exit</code>, and you are ready to
-  deploy your changes to the website to fosdem.org.
 </p>
 
 <p>
