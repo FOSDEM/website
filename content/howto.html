@@ -253,6 +253,19 @@ export PATH="$PATH:$HOME/.rvm/bin"
   href="http://gembundler.com/">gembundler.com</a>.
 </p>
 
+<a name="nanoc-update"></a>
+<h3>Loading content from Pentabarf</h3>
+<p>
+  Before you can compile the website, you first need to load the content from
+  Pentabarf.
+  You don't need to do this every time, but it is a good idea to do so before
+  pushing to the public website (q.v.) to ensure you don't push outdated
+  information.
+  You definitely need to do this before compiling the website for the first
+  time.
+</p>
+<pre>nanoc update -y</pre>
+
 <a name="nanoc-compile"></a>
 <h3>Compiling the site</h3>
 <p>
@@ -505,11 +518,6 @@ GSSAPIDelegateCredentials yes
   with MD5 hashes from the database to only download what's needed, how
   thumbnails of photos are made on the fly, and how they are rendered to pages
   using the layouts under <code class="dir">./layouts/schedule/</code>
-</p>
-
-<h2>Updating schedule data</h2>
-<p>
-  TODO: ssh tunnel to penta.fosdem.org, run <code>nanoc update -y</code>
 </p>
 
 <h2>Track descriptions</h2>
