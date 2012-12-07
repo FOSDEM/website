@@ -55,6 +55,61 @@ semantic: true
   nanoc</a> below).
 </p>
 
+<a name="kerberos-access"></a>
+<h1>Kerberos infrastructure</h1>
+<p>
+  We use Kerberos for authentication on our infrastructure.
+  Before you can edit the website, you need to have a Kerberos principal,
+  and you need to be given access to <code>git</code> and the website.
+  Please <a href="mailto:server@fosdem.org">contact the server team</a>
+  by email to get the relevant permissions.
+</p>
+
+<p>
+  If you can access the FIT wiki, you already have a Kerberos principal.
+  It will still need to be given access to <code>git</code> and the
+  website, however.
+</p>
+
+<p>
+  Before trying any <code>git clone</code>, <code>git pull</code>,
+  <code>git push</code>, <code>git fetch</code>,
+  <code>nanoc update</code> or <code>nanoc deploy</code> operation,
+  you need to have a valid Kerberos ticket.
+</p>
+
+<pre>
+% kinit philip@FOSDEM.ORG
+philip@FOSDEM.ORG's Password: 
+% klist
+Credentials cache: API:501:3
+        Principal: philip@FOSDEM.ORG
+
+  Issued                Expires               Principal
+Dec  7 11:26:00 2012    Dec  8 11:25:56 2012  krbtgt/FOSDEM.ORG@FOSDEM.ORG
+</pre>
+
+<p>
+  If <code>kinit</code> fails, or you otherwise fail to get a valid
+  Kerberos ticket, please <a href="mailto:server@fosdem.org">contact the
+  server team</a> by email to help you debug.
+  Or talk to <code>trouble</code> on IRC.
+  All instructions below assume that you have a valid Kerberos ticket.
+</p>
+
+<p>
+  In order to deploy the website, you should also make sure that your
+  <code>ssh</code> client uses GSSAPI authentication when connecting to
+  fosdem.org machines.
+  Add the following to your <code class="file">~/.ssh/config</code> file.
+</p>
+<pre>
+Host *.fosdem.org
+GSSAPIAuthentication yes
+PreferredAuthentications gssapi-with-mic
+</pre>
+
+
 <a name="nanoc"></a>
 <h1>Nanoc</h1>
 <p>
@@ -121,90 +176,6 @@ rush optipng</pre>
   brew install imagemagick jpeg libmagic libpng optipng pngcrush
 </pre>
 
-<a name="git-clone"></a>
-<h3>Kerberos infrastructure and access requirements</h3>
-<p>
-  We use Kerberos for authentication on our infrastructure.
-  Before you can edit the website, you need to have a Kerberos principal,
-  and you need to be given access to <code>git</code> and the website.
-  Please <a href="mailto:server@fosdem.org">contact the server team</a>
-  by email to get the relevant permissions.
-</p>
-
-<p>
-  If you can access the FIT wiki, you already have a Kerberos principal.
-  It will still need to be given access to <code>git</code> and the
-  website, however.
-</p>
-
-<p>
-  Before trying any <code>git clone</code>, <code>git pull</code>,
-  <code>git push</code>, <code>git fetch</code>,
-  <code>nanoc update</code> or <code>nanoc deploy</code> operation,
-  you need to have a valid Kerberos ticket.
-</p>
-
-<pre>
-% kinit philip@FOSDEM.ORG
-philip@FOSDEM.ORG's Password: 
-% klist
-Credentials cache: API:501:3
-        Principal: philip@FOSDEM.ORG
-
-  Issued                Expires               Principal
-Dec  7 11:26:00 2012    Dec  8 11:25:56 2012  krbtgt/FOSDEM.ORG@FOSDEM.ORG
-</pre>
-
-<p>
-  If <code>kinit</code> fails, or you otherwise fail to get a valid
-  Kerberos ticket, please <a href="mailto:server@fosdem.org">contact the
-  server team</a> by email to help you debug.
-  Or talk to <code>trouble</code> on IRC.
-  All instructions below assume that you have a valid Kerberos ticket.
-</p>
-
-<p>
-  In order to deploy the website, you should also make sure that your
-  <code>ssh</code> client uses GSSAPI authentication when connecting to
-  fosdem.org machines.
-  Add the following to your <code class="file">~/.ssh/config</code> file.
-</p>
-<pre>
-Host *.fosdem.org
-GSSAPIAuthentication yes
-PreferredAuthentications gssapi-with-mic
-</pre>
-
-<a name="git-clone"></a>
-<h3>Checking out the website</h3>
-<p>
-  The sources of our website are kept under version control (namely, <a
-  href="http://git-scm.com/"><code>git</code></a>).
-  In order to make modifications, you first need to &quot;clone&quot; the
-  repository to your workstation.
-</p>
-
-<p>
-  To clone the sources initially, create a working directory on your local
-  system, e.g.:
-</p>
-<pre>mkdir -p ~/src/projects/fosdem</pre>
-
-<p>
-  Then change to that directory using
-</p>
-<pre>cd ~/src/projects/fosdem</pre>
-
-<p>
-  Now use <code>git</code> to clone the repository:
-</p>
-<pre>git clone git@git.fosdem.org:/srv/git/website.git</pre>
-
-<p>
-  Finally, go to the subdirectory <code class="dir">website/</code> that has
-  just been created:
-</p>
-<pre>cd website</pre>
 
 <a name="install-rvm"></a>
 <h3>Installing RVM</h3>
@@ -265,8 +236,39 @@ export PATH="$PATH:$HOME/.rvm/bin"
   href="http://gembundler.com/">gembundler.com</a>.
 </p>
 
+<a name="git-clone"></a>
+<h2>Checking out the website</h2>
+<p>
+  The sources of our website are kept under version control (namely, <a
+  href="http://git-scm.com/"><code>git</code></a>).
+  In order to make modifications, you first need to &quot;clone&quot; the
+  repository to your workstation.
+</p>
+
+<p>
+  To clone the sources initially, create a working directory on your local
+  system, e.g.:
+</p>
+<pre>mkdir -p ~/src/projects/fosdem</pre>
+
+<p>
+  Then change to that directory using
+</p>
+<pre>cd ~/src/projects/fosdem</pre>
+
+<p>
+  Now use <code>git</code> to clone the repository:
+</p>
+<pre>git clone git@git.fosdem.org:/srv/git/website.git</pre>
+
+<p>
+  Finally, go to the subdirectory <code class="dir">website/</code> that has
+  just been created:
+</p>
+<pre>cd website</pre>
+
 <a name="nanoc-update"></a>
-<h3>Loading content from Pentabarf</h3>
+<h2>Loading content from Pentabarf</h2>
 <p>
   Before you can compile the website, you first need to load the content from
   Pentabarf.
@@ -279,7 +281,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 <pre>nanoc update -y</pre>
 
 <a name="nanoc-compile"></a>
-<h3>Compiling the site</h3>
+<h2>Compiling the site</h2>
 <p>
   To compile the site, run the following command:
 </p>
@@ -302,7 +304,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 </p>
 
 <a name="nanoc-view"></a>
-<h3>Viewing the compiled site</h3>
+<h2>Viewing the compiled site</h2>
 <p>
   As the compiled site uses absolute paths everywhere (we could use relative
   paths, but that would slow down the rendering of the site) as well as
@@ -343,7 +345,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 </p>
 
 <a name="nanoc-deploy"></a>
-<h3>Deploying changes to fosdem.org</h3>
+<h2>Deploying changes to fosdem.org</h2>
 <p>
   Once you have made changes, ran <code class="cmd">nanoc compile</code>,
   reviewed the results in your browser (running <code class="cmd">nanoc
@@ -382,7 +384,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
   is what all the visitors of our site will see <tt>:)</tt>.
 </p>
 
-<h4>Deploying to staging</h4>
+<h3>Deploying to staging</h3>
 <p>
   To deploy your changes to the website to <a
   href="https://staging.fosdem.org/"><code
@@ -395,7 +397,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 </p>
 <pre>nanoc deploy -t staging</pre>
 
-<h4>Deploying to public</h4>
+<h3>Deploying to public</h3>
 <p>
   In a similar fashion, to deploy the changes to our &quot;real&quot; website,
   do as follows:
