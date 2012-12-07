@@ -14,81 +14,98 @@ semantic: true
 <a name="intro"></a>
 <h1>Introduction</h1>
 <p>
-The new website uses a static content generator, which means that we have
-our content source (under <code class="dir">content/</code>) which can be HTML
-(<code class="ext">.html</code>), <a
+  The new website uses a static content generator, which means that we have our
+  content source (under <code class="dir">content/</code>) which can be HTML
+  (<code class="ext">.html</code>), <a
   href="http://daringfireball.net/projects/markdown/">Markdown</a>
-(<code class="ext">.md</code> or <code class="ext">.markdown</code>) or
-sometimes files that only contain metadata that is processed
-(<code class="ext">.yaml</code>).
+  (<code class="ext">.md</code> or <code class="ext">.markdown</code>) or
+  sometimes files that only contain metadata that is processed
+  (<code class="ext">.yaml</code>).
 </p>
+
 <p>
-First and foremost, the static content generation takes care of wrapping the
-individual content pages into a layout (see <code class="file">layout/main.html</code>: the
-content of each page is put in-place where the layout contains the markup
-<code class="markup">&lt;%= yield&gt;</code>).
+  First and foremost, the static content generation takes care of wrapping the
+  individual content pages into a layout (see <code
+  class="file">layout/main.html</code>: the
+  content of each page is put in-place where the layout contains the markup
+  <code class="markup">&lt;%= yield&gt;</code>).
 </p>
+
 <p>
-That means that each source file (under <code class="dir">content/</code>) may
-<strong>not</strong> contain the full HTML page markup, but is only a <strong>fragment</strong>.
-To make it simple: just put the content in there, but no <code class="markup">&lt;html&gt;</code>
-or <code class="markup">&lt;body&gt;</code> tag.
-Note that the <strong>title heading</strong> of each page is also already set by
-the layout (as a <code class="markup">&lt;h1/&gt;</code>), so <strong>do not</strong>
-specify one in the content files.
+  That means that each source file (under <code class="dir">content/</code>) may
+  <strong>not</strong> contain the full HTML page markup, but is only a
+  <strong>fragment</strong>.  To make it simple: just put the content in there,
+  but no <code class="markup">&lt;html&gt;</code> or <code
+  class="markup">&lt;body&gt;</code> tag.
+  Note that the <strong>title heading</strong> of each page is also already set
+  by the layout (as a <code class="markup">&lt;h1/&gt;</code>), so <strong>do
+  not</strong> specify one in the content files.
 </p>
+
 <p>
-The generator also takes care of many other things, essentially the bells and whistles
-of putting the whole site together, with things such as breadcrumbs, page title heading,
-navigation, etc...
+  The generator also takes care of many other things, essentially the bells and
+  whistles of putting the whole site together, with things such as breadcrumbs,
+  page title heading, navigation, etc...
 </p>
+
 <p>
-The generator is similar to a compiler: whenever you make changes to the source
-(files under <code class="dir">content/</code>) and you want to see the result, you
-need to run the compiler (see <a href="#running-nanoc">running nanoc</a> below).
+  The generator is similar to a compiler: whenever you make changes to the
+  source (files under <code class="dir">content/</code>) and you want to see the
+  result, you need to run the compiler (see <a href="#running-nanoc">running
+  nanoc</a> below).
 </p>
 
 <a name="nanoc"></a>
 <h1>Nanoc</h1>
 <p>
-The tool we are using to compile the website is <a href="http://nanoc.stoneship.org/">nanoc</a>.
+  The tool we are using to compile the website is <a
+  href="http://nanoc.stoneship.org/">nanoc</a>.
 </p>
+
 <p>
-It is written in Ruby but that is of no concern except for installing the prerequisites
-as well as if you want to add or change to the scripting bits of our website.
+  It is written in Ruby but that is of no concern except for installing the
+  prerequisites as well as if you want to add or change to the scripting bits of
+  our website.
 </p>
 
 <a name="install"></a>
 <h2>Installation</h2>
 <p>
-The recommended way to install <code>nanoc</code> is to use <a href="http://rvm.io"><code>rvm</code></a>,
-which manages Ruby and Ruby module installations. The main advantage of using <code>rvm</code> is that
-it will take care of compiling the right Ruby version for you, as well as to install all the Ruby
-libraries (which are called <q>gems</q> in Ruby-speak) that are necessary for running <code>nanoc</code>
-and all the custom code that we've added to the website generation. And it will install and keep everything
-under your regular user's home directory (<code class="dir">~/.rvm/</code>) without the need to be
-<code>root</code> or break anything on your system which is probably still shipping an older version
-of Ruby itself and some of the requires libraries.
+  The recommended way to install <code>nanoc</code> is to use <a
+  href="http://rvm.io"><code>rvm</code></a>, which manages Ruby and Ruby module
+  installations.
+  The main advantage of using <code>rvm</code> is that it will take care of
+  compiling the right Ruby version for you, as well as to install all the Ruby
+  libraries (which are called <q>gems</q> in Ruby-speak) that are necessary for
+  running <code>nanoc</code> and all the custom code that we've added to the
+  website generation.
+  And it will install and keep everything under your regular user's home
+  directory (<code class="dir">~/.rvm/</code>) without the need to be
+  <code>root</code> or break anything on your system which is probably still
+  shipping an older version of Ruby itself and some of the requires libraries.
 </p>
 
 <a name="install-pre"></a>
 <h3>Installing Prerequisites for RVM</h3>
 <p>
-Note that <code>pngcrush</code> and <code>optipng</code> are not prerequisites for <code>rvm</code>,
-but are native applications that are needed for image size optimization when compiling the site.
+  Note that <code>pngcrush</code> and <code>optipng</code> are not prerequisites
+  for <code>rvm</code>, but are native applications that are needed for image
+  size optimization when compiling the site.
 </p>
+
 <a name="install-deb"></a>
 <h4>On Debian or Ubuntu</h4>
 <p>
-Install the following development packages (as <code>root</code>):
+  Install the following development packages (as <code>root</code>):
 </p>
 <pre>apt-get install \
  bzip2 gcc libssl-dev libpq-dev libz-dev libxml2-dev libxslt-dev \
 agic-dev libmagick++-dev libmagickcore-dev libmagickwand-dev \
 rush optipng</pre>
+
 <h4>On openSUSE</h4>
 <p>
-Install the following development packages (as <code>root</code>):
+  Install the following development packages (as <code>root</code>):
 </p>
 <pre>zypper install \
  bzip2 gcc libopenssl-devel postgresql-devel zlib-devel \
@@ -98,52 +115,64 @@ rush optipng</pre>
 <a name="git-clone"></a>
 <h3>Checking out the website</h3>
 <p>
-The sources of our website are kept under version control (namely, <a href="http://git-scm.com/"><code>git</code></a>).
-In order to make modifications, you first need to &quot;clone&quot; the repository to your workstation.
+  The sources of our website are kept under version control (namely, <a
+  href="http://git-scm.com/"><code>git</code></a>).
+  In order to make modifications, you first need to &quot;clone&quot; the
+  repository to your workstation.
 </p>
+
 <p>
-To do so, you need to have access to <code class="host">git.fosdem.org</code> using <code>ssh</code>
-(if not, please <a href="mailto:server@fosdem.org?subject=Account on apeiron">contact our
+  To do so, you need to have access to <code class="host">git.fosdem.org</code>
+  using <code>ssh</code> (if not, please <a
+  href="mailto:server@fosdem.org?subject=Account on apeiron">contact our
   server team by email</a>).
 </p>
+
 <p>
-To clone the sources initially, create a working directory on your local system, e.g.:
+  To clone the sources initially, create a working directory on your local
+  system, e.g.:
 </p>
 <pre>mkdir -p ~/src/projects/fosdem</pre>
+
 <p>
-Then change to that directory using
+  Then change to that directory using
 </p>
 <pre>cd ~/src/projects/fosdem</pre>
+
 <p>
-Now use <code>git</code> to clone the repository:
+  Now use <code>git</code> to clone the repository:
 </p>
 <pre>git clone YOUR_USERNAME_ON_GIT@git.fosdem.org:/srv/git/website.git</pre>
-<p>Obviously, replace <code>YOUR_USERNAME_ON_GIT</code> with your username on
-<code class="host">git.fosdem.org</code>.</p>
+
 <p>
-Finally, go to the subdirectory <code class="dir">website/</code> that has just
-been created:
+  Obviously, replace <code>YOUR_USERNAME_ON_GIT</code> with your username on
+  <code class="host">git.fosdem.org</code>.
+</p>
+
+<p>
+  Finally, go to the subdirectory <code class="dir">website/</code> that has
+  just been created:
 </p>
 <pre>cd website</pre>
 
 <a name="install-rvm"></a>
 <h3>Installing RVM</h3>
 <p>
-Run the <code>rvm</code> installation using their script (make sure
-to have <code>curl</code> installed to do so) -- note that this
-must be done with your regular user, <strong>not</strong> as
-<code>root</code>:
+  Run the <code>rvm</code> installation using their script (make sure to have
+  <code>curl</code> installed to do so) -- note that this must be done with
+  your regular user, <strong>not</strong> as <code>root</code>:
 </p>
 <pre>curl -L https://get.rvm.io | bash -s stable --ruby</pre>
+
 <p>
-That will compile and install an up-to-date Ruby 1.9.x version as
-well as add the sourcing of the <code>rvm</code> shell wrapper
-functions in your <code class="file">~/.bashrc</code>, all
-under <code class="dir">~/.rvm/</code> (it will <strong>not</strong>
-touch anything else on your system).
+  That will compile and install an up-to-date Ruby 1.9.x version as well as add
+  the sourcing of the <code>rvm</code> shell wrapper functions in your <code
+  class="file">~/.bashrc</code>, all under <code class="dir">~/.rvm/</code> (it
+  will <strong>not</strong> touch anything else on your system).
 </p>
+
 <p>
-Once that has been done, to avoid logging out and in again, just do this:
+  Once that has been done, to avoid logging out and in again, just do this:
 </p>
 <pre>source ~/.rvm/scripts/rvm
 rt PATH="$PATH:$HOME/.rvm/bin"</pre>
@@ -151,156 +180,214 @@ rt PATH="$PATH:$HOME/.rvm/bin"</pre>
 <a name="install-nanoc"></a>
 <h3>Installing Nanoc</h3>
 <p>
-Nanoc is simply installed as a bunch of Ruby gems, using <code>bundler</code>
-(for the Rubyists amongst you).
+  Nanoc is simply installed as a bunch of Ruby gems, using <code>bundler</code>
+  (for the Rubyists amongst you).
 </p>
+
 <p>
-After having <code>rvm</code> installed, run the following command, which will
-check which dependencies (Ruby gems) you are missing or are outdated, and install
-them accordingly:
+  After having <code>rvm</code> installed, run the following command, which will
+  check which dependencies (Ruby gems) you are missing or are outdated, and
+  install them accordingly:
 </p>
 <pre>bundle</pre>
-<p>Note that the list of Ruby gems to install is in the file <code class="file">Gemfile</code>,
-with <code class="file">Gemfile.lock</code> holding the versions that we are currently
-using (to avoid getting some random version that might be incompatible or outdated).</p>
+
 <p>
-More details about <code>bundle</code> can be found here:
-<a href="http://gembundler.com/">gembundler.com</a>.
+  Note that the list of Ruby gems to install is in the file <code
+  class="file">Gemfile</code>, with <code class="file">Gemfile.lock</code>
+  holding the versions that we are currently using (to avoid getting some random
+  version that might be incompatible or outdated).
+</p>
+
+<p>
+  More details about <code>bundle</code> can be found here: <a
+  href="http://gembundler.com/">gembundler.com</a>.
 </p>
 
 <a name="nanoc-compile"></a>
 <h3>Compiling the site</h3>
 <p>
-To compile the site, run the following command:
+  To compile the site, run the following command:
 </p>
 <pre>nanoc compile</pre>
-<p>or simply</p>
-<pre>nanoc</pre>
-<p>(<code>compile</code> being the default command to <code>nanoc</code>).</p>
+
 <p>
-Once <code>nanoc</code> is finished compiling the sources (showing what has been
-modified or added or removed along the way, but not showing what remained
-unchanged, unless you also pass the option <code>--verbose</code>), you will
-find the resulting website under <code class="dir">output/</code>.
+  or simply
 </p>
+<pre>nanoc</pre>
+
+<p>
+  (<code>compile</code> being the default command to <code>nanoc</code>).
+</p>
+
+<p>
+  Once <code>nanoc</code> is finished compiling the sources (showing what has
+  been modified or added or removed along the way, but not showing what remained
+  unchanged, unless you also pass the option <code>--verbose</code>), you will
+  find the resulting website under <code class="dir">output/</code>.
+</p>
+
 <a name="nanoc-view"></a>
 <h3>Viewing the compiled site</h3>
 <p>
-As the compiled site uses absolute paths everywhere (we could use relative paths,
-but that would slow down the rendering of the site) as well as assuming it's
-running under a web server that does directory indexing, it is not very
-practical to just open the resulting files with your favourite browser directly
-from the filesystem.
+  As the compiled site uses absolute paths everywhere (we could use relative
+  paths, but that would slow down the rendering of the site) as well as
+  assuming it's running under a web server that does directory indexing, it is
+  not very practical to just open the resulting files with your favourite
+  browser directly from the filesystem.
 </p>
+
 <p>
-Luckily, <code>nanoc</code> includes a tiny little webserver that runs on
-<a href="http://localhost:3000/"><code>localhost:3000</code></a> and does the above.
+  Luckily, <code>nanoc</code> includes a tiny little webserver that runs on <a
+  href="http://localhost:3000/"><code>localhost:3000</code></a> and does the
+  above.
 </p>
+
 <p>
-In order to start that embedded web server, simply run the following command:
+  In order to start that embedded web server, simply run the following command:
 </p>
 <pre>nanoc view</pre>
+
 <p>
-Note that if you plan to make several changes, it is probably most comfortable to
-just run <code>nanoc view</code> in another terminal continuously.
+  Note that if you plan to make several changes, it is probably most comfortable
+  to just run <code>nanoc view</code> in another terminal continuously.
 </p>
+
 <p>
-Now that <code>nanoc view</code> is running, just point your favourite browser
-to <a href="http://localhost:3000/">http://localhost:3000</a>.
+  Now that <code>nanoc view</code> is running, just point your favourite browser
+  to <a href="http://localhost:3000/">http://localhost:3000</a>.
 </p>
+
 <p>
-Note that there is no need to restart <code>nanoc view</code> when you perform
-changes or after running <code>nanoc compile</code>.
+  Note that there is no need to restart <code>nanoc view</code> when you perform
+  changes or after running <code>nanoc compile</code>.
 </p>
+
 <p>
-To stop the web server, just kill <code>nanoc view</code> with <code>Control+C</code>.
+  To stop the web server, just kill <code>nanoc view</code> with
+  <code>Control+C</code>.
 </p>
+
 <a name="nanoc-deploy"></a>
 <h3>Deploying changes to fosdem.org</h3>
 <p>
-Once you have made changes, ran <code class="cmd">nanoc compile</code>, reviewed
-the results in your browser (running <code class="cmd">nanoc view</code>), you should
-do two things:
+  Once you have made changes, ran <code class="cmd">nanoc compile</code>,
+  reviewed the results in your browser (running <code class="cmd">nanoc
+  view</code>), you should do two things:
 </p>
+
 <ul>
   <li>commit the changes to the sources to the git repository</li>
   <li>deploy the changes to the website to fosdem.org</li>
 </ul>
+
 <p>
-Nanoc also provides built-in deployment mechanisms, of which we are using <code>rsync</code>
-and, hence, you need to have <code>rsync</code> installed on your system.
+  Nanoc also provides built-in deployment mechanisms, of which we are using
+  <code>rsync</code> and, hence, you need to have <code>rsync</code> installed
+  on your system.
 </p>
+
 <p>
-You will also need to have an account on <code class="host">apeiron.fosdem.org</code>
-and the ability of <code>ssh</code>-ing into <code class="host">apeiron.fosdem.org</code>
-(if not, please <a href="mailto:server@fosdem.org?subject=Account on apeiron">contact our
+  You will also need to have an account on <code
+  class="host">apeiron.fosdem.org</code> and the ability of <code>ssh</code>-ing
+  into <code class="host">apeiron.fosdem.org</code> (if not, please <a
+  href="mailto:server@fosdem.org?subject=Account on apeiron">contact our
   server team by email</a>).
 </p>
+
 <p>
-You will most probably want to also configure your username on <code class="host">apeiron</code>
-in your <code class="file">~/.ssh/config</code>, as the configuration of the Nanoc deployment
-simply uses <code>apeiron.fosdem.org</code> as the remote host for <code>rsync</code> and, unless
-your local username is the same as your username on <code>apeiron</code>, you need to configure
-<code>ssh</code> to use another username.
+  You will most probably want to also configure your username on <code
+  class="host">apeiron</code> in your <code class="file">~/.ssh/config</code>,
+  as the configuration of the Nanoc deployment simply uses
+  <code>apeiron.fosdem.org</code> as the remote host for <code>rsync</code> and,
+  unless your local username is the same as your username on
+  <code>apeiron</code>, you need to configure <code>ssh</code> to use another
+  username.
 </p>
+
 <p>
-For that, add the following lines to your <code class="file">~/.ssh/config</code> (or create
-that file if it does not exist yet):
+  For that, add the following lines to your <code
+  class="file">~/.ssh/config</code> (or create that file if it does not exist
+  yet):
 </p>
 <pre class="content">Host apeiron.fosdem.org
 User=MY_USERNAME_ON_APEIRON
 GSSAPIAuthentication yes
-GSSAPIDelegateCredentials yes</pre>
+GSSAPIDelegateCredentials yes
+</pre>
+
 <p>
-Obviously, replace <code>MY_USERNAME_ON_APEIRON</code> accordingly, e.g. with <code>jdoe</code>.
+  Obviously, replace <code>MY_USERNAME_ON_APEIRON</code> accordingly, e.g. with
+  <code>jdoe</code>.
 </p>
+
 <p>
-Test your remote access first, using the following command:
+  Test your remote access first, using the following command:
 </p>
 <pre>ssh apeiron.fosdem.org</pre>
+
 <p>
-If it does not work, run the following command in order to get a fresh Kerberos ticket:
+  If it does not work, run the following command in order to get a fresh
+  Kerberos ticket:
 </p>
 <pre>kinit jdoe@FOSDEM.ORG</pre>
-<p>(where <code>jdoe</code> is to be replaced by your username on <code class="host">apeiron</code>
-and the other FOSDEM servers)</p>
+
 <p>
-Then try to run the <code class="cmd">ssh</code> command as above again.
+  (where <code>jdoe</code> is to be replaced by your username on <code
+  class="host">apeiron</code> and the other FOSDEM servers)
 </p>
 <p>
-If it still does not work, <a href="mailto:server@fosdem.org?subject=Account on apeiron">contact our
-  server team by email</a>).
+  Then try to run the <code class="cmd">ssh</code> command as above again.
 </p>
+
 <p>
-If the <code class="cmd">ssh</code> command is successful, you may exit the remote session using
-<code class="cmd">exit</code>, and you are ready to deploy your changes to the website to
-fosdem.org.
+  If it still does not work, <a href="mailto:server@fosdem.org?subject=Account
+  on apeiron">contact our server team by email</a>).
 </p>
+
 <p>
-Note that there are two targets for deployment:
+  If the <code class="cmd">ssh</code> command is successful, you may exit the
+  remote session using <code class="cmd">exit</code>, and you are ready to
+  deploy your changes to the website to fosdem.org.
 </p>
+
+<p>
+  Note that there are two targets for deployment:
+</p>
+
 <ul>
-  <li><code>staging</code>: will deploy to <a href="https://staging.fosdem.org/"><code class="host">
-      staging.fosdem.org</code></a></li>
-  <li><code>public</code>: will deploy to <a href="http://fosdem.org/"><code class="host">fosdem.org</code></a></li>
+  <li>
+    <code>staging</code>: will deploy to <a
+    href="https://staging.fosdem.org/"><code class="host">
+    staging.fosdem.org</code></a>
+  </li>
+  <li>
+    <code>public</code>: will deploy to <a href="http://fosdem.org/"><code
+    class="host">fosdem.org</code></a>
+  </li>
 </ul>
+
 <p>
-Needless to say, be careful before deploying to <code>public</code>, as that is what all the visitors
-of our site will see <tt>:)</tt>.
+  Needless to say, be careful before deploying to <code>public</code>, as that
+  is what all the visitors of our site will see <tt>:)</tt>.
 </p>
+
 <h4>Deploying to staging</h4>
 <p>
-To deploy your changes to the website to <a href="https://staging.fosdem.org/"><code class="host">staging.fosdem.org</code></a>,
-run the following command:
+  To deploy your changes to the website to <a
+  href="https://staging.fosdem.org/"><code
+  class="host">staging.fosdem.org</code></a>, run the following command:
 </p>
 <pre>nanoc deploy</pre>
+
 <p>
-Or, more explicitly:
+  Or, more explicitly:
 </p>
 <pre>nanoc deploy -t staging</pre>
+
 <h4>Deploying to public</h4>
 <p>
-In a similar fashion, to deploy the changes to our &quot;real&quot; website, do as follows:
+  In a similar fashion, to deploy the changes to our &quot;real&quot; website,
+  do as follows:
 </p>
 <pre>nanoc deploy -t public</pre>
 
@@ -309,51 +396,94 @@ In a similar fashion, to deploy the changes to our &quot;real&quot; website, do 
 
 <a name="update"></a>
 <h2>Assets</h2>
-<p>TODO: add them in <code class="dir">content/assets/</code> and link to them using &lt;img src="asset:/foo"/&gt;
-or &lt;a href="asset:/foo"&gt;</p>
+<p>
+  TODO: add them in <code class="dir">content/assets/</code> and link to them
+  using &lt;img src="asset:/foo"/&gt; or &lt;a href="asset:/foo"&gt;
+</p>
 
 <h2>Pages</h2>
-<p>TODO: create new file under <code class="dir">content/</code> with HTML or Markdown</p>
-<p>TODO: explain the metadata header sections of Nanoc, especially for the title</p>
+<p>
+  TODO: create new file under <code class="dir">content/</code> with HTML or
+  Markdown
+</p>
+
+<p>
+  TODO: explain the metadata header sections of Nanoc, especially for the
+  title
+</p>
 
 <h2>News</h2>
-<p>TODO: create new file under <code class="dir">content/news/</code> with a specific filename pattern, with HTML or Markdown</p>
+<p>
+  TODO: create new file under <code class="dir">content/news/</code> with a
+  specific filename pattern, with HTML or Markdown
+</p>
 
 <h2>Navigation</h2>
-<p>TODO: edit <code class="file">content/navigation.yaml</code></p>
+<p>
+  TODO: edit <code class="file">content/navigation.yaml</code>
+</p>
 
 <h2>Stands</h2>
-<p>TODO: edit <code class="file">content/stands.html</code></p>
+<p>
+  TODO: edit <code class="file">content/stands.html</code>
+</p>
 
 <h2>Sponsors</h2>
-<p>TODO: <code class="dir">content/sponsors/</code>: one .html or .markdown file for the sponsor blurb, and the logo
-as ${sponsor}-big.png as well as a thumbnail of the sponsor logo as ${sponsor}-small.png in that directory.</p>
-<p>TODO: how sponsors can be enabled and disabled (add <code>disabled: true</code> in the YAML metadata header of <code class="file">content/sponsors/foo.html</code>)</p>
+<p>
+  TODO: <code class="dir">content/sponsors/</code>: one .html or .markdown file
+  for the sponsor blurb, and the logo as ${sponsor}-big.png as well as a
+  thumbnail of the sponsor logo as ${sponsor}-small.png in that directory.
+</p>
+
+<p>
+  TODO: how sponsors can be enabled and disabled (add <code>disabled:
+  true</code> in the YAML metadata header of <code
+  class="file">content/sponsors/foo.html</code>)
+</p>
 
 <h2>Stylesheets</h2>
-<p>TODO: <code class="dir">content/assets/style/parts/</code> and how they are assembled and minified</p>
+<p>
+  TODO: <code class="dir">content/assets/style/parts/</code> and how they are
+  assembled and minified
+</p>
 
 <h1>Schedule Data</h1>
-<p>TODO: how the schedule data (events, speakers, tracks, rooms, days) are pulled from the Pentabarf database into
-a local cache (<code class="dir">./export/</code>), how attachments and photos are compared with MD5 hashes from the
-database to only download what's needed, how thumbnails of photos are made on the fly, and how they are rendered to
-pages using the layouts under <code class="dir">./layouts/schedule/</code></p>
+<p>
+  TODO: how the schedule data (events, speakers, tracks, rooms, days) are pulled
+  from the Pentabarf database into a local cache (<code
+  class="dir">./export/</code>), how attachments and photos are compared
+  with MD5 hashes from the database to only download what's needed, how
+  thumbnails of photos are made on the fly, and how they are rendered to pages
+  using the layouts under <code class="dir">./layouts/schedule/</code>
+</p>
 
 <h2>Updating schedule data</h2>
-<p>TODO: ssh tunnel to penta.fosdem.org, run <code>nanoc update -y</code></p>
+<p>
+  TODO: ssh tunnel to penta.fosdem.org, run <code>nanoc update -y</code>
+</p>
 
 <h2>Track descriptions</h2>
-<p>TODO: how the content from <code class="dir">content/schedule/devrooms/</code> as well as logos (to be implemented)
-are &quot;injected&quot; into the resulting schedule pages (as we cannot put that data into Pentabarf).</p>
+<p>
+  TODO: how the content from <code class="dir">content/schedule/devrooms/</code>
+  as well as logos (to be implemented) are &quot;injected&quot; into the
+  resulting schedule pages (as we cannot put that data into Pentabarf).
+</p>
 
 <h1>Configuration</h1>
 <h2>Rules</h2>
-<p>TODO: how the nanoc rules configuration (<code class="file">Rules</code>) works.</p>
+<p>
+  TODO: how the nanoc rules configuration (<code class="file">Rules</code>)
+  works.
+</p>
 
 <h2>Nanoc configuration</h2>
-<p>TODO: explain the various bits in <code class="file">config.yaml</code>.</p>
+<p>
+  TODO: explain the various bits in <code class="file">config.yaml</code>.
+</p>
 
 <h1>Performance</h1>
-<p>TODO: the various actions that are taken to make the site extremely fast: digests in asset filenames, CSS minification,
-CSS sprites, optimization of the CSS sprites, ...</p>
-
+<p>
+  TODO: the various actions that are taken to make the site extremely fast:
+  digests in asset filenames, CSS minification, CSS sprites, optimization of the
+  CSS sprites, ...
+</p>
