@@ -597,8 +597,6 @@ module Fosdem
                      t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
                      t['title'] = t['conference_track']
                      t['type'] = case t['conference_track']
-                                 when /\s+track$/i
-                                   'maintrack'
                                  when /\s+devroom$/i
                                    'devroom'
                                  when /^lightning\s*talks?$/i
@@ -607,6 +605,8 @@ module Fosdem
                                    'keynote'
                                  when /^certifications?$/i
                                    'certification'
+                                 else
+                                   'maintrack'
                                  end
 
                      slugify!(model(t, [:name, :title, :type, :conference_track_id, :conference_track, :rank]), :name)
