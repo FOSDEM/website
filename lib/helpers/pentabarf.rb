@@ -30,8 +30,6 @@ module Fosdem
           user: user,
           password: password,
           dbname: database,
-          client_encoding: 'utf-8',
-          sslmode: 'prefer',
         )
         log(:high, "connected to Pentabarf database #{hostaddress}:#{port}", Time.now - time_before)
       rescue => e
