@@ -109,6 +109,37 @@ GSSAPIAuthentication yes
 PreferredAuthentications gssapi-with-mic
 </pre>
 
+<a name="git-clone"></a>
+<h1>Checking out the website</h1>
+<p>
+  The sources of our website are kept under version control (namely, <a
+  href="http://git-scm.com/"><code>git</code></a>).
+  In order to make modifications, you first need to &quot;clone&quot; the
+  repository to your workstation.
+</p>
+
+<p>
+  To clone the sources initially, create a working directory on your local
+  system, e.g.:
+</p>
+<pre>mkdir -p ~/src/projects/fosdem</pre>
+
+<p>
+  Then change to that directory using
+</p>
+<pre>cd ~/src/projects/fosdem</pre>
+
+<p>
+  Now use <code>git</code> to clone the repository:
+</p>
+<pre>git clone git@git.fosdem.org:/srv/git/website.git</pre>
+
+<p>
+  Finally, go to the subdirectory <code class="dir">website/</code> that has
+  just been created:
+</p>
+<pre>cd website</pre>
+
 
 <a name="nanoc"></a>
 <h1>Nanoc</h1>
@@ -236,36 +267,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
   href="http://gembundler.com/">gembundler.com</a>.
 </p>
 
-<a name="git-clone"></a>
-<h2>Checking out the website</h2>
-<p>
-  The sources of our website are kept under version control (namely, <a
-  href="http://git-scm.com/"><code>git</code></a>).
-  In order to make modifications, you first need to &quot;clone&quot; the
-  repository to your workstation.
-</p>
-
-<p>
-  To clone the sources initially, create a working directory on your local
-  system, e.g.:
-</p>
-<pre>mkdir -p ~/src/projects/fosdem</pre>
-
-<p>
-  Then change to that directory using
-</p>
-<pre>cd ~/src/projects/fosdem</pre>
-
-<p>
-  Now use <code>git</code> to clone the repository:
-</p>
-<pre>git clone git@git.fosdem.org:/srv/git/website.git</pre>
-
-<p>
-  Finally, go to the subdirectory <code class="dir">website/</code> that has
-  just been created:
-</p>
-<pre>cd website</pre>
 
 <a name="nanoc-update"></a>
 <h2>Loading content from Pentabarf</h2>
