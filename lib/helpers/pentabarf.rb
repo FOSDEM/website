@@ -602,7 +602,7 @@ module Fosdem
                                    'lightningtalk'
                                  when /^keynotes?$/i
                                    'keynote'
-                                 when /^certifications?$/i
+                                 when /^certification?$/i
                                    'certification'
                                  else
                                    'maintrack'
