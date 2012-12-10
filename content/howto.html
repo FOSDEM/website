@@ -106,8 +106,42 @@ Dec  7 11:26:00 2012    Dec  8 11:25:56 2012  krbtgt/FOSDEM.ORG@FOSDEM.ORG
 <pre>
 Host *.fosdem.org
 GSSAPIAuthentication yes
+#GSSAPIDelegateCredentials yes
 PreferredAuthentications gssapi-with-mic
 </pre>
+
+<a name="nanoc.fosdem.org"></a>
+<h2>Accounts on nanoc.fosdem.org</h2>
+<p>
+  These instructions assume that you want to work on one of your own machines.
+  If you prefer not to install a whole Ruby/RVM toolchain on one of your
+  own machines, we can give you an account on <code>nanoc.fosdem.org</code>.
+  In order to be able to access <code>git</code> and to push the website,
+  you will need to make sure that your Kerberos ticket is <em>forwarded</em>
+  when you log in.
+</p>
+
+<p>
+  For your ticket to be forwardable, you need to obtain it with
+  <code>kinit -f</code>.
+  Alternatively, you can configure Kerberos to obtain forwardable tickets
+  for FOSDEM.ORG all the time, with the following configuration in your
+  <code class="file">/etc/krb5.conf</code> file:
+</p>
+<pre>
+[realms]
+    FOSDEM.ORG = {
+        forwardable = yes
+    }
+</pre>
+
+<p>
+  You will also need to tell <code>ssh</code> that it needs to delegate
+  the credential.
+  Remove the comment in front of <code>GSSAPIDelegateCredentials yes</code>
+  in the above <code class="file">~/.ssh/config</code> stanza.
+</p>
+
 
 <a name="git-clone"></a>
 <h1>Checking out the website</h1>
