@@ -91,12 +91,12 @@ module Fosdem
       cid = begin
               t = conf.fetch :conference_id
               if t.to_s =~ /^\d+$/
-                t
+                t.to_i
               else
                 @db.exec('SELECT conference_id FROM conference WHERE acronym=$1', [t]) do |res|
                   fail "no conference found for acronym #{t}" if res.ntuples < 1
                   fail "found more than one conference that matches acronym #{t}" if res.ntuples > 1
-                  res.first['conference_id']
+                  res.first['conference_id'].to_i
                 end
               end
             end
@@ -479,7 +479,7 @@ module Fosdem
               # the pentabarf database
               p['conference_person_id'] = cp['conference_person_id']
 
-              unless p.has_key? :abstract or p.has_key? :description
+              unless p.has_key? 'abstract' or p.has_key? 'description'
                 # copy those attributes and convert the markup
                 %w(abstract description).each do |a|
                   p[a] = markup(cp[a])
@@ -489,6 +489,7 @@ module Fosdem
                   p['abstract_old'] = true
                   p['description_old'] = true
                 end
+                next
               end
             else
               # it's not a speaker, ignore
