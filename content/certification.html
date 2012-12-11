@@ -2,20 +2,7 @@
 title: Certification Exams
 ---
 <%
-# vim: set ts=2 sw=2 et ai ft=eruby:
-# encoding: utf-8
-require 'time'
-
-days = @items.select{|i| i.identifier =~ %r{/schedule/day/.+}}
-speakers = @items.select{|i| i.identifier =~ %r{/schedule/speaker/.+}}
-events = @items.select{|i| i.identifier =~ %r{/schedule/event/.+}}
-tracks = @items.select{|i| i.identifier =~ %r{/schedule/track/.+}}
-keynotes = events.select{|e| e[:type] == 'keynote'}.sort_by{|e| e[:start_datetime]}
-maintracks = tracks.select{|t| t[:type] == 'maintrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
-distroevents = events.select{|e| e[:type] == 'devroom' and e[:track].casecmp('crossdistribution') == 0}
-devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
-lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first   
-ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
+# vim: et ft=eruby sw=2 ts=2
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
 %>
 
@@ -68,7 +55,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
     <% end %>
   </table>
 <% else %>
-  <p><span class="label label-info">Certification exams have been scheduled yet.</span></p>
+  <p><span class="label label-info">Certification exams have not been scheduled yet.</span></p>
 <% end %>
 
 <img src="asset:lpi-big" alt="" style="float:right; margin-left: 1em; margin-right: 1em;"/>
@@ -91,26 +78,30 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 </p>
 
 <table class="table table-striped table-bordered table-condensed">
-  <tr>
-    <th>Certification</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>LPI Essentials</td>
-    <td>&euro; 50.00</td>
-  </tr>
-  <tr>
-    <td>LPI 10x, 20x</td>
-    <td>&euro; 90.00</td>
-  </tr>
-  <tr>
-    <td>LPI 301</td>
-    <td>&euro; 150.00</td>
-  </tr>
-  <tr>
-    <td>LPI 302, 303, 3041</td>
-    <td>&euro; 90.00</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Certification</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LPI Essentials</td>
+      <td>&euro; 50.00</td>
+    </tr>
+    <tr>
+      <td>LPI 10x, 20x</td>
+      <td>&euro; 90.00</td>
+    </tr>
+    <tr>
+      <td>LPI 301</td>
+      <td>&euro; 150.00</td>
+    </tr>
+    <tr>
+      <td>LPI 302, 303, 3041</td>
+      <td>&euro; 90.00</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>
