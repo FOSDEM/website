@@ -12,6 +12,8 @@ $type_label = {
   interview: 'inverse',
 }
 
+enable :inline_templates
+
 set(:has_parameter) do |parameter|
   condition do
     params.has_key? parameter.to_s and not params[parameter.to_s].strip.empty?
