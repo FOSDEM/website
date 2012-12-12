@@ -1,47 +1,65 @@
 ---
 title: First main tracks for FOSDEM 2013
 ---
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+%>
 <p>Now that the call for main tracks has been closed, we are pleased to
 announce the first main tracks for FOSDEM 2013!</p>
 ---MORE---
 <p>
 We are still reviewing some proposals so there is much more to come, but
 we don't want to keep you waiting any longer. We are proud to announce
-the following talks, in no particular order:
+the following talks, in alphabetical order:
 </p>
-
+<%
+  def elist(list)
+    list
+    .map{|id| $item_by_id.fetch("/schedule/event/#{id}/")}
+    .sort_by{|item| item[:title]}
+    .map{|item|
+      %Q!<li>&quot;<a href="#{item.path}" class="quiet">#{item[:title]}</a>&quot;, by <i>#{item[:speakers].map{|s| speaker(s)}.map{|s| %Q:<a href="#{s.path}" class="quiet">#{s[:name]}</a>:}.join(', ')}</i></li>!
+    }.join("\n")
+  end
+%>
 <ul>
-  <li>"FreedomBox 1.0", by <i>Bdale Garbee</i></li>
-  <li>"How we made the Jenkins community", by <i>Kohsuke Kawaguchi</i></li>
-  <li>"The Keeper of Secrets", by <i>Leslie Hawthorn</i></li>
-  <li>"systemd, Two Years Later", by <i>Lennart Poettering</i></li>
-  <li>"Practical Security for developers, using OWASP ZAP", by <i>Simon Bennetts</i></li>
-  <li>"Open Science, Open Software, and Reproducible Code", by <i>Bill Hoffman</i></li>
-  <li>"Maintaining a kernel subsystem", by <i>Wolfram Sang</i></li>
-  <li>"Keccak, More Than Just SHA3SUM", by <i>The Keccak Team</i></li>
-  <li>"Can we finally replace Skype, Viber, Twitter and Facebook?", by <i>Daniel Pocock</i></li>
-  <li>"Static site generation for the masses", by <i>Denis Defreyne</i></li>
-  <li>"Trends in Open Source Security", by <i>Florian Weimer</i></li>
-  <li>"Vroom! Free Software in your car", by <i>Jeremiah Foster</i></li>
-  <li>"Scaling PHP with HipHop", by <i>Sara Golemon</i></li>
+  <%=
+    elist %w{
+      keynote_freedombox
+      keynote_vibrant_developer_community
+      keynote_keeper_of_secrets
+      systemd_two_years_later
+      security_owasp
+      open_science
+      maintaining_a_kernel_subsystem
+      security_keccak
+      free_open_secure_communications
+      static_site_generation_for_the_masses
+      trends_in_open_source_security
+      free_software_in_your_car
+      scaling_php_with_hiphop
+    }
+  %>
 </ul>
 
 <p>
-<b>Update 2012-12-11:</b> More talks confirmed, we almost have a full schedule
-now!
-
-<ul>
-  <li>"UEFI SecureBoot", by <i>Cathy Malmrose</i></li>
-  <li>"How to build an Identity Management System on Linux", by <i>Simo Sorce</i></li>
-  <li>"Aldebaran Robotics and Open Source", by <i>Dimitri Merejkowsky</i></li>
-  <li>"Open ARM GPU drivers.", by <i>Luc Verhaegen</i></li>
-  <li>"LibreOffice: cleaning and re-factoring a giant code-base", by <i>Michael Meeks</i></li>
-  <li>"Has the GNOME community turned crazy?", by <i>Vincent Untz</i></li>
-  <li>"The Anykernel and Rump Kernels", by <i>Antti Kantee</i></li>
-</ul>
+<b>Update 2012-12-11:</b> More talks confirmed, we almost have a full schedule now!
 </p>
+<ul>
+  <%=
+    elist %w{
+      uefi_secureboot
+      security_identity_management
+      aldebaran_robotics
+      operating_systems_open_arm_gpu
+      challenges_libreoffice
+      challenges_gnome
+      operating_systems_anykernel
+    }
+    %>
+</ul>
 
 <p>
 We are still trying to pour all of these into tracks, you can watch
-our progress on the <a href="/2013/schedule">schedule</a> page.
+our progress on the <a href="page:schedule">schedule page</a>.
 </p>
