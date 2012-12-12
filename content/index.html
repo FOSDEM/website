@@ -8,6 +8,7 @@ visual: true
 ---
 <%
 # vim: set ts=2 sw=2 et ai ft=eruby:
+maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
 %>
   <div class="s-block">
     <div class="text-block">
@@ -44,7 +45,7 @@ visual: true
   <div class="news-block">
     <h2>NEWS</h2>
     <ul class="news-list">
-      <% newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse; newsitems[0,item[:maxnews]].each do |hl| %>
+      <% newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse; newsitems[0,maxnews].each do |hl| %>
         <li class="news">
         <div class="date">
           <div class="holder">
@@ -59,7 +60,7 @@ visual: true
         </li>
       <% end %>
     </ul>
-    <% if newsitems.length > item[:maxnews] %>
+    <% if newsitems.length > maxnews %>
       <div class="btn-news">
         <a class="btn-purple" href="#">more news</a>
       </div>

@@ -190,3 +190,6 @@ deadlines:
     - 2012-11-28
     - 2012-12-15
 
+news:
+  items_on_index_page: 3
+
