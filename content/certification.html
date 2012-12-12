@@ -50,24 +50,34 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   <thead>
     <tr>
       <th>Certification</th>
+      <th>Exams</th>
       <th>Price</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>LPI Essentials</td>
+      <td><a href="http://www.lpi.org/linux-certifications/introductory-programs/linux-essentials">Linux Essentials</a></td>
+      <td></td>
       <td>&euro; 50.00</td>
     </tr>
     <tr>
-      <td>LPI 10x, 20x</td>
+      <td><a href="http://www.lpi.org/linux-certifications/programs/lpic-1">LPIC-1</a></td>
+      <td>101, 102</td>
       <td>&euro; 90.00</td>
     </tr>
     <tr>
-      <td>LPI 301</td>
+      <td><a href="http://www.lpi.org/linux-certifications/programs/lpic-2">LPIC-2</a></td>
+      <td>201, 202</td>
+      <td>&euro; 90.00</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.lpi.org/linux-certifications/programs/lpic-3">LPIC-3</a></td>
+      <td>301</td>
       <td>&euro; 150.00</td>
     </tr>
     <tr>
-      <td>LPI 302, 303, 3041</td>
+      <td><a href="http://www.lpi.org/linux-certifications/programs/lpic-3">LPIC-3</a></td>
+      <td>302, 303, 304</td>
       <td>&euro; 90.00</td>
     </tr>
   </tbody>
@@ -121,8 +131,8 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <h3>Registration procedure</h3>
 <p>
   Participants have to register for a BSDCG ID at
-  <a href="https://register.bsdcertification.org//register/get-a-bsdcg-id">
-  https://register.bsdcertification.org//register/get-a-bsdcg-id</a>.
+  <a href="https://register.bsdcertification.org/register/get-a-bsdcg-id">
+  https://register.bsdcertification.org/register/get-a-bsdcg-id</a>.
   Note that it may take up to 24 hours to receive a BSDCG ID.
   Once you have an ID, you can choose an exam location and pay for the exam from
   the same website.
