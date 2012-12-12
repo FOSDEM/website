@@ -229,10 +229,12 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-    unless item.identifier =~ %r{^/schedule/devrooms/.+}
+    case item.identifier
+    when %r{^/schedule/devrooms/.+}
+    when %r{^/schedule/([^/]+)/.+}
       # process schedule items with their respective template from layouts/schedule/
       # (e.g. /schedule/event/foo is processed with layouts/schedule/event.*)
-      layout "/schedule/#{$1}/" if item.identifier =~ %r{^/schedule/([^/]+)/.+}
+      layout "/schedule/#{$1}/"
     end
 
     # process <% ERB %> templating
