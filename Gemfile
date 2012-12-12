@@ -9,7 +9,7 @@ source "http://rubygems.org"
 
 gem "cri", "~>2.3.0"
 gem "kramdown", "~>0.13.6"
-gem "nanoc", "~>3.4.2"
+gem "nanoc", "3.4.3"
 #gem "nanoc", git: "https://github.com/ddfreyne/nanoc.git", branch: "release-3.4.x"
 #gem "nanoc", git: "https://github.com/ddfreyne/nanoc.git", branch: "master"
 gem "nokogiri"

@@ -38,7 +38,7 @@ GEM
     in_threads (1.1.1)
     kramdown (0.13.8)
     multi_json (1.2.0)
-    nanoc (3.4.2)
+    nanoc (3.4.3)
       cri (~> 2.2)
     nokogiri (1.5.5)
     pdf-reader (1.2.0)
@@ -95,7 +95,7 @@ DEPENDENCIES
   i18n
   image_optim
   kramdown (~> 0.13.6)
-  nanoc (~> 3.4.2)
+  nanoc (= 3.4.3)
   nokogiri
   pg
   prawn!
