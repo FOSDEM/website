@@ -20,13 +20,13 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
 
 <h3>Before the event</h3>
 <h4>Submit your keys</h4>
-<span class="label label-info">
+<p>
   <% if conf.fetch(:submission_closed) %>
+  <span class="label label-info">
     The submission deadline has passed.
-  <% else %>
-    Submission period starts <%= conf.fetch(:submission_start).strftime(dateformat) %>
+  </span>
+  <% # XXX: Add check for "submission not yet open" %>
   <% end %>
-</span>
 </p>
 
 <p>
