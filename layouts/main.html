@@ -25,7 +25,7 @@ $layout_dateline ||= begin
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
     <div id="header">
       <div class="header-holder">
-        <h1 class="logo"><a href="/"><%= conference()[:acronym] %> Free and open source software developer’s european meeting</a></h1>
+        <h1 class="logo"><a href="<%= pathof '/' %>"><%= conference()[:acronym] %> Free and open source software developers’ European meeting</a></h1>
         <ul id="nav">
           <%= navigation $item_by_id.fetch('/navigation/')[:top] %>
           <% unless item[:no_search] %>
