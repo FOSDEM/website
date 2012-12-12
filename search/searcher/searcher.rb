@@ -233,10 +233,10 @@ def search(template=:html, layout=:layout)
 
       partial = begin
                   require 'uri'
-                  uri = "#{@base_uri}"
-                  uri << '/' unless uri.end_with? '/'
-                  uri << "?q=#{URI.escape q}"
-                  uri << "&" << types.map{|type| URI.escape type}.join('&')
+                  #uri = "#{@base_uri}"
+                  #uri << '/' unless uri.end_with? '/'
+                  uri = "?q=#{URI.escape q}"
+                  uri << "&" << types.map{|type| URI.escape type}.join('&') unless types.empty?
                   uri
                 end
 
