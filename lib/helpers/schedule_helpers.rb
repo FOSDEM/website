@@ -34,7 +34,6 @@ module Fosdem
               end
 
     buffer = ''
-    xml = Builder::XmlMarkup.new(:target => buffer, :indent => 0)
     style = begin
               width, height = html_image_size(item)
               a[:width] = width
@@ -46,8 +45,7 @@ module Fosdem
     else
       a[:style] = style
     end
-    xml.img(a)
-    buffer
+    %Q!<img #{a.map{|k,v| %Q!#{k}="#{v}"!}.join(" ")}/>!
   end
 
   def l(item, title=:title, sep=", ", detail=nil, klass=nil)
@@ -342,7 +340,7 @@ module Fosdem
     item[:kind] == 'page' or item.identifier.match(%r{^/(news|headlines|assets|sponsors?|schedule)/}).nil?
   end
   def news?(item)
-    item[:kind] == 'news' or item.identifier.match(%r{^/news/.+}).nil? ? false : true
+    item[:kind] == 'news' or item.identifier.match(%r{^/news/\d\d\d\d-\d\d-\d\d-[^/]+/$}).nil? ? false : true
   end
   def sponsor?(item)
     item[:kind] == 'sponsor' or (item[:kind] != 'page' and not item.binary? and item.identifier.match(%r{^/sponsors?/.+/}).nil? ? false : true)

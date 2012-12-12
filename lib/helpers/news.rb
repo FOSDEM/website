@@ -45,4 +45,48 @@ module Fosdem
       end
     end
   end
+
+  def make_newspages
+    list = []
+    pages = @items
+    .select{|i| news?(i)}
+    .sort_by{|i| i[:created_at]}
+    .reverse
+    .each_slice(@config.fetch(:news).fetch(:news_page_items).to_i)
+    .map(&:to_a)
+
+    pages.each_with_index do |newsitems, i|
+      p = i + 1
+      id = if i > 0
+             "/news/#{p}/"
+           else
+             "/news/"
+           end
+      newspage = Nanoc::Item.new('', {kind: 'newspage'}, id, { mtime: newsitems.first.mtime, binary: false})
+      newspage[:newsitems] = newsitems.map{|i| i.identifier}
+      newspage[:page] = p
+      newspage[:pages] = pages.size
+      newspage[:title] = (pages.size > 1) ? "News (#{p} of #{pages.size})" : "News"
+      newspage[:titlehead] = false
+
+      headlinks = [ { rel: 'canonical', href: id } ]
+      if p > 1
+        prev = if p > 2
+                 "/news/#{p - 1}/"
+               else
+                 "/news/"
+               end
+        headlinks << { rel: 'prev', href: prev }
+      end
+      if p < pages.size
+        headlinks << { rel: 'next', href: "/news/#{p + 1}/" }
+      end
+      newspage[:headlinks] = headlinks
+
+      list << newspage
+    end
+    list.first[:navtitle] = 'News'
+    list.each{|i| @items << i}
+  end
+
 end

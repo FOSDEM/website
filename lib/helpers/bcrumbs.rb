@@ -2,12 +2,23 @@
 module Fosdem
 
   def bcrumbs(opts={})
-    require 'builder'
-
     separator = opts.fetch(:separator, nil)
 
     # smarter breadcrumbs, preprocess here
     path = case @item.identifier
+           when %r{^/news/(\d+/)?$}
+             if @item[:pages] > 1
+               [
+                 { title: conference()[:title], id: '/' },
+                 { title: 'News', id: '/news/' },
+                 { title: "#{@item[:page]} of #{@item[:pages]}", id: @item.identifier },
+               ]
+             else
+               [
+                 { title: conference()[:title], id: '/' },
+                 { title: 'News', id: '/news/' },
+               ]
+             end
            when %r{^/schedule/room/(.+)/$}
              building = $room_to_building.fetch($1)
              [

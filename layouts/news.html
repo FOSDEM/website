@@ -1,0 +1,52 @@
+<%
+# vim: set ts=2 sw=2 et ai ft=eruby:
+%>
+<%
+  page = @item[:page]
+  pages = @item[:pages]
+  pagination = pages > 1
+  prev_page = case page
+              when 1
+                nil
+              when 2
+                $item_by_id.fetch("/news/").path
+              else
+                $item_by_id.fetch("/news/#{page - 1}/").path
+              end
+  next_page = if page >= pages
+                nil
+              else
+                $item_by_id.fetch("/news/#{page + 1}/").path
+              end
+%>
+<ul class="unstyled" id="all-news">
+  <% @item[:newsitems].map(&$to_item).each do |item| %>
+    <li class="news-item">
+    <span class="date"><a href="<%= item.path %>"><%= item[:created_at].strftime '%Y-%m-%d' %></a><span class="date-separator">&nbsp;&#x00BB;&nbsp;</span></span>
+    <h2><%= item[:title] %></h2>
+    <div class="news-item-content">
+      <%= item.compiled_content %>
+    </div>
+    </li>
+  <% end %>
+</ul>
+<% if pagination %>
+  <div class="pagination pagination-centered">
+    <ul>
+      <% if prev_page %>
+        <li><a href="<%= prev_page %>" rel="prev">Prev</a></li>
+      <% else %>
+        <li class="disabled"><a>Prev</a></li>
+      <% end %>
+      <li<% if p == page %> class="active" rel="canonical"<% end %>><a href="<%= $item_by_id.fetch("/news/").path %>">1</a></li>
+      <% (2..pages).each do |p| %>
+        <li<% if p == page %> class="active" rel="canonical"<% end %>><a href="<%= $item_by_id.fetch("/news/#{p}/").path %>"><%= p %></a></li>
+      <% end %>
+      <% if next_page %>
+        <li><a href="<%= next_page %>" rel="next">Next</a></li>
+      <% else %>
+        <li class="disabled"><a>Next</a></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

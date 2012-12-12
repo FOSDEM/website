@@ -56,6 +56,8 @@ preprocess do
   # create /headline/... items from content/news/*
   make_headlines
 
+  make_newspages
+
   # auto-set the title of content/interviews/*
   decorate_interviews
 
@@ -230,6 +232,8 @@ compile '*' do
     # don’t filter binary items
   else
     case item.identifier
+    when %r{^/news/(\d+/)?$}
+      layout "/news/"
     when %r{^/schedule/devrooms/.+}
     when %r{^/schedule/([^/]+)/.+}
       # process schedule items with their respective template from layouts/schedule/
@@ -502,6 +506,18 @@ route '/icon/' do
              ""
            end
   "#{$prefix}/icon#{suffix}.#{item[:extension]}"
+end
+
+route %r{^/news/\d+/$} do
+  if item.identifier =~ %r{^/news/(\d+)/$}
+    if $1.to_i == 1
+      "#{$prefix}/news/index.html"
+    else
+      "#{$prefix}/news/#{$1}/index.html"
+    end
+  else
+    fail "newspage item has invalid identifier \"#{item.identifier}\""
+  end
 end
 
 # and this is for everything else:

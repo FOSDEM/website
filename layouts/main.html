@@ -19,8 +19,16 @@ $layout_dateline ||= begin
     <% (@item[:alternative_representations] or []).each do |alt| %>
       <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= $item_by_id[alt[:item]].path %>" />
     <% end %>
+    <% (@item[:headlinks] or []).each do |l| %>
+      <link<% if l[:type] %> type="<%= l.fetch(:type) %>"<% end %> rel="<%= l.fetch(:rel) %>"<% if l[:title] %> title="<%= l.fetch(:title) %>"<% end %> href="<%= $item_by_id.fetch(l.fetch(:href)).path %>" />
+    <% end %>
     <% if @item[:head_erb_injection] %><%%= <%= @item[:head_erb_injection] %> %><% end %>
     <title><%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %></title>
+    <link rel="schema.DC" href="http://purl.org/DC/elements/1.0/" />
+    <% if @item[:title] %><meta name="DC.Title" content="<%= @item[:title] %>"/><% end %>
+    <meta name="DC.Format" content="text/html" />
+    <meta name="DC.Language" content="en" />
+    <meta name="DC.Subject" content="<%= conference()[:title] %>" />
   </head>
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
     <div id="header">
