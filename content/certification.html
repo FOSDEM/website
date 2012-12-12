@@ -12,37 +12,38 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 
 <p>
   The <a href="http://lpi.org/">Linux Professional Institute</a> and the <a
-  href="http://bsdca.org/">BSD Certification Group</a>
+  href="http://bsdcertification.org/">BSD Certification Group</a>
   will organise exam sessions during <%= conference()[:title] %>.  
   Interested candidates will be able to
   register for exams with the respective certification groups.
 </p>
 
+<h2>Exam schedule</h2>
 <% unless certs.empty? %>
   <p>
     The <a href="<%= pathof '/schedule/' %>#certification">schedule for the
     exam sessions</a> is now available.</p>
 <% else %>
-  <p><span class="label label-info">Certification exams have not been scheduled yet.</span></p>
+  <p>
+    <span class="label label-info">Certification exams have not been scheduled
+    yet.</span>
+  </p>
 <% end %>
 
-<img src="asset:lpi-big" alt="" style="float:right; margin-left: 1em; margin-right: 1em;"/>
-
-<h3>
-  LPI offers discounted certification exams at <%= conference()[:title] %>.
-</h3>
-
+<img src="asset:lpi-big" alt=""
+    style="float:right; margin-left: 1em; margin-right: 1em;"/>
+<h2>LPI offers discounted certification exams at <%= conference()[:title] %>.</h2>
 <p>
   As in previous years, the Linux Professional Institute, will again offer a
-  discount to examination candidates at <%= conference()[:title] %>.  The level
-  1, level 2 and level 3 exams are offered at a <strong>discount of nearly
-  50%</strong>.
+  discount to examination candidates at <%= conference()[:title] %>.<br/>
+  The level 1, level 2 and level 3 exams are offered at a <strong>discount of
+  nearly 50%</strong>.
 </p>
 </div>
 
 <p>
-  The following examinations are offered.  Exams will be in English (all LPICs)
-  or French (LPIC 101 and 102 only).
+  The following examinations are offered.
+  Exams will be in English (all LPICs) or French (LPIC 101 and 102 only).
 </p>
 
 <table class="table table-striped table-bordered table-condensed">
@@ -72,8 +73,81 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   </tbody>
 </table>
 
+<h3>Registration procedure</h3>
 <p>
   <span class="label label-info">
-    The registration procedure for exam sessions is yet to be announced.
+    The registration procedure is yet to be announced.
   </span>
+</p>
+
+<h3>About LPI</h3>
+<p>
+  The Linux Professional Institute (LPI) is an internationally recognised,
+  vendor-independent organisation advocating and assisting the professional
+  use of Linux, Open Source and Free Software, through the certification of
+  Linux professionals.
+  Established as a non-profit organisation in 1999, LPI is community-based and
+  -supported.
+  LPI’s certification program is delivered worldwide in multiple languages at
+  over 7,000 testing locations and is supported by an affiliate network spanning
+  five continents.
+</p>
+<p>
+  Since the program’s inception, LPI has delivered over 300,000 exams and
+  100,000+ LPIC certifications around the world.
+</p>
+
+<hr/>
+
+<img src="asset:bsdcg-logo" alt=""
+  style="float:right; margin-left: 1em; margin-right: 1em;"/>
+<h2>BSD Associate Certification</h2>
+<p>
+  The BSD Certification Group (BSDCG) will offer the BSDA certification exam
+  to attendees of <%= conference()[:title] %>.
+  One exam session will be offered.
+</p>
+
+<p>
+  The exam will be paper based and in English.
+  Exam information is available from the <a
+  href="http://www.bsdcertification.org/certification/">certification page of
+  the BSDCG website</a>.
+  Exam candidates should be proficient in the BSDA Certification Requirements
+  and the Command Reference, both of which are available for free download from
+  this page of the website.
+</p>
+
+<h3>Registration procedure</h3>
+<p>
+  Participants have to register for a BSDCG ID at
+  <a href="https://register.bsdcertification.org//register/get-a-bsdcg-id">
+  https://register.bsdcertification.org//register/get-a-bsdcg-id</a>.
+  Note that it may take up to 24 hours to receive a BSDCG ID.
+  Once you have an ID, you can choose an exam location and pay for the exam from
+  the same website.
+  Prices are $75 USD and payable through PayPal or credit card.
+</p>
+
+<p>
+  Exam candidates must bring valid photo identification matching the name they
+  used when they registered for their BSDCG ID.
+  Due to limited seating at the event, exam pre-registration is recommended.
+</p>
+
+<h3>About BSDCG</h3>
+<p>
+  The BSD Certification Group (BSDCG) is a non-profit organization committed to
+  creating and maintaining a global certification standard for system
+  administration on BSD based operating systems.
+  The BSDCG works with the BSD and sysadmin communities in order to provide a
+  practical and relevant certification.
+</p>
+
+<p>
+  The BSDA certification is designed to be an entry-level certification on BSD
+  Unix systems administration.
+  The successful BSDA candidate is able to complete common administrative and
+  troubleshooting tasks and has a good understanding of general BSD Unix and
+  networking principles.
 </p>
