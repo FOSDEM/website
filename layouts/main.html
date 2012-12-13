@@ -29,6 +29,7 @@ $layout_dateline ||= begin
     <meta name="DC.Format" content="text/html" />
     <meta name="DC.Language" content="en" />
     <meta name="DC.Subject" content="<%= conference()[:title] %>" />
+    <meta name="DC.Rights" content="http://creativecommons.org/licenses/by-sa/2.0/be/" />
   </head>
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
     <div id="header">
@@ -146,6 +147,13 @@ $layout_dateline ||= begin
         <div class="company-info">
           <strong class="logo-small"><a href="<%= pathof '/schedule/' %>"><%= conference()[:acronym] %></a></strong>
           <p>Brussels <span>/</span> <strong><%= $layout_dateline %></strong></p>
+        </div>
+        <div class="license-info">
+          This work is licensed under the Creative Commons Attribution-ShareAlike 2.0
+          Belgium License.<br/>
+          To view a copy of this license, visit
+          <a class="quiet" rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/be/">http://creativecommons.org/licenses/by-sa/2.0/be/</a><br/>
+          or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
         </div>
       </div>
     </div>
