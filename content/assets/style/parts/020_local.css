@@ -440,3 +440,10 @@ ul.side-box {
     margin-top: 0.7em;
     margin-left: -110px;
 }
+pre.sh {
+    background-color: #000;
+    color: #e2e2e2;
+    padding: 0.5em 1em;
+    border: 1px solid #ddd;
+    border-left: 1em solid #ddd;
+}

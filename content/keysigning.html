@@ -36,9 +36,9 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
   are using GnuPG, this can easily be accomplished with:
 </p>
 
-<p style="margin-left: 2em;">
-  <code>% gpg --keyserver ksp.fosdem.org --send-key [keyid]</code>
-</p>
+<pre class="sh">
+gpg --keyserver ksp.fosdem.org --send-key [keyid]
+</pre>
 
 <p>
   You may want to verify that your submission made it to the keyserver by
@@ -87,9 +87,9 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
   If there is a trust-path between you and the author, you should verify the
   list's detached signature using:
 </p>
-<p style="margin-left: 2em;">
-  <code>% gpg --verify ksp-<%= klist %>.txt.asc ksp-<%= klist %>.txt</code>
-</p>
+<pre class="sh">
+gpg --verify ksp-<%= klist %>.txt.asc ksp-<%= klist %>.txt
+</pre>
 
 <p>
   Please bring the printed list, a pen and appropriate form of identification
@@ -121,9 +121,9 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
   If there is a trust-path between you and the author, you should verify the
   file's detached signature using:
 </p>
-<p style="margin-left: 2em;">
-  <code>% gpg --verify ksp-<%= klist %>-hashes.txt.asc ksp-<%= klist %>-hashes.txt</code>
-</p>
+<pre class="sh">
+gpg --verify ksp-<%= klist %>-hashes.txt.asc ksp-<%= klist %>-hashes.txt
+</pre>
 
 <p>
   Please complete your signing homework before
