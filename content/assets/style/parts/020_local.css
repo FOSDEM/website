@@ -447,3 +447,29 @@ pre.sh {
     border: 1px solid #ddd;
     border-left: 1em solid #ddd;
 }
+
+.floating-image-container-left {
+    float: left;
+    margin: 0 1em 0.5em 0;
+}
+.floating-image-container-right {
+    float: right;
+    margin: 0 0 0.5em 1em;
+}
+.floating-image-container-left span,
+.floating-image-container-right span {
+    color: #998;
+    font-size: 80%;
+    font-style: italic;
+    display: block;
+    margin-top: 0.3em;
+}
+.floating-image-container-right span {
+    text-align: right;
+}
+.floating-image-container-left span a,
+.floating-image-container-right span a {
+    color: inherit;
+    text-decoration: none;
+}
+
