@@ -179,7 +179,7 @@
         <tr>
           <td colspan="6"><h3><%= day[:title] %></h3></td>
         </tr>
-        <% event_slugs.map(&$to_event).sort_by{|e| [e[:start_time], e[:room_rank]]}.each do |e| %>
+        <% event_slugs.map(&$to_event).sort_by{|e| [e[:start_time], e[:title], e[:room_rank]]}.each do |e| %>
           <tr>
             <td class="<%= event_color.fetch e[:event_id] %>">&nbsp;</td>
             <td><%= l e %></td>
