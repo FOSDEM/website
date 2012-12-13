@@ -1,6 +1,14 @@
 ---
 binary: true
 extension: png
+sprites:
+  '.logo-small': /assets/style/fosdem-logo/
+  '.logo-ulb-big': /assets/style/ulb/
+  '.license-info-logo': /assets/style/cc-by-sa-20-be/
+  '.company-info-logo': /assets/style/bg-company-info/
+  '.logo': /assets/style/logo-compact/
+  '#nav .home a': /assets/style/btn-home-inactive/
+  '#nav .home.active a': /assets/style/btn-home-active/
 ---
 <%=
   # vim: set ts=2 sw=2 et ai ft=eruby:
@@ -15,18 +23,16 @@ logos = sponsors.select{|s| s.cornerstone? ? s.logo? : s.thumb? }.map do |s|
 end
 
 # add fosdem and ULB logos to the sprite
-[
-  '/assets/style/fosdem-logo/',
-  '/assets/style/ulb/',
-  '/assets/style/cc-by-sa-20-be/',
-  '/assets/style/bg-company-info/',
-  '/assets/style/logo-compact/',
-  '/assets/style/btn-home-inactive/',
-  '/assets/style/btn-home-active/',
-].map(&$to_item).each do |i|
+item[:sprites].values.map(&$to_item).each do |i|
   logos << i
 end
 
-sprite_image(logos, 'PNG', true)
-
+sprite = sprite_image(logos, 'PNG', true)
+$sprite_digest = begin
+                   require 'digest/sha2'
+                   sha = Digest::SHA256.new
+                   sha << sprite 
+                   sha.hexdigest.downcase
+                 end
+sprite
 %>
