@@ -25,17 +25,9 @@ GEM
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.0)
-    fspath (2.0.4)
     hashery (2.0.1)
     htmlentities (4.3.1)
     i18n (0.6.1)
-    image_optim (0.6.0)
-      fspath (~> 2.0.3)
-      image_size (~> 1.1)
-      in_threads (~> 1.1.1)
-      progress (~> 2.4.0)
-    image_size (1.1.1)
-    in_threads (1.1.1)
     kramdown (0.13.8)
     multi_json (1.2.0)
     nanoc (3.4.3)
@@ -46,7 +38,6 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
     pg (0.14.1)
-    progress (2.4.0)
     rack (1.4.1)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
@@ -93,7 +84,6 @@ DEPENDENCIES
   erubis (~> 2.7.0)
   htmlentities
   i18n
-  image_optim
   kramdown (~> 0.13.6)
   nanoc (= 3.4.3)
   nokogiri

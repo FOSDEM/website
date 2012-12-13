@@ -29,7 +29,6 @@ gem "bluecloth"
 # we need git master here, implements colspan in tables:
 gem "prawn", git: "git://github.com/prawnpdf/prawn", branch: "master"
 gem "rmagick"
-gem "image_optim"
 gem "rsolr"
 gem "sinatra"
 gem "sinatra-contrib"

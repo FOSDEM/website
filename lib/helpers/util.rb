@@ -220,16 +220,16 @@ module Fosdem
         end
 
         temp = nil
+        tempopt = nil
         begin
-          require 'image_optim'
-          io = ImageOptim.new(pngout: false, advpng: false, jpegoptim: false, gifsicle: false, jpegtran: false)
           require 'tempfile'
           temp = Tempfile.new("unoptimized-#{@item[:filename]}".gsub(%r{/+}, '_'))
           temp.write(sprite.to_blob)
           temp.flush
-          io.optimize_image!(temp.path)
-          temp.rewind
-          content = temp.read
+          tempopt = Tempfile.new("optimized-#{@item[:filename]}".gsub(%r{/+}, '_'))
+          %x{pngcrush -q #{temp.path} #{tempopt.path}} or fail "failed to run pngcrush"
+          tempopt.rewind
+          content = tempopt.read
           content
         ensure
           if temp
@@ -237,6 +237,13 @@ module Fosdem
               temp.close
             ensure
               temp.unlink
+            end
+          end
+          if tempopt
+            begin
+              tempopt.close
+            ensure
+              tempopt.unlink
             end
           end
         end
