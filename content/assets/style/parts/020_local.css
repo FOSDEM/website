@@ -433,5 +433,10 @@ ul.side-box {
 	text-shadow:0 1px 0 #fff;
 	font-size:12px;
 	padding:0 0 24px 122px;
-	background:url(cc-by-sa-20-be.png) no-repeat 9px 10%;
+}
+.license-info-logo {
+	background:url(sprite.png) no-repeat;
+    float: left;
+    margin-top: 0.7em;
+    margin-left: -110px;
 }

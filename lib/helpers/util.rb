@@ -163,7 +163,7 @@ module Fosdem
 
       y = 0
       h.map do |rule, image|
-        line = %Q!#{rule} { width: #{image.columns}px; height: #{image.rows}px; background-position: 0 #{-y}px; }!
+        line = %Q&#{rule} { width: #{image.columns}px !important; height: #{image.rows}px !important; background-position: 0 #{-y}px !important; }&
         y += image.rows
         line
       end

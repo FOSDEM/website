@@ -46,7 +46,8 @@ fieldset{
 .logo{
 	margin:0;
 	float:left;
-	background:url(logo-compact.gif) no-repeat;
+	/*background:url(logo-compact.gif) no-repeat;*/
+	background:url(sprite.png) no-repeat;
 	text-indent:-9999px;
 	overflow:hidden;
     width:161px;
@@ -612,7 +613,7 @@ a.btn-purple:hover {
 	font-size:18px;
 	line-height:22px;
 	padding:26px 0 24px 122px;
-	background:url(bg-company-info.gif) no-repeat 9px 0;
+	/*background:url(bg-company-info.gif) no-repeat 9px 0;*/
 }
 .logo-small{
 	margin:0 0 3px 3px;
@@ -631,4 +632,9 @@ a.btn-purple:hover {
 .company-info p{margin:0;}
 .company-info strong{font-weight:600;}
 .company-info span{padding:0 6px;}
-
+.company-info-logo {
+    background:url(sprite.png) no-repeat;
+    float: left;
+    margin-top: -20px;
+    margin-left: -110px;
+}
