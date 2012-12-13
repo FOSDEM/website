@@ -316,7 +316,7 @@ __END__
 <%
   else
 %>
-<p class="search-result-count">Found <%= @num_results %> matches for your query, with up to #{settings.results_per_page} results per page:</p>
+<p class="search-result-count">Found <%= @num_results %> matches for your query, with up to <%= settings.results_per_page %> results per page:</p>
 <%
   end
 %>
