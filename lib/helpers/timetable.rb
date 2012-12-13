@@ -60,7 +60,7 @@ module Fosdem
 
     events = items.select{|i| i.identifier =~ %r{^/schedule/event/.+}}
     .select{|e| e[:conference_day_id] == day[:conference_day_id]}
-    .sort_by{|e| [e[:start_time], e[:title], e[:event_id]]}
+    .sort_by{|e| [e[:start_time], e[:event_id]]}
 
     timetable rooms, events
   end
