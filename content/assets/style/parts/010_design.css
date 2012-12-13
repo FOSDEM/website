@@ -86,10 +86,13 @@ fieldset{
 	text-indent:-9999px;
 	width:16px;
 	height:15px;
-	background:url(btn-home.png) no-repeat;
+	/*background:url(btn-home.png) no-repeat;*/
+	background:url(sprite.png) no-repeat;
 }
 #nav .home a:hover,
-#nav .home.active a{background-position:0 -15px;}
+#nav .home.active a{
+    /*background-position:0 -15px;*/
+}
 .visual{
 	position:relative;
 	overflow:hidden;
