@@ -396,7 +396,7 @@ route '/schedule/devrooms/*/' do;end
 
 route '/assets/style/sprite/' do
   suffix = if @site.config[:digest_assets]
-             "-#{$sprite_digest}"
+             "-#{digest item[:sprites].values.map(&$to_item)}"
            else
              ""
            end
