@@ -80,7 +80,7 @@ def search(template=:html, layout=:layout)
 
   solr_params = {
     :q => q,
-    :qf => 'title^10',
+    :qf => 'title^50 text',
     :rows => settings.results_per_page,
     :fl => '*,score',
     :hl => 'true',
