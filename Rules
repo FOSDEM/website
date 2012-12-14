@@ -250,7 +250,7 @@ compile '*' do
 
       # don't process content that is generated from Pentabarf, or content
       # pages that have "kind: internal" in their metadata
-      unless item.identifier =~ %r{^/schedule/} or item[:kind] == 'internal'
+      unless item.identifier =~ %r{^/schedule/.+} or item[:kind] == 'internal'
 
         # convert .md and .markdown files to HTML using the
         # kramdown processor
