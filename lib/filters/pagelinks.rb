@@ -64,6 +64,12 @@ module Fosdem
                      else
                        fail "unsupported URL type #{type.to_s}"
                      end
+              id, anchor = if id =~ %r{^(.+)#(.+)$}
+                             [ $1, $2 ]
+                           else
+                             [ id, nil ]
+                           end
+
               id.insert(0, '/') unless id.start_with? '/'
               id << '/' unless id.end_with? '/'
               id.gsub!(%r{/+}, '/')
@@ -84,7 +90,11 @@ module Fosdem
                 elem['height'] = h.to_s
               end
 
-              target.path
+              if anchor
+                target.path + '#' + anchor
+              else
+                target.path
+              end
             end
             fail "link target is not a rendered page: #{target.identifier}" unless link
             elem[attr] = link
