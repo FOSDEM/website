@@ -62,7 +62,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     </ul>
     <% if newsitems.length > maxnews %>
       <div class="btn-news">
-        <a class="btn-purple" href="#">more news</a>
+        <a class="btn-purple" href="page:/news/">more news</a>
       </div>
     <% end %>
   </div>
