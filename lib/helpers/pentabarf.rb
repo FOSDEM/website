@@ -513,7 +513,7 @@ module Fosdem
                           end
         # now decorate the persons with their links
         speakers.each do |p|
-          links = model(cplinks_by_cpid.fetch(p['conference_person_id'], []), [:url, :title, :rank]).sort_by{|l| l['rank']}
+          links = model(cplinks_by_cpid.fetch(p['conference_person_id'], []), [:url, :title, :rank]).reject{|l| l['url'] == 'http://'}.sort_by{|l| l['rank']}
           # post-process links by setting 'title' if not set
           links.each do |l|
             l['title'] = l.fetch('url') unless l['title']
