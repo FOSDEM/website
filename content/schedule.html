@@ -237,11 +237,11 @@ A <a href="page:/schedule/speakers">list of all speakers</a> is available, too.
 </p>
 <div class="container-fluid">
     <div class="row-fluid">
-        <% (1..columns).map{|f| devrooms.select.with_index{|s,i| i % columns == f - 1}}.each do |list| %>
+        <% devrooms.sort_by{|x| x[:title]}.each_slice(devrooms.size / columns) do |list| %>
         <div class="span<%= 9 / columns %>">
             <ul>
                 <% list.each do |t| %>
-                <li><%= l t %></li>
+                <li><%= l t, :name %></li>
                 <% end %>
             </ul>
         </div>
