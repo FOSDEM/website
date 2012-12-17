@@ -2,6 +2,20 @@
 title: Tracks
 sponsors_under_navigation: true
 ---
+<%
+categories = [
+    {type: "keynote"},
+    {type: "lightningtalk"},
+    {type: "certification"},
+    {heading: "Main Tracks", type: "maintrack"},
+    {heading: "Devrooms", type: "devroom"},
+]
+%>
+<% unless categories.map{|c| tracks.select{|t| t[:type] == c[:type]}.map{|t| t[:events].map(&$to_event).size}.inject(:+)}.select{|s| s == 0}.empty? %>
+    <p>Note that lines that do not have a room and times listed
+    currently do not have scheduled sessions yet, but they are
+    confirmed to take place.</p>
+<% end %>
 <table class="table table-striped table-bordered table-condensed">
     <thead>
         <tr>
@@ -14,19 +28,13 @@ sponsors_under_navigation: true
     </thead>
     <tbody>
         <%
-            [
-                {type: "keynote"},
-                {type: "lightningtalk"},
-                {type: "certification"},
-                {heading: "Main Tracks", type: "maintrack"},
-                {heading: "Devrooms", type: "devroom"},
-            ].each do |duty|
-                list = tracks.select{|t| t[:type] == duty[:type]}
+            categories.each do |category|
+                list = tracks.select{|t| t[:type] == category[:type]}
             %>
             <% unless list.empty?  %>
-                <% if duty[:heading] %>
+                <% if category[:heading] %>
                     <tr>
-                        <th colspan="<%= 2 + days.size %>"><h4><%= duty[:heading] %></h4></th>
+                        <th colspan="<%= 2 + days.size %>"><h4><%= category[:heading] %></h4></th>
                     </tr>
                 <% end %>
                 <%
@@ -34,9 +42,10 @@ sponsors_under_navigation: true
                         events = t[:events].map &$to_event
                     %>
                     <% if events.empty? %>
-                        <% if duty[:heading] %>
+                        <% if category[:heading] %>
                             <tr>
-                                <td colspan"<%= 2 + days.size %>">(no events are confirmed in this category yet)</td>
+                                <td><%= l t, :name %></td>
+                                <td colspan="<%= 1 + days.size %>"></td>
                             </tr>
                         <% end %>
                     <% else %>
