@@ -62,8 +62,9 @@ deadlines:
     ann: 2012-November/001665
     deadline: 2012-12-21
   'The Wine Project':
-    days: sat
+    days: sun
     ann: 'http://www.winehq.org/pipermail/wine-devel/2012-November/097669.html'
+    deadline: 2012-12-31
   'Virtualization':
     days: sat
     ann: 2012-November/001660
