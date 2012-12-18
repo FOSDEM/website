@@ -1296,7 +1296,7 @@ module Fosdem
             " " * 7
           end
 
-      Nanoc::CLI::Logger.instance.log(prio, "%s%12s%s  %s  %s" % [ "\e[36;1m", "pentabarf", "\e[0m", t, message ])
+      Nanoc::CLI::Logger.instance.log(prio, "%s%12s%s  %s  %s" % [ "\e[36m", "pentabarf", "\e[0m", t, message ])
     end
 
   end
