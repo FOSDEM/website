@@ -74,6 +74,9 @@ div.s-unit {
   padding-bottom: 2em;
   border-bottom: 1px dashed #ccc;
 }
+div.s-unit-last {
+  border-bottom: none;
+}
 div.hotel {
   margin-bottom: 1.5em;
 }

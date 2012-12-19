@@ -10,35 +10,38 @@ FOSDEM would not be possible without the generous help of our sponsors.
 Thank you very much!
 </p>
 <div id="s-quick-links">
-    <% sponsors.select{|s| s.include_in_toplevel? }.reverse.each do |s| %>
-	<a href="#<%= s.id %>">
-		<% if s.thumb? then %>
-        <%= img s.thumb, {alt: s.name} %>
-		<% else %>
-		<%= s.name %>
-		<% end %>
-	</a>
-	<% end %>
+    <% [ lambda{|s| s.cornerstone?}, lambda{|s| not s.cornerstone?} ].each_with_index do |row, i| %>
+        <% if i > 0 %><br /><% end %>
+        <% sponsors.select{|s| s.include_in_toplevel? }.select(&row).each do |s| %>
+            <a href="#<%= s.id %>">
+                <% if s.thumb? then %>
+                    <%= img s.thumb, {alt: s.name} %>
+                <% else %>
+                    <%= s.name %>
+                <% end %>
+            </a>
+        <% end %>
+    <% end %>
 </div>
 
 <hr />
 
 <% [
-    { title: '<h2>Cornerstone sponsor</h2>', id: 'cornerstone', section: '',       selector: lambda{|s| s.cornerstone?} },
-    { title: '<h3>Main sponsors</h3>',        id: 'main',        section: '',       selector: lambda{|s| not s.cornerstone?} },
-    { title: '<h1>Thanks</h1>',               id: 'thanks',      section: 'thanks', selector: lambda{|s| true} },
+    { title: 'Cornerstone Sponsor', plural: true,  alpha: true,  id: 'cornerstone', section: '',       selector: lambda{|s| s.cornerstone?} },
+    { title: 'Main Sponsor',        plural: true,  alpha: true,  id: 'main',        section: '',       selector: lambda{|s| not s.cornerstone?} },
+    { title: 'Thanks',              plural: false, alpha: false, id: 'thanks',      section: 'thanks', selector: lambda{|s| true} },
 ].each_with_index do |section, index|
 %>
 <% unless index == 0 %><hr /><% end %>
-<a name="<%= section[:id] %>"></a><%= section[:title] %>
 <% list = sponsors.select{|s| section[:section] == s.section }.select(&section[:selector]) %>
-<% if list.size > 1 %>
+<a name="<%= section[:id] %>"></a><h2><%= section[:title] %><% if section[:plural] and list.size > 1 %>s<% end %></h2>
+<% if section[:alpha] and list.size > 1 %>
     <span class="muted">(in alphabetical order)</span>
 <% end %>
-<% list.each do |s| %>
+<% list.each_with_index do |s, i| %>
 <a name="<%= s.id %>"></a>
 <h2><a href="<%= s.url %>" title="<%= s.name %> website"><%= s.name %></a></h2>
-<div class="s-unit">
+<div class="s-unit<% if (i+1) == list.size %> s-unit-last<% end %>">
 <% if s.logo? %>
 <% if s.url? %><a href="<%= s.url %>" title="<%= s.name %> website"><% end %>
 <%= img s.logo, {class: "s-logo"} %>
