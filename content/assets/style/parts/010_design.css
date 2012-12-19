@@ -57,6 +57,12 @@ fieldset{
 	display:block;
 	height:100%;
 }
+.logo-redhat{
+	display:block;
+	overflow:hidden;
+	text-indent:-9999px;
+	background:url(sprite.png) no-repeat;
+}
 #nav{
 	float:right;
 	margin:0;
