@@ -5,7 +5,7 @@ disabled: false
 cornerstone: true
 ---
 
-Red Hat is the world's leading provider of open source software solutions, using
+Red Hat is the world’s leading provider of open source software solutions, using
 a community-powered approach to reliable and high-performing cloud, Linux,
 middleware, storage and virtualization technologies.
 Red Hat also offers award-winning support, training, and consulting services.
