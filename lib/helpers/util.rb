@@ -165,6 +165,7 @@ module Fosdem
       h.map do |rule, image|
         line = %Q&#{rule} { width: #{image.columns}px !important; height: #{image.rows}px !important; background-position: 0 #{-y}px !important; }&
         y += image.rows
+        y += 20 # use additional empty transparent row offset to avoid bleeding
         line
       end
       .join("\n")
@@ -211,12 +212,14 @@ module Fosdem
         sprite = Magick::Image.new(width, height) do
           self.format = format
           self.background_color = 'transparent'
+          self.antialias = false
         end
 
         y = 0
         images.each do |image|
           sprite.composite!(image, 0, y, Magick::OverCompositeOp)
           y += image.rows
+          y += 20 # use additional empty transparent row offset to avoid bleeding
         end
 
         temp = nil
