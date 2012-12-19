@@ -473,3 +473,7 @@ pre.sh {
     text-decoration: none;
 }
 
+#s-quick-links a {
+    padding-left: 0.5em;
+}
+
