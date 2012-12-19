@@ -51,12 +51,21 @@ speakers.each do |s|
   end
 end
 keys = h.keys.sort
+
+require 'set'
+alphabet = Set.new
+('A'..'Z').each{|a| alphabet << a}
+keys.each{|k| alphabet << k}
 %>
 <div class="row-fluid">
   <div class="span12">
-    <ul class="horizontal-list">
-      <% keys.each do |k| %>
-        <li><a href="#<%= k %>"><%= k %></a></li>
+    <ul class="horizontal-list name-index-list">
+      <% alphabet.each do |a| %>
+        <% if keys.include? a %>
+          <li><a href="#<%= a %>"><%= a %></a></li>
+        <% else %>
+          <li><span class="muted"><%= a %></span></li>
+        <% end %>
       <% end %>
     </ul>
   </div>
