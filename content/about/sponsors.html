@@ -24,8 +24,8 @@ Thank you very much!
 <hr />
 
 <% [
-    { title: '<h2>Cornerstone Sponsors</h2>', id: 'cornerstone', section: '',       selector: lambda{|s| s.cornerstone?} },
-    { title: '<h3>Main Sponsors</h3>',        id: 'main',        section: '',       selector: lambda{|s| not s.cornerstone?} },
+    { title: '<h2>Cornerstone sponsor</h2>', id: 'cornerstone', section: '',       selector: lambda{|s| s.cornerstone?} },
+    { title: '<h3>Main sponsors</h3>',        id: 'main',        section: '',       selector: lambda{|s| not s.cornerstone?} },
     { title: '<h1>Thanks</h1>',               id: 'thanks',      section: 'thanks', selector: lambda{|s| true} },
 ].each_with_index do |section, index|
 %>
