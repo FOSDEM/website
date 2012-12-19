@@ -42,18 +42,7 @@ speakers.each do |s|
                 end
               end
 
-              r = normalforms.map{|n| n[0]}
-
-              normalforms.each do |l|
-                lf = l[0]
-                alt = begin
-                          require 'active_support/inflector/transliterate'
-                          require 'active_support/inflector/methods'
-                          ActiveSupport::Inflector.transliterate(lf)
-                      end
-                r << alt if alt != lf
-              end
-              r
+              normalforms.map{|n| n[0]}
             end
 
   indexes.each do |i|
