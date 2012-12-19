@@ -313,6 +313,7 @@ module Fosdem
                    WHERE conference_id=$1
                    AND event_state='accepted'
                    AND event_state_progress IN ('confirmed', 'reconfirmed')
+                   AND start_time IS NOT NULL
                    AND (language IS NULL OR language='en')
                    AND public=true
                    ORDER BY event_id}, [cid]) {|res|
