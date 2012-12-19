@@ -24,15 +24,18 @@ Thank you very much!
 <hr />
 
 <% [
-{ title: '<h3>In alphabetical order</h3>', id: 'support', section: '' },
-{ title: '<h1>Thanks</h1>',                id: 'thanks',   section: 'thanks' },
+    { title: '<h2>Cornerstone Sponsors</h2>', id: 'cornerstone', section: '',       selector: lambda{|s| s.cornerstone?} },
+    { title: '<h3>Main Sponsors</h3>',        id: 'main',        section: '',       selector: lambda{|s| not s.cornerstone?} },
+    { title: '<h1>Thanks</h1>',               id: 'thanks',      section: 'thanks', selector: lambda{|s| true} },
 ].each_with_index do |section, index|
 %>
 <% unless index == 0 %><hr /><% end %>
 <a name="<%= section[:id] %>"></a><%= section[:title] %>
-<%
-sponsors.select{|s| section[:section] == s.section }.each do |s|
-%>
+<% list = sponsors.select{|s| section[:section] == s.section }.select(&section[:selector]) %>
+<% if list.size > 1 %>
+    <span class="muted">(in alphabetical order)</span>
+<% end %>
+<% list.each do |s| %>
 <a name="<%= s.id %>"></a>
 <h2><a href="<%= s.url %>" title="<%= s.name %> website"><%= s.name %></a></h2>
 <div class="s-unit">
