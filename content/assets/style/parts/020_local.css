@@ -477,3 +477,16 @@ pre.sh {
     padding-left: 0.5em;
 }
 
+.name-index {
+    margin-bottom: 0;
+    line-height: 1;
+}
+.name-index-items {
+    margin-left: 0;
+    list-style-type: none;
+}
+.name-index-items li:before {
+    content: "\00B7\00A0";
+}
+
+}

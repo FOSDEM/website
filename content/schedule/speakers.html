@@ -6,7 +6,7 @@ titlehead: false
 <% speakers = speakers(:name) %>
 <h1><%= speakers.size %> Speakers</h1>
 <%
-columns = 3
+columns = 4
 
 h = {}
 speakers.each do |s|
@@ -16,7 +16,7 @@ speakers.each do |s|
                     if n.size > 1
                       n[1..-1].join(" ")
                     else
-                      n[0]
+                      n.first
                     end
                   elsif s[:last_name]
                     s[:last_name]
@@ -62,11 +62,11 @@ keys = h.keys.sort
   </div>
 </div>
 <div class="row-fluid">
-<% (1..columns).map{|f| keys.select.with_index{|s,i| i % columns == f - 1}}.each do |list| %>
+<% keys.each_slice(keys.size / columns) do |list| %>
 <div class="span<%= 12 / columns %>">
   <% list.each do |k| %>
-    <a name="<%= k %>"></a><h3><%= k %></h3>
-    <ul>
+    <a name="<%= k %>"></a><h3 class="name-index"><%= k %></h3>
+    <ul class="name-index-items">
       <% h[k].each do |s| %>
         <li><%= l(s) %></li>
       <% end %>
