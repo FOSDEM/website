@@ -27,8 +27,8 @@ Thank you very much!
 <hr />
 
 <% [
-    { title: 'Cornerstone Sponsor', plural: true,  alpha: true,  id: 'cornerstone', section: '',       selector: lambda{|s| s.cornerstone?} },
-    { title: 'Main Sponsor',        plural: true,  alpha: true,  id: 'main',        section: '',       selector: lambda{|s| not s.cornerstone?} },
+    { title: 'Cornerstone sponsor', plural: true,  alpha: true,  id: 'cornerstone', section: '',       selector: lambda{|s| s.cornerstone?} },
+    { title: 'Main sponsor',        plural: true,  alpha: true,  id: 'main',        section: '',       selector: lambda{|s| not s.cornerstone?} },
     { title: 'Thanks',              plural: false, alpha: false, id: 'thanks',      section: 'thanks', selector: lambda{|s| true} },
 ].each_with_index do |section, index|
 %>
