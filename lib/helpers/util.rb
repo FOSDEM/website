@@ -265,5 +265,45 @@ module Fosdem
     end
   end
 
+  def cfp_date(d)
+    if d.nil?
+      'TBA'
+    else
+      d = [d] unless d.is_a? Array
+      d.map.with_index do |x, i|
+        t = x.strftime("%Y-%m-%d")
+        if (i + 1) < d.size
+          %Q!<del>#{t}</del>!
+        else
+          t
+        end
+      end.join(", ")
+    end
+  end
+  def cfp_mail_uri(m)
+    if m.nil? or m.empty?
+      '-'
+    else
+      m = if m.is_a? Array
+            m
+          else
+            [m]
+          end
+      m.map.with_index do |x, i|
+        t = case m
+            when %r{^\d{4}-.+/\d+}
+              %Q!<a href="https://lists.fosdem.org/pipermail/fosdem/#{m}.html">announcement</a>!
+            else
+              %Q!<a href="#{m}">announcement</a>!
+            end
+        if (i + 1) < m.size
+          %Q!<del>#{t}</del>!
+        else
+          t
+        end
+      end.join(", ")
+    end
+  end
+
 end #Fosdem
 

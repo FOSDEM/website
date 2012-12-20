@@ -15,25 +15,6 @@ at FOSDEM 2013:</p>
     'sun' => 'Sunday',
     'both' => 'Both days',
   }
-  def cfp_date(d)
-    if d
-      d.strftime("%Y-%m-%d")
-    else
-      'TBA'
-    end
-  end
-  def cfp_mail_uri(m)
-    if m.nil? or m.empty?
-      '-'
-    else
-      case m
-      when %r{^\d{4}-.+/\d+}
-        %Q!<a href="https://lists.fosdem.org/pipermail/fosdem/#{m}.html">announcement</a>!
-      else
-        %Q!<a href="#{m}">announcement</a>!
-      end
-    end
-  end
 %>
 <table class="table table-condensed table-hover table-striped">
   <thead>
