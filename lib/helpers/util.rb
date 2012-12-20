@@ -205,7 +205,7 @@ module Fosdem
       end
 
       width  = images.map{|i| i.columns}.max
-      height = images.map{|i| i.rows}.inject(0, :+)
+      height = images.map{|i| i.rows}.inject(0, :+) + (images.size - 1) * 20
 
       sprite = nil
       begin
