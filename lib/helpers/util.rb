@@ -290,11 +290,11 @@ module Fosdem
             [m]
           end
       m.map.with_index do |x, i|
-        t = case m
+        t = case x
             when %r{^\d{4}-.+/\d+}
-              %Q!<a href="https://lists.fosdem.org/pipermail/fosdem/#{m}.html">announcement</a>!
+              %Q!<a href="https://lists.fosdem.org/pipermail/fosdem/#{x}.html">announcement</a>!
             else
-              %Q!<a href="#{m}">announcement</a>!
+              %Q!<a href="#{x}">announcement</a>!
             end
         if (i + 1) < m.size
           %Q!<del>#{t}</del>!
