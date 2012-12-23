@@ -11,7 +11,7 @@ title: Hotel discounts
 
 <p>
 <table class="table table-condensed table-striped table-bordered">
-   <tbody>
+  <thead>
      <tr>
        <th>Hotel</th>
        <th>Rating</th>
@@ -20,11 +20,12 @@ title: Hotel discounts
        <th>Double room</th>
        <th>Wifi</th>
        <th>Contact details</th>
+       <th>Reservation form</th>
      </tr>
+   </thead>
+   <tbody>
      <tr>
-       <td><a href="http://hotelcapital.be/">Hotel Capital</a><br>
-           <a href="asset:capital.pdf">Form</a>
-       </td>
+       <td><a href="http://hotelcapital.be/">Hotel Capital</a></td>
        <td>***</td>
        <td>Chaussee de Vleurgat 191<br>1050 Brussels</td>
        <td>&euro;65.00</td>
@@ -34,6 +35,7 @@ title: Hotel discounts
            Fax: +32 (0)2 646 33 14<br>
            E-mail: sales@hotelcapital.be
        </td>
+       <td><a href="<%= pathof "/assets/accommodation/capital/" %>">Form</a></td>
      </tr>
      <tr>
        <td><a href="http://www.accorhotels.com">Ibis st. Catherine</a></td>
