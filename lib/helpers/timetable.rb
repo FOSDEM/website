@@ -79,8 +79,8 @@ module Fosdem
     table_by_room = begin
                       table = {}
                       unless events.empty?
-                        start_time = Time.parse(events.first[:start_time])
-                        end_time   = Time.parse(events.last[:end_time])
+                        start_time = Time.parse(events.map{|e| e[:start_time]}.sort.first)
+                        end_time   = Time.parse(events.map{|e| e[:end_time]}.sort.last)
 
                         rooms.each do |room|
                           column = {}
@@ -100,8 +100,8 @@ module Fosdem
     table_by_time = begin
                       table = {}
                       unless events.empty?
-                        start_time = Time.parse(events.first[:start_time])
-                        end_time   = Time.parse(events.last[:end_time])
+                        start_time = Time.parse(events.map{|e| e[:start_time]}.sort.first)
+                        end_time   = Time.parse(events.map{|e| e[:end_time]}.sort.last)
 
                         now = start_time
                         while now <= end_time
