@@ -38,7 +38,7 @@ xml.schedule do
               xml.slug event[:slug]
               xml.title event[:title]
               xml.subtitle event[:subtitle]
-              xml.track event[:conference_track]
+              xml.track event[:track_name]
               xml.type event[:type]
               xml.language event[:language]
               xml.abstract event[:abstract]
