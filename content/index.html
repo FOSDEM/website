@@ -36,13 +36,6 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
   </div>
 
   <div class="news-block">
-    <h2>CALL FOR PARTICIPATION</h2>
-    <p>While the developer rooms, main tracks and stands have already been decided for this
-    edition, the <a href="page:news/2012-11-01-cfp/">call for participation</a> is still open for
-    lightning talks.</p>
-  </div>
-
-  <div class="news-block">
     <h2>NEWS</h2>
     <ul class="news-list">
       <% newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse; newsitems[0,maxnews].each do |hl| %>
