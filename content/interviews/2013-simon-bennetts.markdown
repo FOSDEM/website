@@ -1,12 +1,16 @@
 ---
 year: 2013
 person: Simon Bennetts 
+speaker: simon_bennetts
 topic: Practical Security for developers, using OWASP ZAP
+event: security_owasp
 ---
+
+[<%= @item[:person] %>](/schedule/speaker/<%= @item[:speaker] %>) will give a talk about [<%= @item[:topic] %>](/schedule/event/<%= @item[:event] %>) at FOSDEM <%= @item[:year] %>
 
 Q: Could you briefly introduce yourself?
 
-My name is Simon Bennetts, and I'm the OWASP ZAP project lead. Although I'm now part of the Mozilla security team, my background is in software development - I've been designing and building web applications since 1987, and worked on operating systems before that. 
+My name is Simon Bennetts, and I'm the [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) project lead. Although I'm now part of the [Mozilla security](https://wiki.mozilla.org/Security) team, my background is in software development - I've been designing and building web applications since 1987, and worked on operating systems before that. 
 
 Q: What will your talk be about, exactly? Why this topic?
 
@@ -18,7 +22,7 @@ I hope developers will see how easy it is to find vulnerabilities with ZAP, and 
 
 Q: Could you explain what OWASP is and what activities it does?
 
-OWASP is a not-for-profit organisation dedicated to improving the security of software. We produce a whole range of guides and tools, all of which are completely free. There are also hundreds of local chapters and many security conferences all around the world. To learn more have a look online, or pop over to the OWASP stand at FOSDEM and have a chat with us :) 
+[OWASP](https://www.owasp.org/index.php/Main_Page) is a not-for-profit organisation dedicated to improving the security of software. We produce a whole range of guides and tools, all of which are completely free. There are also hundreds of local chapters and many security conferences all around the world. To learn more have a look online, or pop over to the OWASP stand at FOSDEM and have a chat with us :) 
 
 Q: What are in your opinion the key differences between OWASP ZAP and other web security testing tools?
 
@@ -42,9 +46,9 @@ The best thing to do would be to come along to my talk at FOSDEM - thats what I'
 
 Q: You're not only OWASP ZAP Project Lead, but also Mozilla Security Automation Engineer. How are you using OWASP ZAP at Mozilla, and could you give some examples of vulnerabilities you have found with it? 
 
-We use ZAP in the security team for manual penetration tests (along with other tools of course). We test both apps written by both Mozilla people and 3rd party apps that we want to make use of. And we've found pretty much everything on the OWASP Top Ten (and more) using ZAP on 3rd party apps!                                         
+We use ZAP in the security team for manual penetration tests (along with other tools of course). We test both apps written by both Mozilla people and 3rd party apps that we want to make use of. And we've found pretty much everything on the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) (and more) using ZAP on 3rd party apps!                                         
 
-We're also introducing it into our QA process. So all of our web app QA tests (which are controlled by Jenkins) will be proxied through ZAP and then we're using the ZAP REST API to actively scan the apps for vulnerabilities.                                                                                                              
+We're also introducing it into our QA process. So all of our web app QA tests (which are controlled by [Jenkins](http://jenkins-ci.org/)) will be proxied through ZAP and then we're using the ZAP REST API to actively scan the apps for vulnerabilities.
 
 Automated scanning won't find all vulnerabilities, but it does find a whole load of issues which frees us up to concentrate on the ones automated scanning can't find, like logical problems. 
 

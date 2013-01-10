@@ -1,12 +1,16 @@
 ---
 year: 2013
 person: Lennart Poettering 
+speaker: lennart_poettering
 topic: systemd, Two Years Later
+event: systemd_two_years_later
 ---
+
+[<%= @item[:person] %>](/schedule/speaker/<%= @item[:speaker] %>) will give a talk about [<%= @item[:topic] %>](/schedule/event/<%= @item[:event] %>) at FOSDEM <%= @item[:year] %>
 
 Q: Could you briefly introduce yourself?
 
-I am Lennart Poettering, I have created the systemd system and service manager, the PulseAudio sound server and the Avahi Zeroconf stack among other things.
+I am Lennart Poettering, I have created the [systemd](http://www.freedesktop.org/wiki/Software/systemd) system and service manager, the [PulseAudio](http://www.freedesktop.org/wiki/Software/PulseAudio) sound server and the [Avahi](http://avahi.org/) Zeroconf stack among other things.
 
 Q: What will your talk be about, exactly? Why this topic?
 
@@ -28,11 +32,11 @@ Q: BSD users weren't happy that systemd is Linux-centric, others complained that
 
 Actually, I think the interest of the BSD folks in systemd is rather minimal, so they actually aren't unhappy about systemd being Linux-specific, they probably don't care at all. On the BSDs much of the userspace tends to be developed jointly with their kernels. This userspace is generally not portable unmodified. For example, the OpenSSH server that is quite commonly used on Linux is actually developed pretty close to OpenBSD and a special portable vesion is maintained by separate team, which regularly does the non-trivial portability work.
                                                                        
-One can say that with systemd we are actually much closer to this BSD model in a way, since we now develop much of our most core userspace much more integrated and focus much closer on what our kernel offers us.                                                                 
-                                                                                                                                                                       
+One can say that with systemd we are actually much closer to this BSD model in a way, since we now develop much of our most core userspace much more integrated and focus much closer on what our kernel offers us.
+
 Hence, as far as I see it, portability of the most basic userspace is hardly anything the BSD or Solaris folks are interested in, as they tend to maintain theirs independently, too. The idea that the most basic userspace should be kernel agnostic is primarily an idea coming from the Debian/Gentoo camps, since they (or at least some of their developers) think it's fun developing their userspace in parallel for multiple kernels.
 
-So, in our development model we are in a way closer to what the BSDs use, which are (in contrast to Linux) true Unixes. Also, systemd reintroduces a number of Unix concepts back into normal Linux systems, such as native multi-seat support (something which existed in Unix for text terminals since time began -- but text terminals are hardly the preferred way to communicate with your system anymore). systemd exposes all services in the file system (via the cgroup fs), which in a way can be seen as an implementation of Unix' "everything is a file motto". So, if you put this altogether I doubt that systemd wouldn't "comply with the Unix philosophy". We drive a lot of inspiration from Unix, we go closer to it in some ways, even if we might depart a bit from it in others.                                                            
+So, in our development model we are in a way closer to what the BSDs use, which are (in contrast to Linux) true Unixes. Also, systemd reintroduces a number of Unix concepts back into normal Linux systems, such as native [multi-seat support](http://www.freedesktop.org/wiki/Software/systemd/multiseat) (something which existed in Unix for text terminals since time began -- but text terminals are hardly the preferred way to communicate with your system anymore). systemd exposes all services in the file system (via the [cgroup](http://www.kernel.org/doc/Documentation/cgroups/cgroups.txt) fs), which in a way can be seen as an implementation of Unix' "everything is a file motto". So, if you put this altogether I doubt that systemd wouldn't "comply with the Unix philosophy". We drive a lot of inspiration from Unix, we go closer to it in some ways, even if we might depart a bit from it in others.                                                            
 
 Ultimately, Unix is something different for everybody. For some, specific implementations of Unix concepts are Unix. For us, Unix is less specific, but an idea to drive inspiration from, and we do that constantly. And hence I'd still claim that a systemd system is still very much a Unix-style system.                                 
 

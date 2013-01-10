@@ -1,14 +1,20 @@
 ---
 year: 2013
 person: Bdale Garbee
+speaker: bdale_garbee
+person2: Eben Moglen
+speaker2: eben_moglen
 topic: FreedomBox 1.0
+event: freedombox
 ---
+
+[<%= @item[:person] %>](/schedule/speaker/<%= @item[:speaker] %>) and [<%= @item[:person2] %>](/schedule/speaker/<%= @item[:speaker2] %>) will give a talk about [<%= @item[:topic] %>](/schedule/event/<%= @item[:event] %>) at FOSDEM <%= @item[:year] %>
 
 Q: Could you briefly introduce yourself?
 
-Eben Moglen is a professor of law and legal history at Columbia University, and is the founder, Director-Counsel and Chairman of Software Freedom Law Center, whose client list includes numerous pro bono clients, such as the Free Software Foundation. Eben's ideas led us to form the FreedomBox Foundation.
+Eben Moglen is a professor of law and legal history at Columbia University, and is the founder, Director-Counsel and Chairman of [Software Freedom Law Center](http://www.softwarefreedom.org/), whose client list includes numerous pro bono clients, such as the [Free Software Foundation](http://www.fsf.org/). Eben's ideas led us to form the [FreedomBox Foundation](http://freedomboxfoundation.org/).
 
-Bdale Garbee is a technologist and community builder who recently retired from HP, where he served as Chief Technologist for Open Source and Linux.  A long-time contributor to Debian, Bdale is President of Software in the Public Interest, and a board member of the Linux Foundation.  He also serves on the board of the FreedomBox Foundation and leads the development of the foundation's reference implementation.
+Bdale Garbee is a technologist and community builder who recently retired from HP, where he served as Chief Technologist for Open Source and Linux.  A long-time contributor to [Debian](http://www.debian.org/), Bdale is President of [Software in the Public Interest](http://www.spi-inc.org/), and a board member of the [Linux Foundation](http://www.linuxfoundation.org/).  He also serves on the board of the FreedomBox Foundation and leads the development of the foundation's reference implementation.
 
 Q: What will your talk be about, exactly? Why this topic?
 
@@ -24,7 +30,7 @@ This will be discussed in the talk.
 
 Q: What were the biggest hurdles for the FreedomBox project? And what are currently the challenges that you're facing?
 
-The two biggest hurdles technically to date have been dealing with the "binary blobs" necessary to use existing plug server devices, and working through the practical consequences of our decision to use OpenPGP keys as the root of our trust and identity model. 
+The two biggest hurdles technically to date have been dealing with the "binary blobs" necessary to use existing plug server devices, and working through the practical consequences of our decision to use [OpenPGP](http://www.openpgp.org/) keys as the root of our trust and identity model. 
 
 Q: In the summer of 2012 we saw the first software release for developers. What work has been done since then?
 
@@ -44,7 +50,7 @@ The core group of developers who would identify themselves as working specifical
 
 Q: What are currently the best devices to run FreedomBox on? 
 
-The primary hardware target for our initial release of the reference implementation was the Dreamplug from Global Scale.  That's still a fine platform to use for a low power deployment, but there are exciting new hardware platforms that we will discuss at FOSDEM.  And of course, the core software stack being implemented through Debian means that any hardware that can run Debian can potentially serve as a FreedomBox.
+The primary hardware target for our initial release of the reference implementation was the [Dreamplug](http://wiki.debian.org/FreedomBox/DreamPlug) from Global Scale.  That's still a fine platform to use for a low power deployment, but there are exciting new hardware platforms that we will discuss at FOSDEM.  And of course, the core software stack being implemented through Debian means that any hardware that can run Debian can potentially serve as a FreedomBox.
 
 Q: Have you enjoyed previous FOSDEM editions?
 

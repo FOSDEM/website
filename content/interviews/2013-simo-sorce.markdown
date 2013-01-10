@@ -1,16 +1,20 @@
 ---
 year: 2013
 person: Simo Sorce
+speaker: simo_sorce
 topic: How to build an Identity Management System on Linux
+event: security_identity_management
 ---
+
+[<%= @item[:person] %>](/schedule/speaker/<%= @item[:speaker] %>) will give a talk about [<%= @item[:topic] %>](/schedule/event/<%= @item[:event] %>) at FOSDEM <%= @item[:year] %>
 
 Q: Could you briefly introduce yourself?
 
-My name is Simo Sorce, and I work for Red Hat, Inc. I currently live in New York City, but I am originally from Italy. I have been involved with Free Software for a long time now, I started in the nineties and I have been a Samba Team member since 2001. When I was still in Europe I was also a Free Software Activist, both at the local and the EU level.
+My name is Simo Sorce, and I work for [Red Hat, Inc.](http://www.redhat.com/) I currently live in New York City, but I am originally from Italy. I have been involved with Free Software for a long time now, I started in the nineties and I have been a Samba Team member since 2001. When I was still in Europe I was also a Free Software Activist, both at the local and the EU level.
 
 Q: What will your talk be about, exactly? Why this topic?
 
-I will talk about Identity Management in Linux, particularly my experience in building the FreeIPA project. I think this topic deserves more exposure as IdM in the Linux world is still underdeveloped, and needs more attention from the community.
+I will talk about Identity Management in Linux, particularly my experience in building the [FreeIPA](http://freeipa.org/page/Main_Page) project. I think this topic deserves more exposure as IdM in the Linux world is still underdeveloped, and needs more attention from the community.
 
 Q: What do you hope to accomplish by giving this talk? What do you expect?
 
@@ -30,11 +34,11 @@ The three fundamental components are the LDAP server, the KDC and the management
 
 Q: Which client components do users need for identity management with FreeIPA?
 
-FreeIPA is a fully RFC2307bis compliant directory mated to a Kerberos KDC at its core, so any standard LDAP/Krb client can be used, and we also have a NIS compatible mode. However the best and more feature-rich client we recommend is SSSD which is a spin-off of the FreeIPA project itself and is available in most distributions now.
+FreeIPA is a fully RFC2307bis compliant directory mated to a Kerberos KDC at its core, so any standard LDAP/Krb client can be used, and we also have a NIS compatible mode. However the best and more feature-rich client we recommend is [SSSD](https://fedorahosted.org/sssd/) which is a spin-off of the FreeIPA project itself and is available in most distributions now.
 
 Q: The IPA in FreeIPA stands for "Identity, Policy and Audit", but the project seems to focus on the identity and policy components. Why was the audit component deferred?
 
-Each of these 3 areas is in some way fundamental for a complete Identity Management system, each area is also a huge complex one on its own right. We Started with the 'I' of IPA, and only later we added some components of the 'P', the policy related features. Audit, the 'A', is something we really want to look at soon, but it is an area that is quite complex and peculiar. Because lack of integrated auditing features do not prevent an IdM system from working we decided to defer work on it just out of necessity. Auditing can be done through external log aggregation and analyzers, which is what is currently already done with Linux systems, so we felt working on this area was not as urgent as getting a decent I and P. 
+Each of these three areas is in some way fundamental for a complete Identity Management system, each area is also a huge complex one on its own right. We Started with the 'I' of IPA, and only later we added some components of the 'P', the policy related features. Audit, the 'A', is something we really want to look at soon, but it is an area that is quite complex and peculiar. Because lack of integrated auditing features do not prevent an IdM system from working we decided to defer work on it just out of necessity. Auditing can be done through external log aggregation and analyzers, which is what is currently already done with Linux systems, so we felt working on this area was not as urgent as getting a decent I and P. 
 
 Q: Which new features can we expect in FreeIPA in 2013?
 

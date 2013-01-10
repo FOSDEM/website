@@ -1,12 +1,16 @@
 ---
 year: 2013
 person: Jeremiah Foster 
+speaker: jeremiah_foster
 topic: Vroom! Free Software in your car
+event: free_software_in_your_car
 ---
+
+[<%= @item[:person] %>](/schedule/speaker/<%= @item[:speaker] %>) will give a talk about [<%= @item[:topic] %>](/schedule/event/<%= @item[:event] %>) at FOSDEM <%= @item[:year] %>
 
 Q: Could you briefly introduce yourself?
 
-I'm an American, born in Boston, who moved to Sweden and has lived in Europe for more than a decade. I work for a company called Pelagicore that focuses on designing great Open Source Automotive software.
+I'm an American, born in Boston, who moved to Sweden and has lived in Europe for more than a decade. I work for a company called [Pelagicore](http://www.pelagicore.com/) that focuses on designing great Open Source Automotive software.
 
 Q: What will your talk be about, exactly? Why this topic?
 
@@ -23,13 +27,13 @@ There are a number of challenges, many of them quite important. A quick list of 
 * Cost and business model;
 * Licensing;                                      
 * Availability of software, ecosystem.
-                                                                                                                                                                       
-GENIVI is directly addressing cost and ecosystem and also working hard to provide understanding around licensing. GENIVI has a fairly comprehensive approach towards Free Software, or perhaps Open Source, in IVI systems. 
+
+[GENIVI](http://www.genivi.org/) is directly addressing cost and ecosystem and also working hard to provide understanding around licensing. GENIVI has a fairly comprehensive approach towards Free Software, or perhaps Open Source, in IVI systems. 
 
 Q: The GENIVI Alliance, founded in 2009, is still quite young. What did it accomplish in those four years and what are the major plans in the coming years?
 
 There are a number of significant accomplishments, not least the establishment of the Alliance itself. A short list might include:
-                                                                                                                                                                       
+
 * Over 150 companies joined as Alliance members, including a number of OEMs from around the world.                                                 
 * A compliance program that has produced around 30 compliant platforms, all open source.
 * An open source software stack that is in production and soon to be on the road.
