@@ -10,7 +10,7 @@ event: security_owasp
 
 Q: Could you briefly introduce yourself?
 
-My name is Simon Bennetts, and I'm the [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) project lead. Although I'm now part of the [Mozilla security](https://wiki.mozilla.org/Security) team, my background is in software development - I've been designing and building web applications since 1987, and worked on operating systems before that. 
+My name is Simon Bennetts, and I'm the [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) project lead. Although I'm now part of the [Mozilla security](https://wiki.mozilla.org/Security) team, my background is in software development - I've been designing and building web applications since 1997, and worked on operating systems before that. 
 
 Q: What will your talk be about, exactly? Why this topic?
 
