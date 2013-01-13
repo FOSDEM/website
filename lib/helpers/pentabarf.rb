@@ -164,10 +164,20 @@ module Fosdem
         raise "slug: o[#{attr}] is nil" if o.nil?
 
         sanitized = begin
-                      require 'active_support/inflector/transliterate'
-                      require 'active_support/inflector/methods'
                       # Inflector takes care of replacing locale specific symbols to
                       # something "safe" for URLs without requiring symbol gibberish
+                      require 'active_support/inflector/transliterate'
+                      require 'active_support/inflector/methods'
+                      # Teach Inflector's i18n backend about some extra characters
+                      # we'd like it to transliterate for us.
+                      I18n.backend.store_translations(:custom, :i18n => {
+                        :transliterate => {
+                          :rule => {
+                            "’" => "'"
+                          }
+                        }
+                      })
+                      I18n.locale = :custom
                       ActiveSupport::Inflector
                       .transliterate(slug)
                       .downcase
