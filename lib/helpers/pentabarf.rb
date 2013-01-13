@@ -464,6 +464,52 @@ module Fosdem
                               end
                        p['name'] = name
                        p['title'] = name
+
+                       #
+                       # Figure out where to sort speakers in alphabetised
+                       # lists.  Harder than it looks!
+                       #
+                       #  - If a speaker lists a 'public name', we need to
+                       #    list it in preference to any other name fields
+                       #    (which may or may not exist).  Unfortunately,
+                       #    we can't determine sort order easily from it,
+                       #    so we have to guess.
+                       #
+                       #  - Ruby's hopelessly inadequate sorting features
+                       #    provide us with no reasonable way to specify
+                       #    custom collation rules in the face of multiple
+                       #    alphabets.  We hack around this by replacing
+                       #    letters with letter pairs so their sort well.
+                       #
+                       # NOTE: sortname should _never_ be printed anywhere!
+                       #
+                       if p['public_name']
+                         # Assume that the last component of the speaker's
+                         # public name is their last name.
+                         n = p['public_name'].split(/\s+/)
+                         sortname = "#{n.last} #{n.first}"
+
+                         # Deal with common exceptions (composed last names).
+                         ['de', 'le', 'van de', 'van den', 'van', 'von'].map{|s|
+                           Regexp.new("(.*)\s+(#{s}\s+.*)$", true)}.each do |r|
+                           if p['public_name'] =~ r
+                             sortname = "#{$2} #{$1}"
+                             break
+                           end
+                         end
+                       elsif p['last_name']
+                         sortname = p['last_name']
+                         if p['first_name']
+                           sortname << ' ' << p['first_name']
+                         end
+                       else
+                         sortname =  p['name']
+                       end
+                       # Sort non-ASCII characters (more) correctly.
+                       p['sortname'] = sortname.upcase
+                         .gsub('ñ', 'NZ')
+                         .gsub('ó', 'OZ')
+
                        slugify! p, :name
                      end
                    end

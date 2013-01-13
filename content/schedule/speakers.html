@@ -3,65 +3,38 @@ title: Speakers
 sponsors_under_navigation: true
 titlehead: false
 ---
-<% speakers = speakers(:name) %>
+<% speakers = speakers(:sortname) %>
 <h1><%= speakers.size %> Speakers</h1>
 <%
 columns = 4
 
 h = {}
+# Prime the hash with keys for each letter of the English alphabet.
+# This lets us print a complete-looking index even if we don't have
+# speaker names beginning with some letters.
+('A'..'Z').each{|a| h[a] = []}
+
+# Sort speakers into letter buckets by first letter of sortname.
 speakers.each do |s|
-  indexes = begin
-              l = if s[:public_name]
-                    n = s[:public_name].split(/\s+/)
-                    if n.size > 1
-                      n[1..-1].join(" ")
-                    else
-                      n.first
-                    end
-                  elsif s[:last_name]
-                    s[:last_name]
-                  else
-                    s[:name]
-                  end.upcase.gsub(/\s+/, ' ')
-
-              if l[0] == '('
-                n = l.split(/\s+/)
-                if n.size > 1
-                  l = n[1][0]
-                else
-                  l = l[1]
-                end
-              end
-
-              normalforms = [l[0]]
-
-              ['de', 'van de', 'van den', 'van', 'von'].map{|s| Regexp.new("^#{s}\\s+(.+)$")}.each do |r|
-                if l =~ r
-                  normalforms << $1
-                  break
-                end
-              end
-
-              normalforms.map{|n| n[0]}
-            end
-
-  indexes.each do |i|
-    h[i] = [] unless h.has_key? i
-    h[i] << s
-  end
+  i = s[:sortname][0]
+  h[i] = [] unless h.has_key? i
+  h[i] << s
 end
-keys = h.keys.sort
 
-require 'set'
-alphabet = Set.new
-('A'..'Z').each{|a| alphabet << a}
-keys.each{|k| alphabet << k}
+# Work around Ruby's hopelessly inadequate sorting features.
+# Tweak sort order by substituting "funny characters" with ASCII
+# characters matching desired sorting location.
+keys = h.keys.sort_by { |k| k
+  .gsub('Š', 'Sz')
+  .gsub('Ó', 'Oz')
+}
 %>
+
 <div class="row-fluid">
   <div class="span12">
     <ul class="horizontal-list name-index-list">
-      <% alphabet.each do |a| %>
-        <% if keys.include? a %>
+      <% keys.each do |a| %>
+        <% if h[a].size > 0 %>
           <li><a href="#<%= a %>"><%= a %></a></li>
         <% else %>
           <li><span class="muted"><%= a %></span></li>
@@ -74,12 +47,14 @@ keys.each{|k| alphabet << k}
 <% keys.each_slice(keys.size / columns) do |list| %>
 <div class="span<%= 12 / columns %>">
   <% list.each do |k| %>
+    <% if h[k].size > 0 %>
     <a name="<%= k %>"></a><h3 class="name-index"><%= k %></h3>
     <ul class="name-index-items">
       <% h[k].each do |s| %>
         <li><%= l(s) %></li>
       <% end %>
     </ul>
+    <% end %>
   <% end %>
 </div>
 <% end %>
