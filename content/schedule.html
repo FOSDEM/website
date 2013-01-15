@@ -16,6 +16,20 @@ lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
 %>
+<div class="info-block">
+  <div class="more-info">
+    <h2>Quick links:</h2>
+<ul>
+  <li>Time Tables: 
+    <%= l days %>
+  </li>
+  <li>Overview of <a href="<%= pathof '/schedule/roomtracks/' %>">rooms per days</a></li>
+  <li>Mobile site: <a href="<%= pathof '/mobile/' %>">http://fosdem.org/mobile</a></li>
+  <li>Mobile apps: TO APPEAR</li>
+</ul>
+    </div>
+    <div>
+
 <p>
   Every year, FOSDEM hosts a wide variety of activities.
   This page gives an overview with links to further information about
@@ -59,6 +73,9 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 
   A <a href="page:/schedule/speakers">list of all speakers</a> is available, too.
 </p>
+
+    </div>
+</div>
 
 <a name="beerevent"></a>
 <h3>Friday beer event</h3>
@@ -336,3 +353,13 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <% else %>
   <p><span class="label label-info">Certification exams have not been scheduled yet.</span></p>
 <% end %>
+
+<h3>Raw schedule data</h3>
+<p>
+The schedule data is available in:
+<ul>
+<li>Pentabarf <a href="<%= pathof '/schedule/pentabarf/' %>">XML</a>
+<li><a href="<%= pathof '/schedule/ical/' %>">iCal</a>
+<li><a href="<%= pathof '/schedule/xcal/' %>">xCal</a>
+</ul>
+</p>
