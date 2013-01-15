@@ -507,6 +507,7 @@ module Fosdem
                        end
                        # Sort non-ASCII characters (more) correctly.
                        p['sortname'] = sortname.upcase
+                         .gsub('é', 'EZ')
                          .gsub('ñ', 'NZ')
                          .gsub('ó', 'OZ')
 
