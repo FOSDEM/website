@@ -125,7 +125,12 @@ $layout_dateline ||= begin
       <% end %>
 
       <% unless @item[:titlehead] == false or @item[:visual] == true %>
+        <div id="pagetitles">
         <h1><%= @item[:title] %></h1>
+	<% unless @item[:subtitle].nil? %>
+	<h2><%= @item[:subtitle] %></h2>
+	<% end %>
+	</div>
       <% end %>
 
       <%= yield %>

@@ -356,9 +356,9 @@ ul.side-box {
   padding-left: 0.5em;
   border-left: 1px dotted #000;
 }
-.schedule-track #main > h1,
-.schedule-event #main > h1,
-.schedule-room  #main > h1 {
+.schedule-track #pagetitles,
+.schedule-event #pagetitles,
+.schedule-room  #pagetitles {
   float: left;
 }
 
