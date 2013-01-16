@@ -1,7 +1,7 @@
 ---
 year: 2013
 person: Denis Defreyne 
-speaker: denis_Defreyne
+speaker: denis_defreyne
 topic: Static site generation for the masses
 event: static_site_generation_for_the_masses
 ---
