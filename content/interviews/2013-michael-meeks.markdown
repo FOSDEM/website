@@ -2,7 +2,7 @@
 year: 2013
 person: Michael Meeks 
 speaker: michael_meeks
-topic: LibreOffice: cleaning and re-factoring a giant code-base
+topic: "LibreOffice: cleaning and re-factoring a giant code-base"
 event: challenges_libreoffice
 ---
 
@@ -50,4 +50,4 @@ Q: Have you enjoyed previous FOSDEM editions?
 
 Yes ! FOSDEM is an incredible conference - and better an important meeting place for the best European Free Software developers. It is the one un-missable Free Software conference in the year for me - and it seems to get better each year.
 
-I go to enjoy meeting old friends, making new ones, and talking until extremely late into the night / morning. It is hard to appreciating the richness and depth of the characters we work with via E-mail. Free Software is built out of people and one of the best places to meet them each year is FOSDEM. It's also a great place for people to get involved for the first time with Free Software, I'd love newbies to come and meet up with the teams I care about most: LibreOffice, openSUSE, GNOME, RepRap, whatever takes your fancy - please come, learn, and find your place to be most effective, as we change the world together. 
+I go to enjoy meeting old friends, making new ones, and talking until extremely late into the night / morning. It is hard to appreciating the richness and depth of the characters we work with via e-mail. Free Software is built out of people and one of the best places to meet them each year is FOSDEM. It's also a great place for people to get involved for the first time with Free Software, I'd love newbies to come and meet up with the teams I care about most: LibreOffice, openSUSE, GNOME, RepRap, whatever takes your fancy - please come, learn, and find your place to be most effective, as we change the world together. 

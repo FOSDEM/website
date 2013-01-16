@@ -10,11 +10,11 @@ event: challenges_gnome
 
 Q: Could you briefly introduce yourself?
 
-Sure. I've been involved in free software since around 2002, which is when I started playing with GNOME. I have contributed to the project in tons of different ways: bug triage, translation, code, release management, marketing, etc. I've been the maintainer of several core modules in the past, the release manager for 4-5 years, a member of the GNOME Foundation Board for 4 years, and so on. I was also part of the small group who pushed for GNOME 3 before we knew what we wanted to achieve with it, and releasing this new milestone became my goal for the following years.
+Sure. I've been involved in free software since around 2002, which is when I started playing with [GNOME](http://www.gnome.org/). I have contributed to the project in tons of different ways: bug triage, translation, code, release management, marketing, etc. I've been the maintainer of several core modules in the past, the release manager for 4-5 years, a member of the [GNOME Foundation](http://www.gnome.org/foundation/) Board for 4 years, and so on. I was also part of the small group who pushed for GNOME 3 before we knew what we wanted to achieve with it, and releasing this new milestone became my goal for the following years.
 
-Since 2008, I'm also involved in openSUSE, where I helped shape the GNOME team and attract new contributors to this community. I'm currently the chairman of the openSUSE Board.
+Since 2008, I'm also involved in [openSUSE](http://www.opensuse.org/en/), where I helped shape the GNOME team and attract new contributors to this community. I'm currently the chairman of the [openSUSE Board](http://en.opensuse.org/openSUSE:Board).
 
-On my work time, I'm having fun with cloud technologies (such as OpenStack and Crowbar), at SUSE.
+On my work time, I'm having fun with cloud technologies (such as [OpenStack](http://www.openstack.org/) and Crowbar), at [SUSE](https://www.suse.com/).
 
 And I'm French :-)
 
@@ -28,7 +28,7 @@ Q: What do you hope to accomplish by giving this talk? What do you expect?
 
 I want to clarify the directions the GNOME project is taking, and to explain the rationale for various decisions. My end goal is to make people understand the project better, and trust it again.
 
-One important challenge for GNOME today is that some people are unhappy about it and blaming it for different woes. Sometimes, when reading comments, I feel that the person believes the GNOME community just wants to destroy the world. It's also relatively easy to find mis-informed comments... Of course, GNOME is not perfect and there are certainly valid reasons to complain about it. But there are also many happy users! I've discussed with people switching back to a free software desktop thanks to GNOME 3, for instance.                                                                                                                                       
+One important challenge for GNOME today is that some people are unhappy about it and blaming it for different woes. Sometimes, when reading comments, I feel that the person believes the GNOME community just wants to destroy the world. It's also relatively easy to find misinformed comments... Of course, GNOME is not perfect and there are certainly valid reasons to complain about it. But there are also many happy users! I've discussed with people switching back to a free software desktop thanks to GNOME 3, for instance.                                                                                                                                       
                                                                    
 If I manage to debunk some myths about GNOME and to have people get a clearer vision about what GNOME is doing, then the talk will have been useful.
 
@@ -36,7 +36,7 @@ Q: GNOME 3.8 will drop the fallback mode, but GNOME developers are working on im
 
 The fallback mode was being used for two reasons: computers that didn't have 3D acceleration, and people that wanted to keep a user experience similar to GNOME 2. However, the original goal of the fallback mode was really just the first case, and not the second one.
 
-After two years in GNOME 3, it became clear that the fallback mode wouldn't have the quality and integration we expect from GNOME software anymore. Moreover, the progress on llvmpipe made software rendering a solid option to run GNOME 3 -- something which has been the plan since the beginning, actually. Hence, we decided it was a good time to stop shipping the fallback mode (note that some people might still work on it, and do releases; help is welcome there).
+After two years in GNOME 3, it became clear that the fallback mode wouldn't have the quality and integration we expect from GNOME software anymore. Moreover, the progress on [llvmpipe](http://www.mesa3d.org/llvmpipe.html) made software rendering a solid option to run GNOME 3 -- something which has been the plan since the beginning, actually. Hence, we decided it was a good time to stop shipping the fallback mode (note that some people might still work on it, and do releases; help is welcome there).
 
 We do not want to abandon users that were using the fallback mode because they preferred that user experience. We intend to offer a set of extensions (most likely a taskbar, a classic alt-tab, a main menu, etc.) for this audience. I'm pretty much aware that some people feel we should have done that since day one, but it was a matter of priorities, and back then, extensions were more of an experiment. Thanks to many great extensions out there, it was proven to be a successful experiment, which is why the project is embracing them to offer an alternative to the old fallback mode.
 

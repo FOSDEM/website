@@ -10,7 +10,7 @@ event: uefi_secureboot
 
 Q: Could you briefly introduce yourself?
 
-Cathy Malmrose, grew up near Microsoft, lived in France for a while, now working to build hardware for F/LOSS.
+Cathy Malmrose, grew up near Microsoft, lived in France for a while, now working to build hardware for F/LOSS as the CEO of [ZaReason](http://zareason.com).
 
 Q: What will your talk be about, exactly? Why this topic?
 
