@@ -2,7 +2,7 @@
 year: 2013
 person: Michael Meeks 
 speaker: michael_meeks
-topic: "LibreOffice: cleaning and re-factoring a giant code-base"
+topic: 'LibreOffice: cleaning and re-factoring a giant code-base'
 event: challenges_libreoffice
 ---
 
