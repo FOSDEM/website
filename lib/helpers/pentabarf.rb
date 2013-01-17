@@ -497,6 +497,14 @@ module Fosdem
                              break
                            end
                          end
+                         # Be very evil and sort "roles" under "#"
+                         ['Staff', 'Team'].map{|s|
+                           Regexp.new("(.*\s#{s})$", false)}.each do |r|
+                           if p['public_name'] =~ r
+                             sortname = "# #{$1}"
+                             break
+                          end
+                       end
                        elsif p['last_name']
                          sortname = p['last_name']
                          if p['first_name']
