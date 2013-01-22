@@ -31,7 +31,7 @@ module Fosdem
 
     # Get sorted relevant articles
     sorted_relevant_articles = relevant_articles.sort_by do |a|
-      iso822(a[:created_at])
+      a[:created_at]
     end.reverse.first(limit)
 
     # Get most recent article
@@ -51,7 +51,7 @@ module Fosdem
         xml.method_missing :'atom:link', href: root_url + @item.path, rel: 'self', type: 'application/rss+xml'
         xml.title   title
         xml.description "#{conference()[:title]} News Feed"
-        t = iso822(last_article[:created_at])
+        t = last_article[:created_at]
         xml.lastBuildDate(t)
         xml.pubDate(t)
         xml.ttl('1800')
@@ -67,7 +67,7 @@ module Fosdem
           xml.item do
             xml.title       a[:title]
             xml.guid        url
-            xml.pubDate     iso822(a[:created_at])
+            xml.pubDate     a[:created_at]
             xml.link        url
             xml.description excerpt
           end
@@ -82,7 +82,7 @@ module Fosdem
   def rss_tag_for(item)
     hostname, base_dir = %r{^.+?://([^/]+)(.*)$}.match(@site.config[:base_url])[1..2]
 
-    formatted_date = iso822(item[:created_at])
+    formatted_date = item[:created_at]
 
     'tag:' + hostname + ',' + formatted_date + ':' + base_dir + (item.path || item.identifier)
   end
