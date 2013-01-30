@@ -31,8 +31,8 @@ module Fosdem
 
     public
     def self.pdf_grid(size)
-      params = PARAMS[size]
-      raise "invalid size: must be one of [#{PARAMS.keys.join(", ")}]" unless params
+      params = $PARAMS[size]
+      raise "invalid size: must be one of [#{$PARAMS.keys.join(", ")}]" unless params
 
       require 'prawn'
 
