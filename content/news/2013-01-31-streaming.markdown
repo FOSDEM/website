@@ -1,8 +1,10 @@
 ---
 title: Streaming
 ---
-Not coming to FOSDEM? Still want to particpate? Do not despair!
----MORE---
+Not coming to FOSDEM? Still want to participate? Do not despair!
+
+<!-- ---MORE--- -->
+
 As during last year, FOSDEM will be streaming talks live onto the
 internet from a select number of our rooms. If you can't make it, this
 is the perfect way to avoid getting depressed for not being able to be
