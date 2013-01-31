@@ -256,7 +256,7 @@ compile '*' do
         # kramdown processor
         filter :kramdown if ['markdown', 'md'].include? item[:extension]
 
-        # run the custom interview filter (lib/helpers/interview_filter.rb)
+        # run the custom interview filter (lib/filters/interview_filter.rb)
         # on content/interviews/* -- it adds a CC license footer and
         # converts "Q: ..." lines to styled HTML markup
         filter :interview if interview?(item)
