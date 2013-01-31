@@ -19,20 +19,20 @@ URLs:
 
 - Janson: [WebM](http://streaming.fosdem.org/fosdem/janson.webm.m3u),
   [Ogg Theora](http://streaming.fosdem.org/fosdem/janson.ogg.m3u); IRC:
-  #fosdem-video-janson
+  #fosdem-janson
 - K auditorium:
   [WebM](http://streaming.fosdem.org/fosdem/k-auditorium.webm.m3u),
   [Ogg Theora](http://streaming.fosdem.org/fosdem/k-auditorium.ogg.m3u);
-  IRC: #fosdem-video-k-auditorium
+  IRC: #fosdem-k-auditorium
 - Ferrer: [WebM](http://streaming.fosdem.org/fosdem/ferrer.webm.m3u),
   [Ogg Theora](http://streaming.fosdem.org/fosdem/ferrer.ogg.m3u); IRC:
-  #fosdem-video-ferrer
+  #fosdem-ferrer
 - H.1301: [WebM](http://streaming.fosdem.org/fosdem/h1301.webm.m3u),
   [Ogg Theora](http://streaming.fosdem.org/fosdem/h1301.ogg.m3u); IRC:
-  #fosdem-video-h1301
+  #fosdem-h1301
 - H.1302: [WebM](http://streaming.fosdem.org/fosdem/h1302.webm.m3u),
   [Ogg Theora](http://streaming.fosdem.org/fosdem/h1302.ogg.m3u); IRC:
-  #fosdem-video-h1302
+  #fosdem-h1302
 
 Note that these streams will not work before the event; you'll need to
 wait until saturday morning.
