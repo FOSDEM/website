@@ -9,7 +9,7 @@ is the perfect way to avoid getting depressed for not being able to be
 there :-)
 
 If you're watching the streams, you may want to join us on IRC (on the
-FreeNode network). That will allow you to provide some feedback on the
+freenode network). That will allow you to provide some feedback on the
 streams; it could also allow people in the room relay questions.
 
 To tune in, point your favourite media player to one of the following
