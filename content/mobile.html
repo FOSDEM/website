@@ -99,6 +99,7 @@ more_tracks.each do |track|
         <ul data-role="listview" data-inset="false">
 <%
   if days.size < 2
+    # TODO: days contains empty arrays, count not reliable
     events = track[:events].map &$to_event
     events.each do |event|
   %>
@@ -108,7 +109,7 @@ more_tracks.each do |track|
   else
     days.each do |day|
       days_tracks << track
-      eventcount = track[:events_by_day].fetch(day[:slug], []).size
+      eventcount = track[:events_by_day].fetch(day[:slug].to_sym, []).size
 %>
             <li><a href="#track-<%= track[:slug] %>-<%= day[:slug] %>"><%= day[:title] %> (<%= eventcount %>)</a></li>
 <%
@@ -132,7 +133,7 @@ days_tracks.each do |track|
     <div data-role="content">
         <ul data-role="listview" data-inset="false">
         <%
-          events = track[:events_by_day].fetch(day[:slug], []).map(&$to_event)
+          events = track[:events_by_day].fetch(day[:slug].to_sym, []).map(&$to_event)
           events.each do |event|
         %>
             <li><a href="#event-<%= event[:slug] %>"><%= event[:title] %></a></li>
