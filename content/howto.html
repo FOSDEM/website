@@ -279,9 +279,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 <p>
   After having <code>rvm</code> installed, run the following command, which will
   check which dependencies (Ruby gems) you are missing or are outdated, and
-  install them accordingly:
+  install them accordingly. Please note that you need to run this within your
+  clone of the website's repo.
 </p>
-<pre>bundle</pre>
+<pre>cd $your_git_repo
+bundle</pre>
 
 <p>
   Note that the list of Ruby gems to install is in the file <code
@@ -420,11 +422,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
   class="host">staging.fosdem.org</code></a>, run the following command:
 </p>
 <pre>nanoc deploy</pre>
-
-<p>
-  Or, more explicitly:
-</p>
-<pre>nanoc deploy -t staging</pre>
 
 <h3>Deploying to public</h3>
 <p>
