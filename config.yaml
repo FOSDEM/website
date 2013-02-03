@@ -178,7 +178,7 @@ keysigning:
   # Change this when the list of keys is published.
   list_published: true
   # Change this when the hashes of the keylist have been published.
-  hashes_published: false
+  hashes_published: true
 
 deadlines:
   lightningtalks:
