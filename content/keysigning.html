@@ -18,6 +18,13 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
   server rather than email to to collect keys.
 </p>
 
+<% if conf.fetch(:submission_notyet) %>
+<p>
+  <span class="label label-info">
+    Further information will be published in due course.
+  </span>
+<% else %>
+
 <h3>Before the event</h3>
 <h4>Submit your keys</h4>
 <p>
@@ -25,7 +32,6 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
   <span class="label label-info">
     The submission deadline has passed.
   </span>
-  <% # XXX: Add check for "submission not yet open" %>
   <% end %>
 </p>
 
@@ -135,3 +141,4 @@ gpg --verify ksp-<%= klist %>-hashes.txt.asc ksp-<%= klist %>-hashes.txt
   statistics of the density of the web of trust at FOSDEM will be published
   soon after that date.
 </p>
+<% end %>

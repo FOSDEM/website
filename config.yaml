@@ -170,15 +170,16 @@ pentabarf:
     height: 200
 
 keysigning:
-  submission_deadline: 2013-01-31
-  homework_due: 2013-06-09
-  submission_start: 2012-12-08
-  # Change this when the submission window opens/closes.
-  submission_closed: true
+  submission_deadline: 2014-01-30
+  homework_due: 2014-06-08
+  submission_start: 2013-12-07
+  # Change these when the submission window opens/closes.
+  submission_notyet: true
+  submission_closed: false
   # Change this when the list of keys is published.
-  list_published: true
+  list_published: false
   # Change this when the hashes of the keylist have been published.
-  hashes_published: true
+  hashes_published: false
 
 deadlines:
   lightningtalks:
