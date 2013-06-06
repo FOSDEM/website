@@ -1,7 +1,7 @@
 ---
 title: Oracle
 url: http://www.oracle.com/
-disabled: false
+disabled: true
 include_in_toplevel: true
 ---
 

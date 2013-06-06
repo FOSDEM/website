@@ -1,7 +1,7 @@
 ---
 title: Red Hat
 url: http://www.redhat.com/
-disabled: false
+disabled: true
 cornerstone: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Google
 url: http://www.google.com
-disabled: false
+disabled: true
 ---
 Google’s innovative search technologies connect millions of people around the
 world with information every day.
