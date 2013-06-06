@@ -37,17 +37,6 @@ $layout_dateline ||= begin
         <h1 class="logo"><a href="<%= pathof '/' %>"><%= conference()[:acronym] %> Free and open source software developers’ European meeting</a></h1>
         <ul id="nav">
           <%= navigation $item_by_id.fetch('/navigation/')[:top] %>
-          <% unless item[:no_search] %>
-            <li class="search-holder">
-            <form class="search-form" action="/search/" method="get">
-              <div class="input-prepend">
-                <span class="add-on"><i class="icon-search"></i></span>
-                <span class="degraded-hint">Search:</span>
-                <input type="search" name="q" id="q" class="span2" value="<% if @item[:search_inject_variable] %><%%= <%= @item[:search_inject_variable] %> %><% end %>"<% unless @item[:search_inject_variable] %> placeholder="Search"<% end %> />
-              </div>
-            </form>
-            </li>
-          <% end %>
         </ul> <!-- #nav -->
       </div> <!-- .header-holder -->
     </div> <!-- #header -->
