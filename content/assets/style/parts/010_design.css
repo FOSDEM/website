@@ -46,7 +46,7 @@ fieldset{
 .logo{
 	margin:0;
 	float:left;
-	/*background:url(logo-compact.gif) no-repeat;*/
+	/*background:url(logo-compact.png) no-repeat;*/
 	background:url(sprite.png) no-repeat;
 	text-indent:-9999px;
 	overflow:hidden;
