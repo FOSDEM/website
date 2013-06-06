@@ -2,7 +2,8 @@
 title: Flumotion
 url: http://flumotion.com/
 section: thanks
-include_in_toplevel: false
+include_in_toplevel: true
+disabled: true
 ---
 
 Flumotion is a multiple award winning streaming software company that was
