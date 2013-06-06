@@ -138,15 +138,15 @@ watcher:
 deploy:
   public:
     kind: rsync
-    dst:  "www-data@apeiron.fosdem.org:/var/www/fosdem.org/public/2013"
+    dst:  "www-data@apeiron.fosdem.org:/var/www/fosdem.org/public/2014"
     options: [ '-avzP', '--delete-after' ]
   default:
     kind: rsync
-    dst:  "www-data@apeiron.fosdem.org:/var/www/staging.fosdem.org/public/2013"
+    dst:  "www-data@apeiron.fosdem.org:/var/www/staging.fosdem.org/public/2014"
     options: [ '-avzP', '--delete-after' ]
 
 pentabarf:
-  conference_id: FOSDEM13
+  conference_id: FOSDEM14
   username: nanoc
   #password: 
   database: pentabarf
