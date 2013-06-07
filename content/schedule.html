@@ -59,7 +59,12 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 
 <p>
   Activities take place in <a href="<%= pathof '/schedule/rooms/' %>">
-  <%= rooms.size %> rooms</a> spread across several buildings of
+<% if rooms.size > 10 %>
+  <%= rooms.size %>
+<% else %>
+  several
+<% end %>
+  rooms</a> spread across several buildings of
   <a href="<%= pathof '/practical/transportation/' %>">the Solbosch campus
   of the ULB (Université Libre de Bruxelles)</a>.<br/>
   An <a href="<%= pathof '/schedule/roomtracks/' %>">overview of the room
@@ -90,7 +95,8 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <h3>Friday beer event</h3>
 <p>
   As tradition has it, on Friday the 1st of February we have the beer event.
-  More information can be found on <a href="/2013/practical/beerevent/">this</a>
+  More information can be found on <a
+    href="<%= pathof '/practical/beerevent/'%>">this</a>
   page.
 </p>
 
