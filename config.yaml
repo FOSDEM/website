@@ -136,6 +136,10 @@ watcher:
   notify_on_compilation_failure: true
 
 deploy:
+  archive:
+    kind: rsync
+    dst:  "www-data@apeiron.fosdem.org:/var/www/archive.fosdem.org"
+    options: [ '-glPrtvzPO', '--exclude=searcher', '--exclude=404.html', '--exclude=favicon.ico' ]
   public:
     kind: rsync
     dst:  "www-data@apeiron.fosdem.org:/var/www/fosdem.org/public/2013"
