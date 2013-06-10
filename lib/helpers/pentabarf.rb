@@ -183,6 +183,8 @@ module Fosdem
                       .downcase
                       .gsub(/[\s\-\+]+/, '_')
                       .gsub(/[\.']+/, '')
+		      .gsub(/[\(]/, '')
+		      .gsub(/[\)]/, '')
                     end
         sanitized
       end
@@ -496,6 +498,13 @@ module Fosdem
                              sortname = "#{$2} #{$1}"
                              break
                            end
+
+                         # Deal with people who suffix their public_name with
+                         # (nickname) or similar.
+                         if sortname =~ /^\(/
+                           sortname = "#{n[-2]} #{n.first}"
+                         end
+
                          end
                          # Be very evil and sort "roles" under "#"
                          ['Staff', 'Team'].map{|s|
