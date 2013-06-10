@@ -326,12 +326,6 @@ route '/404/' do
   "/404.html"
 end
 
-# needs extra routing rule or it will not be rendered
-# as it is a hidden page
-route '/howto/' do
-  "#{$prefix}/staff/howto/index.html"
-end
-
 # send this one into oblivion, its compiled content is included in
 # layouts/default.html, but is not to be rendered as a file of its
 # own into output
