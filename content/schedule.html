@@ -10,7 +10,7 @@ require 'time'
 
 keynotes = events.select{|e| e[:type] == 'keynote'}.sort_by{|e| e[:start_datetime]}
 maintracks = tracks.select{|t| t[:type] == 'maintrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
-distroevents = events.select{|e| e[:conference_track_id] ==  track('cross_distro')[:conference_track_id] }
+distroevents = {}
 devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
