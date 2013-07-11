@@ -1,7 +1,6 @@
 ---
 title: Cisco
 url: http://www.cisco.com/
-disabled: true
 ---
 
 Cisco enables people to make powerful connections - whether in business,
