@@ -1,7 +1,6 @@
 ---
 title: HP
 url: http://www.hp.com/go/opensource/
-disabled: true
 ---
 As the world’s largest IT company, HP focuses on simplifying technology
 experiences for all its customers&mdash;from individual consumers to large
