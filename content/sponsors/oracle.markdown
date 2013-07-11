@@ -1,8 +1,6 @@
 ---
 title: Oracle
 url: http://www.oracle.com/
-disabled: true
-include_in_toplevel: true
 ---
 
 The Oracle Technology Network is the world‘s largest community of application
