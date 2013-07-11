@@ -1,7 +1,6 @@
 ---
 title: Google
 url: http://www.google.com
-disabled: true
 ---
 Google’s innovative search technologies connect millions of people around the
 world with information every day.
@@ -11,7 +10,8 @@ Google’s targeted advertising program, which is the largest and fastest growin
 in the industry, provides businesses of all sizes with measurable results, while
 enhancing the overall web experience for users.
 Google is headquartered in Silicon Valley with offices throughout North America,
-Europe, and Asia.  For more information, visit
-[http://google.com/](http://google.com/).
+Europe, and Asia.
+
+For more information, visit [http://google.com/](http://google.com/).
 
 Google supports the event financially.
