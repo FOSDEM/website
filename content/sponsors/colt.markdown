@@ -1,7 +1,6 @@
 ---
 title: Colt
 url: http://www.colt.net/
-disabled: true
 cornerstone: false
 ---
 
