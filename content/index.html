@@ -35,19 +35,6 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
   </div>
 
   <div class="news-block">
-    <h2>FOSDEM 2014 dates</h2>
-<p>
-  We are pleased to announce that FOSDEM 2014 will take place at ULB Campus
-  Solbosch on <b>Saturday 1 and Sunday 2 February 2014</b>.  Further details and
-  calls for participation will be announced in due course.
-</p>
-
-<p>
-  Have a nice summer!
-</p>
-  </div>
-
-  <div class="news-block">
     <h2>NEWS</h2>
     <ul class="news-list">
       <% newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse; newsitems[0,maxnews].each do |hl| %>
