@@ -1,127 +1,41 @@
 ---
 kind: internal
-deadlines:
-  'Cross Distro':
-    ann: 2012-October/001635
-    deadline: 2012-12-20
-    days: both
-  'CrossDesktop':
-    ann: 2012-October/001643
-    deadline: 2012-12-14
-    days: both
-  'Embedded and Mobile':
-    ann: 2012-November/001650
-    deadline: 2012-12-25
-    days: both
-  'Free Java':
-    ann:
-      - 2012-November/001653
-      - 2012-December/001683
-    deadline:
-      - 2012-12-21
-      - 2013-01-04
-    days: both
-  'Legal Issues':
-    ann: 2012-November/001652
-    deadline: 2012-12-21
-    days: both
-  'Mozilla':
-    ann: 2012-November/001654
-    deadline: 2012-12-20
-    days: both
-  'Apache OpenOffice':
-    days: sat
-    ann: 2012-November/001664
-    deadline: 2012-12-23
-  'Community Development and Marketing':
-    days: sat
-    ann: 2012-November/001656
-    deadline: 2012-12-23
-  'FOSS for Scientists':
-    days: sat
-    ann: 2012-November/001651
-    deadline: 2012-12-16
-  'Graph Processing':
-    days: sat
-    ann: 2012-October/001636
-    deadline: 2012-12-23
-  'Jabber/XMPP':
-    days: sat
-    ann: 2012-December/001671
-    deadline: 2012-12-31
-  'Microkernels / Component-based OSes':
-    days: sat
-    ann: 2012-October/001639
-    deadline: 2012-12-22
-  'Mono':
-    days: sat
-    ann: 2012-December/001670
-    deadline: 2012-12-25
-  'PHP and Friends':
-    days: sat
-    ann: 2012-October/001640
-    deadline: 2012-12-14
-  'Testing and Automation':
-    days: sat
-    ann: 2012-November/001665
-    deadline: 2012-12-21
-  'The Wine Project':
-    days: sun
-    ann: 'http://www.winehq.org/pipermail/wine-devel/2012-November/097669.html'
-    deadline: 2012-12-31
-  'Virtualization':
-    days: sat
-    ann: 2012-November/001660
-    deadline: 2012-12-16
-  'X.org':
-    days: sat
-    ann: 'http://lists.freedesktop.org/archives/wayland-devel/2012-September/005444.html'
-  'Ada':
-    days: sun
-    ann: 2012-November/001647
-    deadline: 2012-12-12
-  'BSD':
-    days: sun
-    ann: 2012-November/001662
-    deadline: 2012-12-17
-  'Cloud':
-    days: sun
-    ann: 2012-November/001649
-    deadline: 2012-12-14
-  'Configuration/Systems Management':
-    days: sun
-    ann: 2012-November/001661
-    deadline: 2012-12-15
-  'LibreOffice':
-    days: sun
-    ann: 2012-November/001645
-    deadline: 2012-12-14
-  'MySQL & Friends':
-    days: sun
-    ann: 'http://lists.mysql.com/community/393'
-    deadline: 2012-12-21
-  'NoSQL':
-    days: sun
-    ann: 2012-November/001648
-    deadline: 2012-12-14
-  'Open Source Game Development':
-    days: sun
-    ann: 2012-October/001634
-    deadline: 2012-12-16
-  'PostgreSQL':
-    days: sun
-    ann: 2012-November/001658
-    deadline: 2012-12-21
-  'Python':
-    days: sun
-    ann: http://wirtel.be/posts/en/2012/11/20/call_of_papers_fosdem_2013/
-    deadline: 2012-12-21
-  'Smalltalk':
-    days: sun
-    deadline: 2012-12-31
-    ann: 2012-November/001659
-  'Telephony':
-    days: sun
-    deadline: 2013-01-04
-    ann: 2012-November/001667
+days:
+  both:
+    'Distributions':
+    'Embedded':
+    'Graphics':
+    'Legal issues':
+    'Virtualisation':
 
+  saturday:
+    'Ada':
+    'BSD':
+    'Configuration management':
+    'Desktops':
+    'Energy-efficient computing':
+    'Game development':
+    'Java':
+    'Mozilla':
+    'MySQL':
+    'Open document editors':
+    'Perl':
+    'PostgreSQL':
+    'Smalltalk':
+    'Wikis':
+
+  sunday:
+    'Automotive development':
+    'High-performance computing and computational science':
+    'Go':
+    'Graph processing':
+    'Internet of things':
+    'JavaScript':
+    'LLVM':
+    'Microkernel and component-based operating systems':
+    'NoSQL':
+    'Python':
+    'Software-defined radio':
+    'Testing and automation':
+    'Valgrind':
+    'Wine':
