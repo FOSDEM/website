@@ -13,8 +13,8 @@ days:
     'BSD':
     'Configuration management':
     'Desktops':
-    'Energy-efficient computing':
     'Game development':
+    'High-performance computing and computational science':
     'Java':
     'Mozilla':
     'MySQL':
@@ -26,7 +26,7 @@ days:
 
   sunday:
     'Automotive development':
-    'High-performance computing and computational science':
+    'Energy-efficient computing':
     'Go':
     'Graph processing':
     'Internet of things':
