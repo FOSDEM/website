@@ -28,6 +28,7 @@ days:
     'Automotive development':
     'Energy-efficient computing':
     'Go':
+        ann: https://code.google.com/p/go-wiki/wiki/Fosdem2014
     'Graph processing':
     'Internet of things':
     'JavaScript':
