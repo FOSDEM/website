@@ -33,6 +33,7 @@ days:
     'Internet of things':
     'JavaScript':
     'LLVM':
+        ann: http://llvm.org/devmtg/2014-02/
     'Microkernel and component-based operating systems':
     'NoSQL':
     'Python':
