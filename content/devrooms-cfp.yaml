@@ -38,6 +38,7 @@ days:
     'NoSQL':
     'Python':
     'Software-defined radio':
+        ann: http://gnuradio.org/redmine/projects/gnuradio/wiki/FOSDEM14
     'Testing and automation':
     'Valgrind':
     'Wine':
