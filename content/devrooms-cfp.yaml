@@ -35,6 +35,7 @@ days:
     'LLVM':
         ann: http://llvm.org/devmtg/2014-02/
     'Microkernel and component-based operating systems':
+        ann: https://os.inf.tu-dresden.de/pipermail/l4-hackers/2013/006068.html
     'NoSQL':
     'Python':
     'Software-defined radio':
