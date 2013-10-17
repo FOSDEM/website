@@ -26,6 +26,7 @@ days:
 
   sunday:
     'Automotive development':
+        ann: http://lists.genivi.org/pipermail/genivi-meta-ivi/2013-October/000042.html
     'Energy-efficient computing':
     'Go':
         ann: https://code.google.com/p/go-wiki/wiki/Fosdem2014
