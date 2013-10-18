@@ -34,6 +34,8 @@ days:
         ann: https://code.google.com/p/go-wiki/wiki/Fosdem2014
     'Graph processing':
     'Internet of things':
+        ann: https://groups.google.com/forum/?hl=en#!forum/iot-devroom
+        deadline: 2013-12-01
     'JavaScript':
     'LLVM':
         ann: http://llvm.org/devmtg/2014-02/
