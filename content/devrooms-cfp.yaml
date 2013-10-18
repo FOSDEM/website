@@ -39,6 +39,7 @@ days:
         ann: http://llvm.org/devmtg/2014-02/
     'Microkernel and component-based operating systems':
         ann: https://os.inf.tu-dresden.de/pipermail/l4-hackers/2013/006068.html
+        deadline: 2013-12-01
     'NoSQL':
         ann: http://www.lczajkowski.com/2013/10/10/cfp-for-nosql-devroom-at-fosdem/
     'Python':
