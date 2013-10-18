@@ -44,6 +44,7 @@ days:
     'Python':
     'Software-defined radio':
         ann: http://gnuradio.org/redmine/projects/gnuradio/wiki/FOSDEM14
+        deadline: 2013-12-01
     'Testing and automation':
     'Valgrind':
     'Wine':
