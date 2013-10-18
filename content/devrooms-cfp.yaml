@@ -15,6 +15,8 @@ days:
     'Desktops':
     'Game development':
     'High-performance computing and computational science':
+        ann: http://hpcugent.github.io/easybuild/fosdem14.html
+        deadline: 2013-12-06
     'Java':
     'Mozilla':
     'MySQL':
