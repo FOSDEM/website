@@ -916,10 +916,9 @@ module Fosdem
         # (load all = 2.19s, one by one = 12.35s)
         counter = 0
         @db.exec(%q{
-        SELECT event_attachment_id, mime_type, title, pages, event_id, attachment_type, filename, md5(data) AS data_hash
-        FROM event_attachment
-        WHERE public=true
-        ORDER BY event_attachment_id}) do |res|
+        SELECT event_attachment_id, mime_type, title, pages, event_id, attachment_type, filename, data_hash
+        FROM fosdem.view_event_attachment
+        WHERE conference_id=$1}, [cid]) do |res|
           res
           .map{|a|
             h = a['data_hash']
@@ -1149,10 +1148,10 @@ module Fosdem
         t = Time.now
         to_export = []
         @db.exec(%q{
-          SELECT person_id, mime_type, md5(image) AS image_hash, octet_length(image) AS image_length
-          FROM person_image
-          WHERE public=true
-          ORDER BY person_id}) do |res|
+          SELECT person_id, mime_type, image_hash, image_length
+          FROM fosdem.view_person_image
+          WHERE conference_id=$1 AND public=true
+          ORDER BY person_id}, [cid]) do |res|
           res.each do |i|
             %w(person_id image_length).each{|x| i[x] = i[x].to_i}
 
