@@ -25,6 +25,8 @@ days:
     'PostgreSQL':
     'Smalltalk':
     'Wikis':
+        ann: https://lists.fosdem.org/pipermail/wikis-devroom/2013-October/000000.html
+        deadline: 2013-11-30
 
   sunday:
     'Automotive development':
