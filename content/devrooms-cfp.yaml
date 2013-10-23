@@ -7,6 +7,8 @@ days:
     'Graphics':
     'Legal issues':
     'Virtualisation and IaaS':
+        ann: https://groups.google.com/forum/#!topic/fosdem14-virt-and-iaas-devroom/04y5YkyqzIo
+        deadline: 2013-12-01
 
   saturday:
     'Ada':
