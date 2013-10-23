@@ -10,6 +10,8 @@ days:
 
   saturday:
     'Ada':
+        ann: http://www.cs.kuleuven.be/~dirk/ada-belgium/events/14/140201-fosdem.html
+        deadline: 2013-11-30
     'BSD':
     'Configuration management':
     'Desktops':
