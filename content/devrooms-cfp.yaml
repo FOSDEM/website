@@ -43,6 +43,8 @@ days:
         ann: https://groups.google.com/forum/?hl=en#!forum/iot-devroom
         deadline: 2013-12-01
     'JavaScript':
+        ann: http://fosdem14-js-devroom.github.io/
+        deadline: 2013-12-01
     'LLVM':
         ann: http://llvm.org/devmtg/2014-02/
     'Microkernel and component-based operating systems':
