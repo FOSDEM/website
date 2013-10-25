@@ -1,75 +1,73 @@
 GIT
   remote: git://github.com/prawnpdf/prawn
-  revision: 131082af5abb71d83de0e2005ecceaa829224904
+  revision: 44df80661ab89852db5604cb58a08cfc4161951b
   branch: master
   specs:
-    prawn (1.0.0.rc1)
-      pdf-reader (>= 0.9.0, < 2.0)
+    prawn (1.0.0.rc2)
+      afm
+      pdf-reader (~> 1.2)
+      ruby-rc4
       ttfunk (~> 1.0.3)
 
 GEM
   remote: http://rubygems.org/
   specs:
     Ascii85 (1.0.2)
-    activesupport (3.1.8)
-      multi_json (>= 1.0, < 1.3)
+    activesupport (3.2.15)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
     adsf (1.1.1)
       rack (>= 1.0.0)
-    awesome_print (1.1.0)
-    backports (2.6.5)
+    afm (0.2.0)
+    allison (2.0.3)
+    atomic (1.1.14)
     bluecloth (2.2.0)
-    builder (3.0.4)
+    builder (3.2.2)
     colored (1.2)
-    cri (2.3.0)
+    cri (2.4.0)
       colored (>= 1.2)
-    daemons (1.1.9)
-    erubis (2.7.0)
-    eventmachine (1.0.0)
-    hashery (2.0.1)
+    echoe (4.6.3)
+      allison (>= 2.0.3)
+      gemcutter (>= 0.7.0)
+      rake (>= 0.9.2)
+      rdoc (>= 3.6.1)
+      rubyforge (>= 2.0.4)
+    gemcutter (0.7.1)
+    hashery (2.1.1)
     htmlentities (4.3.1)
-    i18n (0.6.1)
-    kramdown (0.13.8)
-    multi_json (1.2.0)
-    nanoc (3.4.3)
-      cri (~> 2.2)
-    nokogiri (1.5.5)
-    pdf-reader (1.2.0)
+    i18n (0.6.5)
+    json (1.8.1)
+    json_pure (1.8.1)
+    kramdown (1.2.0)
+    mini_portile (0.5.1)
+    multi_json (1.8.2)
+    nanoc (3.6.5)
+      cri (~> 2.3)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    pdf-reader (1.3.3)
       Ascii85 (~> 1.0.0)
+      afm (~> 0.2.0)
       hashery (~> 2.0)
       ruby-rc4
-    pg (0.14.1)
-    rack (1.4.1)
-    rack-contrib (1.1.0)
-      rack (>= 0.9.1)
-    rack-protection (1.2.0)
-      rack
-    rack-test (0.6.2)
-      rack (>= 1.0)
+      ttfunk
+    pg (0.17.0)
+    rack (1.5.2)
     rainpress (1.0)
-    rmagick (2.13.1)
-    rsolr (1.0.8)
-      builder (>= 2.1.2)
-    ruby-filemagic (0.4.2)
+      echoe
+    rake (10.1.0)
+    rdoc (4.0.1)
+      json (~> 1.4)
+    rmagick (2.13.2)
     ruby-rc4 (0.1.5)
-    sinatra (1.3.3)
-      rack (~> 1.3, >= 1.3.6)
-      rack-protection (~> 1.2)
-      tilt (~> 1.3, >= 1.3.3)
-    sinatra-contrib (1.3.2)
-      backports (>= 2.0)
-      eventmachine
-      rack-protection
-      rack-test
-      sinatra (~> 1.3.0)
-      tilt (~> 1.3)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
     systemu (2.5.2)
-    thin (1.5.0)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
-    tilt (1.3.3)
+    thread_safe (0.1.3)
+      atomic
     ttfunk (1.0.3)
-    tzinfo (0.3.34)
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
@@ -77,25 +75,15 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   adsf
-  awesome_print
   bluecloth
   builder
-  cri (~> 2.3.0)
-  erubis (~> 2.7.0)
   htmlentities
-  i18n
-  kramdown (~> 0.13.6)
-  nanoc (= 3.4.3)
+  kramdown
+  nanoc (= 3.6.5)
   nokogiri
   pg
   prawn!
-  rack-contrib
   rainpress
   rmagick
-  rsolr
-  ruby-filemagic
-  sinatra
-  sinatra-contrib
   systemu
-  thin
   tzinfo
