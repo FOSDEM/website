@@ -18,6 +18,8 @@ days:
     'Configuration management':
     'Desktops':
     'Game development':
+        ann: https://lists.fosdem.org/pipermail/open-source-gamedev-devroom/2013-October/000053.html
+        deadline: 2013-12-01
     'High-performance computing and computational science':
         ann: http://hpcugent.github.io/easybuild/fosdem14.html
         deadline: 2013-12-06
