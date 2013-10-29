@@ -38,6 +38,8 @@ days:
     'Automotive development':
         ann: http://lists.genivi.org/pipermail/genivi-meta-ivi/2013-October/000042.html
     'Energy-efficient computing':
+        ann: http://mageec.org/wiki/FOSDEM_2014_Energy-efficient_Computing_devroom
+        deadline: 2013-11-25
     'Go':
         ann: https://code.google.com/p/go-wiki/wiki/Fosdem2014
     'Graph processing':
