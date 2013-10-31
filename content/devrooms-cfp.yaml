@@ -17,6 +17,8 @@ days:
     'BSD':
     'Configuration management':
     'Desktops':
+        ann: http://www.elpauer.org/2013/10/fosdem-desktops-devroom-2014-call-for-talks/
+        deadline: 2013-12-14
     'Game development':
         ann: https://lists.fosdem.org/pipermail/open-source-gamedev-devroom/2013-October/000053.html
         deadline: 2013-12-01
