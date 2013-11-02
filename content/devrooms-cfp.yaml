@@ -16,6 +16,8 @@ days:
         deadline: 2013-11-30
     'BSD':
     'Configuration management':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001862.html
+        deadline: 2013-12-01
     'Desktops':
         ann: http://www.elpauer.org/2013/10/fosdem-desktops-devroom-2014-call-for-talks/
         deadline: 2013-12-14
