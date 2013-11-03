@@ -71,4 +71,6 @@ days:
         deadline: 2013-12-01
     'Testing and automation':
     'Valgrind':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001871.html
+        deadline: 2013-12-08
     'Wine':
