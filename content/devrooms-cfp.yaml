@@ -35,6 +35,8 @@ days:
     'Perl':
     'PostgreSQL':
     'Smalltalk':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001873.html
+        deadline: 2013-12-31
     'Wikis':
         ann: https://lists.fosdem.org/pipermail/wikis-devroom/2013-October/000000.html
         deadline: 2013-11-30
