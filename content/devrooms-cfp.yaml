@@ -5,6 +5,7 @@ days:
     'Distributions':
     'Embedded':
     'Graphics':
+        ann: http://lists.x.org/archives/xorg-devel/2013-October/038185.html
     'Legal issues':
     'Virtualisation and IaaS':
         ann: https://groups.google.com/forum/#!topic/fosdem14-virt-and-iaas-devroom/04y5YkyqzIo
