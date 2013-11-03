@@ -31,6 +31,8 @@ days:
         ann: http://hpcugent.github.io/easybuild/fosdem14.html
         deadline: 2013-12-06
     'Java':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001865.html
+        deadline: 2013-12-01
     'Mozilla':
     'MySQL':
     'Open document editors':
