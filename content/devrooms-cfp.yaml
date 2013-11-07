@@ -9,6 +9,8 @@ days:
     'Graphics':
         ann: http://lists.x.org/archives/xorg-devel/2013-October/038185.html
     'Legal issues':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001875.html
+        deadline: 2013-12-01
     'Virtualisation and IaaS':
         ann: https://groups.google.com/forum/#!topic/fosdem14-virt-and-iaas-devroom/04y5YkyqzIo
         deadline: 2013-12-01
