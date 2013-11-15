@@ -42,6 +42,8 @@ days:
     'Open document editors':
     'Perl':
     'PostgreSQL':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001878.html
+        deadline: 2013-12-15
     'Smalltalk':
         ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001873.html
         deadline: 2013-12-31
