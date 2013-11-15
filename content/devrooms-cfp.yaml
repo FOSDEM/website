@@ -80,6 +80,8 @@ days:
         ann: http://gnuradio.org/redmine/projects/gnuradio/wiki/FOSDEM14
         deadline: 2013-12-01
     'Testing and automation':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001876.html
+        deadline: 2013-11-30
     'Valgrind':
         ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001871.html
         deadline: 2013-12-08
