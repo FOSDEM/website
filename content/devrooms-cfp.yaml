@@ -20,6 +20,8 @@ days:
         ann: http://www.cs.kuleuven.be/~dirk/ada-belgium/events/14/140201-fosdem.html
         deadline: 2013-11-30
     'BSD':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001877.html
+        deadline: 2013-12-20
     'Configuration management':
         ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001862.html
         deadline: 2013-12-01
