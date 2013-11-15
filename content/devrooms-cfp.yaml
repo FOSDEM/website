@@ -39,6 +39,8 @@ days:
         deadline: 2013-12-01
     'Mozilla':
     'MySQL':
+        ann: http://lists.mysql.com/community/407
+        deadline: 2013-12-06
     'Open document editors':
     'Perl':
     'PostgreSQL':
