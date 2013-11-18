@@ -45,6 +45,8 @@ days:
         deadline: 2013-12-06
     'Open document editors':
     'Perl':
+        ann: http://wendyga.wordpress.com/2013/09/23/fosdem-1-2-feb-2014-brussels-call-for-speakers/
+        deadline: 2013-11-20
     'PostgreSQL':
         ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001878.html
         deadline: 2013-12-15
