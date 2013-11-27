@@ -10,7 +10,6 @@ require 'time'
 
 keynotes = events.select{|e| e[:type] == 'keynote'}.sort_by{|e| e[:start_datetime]}
 maintracks = tracks.select{|t| t[:type] == 'maintrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
-distroevents = {}
 devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
@@ -53,8 +52,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   There are essentially five different categories of sessions and activities:
   <a href="#keynotes">keynotes</a>,
   <a href="#maintracks">main tracks</a>,
-  <a href="#devrooms">developer rooms</a> (amongst which the somewhat special
-  <a href="#distrominiconf">&quot;distro miniconf&quot;</a>),
+  <a href="#devrooms">developer rooms</a>,
   <a href="#lightningtalks">lightning talks</a> and
   <a href="#certification">certification exams</a>.
 </p>
@@ -170,59 +168,6 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 </table>
 <% else %>
 <p><span class="label label-info">Main tracks have not been confirmed yet.</span></p>
-<% end %>
-
-<a name="distrominiconf"></a>
-<h3>Distribution miniconf</h3>
-<p>
-  As the number of requests for <a href="#devrooms">developer rooms</a> grew
-  over the years, having only limited (albeit quite extensive) infrastructure to
-  put at the disposal of open source projects, combined with the fact that a
-  significant fraction of those requests came from Linux and *BSD distribution
-  projects, we decided to start doing a <q>conference in the conference<q>
-  with several goals in mind:
-</p>
-
-<ul>
-  <li>
-    avoid having almost all the developer rooms taken by distribution
-    projects
-  </li>
-  <li>
-    give a chance for all distribution projects that want to take part into the
-    conference to do so
-  </li>
-  <li>
-    incite collaboration amongst such projects.
-    While each have their specificities, they also share a lot of tasks, goals,
-    tools and concepts.
-    And, after all, fostering collaboration is the prime goal of FOSDEM.
-  </li>
-</ul>
-
-<p>
-  Hence, in 2011, we started organising a <a href="#devrooms">developer room</a>
-  on the topic of distributions, with participants coming from many different
-  open source projects, dubbed the <a href="<%= pathof '/distrominiconf/' %>">
-  <q>distro miniconf</q></a>.
-</p>
-
-<p>
-  As there are many participants and a wealth of interesting topics to talk
-  about, present and share, the <%= l '/distrominiconf/' %> takes place in two
-  rooms across both days of the conference.
-</p>
-
-<% unless distroevents.empty? %>
-<p>
-  There are currently <%= distroevents.size %> events scheduled in the
-  <%= l '/schedule/track/cross_distro/' %>.
-</p>
-<% else %>
-<p>
-  <span class="label label-info">Distribution miniconf sessions have not been
-  scheduled yet.</span>
-</p>
 <% end %>
 
 <h3><a name="devrooms"></a>Developer rooms</h3>
