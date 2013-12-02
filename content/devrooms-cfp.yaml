@@ -3,6 +3,8 @@ kind: internal
 days:
   both:
     'Distributions':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2013-December/001891.html
+        deadline: 2013-12-22
     'Embedded':
         ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001870.html
         deadline: 2013-12-10
