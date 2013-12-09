@@ -667,6 +667,7 @@ module Fosdem
                  ORDER BY rank, conference_track_id}, [cid]) do |res|
                    res
                    .reject{|t| t['conference_track'] == 'Main Tracks'}
+                   .reject{|t| t['conference_track'] == 'Main tracks'}
                    .map do |t|
                      t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
                      t['title'] = t['conference_track']
