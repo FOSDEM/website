@@ -601,10 +601,11 @@ module Fosdem
       begin
         time_before = Time.now
 
-        # fetch all event_link rows into a cache, faster
-        # (don't run model() on all of them, we'll discard most as the query returns the
-        # event_link rows for all conferences)
-        eventlinks = model(dblist('SELECT * FROM event_link ORDER BY event_id'))
+        eventlinks = model(dblist(%q{
+            SELECT *
+            FROM fosdem.view_event_link
+            WHERE conference_id=$1
+            ORDER BY event_id}, [cid]))
         eventlinks_by_event_id = begin
                                    h = {}
                                    eventlinks.each{|l| h[l['event_id']] = []}
