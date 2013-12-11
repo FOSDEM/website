@@ -10,7 +10,7 @@ days:
         deadline: 2013-12-10
     'Graphics':
         ann: http://lists.x.org/archives/xorg-devel/2013-October/038185.html
-    'Legal issues':
+    'Legal and policy issues':
         ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001875.html
         deadline: 2013-12-01
     'Virtualisation and IaaS':
