@@ -7,8 +7,8 @@ categories = [
     {type: "keynote"},
     {type: "lightningtalk"},
     {type: "certification"},
-    {heading: "Main Tracks", type: "maintrack"},
-    {heading: "Devrooms", type: "devroom"},
+    {heading: "Main tracks", type: "maintrack"},
+    {heading: "Developer rooms", type: "devroom"},
 ]
 %>
 <% unless categories.map{|c| tracks.select{|t| t[:type] == c[:type]}.map{|t| t[:events].map(&$to_event).size}.inject(:+)}.select{|s| s == 0}.empty? %>

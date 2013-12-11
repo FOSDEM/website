@@ -31,9 +31,9 @@ module Fosdem
            when %r{^/schedule/track/(.+)/$}
              t = case (@item[:type] or :undefined).to_sym
                  when :maintrack
-                   { title: "Main Tracks" }
+                   { title: "Main tracks" }
                  when :devroom
-                   { title: "Devrooms" }
+                   { title: "Developer rooms" }
                  else
                    nil
                  end
@@ -47,9 +47,9 @@ module Fosdem
            when %r{^/schedule/event/(.+)/$}
              t = case (@item[:type] or :undefined).to_sym
                  when :devroom
-                   { title: "Devrooms" }
+                   { title: "Developer rooms" }
                  when :maintrack
-                   { title: "Main Tracks" }
+                   { title: "Main tracks" }
                  else
                    nil
                  end
