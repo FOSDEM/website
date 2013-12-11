@@ -62,6 +62,7 @@ days:
   sunday:
     'Automotive development':
         ann: http://lists.genivi.org/pipermail/genivi-meta-ivi/2013-October/000042.html
+        deadline: 2013-12-31
     'Energy-efficient computing':
         ann: http://mageec.org/wiki/FOSDEM_2014_Energy-efficient_Computing_devroom
         deadline: 2013-11-25
