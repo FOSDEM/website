@@ -97,6 +97,7 @@ module Fosdem
   end
 
   def ltt(item, whence, opts={})
+    fail "item must be a Nanoc::Item" unless item.is_a? Nanoc::Item
     fail "opts must be a Hash" unless opts.is_a? Hash
     klass = begin
               c = opts.fetch(:css, nil)
@@ -109,62 +110,22 @@ module Fosdem
                 [c]
               end
             end
-    microformat = opts.fetch(:microformat, true)
+    klass << 'value-title'
 
-    fail "item must be a Nanoc::Item" unless item.is_a? Nanoc::Item
-
-    field, microformat = case whence
-                         when :start
-                           [ :start_time, :dtstart ]
-                         when :end
-                           [ :end_time, :dtend ]
-                         else
-                           fail "whence must be either :start or :end or a String but is #{whence.inspect}"
-                         end
-
-    case microformat
-    when :start
-      klass << :dtstart
-    when :end
-      klass << :dtend
-    end
-
-    time = item[field]
-    fail "#{item.inspect} has no field #{field.inspect}" unless time
-    time = case time
-           when Time
-             time.strftime("%H:%M")
-           when DateTime
-             time.to_time.strftime("%H:%M")
-           when String
-             case time.length
-             when 5
-               time
-             when 8
-               time.split(/:/)[0,2].join(":")
-             else
-               fail "invalid time \"#{time}\""
-             end
-           else
-             file "unsupported object of type #{time.class}"
-           end
-
+    dt = case whence
+        when DateTime
+          whence
+        when :start
+          DateTime.parse(item[:start_datetime])
+        when :end
+          DateTime.parse(item[:end_datetime])
+        else
+          fail "whence must be either :start or :end or a DateTime but is #{whence.inspect}"
+        end
+    time = dt.to_time.strftime("%H:%M")
     anchor = time.gsub(/:/, '')
-
-    title = if microformat
-              klass << 'value-title'
-              t = DateTime.parse("#{item[:conference_day]} #{time}").iso8601
-              %Q! title="#{t}"!
-            else
-              ''
-            end
-
-    css = if klass.empty?
-            ""
-          else
-            %Q! class="#{klass.map(&:to_s).join(' ')}"!
-          end
-
+    title = %Q! title="#{dt.iso8601}"!
+    css = %Q! class="#{klass.map(&:to_s).join(' ')}"!
     %Q!<a#{css}#{title} href="#{$prefix}/schedule/day/#{item[:day]}/##{anchor}">#{time}</a>!
   end
 
