@@ -170,7 +170,7 @@ pentabarf:
     height: 200
 
 keysigning:
-  submission_deadline: 2014-01-30
+  submission_deadline: 2014-01-27
   homework_due: 2014-06-08
   submission_start: 2013-12-07
   # Change these when the submission window opens/closes.
