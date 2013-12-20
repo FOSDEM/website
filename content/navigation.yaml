@@ -18,9 +18,13 @@ footer:
     - Archives: /archives
   - Schedule:
     - Information: /schedule
+    - /schedule/days
+    - /schedule/tracks
+    - /schedule/events
     - /certification
     - /keysigning
   - Practical Information:
+    - /stands
     - /practical/transportation
     - /practical/accommodation
   - Media and Press:
