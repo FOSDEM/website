@@ -15,6 +15,28 @@ lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
 %>
+<div class="info-block">
+  <div class="more-info">
+    <h2>Quick links:</h2>
+<ul>
+  <li>Timetables: 
+    <%= l days %>
+  </li>
+  <li>Overview of <a href="<%= pathof '/schedule/roomtracks/' %>">rooms per days</a></li>
+  <!-- UNFINISHED <li>Mobile site: <a href="<%= pathof '/mobile/' %>">http://fosdem.org/mobile</a></li> -->
+  <li>Mobile apps: <a href="<%= pathof '/schedule/mobile/' %>">many platforms</a></li>
+<%
+  pdfs = items.select{|x| x.identifier =~ %r{^/schedule/pdf/[^/]+/$}}.sort_by{|x| x[:page_size]}.reverse
+  unless pdfs.empty?
+%>
+  <li>Printable PDF:
+  <% pdfs.each do |pdf| %>
+    <%= l(pdf, pdf[:page_size].to_s.upcase) %>
+  <% end %>
+<% end %>
+</ul>
+    </div>
+    <div>
 
 <p>
   Every year, FOSDEM hosts a wide variety of activities.
