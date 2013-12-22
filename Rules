@@ -422,11 +422,11 @@ route '/assets/style/*/' do
   end
 end
 
-# don't add a digest to the badge filenames: as they are linked to
+# don't add a digest to the banner filenames: as they are linked to
 # on external sites, we need meaningful and stable names here, even
 # if the content is changing
-route '/assets/badge/*/' do
-  "#{$prefix}/support/promote/badge/#{item.identifier.chop.split('/').last}.#{item[:extension]}"
+route '/assets/promote/banner/*/' do
+  "#{$prefix}/support/promote/banner/#{item.identifier.chop.split('/').last}.#{item[:extension]}"
 end
 
 # everything else in assets/* gets a digest suffix
