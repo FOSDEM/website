@@ -18,7 +18,7 @@ them to promote the event</p>
             {
               flyer_color: 'black',
               flyer_nobg: 'white',
-              flyer_grayscale: 'grayscale',
+              flyer_greyscale: 'greyscale',
             }.each do |name, color|
               name = name.to_s
               flyer = $item_by_id.fetch("/assets/promote/flyer/#{name}/")
@@ -56,9 +56,11 @@ them to promote the event</p>
         <tr>
           <td>
             <p><a href="<%= badge.path %>"><img width="<%= w %>" height="<%= h %>" src="<%= badge.path %>"/></a></p>
+          </td>
+	  <td>
             <p>Link: <a href="<%= badge.path %>"><%= badge.path %></a></p>
             <p>HTML markup:<br/>
-            <code>&lt;a href="http://fosdem.org"&gt;&lt;img src="<%= badge.path %>" alt="FOSDEM, the Free and Open Source Software Developers' European Meeting"/&gt;&lt;/a&gt;</code></p>
+            <code>&lt;a href="http://fosdem.org"&gt;&lt;img src="<%= badge.path %>" alt="FOSDEM"/&gt;&lt;/a&gt;</code></p>
           </td>
         </tr>
       <% end %>
