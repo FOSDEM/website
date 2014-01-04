@@ -39,13 +39,12 @@ module Fosdem
       # post-process questions by adding numbered anchors for direct URLs
       # to individual questions
       require 'nokogiri'
-      doc = Nokogiri::HTML(content)
+      doc = Nokogiri::HTML.fragment(content)
       doc.xpath(%#//h5#).each_with_index do |q, index|
         q.children.first.add_previous_sibling(%|<a name="q#{index + 1}"/>|)
         q.xpath(%#span[text()='Q:']#).wrap(%|<a href="#q#{index + 1}"></a>|)
       end
       content = doc.send("to_html")
-
       content
     end
   end
