@@ -16,6 +16,10 @@ It's about LanguageTool, an open source style and grammar checker. Compared to a
 
 Q: What do you hope to accomplish by giving this talk? What do you expect?
 
+The issue of word-based spell checking is mostly solved - the issue of grammar checking isn't. But a lot of the necessary technology is there and I think the time has come that people should be aware of that. Also, as any project, we're always looking for both new contributors and users of course.
+
+Q: LanguageTool started in 2003 as part of your thesis. What are the biggest events in the history of the project? How did it evolve in those eleven years? Is this what you planned it to be?
+
 If you look at [the statistics at ohloh](http://www.ohloh.net/p/languagetool), you'll see we have a slow but steady growth. I don't remember any earth-shaking events in the history of LanguageTool, we've just continued working on it while some other open source grammar checkers are unmaintained now.
 
 Q: Running LanguageTool on a random 20,000 article subset of the English Wikipedia led to a lot of false alarms. What are currently the biggest limitations of LanguageTool that result in these errors?
