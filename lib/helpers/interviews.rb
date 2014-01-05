@@ -6,12 +6,12 @@ module Fosdem
       item[:kind] = 'interview'
       item[:nonav] = true
 
-      title = "Interview: #{item[:person]}"
-      title << ":<br/>#{item[:topic]}" if item[:topic]
+      title = "Interview with #{item[:person]}"
+      title << "<br/>#{item[:topic]}" if item[:topic]
       item[:title] = title if item[:title].nil?
 
       navtitle = "#{item[:person]}"
-      navtitle << ": #{item[:topic]}" if item[:topic]
+      navtitle << " - #{item[:topic]}" if item[:topic]
       item[:navtitle] = navtitle
     end
   end
