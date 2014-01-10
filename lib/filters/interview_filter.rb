@@ -5,7 +5,8 @@ module Fosdem
     identifier :interview
     type :text
     def run(content, params={})
-      header = "<a href='/schedule/speaker/#{@item[:speaker]}'>#{@item[:person]}</a> will give a talk about <a href='/schedule/event/#{@item[:event]}'>#{@item[:topic]}</a> at FOSDEM #{@item[:year]}.\n"
+      header = speaker_list(@item, html=true)
+      header << " will give a talk about <a href='/schedule/event/#{@item[:event]}'>#{@item[:topic]}</a> at FOSDEM #{@item[:year]}.\n"
       content = header.concat(content)
       content = content.gsub(%r{^<p>Q:\s*(.+?)</p>}m, '<h5><span class="label label-info">Q:</span> \1</h5>')
 
