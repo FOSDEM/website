@@ -42,7 +42,7 @@
         </tr>
     </thead>
     <tbody>
-        <% item[:events].map(&$to_event).each do |e| %>
+        <% item[:events].map(&$to_event).sort_by{|e| [e[:start_datetime]]}.each do |e| %>
         <tr>
             <td><%= l e %></td>
             <td><%= l day(e[:day]) %></td>
