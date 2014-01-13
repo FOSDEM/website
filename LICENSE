@@ -3,25 +3,30 @@ Too long; didn't read:
  * Do whatever you want with the code, it can also be used under
    the conditions of the MIT license (just like nanoc itself)
 
- * Don't abuse or reuse our artwork without our explicit consent,
-   and definitely not without attributing it to us (CC-BY-SA)
+ * Do whatever you want with the content, but please attribute it
+   to us (CC-BY)
+
+ * Don't use our trademarks (the FOSDEM name and the "gear" logo)
+   without our explicit consent.
 
 For any inquiries, contact us at <info@fosdem.org>.
 
 
-The following applies to all artwork in this repository.
+The following applies to all non-software content in this repository with the
+exception of the FOSDEM wordmark and the "gear" logo (which are registered
+trademarks of FOSDEM VZW).
 
-Copyright (c) 2012 FOSDEM VZW
+Copyright (c) 2012-2014 FOSDEM VZW
 
-This work is licensed under the Creative Commons Attribution-ShareAlike 2.0
+This work is licensed under the Creative Commons Attribution 2.0
 Belgium License. To view a copy of this license, visit
-http://creativecommons.org/licenses/by-sa/2.0/be/ or send a letter to Creative
+http://creativecommons.org/licenses/by/2.0/be/ or send a letter to Creative
 Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
 
 The following applies to all software in this repository.
 
-Copyright (c) 2012 FOSDEM VZW
+Copyright (c) 2012-2014 FOSDEM VZW
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
