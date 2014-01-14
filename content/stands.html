@@ -2,56 +2,56 @@
 # vim: set ts=2 sw=2 et ai ft=eruby:
 title: Stands
 stands:
-  K [level 1] (18):
-   - KDE
-   - GNOME
-   - Enlightenment
-   - CentOS
-   - Mageia
-   - OpenMandriva
-   - Fedora
-   - OpenSUSE
-   - Debian
-   - OpenStack
-   - oVirt
-   - OpenShift Origin
-   - Xen
-   - FSFE
-   - Mozilla
-   - Libre Graphics Magazine
-   - OpenStreetMap
-   - GeoSpatial
-   - GSoC
-   - CACert
-  K [level 2] (13):
-   - MySQL
-   - Python
-   - Perl
-   - Apache OpenOffice
-   - Jenkins
-   - Puppet
-   - Eclipse
-   - JBoss
-   - LibreOffice
-   - BareOS
-   - Confine
-   - DoudouLinux
-   - Kolab/RoundCube
-   - ElasticSearch
-   - Jabber/XMPP
-   - Jitsi
+  K [level 1] (20):
+   - CAcert and secure-u: http://cacert.org
+   - CentOS: http://www.centos.org
+   - Debian: http://www.debian.org/
+   - Enlightenment: http://www.enlightenment.org
+   - Fedora: http://www.fedoraproject.org
+   - FSFE: http://fsfe.org/
+   - GNOME: http://gnome.org
+   - GsoC: http://google-melange.com
+   - KDE: http://www.kde.org
+   - Libre Graphics magazine: http://libregraphicsmag.com
+   - Mageia: http://mageia.org
+   - Mozilla: http://www.mozilla.org/
+   - Open Source Geospatial Foundation: http://osgeo.org
+   - OpenMandriva: http://openmandriva.org
+   - OpenShift Origin: http://openshift.github.io
+   - OpenStack: http://openstack.org
+   - OpenStreetMap: http://www.openstreetmap.org/
+   - openSUSE: http://www.opensuse.org
+   - oVirt: http://ovirt.org
+   - Xen: http://xenproject.org/
+  K [level 2] (16):
+   - Apache OpenOffice: http://openoffice.org
+   - Bareos: http://www.bareos.org
+   - CONFINE: http://confine-project.eu/
+   - DoudouLinux: http://www.doudoulinux.org/
+   - Eclipse: http://eclipse.org
+   - ElasticSearch: http://elasticsearch.org
+   - Jboss: http://jboss.org
+   - Jenkins: https://jenkins-ci.org
+   - Jitsi: https://jitsi.org
+   - Kolab, MyKolab, Roundcube: http://mykolab.com
+   - LibreOffice: http://www.libreoffice.org
+   - MySQL Community: http://www.mysql.com/
+   - Perl Programming Language community: http://www.perl.org/
+   - Puppet: http://puppetlabs.com/
+   - Python: http://python.org/
+   - XMMP: http://xmpp.org/
   AW (9):
-   - OpenPandora
-   - OLinuXino / Hackable Devices
-   - CoreBoot + FlashROM
-   - mbed
-   - OpenEmbedded
-   - WikiMedia
-   - PostgreSQL
-   - BSDs
-   - MAGEEC
+   - BSD: http://www.bsd.org/
+   - CoreBoot + Flashrom: http://www.coreboot.org/
+   - MAGEEC: http://mageec.org
+   - mbed: http://mbed.org
+   - OlinuXino + Hackable Devices: https://www.olimex.com/Products/OLinuXino/open-source-hardware
+   - OpenEmbedded: http://www.openembedded.org
+   - OpenPandora: http://www.openpandora.org/
+   - PostgreSQL: http://www.postgresql.org/
+   - Wikimedia: https://www.mediawiki.org/wiki/MediaWiki
   H (3):
-   - O'Reilly
+   - O'Reilly Media: http://www.oreilly.com/
    - Job Corner
    - Announcements Corner
 ---
@@ -88,7 +88,7 @@ stands:
                 when %r{^(.+?)\s+\((\d+)\)$}
                   [ $1, $2.to_i ]
                 else
-                  [ p, 1 ]
+                  [ project, 1 ]
                 end
               [ project, tables, link ]
             end
