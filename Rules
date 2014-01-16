@@ -289,6 +289,11 @@ compile '*' do
         filter :imagesize
 
       end
+
+      if item[:forcepagelinks]
+        filter :pagelinks
+        filter :imagesize
+      end
       
       # transform absolute paths in URLs with relative paths using the
       # relativize_paths filter (that is shipped with nanoc)
