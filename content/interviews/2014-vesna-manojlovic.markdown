@@ -34,7 +34,7 @@ There are other ways to help: I will mention some during my presentation. What w
 
  * RIPE Atlas ambassadors: people who want to promote RIPE Atlas in their own circles, by giving presentations at conferences or by distributing probes in exotic locations.
 
- * hosts for RIPE Atlas anchors: larger servers, at datacenters, ENREN organisations and internet exchange points (IXPs), used for regional targets and as more powerful probes.
+ * hosts for RIPE Atlas anchors: larger servers, at datacenters, NREN (National Research and Education Network) organisations and internet exchange points (IXPs), used for regional targets and as more powerful probes.
 
  * sponsors: organisations who want to financially support RIPE Atlas, and to receive some positive mentions in our community.
 
