@@ -1,0 +1,88 @@
+---
+title: Main tracks schedule is complete
+---
+<p>
+  With just over a week to go until FOSDEM 2014, Our main tracks schedule is now
+  complete.
+</p>
+---MORE---
+<p>
+  We are proud to announce the following talks:
+</p>
+
+<%
+  def elist(list)
+    list
+    .map{|id| $item_by_id.fetch("/schedule/event/#{id}/")}
+    .sort_by{|item| item[:title]}
+    .map{|item|
+    %Q!
+      <tr>
+	<td><a href="#{item.path}">#{item[:title]}</a></td>
+	<td>#{item[:speakers].map{|s| speaker(s)}.map{|s| %Q:<a href="#{s.path}">#{s[:name]}</a>:}.join(', ')}</td>
+      </tr>
+    !}.join("\n") end
+%>
+
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th colspan="2"><h4>Closing keynote</h4></th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th>Speaker</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= elist %w{
+    nsa_operation_orchestra
+    } %>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th colspan="2"><h4>Miscellaneous track</h4></th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th>Speaker(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= elist %w{
+    mirageos
+    } %>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th colspan="2"><h4>Security track</h4></th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th>Speaker(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= elist %w{
+    capiscum
+    } %>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th colspan="2"><h4>IPv6 track</h4></th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th>Speaker(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= elist %w{
+    no_more_ipv4
+    using_ripe_atlas_api_for_measuring_ipv6_reachability
+    } %>
+  </tbody>
+</table>
