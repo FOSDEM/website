@@ -55,7 +55,7 @@ module Fosdem
 
     case item
     when Array
-      item.map{|i| l(i, title, sep, detail, klass)}.join(sep)
+      item.map{|i| l(i, title, subtitle, sep, detail, klass)}.join(sep)
     when Nanoc::Item
       text = case title
              when Symbol
@@ -66,17 +66,17 @@ module Fosdem
              else
                title.to_s
              end
-       textsubtitle = case subtitle
-                      when Symbol
-                        if item[subtitle]
-                          item[subtitle]
-                        end
-                      when String
-                        subtitle
-                      else
-                        subtitle.to_s
-                      end
-      if textsubtitle
+      textsubtitle = case subtitle
+                     when Symbol
+                       if item[subtitle]
+                         item[subtitle]
+                       end
+                     when String
+                       subtitle
+                     else
+                       subtitle.to_s
+                     end
+      if textsubtitle and not textsubtitle == ''
         textsubtitle = '<br /><i>' + henc(textsubtitle) + '</i>'
       end
 
