@@ -13,7 +13,7 @@ categories = [
 %>
 <% unless categories.map{|c| tracks.select{|t| t[:type] == c[:type]}.map{|t| t[:events].map(&$to_event).size}.inject(:+)}.select{|s| s == 0}.empty? %>
     <p>Note that lines that do not have a room and times listed
-    currently do not have scheduled sessions yet, but they are
+    currently do not have scheduled events yet, but they are
     confirmed to take place.</p>
 <% end %>
 <table class="table table-striped table-bordered table-condensed">

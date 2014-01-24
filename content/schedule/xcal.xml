@@ -13,7 +13,7 @@ xml.iCalendar(:"xmlns:xCal"=>"urn:ietf:params:xml:ns:xcal", :"xmlns:pentabarf"=>
     xml.version "2.0"
     xml.prodid "-//Pentabarf//Schedule 1.0//EN"
     xml.tag! :"x-wr-caldesc", conference(:title)
-    xml.tag! :"x-wr-calname", "Schedule for sessions at #{conference :title}"
+    xml.tag! :"x-wr-calname", "Schedule for events at #{conference :title}"
     events.each do |event|
       xml.vevent do
         xml.method( "PUBLISH" )

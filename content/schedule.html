@@ -48,9 +48,9 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   FOSDEM is a very busy conference.
 <% if speakers.size > 100 and events.size > 100 %>
   This edition features <%= speakers.size %> speakers, <%= events.size %>
-  sessions, and <%= tracks.size %> tracks.
+  events, and <%= tracks.size %> tracks.
 <% else %>
-  Recent editions featured 400+ speakers, 400+ sessions and a wealth of tracks.
+  Recent editions featured 400+ speakers, 500+ events and a wealth of tracks.
 <% end %>
   We do our best to provide you with as much information and navigation options
   about the schedule as we can.
@@ -81,7 +81,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 
 <p>
   For a complete (but crowded) overview, there is also a
-  <a href="page:/schedule/events">page that lists all sessions</a>.<br/>
+  <a href="page:/schedule/events">page that lists all events</a>.<br/>
 
   A <a href="page:/schedule/speakers">list of all speakers</a> is available, too.
 </p>
@@ -194,7 +194,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 
 <h3><a name="devrooms"></a>Developer rooms</h3>
 <p>
-  The vast majority of sessions (talks, hacking sessions, open discussions) are
+  The vast majority of events (talks, hacking sessions, open discussions) are
   held in so-called <q>developer rooms</q> (<q>devrooms</q>), which are
   organized and managed by open source projects themselves, or even
   associations between several such projects on a common topic in order to
