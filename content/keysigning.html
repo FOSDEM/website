@@ -137,8 +137,6 @@ gpg --verify ksp-<%= klist %>-hashes.txt.asc ksp-<%= klist %>-hashes.txt
 <p>
   Please complete your signing homework before
   <strong><%= conf.fetch(:homework_due).strftime(dateformat) %></strong>, and
-  upload new signatures on your keys to a well-connected keyserver.  New
-  statistics of the density of the web of trust at FOSDEM will be published
-  soon after that date.
+  upload new signatures on your keys to a well-connected keyserver.
 </p>
 <% end %>
