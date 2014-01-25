@@ -48,14 +48,14 @@ module Fosdem
     %Q!<img #{a.map{|k,v| %Q!#{k}="#{v}"!}.join(" ")}/>!
   end
 
-  def l(item, title=:title, subtitle=:subtitle, sep=", ", detail=nil, klass=nil)
+  def l(item, title=:title, sep=", ", detail=nil, klass=nil)
     if item.is_a? String and item.start_with? '/'
       item = $item_by_id.fetch(item)
     end
 
     case item
     when Array
-      item.map{|i| l(i, title, subtitle, sep, detail, klass)}.join(sep)
+      item.map{|i| l(i, title, sep, detail, klass)}.join(sep)
     when Nanoc::Item
       text = case title
              when Symbol
@@ -66,19 +66,6 @@ module Fosdem
              else
                title.to_s
              end
-      textsubtitle = case subtitle
-                     when Symbol
-                       if item[subtitle]
-                         item[subtitle]
-                       end
-                     when String
-                       subtitle
-                     else
-                       subtitle.to_s
-                     end
-      if textsubtitle and not textsubtitle == ''
-        textsubtitle = '<br /><i>' + henc(textsubtitle) + '</i>'
-      end
 
       # using XmlMarkup here is a lot slower than just concatenating a string
       # but it is a lot safer against HTML injection (schedule item titles
@@ -103,7 +90,7 @@ module Fosdem
       if klass
         args[:class] = (klass.is_a? Array) ? klass.join(" ") : klass
       end
-      %Q!<a#{args.map{|k,v| %Q( #{k}="#{v}")}.join('')}>#{henc text}#{textsubtitle}</a>!
+      %Q!<a#{args.map{|k,v| %Q( #{k}="#{v}")}.join('')}>#{henc text}</a>!
     else
       raise "unsupported object of type #{item.class}"
     end
