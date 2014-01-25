@@ -90,7 +90,8 @@ module Fosdem
       if klass
         args[:class] = (klass.is_a? Array) ? klass.join(" ") : klass
       end
-      %Q!<a#{args.map{|k,v| %Q( #{k}="#{v}")}.join('')}>#{henc text}</a>!
+      subtitle = '<br/><i>' + henc(item[:subtitle]) + '</i>' if item[:subtitle]
+      %Q!<a#{args.map{|k,v| %Q( #{k}="#{v}")}.join('')}>#{henc text}#{subtitle if subtitle}</a>!
     else
       raise "unsupported object of type #{item.class}"
     end
