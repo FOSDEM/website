@@ -12,6 +12,13 @@ sponsors_root: true
   <a href="mailto:sponsors@fosdem.org">sponsors@fosdem.org</a> or see our
   <%= l('/contact/', 'contact') %> page for more information.
 </p>
+
+<p>
+  While FOSDEM is primarily funded by sponsors and the sale of t-shirts onsite,
+  we also gratefully accept voluntary donations. See our
+  <%= l('/support/donate/', 'donations') %> page for more information.
+</p>
+
 <div id="s-quick-links">
     <% [ lambda{|s| s.cornerstone?}, lambda{|s| not s.cornerstone?} ].each_with_index do |row, i| %>
         <% if i > 0 %><br /><% end %>
