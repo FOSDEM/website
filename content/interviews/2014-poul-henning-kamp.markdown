@@ -34,4 +34,4 @@ Those are very good questions, and I hope my talk will inspire people to think a
 
 Q: Have you enjoyed previous FOSDEM editions? 
 
-No.
+No, I have never been to FOSDEM before.
