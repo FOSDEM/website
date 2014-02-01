@@ -14,4 +14,4 @@ Europe, and Asia.
 
 For more information, visit [http://google.com/](http://google.com/).
 
-Google supports the event financially.
+Google supports the event financially and supports our video streams.
