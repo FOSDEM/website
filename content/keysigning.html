@@ -10,10 +10,10 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
 %>
 
 <p>
-  The annual keysigning event at FOSDEM is one of the largest of its kind.
-  With more than one hundred participants every year, it is an excellent
-  opportunity to strengthen the web of trust.  We use a slightly modified
-  version of the <a href="https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassaman_key-signing_protocol">
+  The annual keysigning event at <%= conference()[:title] %> is one of the
+  largest of its kind.  With more than one hundred participants every year, it
+  is an excellent opportunity to strengthen the web of trust.  We use a
+  slightly modified version of the <a href="https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassaman_key-signing_protocol">
     Zimmermann-Sassaman key-signing protocol</a> relying on a key submission
   server rather than email to collect keys.
 </p>
@@ -66,7 +66,8 @@ gpg --keyserver ksp.fosdem.org --send-key [keyid]
 </p>
 
 <p>
-  The deadline for submissions is <strong><%= conf.fetch(:submission_deadline).strftime(dateformat) %></strong>.
+  The deadline for submissions is <strong>
+  <%= conf.fetch(:submission_deadline).strftime(dateformat) %></strong>.
   After this date, the keyserver will no longer accept submissions and the
   official keylist will be published.
 </p>
@@ -107,7 +108,7 @@ gpg --verify ksp-<%= klist %>.txt.sig ksp-<%= klist %>.txt
   The keysigning event takes place on Sunday, at 14:00, in the corridor on the
   second level of the U building.
   Please bring the printed list, a pen and appropriate form of identification
-  with you to FOSDEM.
+  with you to <%= conference()[:title] %>.
   Be on time!
 </p>
 
