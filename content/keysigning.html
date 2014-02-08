@@ -106,11 +106,48 @@ gpg --verify ksp-<%= klist %>.txt.sig ksp-<%= klist %>.txt
 
 <p>
   The keysigning event takes place on Sunday, at 14:00, in the corridor on the
-  second level of the U building.
+  second level of the U building.  There is no fixed end time.  Previous
+  editions last for approximately 1 hour per 100 keys on the list.
   Please bring the printed list, a pen and appropriate form of identification
   with you to <%= conference()[:title] %>.
-  Be on time!
 </p>
+<p>
+  You may find it useful to make a badge stating the number(s) of your key(s)
+  on this list and the fact that you verified the fingerprints of your own
+  key(s).  Also provide a place to mark that your hashes match.  Be on time to
+  actually verify the hashes as they are announced!  e.g.
+</p>
+<pre class="sh">
+I am number 001
+My key-id &amp; fingerprint: ☑
+The hashes:              ☐
+</pre>
+
+<p>
+  To avoid descending into chaos, the organizer will line up the participants
+  in the order of the list.
+</p>
+<pre class="sh">
+  1 - 2 - 3 - 4 - 5 - 6 - 7 - 8
+</pre>
+<p>
+  Next, this line folds onto itself, so everyone is facing another participant.
+</p>
+<pre class="sh">
+  1 - 2 - 3 - 4
+  8 - 7 - 6 - 5
+</pre>
+<p>
+  After the participants have verified each other's identity, the whole line
+  moves one step to their right.  Participants on the end of the line move to
+  the opposite line.  That way, everyone should be facing the next person on
+  their list (modulo no-shows).
+</p>
+<pre class="sh">
+  2 - 3 - 4 - 5
+  1 - 8 - 7 - 6
+</pre>
+
 
 <h3>After the event</h3>
 <% unless conf.fetch(:hashes_published) %>
