@@ -23,8 +23,8 @@ module Fosdem
       a3: {
         page_size: 'A3',
         cell_text_length_threshold: 20,
-        rooms_per_page: 8,
-        rows_per_page: 40,
+        rooms_per_page: 12,
+        rows_per_page: 57,
         font_size: 8,
       },
     }
