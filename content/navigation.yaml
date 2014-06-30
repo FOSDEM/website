@@ -21,10 +21,10 @@ footer:
     - Information: /schedule
     - /certification
     - /keysigning
-  - Practical Information:
+  - Practical information:
     - /practical/transportation
     - /practical/accommodation
-  - Media and Press:
+  - Media and press:
     - /interviews
     - Videos: 'http://video.fosdem.org/'
 
