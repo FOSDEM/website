@@ -19,18 +19,12 @@ footer:
     - Archives: /archives
   - Schedule:
     - Information: /schedule
-    - /schedule/days
-    - /schedule/tracks
-    - /schedule/events
     - /certification
     - /keysigning
   - Practical Information:
-    - /stands
-    - /practical/beerevent
     - /practical/transportation
     - /practical/accommodation
   - Media and Press:
     - /interviews
-    - /support/promote
     - Videos: 'http://video.fosdem.org/'
 
