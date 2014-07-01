@@ -122,12 +122,12 @@ fieldset{
 	bottom:2px;
 	right:3px;
 	text-align: left;
-	color:#dcdcdc;
+	color:#a9a9a9;
 	font-size:9px;
 	line-height:11px;
 }
 .visual-image-credits a{
-	color: #dcdcdc;
+	color:inherit;
 	display:block;
 	text-decoration:none;
 }
