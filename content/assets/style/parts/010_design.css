@@ -112,6 +112,25 @@ fieldset{
 	width:100%;
     text-align: center;
 }
+.visual-image-wrapper{
+	position:relative;
+	margin:auto;
+	width:1280px;
+}
+.visual-image-credits{
+	position:absolute;
+	bottom:2px;
+	right:3px;
+	text-align: left;
+	color:#dcdcdc;
+	font-size:9px;
+	line-height:11px;
+}
+.visual-image-credits a{
+	color: #dcdcdc;
+	display:block;
+	text-decoration:none;
+}
 .visual-image img{
 	vertical-align:top;
 	width:100%;
