@@ -7,7 +7,7 @@ to take Direct Debit payments.
 
 In just 3 years GoCardless has become the UK’s largest Direct Debit provider,
 processing millions of pounds every day.
-Last year we grow by over 700%, and in the next 12 months we’re expanding into
+Last year we grew by over 700%, and in the next 12 months we’re expanding into
 Europe. 
 
 We’re written in Ruby and we’re hiring.
