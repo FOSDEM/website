@@ -179,7 +179,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   foster collaboration.
 </p>
 <%
-  devrooms_announcement = @items.select{|i| i.identifier =~ %r{^/news/.*announ.*devroom.*/$}}.first
+  devrooms_announcement = @items.select{|i| i.identifier =~ %r{^/news/.*accepted-devrooms.*/$}}.first
   columns = 3
   if not devrooms.empty?
 %>

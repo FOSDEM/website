@@ -3,99 +3,42 @@ kind: internal
 days:
   both:
     'Distributions':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-December/001891.html
-        deadline: 2013-12-22
     'Embedded':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001870.html
-        deadline: 2013-12-10
     'Graphics':
-        ann: http://lists.x.org/archives/xorg-devel/2013-October/038185.html
-    'Legal and policy issues':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001875.html
-        deadline: 2013-12-01
-    'Virtualisation and IaaS':
-        ann: https://groups.google.com/forum/#!topic/fosdem14-virt-and-iaas-devroom/04y5YkyqzIo
-        deadline: 2013-12-01
+    'Java':
 
   saturday:
     'Ada':
-        ann: http://www.cs.kuleuven.be/~dirk/ada-belgium/events/14/140201-fosdem.html
-        deadline: 2013-11-30
     'BSD':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001877.html
-        deadline: 2013-12-20
     'Configuration management':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001862.html
-        deadline: 2013-12-01
-    'Desktops':
-        ann: http://www.elpauer.org/2013/10/fosdem-desktops-devroom-2014-call-for-talks/
-        deadline: 2013-12-14
-    'Game development':
-        ann: https://lists.fosdem.org/pipermail/open-source-gamedev-devroom/2013-October/000053.html
-        deadline: 2013-12-01
-    'HPC and computational science':
-        ann: http://hpcugent.github.io/easybuild/fosdem14.html
-        deadline: 2013-12-06
-    'Java':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001865.html
-        deadline: 2013-12-01
-    'Mozilla':
-        ann: http://claristamozilla.wordpress.com/2013/11/14/fosdem-2014-call-for-proposals/
-        deadline: 2013-12-20
-    'MySQL':
-        ann: http://lists.mysql.com/community/407
-        deadline: 2013-12-06
-    'Open document editors':
-    'Perl':
-        ann: http://wendyga.wordpress.com/2013/09/23/fosdem-1-2-feb-2014-brussels-call-for-speakers/
-        deadline: 2013-11-20
+    'Graph processing':
+    'Infrastructure as a service':
+    'Legal and policy issues':
+    'Lisp':
+    'Multimedia':
+    'Network management and SDN':
+    'Open Document editors':
+    'Open source search':
     'PostgreSQL':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001878.html
-        deadline: 2013-12-15
-    'Smalltalk':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001873.html
-        deadline: 2013-12-31
-    'Wikis':
-        ann: https://lists.fosdem.org/pipermail/wikis-devroom/2013-October/000000.html
-        deadline: 2013-11-30
+    'Python':
+    'Perl':
+    'Ruby':
+    'Valgrind':
 
   sunday:
-    'Automotive development':
-        ann: http://lists.genivi.org/pipermail/genivi-meta-ivi/2013-October/000042.html
-        deadline: 2013-12-31
-    'Energy-efficient computing':
-        ann: http://mageec.org/wiki/FOSDEM_2014_Energy-efficient_Computing_devroom
-        deadline: 2013-11-25
+    'Desktops':
+    'Electronic design automation':
+    'Geospatial':
     'Go':
-        ann: https://code.google.com/p/go-wiki/wiki/Fosdem2014
-    'Graph processing':
-        ann: http://graphdevroom.org
-        deadline: 2013-12-10
     'Internet of things':
-        ann: https://groups.google.com/forum/?hl=en#!forum/iot-devroom
-        deadline: 2013-12-01
-    'JavaScript':
-        ann: http://fosdem14-js-devroom.github.io/
-        deadline: 2013-12-01
-    'LLVM':
-        ann: http://llvm.org/devmtg/2014-02/
+    'LLVM toolchain':
     'Microkernel-based operating systems':
-        ann: https://os.inf.tu-dresden.de/pipermail/l4-hackers/2013/006068.html
-        deadline: 2013-12-01
-    'NoSQL':
-        ann: http://www.lczajkowski.com/2013/10/10/cfp-for-nosql-devroom-at-fosdem/
-    'Python':
-        ann: http://wirtel.be/posts/en/2013/11/18/python-fosdem-2014-call-for-proposals/
-        deadline: 2013-12-31
+    'Mozilla':
+    'MySQL and friends':
+    'Open source design':
+    'PHP and friends':
+    'Security':
     'Software-defined radio':
-        ann: http://gnuradio.org/redmine/projects/gnuradio/wiki/FOSDEM14
-        deadline: 2013-12-01
+    'Smalltalk':
     'Testing and automation':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-November/001876.html
-        deadline: 2013-11-30
-    'Valgrind':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2013-October/001871.html
-        deadline: 2013-12-08
-    'Wine':
-        ann: http://www.winehq.org/pipermail/wineconf/2013-October/000841.html
-        deadline: 2013-12-01
+    'Virtualisation':
