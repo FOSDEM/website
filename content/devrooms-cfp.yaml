@@ -11,6 +11,8 @@ days:
     'Ada':
     'BSD':
     'Configuration management':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002029.html
+        deadline: 2014-12-01
     'Graph processing':
     'Infrastructure as a service':
     'Legal and policy issues':
