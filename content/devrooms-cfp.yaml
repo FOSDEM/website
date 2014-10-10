@@ -40,6 +40,8 @@ days:
     'Open source design':
     'PHP and friends':
     'Security':
+      ann: https://github.com/security-devroom/fosdem-2015/blob/master/README.md#security-devroom--fosdem15
+      deadline: 2014-12-07
     'Software-defined radio':
     'Smalltalk':
     'Testing and automation':
