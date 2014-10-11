@@ -38,6 +38,8 @@ days:
     'Mozilla':
     'MySQL and friends':
     'Open source design':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002031.html
+        deadline: 2014-12-01
     'PHP and friends':
     'Security':
     'Software-defined radio':
