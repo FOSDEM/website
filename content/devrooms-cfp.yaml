@@ -46,5 +46,7 @@ days:
       deadline: 2014-12-07
     'Software-defined radio':
     'Smalltalk':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002035.html
+        deadline: 2014-12-01
     'Testing and automation':
     'Virtualisation':
