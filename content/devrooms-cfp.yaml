@@ -16,6 +16,8 @@ days:
     'Graph processing':
     'Infrastructure as a service':
     'Legal and policy issues':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002036.html
+        deadline: 2014-11-17
     'Lisp':
     'Open media':
     'Network management and SDN':
