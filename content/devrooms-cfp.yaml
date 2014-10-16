@@ -10,6 +10,8 @@ days:
   saturday:
     'Ada':
     'BSD':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002038.html
+        deadline: 2014-12-01
     'Configuration management':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002029.html
         deadline: 2014-12-01
