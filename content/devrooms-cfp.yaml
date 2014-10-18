@@ -25,6 +25,8 @@ days:
     'Network management and SDN':
     'Open Document editors':
     'Open source search':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002040.html
+        deadline: 2014-12-01
     'PostgreSQL':
     'Python':
     'Perl':
@@ -35,6 +37,8 @@ days:
     'Desktops':
     'Electronic design automation':
     'Geospatial':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002039.html
+        deadline: 2014-12-01
     'Go':
     'Internet of things':
     'LLVM toolchain':
