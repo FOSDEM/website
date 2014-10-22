@@ -75,7 +75,7 @@ module Fosdem
     def self.list(items)
       $cache ||= begin
                    $items_cache = items.reject{|item| item[:disabled] == true or item[:enabled] == false}
-                   h = $items_cache.select{|item| sponsor?(item) }.map{|item| Sponsor.new(item)}.sort_by{|s| [s.order, s.name]}
+                   h = $items_cache.select{|item| sponsor?(item) }.map{|item| Sponsor.new(item)}.sort_by{|s| [s.order, s.name.downcase]}
                    begin
                      l = $items_cache.select{|item| item[:sponsors_root]}
                      raise "failed to find item with attribute :sponsors_root" if l.empty?
