@@ -4,6 +4,8 @@ days:
   both:
     'Distributions':
     'Embedded':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002045.html
+        deadline: 2014-12-01
     'Graphics':
     'Java':
 
@@ -22,6 +24,8 @@ days:
         deadline: 2014-11-17
     'Lisp':
     'Open media':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002041.html
+        deadline: 2014-12-01
     'Network management and SDN':
     'Open Document editors':
     'Open source search':
@@ -41,9 +45,13 @@ days:
         deadline: 2014-12-01
     'Go':
     'Internet of things':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002044.html
+        deadline: 2014-12-01
     'LLVM toolchain':
     'Microkernel-based operating systems':
     'Mozilla':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002046.html
+        deadline: 2014-12-01
     'MySQL and friends':
     'Open source design':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002031.html
@@ -53,6 +61,8 @@ days:
       ann: https://github.com/security-devroom/fosdem-2015/blob/master/README.md#security-devroom--fosdem15
       deadline: 2014-12-07
     'Software-defined radio':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002043.html
+        deadline: 2014-12-01
     'Smalltalk':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002035.html
         deadline: 2014-12-01
