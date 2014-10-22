@@ -3,6 +3,8 @@ kind: internal
 days:
   both:
     'Distributions':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002047.html
+        deadline: 2014-12-07
     'Embedded':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002045.html
         deadline: 2014-12-01
@@ -58,8 +60,8 @@ days:
         deadline: 2014-12-01
     'PHP and friends':
     'Security':
-      ann: https://github.com/security-devroom/fosdem-2015/blob/master/README.md#security-devroom--fosdem15
-      deadline: 2014-12-07
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002049.html
+        deadline: 2014-12-07
     'Software-defined radio':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002043.html
         deadline: 2014-12-01
