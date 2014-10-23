@@ -183,7 +183,7 @@
           <tr>
             <td class="<%= event_color.fetch e[:event_id] %>">&nbsp;</td>
             <td><%= l e %></td>
-            <td><%= l e[:speakers].map(&$to_speaker), :title, ", ", nil, 'quiet' %>
+            <td><%= l e[:speakers].map(&$to_speaker), :title, ", ", nil, 'quiet' %></td>
               <% unless rooms.empty?  %>
                 <td><%= l room(e[:room]), :title, ", ", nil, 'quiet' %></td>
               <% end %>

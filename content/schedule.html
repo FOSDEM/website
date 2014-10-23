@@ -106,7 +106,8 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
           end
           text = ""
           text << "<img class=\"thumb\" src=\"#{photo.path}\"
-	    width=\"#{photo[:width]}\" height=\"#{photo[:height]}\"/>" if photo
+	    width=\"#{photo[:width]}\" height=\"#{photo[:height]}\"
+	    alt=\"Photo of #{s[:name]}\"/>" if photo
           text << l(s)
           text
           end.join(", ")

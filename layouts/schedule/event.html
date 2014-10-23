@@ -64,7 +64,7 @@
         <% item[:speakers].map(&$to_speaker).each do |s| %>
         <tr>
           <% photo = s[:thumbnail] ? $item_by_id.fetch(s[:thumbnail][:identifier]) : nil %>
-          <td><% if photo %><a href="<%= speaker(s).path %>"><img class="thumb" height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>"/></a><% end %></td>
+          <td><% if photo %><a href="<%= speaker(s).path %>"><img class="thumb" height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>" alt="Photo of <%= s[:name] %>"/></a><% end %></td>
           <td><%= l s %></td>
         </tr>
         <% end %>

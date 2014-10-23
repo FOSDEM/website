@@ -85,7 +85,6 @@ module Fosdem
       }
       if title
         args[:title] = title
-        args[:longdesc] = title
       end
       if klass
         args[:class] = (klass.is_a? Array) ? klass.join(" ") : klass

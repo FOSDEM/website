@@ -4,7 +4,7 @@
 %>
 <% photo = item[:photo] ? $item_by_id.fetch(item[:photo][:identifier]) : nil%>
 <% if photo %>
-<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>" class="speaker-photo" />
+<img src="<%= photo.path %>" width="<%= photo[:width] %>" height="<%= photo[:height] %>" class="speaker-photo" alt="Photo of <%= item[:name] %>"/>
 <% end %>
 
 <% if item[:abstract_old] or item[:description_old] %>
@@ -50,6 +50,7 @@
             <td><%= l track(e[:track]), :name %></td>
             <td><%= ltt e, :start %></td>
             <td><%= ltt e, :end %></td>
+        </tr>
         <% end %>
     </tbody>
 </table>

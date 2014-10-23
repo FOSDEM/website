@@ -32,7 +32,7 @@ size = h.values.map(&:size).inject(:+)
         </tr>
         <% list.each do |e| %>
         <tr>
-            <td><%= l(e) %></a></td>
+            <td><%= l(e) %></td>
             <td><%= l e[:speakers].map(&$to_speaker) %></td>
             <td><%= l room e[:room] %></td>
             <td><%= l day e[:day] %></td>

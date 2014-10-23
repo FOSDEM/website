@@ -35,7 +35,12 @@ keys = h.keys.sort_by { |k| k
     <ul class="horizontal-list name-index-list">
       <% keys.each do |a| %>
         <% if h[a].size > 0 %>
-          <li><a href="#<%= a %>"><%= a %></a></li>
+	<%
+          # Produce valid XHTML: '#' is not a valid anchor.
+          # (Teams sort under #)
+          if a == '#' then idx = 'teams' else idx = a end
+	%>
+          <li><a href="#<%= idx %>"><%= a %></a></li>
         <% else %>
           <li><span class="muted"><%= a %></span></li>
         <% end %>
@@ -48,7 +53,12 @@ keys = h.keys.sort_by { |k| k
 <div class="span<%= 12 / columns %>">
   <% list.each do |k| %>
     <% if h[k].size > 0 %>
-    <a name="<%= k %>"></a><h3 class="name-index"><%= k %></h3>
+    <%
+      # Produce valid XHTML: '#' is not a valid anchor.
+      # (Teams sort under #)
+      if k == '#' then idx = 'teams' else idx = k end
+    %>
+    <a name="<%= idx %>"></a><h3 class="name-index"><%= k %></h3>
     <ul class="name-index-items">
       <% h[k].each do |s| %>
         <li><%= l(s) %></li>

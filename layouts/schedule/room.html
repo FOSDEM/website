@@ -3,7 +3,7 @@
 # encoding: utf-8
 %>
 <ul class="side-box">
-    <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></LI>
+    <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></li>
 <%
   building = $buildings.select{|b, rooms| rooms.map{|r| r[:slug]}.include? item[:slug]}.map{|b, rooms| b}.first
   if building
@@ -173,7 +173,7 @@
         <tr>
             <td class="<%= event_color.fetch e[:event_id] %>">&nbsp;</td>
             <td><a name="<%= e[:slug] %>"></a><%= l e %></td>
-            <td><%= l track(e[:track]), :name, nil, nil, :quiet %></a></td>
+            <td><%= l track(e[:track]), :name, nil, nil, :quiet %></td>
             <td><%= ltt e, :start, css: 'quiet' %></td>
             <td><%= ltt e, :end, css: 'quiet' %></td>
         </tr>
