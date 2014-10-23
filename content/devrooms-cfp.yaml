@@ -10,6 +10,8 @@ days:
         deadline: 2014-12-01
     'Graphics':
     'Java':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002050.html
+        deadline: 2014-12-01
 
   saturday:
     'Ada':
@@ -69,4 +71,6 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002035.html
         deadline: 2014-12-01
     'Testing and automation':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002053.html
+        deadline: 2014-12-01
     'Virtualisation':
