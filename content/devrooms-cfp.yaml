@@ -23,6 +23,8 @@ days:
         deadline: 2014-12-01
     'Graph processing':
     'Infrastructure as a service':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002055.html
+        deadline: 2014-12-01
     'Legal and policy issues':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002036.html
         deadline: 2014-11-17
@@ -39,6 +41,8 @@ days:
     'Python':
     'Perl':
     'Ruby':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002054.html
+        deadline: 2014-12-01
     'Valgrind':
 
   sunday:
@@ -76,3 +80,5 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002053.html
         deadline: 2014-12-01
     'Virtualisation':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002056.html
+        deadline: 2014-12-01
