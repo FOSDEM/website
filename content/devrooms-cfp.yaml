@@ -47,6 +47,8 @@ days:
 
   sunday:
     'Desktops':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002057.html
+        deadline: 2014-12-07
     'Electronic design automation':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002030.html
         deadline: 2014-12-01
