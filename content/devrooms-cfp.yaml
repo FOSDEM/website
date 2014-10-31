@@ -38,6 +38,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002040.html
         deadline: 2014-12-01
     'PostgreSQL':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002058.html
+        deadline: 2014-11-24
     'Python':
     'Perl':
     'Ruby':
@@ -56,6 +58,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002039.html
         deadline: 2014-12-01
     'Go':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002059.html
+        deadline: 2014-12-01
     'Internet of things':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002044.html
         deadline: 2014-12-01
