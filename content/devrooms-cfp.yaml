@@ -47,6 +47,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002058.html
         deadline: 2014-11-24
     'Python':
+        ann: http://python-fosdem.org/
+        deadline: 2014-12-01
     'Perl':
     'Ruby':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002054.html
