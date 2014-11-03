@@ -72,6 +72,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002044.html
         deadline: 2014-12-01
     'LLVM toolchain':
+        ann: http://lists.cs.uiuc.edu/pipermail/llvmdev/2014-October/077976.html
+        deadline: 2014-12-01
     'Microkernel-based operating systems':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-November/002061.html
         deadline: 2014-11-28
