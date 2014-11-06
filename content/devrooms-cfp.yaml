@@ -42,6 +42,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002060.html
         deadline: 2014-11-25
     'Open Document editors':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-November/002066.html
+        deadline: 2014-12-14
     'Open source search':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002040.html
         deadline: 2014-12-01
@@ -56,6 +58,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002054.html
         deadline: 2014-12-01
     'Valgrind':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2014-November/002065.html
+        deadline: 2014-12-01
 
   sunday:
     'Desktops':
