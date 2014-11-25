@@ -3,40 +3,10 @@ title: Promote
 ---
 <h2>Flyers, posters and banners</h2>
 
-<p>These are some <a href="#flyers">flyers</a> to print and <a href="#banners">banners</a> to add
-to your personal (or Open Source project) website in order to reference FOSDEM. Feel free to use
-them to promote the event</p>
+<p>These are some <a href="#banners">banners</a> to add to your personal (or Open Source project)
+website in order to reference FOSDEM. Feel free to use them to promote the event</p>
 
 <p>Our news page has an <a href="page:atom">RSS feed</a>. Feel free to aggregate it!</p>
-
-<a name="flyers"></a><h2>Flyers</h2>
-<p>A flyer for you to print and distribute.</p>
-<table class="table">
-    <tbody>
-        <tr>
-          <%
-            {
-              flyer_colour: 'black',
-              flyer_nobg: 'white',
-              flyer_greyscale: 'greyscale',
-            }.each do |name, color|
-              name = name.to_s
-              flyer = $item_by_id.fetch("/assets/promote/flyer/#{name}/")
-              thumb = $item_by_id.fetch("/assets/promote/flyer/#{name}-thumb/")
-              w, h = image_size(thumb[:filename])
-            %>
-            <td>
-                <h3><%= color.capitalize %> version</h3>
-                <a href="<%= flyer.path %>" title="FOSDEM flyer PDF (<%= color %>)"><img src="<%= thumb.path %>" width="<%= w %>" height="<%= h %>"/></a><br/>
-                (<%= filesize flyer %>)<br/>
-                <ul>
-                    <li><a href="<%= flyer.path %>">PDF</a></li>
-                </ul>
-            </td>
-            <% end %>
-        </tr>
-    </tbody>
-</table>
 
 <a name="banners"></a><h2>Banners</h2>
 <table class="table table-striped table-bordered">
