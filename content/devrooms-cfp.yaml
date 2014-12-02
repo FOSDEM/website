@@ -13,12 +13,12 @@ days:
         deadline: 2014-12-24
     'Java':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002050.html
-        deadline: 2014-12-01
+        deadline: 2014-12-07
 
   saturday:
     'Ada':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-November/002063.html
-        deadline: 2014-11-30
+        deadline: 2014-12-14
     'BSD':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002038.html
         deadline: 2014-12-01
@@ -42,7 +42,7 @@ days:
         deadline: 2014-12-01
     'Network management and SDN':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002060.html
-        deadline: 2014-11-25
+        deadline: 2014-12-10
     'Open Document editors':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-November/002066.html
         deadline: 2014-12-14
@@ -58,7 +58,7 @@ days:
     'Perl':
     'Ruby':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002054.html
-        deadline: 2014-12-01
+        deadline: 2014-12-12
     'Valgrind':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-November/002065.html
         deadline: 2014-12-01
@@ -93,7 +93,7 @@ days:
         deadline: 2014-12-07
     'Open source design':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002031.html
-        deadline: 2014-12-01
+        deadline: 2014-12-08
     'PHP and friends':
     'Security':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002049.html
