@@ -68,6 +68,8 @@ GEM
     ttfunk (1.0.3)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2014.10)
+      tzinfo (>= 1.0.0)
 
 PLATFORMS
   ruby
@@ -87,3 +89,4 @@ DEPENDENCIES
   rmagick
   systemu
   tzinfo
+  tzinfo-data
