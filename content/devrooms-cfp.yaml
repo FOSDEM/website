@@ -24,7 +24,7 @@ days:
         deadline: 2014-12-14
     'Configuration management':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002029.html
-        deadline: 2014-12-01
+        deadline: 2014-12-10
     'Graph processing':
         ann: http://www.graphdevroom.org/#CfP
         deadline: 2014-12-07
@@ -48,7 +48,7 @@ days:
         deadline: 2014-12-14
     'Open source search':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002040.html
-        deadline: 2014-12-01
+        deadline: 2014-12-09
     'PostgreSQL':
         ann: https://lists.fosdem.org/pipermail/fosdem/2014-October/002058.html
         deadline: 2014-11-24
