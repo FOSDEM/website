@@ -1,8 +1,175 @@
 ---
 title: Certification exams
 ---
+<%
+# vim: et ft=eruby sw=2 ts=2
+certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
+%>
 
 <p>
   A number of certification exams will be offered at <%= conference()[:title] %>.
-  Further details will be announced when they become available.
 </p>
+
+<p>
+  The <a href="http://lpi.org/">Linux Professional Institute</a> and the <a
+  href="http://bsdcertification.org/">BSD Certification Group</a>
+  will organise exam sessions during <%= conference()[:title] %>.
+  Interested candidates will be able to
+  register for exams with the respective certification groups.
+</p>
+
+<h2>Exam schedule</h2>
+<% unless certs.empty? %>
+  <p>
+    The <a href="<%= pathof '/schedule/' %>#certification">schedule for the
+    exam sessions</a> is now available.</p>
+<% else %>
+  <p>
+    <span class="label label-info">Certification exams have not been scheduled
+    yet.</span>
+  </p>
+<% end %>
+
+<img src="asset:lpi-big" alt=""
+    style="float:right; margin-left: 1em; margin-right: 1em;"/>
+<a name="lpi"></a>
+<h2>LPI offers discounted certification exams at <%= conference()[:title] %>.</h2>
+<p>
+  As in previous years, the Linux Professional Institute will again offer a
+  discount to examination candidates at <%= conference()[:title] %>.<br/>
+  The level 1, level 2 and level 3 exams are offered at a <strong>discount of
+  nearly 50%</strong>.
+</p>
+</div>
+
+<p>
+  The following examinations are offered.
+</p>
+
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Certification</th>
+      <th>Exams</th>
+      <th>Price</th>
+      <th>Languages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="http://www.lpi.org/linux-certifications/introductory-programs/linux-essentials">Linux Essentials</a></td>
+      <td>010</td>
+      <td>&euro; 60.00</td>
+      <td>English, German</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.lpi.org/linux-certifications/programs/lpic-1">LPIC-1</a></td>
+      <td>101, 102</td>
+      <td>&euro; 90.00</td>
+      <td>English, French, German</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.lpi.org/linux-certifications/programs/lpic-2">LPIC-2</a></td>
+      <td>201, 202</td>
+      <td>&euro; 90.00</td>
+      <td>English, French, German</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.lpi.org/linux-certifications/programs/lpic-3">LPIC-3</a></td>
+      <td>300, 303, 304</td>
+      <td>&euro; 90.00</td>
+      <td>English</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Registration procedure</h3>
+<ul>
+  <li>
+    Register for an LPI ID on the following website:<br/>
+    <a href="https://cs.lpi.org/caf/Xamman/register">
+    https://cs.lpi.org/caf/Xamman/register</a>
+  </li>
+  <li>
+    Sign up for a specific exam session at:<br/>
+    <a href="http://lpievent.lpice.eu/">
+    http://lpievent.lpice.eu/</a><br/>
+    Note that due to limited seating, there is a maximum of
+    50 candidates per session.
+  </li>
+  <li>
+    You must bring valid photo identification and your LPI
+    ID to the exam lab.
+  </li>
+  <li>
+    Pay for the exam at FOSDEM (in cash).
+  </li>
+</ul>
+
+<h3>About LPI</h3>
+<% lpi = speaker 'lpi_team' %>
+<%= lpi[:abstract] %>
+<%= lpi[:description] %>
+
+<hr/>
+
+<a name="bsdcg"></a>
+<img src="asset:bsdcg-logo" alt=""
+  style="float:right; margin-left: 1em; margin-right: 1em;"/>
+<h2>BSD Associate certification</h2>
+<p>
+  The BSD Certification Group (BSDCG) will offer the BSDA certification exam
+  to attendees of <%= conference()[:title] %>.
+  One exam session will be offered.
+</p>
+
+<p>
+  Exam candidates should be proficient in the BSDA Certification Requirements
+  and the Command Reference, both of which are available for free download from
+  the <a href="http://www.bsdcertification.org/certification/">certification
+  page of the BSDCG website</a>.
+</p>
+
+<p>
+  The following exam is offered.
+  The exam will be paper based and in English.
+</p>
+
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Certification</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="http://www.bsdcertification.org/certification/certification/bsd-associate">BSD Associate</a>
+      </td>
+      <td>$ 75.00</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Registration procedure</h3>
+<p>
+  Participants have to register for a BSDCG ID at
+  <a href="https://register.bsdcertification.org/register/get-a-bsdcg-id">
+  https://register.bsdcertification.org/register/get-a-bsdcg-id</a>.
+  Note that it may take up to 24 hours to receive a BSDCG ID.
+  Once you have an ID, you can choose an exam location and pay for the exam from
+  the same website.
+  Prices are $75 USD and payable through PayPal or credit card.
+</p>
+
+<p>
+  Exam candidates must bring valid photo identification matching the name they
+  used when they registered for their BSDCG ID.
+  Due to limited seating at the event, exam pre-registration is recommended.
+</p>
+
+<h3>About BSDCG</h3>
+<% bsdcg = speaker 'bsdcg_team' %>
+<%= bsdcg[:abstract] %>
+<%= bsdcg[:description] %>
