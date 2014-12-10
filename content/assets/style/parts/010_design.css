@@ -249,9 +249,9 @@ a.btn-purple:hover {
 	padding:12px 0 47px 10px;
 }
 .s-block{
-	padding:6px 8px 24px 11px;
+	padding:6px 8px 8px 11px;
 	overflow:hidden;
-	border-bottom:2px solid #d6d6d6;
+	border-bottom:1px solid #ccc;
 }
 .s-block .text-block{
 	padding:5px 0 0;
@@ -260,12 +260,18 @@ a.btn-purple:hover {
 	float:left;
 	width:615px;
 }
+.announcement-block{
+	padding: 11px 0 11px;
+	/*border-top:1px solid #ccc;*/
+	float:left;
+	width:615px;
+}
+.announcement-block p{margin: 0 0 10px;}
 .s-block h2{
 	margin:0 0 10px;
 	font-size:24px;
 	line-height:28px;
 }
-.s-block p{margin:0;}
 .logo-block{
 	float:right;
 	width:320px;

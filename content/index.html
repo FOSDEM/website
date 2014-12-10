@@ -33,22 +33,28 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
         </ul>
       <% end %>
     </div>
-  </div>
 
-  <div class="news-block">
-    <h2>CALL FOR PARTICIPATION</h2>
-    <p>
-      FOSDEM 2015 will take place at ULB Campus Solbosch on Saturday 31 January
-      and Sunday 1 February 2015.
-    </p>
-    <p>
-      We are inviting proposals for:
-    <ul>
-      <li><a href="<%= pathof '/news/2014-09-19-call-for-participation-part-two/' %>">Lightning talks and stands</a></li>
-      <li><a href="<%= pathof '/news/2014-09-30-accepted-devrooms/' %>">Presentations in developer rooms</a></li>
-    </ul>
-    The deadline for main track proposals has passed.
-    </p>
+    <%
+    # Depending on the height of the sponsors graphic, general announcements
+    # (distinct from "news" by virtue of being undated) should either go here
+    # in an "announcement-block" div or be a "news-block" div below the
+    # "s-block" div. pph 20141210
+    %>
+    <div class="announcement-block">
+      <h2>CALL FOR PARTICIPATION</h2>
+      <p>
+        FOSDEM 2015 will take place at ULB Campus Solbosch on Saturday 31 January
+        and Sunday 1 February 2015.
+      </p>
+      <p>
+        We are inviting proposals for:
+      <ul>
+        <li><a href="<%= pathof '/news/2014-09-19-call-for-participation-part-two/' %>">Lightning talks and stands</a></li>
+        <li><a href="<%= pathof '/news/2014-09-30-accepted-devrooms/' %>">Presentations in developer rooms</a></li>
+      </ul>
+      The deadline for main track proposals has passed.
+      </p>
+    </div>
   </div>
 
   <div class="news-block">
