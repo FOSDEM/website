@@ -13,7 +13,10 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <p>
   The <a href="http://lpi.org/">Linux Professional Institute</a> and the <a
   href="http://bsdcertification.org/">BSD Certification Group</a>
-  will organise exam sessions during <%= conference()[:title] %>.
+  will again organise exam sessions during <%= conference()[:title] %>.
+  For the first time at FOSDEM, <a
+  href="http://www.documentfoundation.org/">The Document Foundation</a> will
+  offer LibreOffice certification.
   Interested candidates will be able to
   register for exams with the respective certification groups.
 </p>
@@ -173,3 +176,36 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <% bsdcg = speaker 'bsdcg_team' %>
 <%= bsdcg[:abstract] %>
 <%= bsdcg[:description] %>
+
+<hr/>
+
+<a name="tdf"></a>
+<img src="asset:tdf-logo" alt=""
+  style="float:right; margin-left: 1em; margin-right: 1em;"/>
+<h2>LibreOffice Certification program</h2>
+<p>
+  For the first time at FOSDEM, The Document Foundation will offer the
+  LibreOffice Certification at <%= conference()[:title] %>.
+  One exam session will be offered.
+</p>
+
+<p>
+  Individuals willing to be certified must be already active in the field of
+  migrations from proprietary software and large deployments of LibreOffice,
+  and/or LibreOffice training programs of any kind (withing a migration or a
+  large deployment, or a training school).  More information is available on the
+  <a href="http://www.documentfoundation.org/certification/">certification page
+    of The Document Foundation website</a>.
+</p>
+
+<h3>Registration procedure</h3>
+<p>
+  Candidates should complete the <a
+  href="http://www.documentfoundation.org/certification/application/">certification
+  application</a> on The Document Foundation website.
+</p>
+
+<h3>About The Document Foundation</h3>
+<% tdf = speaker 'the_document_foundation' %>
+<%= tdf[:abstract] %>
+<%= tdf[:description] %>
