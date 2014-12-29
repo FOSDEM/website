@@ -97,6 +97,6 @@ but ended up limiting the options for further evolution. Hence, Perl 6 will not 
 Q: Have you enjoyed previous FOSDEM editions?
 
 Indirectly, but I've always been interested in way too many things, so I
-rely heavily on other people telling me about the cool bits of everthing.
+rely heavily on other people telling me about the cool bits of everything.
 And certainly FOSDEM has always had cool bits.  :)
 
