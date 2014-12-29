@@ -28,7 +28,7 @@ The workflow continues to improve.  When we started doing a release every six we
  
 Q: What are the most important lessons you have learned during the four years of the rapid release cycle for Firefox development?
 
-The workflow is the key element to make sure that the various teams are on track and that the last critical bugs are fixed for the release. The synchronization 
+The workflow is the key element to make sure that the various teams are on track and that the last critical bugs are fixed for the release. The synchronization and communication between the different teams (Dev, QA, Release management, etc) is a key to success. 
  
 Q: Churning out a major release of Firefox every six weeks is quite a feat. What are the biggest challenges? Are they organizational or technical?
 
