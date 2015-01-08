@@ -17,18 +17,17 @@ footer:
     - /about/sponsors
     - /support/donate
     - Archives: /archives
-  - Schedule:
-    - Information: /schedule
+  - This year:
+    - /schedule
+    - /stands
     - /certification
     - /keysigning
+    - /sightseeing
   - Practical information:
-    - /stands
-    - /practical/transportation
+    - Getting there: /practical/transportation
     - /practical/accessibility
     - /practical/accommodation
-    - /practical/sightseeing
   - Media and press:
     - /interviews
     - /support/promote
-    - Videos: 'http://video.fosdem.org/'
-
+    - Video recordings: 'http://video.fosdem.org/'
