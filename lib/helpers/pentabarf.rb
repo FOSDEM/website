@@ -670,7 +670,14 @@ module Fosdem
                    .reject{|t| t['conference_track'] == 'Main Tracks'}
                    .reject{|t| t['conference_track'] == 'Main tracks'}
                    .map do |t|
-                     t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
+                     # XXX: Disgusting hack for 2015 because I really don't have
+                     # time to come up with anything more elegant than this!
+                     #  pph 20150109
+                     if t['conference_track'] == 'Security devroom' then
+                       t['name'] = t['conference_track']
+                     else
+                       t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
+                     end
                      t['title'] = t['conference_track']
                      t['type'] = case t['conference_track']
                                  when /\s+devroom$/i
