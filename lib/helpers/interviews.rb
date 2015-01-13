@@ -26,7 +26,7 @@ module Fosdem
         if html
           list << ", <a href='/schedule/speaker/#{speaker}'>#{person}</a>"
         else
-          list << ", person"
+          list << ", #{person}"
         end
       end
       if html
