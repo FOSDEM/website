@@ -22,9 +22,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   <li>Timetables: 
     <%= l days %>
   </li>
-  <li>Printable: <a href="http://tmp.fosdem.org/booklet_sat-print.pdf">Saturday</a>, <a href="http://tmp.fosdem.org/booklet_sun-print.pdf">Sunday</a></li>
   <li>Overview of <a href="<%= pathof '/schedule/roomtracks/' %>">rooms per days</a></li>
-  <!-- UNFINISHED <li>Mobile site: <a href="<%= pathof '/mobile/' %>">http://fosdem.org/mobile</a></li> -->
   <li>Mobile apps: <a href="<%= pathof '/schedule/mobile/' %>">many platforms</a></li>
 </ul>
     </div>
