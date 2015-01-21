@@ -14,8 +14,8 @@ top level project I became a member of the project management
 committee.
 
 I'm working as a software architect at Thales Netherlands on
-large distributed embedded real time applications. I
-see the challenges of developing on a daily basis, maintaining and extending complex
+large distributed embedded real time applications. Day by day I
+see the challenges of developing, maintaining and extending complex
 and big software applications in a technologically heterogeneous
 environment with increasingly less time and budget.
 
