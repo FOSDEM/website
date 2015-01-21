@@ -21,7 +21,7 @@ year now.
 
 Q: What will your talk be about, exactly?
 
-LowRISC is a project to produce a completely open source SoC (System on Chip),
+LowRISC is a not-for-profit project to produce a completely open source SoC (System on Chip),
 with a plan to produce volume silicon and low-cost development boards. My talk
 will cover the aims of the project, our current status, future plans, and
 more. Open source silicon is seen to have the odds stacked against it with
