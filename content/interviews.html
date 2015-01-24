@@ -13,8 +13,8 @@ navtitle: Interviews
 <% unless items.empty? %>
 <h2><%= year %></h2>
 <ul>
-    <% items.sort_by{|i| first_speaker(i)}.each do |item| %>
-    <li><%= speaker_list(item) %>: <a href="<%= relpath(@item_rep.path, item.identifier) %>"><%= item[:topic] %></a></li>
+    <% items.sort_by{|i| first_speaker(i[:speaker])}.each do |item| %>
+    <li><%= speaker_list(item[:speaker]) %>: <a href="<%= relpath(@item_rep.path, item.identifier) %>"><%= item[:topic] %></a></li>
     <% end %>
 </ul>
 <% end %>

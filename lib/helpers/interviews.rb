@@ -2,45 +2,41 @@
 
 module Fosdem
 
-  def first_speaker(item)
-    if item[:speaker].is_a? Enumerable
-      item[:speaker].first
+  # We need the first speaker for sorting the interviews.
+  def first_speaker(speakers)
+    if speakers.is_a? Enumerable
+      speakers.first
     else
-      item[:speaker]
+      speakers
     end
   end
 
-  # Generate a list of speakers of an interview, with HTML links for each speaker.
-  def speaker_list(item, html=false)
-    if item[:speaker].is_a? Enumerable and item[:person].is_a? Enumerable and item[:speaker].length > 1 and item[:speaker].length == item[:person].length
-      speakers = item[:speaker].zip(item[:person])
-      first_speaker = speakers.shift
-      last_speaker = speakers.pop
-      list = String.new
-      if html 
-        list << "<a href='/schedule/speaker/#{first_speaker.first}'>#{first_speaker.last}</a>"
-      else
-        list << first_speaker.last
-      end
-      speakers.each do |speaker, person|
-        if html
-          list << ", <a href='/schedule/speaker/#{speaker}'>#{person}</a>"
-        else
-          list << ", #{person}"
-        end
-      end
-      if html
-        list << " and <a href='/schedule/speaker/#{last_speaker.first}'>#{last_speaker.last}</a>"
-      else
-        list << " and #{last_speaker.last}"
-      end
+  def speaker_string(speaker, name, separator="", html=false)
+    if html
+      "#{separator}<a href='/schedule/speaker/#{speaker}'>#{name}</a>"
     else
-      list = String.new
-      if html
-        list << "<a href='/schedule/speaker/#{item[:speaker]}'>#{item[:person]}</a>"
-      else
-        list << item[:person]
+      "#{separator}#{name}"
+    end
+  end
+
+  # Generate a human-readable list of speakers of an interview, with HTML links for each speaker.
+  def speaker_list(speakers, html=false)
+    if speakers.is_a? Enumerable and speakers.length > 1
+      # Create pairs of [speaker slug, speaker name].
+      pairs = speakers.map {|s| [s, @items["/schedule/speaker/#{s}/"][:name]]}
+      # Remove the first and last speaker, they get treated separately.
+      first_speaker = pairs.shift
+      last_speaker = pairs.pop
+      # First speaker gets no separator.
+      list = speaker_string(first_speaker.first, first_speaker.last, "", html)
+      # Use a comma as separator for the rest of the speakers.
+      pairs.each do |speaker, name|
+        list << speaker_string(speaker, name, ", ", html)
       end
+      # Use " and " as separator for the last speaker.
+      list << speaker_string(last_speaker.first, last_speaker.last, " and ", html)
+    else
+      list = speaker_string(first_speaker(speakers), @items["/schedule/speaker/#{first_speaker(speakers)}/"][:name], "", html)
     end
   end
 
@@ -49,11 +45,15 @@ module Fosdem
       item[:kind] = 'interview'
       item[:nonav] = true
 
-      title = "Interview with #{speaker_list(item)}"
+      speakers = speaker_list(item[:speaker])
+      title = "Interview with #{speakers}"
+
+      event = @items["/schedule/event/#{item[:event]}/"]
+      item[:topic] = event[:subtitle].nil? ? event[:title] : [event[:title], event[:subtitle]].join(". ")
       title << "<br/>#{item[:topic]}" if item[:topic]
       item[:title] = title if item[:title].nil?
 
-      navtitle = "#{speaker_list(item)}"
+      navtitle = "#{speakers}"
       navtitle << " - #{item[:topic]}" if item[:topic]
       item[:navtitle] = navtitle
     end
