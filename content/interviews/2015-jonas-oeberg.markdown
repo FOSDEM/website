@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Jonas Öberg 
 speaker: jonas_oberg 
-topic: "Automating Attribution: Giving credit where credit is due"
 event: automating_attribution 
 ---
 

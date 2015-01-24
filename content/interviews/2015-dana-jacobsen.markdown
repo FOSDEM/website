@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Dana Jacobsen 
 speaker: dana_jacobsen 
-topic: "Design and Implementation of a Perl Number Theory Module"
 event: design_and_implementation_of_a_perl_number_theory_module 
 ---
 

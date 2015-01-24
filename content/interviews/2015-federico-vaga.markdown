@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: [Federico Vaga, Matthieu Cattin] 
 speaker: [federico_vaga, matthieu_cattin] 
-topic: "A GPS watch made of free software and hardware"
 event: gps_watch 
 ---
 

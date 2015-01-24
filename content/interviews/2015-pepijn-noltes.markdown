@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Pepijn Noltes 
 speaker: pepijn_noltes 
-topic: "Modularizing C software with Apache Celix"
 event: apache_celix 
 ---
 

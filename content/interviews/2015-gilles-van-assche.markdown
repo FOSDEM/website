@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: [Gilles Van Assche, Joan Daemen, Michaël Peeters] 
 speaker: [gilles_van_assche, joan_daemen, michael_peeters] 
-topic: "Keccak and SHA-3: code and standard updates"
 event: keccak_and_sha3 
 ---
 

@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Stefan Marr 
 speaker: stefan_marr 
-topic: "Building High-Performance Language Implementations With Low Effort"
 event: building_high_performance_language_implementations 
 ---
 

@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Benjamin Berg 
 speaker: benjamin_berg 
-topic: "SDAPS: Surveying Made Easy"
 event: sdaps 
 ---
 

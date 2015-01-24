@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Simon Cozens
 speaker: simon_cozens
-topic: "Introducing SILE: A New Typesetting System"
 event: introducing_sile
 ---
 

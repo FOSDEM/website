@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Steve Klabnik 
 speaker: steve_klabnik 
-topic: "The story of Rust"
 event: the_story_of_rust 
 ---
 

@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: James Pallister 
 speaker: james_pallister 
-topic: "Superoptimization: How fast can your code go?"
 event: superoptimization 
 ---
 

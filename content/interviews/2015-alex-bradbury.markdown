@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Alex Bradbury 
 speaker: alex_bradbury 
-topic: "lowRISC: The path to an open-source SoC"
 event: lowrisc 
 ---
 

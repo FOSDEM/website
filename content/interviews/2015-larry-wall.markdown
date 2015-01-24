@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Larry Wall 
 speaker: larry_wall 
-topic: "Get ready to party!"
 event: get_ready_to_party
 ---
 

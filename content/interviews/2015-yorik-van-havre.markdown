@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Yorik van Havre 
 speaker: yorik_van_havre
-topic: "FreeCAD: a hackable design platform"
 event: freecad 
 ---
 

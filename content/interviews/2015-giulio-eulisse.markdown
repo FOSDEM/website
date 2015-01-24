@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Giulio Eulisse 
 speaker: giulio_eulisse 
-topic: "IgProf: The Ignominous Profiler"
 event: igprof_the_ignominous_profiler
 ---
 

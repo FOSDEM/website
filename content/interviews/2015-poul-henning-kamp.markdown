@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Poul-Henning Kamp 
 speaker: poul_henning_kamp 
-topic: "Ntimed an NTPD replacement"
 event: ntimed_ntpd_replacement 
 ---
 

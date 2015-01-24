@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Till Tantau 
 speaker: till_tantau 
-topic: "Algorithmic Graph Drawing in TikZ"
 event: algorithmic_graph_drawing_in_tikz 
 ---
 

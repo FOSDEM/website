@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Antti Kantee 
-speaker: antii_kantee 
-topic: "What is wrong with Operating Systems (and how do we make things better)" 
+speaker: antti_kantee 
 event: what_is_wrong_with_operating_systems 
 ---
 

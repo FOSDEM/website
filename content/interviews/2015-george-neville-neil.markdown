@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: George Neville-Neil 
 speaker: george_neville_neil 
-topic: "Computers, Clocks and Network Time: Everything you never wanted to know about time"
 event: computers_clocks_and_network_time 
 ---
 

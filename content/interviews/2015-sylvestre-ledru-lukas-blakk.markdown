@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: [Sylvestre Ledru, Lukas Blakk] 
 speaker: [sylvestre_ledru, lukas_blakk]
-topic: "A new version of Firefox is available: Releasing Quality Firefox Products"
 event: a_new_version_of_firefox_is_available 
 ---
 

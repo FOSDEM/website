@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Harlan Stenn 
 speaker: harlan_stenn 
-topic: "NTF's General Timestamp API and Library: Current timestamps suck. We can do much better"
 event: ntf_s_general_timestamp_api_and_library 
 ---
 

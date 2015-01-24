@@ -1,8 +1,6 @@
 ---
 year: 2015
-person: Martin Burnicki
 speaker: martin_burnicki
-topic: "Technical Aspects of Leap Second Propagation and Evaluation"
 event: technical_aspects_of_leap_second_propagation_and_evaluation 
 ---
 
