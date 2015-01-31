@@ -1,0 +1,37 @@
+---
+title: IPv6-only wireless network again!
+---
+
+<p>
+  Last year we turned off IPv4 on our main <code>FOSDEM</code> wireless network.
+  They idea is to confront developers with the IPv6-reality and encourage them
+  to fix bugs.  Progress has been made, but there is a lot of work left to do!
+</p>
+---MORE---
+
+<p>
+  FOSDEM is a unique opportunity to confront thousands of developers with an
+  IPv6-only reality. We are hopeful that making our default network IPv6-only
+  will encourage people to fix bugs in applications and devices.
+</p>
+<p>
+  The <code>FOSDEM</code> network has NAT64 and DNS64 transition measures in
+  place for communicating with the legacy internet. For those who need it, the
+  <code>FOSDEM-legacy</code> wireless network provides the same dual stack
+  connectivity we offered on <code>FOSDEM</code> prior to 2014.
+</p>
+
+<p>
+  While last year we had "seatbelts" in place for flipping <code>FOSDEM</code>
+  back to dual stack, we decided not to implement those this year.  If the main
+  network catches fire, we will just have to fix our bugs!
+</p>
+
+<ul>
+  <li><code>FOSDEM</code>: IPv6-only, provides NAT64 and DNS64. Recursive
+    DNS resolvers announced with RA and DHCPv6. If you need to configure DNS
+    manually, use 2001:67c:1810:f056::2 and 2001:41d0:2:1959:21c:c0ff:fe88:6f58</li>
+
+  <li><code>FOSDEM-legacy</code>: provides native IPv6 and legacy IP connectivity. No DNS64.</li>
+</ul>
+
