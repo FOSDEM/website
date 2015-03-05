@@ -151,33 +151,6 @@ The hashes:              ☐
 
 
 <h3>After the event</h3>
-<% unless conf.fetch(:hashes_published) %>
-<p>
-  <span class="label label-info">
-    The hashes of the keylist have not been published yet.
-  </span>
-</p>
-<% end %>
-
-<p>
-  If you participated in the keysigning event, but missed (parts of) the
-  participant list hashes as they were shouted out at the start, you should
-  verify the hashes before signing any keys.
-</p>
-
-<p>
-<% if conf.fetch(:hashes_published) %>
-  The hashes can be downloaded from
-<% else %>
-  You will be able to download the hashes from
-<% end %>
-  <a href="https://ksp.fosdem.org/files/">https://ksp.fosdem.org/files/</a>.
-  If there is a trust-path between you and the author, you should verify the
-  file's detached signature using:
-</p>
-<pre class="sh">
-gpg --verify ksp-<%= klist %>-hashes.txt.sig ksp-<%= klist %>-hashes.txt
-</pre>
 
 <p>
   Please complete your signing homework before
