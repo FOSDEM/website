@@ -18,20 +18,18 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
   server rather than email to collect keys.
 </p>
 
-<% if conf.fetch(:submission_notyet) %>
-<p>
-  <span class="label label-info">
-    Further information will be published in due course.
-  </span>
-<% else %>
-
 <h3>Before the event</h3>
 <h4>Submit your keys</h4>
+
 <p>
-  <% if conf.fetch(:submission_closed) %>
-  <span class="label label-info">
-    The submission deadline has passed.
-  </span>
+  <% if conf.fetch(:submission_notyet) %>
+	  <span class="label label-info">
+	    Submissions are not yet accepted.
+	  </span>
+  <% elsif conf.fetch(:submission_closed) %>
+	  <span class="label label-info">
+	    The submission deadline has passed.
+	  </span>
   <% end %>
 </p>
 
@@ -41,7 +39,6 @@ klist = conference()[:title].downcase.gsub(/\s+/,"")
   signed to the keyserver listening on <code>ksp.fosdem.org</code>.  If you
   are using GnuPG, this can easily be accomplished with:
 </p>
-
 <pre class="sh">
 gpg --keyserver ksp.fosdem.org --send-key [keyid]
 </pre>
@@ -58,27 +55,23 @@ gpg --keyserver ksp.fosdem.org --send-key [keyid]
   href="https://ksp.fosdem.org/">https://ksp.fosdem.org/</a>.
 </p>
 
-<p>
-  During the submission period, graphs will be generated of the density of the
-  web of trust and the rate at which keys are being submitted.  You can find
-  these graphs at: <a
-  href="https://ksp.fosdem.org/graphs/">https://ksp.fosdem.org/graphs/</a>
-</p>
+<% unless conf.fetch(:submission_notyet) %>
+	<p>
+	  The deadline for submissions is <strong>
+	  <%= conf.fetch(:submission_deadline).strftime(dateformat) %></strong>.
+	  After this date, the keyserver will no longer accept submissions and the
+	  official keylist will be published.
+	</p>
+<% end %>
 
-<p>
-  The deadline for submissions is <strong>
-  <%= conf.fetch(:submission_deadline).strftime(dateformat) %></strong>.
-  After this date, the keyserver will no longer accept submissions and the
-  official keylist will be published.
-</p>
 
 <h4>Download the list of participants</h4>
 <% unless conf.fetch(:list_published) %>
-<p>
-  <span class="label label-info">
-    The list of participants has not yet been published!
-  </span>
-</p>
+	<p>
+	  <span class="label label-info">
+	    The list of participants has not yet been published!
+	  </span>
+	</p>
 <% end %>
 
 <p>
@@ -88,11 +81,11 @@ gpg --keyserver ksp.fosdem.org --send-key [keyid]
 </p>
 
 <p>
-<% if conf.fetch(:list_published) %>
-  The final list of participants is available from
-<% else %>
-  The final list of participants will be available from
-<% end %>
+  <% if conf.fetch(:list_published) %>
+	The final list of participants is available from
+  <% else %>
+	The final list of participants will be available from
+  <% end %>
   <a href="https://ksp.fosdem.org/files/">https://ksp.fosdem.org/files/</a>.
 </p>
 
@@ -104,6 +97,9 @@ gpg --keyserver ksp.fosdem.org --send-key [keyid]
 gpg --verify ksp-<%= klist %>.txt.sig ksp-<%= klist %>.txt
 </pre>
 
+
+<h3>The key signing event itself</h3>
+
 <p>
   The keysigning event takes place on Sunday, at 14:00, in the corridor on the
   second level of the U building.  There is no fixed end time.  Previous
@@ -111,6 +107,7 @@ gpg --verify ksp-<%= klist %>.txt.sig ksp-<%= klist %>.txt
   Please bring the printed list, a pen and appropriate form of identification
   with you to <%= conference()[:title] %>.
 </p>
+
 <p>
   You may find it useful to make a badge stating the number(s) of your key(s)
   on this list and the fact that you verified the fingerprints of your own
@@ -187,4 +184,3 @@ gpg --verify ksp-<%= klist %>-hashes.txt.sig ksp-<%= klist %>-hashes.txt
   <strong><%= conf.fetch(:homework_due).strftime(dateformat) %></strong>, and
   upload new signatures on your keys to a well-connected keyserver.
 </p>
-<% end %>
