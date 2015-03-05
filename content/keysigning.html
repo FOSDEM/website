@@ -97,6 +97,18 @@ gpg --keyserver ksp.fosdem.org --send-key [keyid]
 gpg --verify ksp-<%= klist %>.txt.sig ksp-<%= klist %>.txt
 </pre>
 
+<p>
+  Besides the official list (<code>ksp-<%= klist %>.txt</code>), we also provide
+  non-authoritative files that may make your life easier.  It is up to you, the
+  participant, to verify that these files actually contain the same information
+  than the official list: e.g. for the `keyring.gpg` file, you could run the
+  `keylist.txt.sh` script and verify that the output similar enough to the
+  official list.  Note that different GnuPG version may output slightly
+  different output.  In particular, GnuPG older than version 2.1 uses <a
+  href="https://www.gnupg.org/faq/whats-new-in-2.1.html#keylist">a different key
+  format</a>.
+</p>
+
 
 <h3>The key signing event itself</h3>
 
