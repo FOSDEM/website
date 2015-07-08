@@ -33,31 +33,6 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
         </ul>
       <% end %>
     </div>
-
-    <%
-    # Depending on the height of the sponsors graphic, general announcements
-    # (distinct from "news" by virtue of being undated) should either go here
-    # in an "announcement-block" div or be a "news-block" div below the
-    # "s-block" div. pph 20141210
-    %>
-    <div class="announcement-block">
-      <h2>FOSDEM is over for another year!</h2>
-      <p>
-	We would like to thank everyone for their contribution to another successful FOSDEM!
-      </p>
-      <p>
-	Please tell us about your FOSDEM experience at 
-	<a href="mailto:feedback@fosdem.org">feedback@fosdem.org</a>.
-	All your feedback and suggestions for next year will be greatly appreciated.
-      </p>
-      <p>
-	We're looking forward to meeting you again in 2016!
-      </p>
-      <h2>Video Recordings</h2>
-      <p>
-	Many of the individual <a href="https://fosdem.org/2015/schedule/events/">event pages</a> now have links to <a href="http://video.fosdem.org/2015/">video recordings</a> of the talks.
-      </p>
-    </div>
   </div>
 
   <div class="news-block">
