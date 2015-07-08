@@ -649,7 +649,7 @@ a.btn-purple:hover {
 	/*background:url(bg-company-info.gif) no-repeat 9px 0;*/
 }
 .logo-small{
-	margin:0 0 3px 3px;
+	margin-bottom:3px;
 	display:block;
 	background:url(sprite.png) no-repeat;
    /* 0 -335px;*/
