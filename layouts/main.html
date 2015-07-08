@@ -2,7 +2,7 @@
 <%
 # vim: set ts=2 sw=2 et ai ft=eruby:
 $layout_dateline ||= begin
-                       days.map{|d| d[:conference_day].strftime('%e %B')}.join(' &amp; ') + " " + days.first[:conference_day].year.to_s
+                       days.map{|d| d[:conference_day].day}.join(' &amp; ') + " " + days.first[:conference_day].strftime('%B %Y')
                      end
 %>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">

@@ -36,29 +36,19 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
   </div>
 
   <div class="news-block">
-    <h2>NEWS</h2>
-    <ul class="news-list">
-      <% newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse; newsitems[0,maxnews].each do |hl| %>
-        <li class="news">
-        <div class="date">
-          <div class="holder">
-            <div class="frame"><%= hl[:created_at].strftime '%Y-%m-%d' %></div>
-          </div>
-        </div>
-        <h3><a href="page:<%= hl[:fullpost] %>"><%= hl[:title] %></a></h3>
-        <p><%= hl.compiled_content(:snapshot => :pre) %></p>
-        <% if hl[:readmore] %>
-          <p class="readmore"><a href="page:<%= hl[:readmore] %>">read more</a></p>
-        <% end %>
-        </li>
-      <% end %>
-    </ul>
-    <% if newsitems.length > maxnews %>
-      <div class="btn-news">
-        <a class="btn-purple" href="page:/news/">more news</a>
-      </div>
-    <% end %>
+    <h2>FOSDEM 2016: 30 &amp; 31 January 2016</h2>
+    <p>
+      FOSDEM 2016 will take place at ULB Campus Solbosch on Saturday 30 and
+      Sunday 31 January 2016.<br/>
+      Further details and calls for participation will be announced in the
+      coming weeks and months.
+    </p>
+    <p>
+      Have a nice summer!
+    </p>
   </div>
+  </div>
+
   <div class="location-block">
     <h2>LOCATION</h2>
     <p>FOSDEM will take place at the ULB Solbosch Campus, <strong>Brussels, Belgium</strong>, Europe, Earth.</p>
