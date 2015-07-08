@@ -142,7 +142,7 @@ deploy:
     options: [ '-avzP', '--delete-after' ]
   default:
     kind: rsync
-    dst:  "www-data@apeiron.fosdem.org:/var/www/staging.fosdem.org/public/2015"
+    dst:  "www-staging@www-public.fosdem.org:/www/staging.fosdem.org/public/2016"
     options: [ '-avzP', '--delete-after' ]
 
 pentabarf:
