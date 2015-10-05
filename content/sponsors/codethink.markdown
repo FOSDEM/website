@@ -1,5 +1,5 @@
 ---
-title: Code Think
+title: Codethink
 url: http://www.codethink.co.uk
 ---
 
@@ -13,3 +13,4 @@ organizations who seek competitive edge through design of systems
 which are faster, smaller, more secure, more up-to-date, or more
 advanced than their competitors.
 
+Codethink supports the event financially.
