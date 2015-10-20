@@ -51,7 +51,7 @@ ul.horizontal-list li:first-child:before {
 img.s-logo {
   float: right;
   margin-left: 1em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 img.s-box-logo {
   padding: 0.1em 0.05em;
@@ -477,7 +477,7 @@ pre.sh {
 }
 
 #s-quick-links a {
-    padding-left: 0.5em;
+    padding-left: 1.2em;
 }
 
 .name-index {
