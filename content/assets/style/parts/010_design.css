@@ -301,7 +301,7 @@ a.btn-purple:hover {
 	text-indent:-9999px;
 	background:url(sprite.png) no-repeat;
 }
-.logo-list li {padding-right: 7px;}
+.logo-list li {padding-right: 25px;}
 .news-block{
 	/*margin:0 0 32px;*/
 	margin:0 0 16px;
