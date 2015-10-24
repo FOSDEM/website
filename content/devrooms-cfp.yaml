@@ -17,8 +17,11 @@ days:
     'IoT':
     'Lua':
     'Microkernels':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002191.html
+        deadline: 2015-12-13
     'Mozilla':
     'MySQL and Friends':
+        ann: http://www.mysqlandfriends.eu/post/fosdem-mysql-friends-devroom-cfp-is-open/
     'Open Document Editors':
     'Open Media':
     'Open Source Design':
