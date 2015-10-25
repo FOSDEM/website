@@ -15,6 +15,8 @@ days:
     'GNU Guile':
     'Graph Processing':
     'IoT':
+        ann: http://iot-devroom.wikidot.com/blog:3
+        deadline: 2015-12-01
     'Lua':
     'Microkernels':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002191.html
