@@ -56,4 +56,6 @@ days:
     'Ruby':
     'SDN and NFV':
     'Software Defined Radio':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002188.html
+        deadline: 2015-12-04
 
