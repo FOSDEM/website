@@ -6,7 +6,7 @@ days:
     'Embedded':
     'Free Java':
     'Legal and Policy issues':
-    'Programmable Infrastructure':
+    'Virtualisation and IaaS':
 
   saturday:
     'Ada':
@@ -15,13 +15,22 @@ days:
     'GNU Guile':
     'Graph Processing':
     'IoT':
+        ann: http://iot-devroom.wikidot.com/blog:3
+        deadline: 2015-12-01
     'Lua':
     'Microkernels':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002191.html
+        deadline: 2015-12-13
     'Mozilla':
     'MySQL and Friends':
+        ann: http://www.mysqlandfriends.eu/post/fosdem-mysql-friends-devroom-cfp-is-open/
     'Open Document Editors':
     'Open Media':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002193.html
+        deadline: 2015-12-01
     'Open Source Design':
+        ann: http://opensourcedesign.net/events/design/hack/meeting/2016/01/30/opensourcedesign-fosdem.html
+        deadline: 2015-12-01
     'Python':
     'Real Time':
     'Security':
@@ -29,6 +38,8 @@ days:
 
   sunday:
     'BSD':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002189.html
+        deadline: 2015-12-10
     'Coding for Language Communities':
     'Config Management':
     'Desktops':
@@ -45,4 +56,6 @@ days:
     'Ruby':
     'SDN and NFV':
     'Software Defined Radio':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002188.html
+        deadline: 2015-12-04
 
