@@ -7,6 +7,8 @@ days:
     'Free Java':
     'Legal and Policy issues':
     'Virtualisation and IaaS':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002197.html
+        deadline: 2015-12-01
 
   saturday:
     'Ada':
@@ -34,6 +36,8 @@ days:
     'Python':
     'Real Time':
     'Security':
+        ann: https://github.com/security-devroom/fosdem-2016
+        deadline: 2015-12-10
     'Testing and Automation':
 
   sunday:
@@ -45,6 +49,7 @@ days:
     'Desktops':
     'Geospatial':
     'Go':
+        ann: https://forum.golangbridge.org/t/fosdem-2016-call-for-proposals/1358/1
     'Graphics':
     'HPC, Big Data and Data Science':
     'LLVM Toolchain':
