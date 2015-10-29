@@ -6,6 +6,8 @@ days:
     'Embedded':
     'Free Java':
     'Legal and Policy issues':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002202.html
+        deadline: 2015-11-29
     'Virtualisation and IaaS':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002197.html
         deadline: 2015-12-01
@@ -30,6 +32,7 @@ days:
         deadline: 2015-12-04
     'MySQL and Friends':
         ann: http://www.mysqlandfriends.eu/post/fosdem-mysql-friends-devroom-cfp-is-open/
+        deadline: 2015-12-01
     'Open Document Editors':
     'Open Media':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002193.html
@@ -52,6 +55,8 @@ days:
         deadline: 2015-12-10
     'Coding for Language Communities':
     'Config Management':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002201.html
+        deadline: 2015-12-01
     'Desktops':
     'Geospatial':
     'Go':
