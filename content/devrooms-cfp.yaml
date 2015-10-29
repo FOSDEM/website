@@ -14,6 +14,8 @@ days:
     'Ada':
     'Containers and Process Isolation':
     'EDA':
+        ann: http://www.ohwr.org/projects/ohr-meta/wiki/FOSDEM2016
+        deadline: 2015-12-04
     'GNU Guile':
     'Graph Processing':
     'IoT':
@@ -24,6 +26,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002191.html
         deadline: 2015-12-13
     'Mozilla':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002200.html
+        deadline: 2015-12-04
     'MySQL and Friends':
         ann: http://www.mysqlandfriends.eu/post/fosdem-mysql-friends-devroom-cfp-is-open/
     'Open Document Editors':
@@ -39,6 +43,8 @@ days:
         ann: https://github.com/security-devroom/fosdem-2016
         deadline: 2015-12-10
     'Testing and Automation':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002198.html
+        deadline: 2015-11-30
 
   sunday:
     'BSD':
