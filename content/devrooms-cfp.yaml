@@ -19,6 +19,8 @@ days:
         ann: http://www.ohwr.org/projects/ohr-meta/wiki/FOSDEM2016
         deadline: 2015-12-04
     'GNU Guile':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002273.html
+        deadline: 2015-11-30
     'Graph Processing':
     'IoT':
         ann: http://iot-devroom.wikidot.com/blog:3
@@ -70,6 +72,8 @@ days:
         ann: https://wendyga.wordpress.com/2015/10/08/fosdem-30-31-january-2016-brussels-belgium-call-for-speakers/
     'PostgreSQL':
     'Ruby':
+        ann: http://fosdem.rubybelgium.be/cfp
+        deadline: 2015-12-01
     'SDN and NFV':
     'Software Defined Radio':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002188.html
