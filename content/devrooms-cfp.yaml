@@ -43,7 +43,9 @@ days:
         ann: http://opensourcedesign.net/events/design/hack/meeting/2016/01/30/opensourcedesign-fosdem.html
         deadline: 2015-12-01
     'Python':
-    'Real Time':
+    'Real Time Communications':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002281.html
+        deadline: 2015-11-27
     'Security':
         ann: https://github.com/security-devroom/fosdem-2016
         deadline: 2015-12-10
@@ -63,6 +65,7 @@ days:
     'Geospatial':
     'Go':
         ann: https://forum.golangbridge.org/t/fosdem-2016-call-for-proposals/1358/1
+        deadline: 2015-12-05
     'Graphics':
     'HPC, Big Data and Data Science':
     'LLVM Toolchain':
@@ -75,6 +78,8 @@ days:
         ann: http://fosdem.rubybelgium.be/cfp
         deadline: 2015-12-01
     'SDN and NFV':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002282.html
+        deadline: 2015-11-18
     'Software Defined Radio':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002188.html
         deadline: 2015-12-04
