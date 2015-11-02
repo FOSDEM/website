@@ -4,6 +4,8 @@ days:
   both:
     'Distributions':
     'Embedded':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002283.html
+        deadline: 2015-12-07
     'Free Java':
     'Legal and Policy issues':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002202.html
@@ -26,6 +28,8 @@ days:
         ann: http://iot-devroom.wikidot.com/blog:3
         deadline: 2015-12-01
     'Lua':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002291.html
+        deadline: 2015-12-01
     'Microkernels':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002191.html
         deadline: 2015-12-13
@@ -68,8 +72,12 @@ days:
         deadline: 2015-12-05
     'Graphics':
     'HPC, Big Data and Data Science':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002290.html
+        deadline: 2015-12-04
     'LLVM Toolchain':
     'Open Game Development':
+        ann: http://gamelier.org/open-game-development-room-at-fosdem-call-for-participation/
+        deadline: 2015-12-04
     'PHP and Friends':
     'Perl':
         ann: https://wendyga.wordpress.com/2015/10/08/fosdem-30-31-january-2016-brussels-belgium-call-for-speakers/
