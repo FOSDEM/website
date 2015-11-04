@@ -3,6 +3,8 @@ kind: internal
 days:
   both:
     'Distributions':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002297.html
+        deadline: 2015-12-10
     'Embedded':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002283.html
         deadline: 2015-12-07
@@ -16,6 +18,8 @@ days:
 
   saturday:
     'Ada':
+        ann: http://www.cs.kuleuven.be/~dirk/ada-belgium/events/16/160130-fosdem.html
+        deadline: 2015-11-29
     'Containers and Process Isolation':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002294.html
         deadline: 2015-12-01
@@ -70,6 +74,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002201.html
         deadline: 2015-12-01
     'Desktops':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002296.html
+        deadline: 2015-12-06
     'Geospatial':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/thread.html
         deadline: 2015-12-01
