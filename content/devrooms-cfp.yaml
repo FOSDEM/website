@@ -9,6 +9,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002283.html
         deadline: 2015-12-07
     'Free Java':
+        ann: https://lists.fosdem.org/pipermail/java-devroom/2015-October/000136.html
+        deadline: 2015-12-01
     'Legal and Policy issues':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002202.html
         deadline: 2015-11-29
@@ -46,6 +48,8 @@ days:
         ann: http://www.mysqlandfriends.eu/post/fosdem-mysql-friends-devroom-cfp-is-open/
         deadline: 2015-12-01
     'Open Document Editors':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002302.html
+        dealine: 2015-12-07
     'Open Media':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002193.html
         deadline: 2015-12-01
@@ -98,7 +102,7 @@ days:
         ann: http://fosdem.rubybelgium.be/cfp
         deadline: 2015-12-01
     'SDN and NFV':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002282.html
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002300.html
         deadline: 2015-11-18
     'Software Defined Radio':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002188.html
