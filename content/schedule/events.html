@@ -43,3 +43,7 @@ size = h.values.map(&:size).inject(:+)
         <% end %>
     </tbody>
 </table>
+
+<p>
+This information was last updated on <%= @item.mtime.strftime("%A %B %d, %Y at %H:%M:%S %Z") %>.
+</p>
