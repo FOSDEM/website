@@ -3,30 +3,53 @@ kind: internal
 days:
   both:
     'Distributions':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002297.html
+        deadline: 2015-12-10
     'Embedded':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002283.html
+        deadline: 2015-12-07
     'Free Java':
+        ann: https://lists.fosdem.org/pipermail/java-devroom/2015-October/000136.html
+        deadline: 2015-12-01
     'Legal and Policy issues':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002202.html
+        deadline: 2015-11-29
     'Virtualisation and IaaS':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002197.html
         deadline: 2015-12-01
 
   saturday:
     'Ada':
+        ann: http://www.cs.kuleuven.be/~dirk/ada-belgium/events/16/160130-fosdem.html
+        deadline: 2015-11-29
     'Containers and Process Isolation':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002294.html
+        deadline: 2015-12-01
     'EDA':
+        ann: http://www.ohwr.org/projects/ohr-meta/wiki/FOSDEM2016
+        deadline: 2015-12-04
     'GNU Guile':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002273.html
+        deadline: 2015-11-30
     'Graph Processing':
     'IoT':
         ann: http://iot-devroom.wikidot.com/blog:3
         deadline: 2015-12-01
     'Lua':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002291.html
+        deadline: 2015-12-01
     'Microkernels':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002191.html
         deadline: 2015-12-13
     'Mozilla':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002200.html
+        deadline: 2015-12-04
     'MySQL and Friends':
         ann: http://www.mysqlandfriends.eu/post/fosdem-mysql-friends-devroom-cfp-is-open/
+        deadline: 2015-12-01
     'Open Document Editors':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002302.html
+        dealine: 2015-12-07
     'Open Media':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002193.html
         deadline: 2015-12-01
@@ -34,32 +57,53 @@ days:
         ann: http://opensourcedesign.net/events/design/hack/meeting/2016/01/30/opensourcedesign-fosdem.html
         deadline: 2015-12-01
     'Python':
-    'Real Time':
+    'Real Time Communications':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002281.html
+        deadline: 2015-11-27
     'Security':
         ann: https://github.com/security-devroom/fosdem-2016
         deadline: 2015-12-10
     'Testing and Automation':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002198.html
+        deadline: 2015-11-30
 
   sunday:
     'BSD':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002189.html
         deadline: 2015-12-10
     'Coding for Language Communities':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002295.html
+        deadline: 2015-12-11
     'Config Management':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002201.html
+        deadline: 2015-12-01
     'Desktops':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002296.html
+        deadline: 2015-12-06
     'Geospatial':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/thread.html
+        deadline: 2015-12-01
     'Go':
         ann: https://forum.golangbridge.org/t/fosdem-2016-call-for-proposals/1358/1
+        deadline: 2015-12-05
     'Graphics':
     'HPC, Big Data and Data Science':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002290.html
+        deadline: 2015-12-04
     'LLVM Toolchain':
     'Open Game Development':
+        ann: http://gamelier.org/open-game-development-room-at-fosdem-call-for-participation/
+        deadline: 2015-12-04
     'PHP and Friends':
     'Perl':
         ann: https://wendyga.wordpress.com/2015/10/08/fosdem-30-31-january-2016-brussels-belgium-call-for-speakers/
     'PostgreSQL':
     'Ruby':
+        ann: http://fosdem.rubybelgium.be/cfp
+        deadline: 2015-12-01
     'SDN and NFV':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002300.html
+        deadline: 2015-11-18
     'Software Defined Radio':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002188.html
         deadline: 2015-12-04
