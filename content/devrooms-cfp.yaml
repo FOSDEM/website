@@ -87,14 +87,18 @@ days:
         ann: https://forum.golangbridge.org/t/fosdem-2016-call-for-proposals/1358/1
         deadline: 2015-12-05
     'Graphics':
+        ann: http://lists.x.org/archives/xorg-devel/2015-October/047719.html
     'HPC, Big Data and Data Science':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002290.html
         deadline: 2015-12-04
     'LLVM Toolchain':
+        ann: http://lists.llvm.org/pipermail/llvm-dev/2015-November/091906.html
+        deadline: 2015-12-01
     'Open Game Development':
         ann: http://gamelier.org/open-game-development-room-at-fosdem-call-for-participation/
         deadline: 2015-12-04
     'PHP and Friends':
+        ann: http://fosdemphp.cu.be/
     'Perl':
         ann: https://wendyga.wordpress.com/2015/10/08/fosdem-30-31-january-2016-brussels-belgium-call-for-speakers/
     'PostgreSQL':
