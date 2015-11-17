@@ -5,7 +5,7 @@ days:
     'Distributions':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002297.html
         deadline: 2015-12-10
-    'Embedded':
+    'Embedded, Mobile and Automotive':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002283.html
         deadline: 2015-12-07
     'Free Java':
@@ -102,6 +102,8 @@ days:
     'Perl':
         ann: https://wendyga.wordpress.com/2015/10/08/fosdem-30-31-january-2016-brussels-belgium-call-for-speakers/
     'PostgreSQL':
+        ann: http://fosdem2016.pgconf.eu/callforpapers/
+        deadline: 2015-12-07
     'Ruby':
         ann: http://fosdem.rubybelgium.be/cfp
         deadline: 2015-12-01
