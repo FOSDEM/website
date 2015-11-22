@@ -32,6 +32,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002273.html
         deadline: 2015-11-30
     'Graph Processing':
+        ann: http://graphdevroom.github.io/
+        deadline: 2015-12-14
     'IoT':
         ann: http://iot-devroom.wikidot.com/blog:3
         deadline: 2015-12-01
@@ -57,6 +59,7 @@ days:
         ann: http://opensourcedesign.net/events/design/hack/meeting/2016/01/30/opensourcedesign-fosdem.html
         deadline: 2015-12-01
     'Python':
+        ann: http://python-fosdem.org/
     'Real Time Communications':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002281.html
         deadline: 2015-11-27
