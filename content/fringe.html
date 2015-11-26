@@ -1,0 +1,46 @@
+---
+title: Fringe
+---
+
+<p>
+  The FOSDEM Fringe consists of independent events involving free and open source software taking place in the days around the FOSDEM weekend.
+  They are organised independently of FOSDEM so please refer any questions to the contacts listed.
+</p>
+
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Location</th>
+      <th>Starts</th>
+      <th>Ends</th>
+      <th>Cost</th>
+      <th>Registration</th>
+      <th>Website</th>
+      <th>Contact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% $item_by_id.fetch('/fringe-events/')[:events].each do |event_name, meta| %>
+    <tr>
+      <td><%= event_name.to_s %></td>
+      <td><%= meta[:location] %></td>
+      <td><%= meta[:start] %></td>
+      <td><%= meta[:end] %></td>
+      <td><%= meta[:cost] %></td>
+      <td><%= meta[:registration] %></td>
+      <td><a href="<%=  meta[:website] %>"><%= meta[:website] %></a></td>
+      <td><a href="mailto:<%= meta[:contact] %>"><%= meta[:contact] %></a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <a href="http://www.fosdem.org/fringe">Add your event</a>.
+</p>
+
+<p><em>
+  This information is provided in good faith and FOSDEM takes no responsibility for any errors, omissions or inaccuracies.
+</em></p>
+
