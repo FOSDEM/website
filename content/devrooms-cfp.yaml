@@ -51,7 +51,7 @@ days:
         deadline: 2015-12-01
     'Open Document Editors':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002302.html
-        dealine: 2015-12-07
+        deadline: 2015-12-07
     'Open Media':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002193.html
         deadline: 2015-12-01
@@ -60,6 +60,7 @@ days:
         deadline: 2015-12-01
     'Python':
         ann: http://python-fosdem.org/
+        deadline: 2015-12-11
     'Real Time Communications':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-October/002281.html
         deadline: 2015-11-27
@@ -91,6 +92,7 @@ days:
         deadline: 2015-12-05
     'Graphics':
         ann: http://lists.x.org/archives/xorg-devel/2015-October/047719.html
+        deadline: 2015-12-08
     'HPC, Big Data and Data Science':
         ann: https://lists.fosdem.org/pipermail/fosdem/2015-November/002290.html
         deadline: 2015-12-04
@@ -102,8 +104,10 @@ days:
         deadline: 2015-12-04
     'PHP and Friends':
         ann: http://fosdemphp.cu.be/
+        deadline: 2015-11-25
     'Perl':
         ann: https://wendyga.wordpress.com/2015/10/08/fosdem-30-31-january-2016-brussels-belgium-call-for-speakers/
+        deadline: 2015-12-08
     'PostgreSQL':
         ann: http://fosdem2016.pgconf.eu/callforpapers/
         deadline: 2015-12-07
