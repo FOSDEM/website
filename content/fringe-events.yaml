@@ -49,3 +49,19 @@ events:
         registration: In advance (advised)
         website: https://www.rdoproject.org/blog/2015/11/rdo-community-day-fosdem/
         contact: rbowen@redhat.com
+    'Configuration Management Camp 2016':
+        location: Ghent, Belgium
+        start: 2016-02-01
+        end: 2016-02-02
+        cost: Free
+        registration: In advance (waiting list)
+        website: http://cfgmgmtcamp.eu/
+        contact: info@cfgmgmtcamp.eu
+    'Juju Charmer Summit':
+        location: Ghent, Belgium
+        start: 2016-02-01
+        end: 2016-02-03
+        cost: Free
+        registration: In advance
+        website: http://summit.juju.solutions/
+        contact: jorge.castro@gmail.com
