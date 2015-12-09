@@ -65,3 +65,11 @@ events:
         registration: In advance
         website: http://summit.juju.solutions/
         contact: jorge.castro@gmail.com
+    'Foreman Construction Day':
+        location: Ghent, Belgium
+        start: 2016-02-03
+        end: 2016-02-03
+        cost: Free
+        registration: By 2016-01-17
+        website: https://www.eventbrite.com/e/foreman-construction-day-registration-19911909056
+        contact: greg.sutcliffe@gmail.com
