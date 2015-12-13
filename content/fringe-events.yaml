@@ -49,6 +49,14 @@ events:
         registration: In advance (advised)
         website: https://www.rdoproject.org/blog/2015/11/rdo-community-day-fosdem/
         contact: rbowen@redhat.com
+    'MINIXCon 2016':
+        location: Amsterdam
+        start: 2016-02-01
+        end: 2016-02-01
+        cost: 30-50 Euros
+        registration: In advance
+        website: http://www.minix3.org/conference/2016
+        contact: conference@minix3.org
     'Configuration Management Camp 2016':
         location: Ghent, Belgium
         start: 2016-02-01
@@ -73,3 +81,11 @@ events:
         registration: By 2016-01-17
         website: https://www.eventbrite.com/e/foreman-construction-day-registration-19911909056
         contact: greg.sutcliffe@gmail.com
+    'DevConf.cz':
+        location: Brno, Czech Republic
+        start: 2016-02-05
+        end: 2016-02-07
+        cost: Free
+        registration: None
+        website: http://www.devconf.cz/
+        contact: JBleha@redhat.com
