@@ -16,20 +16,19 @@ title: Fringe
       <th>Ends</th>
       <th>Cost</th>
       <th>Registration</th>
-      <th>Website</th>
       <th>Contact</th>
     </tr>
   </thead>
   <tbody>
     <% $item_by_id.fetch('/fringe-events/')[:events].each do |event_name, meta| %>
     <tr>
-      <td><%= event_name.to_s %></td>
+      <td><%= event_name.to_s %><br />
+          <a href="<%=  meta[:website] %>"><%= meta[:website] %></a></td>
       <td><%= meta[:location] %></td>
       <td><%= meta[:start] %></td>
       <td><%= meta[:end] %></td>
       <td><%= meta[:cost] %></td>
       <td><%= meta[:registration] %></td>
-      <td><a href="<%=  meta[:website] %>"><%= meta[:website] %></a></td>
       <td><a href="mailto:<%= meta[:contact] %>"><%= meta[:contact] %></a></td>
     </tr>
     <% end %>
