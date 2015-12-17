@@ -97,7 +97,7 @@ events:
         registration: None
         website: http://puppet-contributor-summit-ghent-2016.eventbrite.com/
         contact: kara@puppetlabs.com
-   'Puppet Camp Amsterdam':
+    'Puppet Camp Amsterdam':
         location: Amsterdam, Netherlands
         start: 2016-02-05
         end: 2016-02-05
