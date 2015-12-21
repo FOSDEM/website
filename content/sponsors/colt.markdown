@@ -4,24 +4,17 @@ url: http://www.colt.net/
 cornerstone: false
 ---
 
-Colt is the information delivery platform, enabling its customers to deliver,
-share, process and store their vital business information.
-An established leader in delivering integrated computing and network services to
-major organisations, midsized businesses and wholesale customers, Colt operates
-a 22-country, 43,000km network that includes metropolitan area networks in 39
-major European cities with direct fibre connections into 18,000 buildings and 20
-carrier neutral Colt data centres.
+Colt provides network, voice, and data centre services to thousands of
+businesses around the world, allowing them to focus on delivering their
+business goals instead of the underlying infrastructure. Customers include 18
+of the top 25 banks and diversified financial groups and 19 out of the top 25
+companies in both global media and telecoms industries (Forbes 2000 list,
+2014). In addition, Colt works with over 50 exchange venues and 13 European
+central banks.
 
-In 2010, the Colt Data Centre Services business was launched to deliver
-innovative high quality data centre solutions at a Colt or customer site.
-Our Innovative data centres are rapid to deploy, flexible and highly efficient.
-
-In addition to its direct sales capability, Colt has four indirect channels to
-market; Agent, Franchise, Distributor and Wholesale which includes Carriers,
-Service Providers, VARs and Voice Resellers.
-
-Colt is listed on the London Stock Exchange (COLT).
-Information about Colt and its services can be found at
-[http://www.colt.net/](http://www.colt.net/).
+Colt operates across Europe, Asia and North America with connections into over
+200 cities globally. It completed the acquisition of KVH in 2014, an
+integrated managed communications and IT infrastructure services business,
+with headquarters in Tokyo and operations in Hong Kong, Seoul and Singapore.
 
 Colt sponsors the internet uplink at FOSDEM.
