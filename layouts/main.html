@@ -6,7 +6,7 @@ $layout_dateline ||= begin
                      end
 %>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-  <head profile="http://a9.com/-/spec/opensearch/1.1/">
+  <head profile="http://a9.com/-/spec/opensearch/1.1/" prefix="og: http://ogp.me/ns#">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="nanoc"/>
@@ -30,6 +30,9 @@ $layout_dateline ||= begin
     <meta name="DC.Language" content="en" />
     <meta name="DC.Subject" content="<%= conference()[:title] %>" />
     <meta name="DC.Rights" content="http://creativecommons.org/licenses/by-sa/2.0/be/" />
+    <meta property="og:title" content="<%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="<%= conference()[:homepage] %><%= pathof('/assets/style/logo-gear/')[1..-1] %>" />
   </head>
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
     <div id="header">
