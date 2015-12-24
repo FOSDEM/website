@@ -33,16 +33,22 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
         </ul>
       <% end %>
     </div>
-  </div>
 
-  <div class="news-block">
-    <h2>FOSDEM 2016: 30 &amp; 31 January 2016 - Call for Participation</h2>
-    <p>
-      FOSDEM 2016 will take place at ULB Campus Solbosch on Saturday 30 and
-      Sunday 31 January 2016.<br/>
-      We are pleased to announce this year's <a href="/2016/news/2015-09-24-call-for-participation/">Call for Participation</a>.
-    </p>
-  </div>
+    <%
+    # Depending on the height of the sponsors graphic, general announcements
+    # (distinct from "news" by virtue of being undated) should either go here
+    # in an "announcement-block" div or be a "news-block" div below the
+    # "s-block" div. pph 20141210
+    %>
+
+    <div class="announcement-block">
+      <h2>FOSDEM 2016: 30 &amp; 31 January 2016 - Call for Participation</h2>
+      <p>
+        FOSDEM 2016 will take place at ULB Campus Solbosch on Saturday 30 and
+        Sunday 31 January 2016.<br/>
+        We are pleased to announce this year's <a href="/2016/news/2015-09-24-call-for-participation/">Call for Participation</a>.
+      </p>
+    </div>
   </div>
 
   <div class="news-block">
