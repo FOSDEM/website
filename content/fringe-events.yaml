@@ -17,6 +17,14 @@ events:
         registration: In advance (advised)
         website: http://zero.mq/bxl
         contact: pieter@hintjens.com
+    'LibreOffice HackFest':
+        location: Brussels
+        start: 2016-01-28
+        end: 2016-01-29
+        cost: Free
+        registration: In advance
+        website: https://wiki.documentfoundation.org/Hackfest/FOSDEM2016
+        contact: italo@documentfoundation.org
     'CentOS Dojo':
         location: Brussels
         start: 2016-01-29
