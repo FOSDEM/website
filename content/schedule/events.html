@@ -6,7 +6,7 @@ titlehead: false
 <%
 h = begin
       h = {}
-      tracks.reject(&$empty_track).sort_by{|t| [t[:rank], t[:conference_track_id]]}.each do |t|
+      tracks.sort_by{|t| [t[:rank], t[:conference_track_id]]}.each do |t|
         h[t] = t[:events].map(&$to_event)
       end
       h
