@@ -170,6 +170,7 @@ module Fosdem
                       require 'active_support/inflector/methods'
                       # Teach Inflector's i18n backend about some extra characters
                       # we'd like it to transliterate for us.
+                      I18n.config.available_locales = [:custom]
                       I18n.backend.store_translations(:custom, :i18n => {
                         :transliterate => {
                           :rule => {
