@@ -35,6 +35,7 @@ module Fosdem
       raise "invalid size: must be one of [#{$PARAMS.keys.join(", ")}]" unless params
 
       require 'prawn'
+      require 'prawn/table'
 
       Prawn::Document.new(
         page_size: params.fetch(:page_size),

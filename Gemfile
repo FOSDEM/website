@@ -18,6 +18,7 @@ gem "nokogiri"
 gem "pg"
 # we need git master here, implements colspan in tables:
 gem "prawn", git: "git://github.com/prawnpdf/prawn", branch: "master"
+gem "prawn-table"
 gem "rainpress"
 gem "rmagick"
 gem "systemu" # needed for "nanoc deploy"
