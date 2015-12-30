@@ -85,7 +85,7 @@ module Fosdem
   end
 
   def image_size(filename)
-    require 'RMagick'
+    require 'rmagick'
     image = Magick::Image.from_blob(IO.read(filename)).first
     begin
       [ image.columns, image.rows ]
@@ -180,7 +180,7 @@ module Fosdem
   end
 
   def sprite_image(filenames, format='PNG', optimize=true)
-    require 'RMagick'
+    require 'rmagick'
 
     images = []
     begin

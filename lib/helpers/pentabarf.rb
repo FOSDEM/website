@@ -1119,7 +1119,7 @@ module Fosdem
           image = nil
           begin
             i['image'] = PGconn.unescape_bytea(i['image'])
-            require 'RMagick'
+            require 'rmagick'
             image = Magick::Image.from_blob(i['image']).first
             blob, width, height = if image.rows > $logo_width or image.columns > $logo_height
                                     [ image.resize_to_fill($logo_width, $logo_height).to_blob, $logo_width, $logo_height ]
@@ -1245,7 +1245,7 @@ module Fosdem
           image = nil
           begin
             i['image'] = PGconn.unescape_bytea(i['image'])
-            require 'RMagick'
+            require 'rmagick'
             image = Magick::Image.from_blob(i['image']).first
             [
               { f: todo[:file],       mw: $photo_width, mh: $photo_height, m: todo[:meta],       mf: todo[:meta_file]       },
