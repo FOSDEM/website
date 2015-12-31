@@ -54,6 +54,7 @@ GEM
       ruby-rc4
       ttfunk
     pg (0.17.0)
+    prawn-table (0.2.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -92,6 +93,7 @@ DEPENDENCIES
   nokogiri
   pg
   prawn!
+  prawn-table
   pry
   rainpress
   rmagick
