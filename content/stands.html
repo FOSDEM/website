@@ -4,66 +4,66 @@
 # Use the format:   - Stand name: URL
 title: Stands
 stands:
-  K [level 1] (21):
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
+  All [in random order] (54):
+# H (7):
+   - CoreOS
+   - MongoDB
+   - BBC Open Source
+   - Python
+   - WolfSSL
+   - OSM / OpenArialMap
+   - MySQL
+# K [level 1] (25):
+   - KDE
+   - GNOME
+   - LibreOffice
+   - Kolab and Roudcube
+   - Enlightenment
+   - ownCloud
+   - illumos
+   - OpenSuse
+   - CentOS
+   - Fedora
+   - ReactOS
+   - BAREOS
+   - Debian
+   - PostgreSQL
+   - OpenMandriva
+   - Mageia
+   - Gentoo
+   - FSFE
+   - OpenVZ
+   - Xen
+   - OpenStack
+   - oVirt/Foreman
+   - Gluster
+   - DRLM
+   - CAcert
+# K [level 2] (16):
+   - Mozilla
+   - ASF
+   - Eclipse Foundation
+   - Jenkins
+   - Wikis and CMS
+   - MediaWiki
+   - Linux from scratch
+   - Perl
+   - Barghest
+   - Coala
+   - Google Summer of Code
+   - 3D Printing
+   - Diaspora
+   - PicoTCP
+   - Matrix
+   - The Realtime Lounge
+# AW (6):
+   - Coreboot / Flashrom
+   - PTXdist and Barebox
+   - Open hardware laptops
+   - JavaCard Pro
+   - OpenEmbedded
+   - Brainduino
 
-  K [level 2] (19):
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-  AW (12):
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-   - 
-  H (3):
-   - 
-   - 
-   - 
 ---
 <%
   # parse stands meta
@@ -72,6 +72,9 @@ stands:
       binfo = {}
       btables = {}
       item[:stands].each do |b, list|
+        if b.to_sym =~ %r{^#}
+          next
+        end
         if b.to_sym =~ %r{^(\S+)\s*(\[(.+?)\])?\s*(\((\d+)\))?\s*}
           building = {
             name: $1,
@@ -117,6 +120,10 @@ give away goodies and so forth, and to present themselves to the visitors
 in a more personal fashion.
 </p>
 <p>
+The following stands will be present at FOSDEM 2016.
+<%
+=begin
+%>
 <span class="label label-info">
 The list of accepted stands for FOSDEM 2016 has not yet been published!
 </span>
@@ -124,6 +131,9 @@ The list of accepted stands for FOSDEM 2016 has not yet been published!
 <p>
 There are stands in the following <%= l('/schedule/buildings/', 'buildings') %>:
 <%= binfo.values.map{|x| x[:name]}.uniq.join(", ") %>
+<%
+=end
+%>
 </p>
 
 <% buildings_per_row = 2 %>
