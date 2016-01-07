@@ -9,6 +9,14 @@ events:
         registration: In advance
         website: https://github.com/hpcugent/easybuild/wiki/1st-EasyBuild-User-Meeting
         contact: kenneth.hoste@ugent.be
+    'Computers, Privacy and Data Protection 2016':
+        location: Brussels
+        start: 2016-12-27
+        end: 2016-12-29
+        cost: 100 - 695 Euros
+        registration: Required
+        website: http://www.cpdpconferences.org/
+        contact: Dara.Hallinan@isi.fraunhofer.de
     'ZeroMQ FOSDEM Hackthon':
         location: Brussels
         start: 2016-01-27
@@ -121,3 +129,11 @@ events:
         registration: None
         website: http://www.devconf.cz/
         contact: JBleha@redhat.com
+    'ScalaSphere':
+        location: Kraków, Poland
+        start: 2016-02-11
+        end: 2016-02-12
+        cost: 0-400 PLN
+        registration: By 23rd Jan
+        website: http://scalasphere.org/
+        contact: events@virtuslab.com
