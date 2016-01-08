@@ -66,12 +66,12 @@ events:
         website: https://www.rdoproject.org/blog/2015/11/rdo-community-day-fosdem/
         contact: rbowen@redhat.com
     'Richard Stallman - Free/Libre/Vrije Software: The Goal and the Path':
-        location: Brussels - D0.03, Campus Etterbeek, VUB, Pleinlaan 2
+        location: Brussels - Campus Etterbeek, VUB
         start: 2016-01-29 19:30
-        end: 2016-01-29
+        end: 2016-01-29 21:00
         cost: Free
         registration: None
-        website: http://www.vub.ac.be/image/3brussel_large.jpg
+        website: http://www.freeasinfreedom.be/
         contact: kevin@vanbockryck.eu
     'MINIXCon 2016':
         location: Amsterdam
