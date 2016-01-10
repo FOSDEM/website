@@ -689,6 +689,8 @@ module Fosdem
                                    'keynote'
                                  when /^certification?$/i
                                    'certification'
+                                 when /^keysigning?$/i
+                                   'keysigning'
                                  else
                                    'maintrack'
                                  end
