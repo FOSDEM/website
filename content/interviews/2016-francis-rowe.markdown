@@ -46,9 +46,9 @@ We also have a mailing list, which currently consists of a few hundred people (s
 
 People who are interested in contributing can look at [this page](http://libreboot.org/git/).
 
-We have also a page listing [current areas of interest to work on](http://libreboot.org/docs/tasks.html). This can be expanded upon, and we will later implement a bug tracker on debbegs.gnu.org.
+We have also a page listing [current areas of interest to work on](http://libreboot.org/docs/tasks.html). This can be expanded upon, and we will later implement a bug tracker on debbugs.gnu.org.
 
-Libreboot is also joining the GNU project. There's still some [remaining work that we need to complete$(http://libreboot.org/gnu/).
+Libreboot is also joining the GNU project. There's still some [remaining work that we need to complete](http://libreboot.org/gnu/).
 
 Q: How difficult is it to install libreboot on your own system and which advantages do you get then?
 
