@@ -36,4 +36,4 @@ The LX work that's going on in SmartOS is amazing, and hopefully will be appeari
 
 Q: Have you enjoyed previous FOSDEM editions?
 
-I have not, and am looking very much forward to it.  Many European illumos users & developers will be in attendance:  some of whom I have never met in person.  I'm excited about face-to-face encounters.
+I have not previously attended, but am looking very much forward to it.  Many European illumos users & developers will be in attendance:  some of whom I have never met in person.  I'm excited about face-to-face encounters.
