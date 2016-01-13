@@ -551,10 +551,6 @@ module Fosdem
             p = speaker_by_person_id[cp['person_id']]
             # if we have no match (p) then it's not a speaker, and simply skip to the next
             if p
-              # copy that attribute, might be useful for investigating issues in
-              # the pentabarf database
-              p['conference_person_id'] = cp['conference_person_id']
-
               unless p.has_key? 'abstract' or p.has_key? 'description'
                 # copy those attributes and convert the markup
                 %w(abstract description).each do |a|
@@ -565,6 +561,8 @@ module Fosdem
                   p['abstract_old'] = true
                   p['description_old'] = true
                 end
+		# Store the record this data came from - links come from here 
+                p['conference_person_id'] = cp['conference_person_id']
                 next
               end
             else

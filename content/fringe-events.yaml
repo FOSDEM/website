@@ -33,6 +33,14 @@ events:
         registration: In advance
         website: https://wiki.documentfoundation.org/Hackfest/FOSDEM2016
         contact: italo@documentfoundation.org
+    'XMPP Standards Foundation Summit 19':
+        location: Brussels
+        start: 2016-01-28
+        end: 2016-01-29
+        cost: free
+        registration: wiki
+        website: http://wiki.xmpp.org/web/Summit_19
+        contact: summit@xmpp.org
     'CentOS Dojo':
         location: Brussels
         start: 2016-01-29
@@ -73,6 +81,14 @@ events:
         registration: None
         website: http://www.freeasinfreedom.be/
         contact: kevin@vanbockryck.eu
+    'BYTENIGHT':
+        location: Brussels - Molenbeek
+        start: 2016-01-30
+        end: 2016-01-31
+        cost: Free
+        registration: None
+        website: https://hackerspace.be/Bytenight_(2016)
+        contact: contact@hackerspace.be
     'MINIXCon 2016':
         location: Amsterdam
         start: 2016-02-01

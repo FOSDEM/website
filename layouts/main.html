@@ -81,7 +81,7 @@ $layout_dateline ||= begin
           <ul class="visual-panel">
             <%
               $eventcount ||= begin
-                                s = events.size
+                                s = events.size - 8 # 8 cert; 1 PGP; off-by-one
                                 if s > 400
                                   s.to_s
                                 else
