@@ -25,7 +25,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <p>
   FOSDEM is a very busy conference.
 <% if speakers.size > 100 and events.size > 100 %>
-  This edition features <%= speakers.size %> speakers, <%= events.size %>
+  This edition features <%= speakers.size %> speakers, <%= events.size + 1 %>
   events, and <%= tracks.size %> tracks.
 <% else %>
   Recent editions featured 400+ speakers, 500+ events and a wealth of tracks.
