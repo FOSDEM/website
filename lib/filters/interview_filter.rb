@@ -5,9 +5,22 @@ module Fosdem
     identifier :interview
     type :text
     def run(content, params={})
-      header = speaker_list(@item[:speaker], html=true)
+      header = ""
+      speakers = @item[:speaker]
+      unless speakers.is_a? Enumerable
+        speakers = [speakers]
+      end
+      speakers.each do |speaker|
+        speaker_page = @items["/schedule/speaker/#{speaker}/"]
+        photo = speaker_page[:photo] ? $item_by_id.fetch(speaker_page[:photo][:identifier]) : nil
+        if photo
+          header << "<img src='#{photo.path}' width='#{photo[:width]}' height='#{photo[:height]}' class='speaker-photo' alt='Photo of #{speaker_page[:name]}'/>"
+        end
+      end
+      header << "<p>" 
+      header << speaker_list(@item[:speaker], html=true)
       event = $item_by_id.fetch("/schedule/event/#{@item[:event]}/")
-      header << " will give a talk about <a href='#{event.path}'>#{@item[:topic]}</a> at FOSDEM #{@item[:year]}.\n"
+      header << " will give a talk about <a href='#{event.path}'>#{@item[:topic]}</a> at FOSDEM #{@item[:year]}.</p>\n"
       content = header.concat(content)
       content = content.gsub(%r{^<p>Q:\s*(.+?)</p>}m, '<h5><span class="label label-info">Q:</span> \1</h5>')
 
