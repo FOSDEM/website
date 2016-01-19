@@ -89,6 +89,14 @@ events:
         registration: None
         website: https://hackerspace.be/Bytenight_(2016)
         contact: contact@hackerspace.be
+    'StartupBus.Accelerate':
+        location: Brussels
+        start: 2016-01-30
+        end: 2016-01-30
+        cost: Free
+        registration: In advance
+        website: https://www.eventbrite.com/e/startupbusaccelerate-the-impact-of-open-source-software-on-the-tech-industry-tickets-20869395925
+        contact: steven@startupbus.com
     'MINIXCon 2016':
         location: Amsterdam
         start: 2016-02-01
