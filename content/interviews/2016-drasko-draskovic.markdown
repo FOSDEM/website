@@ -34,7 +34,7 @@ In the end we expect that the audience obtains information about how such a comp
 
 Q: What's the history of the Mainflux project? Why was it started and how did it evolve?
 
-The Mainflux project started behind the [WeIO](http://we-io.net) project, which is open source hardware that we designed for the purpose of electronic prototyping. The WeIO board was easy to connect and use in a LAN, but for remote control we needed a centralized server that would act as a transparent message bridge between devices. As we started connecting other devices than WeIO - for example less powerful microcontrollers with a lot of processing and memory constraints, we started to analyze other communication protocols (such as [CoAP](http://coap.technology/) and [MQTT](http://mqtt.org/)), and decided to make a server application that can can handle a large set of various sensors and actuators.
+The Mainflux project started behind the [WeIO](http://we-io.net) project, which is open source hardware that we designed for the purpose of electronic prototyping. The WeIO board was easy to connect and use in a LAN, but for remote control we needed a centralized server that would act as a transparent message bridge between devices. As we started connecting other devices than WeIO - for example less powerful microcontrollers with a lot of processing and memory constraints, we started to analyze other communication protocols (such as [CoAP](http://coap.technology/) and [MQTT](http://mqtt.org/)), and decided to make a server application that can handle a large set of various sensors and actuators.
 
 At first we did a survey of existing open systems in order to learn how such a system can be implemented. Unfortunately, we found practically no open implementation, especially not one that can be run on a local gateway or form a mesh between gateways and distributed servers.
 
@@ -74,7 +74,7 @@ There are many things planned for the future months, and some of them are:
   * Add support for missing protocols and improve APIs.
   * Finish the [LWM2M](http://openmobilealliance.hs-sites.com/lightweight-m2m-specification-from-oma) standard implementation.
   * Pub/sub context broker based on [Redis](http://redis.io/) for protocol-to-protocol translation and streaming.
-  * Implement client libraries, especially embedded firmware libraries for constrained devices (in cooperation with [Project Iota](http://projectiota.github.io/).
+  * Implement client libraries, especially embedded firmware libraries for constrained devices (in cooperation with [Project Iota](http://projectiota.github.io/)).
 
 We expect a lot of improvements and progress on both embedded firmware libraries and web server parts.
 
