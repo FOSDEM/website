@@ -24,6 +24,6 @@ STATUS:CONFIRMED
 CATEGORIES:<%= event[:track_name] %>
 URL:<%= "#{@site.config.fetch(:base_url)}/#{event(event[:slug]).path}".gsub(%r{/+}, '/') %>
 LOCATION:<%= event[:room_name] %>
-<% event[:speakers].map(&$to_speaker).each do |speaker| %>ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="<%= speaker[:name] %>":invalid:nomail
+<% event[:speakers].map(&$to_speaker).each do |speaker| %>ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="<%= speaker[:name].gsub(/"/, "^'") %>":invalid:nomail
 <% end %>END:VEVENT
 <% end %>END:VCALENDAR
