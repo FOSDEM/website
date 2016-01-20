@@ -6,7 +6,7 @@ event: universal_network
 
 Q: Could you briefly introduce yourself? 
 
-**Adrien Béraud**: I'm a software engineer at [Savoir-Faire Linux](https://www.savoirfairelinux.com/) in Montreal (Canada). I work mostly as a maintainer of the [OpenDHT](https://github.com/savoirfairelinux/opendht) library and as a developer of the [Ring](https://ring.cx/en) Android client. Free software enthusiast, I'm passionate about robotics, artifical intelligence and distributed systems such as Bittorrent, Bitcoin and distributed hash tables. Such interest prompted me to imagine a distributed system to communicate in real-time. Then OpenDHT was born.
+**Adrien Béraud**: I'm a software engineer at [Savoir-faire Linux](https://www.savoirfairelinux.com/) in Montreal (Canada). I work mostly as a maintainer of the [OpenDHT](https://github.com/savoirfairelinux/opendht) library and as a developer of the [Ring](https://ring.cx/en) Android client. Free software enthusiast, I'm passionate about robotics, artifical intelligence and distributed systems such as Bittorrent, Bitcoin and distributed hash tables. Such interest prompted me to imagine a distributed system to communicate in real-time. Then OpenDHT was born.
 
 **Guillaume Roguez**: I'm a senior free-software consultant and I lead the Ring project team. Over the past 15 years, I worked on different projects, like porting Blender and Python. There are so many things to create and improve for Ring that it's a great challenge! We are a small team and we get good results because we are all passionate. Ring is a free project for everyone on the planet. I'm proud to manage it and I'm honored to introduce it for the FOSDEM.
 
@@ -43,6 +43,19 @@ Q: Which new features can we expect in Ring and OpenDHT this year?
 **Guillaume Roguez**: Ring will have big new features. For example, we will add secure file transfer. We will propose a public version on the Android platform. And, for its beta version, Ring will have better visual front-ends.
 
 **Adrien Béraud**: We also hope to add data indexation on the OpenDHT network thanks to research at the UQAM University (Montreal). That would allow us to optionally publish and search user profiles or select random relay nodes. Data persistance was recently implemented. Thus, it will soon be possible to use the DHT to store undelivered encrypted text messages.
+
+Q: How can interested people contribute to Ring?
+
+To join the Ring adventure, there are various public tools:
+
+  * [General information](https://ring.cx) (find binary packages, documentation links, news, ...)
+  * Discussion:
+    * [Mailing List](https://lists.savoirfairelinux.net/mailman/listinfo/ring)
+    * IRC : #ring on freenode.org
+  * Development:
+    * [Issue tracking](https://tuleap.ring.cx/projects/ring/)
+    * [Patchset review and repository firewall](https://gerrit-ring.savoirfairelinux.com)
+  * [Online translation](https://www.transifex.com/savoirfairelinux/ring/)
 
 Q: Have you enjoyed previous FOSDEM editions?
 
