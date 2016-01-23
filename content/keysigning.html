@@ -98,15 +98,15 @@ gpg --verify ksp-<%= klist %>.txt.sig ksp-<%= klist %>.txt
 </pre>
 
 <p>
-  Besides the official list (<code>ksp-<%= klist %>.txt</code>), we also provide
+  Besides the official list, <code>ksp-<%= klist %>.txt</code>, we also provide
   non-authoritative files that may make your life easier.  It is up to you, the
   participant, to verify that these files actually contain the same information
-  than the official list: e.g. for the `keyring.gpg` file, you could run the
-  `keylist.txt.sh` script and verify that the output similar enough to the
-  official list.  Note that different GnuPG version may output slightly
-  different output.  In particular, GnuPG older than version 2.1 uses <a
-  href="https://www.gnupg.org/faq/whats-new-in-2.1.html#keylist">a different key
-  format</a>.
+  than the official list: e.g. for the <code>keyring.gpg</code> file,
+  you could run the <code>keylist.txt.sh</code> script and verify that
+  the output similar enough to the official list.  Note that different
+  GnuPG version may output slightly different output.  In particular,
+  GnuPG older than version 2.1 uses
+  <a href="https://www.gnupg.org/faq/whats-new-in-2.1.html#keylist">a different key format</a>.
 </p>
 
 
@@ -115,9 +115,12 @@ gpg --verify ksp-<%= klist %>.txt.sig ksp-<%= klist %>.txt
 <p>
   The keysigning event takes place on Sunday, at 14:00, in the corridor on the
   second level of the U building.  There is no fixed end time.  Previous
-  editions last for approximately 1 hour per 100 keys on the list.
-  Please bring the printed list, a pen and appropriate form of identification
-  with you to <%= conference()[:title] %>.
+  editions last for approximately one hour per 100 keys on the list.
+  To participate, you should have submitted your keys before the deadline.
+  Please bring the <strong>printed list</strong>, a <strong>pen</strong>
+  and appropriate form of <strong>identification</strong> with you to
+  <%= conference()[:title] %>.
+  Note that it is not possible to print the list at the conference.
 </p>
 
 <p>
@@ -166,6 +169,9 @@ The hashes:              ☐
 
 <p>
   Please complete your signing homework before
-  <strong><%= conf.fetch(:homework_due).strftime(dateformat) %></strong>, and
-  upload new signatures on your keys to a well-connected keyserver.
+  <strong><%= conf.fetch(:homework_due).strftime(dateformat) %></strong>,
+  and send your key signatures to the verified key owners,
+  or upload them to a well-connected keyserver.
+  You may find <a href="https://wiki.debian.org/caff">caff</a>
+  a helpful tool.
 </p>
