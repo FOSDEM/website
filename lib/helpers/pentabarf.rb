@@ -785,6 +785,29 @@ module Fosdem
         end
       end
 
+      # Add video links for 20 minutes before and after each event
+      begin
+	events.each do |e|
+	  next if e['room'] =~ /corridor/
+	  next if e['track'] =~ /certification/
+          current_time = Time.now
+
+	  # Uncomment the following line to test what the site looks like at a specific time
+          # current_time = Time.parse('2016-01-30 13:15:00.000000000 +0100')
+
+	  event_start = Time.parse(e['start_datetime'])
+	  event_end = Time.parse(e['end_datetime'])
+	  next if event_start - current_time > 20 * 60
+	  next if current_time - event_end > 20 * 60
+
+	  ll = {}
+	  ll['title'] = 'Live video stream from the room'
+	  ll['url'] = 'https://live.fosdem.org/watch.php?room=' << e['room']
+	  ll['rank'] = nil
+	  e['links'] << ll
+	end
+      end
+
       # add rooms to tracks
       tracks.each do |t|
         trackevents = events_by_track_id.fetch(t['conference_track_id'], []).sort_by{|e| e['start_datetime']}
