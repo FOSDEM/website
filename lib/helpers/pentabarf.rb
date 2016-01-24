@@ -787,6 +787,7 @@ module Fosdem
 
       # Add video links for 20 minutes before and after each event
       begin
+	video_link_count = 0
 	events.each do |e|
 	  next if e['room'] =~ /corridor/
 	  next if e['track'] =~ /certification/
@@ -805,7 +806,9 @@ module Fosdem
 	  ll['url'] = 'https://live.fosdem.org/watch.php?room=' << e['room']
 	  ll['rank'] = nil
 	  e['links'] << ll
+	  video_link_count += 1
 	end
+	log(:high, "added #{video_link_count} live video links")
       end
 
       # add rooms to tracks
