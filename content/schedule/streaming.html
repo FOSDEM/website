@@ -12,7 +12,7 @@ sponsors_under_navigation: true
   current_event = nil
 
   # Uncomment the following line to test what the site looks like at a specific time
-  #current_time = Time.parse('2016-01-31 09:30:00.000000000 +0100')
+  #current_time = Time.parse('2016-01-31 14:20:00.000000000 +0100')
 
   current_date = current_time.to_date
 %>
@@ -85,14 +85,13 @@ are available, too.</p>
 	    %>
 	    <% if current_event %>
 	      <td><%= l(current_event) %> - <%= l current_event[:speakers].map(&$to_speaker) %> (<%= current_event[:start_time] %>-<%= current_event[:end_time] %>)</td>
-	      <td><a href="http://live.fosdem.org/watch.php?room=<%= r[:slug] %>">Watch Live!</a></td>
 	    <% else %>
-	      <% if r[:slug] =~ /corridor/ or r[:slug] =~ /h3227/ %>
-		<td></td>
-	      <% else %>
-	        <td>No event scheduled.</td>
-	      <% end %>
+	      <td>No event scheduled.</td>
+	    <% end %>
+	    <% if r[:slug] =~ /corridor/ or r[:slug] =~ /h3227/ or !current_event %>
 	      <td></td>
+	    <% else %>
+	      <td><a href="http://live.fosdem.org/watch.php?room=<%= r[:slug] %>">Watch Live!</a></td>
 	    <% end %>
 	  <% end %>
         </tr>
