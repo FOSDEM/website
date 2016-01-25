@@ -137,6 +137,14 @@ events:
         registration: In advance
         website: http://summit.juju.solutions/
         contact: jorge.castro@gmail.com
+    'Totalism Hackbase Season 4-C camp':
+        location: Lanzarote, Canary Islands
+        start: 2016-02-02
+        end: 2016-03-08
+        cost: 100 Euros / week
+        registration: By email
+        website: http://totalism.org/season4-C
+        contact: info@totalism.org
     'Foreman Construction Day':
         location: Ghent, Belgium
         start: 2016-02-03
