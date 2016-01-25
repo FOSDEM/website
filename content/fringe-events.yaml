@@ -11,8 +11,8 @@ events:
         contact: kenneth.hoste@ugent.be
     'Computers, Privacy and Data Protection 2016':
         location: Brussels
-        start: 2016-12-27
-        end: 2016-12-29
+        start: 2016-01-27
+        end: 2016-01-29
         cost: 100 - 695 Euros
         registration: Required
         website: http://www.cpdpconferences.org/
@@ -113,6 +113,14 @@ events:
         registration: In advance (waiting list)
         website: http://cfgmgmtcamp.eu/
         contact: info@cfgmgmtcamp.eu
+    'Buildroot Developer Days':
+        location: Brussels
+        start: 2016-02-01
+        end: 2016-02-02
+        cost: Free
+        registration: Required
+        website: http://elinux.org/Buildroot:DeveloperDaysFOSDEM2016
+        contact: yann.morin.1998@free.fr
     'Jenkins 2.0 Contributor Summit':
         location: Brussels
         start: 2016-02-01
