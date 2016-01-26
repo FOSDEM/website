@@ -16,6 +16,33 @@ ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_dat
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
 %>
 
+<div class="info-block">
+  <div class="more-info">
+    <h2>Quick links:</h2>
+<ul>
+  <li>Timetables: 
+    <%= l days %>
+  </li>
+  <li>Overview of <a href="<%= pathof '/schedule/roomtracks/' %>">rooms per days</a></li>
+  <li>Mobile site: <a href="<%= pathof '/mobile/' %>">http://fosdem.org/mobile</a></li>
+  <li>Mobile apps: <a href="<%= pathof '/schedule/mobile/' %>">many platforms</a></li>
+  <li>What's on now: <a href="page:/schedule/streaming">Live streaming</a></li>
+  <li>Sat Booklet: <a href="asset:booklet_saturday">Colour</a> <!-- , <a href="asset:booklet_saturday_simple">Simple</a>(<a href="asset:booklet_saturday_simple_printable">print</a>) --> </li>
+  <li>Sun Booklet: <a href="asset:booklet_sunday">Colour</a> <!-- , <a href="asset:booklet_sunday_simple">Simple</a>(<a href="asset:booklet_sunday_simple_printable">print</a>) --> </li>
+<%
+  pdfs = items.select{|x| x.identifier =~ %r{^/schedule/pdf/[^/]+/$}}.sort_by{|x| x[:page_size]}.reverse
+  unless pdfs.empty?
+%>
+  <li>Printable PDF:
+  <% pdfs.each do |pdf| %>
+    <%= l(pdf, pdf[:page_size].to_s.upcase) %>
+  <% end %>
+<% end %>
+</ul>
+    </div>
+    <div>
+
+
 <p>
   Every year, FOSDEM hosts a wide variety of activities.
   This page gives an overview with links to further information about
