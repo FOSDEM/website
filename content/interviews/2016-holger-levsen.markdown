@@ -72,7 +72,7 @@ And then there are (some) embedded folks, for whom it is apperantly entirely nor
 
 (BTW: I'd be curious to learn more about the state of reproducible builds for embedded (in human bodies, no less) medical devices, though I have to admit I'm a bit scared about what I might learn.)
 
-So long story short: because it is a pretty hard problem, at least for larger projects with diverse codebase like distributions - and then it's also a problem which very few years ago many people didnt even know it exists (and less so what advantages there are in solving it).
+So long story short: because it is a pretty hard problem, at least for larger projects with diverse codebases like distributions - and then it's also a problem which very few years ago many people didnt even know it exists (and less so what advantages there are in solving it).
 
 And, to correct my short answer: it's not just one problem. There are many many causes for many many problems :-) I guess it's not needless to say that there are often several solutions for each problem too.
 
