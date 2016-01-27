@@ -6,7 +6,7 @@ event: distros_rethinking
 
 Q: Could you briefly introduce yourself? 
 
-I have 20 yearsi experience working in the software world, most of that time spent in consulting. I have had jobs ranging from programmer to architect to VP of engineering. I am really excited about the direction of computing the past few years allowing us to develop systems that are more resilient and reliable through models like DevOps, microservices, and the perpetual beta. The reinvigoration of the AI space is also really exciting. However, at the end of the day, I just want software to simplify and improve the lives of individuals. I believe in open source for two main reasons: first, because it helps to make all software available to everyone, and second, because it allows us all to "stand on the shoulders of giants."
+I have 20 years experience working in the software world, most of that time spent in consulting. I have had jobs ranging from programmer to architect to VP of engineering. I am really excited about the direction of computing the past few years allowing us to develop systems that are more resilient and reliable through models like DevOps, microservices, and the perpetual beta. The reinvigoration of the AI space is also really exciting. However, at the end of the day, I just want software to simplify and improve the lives of individuals. I believe in open source for two main reasons: first, because it helps to make all software available to everyone, and second, because it allows us all to "stand on the shoulders of giants."
 
 Q: What will your talk be about, exactly? Why this topic?
 
