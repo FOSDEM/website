@@ -65,6 +65,14 @@ events:
         registration: On the day
         website: http://fosdem2016.pgconf.eu/
         contact: contact@pgconf.eu
+    'GitHub Patchwork':
+        location: Brussels
+        start: 2016-01-29
+        end: 2016-01-29
+        cost: Free
+        registration: None
+        website: https://ti.to/github-events/patchwork-brussels-2016
+        contact: patchwork@github.com
     'RDO Community Day':
         location: Brussels
         start: 2016-01-29
@@ -81,6 +89,14 @@ events:
         registration: None
         website: http://www.freeasinfreedom.be/
         contact: kevin@vanbockryck.eu
+    'NethServer Community Dinner':
+        location: Bruxelles
+        start: 2016-01-30
+        end: 2016-01-30
+        cost: Free
+        registration: None
+        website: http://www.nethserver.org/nethserver-community-at-fosdem-16/
+        contact: alessio.fattorini@nethserver.org
     'BYTENIGHT':
         location: Brussels - Molenbeek
         start: 2016-01-30
