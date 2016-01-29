@@ -41,6 +41,14 @@ events:
         registration: wiki
         website: http://wiki.xmpp.org/web/Summit_19
         contact: summit@xmpp.org
+    'Brussels Erlang Factory Lite 2016':
+        location: Brussels
+        start: 2016-01-29
+        end: 2016-01-29
+        cost: Free
+        registration: None
+        website: http://www.erlang-factory.com/brussels2016
+        contact: richard.benaleya@scasol.com
     'CentOS Dojo':
         location: Brussels
         start: 2016-01-29
