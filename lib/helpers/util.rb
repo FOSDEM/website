@@ -58,6 +58,7 @@ module Fosdem
     .gsub(%r{\s+}, '_')
     .gsub(/[\s\-\+]+/, '_')
     .gsub(/["']+/, '')
+    .gsub(/\./, '_')
     [ d, "#{b}.#{e}", b, e ]
   end
 
