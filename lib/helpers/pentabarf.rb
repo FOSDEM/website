@@ -811,6 +811,20 @@ module Fosdem
 	log(:high, "added #{video_link_count} live video links")
       end
 
+      # Add feedback links (FIXME Only after the event!)
+      begin
+	feedback_link_count = 0
+	events.each do |e|
+          ll = {}
+          ll['title'] = 'Submit feedback'
+          ll['url'] = "https://submission.fosdem.org/feedback/#{e['event_id']}.php"
+          ll['rank'] = nil
+          e['links'] << ll
+	  feedback_link_count += 1
+        end
+        log(:high, "added #{feedback_link_count} feedback links")
+      end
+
       # add rooms to tracks
       tracks.each do |t|
         trackevents = events_by_track_id.fetch(t['conference_track_id'], []).sort_by{|e| e['start_datetime']}
