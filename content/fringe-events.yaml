@@ -113,6 +113,14 @@ events:
         registration: None
         website: https://hackerspace.be/Bytenight_(2016)
         contact: contact@hackerspace.be
+    'MySQL And Friends Community Dinner':
+        location: Brussels, Belgium
+        start: 2016-01-30
+        end: 2016-01-30
+        cost: 20 Euros
+        registration: order ticket on eventbrite
+        website: https://fosdem2016mysqlandfriendscommunitydinner.eventbrite.com
+        contact: kenny@goss.be
     'StartupBus.Accelerate':
         location: Brussels
         start: 2016-01-30
