@@ -1,12 +1,12 @@
 ---
 year: 2016
-speaker: francis_rowe 
+speaker: leah_woods 
 event: libreboot
 ---
 
 Q: Could you briefly introduce yourself? 
 
-My name is Francis Rowe, I'm a Free Software developer and activist. I founded the [libreboot](http://libreboot.org/) project 3 years ago, and have been working on it ever since. Libreboot is a free/libre BIOS replacement.
+My name is Leah Woods, I'm a Free Software developer and activist. I founded the [libreboot](http://libreboot.org/) project 3 years ago, and have been working on it ever since. Libreboot is a free/libre BIOS replacement.
 
 Q: What will your talk be about, exactly? Why this topic?
 
