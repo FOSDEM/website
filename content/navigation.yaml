@@ -20,11 +20,8 @@ footer:
     - Archives: /archives
   - This year:
     - /schedule
-    - /stands
     - /certification
     - /keysigning
-    - /beerevent
-    - /sightseeing
     - /fringe
   - Practical information:
     - Getting there: /practical/transportation
@@ -33,5 +30,4 @@ footer:
     - /practical/conduct
   - Media and press:
     - /interviews
-    - /support/promote
     - Video recordings: 'http://video.fosdem.org/'
