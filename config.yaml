@@ -138,15 +138,15 @@ watcher:
 deploy:
   public:
     kind: rsync
-    dst:  "www-public@www-public.fosdem.org:/www/fosdem.org/public/2016"
+    dst:  "www-public@www-public.fosdem.org:/www/fosdem.org/public/2017"
     options: [ '-avzP', '--delete-after' ]
   default:
     kind: rsync
-    dst:  "www-staging@www-public.fosdem.org:/www/staging.fosdem.org/public/2016"
+    dst:  "www-staging@www-public.fosdem.org:/www/staging.fosdem.org/public/2017"
     options: [ '-avzP', '--delete-after' ]
 
 pentabarf:
-  conference_id: FOSDEM16
+  conference_id: FOSDEM17
   username: nanoc
   #password: 
   database: pentabarf
@@ -170,8 +170,8 @@ pentabarf:
     height: 200
 
 keysigning:
-  submission_deadline: 2016-01-24
-  homework_due: 2016-04-30
+  submission_deadline: 2017-01-24
+  homework_due: 2017-04-30
   # Change these when the submission window opens/closes.
   submission_notyet: false
   submission_closed: true
