@@ -44,8 +44,8 @@ days:
         ann:
         deadline:
     'MySQL and Friends':
-        ann:
-        deadline:
+        ann: http://www.mysqlandfriends.eu/post/fosdem-2017s-mysql-friends-devroom-call-for-papers-is-now-open/
+        deadline: 2016-12-06
     'Open Document Editors':
         ann:
         deadline:
@@ -109,8 +109,8 @@ days:
         ann:
         deadline:
     'Open Source Design':
-        ann:
-        deadline:
+        ann: http://opensourcedesign.net/events/2017/02/05/opensourcedesign-fosdem-2017
+        deadline: 2016-12-01
     'PHP and Friends':
         ann:
         deadline:
