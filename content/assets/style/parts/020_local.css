@@ -50,8 +50,8 @@ ul.horizontal-list li:first-child:before {
 }
 img.s-logo {
   float: right;
-  margin-left: 1em;
-  margin-bottom: 1em;
+  margin-left: 3em;
+  margin-bottom: 4ex;
 }
 img.s-box-logo {
   padding: 0.1em 0.05em;

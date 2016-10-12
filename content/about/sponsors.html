@@ -19,9 +19,9 @@ sponsors_root: true
   <%= l('/support/donate/', 'donations') %> page for more information.
 </p>
 
-<div id="s-quick-links">
+<div id="s-quick-links"><br />
     <% [ lambda{|s| s.cornerstone?}, lambda{|s| not s.cornerstone?} ].each_with_index do |row, i| %>
-        <% if i > 0 %><br /><% end %>
+        <% if i > 0 %><br /><br /><br /><% end %>
         <% sponsors.select{|s| s.include_in_toplevel? }.select(&row).each do |s| %>
             <a href="#<%= s.id %>">
                 <% if s.thumb? then %>
@@ -29,7 +29,7 @@ sponsors_root: true
                 <% else %>
                     <%= s.name %>
                 <% end %>
-            </a>
+            </a> &nbsp; &nbsp;
         <% end %>
     <% end %>
 </div>

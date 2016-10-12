@@ -1,6 +1,6 @@
 ---
 title: Cercle Informatique ULB
-url: http://www.cerkinfo.be
+url: http://www.cerkinfo.be/
 section: thanks
 order: 1000
 ---
