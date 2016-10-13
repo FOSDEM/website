@@ -11,8 +11,8 @@ days:
 
   saturday:
     'Backup and Disaster Recovery':
-        ann:
-        deadline:
+        ann: https://github.com/gdha/backup-disaster-recovery-devroom-fosdem-2017
+        deadline: 2016-12-02
     'Config Management':
         ann:
         deadline:
