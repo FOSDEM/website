@@ -88,8 +88,8 @@ days:
         ann:
         deadline:
     'Geospatial':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002458.html
+        deadline: 2016-12-01
     'Go':
         ann:
         deadline:
