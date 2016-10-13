@@ -57,9 +57,19 @@ fieldset{
 	display:block;
 	height:100%;
 }
+.logo-google{
+	display:block;
+	overflow:hidden;
+	margin-top: 4ex;
+	margin-bottom: 4ex;
+	text-indent:-9999px;
+	background:url(sprite.png) no-repeat;
+}
 .logo-redhat{
 	display:block;
 	overflow:hidden;
+	margin-top: 5ex;
+	margin-bottom: 4ex;
 	text-indent:-9999px;
 	background:url(sprite.png) no-repeat;
 }
