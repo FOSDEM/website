@@ -68,8 +68,8 @@ days:
         ann:
         deadline:
     'Virtualisation and IaaS':
-        ann:
-        deadline:
+        ann: http://www.ovirt.org/blog/2016/10/call-for-proposal-fosdem-2017/
+        deadline: 2016-11-18
 
   sunday:
     'BSD':
@@ -94,8 +94,8 @@ days:
         ann:
         deadline:
     'LLVM Toolchain':
-        ann:
-        deadline:
+        ann: http://lists.llvm.org/pipermail/llvm-dev/2016-October/105815.html
+        deadline: 2016-12-01
     'Linux Containers and Microservices':
         ann:
         deadline:
