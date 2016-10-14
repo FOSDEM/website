@@ -14,8 +14,8 @@ days:
         ann: https://github.com/gdha/backup-disaster-recovery-devroom-fosdem-2017
         deadline: 2016-12-02
     'Config Management':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002459.html
+        deadline: 2016-11-18
     'Distributions':
         ann:
         deadline:
