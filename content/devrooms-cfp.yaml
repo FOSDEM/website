@@ -103,8 +103,8 @@ days:
         ann:
         deadline:
     'Open Game Development':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002460.html
+        deadline: 2016-12-04
     'Open Media':
         ann:
         deadline:
