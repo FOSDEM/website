@@ -3,8 +3,8 @@ kind: internal
 days:
   both:
     'Legal and Policy Issues':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002462.html
+        deadline: 2016-11-27
     'Embedded, Mobile and Automotive':
         ann:
         deadline:
@@ -85,8 +85,8 @@ days:
         ann:
         deadline:
     'Electronic Design Automation':
-        ann:
-        deadline:
+        ann: http://www.ohwr.org/projects/ohr-meta/wiki/FOSDEM2017
+        deadline: 2016-12-01
     'Geospatial':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002458.html
         deadline: 2016-12-01
