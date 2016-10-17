@@ -38,8 +38,8 @@ days:
         ann:
         deadline:
     'Microkernels and Component-based OS':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002463.html
+        deadline: 2016-12-04
     'Mozilla':
         ann:
         deadline:
