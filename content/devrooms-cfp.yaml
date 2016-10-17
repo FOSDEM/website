@@ -73,8 +73,8 @@ days:
 
   sunday:
     'BSD':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002464.html
+        deadline: 2016-11-27
     'Community':
         ann:
         deadline:
