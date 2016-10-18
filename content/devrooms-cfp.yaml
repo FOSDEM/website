@@ -23,8 +23,8 @@ days:
         ann:
         deadline:
     'GNU Guile':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002469.html
+        deadline: 2016-11-18
     'Graph Processing':
         ann:
         deadline:
@@ -115,7 +115,7 @@ days:
         ann: https://fosdemphp.cu.be/
         deadline: 2016-11-25
     'Perl':
-        ann:
+        ann: https://wendyga.wordpress.com/2016/10/08/fosdem-04-05-february-2017-brussels-belgium-call-for-speakers/
         deadline:
     'PostgreSQL':
         ann:
