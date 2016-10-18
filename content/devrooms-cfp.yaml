@@ -65,8 +65,8 @@ days:
         ann:
         deadline:
     'Valgrind':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002467.html
+        deadline: 2016-12-01
     'Virtualisation and IaaS':
         ann: http://www.ovirt.org/blog/2016/10/call-for-proposal-fosdem-2017/
         deadline: 2016-11-18
@@ -112,8 +112,8 @@ days:
         ann: http://opensourcedesign.net/events/2017/02/05/opensourcedesign-fosdem-2017
         deadline: 2016-12-01
     'PHP and Friends':
-        ann:
-        deadline:
+        ann: https://fosdemphp.cu.be/
+        deadline: 2016-11-25
     'Perl':
         ann:
         deadline:
