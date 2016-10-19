@@ -121,8 +121,8 @@ days:
         ann:
         deadline:
     'Python':
-        ann:
-        deadline:
+        ann: http://python-fosdem.org/cfp.html
+        deadline: 2016-12-02
     'Software Defined Storage':
         ann:
         deadline:
