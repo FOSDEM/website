@@ -53,17 +53,17 @@ days:
         ann:
         deadline:
     'Ruby':
-        ann:
-        deadline:
+        ann: http://fosdem.rubybelgium.be/
+        deadline: 2016-12-04
     'SDN and NFV':
         ann:
         deadline:
     'Security':
-        ann:
-        deadline:
+        ann: https://github.com/security-devroom/fosdem-2017
+        deadline: 2016-12-01
     'Software Defined Radio':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002471.html
+        deadline: 2016-12-09
     'Valgrind':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002467.html
         deadline: 2016-12-01
@@ -76,8 +76,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002464.html
         deadline: 2016-11-27
     'Community':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002470.html
+        deadline: 2016-11-25
     'Decentralised Internet':
         ann:
         deadline:
