@@ -6,8 +6,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002462.html
         deadline: 2016-11-27
     'Embedded, Mobile and Automotive':
-        ann:
-        deadline:
+        ann: http://lists.genivi.org/pipermail/genivi-projects/2016-October/003088.html
+        deadline: 2016-12-12
 
   saturday:
     'Backup and Disaster Recovery':
@@ -29,11 +29,11 @@ days:
         ann:
         deadline:
     'HPC, Big Data, and Data Science':
-        ann:
-        deadline:
+        ann: https://hpc-bigdata-fosdem17.github.io/
+        deadline: 2016-12-02
     'Internet of Things':
-        ann:
-        deadline:
+        ann: https://github.com/maximevince/IoT-devroom-fosdem
+        deadline: 2016-12-01
     'Lua':
         ann:
         deadline:
@@ -56,8 +56,8 @@ days:
         ann: http://fosdem.rubybelgium.be/
         deadline: 2016-12-04
     'SDN and NFV':
-        ann:
-        deadline:
+        ann: https://blogs.gnome.org/bolsh/2016/10/19/fosdem-sdn-nfv-devroom-call-for-content/
+        deadline: 2016-11-16
     'Security':
         ann: https://github.com/security-devroom/fosdem-2017
         deadline: 2016-12-01
@@ -118,14 +118,14 @@ days:
         ann: https://wendyga.wordpress.com/2016/10/08/fosdem-04-05-february-2017-brussels-belgium-call-for-speakers/
         deadline:
     'PostgreSQL':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002474.html
+        deadline: 2016-11-13
     'Python':
-        ann:
-        deadline:
+        ann: http://python-fosdem.org/cfp.html
+        deadline: 2016-12-02
     'Software Defined Storage':
-        ann:
-        deadline:
+        ann: http://ceph.com/community/fosdem-2017-software-defined-storage-devroom/
+        deadline: 2016-11-16
     'Testing and Automation':
         ann:
         deadline:
