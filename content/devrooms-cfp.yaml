@@ -82,8 +82,8 @@ days:
         ann:
         deadline:
     'Desktops':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002477.html
+        deadline: 2016-12-05
     'Electronic Design Automation':
         ann: http://www.ohwr.org/projects/ohr-meta/wiki/FOSDEM2017
         deadline: 2016-12-01
