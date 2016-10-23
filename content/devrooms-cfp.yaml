@@ -91,8 +91,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002458.html
         deadline: 2016-12-01
     'Go':
-        ann:
-        deadline:
+        ann: https://forum.golangbridge.org/t/fosdem-2017-call-for-proposals/3716
+        deadline: 2016-12-12
     'LLVM Toolchain':
         ann: http://lists.llvm.org/pipermail/llvm-dev/2016-October/105815.html
         deadline: 2016-12-01
@@ -116,7 +116,7 @@ days:
         deadline: 2016-11-25
     'Perl':
         ann: https://wendyga.wordpress.com/2016/10/08/fosdem-04-05-february-2017-brussels-belgium-call-for-speakers/
-        deadline:
+        deadline: 2016-12-11
     'PostgreSQL':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002474.html
         deadline: 2016-11-13
