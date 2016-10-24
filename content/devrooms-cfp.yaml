@@ -50,8 +50,8 @@ days:
         ann:
         deadline:
     'Real Time Communications':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002481.html
+        deadline: 2016-11-17
     'Ruby':
         ann: http://fosdem.rubybelgium.be/
         deadline: 2016-12-04
