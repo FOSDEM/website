@@ -17,11 +17,11 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002459.html
         deadline: 2016-11-18
     'Distributions':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002483.html
+        deadline: 2016-11-25
     'Free Java':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002482.html
+        deadline: 2016-12-01
     'GNU Guile':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002469.html
         deadline: 2016-11-18
@@ -41,8 +41,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002463.html
         deadline: 2016-12-04
     'Mozilla':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002484.html
+        deadline: 2016-12-01
     'MySQL and Friends':
         ann: http://www.mysqlandfriends.eu/post/fosdem-2017s-mysql-friends-devroom-call-for-papers-is-now-open/
         deadline: 2016-12-06
@@ -97,11 +97,11 @@ days:
         ann: http://lists.llvm.org/pipermail/llvm-dev/2016-October/105815.html
         deadline: 2016-12-01
     'Linux Containers and Microservices':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002490.html
+        deadline: 2016-11-26
     'Monitoring and Cloud':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002490.html
+        deadline: 2016-11-26
     'Open Game Development':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002460.html
         deadline: 2016-12-04
