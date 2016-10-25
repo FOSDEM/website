@@ -127,7 +127,7 @@ days:
         ann: http://ceph.com/community/fosdem-2017-software-defined-storage-devroom/
         deadline: 2016-11-16
     'Testing and Automation':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002491.html
+        deadline: 2016-12-15
 
 
