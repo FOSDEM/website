@@ -26,8 +26,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002469.html
         deadline: 2016-11-18
     'Graph Processing':
-        ann:
-        deadline:
+        ann: https://graphdevroom.github.io/
+        deadline: 2016-11-25
     'HPC, Big Data, and Data Science':
         ann: https://hpc-bigdata-fosdem17.github.io/
         deadline: 2016-12-02
@@ -35,8 +35,8 @@ days:
         ann: https://github.com/maximevince/IoT-devroom-fosdem
         deadline: 2016-12-01
     'Lua':
-        ann:
-        deadline:
+        ann: http://lua.space/general/cfp-lua-devroom-fosdem-2017
+        deadline: 2016-12-01
     'Microkernels and Component-based OS':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002463.html
         deadline: 2016-12-04
