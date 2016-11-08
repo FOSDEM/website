@@ -47,8 +47,8 @@ days:
         ann: http://www.mysqlandfriends.eu/post/fosdem-2017s-mysql-friends-devroom-call-for-papers-is-now-open/
         deadline: 2016-12-06
     'Open Document Editors':
-        ann:
-        deadline:
+        ann: https://blog.documentfoundation.org/blog/2016/11/04/fosdem-call-for-papers-open-document-editors-devroom/
+        deadline: 2016-12-11
     'Real Time Communications':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002481.html
         deadline: 2016-11-17
