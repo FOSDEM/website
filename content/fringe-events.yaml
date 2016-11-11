@@ -1,13 +1,19 @@
 ---
 kind: internal
 events:
-     '':
-        location: 
-        start: 
-        end: 
-        cost: 
-        registration: 
-        website: 
-        contact: 
-
-
+    'Git Merge':
+        location: Brussels
+        start: 2017-02-02
+        end: 2017-02-03
+        cost: 99 Euro
+        registration: In advance or on the day
+        website: http://git-merge.com/
+        contact: events@github.com
+    'GrimoireCon':
+        location: Brussels
+        start: 2017-02-03
+        end: 2017-02-03
+        cost: 16.67 - 58.24 Euro (Developers enquire for limited free places)
+        registration: Required
+        website: http://grimoirelab.github.io/con/
+        contact: jsmanrique@bitergia.com
