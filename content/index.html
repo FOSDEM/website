@@ -33,18 +33,20 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
         </ul>
       <% end %>
     </div>
+
     <%
     # Depending on the height of the sponsors graphic, general announcements
     # (distinct from "news" by virtue of being undated) should either go here
     # in an "announcement-block" div or be a "news-block" div below the
     # "s-block" div. pph 20141210
     %>
-  </div>
 
-  <div class="announcement-block">
-    <h2>FOSDEM 2017</h2>
-    <p>FOSDEM 2017 will take place at ULB Campus Solbosch on Saturday 4 and Sunday 5 February 2017.
-    </p>
+    <div class="announcement-block">
+      <h2>FOSDEM 2017</h2>
+      <p>FOSDEM 2017 will take place at ULB Campus Solbosch on Saturday 4 and Sunday 5 February 2017.
+      </p>
+    </div>
+
   </div>
 
   <div class="news-block">
