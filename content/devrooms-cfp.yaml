@@ -122,7 +122,7 @@ days:
         deadline: 2016-11-13
     'Python':
         ann: http://python-fosdem.org/cfp.html
-        deadline: 2016-12-02
+        deadline: 2016-12-18
     'Software Defined Storage':
         ann: http://ceph.com/community/fosdem-2017-software-defined-storage-devroom/
         deadline: 2016-11-16
