@@ -1,6 +1,14 @@
 ---
 kind: internal
 events:
+    'DARPA SDR Hackfest':
+        location: Brussels
+        start: 2017-02-01
+        end: 2017-02-03
+        cost: USD 70
+        registration: By 15th Jan 2017
+        website: http://www.cvent.com/d/bvq3x2
+        contact: DARPA-MTO-Hackfest-Brussels@DARPA.mil
     'Git Merge':
         location: Brussels
         start: 2017-02-02
@@ -17,3 +25,5 @@ events:
         registration: Required
         website: http://grimoirelab.github.io/con/
         contact: jsmanrique@bitergia.com
+
+
