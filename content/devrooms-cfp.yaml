@@ -21,7 +21,7 @@ days:
         deadline: 2016-11-25
     'Free Java':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002482.html
-        deadline: 2016-12-01
+        deadline: 2016-12-10
     'GNU Guile':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002469.html
         deadline: 2016-11-18
@@ -74,7 +74,7 @@ days:
   sunday:
     'BSD':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002464.html
-        deadline: 2016-11-27
+        deadline: 2016-12-10
     'Community':
         ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002470.html
         deadline: 2016-11-25
