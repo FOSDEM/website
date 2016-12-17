@@ -25,5 +25,27 @@ events:
         registration: Required
         website: http://grimoirelab.github.io/con/
         contact: jsmanrique@bitergia.com
-
-
+    'ZeroMQ hackaton':
+        location: Brussels
+        start: 2017-02-02
+        end: 2017-02-03
+        cost: Free
+        registration: None. Wiki.
+        website: http://zeromq.org/event:zeromq-pre-fosdem-hackaton-thu-2-fri-3-feb-2017
+        contact: zoobab@gmail.com
+    'Buildroot Developer Days':
+        location: Brussels
+        start: 2017-02-06
+        end: 2017-02-07
+        cost: Free
+        registration: Before 2017-02-01
+        website: http://elinux.org/Buildroot:DeveloperDaysFOSDEM2017
+        contact: yann.morin.1998@free.fr
+    'Config Management Camp':
+        location: Ghent, Belgium
+        start: 2017-02-06
+        end: 2017-02-07
+        cost: Free
+        registration: Full. Waiting list.
+        website: http://cfgmgmtcamp.eu/
+        contact: kris.buytaert@gmail.com
