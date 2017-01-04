@@ -96,6 +96,26 @@ Reports, feature requests and code contributions can be handed in at our
 future, because GitHub locks out a major, important part of the
 Veripeditus community in their Terms of Use.
 
+Q: What do you mean, GitHub locks out part of your community?
+
+GitHub explicitly ban contributors younger than 13 years from using their
+website. They do this because they believe that COPPA, the US Children
+Online Privacy Protection Act, requires them to do that.
+
+While this wouls seem like a non-issue to most projects, it is an issue
+for us because we actually do have students between ten and 13 years who
+already have a list of features they would like to see in Veripeditus,
+and they have no way of contributing that and have their contributions
+credited to them, even if their parents agree and they get guidance. At
+Teckids e.V., we see contributions by children of that age on a regular
+basis.
+
+As I already said, most projects will not see or understand this issue,
+but for us, it is a real life problem, and we believe that access to
+free software and contribution to it must not be limited for any
+sub-group of people by a third party, even less when it comes to
+educational software.
+
 Q: Which new features can we expect this year in Veripeditus?
 
 Veripeditus offers a lot of simplicity in AR game creation right now,
