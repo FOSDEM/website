@@ -6,7 +6,7 @@ event: session_recording
 
 Q: Could you briefly introduce yourself?
 
-'m a self-taught software engineer. Born in Saint-Petersburg, Russia, I
+I'm a self-taught software engineer. Born in Saint-Petersburg, Russia, I
 relocated to Finland in 2011. My career started 20 years ago, and
 included working on GIS, POS terminals, websites, Linux-based routers, the Linux
 input stack, OpenGL ES drivers, and a spell of system administration.
@@ -68,7 +68,7 @@ past what I initially imagined. There's now a lot more work to do! This makes
 it all the more exciting to me, and I hope that will also interest the FOSDEM
 visitors.
 
-Q: User session recording seems like a pretty important task. Yet, Scribery seems to be the first open source project that tackles this task with an approach that meets enterprise needs. Why is that in your opinion?
+Q: User session recording seems like a pretty important task. Yet, Scribery seems to be the first project that tackles this task with an approach that meets enterprise needs. Why is that in your opinion?
 
 First of all, it's not exactly the first project. There's plenty of
 commercial, proprietary offerings, and very good ones too. Enterprises are not
