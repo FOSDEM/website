@@ -17,14 +17,6 @@ events:
         registration: In advance or on the day
         website: http://git-merge.com/
         contact: events@github.com
-    'GrimoireCon':
-        location: Brussels
-        start: 2017-02-03
-        end: 2017-02-03
-        cost: 16.67 - 58.24 Euro (Developers enquire for limited free places)
-        registration: Required
-        website: http://grimoirelab.github.io/con/
-        contact: jsmanrique@bitergia.com
     'ZeroMQ hackaton':
         location: Brussels
         start: 2017-02-02
@@ -33,6 +25,14 @@ events:
         registration: None. Wiki.
         website: http://zeromq.org/event:zeromq-pre-fosdem-hackaton-thu-2-fri-3-feb-2017
         contact: zoobab@gmail.com
+    'GrimoireCon':
+        location: Brussels
+        start: 2017-02-03
+        end: 2017-02-03
+        cost: 16.67 - 58.24 Euro
+        registration: Required
+        website: http://grimoirelab.github.io/con/
+        contact: jsmanrique@bitergia.com
     'Buildroot Developer Days':
         location: Brussels
         start: 2017-02-06
@@ -49,3 +49,19 @@ events:
         registration: Full. Waiting list.
         website: http://cfgmgmtcamp.eu/
         contact: kris.buytaert@gmail.com
+    'GodotCon':
+        location: Brussels
+        start: 2017-02-06
+        end: 2017-02-07
+        cost: Free
+        registration: Required
+        website: https://godotengine.org/events
+        contact: remi@godotengine.org
+    'Puppet Contributor Summit EU':
+        location: Ghent, Belgium
+        start: 2017-02-08
+        end: 2017-02-08
+        cost: Free
+        registration: None
+        website: https://contributor-summit-eu-2017.eventbrite.com/
+        contact: meg@puppet.com
