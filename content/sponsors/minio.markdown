@@ -1,6 +1,6 @@
 ---
 title: Minio
-url: http://gitter.minio.io/
+url: https://www.minio.io/
 ---
 
 Minio is a distributed object storage server. It is written in Go and
