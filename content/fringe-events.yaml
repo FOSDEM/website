@@ -1,6 +1,14 @@
 ---
 kind: internal
 events:
+    'Computer, Privacy & Data Protection 2017':
+        location: Brussels
+        start: 2017-01-25
+        end: 2017-01-27
+        cost: 125 - 850 Euro
+        registration: Required
+        website: http://www.cpdpconferences.org/
+        contact: info@cpdpconferences.org
     'DARPA SDR Hackfest':
         location: Brussels
         start: 2017-02-01
