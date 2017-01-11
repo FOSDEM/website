@@ -794,7 +794,7 @@ module Fosdem
           current_time = Time.now
 
 	  # Uncomment the following line to test what the site looks like at a specific time
-          # current_time = Time.parse('2016-01-30 13:15:00.000000000 +0100')
+          # current_time = Time.parse('2017-02-04 13:15:00.000000000 +0100')
 
 	  event_start = Time.parse(e['start_datetime'])
 	  event_end = Time.parse(e['end_datetime'])
@@ -803,7 +803,7 @@ module Fosdem
 
 	  ll = {}
 	  ll['title'] = 'Live video stream from the room'
-	  ll['url'] = 'https://live.fosdem.org/watch.php?room=' << e['room']
+	  ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/,'')
 	  ll['rank'] = nil
 	  e['links'] << ll
 	  video_link_count += 1
