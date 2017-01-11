@@ -41,6 +41,14 @@ events:
         registration: Required
         website: http://grimoirelab.github.io/con/
         contact: jsmanrique@bitergia.com
+    'Linux-sunxi dinner':
+        location: Brussels
+        start: 2017-02-04
+        end: 2017-02-04
+        cost: Free
+        registration: Required (send e-mail)
+        website: https://groups.google.com/forum/#!topic/linux-sunxi/afFMBIR2m_o
+        contact: zoobab@gmail.com
     'Buildroot Developer Days':
         location: Brussels
         start: 2017-02-06
