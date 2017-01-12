@@ -41,6 +41,14 @@ events:
         registration: Required
         website: http://grimoirelab.github.io/con/
         contact: jsmanrique@bitergia.com
+    'MySQL day':
+        location: Brussels
+        start: 2017-02-03
+        end: 2017-02-03
+        cost: Free
+        registration: Required
+        website: http://lefred.be/content/pre-fosdem17-mysql-day/
+        contact: frederic.descamps@oracle.com
     'Linux-sunxi dinner':
         location: Brussels
         start: 2017-02-04
