@@ -11,7 +11,7 @@ systems since around 1981. Starting around 1984, I began doing work with
 the X window system, spent four years at the MIT X Consortium and then
 the next 20+ years doing X system software work at a variety of
 companies, including SuSE, Compaq, Hewlett Packard and Intel. In 2015, I
-started at back at Hewlett Packard doing something completely different.
+started back at Hewlett Packard doing something completely different.
 
 Q: What will your talk be about, exactly? Why this topic?
 
