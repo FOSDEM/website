@@ -689,6 +689,10 @@ module Fosdem
                                    'certification'
                                  when /^keysigning?$/i
                                    'keysigning'
+                                 when /^bof/i
+                                   'bof'
+                                 when /^stands/i
+                                   'stand'
                                  else
                                    'maintrack'
                                  end
