@@ -1,6 +1,6 @@
 ---
 title: Hewlett Packard Enterprise
-url: http://www.hp.com/go/opensource/
+url: http://www8.hp.com/us/en/campaigns/opensource/community.html
 ---
 
 Open source software is a strategic priority for HPE.  HPE creates new
