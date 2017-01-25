@@ -57,6 +57,14 @@ events:
         registration: None.
         website: https://hsbxl.be/Bytenight_2017
         contact: contact@hackerspace.be
+    'GNOME Beers':
+        location: A La Bécasse
+        start: 2017-02-04
+        end: 2017-02-04
+        cost: Free
+        registration: None
+        website: https://wiki.gnome.org/Events/FOSDEM/2017/#Saturday_Evening
+        contact: bastianilso@gnome.org
     'Linux-sunxi dinner':
         location: Brussels
         start: 2017-02-04
