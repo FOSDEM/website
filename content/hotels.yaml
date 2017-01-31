@@ -19,7 +19,7 @@ hotels:
       tel: '2 5110436'
       fax: '2 5120711'
       email: 'brussel@vjh.de'
-      url: 'http://www.jeugdherbergen.be/brusselE.htm'
+      url: 'http://www.jeugdherbergen.be/en/youth-hostels/city-hostels/brussel-bruegel'
       maps:
       - 'http://osm.org/go/0EoS1F2gC--'
       - 'http://goo.gl/maps/BfJZz'
@@ -49,7 +49,7 @@ hotels:
       tel: '2 2180187'
       fax: '2 2172005'
       email: 'brussels.brel@lesaubergesdejeunesse.be'
-      url: 'http://www.lesaubergesdejeunesse.be/Bruxelles-Brel-Presentation,24?lang=en'
+      url: 'http://www.lesaubergesdejeunesse.be/en_US/website/action/hotel?id=2'
       maps:
       - 'http://osm.org/go/0EoTjkBRj--'
       - 'http://goo.gl/maps/2Jydm'
