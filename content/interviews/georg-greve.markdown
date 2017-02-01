@@ -42,7 +42,7 @@ around OpenPOWER, how we found our way into it, what we have discovered as a
 member of the OpenPOWER Foundation, and what opportunities we see in this
 ecosystem.
 
-Q: How did you discover OpenPOWER? And did you immediately think "This is it, we finally can have a completely free platform, both software and hardware."?
+Q: How did you discover OpenPOWER?
 
 We discovered OpenPOWER by chance, I am afraid to admit. IBM contacted us on
 behalf of a large supermarket chain in a European country that was already

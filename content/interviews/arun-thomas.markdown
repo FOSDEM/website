@@ -71,7 +71,7 @@ Micron, NXP, Western Digital, and Bluespec. There have been a number
 of talks at past RISC-V Workshops that describe how companies such as
 Nvidia are using RISC-V in their products.
 
-[SiFive](https://www.sifive.com/), BlueSpec, [lowRISC](http://www.lowrisc.org/), [IIT Madras](https://www.iitm.ac.in/), [ETH Zurich](https://www.ethz.ch/en.html) and others have RISC-V SoCs that
+[SiFive](https://www.sifive.com/), [BlueSpec](http://www.bluespec.com/), [lowRISC](http://www.lowrisc.org/), [IIT Madras](https://www.iitm.ac.in/), [ETH Zurich](https://www.ethz.ch/en.html) and others have RISC-V SoCs that
 can be used today.
 
 Q: What can we expect this year in the RISC-V world?
