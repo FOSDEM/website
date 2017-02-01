@@ -81,6 +81,14 @@ events:
         registration: None.
         website: https://www.meetup.com/srcd-tech-talks/events/237043683/
         contact: mcuadros@sourced.tech
+    'WikiSuite dinner and drinks':
+        location: Brussels
+        start: 2017-02-04
+        end: 2017-02-05
+        cost: Free
+        registration: None
+        website: http://wikisuite.org/FOSDEM-2017
+        contact: marc@marclaporte.com
     'Buildroot Developer Days':
         location: Brussels
         start: 2017-02-06
@@ -105,6 +113,14 @@ events:
         registration: Required
         website: https://godotengine.org/events
         contact: remi@godotengine.org
+    'TikiFest post-FOSDEM 2017':
+        location: Brussels
+        start: 2016-02-06
+        end: 2016-02-08
+        cost: Free
+        registration: None
+        website: https://tiki.org/TikiFestFosdem2017
+        contact: jyhem@tiki.org
     'Puppet Contributor Summit EU':
         location: Ghent, Belgium
         start: 2017-02-08
