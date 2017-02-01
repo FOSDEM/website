@@ -25,7 +25,7 @@ Brussels, and he made the best speech I had ever listened to on the topic.
 After the rejection of the directive in July 2005, he became the next
 president of the [Foundation for a Free Information Infrastructure (FFII)](https://www.ffii.org/), and he recruited me to work with him on those topics. In
 January 2006, the European Commission was announcing the reopening of the
-discussion on the Community Patent, which is now taking the form of the [Unitary Patent](https://www.epo.org/law-practice/unitary.html).
+discussion on the Community Patent, which is now taking the form of the [Unitary Patent](https://www.gnu.org/philosophy/europes-unitary-patent.html).
 
 In 2005, Pieter started to make some messaging solutions for JP Morgan Chase,
 which at the end became [OpenAMQ](http://www.openamq.org/), an open source messaging solution centered around a broker. In 2010, iMatix decided to drop the broker model for
@@ -71,7 +71,7 @@ booth.
 Q: Can you share a typical anecdote about him?
 
 After the [NoOOXML campaign](http://noooxml.wikidot.com/) in 2008, Pieter set up an award (the Kayak Award)
-for the best team that was fighting the OOXML ISO standardization at ISO. At
+for the best team that was fighting the OOXML standardization at ISO. At
 the end, we gave the award to Microsoft, they were just too good at
 corrupting the process. At some point, we learned from a trusted source that
 Pieter was on Microsoft's blacklist. Pieter went to a conference where there
