@@ -12,7 +12,7 @@ Q: What will your talk be about, exactly? Why this topic?
 
 I'll be describing the process we've gone through in adding end-to-end encryption to the core of the Matrix, by writing [Olm](https://matrix.org/docs/spec/olm.html) - a new Apache-licensed implementation of our own version of the [Double Ratchet Algorithm](https://whispersystems.org/docs/specifications/doubleratchet/), and then extending it to [Megolm](https://matrix.org/docs/spec/megolm.html), a new ratchet optimised for group chats with persistent history as is typical in Matrix.  We'll be explaining the public audit that we went through for libolm with [NCC Group](https://www.nccgroup.trust/), and some of the interesting bugs that we've hit along the way.
 
-This topic is critical as Matrix is decentralised, and so dependent on end-to-end encryption to protect the privacy of rooms from any of the admins or intermediaries who might have access to the servers participating in a node.  Also, end-to-end encryption communication has also never been so topical for the world in general as it is today.
+This topic is critical as Matrix is decentralised, and so dependent on end-to-end encryption to protect the privacy of rooms from any of the admins or intermediaries who might have access to the servers participating in a room.  Also, end-to-end encryption communication has also never been so topical for the world in general as it is today.
 
 Q: What do you hope to accomplish by giving this talk? What do you expect?
 
