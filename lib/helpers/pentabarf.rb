@@ -789,7 +789,7 @@ module Fosdem
         end
       end
 
-      # Add video links for 20 minutes before and after each event
+      # Add video links for 2 days before until 30 minutes after each event
       begin
 	video_link_count = 0
 	events.each do |e|
@@ -802,11 +802,11 @@ module Fosdem
 
 	  event_start = Time.parse(e['start_datetime'])
 	  event_end = Time.parse(e['end_datetime'])
-	  next if event_start - current_time > 20 * 60
-	  next if current_time - event_end > 20 * 60
+	  next if event_start - current_time > 48 * 60 * 60
+	  next if current_time - event_end > 30 * 60
 
 	  ll = {}
-	  ll['title'] = 'Live video stream from the room'
+	  ll['title'] = 'Live video stream from the room (during event)'
 	  ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/,'')
 	  ll['rank'] = nil
 	  e['links'] << ll
