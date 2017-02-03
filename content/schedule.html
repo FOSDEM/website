@@ -27,6 +27,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   <li>Mobile site: <a href="<%= pathof '/mobile/' %>">http://fosdem.org/mobile</a></li>
   <li>Mobile apps: <a href="<%= pathof '/schedule/mobile/' %>">many platforms</a></li>
   <li>What's on now: <a href="page:/schedule/streaming">Live streaming</a></li>
+  <li>Programme <a href="page:/schedule/amendments">Schedule Amendments</a></li>
   <li>Booklet: <a href="asset:booklet_general">Info</a>, <a href="asset:booklet_saturday">Saturday</a>, <a href="asset:booklet_sunday">Sunday</a></li>
 <%
   pdfs = items.select{|x| x.identifier =~ %r{^/schedule/pdf/[^/]+/$}}.sort_by{|x| x[:page_size]}.reverse
