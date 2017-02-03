@@ -31,7 +31,7 @@ These published principles embody the ad-hoc principles that both
 Conservancy and the FSF followed for decades in our GPL enforcement work,
 but they had never been written down.  Copyleft enforcers have been accused
 of some nasty things over the years, and yet adherence to our principles
-showed.
+showed those accusations are false.
 
 Q: Do we really need GPL enforcement? According to Greg Kroah-Hartman and Linus Torvalds, the Linux kernel has been doing fine for 25 years without a legal approach.
 
@@ -47,7 +47,7 @@ allow copyright holders to defend the rights of users.  Folks have been
 doing that for copylefted software for the last 25 years, included for
 Linux.  In fact, thanks to Harald Welte's excellent work in the early 2000s,
 there had been more lawsuits about Linux already -- before people started
-attacking Conservancy's work, and long before Conservancy sued VMware.
+attacking Conservancy's work, and long before Conservancy funded Hellwig's lawsuit against VMware. 
 
 Q: Again according to Kroah-Hartman and Torvalds, instead of using a legal approach the Linux kernel developers showed the benefit of the GPL to companies violating the license, tried to 'convert' them and - after many years - made them part of the community.
 
