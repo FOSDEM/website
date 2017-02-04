@@ -42,11 +42,14 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     %>
 
     <div class="announcement-block">
-      <h2>FOSDEM 2017</h2>
-      <p>FOSDEM 2017 will take place at ULB Campus Solbosch on Saturday 4 and Sunday 5 February 2017.
-	The <%= l('/schedule/', 'full schedule') %> and list of <%= l('/stands/', 'stands') %> are now online.
-	There are also <%= l('/interviews/', 'interviews') %> with some main track speakers, 
-	and details of this year's <%= l('/fringe/', 'fringe') %> events.
+      <h2>Welcome to FOSDEM 2017!</h2>
+
+      <h2>Welcome to FOSDEM 2017!</h2>
+      <p>FOSDEM 2017 is happening now at ULB Campus Solbosch!  All sessions are
+being <a href="page:/schedule/streaming">streamed live</a>!  Read the <%=
+l('/schedule/', 'full schedule') %>, list of <%= l('/stands/', 'stands') %>,
+<%= l('/interviews/', 'interviews') %> with main track speakers, and details of
+this year's <%= l('/fringe/', 'fringe') %> events.
       </p>
 
       <h2>Schedule Amendments</h2>
