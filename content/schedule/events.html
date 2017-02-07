@@ -4,6 +4,8 @@ sponsors_under_navigation: true
 titlehead: false
 ---
 <%
+require 'uri'
+
 h = begin
       h = {}
       tracks.sort_by{|t| [t[:rank], t[:conference_track_id]]}.each do |t|
@@ -23,12 +25,13 @@ size = h.values.map(&:size).inject(:+)
             <th>Day</th>
             <th>Start</th>
             <th>End</th>
+	    <th>Videos</th>
         </tr>
     </thead>
     <tbody>
       <% h.each do |track, list| %>
         <tr>
-          <td colspan="6"><h4><%= track[:title] %> (<%= list.size %>)</h4></td>
+          <td colspan="7"><h4><%= track[:title] %> (<%= list.size %>)</h4></td>
         </tr>
         <% list.each do |e| %>
         <tr>
@@ -38,6 +41,18 @@ size = h.values.map(&:size).inject(:+)
             <td><%= l day e[:day] %></td>
             <td><%= e[:start_time] %></td>
             <td><%= e[:end_time] %></td>
+	    <td>
+	      <% video_webm = (e[:links] or []).select{|k| k[:url] =~ /\/video.fosdem.org\/.*webm/}.map{|k| k[:url]} %>
+	      <% video_mp4 = (e[:links] or []).select{|k| k[:url] =~ /\/video.fosdem.org\/.*mp4/}.map{|k| k[:url]} %>
+	      <% if not video_webm.empty? %>
+		<% video_webm_url = URI.encode video_webm[0] %>
+		<a href="<%= video_webm_url %>">webm</a>
+	      <% end %>
+	      <% if not video_mp4.empty? %>
+		<% video_mp4_url = URI.encode video_mp4[0] %>
+		<a href="<%= URI.encode video_mp4[0] %>">mp4</a>
+	      <% end %>
+	    </td>
         </tr>
         <% end %>
         <% end %>
