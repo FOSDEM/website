@@ -46,6 +46,8 @@ GEM
     rack (1.6.4)
     rainpress (1.0)
     rmagick (2.15.4)
+    rsolr (1.1.2)
+      builder (>= 2.1.2)
     slop (3.6.0)
     systemu (2.6.5)
     thread_safe (0.3.5)
@@ -73,6 +75,7 @@ DEPENDENCIES
   pry
   rainpress
   rmagick
+  rsolr
   systemu
   tzinfo
   tzinfo-data
