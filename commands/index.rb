@@ -7,7 +7,7 @@ to load the index into Solr on nanoc.fosdem.org through ssh'
 aliases     :i, :solr
 flag        :l, :local, "operate on a local Solr instance"
 option      :o, :output, "output file for the Solr add XML document", :argument => :required
-option      :u, :url, "override Solr instance URL (defaults to http://localhost:8983/solr)", :argument => :required
+option      :u, :url, "override Solr instance URL (defaults to http://localhost:8983/solr/production/)", :argument => :required
 
 class SolrIndex < ::Nanoc::CLI::CommandRunner
   def run
@@ -27,7 +27,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
                      options[:url]
                    elsif options[:live]
                      conf = site.config.fetch :solr, {}
-                     url = conf.fetch 'url', 'http://localhost:8983/solr/'
+                     url = conf.fetch 'url', 'http://localhost:8983/solr/production/'
                    else
                      nil
                    end

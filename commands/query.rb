@@ -12,7 +12,7 @@ class SolrQuery < ::Nanoc::CLI::CommandRunner
     self.require_site
     solr = begin
              conf = site.config.fetch :solr, {}
-             url = conf.fetch 'url', 'http://localhost:8983/solr/'
+             url = conf.fetch 'url', 'http://localhost:8983/solr/production/'
              RSolr.connect :url => url
            end
 
