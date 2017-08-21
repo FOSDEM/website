@@ -1,4 +1,4 @@
-This repository holds the source code and content of the FOSDEM website (as of http://fosdem.org/).
+This repository holds the source code and content of the FOSDEM website (as of https://fosdem.org/).
 
 FOSDEM is the Free and Open source Software Developers' European Meeting,
 an event that is organized by the community for the community, as a non-for-profit.
