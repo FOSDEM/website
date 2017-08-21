@@ -20,7 +20,7 @@ title: Fringe
     </tr>
   </thead>
   <tbody>
-    <% $item_by_id.fetch('/fringe-events/')[:events].each do |event_name, meta| %>
+    <% $item_by_id.fetch('/fringe-events/')[:events].to_a.each do |event_name, meta| %>
     <tr>
       <td><a href="<%=  meta[:website] %>"><%= event_name.to_s %></a></td>
       <td><%= meta[:location] %></td>

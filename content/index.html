@@ -15,6 +15,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
       <p>Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels.</p>
       <p class="btn-news"><a href="page:practical">No registration necessary.</a></p>
     </div>
+<!--
     <div class="logo-block">
       <h3><a href="page:/about/sponsors/">SPONSORS</a></h3>
       <%
@@ -33,39 +34,13 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
         </ul>
       <% end %>
     </div>
-
+-->
     <%
     # Depending on the height of the sponsors graphic, general announcements
     # (distinct from "news" by virtue of being undated) should either go here
     # in an "announcement-block" div or be a "news-block" div below the
     # "s-block" div. pph 20141210
     %>
-
-    <div class="announcement-block">
-      <h2>FOSDEM 2017 is now over!</h2>
-      <p>The whole <a href="page:/about">team</a> would like to thank everyone for their contribution to another successful event!</p>
-
-      <p>
-      Please tell us about your FOSDEM experience at 
-      <a href="mailto:feedback@fosdem.org">feedback@fosdem.org</a>.
-      All your feedback and suggestions for next year will be greatly appreciated.
-      </p><p>
-      You may also submit feedback on individual talks by following the link at the bottom of each event page in the schedule.
-      </p>
-
-      <h2>Videos</h2>
-      <p>Over 600 videos are already available this year!
-	Videos are linked from the individual schedule
-	pages for the talks and the <a href="page:/schedule/events">full schedule</a>
-	page.  They are mirrored from <a href="http://video.fosdem.org/2017/">video.fosdem.org</a>.
-	<a href="https://review.video.fosdem.org/overview">Summary</a> of processing status.  
-      </p>
-
-      <h2>Lost Property</h2>
-      <p>Several items were handed in at the infodesks.  If you think you lost something on site, please email <a href="mailto:info@fosdem.org">info@fosdem.org</a>.</p>
-    </div>
-
-  </div>
 
   <div class="news-block">
     <h2>NEWS</h2>
