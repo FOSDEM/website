@@ -2,132 +2,133 @@
 kind: internal
 days:
   both:
-    'Legal and Policy Issues':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002462.html
-        deadline: 2016-11-27
     'Embedded, Mobile and Automotive':
-        ann: http://lists.genivi.org/pipermail/genivi-projects/2016-October/003088.html
-        deadline: 2016-12-12
+        ann: 
+        deadline: 
+    'Virtualization and IaaS':
+        ann: 
+        deadline: 
 
   saturday:
-    'Backup and Disaster Recovery':
-        ann: https://github.com/gdha/backup-disaster-recovery-devroom-fosdem-2017
-        deadline: 2016-12-02
-    'Config Management':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002459.html
-        deadline: 2016-11-18
+    'Ada':
+        ann: 
+        deadline: 
+    'CAD and Open Hardware':
+        ann: 
+        deadline: 
     'Distributions':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002483.html
-        deadline: 2016-11-25
-    'Free Java':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002482.html
-        deadline: 2016-12-10
-    'GNU Guile':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002469.html
-        deadline: 2016-11-18
+        ann: 
+        deadline: 
+    'Go':
+        ann: 
+        deadline: 
     'Graph Processing':
-        ann: https://graphdevroom.github.io/
-        deadline: 2016-11-25
-    'HPC, Big Data, and Data Science':
-        ann: https://hpc-bigdata-fosdem17.github.io/
-        deadline: 2016-12-02
-    'Internet of Things':
-        ann: https://github.com/maximevince/IoT-devroom-fosdem
-        deadline: 2016-12-01
-    'Lua':
-        ann: http://lua.space/general/cfp-lua-devroom-fosdem-2017
-        deadline: 2016-12-01
-    'Microkernels and Component-based OS':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002463.html
-        deadline: 2016-12-04
+        ann: 
+        deadline: 
+    'Graphics':
+        ann: 
+        deadline: 
+    'Identity and Access Management':
+        ann: 
+        deadline: 
+    'Legal and Policy Issues':
+        ann: 
+        deadline: 
+    'Microkernels':
+        ann: 
+        deadline: 
+    'Monitoring and Cloud':
+        ann: 
+        deadline: 
     'Mozilla':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002484.html
-        deadline: 2016-12-01
-    'MySQL and Friends':
-        ann: http://www.mysqlandfriends.eu/post/fosdem-2017s-mysql-friends-devroom-call-for-papers-is-now-open/
-        deadline: 2016-12-06
+        ann: 
+        deadline: 
     'Open Document Editors':
-        ann: https://blog.documentfoundation.org/blog/2016/11/04/fosdem-call-for-papers-open-document-editors-devroom/
-        deadline: 2016-12-11
-    'Real Time Communications':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002481.html
-        deadline: 2016-11-17
-    'Ruby':
-        ann: http://fosdem.rubybelgium.be/
-        deadline: 2016-12-04
+        ann: 
+        deadline: 
+    'Open Media':
+        ann: 
+        deadline: 
+    'Perl':
+        ann: 
+        deadline: 
+    'PostgreSQL':
+        ann: 
+        deadline: 
+    'Rust':
+        ann: 
+        deadline: 
     'SDN and NFV':
-        ann: https://blogs.gnome.org/bolsh/2016/10/19/fosdem-sdn-nfv-devroom-call-for-content/
-        deadline: 2016-11-16
-    'Security':
-        ann: https://github.com/security-devroom/fosdem-2017
-        deadline: 2016-12-01
+        ann: 
+        deadline: 
     'Software Defined Radio':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002471.html
-        deadline: 2016-12-09
-    'Valgrind':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002467.html
-        deadline: 2016-12-01
-    'Virtualisation and IaaS':
-        ann: http://www.ovirt.org/blog/2016/10/call-for-proposal-fosdem-2017/
-        deadline: 2016-11-18
+        ann: 
+        deadline: 
+    'Valgrind, GDB and Debugging Tools':
+        ann: 
+        deadline: 
 
   sunday:
     'BSD':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002464.html
-        deadline: 2016-12-10
+        ann: 
+        deadline: 
     'Community':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002470.html
-        deadline: 2016-11-25
+        ann: 
+        deadline: 
+    'Config Management':
+        ann: 
+        deadline: 
+    'Containers':
+        ann: 
+        deadline: 
     'Decentralised Internet':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-November/002495.html
-        deadline: 2016-12-04
-    'Desktops':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002477.html
-        deadline: 2016-12-05
-    'Electronic Design Automation':
-        ann: http://www.ohwr.org/projects/ohr-meta/wiki/FOSDEM2017
-        deadline: 2016-12-01
+        ann: 
+        deadline: 
+    'DNS':
+        ann: 
+        deadline: 
+    'Free Java':
+        ann: 
+        deadline: 
     'Geospatial':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002458.html
-        deadline: 2016-12-01
-    'Go':
-        ann: https://forum.golangbridge.org/t/fosdem-2017-call-for-proposals/3716
-        deadline: 2016-12-12
+        ann: 
+        deadline: 
+    'Hardware Enablement':
+        ann: 
+        deadline: 
+    'HPC, Big Data, and Data Science':
+        ann: 
+        deadline: 
+    'Internet of Things':
+        ann: 
+        deadline: 
     'LLVM Toolchain':
-        ann: http://lists.llvm.org/pipermail/llvm-dev/2016-October/105815.html
-        deadline: 2016-12-01
-    'Linux Containers and Microservices':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002490.html
-        deadline: 2016-11-26
-    'Monitoring and Cloud':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002490.html
-        deadline: 2016-11-26
-    'Open Game Development':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002460.html
-        deadline: 2016-12-04
-    'Open Media':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-November/002494.html
-        deadline: 2016-12-01
+        ann: 
+        deadline: 
+    'MySQL and Friends':
+        ann: 
+        deadline: 
     'Open Source Design':
-        ann: http://opensourcedesign.net/events/2017/02/05/opensourcedesign-fosdem-2017
-        deadline: 2016-12-01
-    'PHP and Friends':
-        ann: https://fosdemphp.cu.be/
-        deadline: 2016-11-25
-    'Perl':
-        ann: https://wendyga.wordpress.com/2016/10/08/fosdem-04-05-february-2017-brussels-belgium-call-for-speakers/
-        deadline: 2016-12-11
-    'PostgreSQL':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002474.html
-        deadline: 2016-11-13
-    'Python':
-        ann: http://python-fosdem.org/cfp.html
-        deadline: 2016-12-18
+        ann: 
+        deadline: 
+    'Package Management':
+        ann: 
+        deadline: 
+    'Real Time Communications':
+        ann: 
+        deadline: 
+    'Retrocomputing':
+        ann: 
+        deadline: 
     'Software Defined Storage':
-        ann: http://ceph.com/community/fosdem-2017-software-defined-storage-devroom/
-        deadline: 2016-11-16
+        ann: 
+        deadline: 
+    'Source Code Analysis':
+        ann: 
+        deadline: 
     'Testing and Automation':
-        ann: https://lists.fosdem.org/pipermail/fosdem/2016-October/002491.html
-        deadline: 2016-12-15
-
-
+        ann: 
+        deadline: 
+    'Tool the Docs':
+        ann: 
+        deadline: 
