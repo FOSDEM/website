@@ -14,14 +14,14 @@ days:
         ann: 
         deadline: 
     'BSD':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002614.html
+        deadline: 2017-11-26
     'CAD and Open Hardware':
         ann: 
         deadline: 
     'Community':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002610.html
+        deadline: 2017-11-27
     'Debugging Tools':
         ann: 
         deadline: 
@@ -38,11 +38,11 @@ days:
         ann: 
         deadline: 
     'Identity and Access Management':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002607.html
+        deadline: 2017-11-26
     'Microkernels':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002606.html
+        deadline: 2017-12-08
     'Monitoring and Cloud':
         ann: 
         deadline: 
@@ -70,8 +70,8 @@ days:
 
   sunday:
     'Config Management':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002608.html
+        deadline: 2017-11-12
     'Containers':
         ann: 
         deadline: 
@@ -91,19 +91,19 @@ days:
         ann: 
         deadline: 
     'HPC, Big Data, and Data Science':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002615.html
+        deadline: 2017-11-24
     'Internet of Things':
         ann: 
         deadline: 
     'Legal and Policy Issues':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002611.html
+        deadline: 2017-11-26
     'LLVM Toolchain':
         ann: 
         deadline: 
     'MySQL and Friends':
-        ann: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002605.html
         deadline: 
     'Open Source Design':
         ann: 
@@ -121,11 +121,11 @@ days:
         ann: 
         deadline: 
     'Software Defined Radio':
-        ann: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002603.html
         deadline: 
     'Software Defined Storage':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002616.html
+        deadline: 2017-11-26
     'Source Code Analysis':
         ann: 
         deadline: 
