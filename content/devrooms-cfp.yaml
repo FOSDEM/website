@@ -13,10 +13,19 @@ days:
     'Ada':
         ann: 
         deadline: 
+    'BSD':
+        ann: 
+        deadline: 
     'CAD and Open Hardware':
         ann: 
         deadline: 
-    'Distributions':
+    'Community':
+        ann: 
+        deadline: 
+    'Debugging Tools':
+        ann: 
+        deadline: 
+    'Free Java':
         ann: 
         deadline: 
     'Go':
@@ -29,9 +38,6 @@ days:
         ann: 
         deadline: 
     'Identity and Access Management':
-        ann: 
-        deadline: 
-    'Legal and Policy Issues':
         ann: 
         deadline: 
     'Microkernels':
@@ -49,45 +55,33 @@ days:
     'Open Media':
         ann: 
         deadline: 
-    'Perl':
+    'Package Management':
         ann: 
         deadline: 
     'PostgreSQL':
         ann: 
         deadline: 
-    'Rust':
-        ann: 
-        deadline: 
     'SDN and NFV':
         ann: 
         deadline: 
-    'Software Defined Radio':
-        ann: 
-        deadline: 
-    'Valgrind, GDB and Debugging Tools':
+    'Testing and Automation':
         ann: 
         deadline: 
 
   sunday:
-    'BSD':
-        ann: 
-        deadline: 
-    'Community':
-        ann: 
-        deadline: 
     'Config Management':
         ann: 
         deadline: 
     'Containers':
         ann: 
         deadline: 
-    'Decentralised Internet':
+    'Decentralised Internet and Privacy':
+        ann: 
+        deadline: 
+    'Distributions':
         ann: 
         deadline: 
     'DNS':
-        ann: 
-        deadline: 
-    'Free Java':
         ann: 
         deadline: 
     'Geospatial':
@@ -102,6 +96,9 @@ days:
     'Internet of Things':
         ann: 
         deadline: 
+    'Legal and Policy Issues':
+        ann: 
+        deadline: 
     'LLVM Toolchain':
         ann: 
         deadline: 
@@ -111,7 +108,7 @@ days:
     'Open Source Design':
         ann: 
         deadline: 
-    'Package Management':
+    'Perl':
         ann: 
         deadline: 
     'Real Time Communications':
@@ -120,13 +117,16 @@ days:
     'Retrocomputing':
         ann: 
         deadline: 
+    'Rust':
+        ann: 
+        deadline: 
+    'Software Defined Radio':
+        ann: 
+        deadline: 
     'Software Defined Storage':
         ann: 
         deadline: 
     'Source Code Analysis':
-        ann: 
-        deadline: 
-    'Testing and Automation':
         ann: 
         deadline: 
     'Tool the Docs':
