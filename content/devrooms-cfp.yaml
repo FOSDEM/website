@@ -53,8 +53,8 @@ days:
         ann: 
         deadline: 
     'Open Media':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002622.html
+        deadline:  2017-12-01
     'Package Management':
         ann: 
         deadline: 
@@ -115,8 +115,8 @@ days:
         ann: 
         deadline: 
     'Retrocomputing':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002623.html
+        deadline: 2017-11-25
     'Rust':
         ann: 
         deadline: 
