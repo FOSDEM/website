@@ -6,8 +6,8 @@ days:
         ann: 
         deadline: 
     'Virtualization and IaaS':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002632.html
+        deadline: 2017-12-01
 
   saturday:
     'Ada':
@@ -44,8 +44,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002606.html
         deadline: 2017-12-08
     'Monitoring and Cloud':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002631.html
+        deadline: 2017-11-26
     'Mozilla':
         ann: 
         deadline: 
@@ -54,10 +54,10 @@ days:
         deadline: 
     'Open Media':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002622.html
-        deadline:  2017-12-01
+        deadline: 2017-12-01
     'Package Management':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002630.html
+        deadline: 2017-12-01
     'PostgreSQL':
         ann: 
         deadline: 
@@ -73,11 +73,11 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002608.html
         deadline: 2017-11-12
     'Containers':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002626.html
+        deadline: 2017-11-30
     'Decentralised Internet and Privacy':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002627.html
+        deadline: 2017-11-26
     'Distributions':
         ann: 
         deadline: 
@@ -85,8 +85,8 @@ days:
         ann: 
         deadline: 
     'Geospatial':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002633.html
+        deadline: 2017-12-01
     'Hardware Enablement':
         ann: 
         deadline: 
@@ -100,14 +100,14 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002611.html
         deadline: 2017-11-26
     'LLVM Toolchain':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002624.html 
+        deadline: 2017-11-26
     'MySQL and Friends':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002605.html
         deadline: 
     'Open Source Design':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002628.html
+        deadline: 2017-12-01
     'Perl':
         ann: 
         deadline: 
@@ -118,17 +118,17 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002623.html
         deadline: 2017-11-25
     'Rust':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002625.html
+        deadline: 2017-11-24
     'Software Defined Radio':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002603.html
-        deadline: 
+        deadline: 2017-12-08 
     'Software Defined Storage':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002616.html
         deadline: 2017-11-26
     'Source Code Analysis':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002629.html
+        deadline: 2017-12-01
     'Tool the Docs':
         ann: 
         deadline: 
