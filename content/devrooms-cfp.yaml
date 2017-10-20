@@ -17,8 +17,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002614.html
         deadline: 2017-11-26
     'CAD and Open Hardware':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002637.html 
+        deadline: 2017-12-01
     'Community':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002610.html
         deadline: 2017-11-27
@@ -65,8 +65,8 @@ days:
         ann: 
         deadline: 
     'Testing and Automation':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002635.html
+        deadline: 2017-11-26
 
   sunday:
     'Config Management':
@@ -112,8 +112,8 @@ days:
         ann: 
         deadline: 
     'Real Time Communications':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002636.html
+        deadline: 2017-11-30
     'Retrocomputing':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002623.html
         deadline: 2017-11-25
