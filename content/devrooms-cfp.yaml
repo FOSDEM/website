@@ -62,8 +62,8 @@ days:
         ann: 
         deadline: 
     'SDN and NFV':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002642.html
+        deadline: 2017-11-16
     'Testing and Automation':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002635.html
         deadline: 2017-11-26
