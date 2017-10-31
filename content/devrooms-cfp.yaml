@@ -3,16 +3,16 @@ kind: internal
 days:
   both:
     'Embedded, Mobile and Automotive':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002647.html
+        deadline: 2017-12-11
     'Virtualization and IaaS':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002632.html
         deadline: 2017-12-01
 
   saturday:
     'Ada':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002644.html
+        deadline: 2017-11-26
     'BSD':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002614.html
         deadline: 2017-11-26
@@ -26,8 +26,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002620.html 
         deadline: 2017-12-01
     'Free Java':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002646.html
+        deadline: 2017-12-01
     'Go':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002617.html
         deadline: 
@@ -79,8 +79,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002627.html
         deadline: 2017-11-26
     'Distributions':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002648.html
+        deadline: 2017-12-03
     'DNS':
         ann: 
         deadline: 
@@ -94,8 +94,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002615.html
         deadline: 2017-11-24
     'Internet of Things':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002643.html 
+        deadline: 2017-12-01
     'Legal and Policy Issues':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002611.html
         deadline: 2017-11-26
