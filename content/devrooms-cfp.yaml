@@ -50,8 +50,8 @@ days:
         ann: 
         deadline: 
     'Open Document Editors':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002650.html 
+        deadline: 2017-12-04
     'Open Media':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002622.html
         deadline: 2017-12-01
@@ -59,8 +59,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002630.html
         deadline: 2017-12-01
     'PostgreSQL':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002638.html
+        deadline: 2017-11-19
     'SDN and NFV':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002642.html
         deadline: 2017-11-16
@@ -88,8 +88,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002633.html
         deadline: 2017-12-01
     'Hardware Enablement':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002649.html 
+        deadline: 2017-11-26
     'HPC, Big Data, and Data Science':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002615.html
         deadline: 2017-11-24
