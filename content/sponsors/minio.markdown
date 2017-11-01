@@ -3,14 +3,12 @@ title: Minio
 url: https://www.minio.io/
 ---
 
-Minio is a distributed object storage server. It is written in Go and
-released under Apache License 2.0. The name Minio stems from Minimal
-Object storage.
-
-Minio will enable application developers to build their own Amazon S3
-compatible object storage without any special storage skills. It is
-light enough to be bundled along with the application stack similar to
-Node.js and MongoDB.
+Minio is an AWS S3 compatible, open source, object storage server,
+written in Go. Consistent S3 API with freedom of deployment on variety
+of platforms, makes Minio an ideal multi-cloud storage platform.
+Developers generally deploy Minio in a container and consume storage
+services. While scaling Minio via platforms like Kubernetes and Docker
+Swarm.
 
 Our community hangs out on Gitter @ [http://gitter.minio.io/](http://gitter.minio.io/).
 
