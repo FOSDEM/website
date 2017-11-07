@@ -34,12 +34,11 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <img src="asset:lpi-big" alt=""
     style="float:right; margin-left: 1em; margin-right: 1em;"/>
 <a name="lpi"></a>
-<h2>LPI offers discounted certification exams at <%= conference()[:title] %>.</h2>
+<h2>LPI certification</h2>
 <p>
   As in previous years, the Linux Professional Institute will again offer a
-  discount to examination candidates at <%= conference()[:title] %>.<br/>
-  The level 1, level 2 and level 3 exams are offered at a <strong>discount of
-  nearly 50%</strong>.
+  discount to examination candidates at <%= conference()[:title] %>. The level
+  1, level 2 and level 3 exams are offered at a <strong>discount of nearly 50%</strong>.
 </p>
 </div>
 
@@ -61,7 +60,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
       <td><a href="https://www.lpi.org/our-certifications/linux-essentials-overview">Linux Essentials</a></td>
       <td>010</td>
       <td>&euro; 60.00</td>
-      <td>English, German</td>
+      <td>Dutch, English, German</td>
     </tr>
     <tr>
       <td><a href="https://www.lpi.org/our-certifications/lpic-1-overview">LPIC-1</a></td>
@@ -78,6 +77,12 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
     <tr>
       <td><a href="https://www.lpi.org/our-certifications/lpic-3-300-overview">LPIC-3</a></td>
       <td>300, 303, 304</td>
+      <td>&euro; 90.00</td>
+      <td>English</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.lpice.eu/en/our-certifications/devops-tools-engineer/">LPIC-OT DevOps Tools Engineer</a></td>
+      <td>701</td>
       <td>&euro; 90.00</td>
       <td>English</td>
     </tr>
