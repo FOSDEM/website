@@ -10,6 +10,6 @@ Developers generally deploy Minio in a container and consume storage
 services. While scaling Minio via platforms like Kubernetes and Docker
 Swarm.
 
-Our community hangs out on Gitter @ [http://gitter.minio.io/](http://gitter.minio.io/).
+Join us on [slack.minio.io](http://slack.minio.io).
 
 Minio supports the event financially.
