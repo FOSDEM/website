@@ -1,3 +1,27 @@
 ---
 kind: internal
 events:
+    'ZeroMQ hackaton':
+        location: Brussels
+        start: 2018-02-01
+        end: 2018-02-02
+        cost: Free
+        registration: None (wiki)
+        website: http://zeromq.org/event:zeromq-pre-fosdem-hackaton-thu-1-fri-2-feb-2018
+        contact: zeromq-dev@lists.zeromq.org
+    'FOSDEM PGDay 2018':
+        location: Brussels
+        start: 2018-02-02
+        end: 2018-02-02
+        cost: 50 Euro
+        registration: None
+        website: https://2018.fosdempgday.org/
+        contact: contact@fosdempgday.org
+    'CfgMgmtCamp 2018':
+        location: Ghent
+        start: 2018-02-05
+        end: 2018-02-07
+        cost: Free
+        registration: Website
+        website: http://cfgmgmtcamp.eu
+        contact: info@cfgmgmtcamp.eu
