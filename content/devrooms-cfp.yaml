@@ -82,8 +82,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002648.html
         deadline: 2017-12-03
     'DNS':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2017-November/002659.html
+        deadline: 2017-12-08
     'Geospatial':
         ann: https://lists.fosdem.org/pipermail/fosdem/2017-October/002633.html
         deadline: 2017-12-01
