@@ -17,6 +17,14 @@ events:
         registration: None
         website: https://2018.fosdempgday.org/
         contact: contact@fosdempgday.org
+    'GrimoireCon+CHAOSSCon':
+        location: Brussels
+        start: 2018-02-02
+        end: 2018-02-02
+        cost: Free to 50 Euro
+        registration: Website
+        website: http://grimoirelab.github.io/con
+        contact: jsmanrique@bitergia.com
     'CfgMgmtCamp 2018':
         location: Ghent
         start: 2018-02-05
