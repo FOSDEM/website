@@ -19,8 +19,8 @@ events:
         contact: contact@fosdempgday.org
     'GNU Guix/Guile day':
         location: Brussels
-        start: 2017-02-02
-        end: 2017-02-02
+        start: 2018-02-02
+        end: 2018-02-02
         cost: Free
         registration: None
         website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2018
