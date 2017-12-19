@@ -1,6 +1,14 @@
 ---
 kind: internal
 events:
+    'EasyBuild User Meeting':
+        location: Amsterdam (NL)
+        start: 2018-01-30
+        end: 2018-02-01
+        cost: Free
+        registration: None
+        website: https://github.com/easybuilders/easybuild/wiki/3rd-EasyBuild-User-Meeting
+        contact: kenneth.hoste@ugent.be
     'ZeroMQ hackaton':
         location: Brussels
         start: 2018-02-01
@@ -41,3 +49,11 @@ events:
         registration: Website
         website: http://cfgmgmtcamp.eu
         contact: info@cfgmgmtcamp.eu
+    'GodotCon 2018':
+        location: Brussels
+        start: 2018-02-05
+        end: 2018-02-06
+        cost: Free
+        registration: Required (deadline 2017-12-31)
+        website: https://godotengine.org/events
+        contact: remi@godotengine.org
