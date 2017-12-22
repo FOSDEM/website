@@ -2,22 +2,36 @@
 title: trivago
 url: http://www.trivago.com/
 ---
-trivago is the world's largest hotel search website, with over 900,000
-hotels, 250 booking sites and 80 million monthly visitors.
+trivago is a global hotel search platform. We are focused on reshaping
+the way travelers search for and compare hotels, while enabling hotel
+advertisers to grow their businesses. Our search platform makes sense
+of a complex, fragmented web of online hotel offerings in a
+comprehensive way, by aggregating information from a deep supply of
+hotels and websites. trivago provides access to over 1.8m hotels,
+including vacation rentals and alternative accommodations, with prices
+and availability from over 400+ booking sites and hotel chains.
 
-But trivago is more! With people from all over the world, trivago is
-an international IT company constantly implementing the newest
-technology. Over 150 IT specialists are currently working on the
-continuous development of the high-traffic metasearch engine. Do you
-want to know more? Here's a little more insight into our world of IT:
+trivago is a place where we take pride in learning from one another.
+We love what we do but we don’t take ourselves too seriously— we make
+mistakes, but the drive to continually improve is something we all
+possess.
 
-PHP 5.4 at it's best, handmade on FreeBSD
-Javascript in browser and back-end
-Symfony2, Twig, Twitter Bootstrap, jQuery, Backbone and much more
-Storage facilities: MySQL Percona Server, TokuDB, Redis, Memcached,
-Varnish, InfluxDB, Solr, Kafka
-"Big Data" areas: Java, Hadoop MR, Hive, Pig & Co
+Our tech stack:
+<ul>
+<li>Highly modern JavaScript, including Jest, Snapshot
+testing, Redux, webpack, Rollup and of course ES6+</li>
+<li>PHP and Symfony at their best, running on handmade FreeBSD
+servers</li>
+<li>node.js in the cloud</li>
+<li>Storage systems: Percona MySQL, Cassandra, Redis,
+Memcached and Varnish</li>
+<li>Big Data” areas: Java, Hadoop, Kafka, Stream
+processing, Big data analytics</li>
+</ul>
 
-Curious? Visit [www.trivago.com](http://www.trivago.com/)
+We are big supporters of Open Source and contribute back whenever possible.
 
-trivago supports the event financially.
+
+Curious? Visit our tech blog! [tech.trivago.com](http://tech.trivago.com/)
+
+trivago supports the event financially
