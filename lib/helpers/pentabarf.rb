@@ -671,12 +671,13 @@ module Fosdem
                    .map do |t|
                      # XXX: Disgusting hack for 2015 because I really don't have
                      # time to come up with anything more elegant than this!
-                     #  pph 20150109.  Disabled agk 20160104.
-                     # if t['conference_track'] == 'Security devroom' then
-                     #  t['name'] = t['conference_track']
-                     # else
-                     t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
-                     # end
+                     #  pph 20150109.  Disabled agk 20160104 (for Security devroom).
+                     #  Reenabled 20171222 for Community devroom with same name as main track.
+                     if t['conference_track'] == 'Community devroom' then
+                       t['name'] = t['conference_track']
+                     else
+                       t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
+                     end
                      t['title'] = t['conference_track']
                      t['type'] = case t['conference_track']
                                  when /\s+devroom$/i
