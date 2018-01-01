@@ -41,6 +41,14 @@ events:
         registration: Website
         website: http://grimoirelab.github.io/con
         contact: jsmanrique@bitergia.com
+    'Bytenight Party':
+        location: Brussels
+        start: 2018-02-03
+        end: 2018-02-04
+        cost: Free
+        registration: None
+        website: https://hsbxl.be/Bytenight_2018
+        contact: zoobab@gmail.com
     'CfgMgmtCamp 2018':
         location: Ghent
         start: 2018-02-05
