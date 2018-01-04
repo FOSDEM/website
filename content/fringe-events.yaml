@@ -73,6 +73,14 @@ events:
         registration: Website
         website: http://cfgmgmtcamp.eu
         contact: info@cfgmgmtcamp.eu
+    'CiviCamp':
+        location: Brussels
+        start: 2018-02-05
+        end: 2018-02-09
+        cost: 85
+        registration: None
+        website: https://civicrm.org/civicamp/brussels-2018
+        contact: alain@businessandcode.eu
     'GodotCon 2018':
         location: Brussels
         start: 2018-02-05
