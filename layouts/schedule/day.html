@@ -42,7 +42,7 @@ xml.table(class: "timetable timetable-head table table-striped table-bordered ta
   end
 end #table
 
-xml.table(class: "timetable table table-striped table-bordered table-condensed") do
+xml.table(class: "timetable timetable-body table table-striped table-bordered table-condensed") do
   xml.tbody do
     c = 0
     source.fetch(:by_time).each do |time, by_rooms|
