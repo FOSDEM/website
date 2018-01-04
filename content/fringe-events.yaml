@@ -41,6 +41,14 @@ events:
         registration: Website
         website: http://grimoirelab.github.io/con
         contact: jsmanrique@bitergia.com
+    'Pre-FOSDEM Kubernetes Meetup':
+        location: HSBXL Hackerspace Brussels
+        start: 2018-02-02
+        end: 2018-02-02
+        cost: Free
+        registration: Required
+        website: https://www.meetup.com/Brussels-Kubernetes-Meetup/events/245974093/
+        contact: sttts@redhat.com
     'pre-FOSDEM MySQL Days':
         location: Brussels
         start: 2018-02-02
