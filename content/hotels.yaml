@@ -39,7 +39,7 @@ hotels:
       tel: '2 4103858'
       fax: '2 4103905'
       email: 'brussels.europe@lesaubergesdejeunesse.be'
-      url: 'http://www.lesaubergesdejeunesse.be/Brussels-Europe-Introduction?lang=en'
+      url: 'http://www.lesaubergesdejeunesse.be/en_US/website/action/hotel?id=1'
       maps:
       - 'http://osm.org/go/0EoTJlZ0E--'
       - 'http://goo.gl/maps/HTUem'
