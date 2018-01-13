@@ -692,6 +692,8 @@ module Fosdem
                                    'keysigning'
                                  when /^bof/i
                                    'bof'
+                                 when /workshop/i
+                                   'workshop'
                                  when /^stands/i
                                    'stand'
                                  else
