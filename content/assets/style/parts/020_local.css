@@ -285,7 +285,7 @@ body.fullpage {
 }
 
 .roomtracks th.building {
-    width: 2%;
+    width: 4%;
     text-align: right;
     padding: 0.1em;
     line-height: 1em;
@@ -294,14 +294,25 @@ body.fullpage {
     text-align: right;
     vertical-align: middle;
 }
-.roomtracks th.room, .roomtracks th.day {
-    width: 8%;
+.roomtracks th.room {
+    width: 16%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.roomtracks tbody th.room, .roomtracks tbody th.day {
+.roomtracks th.day {
+    width: 7%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.roomtracks tbody th.room {
+    text-align: left;
+}
+.roomtracks tbody th.day {
     text-align: right;
+}
+.roomtracks tbody th.room, .roomtracks tbody th.day {
     padding: 0.1em;
     line-height: 1em;
     font-weight: normal;
