@@ -65,6 +65,14 @@ events:
         registration: Website
         website: https://www.eventbrite.com/e/pre-fosdem-mysql-day-2018-tickets-40779231780
         contact: frederic.descamps@oracle.com
+    'Allwinner/Sunxi dinner':
+        location: Brussels
+        start: 2018-02-03
+        end: 2018-02-03
+        cost: 0-50eur
+        registration: E-mail or phone (+32.484566109)
+        website: https://groups.google.com/forum/#!topic/linux-sunxi/qZ817H8cV0U
+        contact: zoobab@gmail.com
     'Automotive Evening':
         location: Brussels
         start: 2018-02-03
