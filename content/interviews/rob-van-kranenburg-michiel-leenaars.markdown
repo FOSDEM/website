@@ -1,6 +1,6 @@
 ---
 year: 2018
-speaker: [rob_van_kranenburg, michiel_leenaars]
+speaker: rob_van_kranenburg
 event: next_generation_internet 
 ---
 
@@ -42,7 +42,7 @@ We need them.
 
 "Rough consensus and running code" is not just keyboard nation, no, it is the model for governance of everything.
 
-In my vision [NGI](https://nlnet.nl/NGI/) is a system of systems, a pragmatic cybernetics, that eventually runs a 500 million European zone as a service. Compared to China we have the advantage of building a productive balance between extreme centralization on infrastructure, spectrum, smart contracts and hardware by EU industry and extreme decentralization on data fully open for direct local democracy and services and apps by EU SMEs; and personal data clouds as envisioned by the GDPR.  Compared to Singapore we have scale and the possibility to sell the system (running your territory-region as a service).  Compared to the US we have relatively intact social systems and fully functional building blocks such as Estonian e-card, Horizon 2020, Digital Single Market focus. This scenario offers investors a real viable European project, strengthening public infrastructure and open business models on the data if they are on EU platforms, 
+In our vision (the vision of the CSA NGI Move) [NGI](https://nlnet.nl/NGI/) is a system of systems, a pragmatic cybernetics, that eventually runs a 500 million European zone as a service. Compared to China we have the advantage of building a productive balance between extreme centralization on infrastructure, spectrum, smart contracts and hardware by EU industry and extreme decentralization on data fully open for direct local democracy and services and apps by EU SMEs; and personal data clouds as envisioned by the GDPR.  Compared to Singapore we have scale and the possibility to sell the system (running your territory-region as a service).  Compared to the US we have relatively intact social systems and fully functional building blocks such as Estonian e-card, Horizon 2020, Digital Single Market focus. This scenario offers investors a real viable European project, strengthening public infrastructure and open business models on the data if they are on EU platforms, 
 
 Q: You talk about "an opportunity to fix the internet". In what way is the internet broken today?
 
