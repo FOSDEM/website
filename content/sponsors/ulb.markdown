@@ -1,8 +1,6 @@
 ---
 title: Université Libre de Bruxelles
 url: http://www.ulb.ac.be/
-section: thanks
-include_in_toplevel: false
 ---
 
 The Université Libre de Bruxelles (or ULB) is a French-speaking university in Brussels, Belgium.
