@@ -24,7 +24,7 @@ There are some exceptions (like GELI in FreeBSD), but in Linux, we did not have 
 
 Unfortunately, there are not even many filesystems that focus on authenticated encryption and provide cryptographic data integrity protection. 
 
-I would like to explain why we should care more about data integrity protection in the future. The implementation with dm-integrity, dm-crypt and cryptsetup tools is just our attemp to show that it is possible in reality.
+I would like to explain why we should care more about data integrity protection in the future. The implementation with dm-integrity, dm-crypt and cryptsetup tools is just our attempt to show that it is possible in reality.
 
 Also, the idea of easy deployment of new concepts in disk encryption, like authenticated encryption or memory-hard key derivation functions, led to the new LUKS2 metadata on-disk format that I would like to mention as well.
 
