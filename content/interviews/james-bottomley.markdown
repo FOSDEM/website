@@ -38,7 +38,7 @@ Gnutls actually does support TPM 1.2.  The jury is out on whether it will integr
 
 OpenSSH has switchable crypto, but the version compiled by most distributions is based on OpenSSL.  This makes it easy to support the TPM via OpenSSL engines.  The one drawback is that the ssh-agent makes assumptions about how it can handle the keys which are broken by the engine code but once this is fixed, TPM support becomes easy.
 
-GPG uses its own crypto system called libgcrypt, so it needs hand crafted support for a TPM.  I did talk to Werner Koch about this at Kernel Recipes and I'm in the middle of trying to implement TPM 2.0 support for GPG based on a modification of the way OpenPGP dongles are supported.
+GPG uses its own crypto system called libgcrypt, so it needs hand crafted support for a TPM.  I did talk to Werner Koch about this at Kernel Recipes and I [implemented TPM 2.0 support for GPG](https://lists.gnupg.org/pipermail/gnupg-devel/2018-January/033350.html) based on a modification of the way OpenPGP dongles are supported.
 
 Gnome keyring is a bit of a quandry:  For some reason it emulates a ssh-agent, meaning that simply adding TPM support to openSSH doesn't make it work with GNOME keyring.  It means that several other features of openSSH (like pkcs11 token support) also don't work.  I think the way to fix gnome-keyring is to get it out of the business of emulating the agent and instead concentrate on TPM enabling the crypto system that protects your user passwords (meaning the keystores would become useless if removed from your laptop).
 
