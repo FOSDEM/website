@@ -18,7 +18,7 @@ Ouroboros has been growing steadily and we arrived at a point where it was stabl
 
 Q: What's the history of the Ouroboros project? Why did you two decide to start developing a new IPC/network subsystem?
 
-When reading papers by the pioneers that started building computer networks 30-40 years ago, one finds that they virtually all agreed that communication endpoints are processes.
+When reading papers by the pioneers that started building computer networks 40-50 years ago, one finds that they virtually all agreed that communication endpoints are processes.
 
 This mindset has somewhat been lost in current networks, where we’re conceptually building networks where (virtual) machines and devices are the network endpoints. John Day gives a colorful account in his book “Patterns in Network Architecture”. Since around 2010, there are research efforts in Europe and the US that are rethinking networks based on this IPC principle and we were involved in a few of them. 
 
