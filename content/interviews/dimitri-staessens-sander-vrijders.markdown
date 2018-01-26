@@ -6,7 +6,7 @@ event: ipc
 
 Q: Could you briefly introduce yourself?
 
-We are part of the [IDLab](https://www.ugent.be/ea/idlab/en) group at Ghent University (Belgium) that researches everything that relates to “Future Internet”. Our own research is mostly experimental, transforming cutting edge concepts into working prototypes and evaluate them on network testbeds provided by the Global Environment for Network Innovation (GENI) in the US and Future Internet Research and Experimentation (FIRE+) programs in Europe.
+We are part of the [IDLab](https://www.ugent.be/ea/idlab/en) group at Ghent University - imec (Belgium) that researches everything that relates to “Future Internet”. Our own research is mostly experimental, transforming cutting edge concepts into working prototypes and evaluate them on network testbeds provided by the Global Environment for Network Innovation (GENI) in the US and Future Internet Research and Experimentation (FIRE+) programs in Europe.
 
 Q: What will your talk be about, exactly?
 
@@ -38,7 +38,7 @@ Ouroboros stems from our research on network architectures, but the prototype wa
 
 Q: Which new features can we expect this year in Ouroboros and which future directions will you research?
 
-Right now, we have two main priorities: bug fixing to stabilize larger and larger deployments for our research and implementing acknowledgments, retransmission, flow control, congestion control... We also plan to add encryption support (implementing a ECDH-C25519/EAS encryption scheme using libgcrypt/libssl). There’s always plenty of work to be done.
+Right now, we have two main priorities: bug fixing to stabilize larger and larger deployments for our research and implementing acknowledgments, retransmission, flow control, congestion control... We also plan to add encryption support (implementing a ECDH-C25519/AES encryption scheme using libgcrypt/libssl). There’s always plenty of work to be done.
 
 Future research would go towards trimming down the system to get minimal implementations for very small embedded systems (“IoT”). This would mean developing device-specific C/assembly code for each targeted device.
 
