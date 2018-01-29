@@ -89,6 +89,14 @@ events:
         registration: None
         website: https://hsbxl.be/Bytenight_2018
         contact: zoobab@gmail.com
+    'Python Dinner':
+        location: Brussels
+        start: 2018-02-03
+        end: 2018-02-03
+        cost: 22.40
+        registration: Required (deadline 2018-01-31)
+        website: https://ti.to/python-dinner-fosdem/2018
+        contact: hello@hugoherter.con
     'Buildroot Developers Days':
         location: Brussels
         start: 2018-02-05
