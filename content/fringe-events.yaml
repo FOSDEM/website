@@ -69,7 +69,7 @@ events:
         location: Brussels
         start: 2018-02-03
         end: 2018-02-03
-        cost: 0-50eur
+        cost: 0-50 Euro
         registration: E-mail or phone (+32.484566109)
         website: https://groups.google.com/forum/#!topic/linux-sunxi/qZ817H8cV0U
         contact: zoobab@gmail.com
@@ -93,7 +93,7 @@ events:
         location: Brussels
         start: 2018-02-03
         end: 2018-02-03
-        cost: 22.40
+        cost: 22,40 Euro
         registration: Required (deadline 2018-01-31)
         website: https://ti.to/python-dinner-fosdem/2018
         contact: hello@hugoherter.con
@@ -117,7 +117,7 @@ events:
         location: Brussels
         start: 2018-02-05
         end: 2018-02-09
-        cost: 85
+        cost: 85 Euro
         registration: None
         website: https://civicrm.org/civicamp/brussels-2018
         contact: alain@businessandcode.eu
