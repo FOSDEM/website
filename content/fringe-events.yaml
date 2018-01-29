@@ -97,6 +97,14 @@ events:
         registration: Required (deadline 2018-01-31)
         website: https://ti.to/python-dinner-fosdem/2018
         contact: hello@hugoherter.con
+    'ULYSSIS goes to FOSDEM':
+        location: Leuven
+        start: 2018-02-03
+        end: 2018-02-04
+        cost: 6,60 Euro per day (price of train ticket)
+        registration: Required (deadline 2018-02-02)
+        website: https://inschrijven.ulyssis.org/26/
+        contact: activiteiten@ulyssis.org
     'Buildroot Developers Days':
         location: Brussels
         start: 2018-02-05
