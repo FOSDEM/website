@@ -18,7 +18,7 @@ Currently, every FLOSS system has its own configuration access. Such FLOSS syste
 
 In the talk I'll present a revolutionary approach, called [Elektra](https://www.libelektra.org/), which is a global shared configuration access that does not impair modularity.
 
-We will also have a demonstration of some of Elektra's features, such as validation and introspection, thanks to Thomas Waser.
+We will also demonstrate some of Elektra's features, such as validation and introspection, thanks to Thomas Waser.
 
 Q: Why this topic?
 
@@ -44,7 +44,7 @@ Elektra started in 2004, initially with the naïve assumption we could use the c
 
 2008 (version 0.7): The next step was to have a virtual-file-system-like abstraction. It allows us to mount application-specific configuration files into a global hierarchy.
 
-2012 (version 0.8): To scope with modularity on system-level (dynamic linker dependences as printed with ldd), we introduced a plugin system. For example, this allowed us to use XML, YAML, or JSON parsers without adding any dependency to the core.
+2012 (version 0.8): To cope with modularity on system-level (dynamic linker dependences as printed with ldd), we introduced a plugin system. For example, this allowed us to use XML, YAML, or JSON parsers without adding any dependency to the core.
 
 Since 2014 (version 0.8.*): To keep modularity between applications and to introduce introspection, we introduced the declarative configuration specification language, which also unifies all earlier abstractions.
 
@@ -56,11 +56,11 @@ Q: What is so important about good configuration defaults and how is Elektra add
 
 Defaults are essential because they decide about the first impression of your application. Two aspects (next to knowing your users) are fundamental for what we consider as good defaults, both can be improved by Elektra's configuration specification language.
 
-First, we want defaults to adopt themselves to the system it is running on. If we have a one graphic card, we usually want the X-Server to start up using this graphic card, if we have a specific number of cores we usually want Firefox to distribute the load on all these cores.
+First, we want defaults to adapt themselves to the system they are running on. If we have one graphics card, we usually want the X-Server to start up using this graphic card, if we have a specific number of cores we usually want Firefox to distribute the load on all these cores.
 
 Second, we want defaults to be consistent with decisions we have already taken before. We are currently lacking configuration settings respected by all applications, for example, a configuration setting to change all shortcuts to quit an application from Ctrl+Q to Alt+F4.
 
-Elektra's idea is to add a simple language which allows us to connect configuration settings, calculate defaults from other configuration settings or to do arbitrary computations on configuration settings using plugins. Because of the key/value based syntax, also the specification language can be written using configuration tools (commandline-tools, web-UIs, GUIs, ...).
+Elektra's idea is to add a simple language which allows us to connect configuration settings, calculate defaults from other configuration settings or to do arbitrary computations on configuration settings using plugins. Because of the key-value based syntax, also the specification language can be written using configuration tools (commandline-tools, web-UIs, GUIs, ...).
 
 Q: Can Elektra be used together with existing configuration management tools, such as Puppet, Chef, and CFengine?
 
@@ -86,9 +86,9 @@ For some time I was the only contributor but this changed completely. In the las
 
 Q: How can interested developers contribute? In which domains could Elektra use some help?
 
-Luckily the technical debt of Elektra's code base is quite low. We have good code quality with plenty of documentation; we continuously build the whole source on many architectures, operating systems, and compilers; we have exhaustive tests; and Valgrind tells that no memory leak is possible within these tests.
+Luckily the technical debt of Elektra's code base is quite low. We have good code quality with plenty of documentation; we continuously build the whole source on many architectures, operating systems, and compilers; we have exhaustive tests; and Valgrind tells us that no memory leak is possible within these tests.
 
-Elektra is already successful and there are already more systems that would like to use Elektra than we are able to write patches.
+Elektra is already successful and there are already more systems that would like to use Elektra than we are able to write patches for.
 
 What Elektra is mainly missing are FLOSS systems that want to use Elektra and are also willing to contribute non-trivial parts, like writing application-specific bindings and plugins. Such bindings and plugins are often reusable between applications, e.g., a configuration parser for Elektra can be used by any application using Elektra.
 
@@ -98,7 +98,7 @@ Q: Which new features can we expect this year in Elektra?
 
 There are many interesting features in the pipeline, I will pick four.
 
-One larger goal are optimizations so that Elektra can better handle very large configuration settings. One technique will be an Order Preserving Minimal Perfect Hash Map (OPMPHM) to speed up lookups without making ordered iteration slower. The implementation of the randomized Las Vegas hash map algorithm is in a final stage and the heuristic functions ensuring time and space optimality are backed up by benchmarks. Thanks for Kurt Micheli for his work.
+One larger goal are optimizations so that Elektra can better handle very large configuration settings. One technique will be an Order Preserving Minimal Perfect Hash Map (OPMPHM) to speed up lookups without making ordered iteration slower. The implementation of the randomized Las Vegas hash map algorithm is in a final stage and the heuristic functions ensuring time and space optimality are backed up by benchmarks. Thanks to Kurt Micheli for his work.
 
 Secondly, we want to make our notification system more flexible and avoid any blocking operations. That allows applications to be instantly aware of configuration changes. It will support different I/O management libraries like libuv or glib. Thanks to Thomas Wahringer for his work.
 
