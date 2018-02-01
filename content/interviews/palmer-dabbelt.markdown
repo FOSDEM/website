@@ -16,7 +16,7 @@ I'm giving the talk because I think it's a very exciting time if you're interest
 
 Q: What do you hope to accomplish by giving this talk? What do you expect?
 
-I want to get the word out about RISC-V.  We've made huge strides in the last year: much of the key software ecosystem is upstream, simulators have gotten a lot more stable, hardware is starting to become readily available, and the open source RTL implementations are usable.  We've gotten lots of traction in the hardware community (Western Digital announced they're moving everything to RISC-V, for example), but there's been less buy-in among the software community.  I view this talk as a way to announce RISC-V to the larger open source community, as it's now ready for prime time.
+I want to get the word out about RISC-V.  We've made huge strides in the last year: much of the key software ecosystem is upstream, simulators have gotten a lot more stable, hardware is starting to become readily available, and the open source RTL implementations are usable.  We've gotten lots of traction in the hardware community (Western Digital announced they're moving everything - 1 billion cores a year - to RISC-V, for example), but there's been less buy-in among the software community.  I view this talk as a way to announce RISC-V to the larger open source community, as it's now ready for prime time.
 
 My hope is to get people excited about RISC-V, convince them they should abandon whatever else they're working on, and get everyone on board with porting their favorite project to RISC-V.
 
@@ -26,7 +26,7 @@ I was a PhD candidate at UC Berkeley, and I sat in the lab right next to Andrew 
 
 Q: What were the biggest challenges in getting RISC-V support in binutils, GCC, glibc and Linux?
 
-The biggest challenge has been the scale of the project: essentially the goal is to port all of software to RISC-V.  While most ISA ports will have a team of experience people involved, up until recently RISC-V was an academic project so everyone involved was doing this for the first time.  SiFive has helped a lot, as we can now hire people who know what they're doing.  Additionally, RISC-V has been gaining a lot of traction in both the software and hardware communities, and the additional manpower has been a huge help.
+The biggest challenge has been the scale of the project: essentially the goal is to port all of software to RISC-V.  While most ISA ports will have a team of experience people involved, up until recently RISC-V was an academic project so everyone involved was doing this for the first time.  SiFive has helped a lot, as we have now hired a bunch of people who know what they're doing.  Additionally, RISC-V has been gaining a lot of traction in both the software and hardware communities, and the additional manpower has been a huge help.
 
 Q: When will we start seeing distributions being ported to RISC-V? Which ones are actively working on support?
 
@@ -38,7 +38,7 @@ Since RISC-V is such a large and unique project, we have a wide ranging communit
 
   * Academic computer architecture researchers, who are interested in RISC-V  because it's the only viable option for performance large scale RTL-based  research.  The combination of an extensible ISA and an open-source RTL  implementation has fundamentally changed the projects that are available to  a research group.
   * Open source enthusiasts, who are interested in having the lowest level  details of the system available to them in a way that's never going to happen  in systems based on proprietary ISAs.
-  * Industrial or hobbyist micro architects who are interested in building their  own RISC-V based implementations, either from scratch or by leveraging SiFive's open source RTL generator.
+  * Industrial or hobbyist micro architects who are interested in building their  own RISC-V based implementations, either from scratch or by leveraging SiFive's open source RTL generator or commercial products.
   * Compiler experts, who are interested in optimizing for the current set of  RISC-V ISA extensions as well as the upcoming explicitly parallel extensions  like the V extension for Cray-style vectors.
   * Kernel hackers, who are interested in using systems that they can see the  workings of at a level that has not yet been possible.
   * Simulator writers, where the simplicity of the RISC-V ISA allows for very low  overhead software implementations.
@@ -53,15 +53,17 @@ Q: What is open in SiFive's chips, what isn't, and why?
 SiFive ensures that there is a high quality open source implementation of the base RISC-V platform, but unfortunately it's not feasible to have an entire chip be open source:
 
   * RTL for the base platform is open source, which on the current chips includes  the cores and the L1 caches.
-  * Some of the RTL on the chip is not open source, with the big part being the  L2 cache on the upcoming U54-MC based chip.  In general there's always going  to be a few bits of proprietary components.
+  * Some of the RTL on the chip is not open source, with the big part being the  L2 cache on the upcoming U54-MC based chip.  In general there's always going  to be a few bits of proprietary components, or items that will take a little bit longer to open source.
   * The simpler interfaces (those where we can produce the controller and phy)  are largely open source, which includes things like SPI and UART.
-  * The IP we've licensed is not open source, which includes things like the DDR  controller and phy.  There's not much we can do about this.
+  * The third-party IP we've licensed is not open source, which includes things like the DDR  controller and phy.  There's not much we can do about this.
 
 On chips like the FE310-G000, which have no complicated analog interfaces, it's feasible to have the vast majority of the chip open source.  Chips like the upcoming Freedom U design are trickier to build that way, we'd need a mechanism for doing open source analog design on modern processors first. 
 
+Our software SDK for the chips is open, as are our platform specifications, memory maps, register bits, and items that software care about. SiFive is built on RISC-V, which is built on a free and open philosophy.
+
 Q: What are SiFive's plans in 2018?
 
-We hope to release many interesting RISC-V implemenations, along with improving the general state of the RISC-V software ecosystem.  My hope is to have mainstream Linux distributions have experimental releases for RISC-V in 2018.
+We hope to release many interesting RISC-V implemenations, along with improving the general state of the RISC-V software ecosystem. We will also continue to see commercial adoption of RISC-V among more system and chip vendors. My hope is to have mainstream Linux distributions have experimental releases for RISC-V in 2018.
 
 Q: Have you enjoyed previous FOSDEM editions?
 
