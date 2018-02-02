@@ -797,7 +797,9 @@ module Fosdem
 	video_link_count = 0
 	events.each do |e|
 	  next if e['room'] =~ /corridor/
+	  next if e['room'] =~ /level/
 	  next if e['track'] =~ /certification/
+	  next if e['track'] =~ /bof/
           current_time = Time.now
 
 	  # Uncomment the following line to test what the site looks like at a specific time
