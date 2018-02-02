@@ -121,6 +121,14 @@ events:
         registration: Required (deadline 2018-02-02)
         website: https://inschrijven.ulyssis.org/26/
         contact: activiteiten@ulyssis.org
+    'OpenStreetMap Meetup':
+        location: Brussels
+        start: 2018-02-04
+        end: 2017-02-04
+        cost: Free
+        registration: None
+        website: https://www.meetup.com/OpenStreetMap-Belgium/events/247283180/
+        contact: pietervdvn@gmail.com
     'Buildroot Developers Days':
         location: Brussels
         start: 2018-02-05
