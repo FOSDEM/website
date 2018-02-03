@@ -78,8 +78,8 @@ are available, too.</p>
 	      dayevents.each do |e|
                 event_start = Time.parse(e[:start_datetime])
                 event_end = Time.parse(e[:end_datetime])
-                next if event_start - current_time > 4 * 60
-                next if event_end - current_time <= 4 * 60
+                next if event_start - current_time > 5 * 60
+                next if event_end - current_time <= 1
 		current_event = e
 	      end
 	    %>
