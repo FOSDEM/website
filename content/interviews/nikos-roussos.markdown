@@ -42,4 +42,4 @@ We want to automate all things, and essentially remove the human factor out of o
 
 Q: Have you enjoyed previous FOSDEM editions?
 
-Yes! I'm a regular. This must be my 10th Fosdem :)
+Yes! I'm a regular. This must be my 10th FOSDEM :)
