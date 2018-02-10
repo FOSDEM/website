@@ -66,15 +66,11 @@ http-server
 
 ### Ruby version
 
-Ruby must be pinned at 2.1.5 because of the following requirements:
-
-- The `json` dependency (v1.8.3) as of 2017-02-06) is not compatible with Ruby >= 2.4.0. ActiveSupport needs to be updated so its `json` dependency is bumped to >= 1.8.6 to gain support for Ruby 2.4 and greater.
-- The `psych` gem fails on Ruby > 2.1.5.
-- `prawn-2.0.3 requires ruby version >= 2.0.0, which is incompatible with the current version, ruby 1.9.3p551`
+Ruby must be pinned at 2.1.5 because bumping the Ruby version affects the schedule ical & xcal feed output.
 
 ### ImageMagick version
 
-`rmagick` v2.15.4 is not compatible with ImageMagick 7 and newer. Tested with ImageMagick 6.9.9-34 on OSX.
+`rmagick` v2.16 is not compatible with ImageMagick 7 and newer. See [this issue](https://github.com/rmagick/rmagick/issues/267) (still open as of 2018-02-10).
 
 ## Getting set up on OSX
 
