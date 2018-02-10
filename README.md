@@ -84,3 +84,21 @@ Ruby must be pinned at 2.1.5 because of the following requirements:
 brew install rbenv pngcrush imagemagick@6
 rbenv install ruby-1.9.3-p551
 ```
+
+# Testing upgrades
+
+A good way to test ruby/dependency upgrades is to compare the output with a known-good output, e.g.:
+
+```bash
+# generate the reference output
+git checkout master
+bundle exec nanoc 
+mv output output_reference
+
+# generate the test output
+git checkout my_changes_branch
+bundle exec nanoc
+
+# compare the two
+diff -rq output output_reference
+```
