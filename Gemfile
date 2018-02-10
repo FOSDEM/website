@@ -14,7 +14,7 @@ gem "builder"
 gem "htmlentities"
 gem "kramdown"
 gem "nanoc", "3.6.5"
-gem "nokogiri"
+gem "nokogiri", '~> 1.6' # Bumping past 1.6 causes <b> tags to be swallowed
 gem "pg", '~> 0.18.0' # 1.0.0 deprecates Ruby <2.2 
 # we need git master here, implements colspan in tables:
 gem "prawn", git: "git://github.com/prawnpdf/prawn", branch: "master"
