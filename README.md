@@ -62,6 +62,21 @@ cd output
 http-server
 ```
 
+### Running with Docker
+
+```bash
+docker build -t fosdem/website .
+
+# Export from Pentabarf
+docker run --rm -v $(pwd):/usr/src/app fosdem/website nanoc update -y
+
+# Generate the site
+docker run --rm -v $(pwd):/usr/src/app fosdem/website nanoc
+
+# Preview the site (at http://localhost:3000/2018)
+docker run --rm -v $(pwd):/usr/src/app fosdem/website -p 3000:3000 nanoc view
+```
+
 ## Dependency notes
 
 ### Ruby version
@@ -80,7 +95,6 @@ Ruby must be pinned at 2.1.5 because bumping the Ruby version affects the schedu
 brew install rbenv pngcrush imagemagick@6
 rbenv install ruby-1.9.3-p551
 ```
-
 # Testing upgrades
 
 A good way to test ruby/dependency upgrades is to compare the output with a known-good output, e.g.:
