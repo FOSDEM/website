@@ -10,27 +10,27 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (4.2.5)
+    activesupport (4.2.10)
       i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    adsf (1.2.0)
+    adsf (1.2.1)
       rack (>= 1.0.0)
     bluecloth (2.2.0)
-    builder (3.2.2)
-    coderay (1.1.0)
+    builder (3.2.3)
+    coderay (1.1.2)
     colored (1.2)
+    concurrent-ruby (1.0.5)
     cri (2.7.0)
       colored (~> 1.2)
     htmlentities (4.3.4)
-    i18n (0.7.0)
-    json (1.8.3)
-    kramdown (1.9.0)
-    method_source (0.8.2)
+    i18n (0.9.4)
+      concurrent-ruby (~> 1.0)
+    kramdown (1.16.2)
+    method_source (0.9.0)
     mini_portile2 (2.0.0)
-    minitest (5.8.3)
+    minitest (5.11.3)
     nanoc (3.6.5)
       cri (~> 2.3)
     nokogiri (1.6.7.1)
@@ -39,22 +39,20 @@ GEM
     pg (0.18.4)
     prawn-table (0.2.2)
       prawn (>= 1.3.0, < 3.0.0)
-    pry (0.10.3)
+    pry (0.11.3)
       coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
-    rack (1.6.4)
-    rainpress (1.0)
-    rmagick (2.15.4)
+      method_source (~> 0.9.0)
+    rack (1.6.8)
+    rainpress (1.0.1)
+    rmagick (2.16.0)
     rsolr (1.1.2)
       builder (>= 2.1.2)
-    slop (3.6.0)
     systemu (2.6.5)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     ttfunk (1.4.0)
-    tzinfo (1.2.2)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2015.7)
+    tzinfo-data (1.2018.3)
       tzinfo (>= 1.0.0)
 
 PLATFORMS
@@ -68,14 +66,17 @@ DEPENDENCIES
   htmlentities
   kramdown
   nanoc (= 3.6.5)
-  nokogiri
-  pg
+  nokogiri (~> 1.6)
+  pg (~> 0.18.0)
   prawn!
   prawn-table
   pry
   rainpress
   rmagick
-  rsolr
+  rsolr (~> 1.1)
   systemu
   tzinfo
   tzinfo-data
+
+BUNDLED WITH
+   1.16.1

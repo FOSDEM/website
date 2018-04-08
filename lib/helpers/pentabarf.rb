@@ -83,8 +83,6 @@ module Fosdem
     private
     def run_internal(conf, total_time)
       require 'yaml'
-      require 'psych'
-      YAML::ENGINE.yamler = 'psych'
       require 'time'
       require 'fileutils'
 
