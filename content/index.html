@@ -17,6 +17,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
       <p class="btn-news"><a href="page:practical">No registration necessary.</a></p>
     </div>
 
+<!--
     <div class="logo-block">
       <h3><a href="page:/about/sponsors/">SPONSORS</a></h3>
       <%
@@ -35,32 +36,13 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
         </ul>
       <% end %>
     </div>
-
+-->
     <%
     # Depending on the height of the sponsors graphic, general announcements
     # (distinct from "news" by virtue of being undated) should either go here
     # in an "announcement-block" div or be a "news-block" div below the
     # "s-block" div. pph 20141210
     %>
-    <div class="announcment-block">
-      <h2>Thank you all for a great FOSDEM 2018!</h2>
-      <p>
-      Please tell us about your FOSDEM experience at 
-      <a href="mailto:feedback@fosdem.org">feedback@fosdem.org</a>.
-      All your feedback and suggestions for next year will be greatly appreciated.
-      </p><p>
-      You may also submit feedback on individual talks by following the link at the bottom of each event page in the schedule.
-       </p>
-
-       <h2>Videos</h2>
-       <p>Many videos are already available this year!  
-	You'll find them on the web pages for the individual talks when they are ready,
-	or download them from <a href="https://video.fosdem.org/2018/">video.fosdem.org</a> or view our
-	 <a href="https://www.youtube.com/user/fosdemtalks">YouTube channel</a>.
-	<a href="https://review.video.fosdem.org/overview">Processing status.</a>
-       </p>
-
-    </div>
 
   <div class="news-block">
     <h2>NEWS</h2>
