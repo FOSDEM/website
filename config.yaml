@@ -150,7 +150,7 @@ pentabarf:
   username: nanoc
   #password: 
   database: pentabarf
-  host:     phronesis.fosdem.org
+  host:     pgsql.fosdem.org
   port:     5432
   schema:   public
   meta_export_file: export/pentabarf.yaml
