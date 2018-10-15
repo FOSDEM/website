@@ -30,8 +30,8 @@ days:
         ann: 
         deadline: 
     'Infra Management':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002744.html
+        deadline: 2018-11-20
     'Legal':
         ann: 
         deadline: 
@@ -48,8 +48,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002736.html
         deadline: 2018-12-03
     'Open Source Design':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002746.html 
+        deadline: 2018-12-01
     'PHP and Friends':
         ann: 
         deadline: 
@@ -101,8 +101,8 @@ days:
         ann: 
         deadline: 
     'HPC, Big Data and Data Science':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002745.html
+        deadline: 2018-11-23
     'Hardware Enablement':
         ann: 
         deadline: 
