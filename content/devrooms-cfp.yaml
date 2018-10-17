@@ -15,14 +15,14 @@ days:
         ann: 
         deadline: 
     'Decentralized Internet and Privacy':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002769.html
+        deadline: 2018-11-26
     'Free Java':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002766.html
+        deadline: 2018-12-01
     'Go':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002767.html
+        deadline: 2018-11-30
     'Graph Processing':
         ann: 
         deadline: 
@@ -51,8 +51,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002746.html 
         deadline: 2018-12-01
     'PHP and Friends':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002768.html
+        deadline: 2018-11-25
     'Quantum Computing':
         ann: 
         deadline: 
@@ -113,8 +113,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002737.html
         deadline: 2018-11-25
     'Machine Learning on Code':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002764.html
+        deadline: 2018-11-30
     'Microkernels and Component-based OS':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002742.html
         deadline: 2018-12-01
