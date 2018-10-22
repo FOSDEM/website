@@ -74,8 +74,8 @@ days:
 
   sunday:
     'Blockchain':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002778.html
+        deadline: 2018-12-01
     'CAD and Open Hardware':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002752.html
         deadline: 2018-12-01
