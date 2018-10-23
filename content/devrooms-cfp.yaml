@@ -107,8 +107,8 @@ days:
         ann: 
         deadline: 
     'Javascript':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002780.html
+        deadline: 2018-11-28
     'LLVM':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002737.html
         deadline: 2018-11-25
