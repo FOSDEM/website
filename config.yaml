@@ -173,8 +173,8 @@ keysigning:
   submission_deadline: 2019-01-24
   homework_due: 2019-04-30
   # Change these when the submission window opens/closes.
-  submission_notyet: false
-  submission_closed: true
+  submission_notyet: true
+  submission_closed: false
   # Change this when the list of keys is published.
   list_published: true
 
