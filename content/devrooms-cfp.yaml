@@ -3,8 +3,8 @@ kind: internal
 days:
   saturday:
     '.NET and TypeScript':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002794.html 
+        deadline: 2018-12-03
     'Ada':
         ann: 
         deadline: 
@@ -98,8 +98,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002783.html
         deadline: 2018-12-07
     'Geospatial':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002793.html
+        deadline: 2018-12-01
     'HPC, Big Data and Data Science':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002745.html
         deadline: 2018-11-23
