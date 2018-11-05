@@ -66,8 +66,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002758.html
         deadline: 2018-11-25
     'Tool the Docs ':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002798.html 
+        deadline: 2018-11-25
     'Virtualization and IaaS':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002757.html
         deadline: 2018-12-01
@@ -104,8 +104,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002745.html
         deadline: 2018-11-23
     'Hardware Enablement':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002797.html
+        deadline: 2018-12-01
     'Javascript':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002780.html
         deadline: 2018-11-28
@@ -122,8 +122,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002770.html
         deadline: 2018-11-26
     'PostgreSQL':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002796.html
+        deadline: 2018-11-19
     'Python':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002781.html
         deadline: 2018-12-01
