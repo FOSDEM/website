@@ -1,3 +1,51 @@
 ---
 kind: internal
 events:
+    'IndieWebWeek':
+        location: Vlissingen, NL
+        start: 2019-01-28
+        end: 2019-02-01
+        cost: Free
+        registration: None
+        website: https://indieweb.org/2019/Vlissingen
+        contact: input@sebastianlasse.de
+    'GNU Guix/Guile days':
+        location: Brussels, BE
+        start: 2019-01-31
+        end: 2019-02-01
+        cost: Free
+        registration: Website or Email
+        website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2019
+        contact: pjotr.public12@thebird.nl
+    'CentOS Dojo':
+        location: Brussels, BE
+        start: 2019-02-01
+        end: 2019-02-01
+        cost: Free
+        registration: None
+        website: https://wiki.centos.org/Events/Dojo/Brussels2019
+        contact: rbowen@centosproject.org
+    'CfgMgmtCamp':
+        location: Ghent, BE
+        start: 2019-02-04
+        end: 2019-02-06
+        cost: Free
+        registration: Required
+        website: https://cfgmgmtcamp.eu/
+        contact: info@cfgmgmtcamp.eu
+    'Copyleft Conf':
+        location: Brussels, BE
+        start: 2019-02-04
+        end: 2019-02-04
+        cost: $15-150
+        registration: None
+        website: https://2019.copyleftconf.org/
+        contact: copyleftconf@sfconservancy.org
+    'The First Annual International Copyleft Conference':
+        location: Brussels, BE
+        start: 2019-02-04
+        end: 2019-02-04
+        cost: Free
+        registration: None
+        website: https://sfconservancy.org/news/2018/apr/30/copyleft-conf/
+        contact: info@sfconservancy.org
