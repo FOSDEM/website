@@ -9,6 +9,14 @@ events:
         registration: None
         website: https://indieweb.org/2019/Vlissingen
         contact: input@sebastianlasse.de
+    'EasyBuild User Meeting':
+        location: Louvain-la-Neuve, BE
+        start: 2019-01-30
+        end: 2019-02-01
+        cost: Free
+        registration: None
+        website: https://indico.cism.ucl.ac.be/event/4/
+        contact: kenneth.hoste@ugent.be
     'GNU Guix/Guile days':
         location: Brussels, BE
         start: 2019-01-31
