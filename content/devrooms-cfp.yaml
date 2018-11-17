@@ -6,8 +6,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002794.html 
         deadline: 2018-12-03
     'Ada':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002801.html
+        deadline: 2018-12-01
     'BSD':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002741.html
         deadline: 2018-12-10
@@ -31,16 +31,16 @@ days:
         deadline: 
     'Infra Management':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002744.html
-        deadline: 2018-11-20
+        deadline: 2018-12-01
     'Legal':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002773.html
-        deadline: 2018-11-23
+        deadline: 2018-11-25
     'Minimalistic Languages':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002760.html
         deadline: 2018-11-25
     'Mozilla':
-        ann: 
-        deadline: 
+        ann: https://discourse.mozilla.org/t/fosdem-2019-call-for-proposals/33038
+        deadline: 2018-11-25
     'MySQL, MariaDB and Friends':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002733.html
         deadline: 2018-11-15
@@ -134,8 +134,8 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002740.html
         deadline: 2018-11-25
     'Search':
-        ann: 
-        deadline: 
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002805.html
+        deadline: 2018-12-14
     'Security':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002777.html
         deadline: 2018-12-01
