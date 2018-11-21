@@ -283,8 +283,10 @@ a.btn-purple:hover {
 	line-height:28px;
 }
 .logo-block{
-	float:right;
-	width:320px;
+	margin:0 0 16px;
+	/*padding:28px 11px 27px;*/
+	padding:11px 11px 11px;
+	border-bottom:1px solid #ccc;
 }
 .logo-block h3{
 	color:#999;

@@ -17,26 +17,6 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
       <p class="btn-news"><a href="page:practical">No registration necessary.</a></p>
     </div>
 
-<!--
-    <div class="logo-block">
-      <h3><a href="page:/about/sponsors/">SPONSORS</a></h3>
-      <%
-        cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?}
-        cornerstone.each do |c|
-      %>
-      <a class="logo-sponsor-cornerstone logo-<%= c.id %>" href="<%= c.path %>"><%= c.name %></a>
-      <%
-        end
-      %>
-      <% unless other.empty? %>
-        <ul class="logo-list">
-          <% other.each do |s| %>
-            <li class="logo-sponsor-other logo-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
--->
     <%
     # Depending on the height of the sponsors graphic, general announcements
     # (distinct from "news" by virtue of being undated) should either go here
@@ -66,6 +46,25 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
       <div class="btn-news">
         <a class="btn-purple" href="page:/news/">more news</a>
       </div>
+    <% end %>
+  </div>
+
+  <div class="logo-block">
+    <h3><a href="page:/about/sponsors/">SPONSORS</a></h3>
+    <%
+      cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?}
+      cornerstone.each do |c|
+    %>
+    <a class="logo-sponsor-cornerstone logo-<%= c.id %>" href="<%= c.path %>"><%= c.name %></a>
+    <%
+      end
+    %>
+    <% unless other.empty? %>
+      <ul class="logo-list">
+        <% other.each do |s| %>
+          <li class="logo-sponsor-other logo-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
+        <% end %>
+      </ul>
     <% end %>
   </div>
 
