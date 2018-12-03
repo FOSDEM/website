@@ -41,7 +41,7 @@ events:
         registration: Required
         website: https://cfgmgmtcamp.eu/
         contact: info@cfgmgmtcamp.eu
-    'Copyleft Conf':
+    'The First Annual International Copyleft Conference':
         location: Brussels, BE
         start: 2019-02-04
         end: 2019-02-04
@@ -57,11 +57,3 @@ events:
         registration: None
         website: https://wiki.debian.org/Sprints/2018/DebConf%20Video%20team%20sprint%20%40%20FOSDEM%202019
         contact: debconf-video@lists.debian.org
-    'The First Annual International Copyleft Conference':
-        location: Brussels, BE
-        start: 2019-02-04
-        end: 2019-02-04
-        cost: Free
-        registration: None
-        website: https://sfconservancy.org/news/2018/apr/30/copyleft-conf/
-        contact: info@sfconservancy.org
