@@ -1,6 +1,14 @@
 ---
 kind: internal
 events:
+    'DebConf Video team sprint':
+        location: Diegem
+        start: 2019-01-28
+        end: 2019-02-01
+        cost: Free
+        registration: None
+        website: https://wiki.debian.org/Sprints/2018/DebConf%20Video%20team%20sprint%20%40%20FOSDEM%202019
+        contact: debconf-video@lists.debian.org
     'IndieWebWeek':
         location: Vlissingen, NL
         start: 2019-01-28
@@ -33,6 +41,14 @@ events:
         registration: None
         website: https://wiki.centos.org/Events/Dojo/Brussels2019
         contact: rbowen@centosproject.org
+    'FreeBSD mini-Devsummit':
+        location: Brussels
+        start: 2019-02-01
+        end: 2019-02-01
+        cost: 35
+        registration: None
+        website: https://wiki.freebsd.org/Devsummit/201902
+        contact: bcr@FreeBSD.org
     'CfgMgmtCamp':
         location: Ghent, BE
         start: 2019-02-04
@@ -49,11 +65,3 @@ events:
         registration: None
         website: https://2019.copyleftconf.org/
         contact: copyleftconf@sfconservancy.org
-    'DebConf Video team sprint':
-        location: Diegem
-        start: 2019-02-04
-        end: 2019-02-08
-        cost: Free
-        registration: None
-        website: https://wiki.debian.org/Sprints/2018/DebConf%20Video%20team%20sprint%20%40%20FOSDEM%202019
-        contact: debconf-video@lists.debian.org
