@@ -25,6 +25,14 @@ events:
         registration: None
         website: https://indico.cism.ucl.ac.be/event/4/
         contact: kenneth.hoste@ugent.be
+    'Git Merge 2019':
+        location: Brussels
+        start: 2019-01-31
+        end: 2019-02-01
+        cost: 99 Euro - 149 Euro
+        registration: None
+        website: https://git-merge.com
+        contact: haleygirl@github.com
     'GNU Guix/Guile days':
         location: Brussels, BE
         start: 2019-01-31
