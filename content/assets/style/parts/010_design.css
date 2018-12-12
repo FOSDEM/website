@@ -57,19 +57,11 @@ fieldset{
 	display:block;
 	height:100%;
 }
-.logo-google{
+.logo-sponsor-cornerstone{
 	display:block;
 	overflow:hidden;
-	margin-top: 4ex;
-	margin-bottom: 4ex;
-	text-indent:-9999px;
-	background:url(sprite.png) no-repeat;
-}
-.logo-redhat{
-	display:block;
-	overflow:hidden;
-	margin-top: 5ex;
-	margin-bottom: 4ex;
+	margin-top: 1ex;
+	margin-bottom: 1ex;
 	text-indent:-9999px;
 	background:url(sprite.png) no-repeat;
 }
@@ -304,7 +296,7 @@ a.btn-purple:hover {
 .logo-list li{
 	display:inline-block;
 	vertical-align:middle;
-	padding:20px 0 0;
+	padding:10px 0 0;
 }
 *+html .logo-list li{display:inline;}
 .logo-list a{
