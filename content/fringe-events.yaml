@@ -2,7 +2,7 @@
 kind: internal
 events:
     'DebConf Video team sprint':
-        location: Diegem
+        location: Diegem, BE
         start: 2019-01-28
         end: 2019-02-01
         cost: Free
@@ -26,7 +26,7 @@ events:
         website: https://indico.cism.ucl.ac.be/event/4/
         contact: kenneth.hoste@ugent.be
     'Git Merge 2019':
-        location: Brussels
+        location: Brussels, BE
         start: 2019-01-31
         end: 2019-02-01
         cost: 99 Euro - 149 Euro
@@ -49,8 +49,16 @@ events:
         registration: None
         website: https://wiki.centos.org/Events/Dojo/Brussels2019
         contact: rbowen@centosproject.org
+    'CHAOSSCon EU':
+        location: Brussels, BE
+        start: 2018-02-01
+        end: 2018-02-01
+        cost: Free
+        registration: Required
+        website: https://chaoss.community/chaosscon-2019-eu/
+        contact: chaoss@lists.linuxfoundation.org
     'FreeBSD mini-Devsummit':
-        location: Brussels
+        location: Brussels, BE
         start: 2019-02-01
         end: 2019-02-01
         cost: 35
