@@ -44,6 +44,9 @@ days:
     'MySQL, MariaDB and Friends':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002733.html
         deadline: 2018-11-15
+    'Open Document Editors':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002820.html
+        deadline: 2018-12-24
     'Open Media':
         ann: https://lists.fosdem.org/pipermail/fosdem/2018q4/002736.html
         deadline: 2018-12-03
