@@ -41,6 +41,14 @@ events:
         registration: Website or Email
         website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2019
         contact: pjotr.public12@thebird.nl
+    'pre-FOSDEM GNU Radio Hackfest 2019':
+        location: Brussels, BE
+        start: 2019-01-31
+        end: 2019-02-01
+        cost: Free
+        registration: None
+        website: https://hsbxl.be/events/byteweek/2019/gnuradio/
+        contact: arode@gnuradio.org
     'CentOS Dojo':
         location: Brussels, BE
         start: 2019-02-01
@@ -66,7 +74,7 @@ events:
         website: https://wiki.freebsd.org/Devsummit/201902
         contact: bcr@FreeBSD.org
     'pre-FOSDEM MySQL Day':
-        location: Brussels
+        location: Brussels, BE
         start: 2019-02-01
         end: 2019-02-01
         cost: Free
