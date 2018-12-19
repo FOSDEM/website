@@ -57,14 +57,6 @@ fieldset{
 	display:block;
 	height:100%;
 }
-.logo-sponsor-cornerstone{
-	display:block;
-	overflow:hidden;
-	margin-top: 1ex;
-	margin-bottom: 1ex;
-	text-indent:-9999px;
-	background:url(sprite.png) no-repeat;
-}
 #nav{
 	float:right;
 	margin:0;
@@ -299,13 +291,24 @@ a.btn-purple:hover {
 	padding:10px 0 0;
 }
 *+html .logo-list li{display:inline;}
-.logo-list a{
+.logo-list li {padding-right: 25px;}
+.logo-sponsor-cornerstone {
 	display:block;
 	overflow:hidden;
+	margin-top: 1ex;
+	margin-bottom: 1ex;
 	text-indent:-9999px;
 	background:url(sprite.png) no-repeat;
 }
-.logo-list li {padding-right: 25px;}
+.logo-sponsor-cornerstone a {
+	display:block;
+}
+.logo-sponsor-other a {
+	background:url(sprite.png) no-repeat;
+	display:block;
+	overflow:hidden;
+	text-indent:-9999px;
+}
 .news-block{
 	/*margin:0 0 32px;*/
 	margin:0 0 16px;

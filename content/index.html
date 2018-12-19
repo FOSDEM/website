@@ -50,15 +50,17 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
   </div>
 
   <div class="logo-block">
-    <h3><a href="page:/about/sponsors/">SPONSORS</a></h3>
-    <%
-      cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?}
-      cornerstone.each do |c|
-    %>
-    <a class="logo-sponsor-cornerstone logo-<%= c.id %>" href="<%= c.path %>"><%= c.name %></a>
-    <%
-      end
-    %>
+    <h2><a href="page:/about/sponsors/">SPONSORS</a></h2>
+    <% cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?} %>
+
+    <% unless cornerstone.empty? %>
+      <ul class="logo-list">
+        <% cornerstone.each do |c| %>
+          <li class="logo-sponsor-cornerstone logo-<%= c.id %>"><a href="<%= c.path %>"><%= c.name %></a></li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <% unless other.empty? %>
       <ul class="logo-list">
         <% other.each do |s| %>
