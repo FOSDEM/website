@@ -416,6 +416,11 @@ route '/assets/style/fosdem/' do
   "#{$prefix}#{item.identifier.chop}#{suffix}.#{item[:extension]}"
 end
 
+route '/assets/style/fosdem-static/' do
+  fail "#{item.identifier} is not the css file!" unless item[:extension] == 'css'
+  "#{$prefix}#{item.identifier.chop}.#{item[:extension]}"
+end
+
 route '/assets/style/*/' do
   unless $item_by_id.fetch('/assets/style/sprite/')[:sprites].values.include? item.identifier
     suffix = if @site.config[:digest_assets]
