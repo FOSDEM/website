@@ -49,6 +49,14 @@ events:
         registration: None
         website: https://hsbxl.be/events/byteweek/2019/gnuradio/
         contact: arode@gnuradio.org
+    'ZeroMQ hackaton':
+        location: Brussels, BE
+        start: 2018-01-31
+        end: 2018-02-01
+        cost: Free
+        registration: Optional
+        website: http://zeromq.org/event:zeromq-pre-fosdem-hackaton-thu-31-jan-fri-1-feb-2019
+        contact: zeromq-dev@lists.zeromq.org
     'CentOS Dojo':
         location: Brussels, BE
         start: 2019-02-01
@@ -81,6 +89,14 @@ events:
         registration: Required
         website: https://mysqlday2019.eventbrite.com/
         contact: frederic.descamps@oracle.com
+    'Pre-FOSDEM warmup with Kubernetes':
+        location: Anderlecht, BE
+        start: 2019-02-01
+        end: 2019-02-01
+        cost: Free
+        registration: Required
+        website: https://www.meetup.com/kubernetes-belgium/events/257513282
+        contact: hello@thomasnys.com
     'CfgMgmtCamp':
         location: Ghent, BE
         start: 2019-02-04
