@@ -81,6 +81,14 @@ events:
         registration: None
         website: https://wiki.freebsd.org/Devsummit/201902
         contact: bcr@FreeBSD.org
+    'librehosters network meeting':
+        location: Saint-Gilles, BE
+        start: 2019-02-01
+        end: 2019-02-01
+        cost: Free
+        registration: None
+        website: https://talk.libreho.st/t/pre-fosdem-19-gathering-1-february-in-brussels/83/2
+        contact: lore@mipsum.be
     'pre-FOSDEM MySQL Day':
         location: Brussels, BE
         start: 2019-02-01
