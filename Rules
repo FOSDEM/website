@@ -48,7 +48,7 @@ preprocess do
               end
 
   ### CREATE ITEMS
-  # Create some items programatically
+  # Create some items programmatically
 
   # clone items that have "aliases: foo, bar, spam" in their metadata
   make_aliases
@@ -62,7 +62,7 @@ preprocess do
   #decorate_interviews
 
   # duplicate favicon.ico to also deploy it under output/ and not just
-  # under e.g. ouput/2013/
+  # under e.g. output/2013/
   begin
     favicon = @items.select{|i| i.identifier == '/favicon/'}.first
     if favicon
@@ -105,7 +105,7 @@ preprocess do
   $track_flatlist = timetable_to_track_cells($timetable, true)
   $event_flatlist = timetable_to_event_cells($timetable, true)
 
-  # compute room to building associations programatically and using
+  # compute room to building associations programmatically and using
   # the metadata in content/buildings.yaml
   # (note that the ranking/order of buildings also stems from the order
   # of buildings as defined in content/buildings.yaml
@@ -463,7 +463,7 @@ route '/schedule/speaker_thumbnails/*/' do
 end
 
 # do _not_ deploy the files under content/sponsors/ as they are only used
-# programatically in content/about/sponsors.html, but we _do_ want to
+# programmatically in content/about/sponsors.html, but we _do_ want to
 # deploy binary files (typically the sponsor logos) that are under
 # content/sponsors/, hence the "if item.binary?"
 route '/sponsors/*/' do

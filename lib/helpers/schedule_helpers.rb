@@ -307,7 +307,7 @@ module Fosdem
     item[:kind] == 'sponsor' or (item[:kind] != 'page' and not item.binary? and item.identifier.match(%r{^/sponsors?/.+/}).nil? ? false : true)
   end
 
-  # compute room to building associations programatically and using
+  # compute room to building associations programmatically and using
   # the metadata in content/buildings.yaml
   # (note that the ranking/order of buildings also stems from the order
   # of buildings as defined in content/buildings.yaml

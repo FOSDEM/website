@@ -672,7 +672,7 @@ module Fosdem
                      # XXX: Disgusting hack for 2015 because I really don't have
                      # time to come up with anything more elegant than this!
                      #  pph 20150109.  Disabled agk 20160104 (for Security devroom).
-                     #  Reenabled 20171222 for Community devroom with same name as main track.
+                     #  Re-enabled 20171222 for Community devroom with same name as main track.
                      if t['conference_track'] == 'Community devroom' then
                        t['name'] = t['conference_track']
                      else
