@@ -98,13 +98,21 @@ events:
         website: https://www.meetup.com/kubernetes-belgium/events/257513282
         contact: hello@thomasnys.com
     'Bytenight':
-        location: Brussels
+        location: Brussels, BE
         start: 2019-02-02
         end: 2019-02-02
         cost: Free
         registration: None
         website: https://hsbxl.be/bytenight
         contact: contact@hsbxl.be
+    'Tech talks on scientific computing':
+        location: Ghent, BE
+        start: 2018-02-04
+        end: 2018-02-04
+        cost: Free
+        registration: None
+        website: https://www.ugent.be/hpc/en/training/materials/2019/postfosdem
+        contact: kenneth.hoste@ugent.be
     'CfgMgmtCamp':
         location: Ghent, BE
         start: 2019-02-04
