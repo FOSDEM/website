@@ -97,6 +97,14 @@ events:
         registration: Required
         website: https://www.meetup.com/kubernetes-belgium/events/257513282
         contact: hello@thomasnys.com
+    'Bytenight':
+        location: Brussels
+        start: 2019-02-02
+        end: 2019-02-02
+        cost: Free
+        registration: None
+        website: https://hsbxl.be/bytenight
+        contact: contact@hsbxl.be
     'CfgMgmtCamp':
         location: Ghent, BE
         start: 2019-02-04
