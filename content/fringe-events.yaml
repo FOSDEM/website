@@ -129,6 +129,14 @@ events:
         registration: None
         website: https://hsbxl.be/bytenight
         contact: contact@hsbxl.be
+    'FOSDEM 2019 - Live Poznań':
+        location: Poznań, PL
+        start: 2019-02-02
+        end: 2019-02-03
+        cost: Free
+        registration: None
+        website: https://www.eventbrite.com/e/fosdem-2019-live-poznan-tickets-54706762399
+        contact: sebastianpozoga@gmail.com
     'Tech talks on scientific computing':
         location: Ghent, BE
         start: 2018-02-04
