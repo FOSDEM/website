@@ -77,10 +77,18 @@ events:
         location: Brussels, BE
         start: 2019-02-01
         end: 2019-02-01
-        cost: 35
+        cost: 35 Euro
         registration: None
         website: https://wiki.freebsd.org/Devsummit/201902
         contact: bcr@FreeBSD.org
+    'Jenkins Pipeline Fundamentals Training':
+        location: Brussels, BE
+        start: 2019-02-01
+        end: 2019-02-01
+        cost: 25 Euro
+        registration: None
+        website: https://www.eventbrite.com/e/jenkins-pipeline-fundamentals-training-tickets-54626761113
+        contact: alytong13@gmail.com
     'librehosters network meeting':
         location: Saint-Gilles, BE
         start: 2019-02-01
@@ -105,6 +113,14 @@ events:
         registration: Required
         website: https://www.meetup.com/kubernetes-belgium/events/257513282
         contact: hello@thomasnys.com
+    'Workshop: Continuous Development with Jenkins X, Kubernetes, and Friends':
+        location: Brussels, BE
+        start: 2019-02-01
+        end: 2019-02-01
+        cost: 25 Euro
+        registration: None
+        website: https://www.eventbrite.com/e/workshop-continuous-deployment-with-jenkins-x-kubernetes-and-friends-tickets-54562126790
+        contact: alytong13@gmail.com
     'Bytenight':
         location: Brussels, BE
         start: 2019-02-02
@@ -129,6 +145,14 @@ events:
         registration: Required
         website: https://cfgmgmtcamp.eu/
         contact: info@cfgmgmtcamp.eu
+    'post-FOSDEM Jenkins Hackfest':
+        location: Brussels, BE
+        start: 2019-02-04
+        end: 2019-02-04
+        cost: Free
+        registration: None
+        website: https://www.meetup.com/jenkinsmeetup/events/257810396/
+        contact: tmiranda@cloudbees.com
     'The First Annual International Copyleft Conference':
         location: Brussels, BE
         start: 2019-02-04
