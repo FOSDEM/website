@@ -129,6 +129,14 @@ events:
         registration: None
         website: https://hsbxl.be/bytenight
         contact: contact@hsbxl.be
+    'Embedded Community Dinner':
+        location: Brussels, BE
+        start: 2019-02-02
+        end: 2019-02-02
+        cost: Own dinner
+        registration: 2019-01-29
+        website: https://elinux.org/FOSDEM
+        contact: dl9pf@gmx.de
     'FOSDEM 2019 - Live Poznań':
         location: Poznań, PL
         start: 2019-02-02
