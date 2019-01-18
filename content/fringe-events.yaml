@@ -57,6 +57,14 @@ events:
         registration: Optional
         website: http://zeromq.org/event:zeromq-pre-fosdem-hackaton-thu-31-jan-fri-1-feb-2019
         contact: zeromq-dev@lists.zeromq.org
+    'FOSDEM PGDay 2019':
+        location: Brussels, BE
+        start: 2019-02-01
+        end: 2019-02-01
+        cost: free for speakers, ~50 Euro for attendees
+        registration: Limited number of seats, first come first serve
+        website: https://2019.fosdempgday.org/
+        contact: ads@pgug.de
     'CentOS Dojo':
         location: Brussels, BE
         start: 2019-02-01
