@@ -25,6 +25,14 @@ events:
         registration: None
         website: https://indico.cism.ucl.ac.be/event/4/
         contact: kenneth.hoste@ugent.be
+    'XMPP Sprint on UX/UI for Federation':
+        location: Brussels, BE
+        start: 30-01-2019
+        end: 30-01-2019
+        cost: Free
+        registration: None
+        website: https://wiki.xmpp.org/web/Sprints/2019_January_Brussels
+        contact: rscmbbng@riseup.net
     'Git Merge 2019':
         location: Brussels, BE
         start: 2019-01-31
@@ -61,8 +69,8 @@ events:
         location: Brussels, BE
         start: 2019-02-01
         end: 2019-02-01
-        cost: free for speakers, ~50 Euro for attendees
-        registration: Limited number of seats, first come first serve
+        cost: Free for speakers, ~50 Euro for attendees
+        registration: Required
         website: https://2019.fosdempgday.org/
         contact: ads@pgug.de
     'CentOS Dojo':
@@ -142,7 +150,7 @@ events:
         start: 2019-02-02
         end: 2019-02-02
         cost: Own dinner
-        registration: 2019-01-29
+        registration: Required
         website: https://elinux.org/FOSDEM
         contact: dl9pf@gmx.de
     'FOSDEM 2019 - Live Poznań':
@@ -169,6 +177,14 @@ events:
         registration: Required
         website: https://cfgmgmtcamp.eu/
         contact: info@cfgmgmtcamp.eu
+    'IT & Social Economy Open Space':
+        location: Brussels, BE
+        start: 2019-02-04
+        end: 2019-02-05
+        cost: Free
+        registration: Invitation only
+        website: https://gestion.coopiteasy.be/event/two-day-gathering-on-it-and-social-economy-2019-02-04-2019-02-05-2/register
+        contact: houssine@coopiteasy.be
     'post-FOSDEM Jenkins Hackfest':
         location: Brussels, BE
         start: 2019-02-04
