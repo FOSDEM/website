@@ -40,7 +40,7 @@ of the presentation. I really look forward to discussing this topic
 with attendees. I also hope to get the feedback of people who deal
 with performance and latency problems day to day.
 
-Q: What's the history of the LLTng project? What are its biggest milestones?
+Q: What's the history of the LTTng project? What are its biggest milestones?
 
 [LTTng](https://lttng.org/) (Linux Trace Toolkit Next Generation) is the successor of LTT, a
 project that was started in the late 90s. LTTng itself was started in
