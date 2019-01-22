@@ -177,6 +177,14 @@ events:
         registration: Required
         website: https://cfgmgmtcamp.eu/
         contact: info@cfgmgmtcamp.eu
+    'Information Security for Journalists':
+        location: Brussels
+        start: 2019-02-04
+        end: 2019-02-04
+        cost: Free
+        registration: Invitation only
+        website: "#"
+        contact: tanja.drca@necunos.com
     'IT & Social Economy Open Space':
         location: Brussels, BE
         start: 2019-02-04
