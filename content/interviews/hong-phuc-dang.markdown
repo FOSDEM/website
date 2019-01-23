@@ -1,6 +1,6 @@
 ---
 year: 2019
-speaker: hong_phuc 
+speaker: hong_phuc_dang
 event: susi_ai 
 ---
 
