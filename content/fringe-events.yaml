@@ -177,6 +177,14 @@ events:
         registration: Required
         website: https://cfgmgmtcamp.eu/
         contact: info@cfgmgmtcamp.eu
+    'GodotCon 2019':
+        location: Brussels, BE
+        start: 2019-02-04
+        end: 2019-02-05
+        cost: Free
+        registration: Website
+        website: https://godotengine.org/events
+        contact: remi@godotengine.org
     'Information Security for Journalists':
         location: Brussels
         start: 2019-02-04
