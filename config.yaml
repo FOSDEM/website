@@ -176,7 +176,7 @@ keysigning:
   submission_notyet: false
   submission_closed: true
   # Change this when the list of keys is published.
-  list_published: false
+  list_published: true
 
 deadlines:
   lightningtalks:
