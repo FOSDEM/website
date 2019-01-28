@@ -17,6 +17,14 @@ events:
         registration: None
         website: https://indieweb.org/2019/Vlissingen
         contact: input@sebastianlasse.de
+    'PCD Brussels at Byteweek':
+        location: Brussels, BE
+        start: 2019-01-29
+        end: 2019-01-29
+        cost: Free
+        registration: None
+        website: https://hsbxl.be/events/byteweek/2019/processing/
+        contact: guillaume.slizewicz@hotmail.fr
     'EasyBuild User Meeting':
         location: Louvain-la-Neuve, BE
         start: 2019-01-30
