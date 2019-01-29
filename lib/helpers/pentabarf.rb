@@ -182,10 +182,12 @@ module Fosdem
                       ActiveSupport::Inflector
                       .transliterate(slug)
                       .downcase
-                      .gsub(/[\s\-\+]+/, '_')
-                      .gsub(/[\.']+/, '')
-		      .gsub(/[\(]/, '')
-		      .gsub(/[\)]/, '')
+                      .gsub(/[&]/, '_and_')
+                      .gsub(/[\s\-\+\/,;:~=]+/, '_')
+                      .gsub(/[\.'"#\?\{\}\*\^\%\$\|<>]+/, '')
+                      .gsub(/[\(]/, '')
+                      .gsub(/[\)]/, '')
+                      .gsub(/__/, '_')
                     end
         sanitized
       end
