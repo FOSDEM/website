@@ -802,6 +802,10 @@ module Fosdem
 	  next if e['room'] =~ /level/
 	  next if e['room'] =~ /106/
 	  next if e['room'] =~ /2111/
+	  next if e['room'] =~ /3242/
+	  next if e['room'] =~ /3244/
+	  next if e['room'] =~ /ub4/
+	  next if e['room'] =~ /147/
 	  next if e['track'] =~ /certification/
 	  next if e['track'] =~ /bof/
           current_time = Time.now
