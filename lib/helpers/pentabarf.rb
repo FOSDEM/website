@@ -820,7 +820,7 @@ module Fosdem
 
 	  ll = {}
 	  ll['title'] = 'Live video stream from the room (during event)'
-	  ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/,'')
+	  ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/,'').gsub(/ub5132/,'h1301')
 	  ll['rank'] = nil
 	  e['links'] << ll
 	  video_link_count += 1
