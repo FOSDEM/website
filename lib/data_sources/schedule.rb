@@ -18,9 +18,6 @@ module Fosdem
     private
     def load_items!
       require 'yaml'
-      require 'psych'
-      YAML::ENGINE.yamler = 'psych'
-
       require 'time'
 
       file = @site.config.fetch(:pentabarf).fetch(:meta_export_file)

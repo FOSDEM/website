@@ -7,17 +7,17 @@
 
 source "http://rubygems.org"
 
-gem "activesupport"
-gem "adsf" # needed for "nanoc view"
+gem "activesupport", "~>5.0" # confirmed working, higher is probably OK too
+gem "adsf", "~>1.3" # needed for "nanoc view", 1.4 and up requires ruby >=2.3
 gem "bluecloth"
 gem "builder"
 gem "htmlentities"
 gem "kramdown"
-gem "nanoc", "3.6.5"
+gem "cri"
+gem "nanoc", "3.8.0" # 4 and up needs some serious work
 gem "nokogiri"
-gem "pg"
-# we need git master here, implements colspan in tables:
-gem "prawn", git: "git://github.com/prawnpdf/prawn", branch: "master"
+gem "pg", "~>0.18.4" # 1.0 requires ruby >= 2.3
+gem "prawn"
 gem "prawn-table"
 gem "rainpress"
 gem "rmagick"
