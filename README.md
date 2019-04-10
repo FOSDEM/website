@@ -34,6 +34,7 @@ to have the following packages installed:
 - libreadline6-dev
 - libssl1.0-dev
 - libyaml-dev
+- pngcrush
 - zlib1g-dev
 
 Following the steps below should result in a working environment:
