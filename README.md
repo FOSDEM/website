@@ -24,6 +24,7 @@ to have the following packages installed:
 - autoconf
 - bison
 - build-essential
+- git
 - libffi-dev
 - libgdbm-dev
 - libmagickcore-dev
