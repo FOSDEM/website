@@ -53,8 +53,10 @@ rbenv local 2.2.10
 
 gem install bundler -v 1.17.3 # bundler 2.0 and up requires ruby >=2.3
 
-cd ~/website
-git clone git@git.fosdem.org:website.git .
+git clone git@git.fosdem.org:website.git
+
+cd website/
+
 git remote add github git@github.com:FOSDEM/website.git
 
 bundle install
