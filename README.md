@@ -30,6 +30,7 @@ to have the following packages installed:
 - libmagickcore-dev
 - libmagickwand-dev
 - libncurses5-dev
+- libpq-dev
 - libreadline6-dev
 - libssl1.0-dev
 - libyaml-dev
