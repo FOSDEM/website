@@ -138,11 +138,11 @@ watcher:
 deploy:
   public:
     kind: rsync
-    dst:  "www-public@www-public.fosdem.org:/www/fosdem.org/public/2019"
+    dst:  "www-live@www-public0.fosdem.org:/var/www/fosdem.org/public"
     options: [ '-avzP', '--delete-after' ]
   default:
     kind: rsync
-    dst:  "www-staging@www-public.fosdem.org:/www/staging.fosdem.org/public/2019"
+    dst:  "www-staging@www-public0.fosdem.org:/var/www/staging.fosdem.org/public"
     options: [ '-avzP', '--delete-after' ]
 
 pentabarf:
