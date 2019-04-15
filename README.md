@@ -65,6 +65,9 @@ bundle install
 source ~/.bashrc
 ```
 
+Of course, if you're not using `bash`, replace `.bashrc` with the appropriate
+initialisation file for your shell.
+
 ## Building the site
 
 A site build consists of two steps:
