@@ -56,10 +56,18 @@ module Fosdem
     .transliterate(b)
     .gsub(%r{/+}, '')
     .gsub(%r{\s+}, '_')
-    .gsub(/[\s\-\+]+/, '_')
     .gsub(/["']+/, '')
-    .gsub(/\./, '_')
-    [ d, "#{b}.#{e}", b, e ]
+    .gsub(/[^0-9A-Za-z]/i, '_')
+    .gsub(/_+/, '_')
+    .gsub(/^_/, '')
+    .gsub(/_$/, '')
+
+    # skip adding the extension if it is empty
+    if e != ''
+      [ d, "#{b}.#{e}", b, e ]
+    else
+      [ d, "#{b}", b, e ]
+    end
   end
 
   def sha_file(filename)
