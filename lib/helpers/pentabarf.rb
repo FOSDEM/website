@@ -1110,7 +1110,7 @@ module Fosdem
             next unless event
 
             extension = mime_to_extension(i.fetch('mime_type'))
-            n = event['slug']
+            _, n = sanitize_filename event['slug']
             filename, meta_filename, hash_filename = [extension, $meta_extension, $hash_extension].map{|x| "#{n}.#{x}"}
             file, meta_file, hash_file = [filename, meta_filename, hash_filename].map{|x| File.join($eventlogos_export_root, x)}
 
@@ -1226,7 +1226,7 @@ module Fosdem
             next unless speaker
 
             extension = mime_to_extension(i.fetch('mime_type'))
-            n = speaker['slug']
+            _, n = sanitize_filename speaker['slug']
             filename, thumb_filename, meta_filename, thumb_meta_filename, hash_filename =
               [extension, extension, $meta_extension, $meta_extension, $hash_extension].map{|x| "#{n}.#{x}"}
 
