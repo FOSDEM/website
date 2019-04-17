@@ -148,7 +148,6 @@ deploy:
 pentabarf:
   conference_id: FOSDEM19
   username: nanoc
-  #password: 
   database: pentabarf
   host:     pgsql.fosdem.org
   port:     5432
