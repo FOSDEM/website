@@ -50,8 +50,8 @@ output_dir: output
 # Colors to use for events and tracks in various grids.
 # These are a combination of two sets of colors from colorlovers.com,
 # namely the following:
-# http://www.colourlovers.com/palette/2510621/NARANJA
-# (and the other one, I forgot...):
+# https://www.colourlovers.com/palette/2510621/NARANJA
+# https://www.colourlovers.com/palette/92095/Giant_Goldfish
 colors: '69D2E7 A7DBD8 E0E4CC F38630 FA6900 EA813D E7A350 FCC777 C3DBB9 A79474'
 
 # A list of index filenames, i.e. names of files that will be served by a web
