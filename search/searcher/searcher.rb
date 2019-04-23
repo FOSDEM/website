@@ -264,7 +264,7 @@ def search(template=:html, layout=:layout)
       @pagination = false
     end
 
-    @title = "Search results for #{q}"
+    @title = "Search results for #{CGI::escapeHTML(q)}"
     @search_navigation = erb :facets, :layout => false
     erb template, :layout => layout
   end
