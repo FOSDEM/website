@@ -3,16 +3,17 @@
 usage       'index'
 summary     'loads the content (in output/) into the Solr search index'
 description 'Default behaviour (when neither --local nor --output is specified) is
-to load the index into Solr on nanoc.fosdem.org through ssh'
+to load the index into Solr through ssh'
 aliases     :i, :solr
 flag        :l, :local, "operate on a local Solr instance"
 option      :o, :output, "output file for the Solr add XML document", :argument => :required
-option      :u, :url, "override Solr instance URL (defaults to http://localhost:8983/solr/production/)", :argument => :required
+option      :u, :url, "override Solr instance URL (defaults to http://localhost:8983/solr/staging/)", :argument => :required
+option      :e, :environment, "specify the Solr coar to load data into (defaults to staging)", :argument => :required
 
 class SolrIndex < ::Nanoc::CLI::CommandRunner
   def run
     total_time = start_time = Time.now
-    if options[:live] or options[:url]
+    if options[:local] or options[:url]
       require 'rsolr'
     end
     require 'builder'
@@ -22,12 +23,18 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
 
     self.site.compiler.load
 
+    core = if options[:environment]
+      options[:environment]
+    else
+      'staging'
+    end
+
     solr = begin
              url = if options[:url]
                      options[:url]
-                   elsif options[:live]
+                   elsif options[:local]
                      conf = site.config.fetch :solr, {}
-                     url = conf.fetch 'url', 'http://localhost:8983/solr/production/'
+                     url = conf.fetch 'url', 'http://localhost:8983/solr/' + core + '/'
                    else
                      nil
                    end
@@ -59,7 +66,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
       file << "index.html" if file.end_with? '/'
       { id: item.identifier, file: file, item: item }
     end
-    
+
     xml = Builder::XmlMarkup.new
     docs = []
     begin
@@ -175,15 +182,20 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
       start = Time.now
       require 'open3'
       message = []
-      Open3.popen2e('ssh', 'solr@nanoc.fosdem.org', './solrize') do |i, oe, t|
+
+      user = site.config.fetch(:search).fetch(:user)
+      host = site.config.fetch(:search).fetch(:host)
+      command = site.config.fetch(:search).fetch(:command)
+
+      Open3.popen2e('ssh', user + '@' + host, command + ' ' + core) do |i, oe, t|
         i.puts xml.target!
         i.close
         oe.each{|line| message << line}
-        fail "failed to run ssh to solr@nanoc.fosdem.org: #{message.join($/)}#{$/}#{$/}Please contact server@fosdem.org" unless t.value.success?
+        fail "failed to run ssh to " + user + "@" + host +": #{message.join($/)}#{$/}#{$/}Please contact server@fosdem.org" unless t.value.success?
       end
       message = message.join($/)
-      if message =~ %r{^(\d+) documents in index$}
-        log :high, :index, "#{$1}/#{self.site.items.size} items in Solr on nanoc.fosdem.org", Time.now - start
+      if message =~ %r{^(\d+) documents in index ([a-z].*)}
+        log :high, :index, "#{$1}/#{self.site.items.size} items in Solr on " + host + " for core #{$2}", Time.now - start
       end
     end
   end

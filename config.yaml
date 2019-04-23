@@ -145,6 +145,11 @@ deploy:
     dst:  "www-staging@www-public0.fosdem.org:/var/www/staging.fosdem.org/public"
     options: [ '-avzP', '--delete-after' ]
 
+search:
+  user: "solr"
+  host: "search.int.fosdem.org"
+  command: "./service/searcher/solrize"
+
 pentabarf:
   conference_id: FOSDEM19
   username: nanoc
