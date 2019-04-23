@@ -57,6 +57,10 @@ get '*', :has_parameter => :q, :provides => 'atom' do
   search :atom, false
 end
 
+get '*' do
+  error
+end
+
 error do
   @error = if env and env.has_key? 'sinatra_error' and env['sinatra_error']
              env['sinatra_error'].message
