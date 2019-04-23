@@ -20,8 +20,6 @@ set(:has_parameter) do |parameter|
   end
 end
 
-#set :views, File.join(settings.root, '../../output/searcher')
-
 $solr ||= begin
             puts "Connecting to Solr on #{settings.solr_url}"
             RSolr.connect :url => settings.solr_url
