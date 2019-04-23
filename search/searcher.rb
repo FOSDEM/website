@@ -12,6 +12,8 @@ $type_label = {
   interview: 'inverse',
 }
 
+enable :reloader
+
 enable :inline_templates
 
 set(:has_parameter) do |parameter|
@@ -69,7 +71,7 @@ error do
   erb :error
 end
 
-def search(template=:html, layout=:layout)
+def search(template=:html, layout=settings.environment)
   q = params[:q] unless q
   page = params[:page] unless page
 

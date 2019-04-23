@@ -1,0 +1,25 @@
+# This is an example systemd unit file. It starts the puma webserver
+# with the configuration supplied in the production.ru file.
+#
+# The server will run as te solr user, you'll need to make sure it has
+# access to all the required gems.
+
+[Unit]
+Description=Searcher production server
+After=network.target
+
+[Service]
+Type=simple
+
+# Run as a non-privileged user
+User=solr
+
+# The path to the your application code root directory
+WorkingDirectory=/opt/solr/service/searcher/
+
+ExecStart=/usr/bin/puma /opt/solr/service/searcher/production.ru
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
