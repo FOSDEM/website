@@ -2,7 +2,7 @@
 # encoding: UTF-8
 #vim: set ts=2 sw=2 et ai:
 require 'sinatra'
-require 'sinatra/reloader' if development?
+require 'sinatra/reloader'
 require 'rsolr'
 
 $type_label = {
