@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+# vim: set ts=2 sw=2 et ai ft=ruby:
+
+# This script is meant to be run through SSH via the "nanoc index" command. The
+# SSH daemon should be configured to only allow this script to be executed, and
+# nothing else.
+
+require 'net/http'
+require 'socket'
+
+unless ENV.has_key? 'SSH_ORIGINAL_COMMAND' and ENV['SSH_ORIGINAL_COMMAND'] == './service/searcher/solrize'
+  puts "Authentication to #{ENV['USER']}@" + Socket.gethostname + " succeeded."
+  puts "Only use this account to run 'nanoc index'"
+  puts "The connection will be closed now."
+  puts
+  #exit 99
+end
+
+if ARGV[0] and (ARGV[0].eql? 'staging' or ARGV[0].eql? 'production')
+  environment = ARGV.shift
+else
+  environment = 'staging'
+end
+
+if environment.eql? 'staging'
+  url = 'https://staging.fosdem.org/searcher/layout.rhtml'
+else
+  url = 'https://fosdem.org/searcher/layout.rhtml'
+end
+
+File.open(__dir__ + '/layout/' + environment + '.rhtml', 'w') { |file| file.write(Net::HTTP.get(URI.parse(url))) }
+
+content = ARGF.each_line.to_a.join
+
+def update(environment, body)
+  req = Net::HTTP::Post.new '/solr/' + environment + '/update'
+  req.body = body
+  req.content_type = 'text/xml'
+  res = Net::HTTP.start 'localhost', 8983 do |http|
+    http.request(req)
+  end
+  res.is_a? Net::HTTPSuccess or fail res.message
+  unless res.body.split(/[\r\n]+/).join() =~ /status..0/
+    fail res.body
+  end
+end
+
+update(environment, '<delete><query>*:*</query></delete>')
+update(environment, content)
+
+res = Net::HTTP.post_form URI('http://localhost:8983/solr/' + environment + '/update'), 'commit' => 'true', 'optimize' => 'true', 'waitFlush' => 'true'
+res.is_a? Net::HTTPSuccess or fail res.message
+res = Net::HTTP.get URI('http://localhost:8983/solr/' + environment + '/select?q=*.*&rows=0')
+
+puts "#{$1} documents in index " + environment if res =~ /numFound..(\d+)./
