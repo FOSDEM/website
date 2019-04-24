@@ -1,4 +1,0 @@
-#!/bin/bash
-grep -roE '(href|src)="/.*?"' output/2013/|grep -Ev '="(/2013/|http)'|grep -v output/2013/mobile/
-
-grep -roE '<img[^>]*width=""[^>]*>' output/
