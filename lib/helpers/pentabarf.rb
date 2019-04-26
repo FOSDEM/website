@@ -1176,6 +1176,11 @@ module Fosdem
             i['image'] = PGconn.unescape_bytea(i['image'])
             require 'rmagick'
             image = Magick::Image.from_blob(i['image']).first
+
+            # Unset dates to ensure consistent checksums of the image file
+            image['date:create'] = nil
+            image['date:modify'] = nil
+
             blob, width, height = if image.rows > $logo_width or image.columns > $logo_height
                                     [ image.resize_to_fill($logo_width, $logo_height).to_blob, $logo_width, $logo_height ]
                                   else
@@ -1302,6 +1307,11 @@ module Fosdem
             i['image'] = PGconn.unescape_bytea(i['image'])
             require 'rmagick'
             image = Magick::Image.from_blob(i['image']).first
+
+            # Unset dates to ensure consistent checksums of the image file
+            image['date:create'] = nil
+            image['date:modify'] = nil
+
             [
               { f: todo[:file],       mw: $photo_width, mh: $photo_height, m: todo[:meta],       mf: todo[:meta_file]       },
               { f: todo[:thumb_file], mw: $thumb_width, mh: $thumb_height, m: todo[:thumb_meta], mf: todo[:thumb_meta_file] },
