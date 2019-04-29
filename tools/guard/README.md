@@ -71,7 +71,8 @@ directory you just created.
 
 ```ini
 [Unit]
-AssertPathExists=/srv/nanoc/website/
+AssertPathExists=/srv/nanoc/website/tools/guard/build
+AssertPathExists=/srv/nanoc/nanoc.keytab
 
 [Service]
 WorkingDirectory=/srv/nanoc/website/
