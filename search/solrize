@@ -13,7 +13,7 @@ unless ENV.has_key? 'SSH_ORIGINAL_COMMAND' and ENV['SSH_ORIGINAL_COMMAND'] == '.
   puts "Only use this account to run 'nanoc index'"
   puts "The connection will be closed now."
   puts
-  #exit 99
+  exit 99
 end
 
 if ARGV[0] and (ARGV[0].eql? 'staging' or ARGV[0].eql? 'production')
