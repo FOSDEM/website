@@ -1,11 +1,8 @@
 #!/bin/sh
 # vim: set ft=sh:
 
-PROG=`basename $0`
-BASEDIR=$(dirname "$0")
-
 HELP() {
-	echo "Usage: $PROG -d <directory> -k <keytab> [-e <environment>] [-b <branch>] [-r <remote>]"
+	echo "Usage: $(basename $0) -d <directory> -k <keytab> [-e <environment>] [-b <branch>] [-r <remote>]"
 	echo
 	echo "  -b <branch>: git branch to build the website from (defaults to master)"
 	echo "  -d <directory>: where to find the website to build"
@@ -19,7 +16,7 @@ if [ $# -lt 6 ]; then
 	HELP
 fi
 
-eval set -- `getopt b:d:e:k:r: "$@"`
+eval set -- $(getopt b:d:e:k:r: "$@")
 
 BRANCH="master"
 REMOTE="origin"
@@ -74,51 +71,62 @@ while true; do
 	# Navigate into the website directory
 	cd "$DIRECTORY"
 
-	# Refresh the credentials
+	# Find out which principal we'll be using
 	PRINCIPAL=$(ktutil --keytab=$KEYTAB list | head -n 4 | tail -n 1 | cut -d' ' -f 7)
 
-	kdestroy
-	kinit -t "$KEYTAB" "$PRINCIPAL"
+	# Run the more critical parts in a subshell with errexit set, so we don't
+	# accidentally deploy half a website.
+	(
+		set -e
 
-	# Fetch the latest version
-	git checkout $BRANCH
-	git pull --rebase $REMOTE $BRANCH
+		# Refresh the credentials, kdestroy can fail as long as kinit works
+		kdestroy || true
+		kinit -t "$KEYTAB" "$PRINCIPAL"
 
-	# Always trigger a rebuild of the events and amendments page
-	touch content/schedule/events.html
-	touch content/schedule/amendments.html
+		# Fetch the latest version
+		git checkout $BRANCH
+		git pull --rebase $REMOTE $BRANCH
 
-	# Refresh the local export
-	nanoc update -y
+		# Always trigger a rebuild of the events and amendments page
+		touch content/schedule/events.html
+		touch content/schedule/amendments.html
 
-	# Compile the website
-	nanoc compile
+		# Refresh the local export
+		nanoc update -y
 
-	# Deploy the website to the relevant target
-	if [ "$ENVIRONMENT" = "production" ]; then
-		nanoc deploy -t public
-	else
-		nanoc deploy
-	fi
+		# Compile the website
+		nanoc compile
 
-	# Update the index
-	if [ "$ENVIRONMENT" = "production" ]; then
-		nanoc index -e production
-	else
-		nanoc index
+		# Deploy the website to the relevant target
+		if [ "$ENVIRONMENT" = "production" ]; then
+			nanoc deploy -t public
+		else
+			nanoc deploy
+		fi
+
+		# Update the index
+		if [ "$ENVIRONMENT" = "production" ]; then
+			nanoc index -e production
+		else
+			nanoc index
+		fi
+	)
+
+	if [ $? -gt 0 ]; then
+		echo "Build failed"
 	fi
 
 	# Output the time at which we were done, and the time it took
 	NOW=$(date +%s)
-	BUILDTIME=`expr $NOW - $START`
-	SLEEPTIME=`expr $START + 240`
+	BUILDTIME=$(expr $NOW - $START)
+	SLEEPTIME=$(expr $START + 240)
 
 	echo
 	echo "Build done at $(date), build took $BUILDTIME seconds"
 
 	# Sleep until at least four minutes have passed since we started building
 	if [ $NOW -lt $SLEEPTIME ]; then
-		SLEEP=`expr $SLEEPTIME - $NOW`
+		SLEEP=$(expr $SLEEPTIME - $NOW)
 
 		echo "Sleeping for $SLEEP seconds"
 		sleep $SLEEP
