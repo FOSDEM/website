@@ -4,7 +4,7 @@ top:
   - /about
   - /news
   - /schedule
-  - /stands
+# - /stands
   - /volunteer
   - Practical: /practical
 head:
@@ -25,7 +25,7 @@ footer:
     - /certification
     - /keysigning
     - /volunteer
-    - /beerevent
+#   - /beerevent
     - /fringe
   - Practical information:
     - Getting there: /practical/transportation
@@ -36,6 +36,6 @@ footer:
     - /practical/jobcorner
   - Media and press:
     - /interviews
-    - Video recordings: 'http://video.fosdem.org/'
+    - Video recordings: 'https://video.fosdem.org/'
     - /social
-    - /support/promote
+#   - /support/promote

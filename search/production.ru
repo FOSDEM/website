@@ -12,6 +12,6 @@ set :views, File.join(settings.root, 'layout')
 set :results_per_page, 10
 
 require 'rack/contrib'
-require './searcher'
+require File.expand_path('searcher.rb', File.dirname(__FILE__))
 
 run Sinatra::Application.run!

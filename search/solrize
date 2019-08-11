@@ -8,7 +8,7 @@
 require 'net/http'
 require 'socket'
 
-unless ENV.has_key? 'SSH_ORIGINAL_COMMAND' and ENV['SSH_ORIGINAL_COMMAND'] == './service/searcher/solrize'
+if ENV.has_key? 'SSH_ORIGINAL_COMMAND' and ENV['SSH_ORIGINAL_COMMAND'] != './service/searcher/solrize'
   puts "Authentication to #{ENV['USER']}@" + Socket.gethostname + " succeeded."
   puts "Only use this account to run 'nanoc index'"
   puts "The connection will be closed now."

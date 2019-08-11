@@ -13,7 +13,6 @@ $type_label = {
 }
 
 enable :reloader
-
 enable :inline_templates
 
 set(:has_parameter) do |parameter|
@@ -68,7 +67,7 @@ error do
              nil
            end
   @title = "Something went wrong"
-  erb :error
+  erb :error, :layout => settings.environment
 end
 
 def search(template=:html, layout=settings.environment)
