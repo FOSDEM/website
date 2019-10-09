@@ -1,8 +1,6 @@
-html{min-width:978px;}
 body{
 	margin:0;
 	color:#333;
-	min-width:978px;
 	/*font:14px/16px "signika" ,Arial, Helvetica, sans-serif;*/
 	font:14px/16px "DejaVu Sans", Arial, Helvetica, sans-serif;
 	background:#fff;
@@ -38,47 +36,48 @@ fieldset{
 	padding:0 0 5px;
 }
 .header-holder{
-	width:937px;
+	max-width:937px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
 	margin:0 auto;
-	padding:14px 0 12px 3px;
+	padding:15px;
 	overflow:hidden;
 }
 .logo{
-	margin:0;
-	float:left;
+	margin:10px 20px 10px 0;
 	/*background:url(logo-compact.png) no-repeat;*/
 	background:url(sprite.png) no-repeat;
 	text-indent:-9999px;
 	overflow:hidden;
-    width:161px;
-    height:28px;
+    min-width:161px;
+	height:28px;
 }
 .logo a{
 	display:block;
 	height:100%;
 }
 #nav{
-	float:right;
+	display: flex;
+	justify-content:flex-end;
+    flex-wrap: wrap;
 	margin:0;
-	padding:11px 4px 0 0;
 	list-style:none;
 	font-size:16px;
 	line-height:20px;
 	font-weight:bold;
 }
 #nav li{
-	float:left;
-	padding:0 0 0 25px;
+	display:flex;
+	align-items:center;
+	margin:5px 0 5px 25px;
 }
 #nav a{color:#999;}
 #nav a:hover,
 #nav .active a{
 	color:#333;
 	text-decoration:none;
-}
-#nav .home{
-	margin:0 -2px 0 0;
-	padding:1px 0 0;
 }
 #nav .home a{
 	float:left;
@@ -96,20 +95,6 @@ fieldset{
 .visual{
 	position:relative;
 	overflow:hidden;
-	height:291px;
-}
-.visual-image{
-	position:absolute;
-	left:0;
-	top:0;
-	min-width:1280px !important;
-	width:100%;
-    text-align: center;
-}
-.visual-image-wrapper{
-	position:relative;
-	margin:auto;
-	width:1280px;
 }
 .visual-image-credits{
 	position:absolute;
@@ -140,52 +125,56 @@ fieldset{
 	background:url(visual-shadow.png) repeat-x;
 }
 .visual-content{
-	width:960px;
+	min-height:240px;
 	margin:0 auto;
 	padding:49px 0 0;
 	position:relative;
 	z-index:5;
+	background:url(fosdem-home-visual.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .visual-panel{
+	width: 560px;
+	height:136px;
+	margin: 0 auto;
+	padding:0;
 	text-shadow:0 1px 2px #3a3a3a;
 	font-size:24px;
 	line-height:28px;
 	font-weight:bold;
-	margin:0;
-	padding:0;
 	list-style:none;
-	height:136px;
 	position:relative;
 	background:url(bg-visual-panel.png) no-repeat 50% 0;
 }
 .visual-panel li{position:absolute;}
 .visual-panel a{color:#fff;}
 .visual-panel .link1{
-	right:559px;
+	left:155px;
 	top:5px;
 }
 .visual-panel .link2{
-	left:549px;
+	right:100px;
 	top:5px;
 }
 .visual-panel .link3{
 	font-size:30px;
 	line-height:37px;
-	right:578px;
+	left:30px;
 	top:42px;
 }
 .visual-panel .link4{
 	font-size:30px;
 	line-height:37px;
-	left:565px;
+	right:0;
 	top:42px;
 }
 .visual-panel .link5{
-	right:553px;
+	left:45px;
 	top:89px;
 }
 .visual-panel .link6{
-	left:550px;
+	right:55px;
 	top:89px;
 }
 .visual-info{
@@ -209,9 +198,7 @@ fieldset{
 .info-box .frame{
 	text-align:left;
 	float:left;
-	height:38px;
-	padding:12px 5px 0 10px;
-	padding:12px 14px 0 14px;
+	padding:15px;
     background: #1e1e1e;
 }
 .info-box span{
