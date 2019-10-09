@@ -1,0 +1,4 @@
+<p>Today CI/CD practices became standard for every software development project. 
+They are numerous OSS projects out there that try to solve the same problem: “how to improve the quality of our software by automating their tests, deliveries or deployments”.
+There are multiple ways to address this problem, the purpose of this room will be to share good and bad practices.
+</p>
