@@ -463,7 +463,7 @@ a.btn-purple:hover {
 	background:url(bg-title-box-b.gif) repeat-x 0 100%;
 }
 .title-box .frame{
-	max-width:940px;
+	max-width:960px;
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:space-between;
@@ -492,7 +492,7 @@ a.btn-purple:hover {
 }
 .title-box .text-block{
 	overflow:hidden;
-	margin-right:25px;
+	margin:0 25px 0 10px;
 }
 .title-box h2{
 	float:left;
