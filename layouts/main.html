@@ -63,13 +63,13 @@ $layout_dateline ||= begin
       <div class="title-box">
         <div class="holder">
           <div class="frame">
-            <ul class="navbar">
-              <%= navigation $item_by_id.fetch('/navigation/')[:head] %>
-            </ul>
             <div class="text-block">
               <h2>Brussels <span>/</span> <strong><%= $layout_dateline %></strong></h2>
               <a class="btn-purple" href="<%= pathof '/schedule/' %>">schedule</a>
             </div>
+            <ul class="navbar">
+              <%= navigation $item_by_id.fetch('/navigation/')[:head] %>
+            </ul>
           </div>
         </div>
       </div> <!-- .title-box -->
