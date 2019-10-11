@@ -225,7 +225,6 @@ a.btn-purple:hover {
 }
 .info-box .btn-purple{margin:3px 0 0 7px;}
 #main{
-	width:968px;
 	margin:0 auto;
 	padding:12px 0 47px 10px;
 }
@@ -239,13 +238,11 @@ a.btn-purple:hover {
 	font-size:20px;
 	line-height:26px;
 	float:left;
-	width:920px;
 }
 .announcement-block{
 	padding: 11px 0 11px;
 	/*border-top:1px solid #ccc;*/
 	float:left;
-	width:615px;
 }
 .announcement-block p{margin: 0 0 10px;}
 .s-block h2{
@@ -323,12 +320,7 @@ a.btn-purple:hover {
 .news-list .news{
 	float:left;
 	width:200px;
-	padding:10px 23px 10px 17px;
-	border-left:1px solid #ccc;
-}
-.news-list .news:first-child{
-	padding-left:0;
-	border:0;
+	padding:10px 40px 10px 0;
 }
 .news-list .date,
 .news .date{
@@ -393,12 +385,11 @@ a.btn-purple:hover {
 }
 .location-info .map{
 	float:right;
-	padding:0 0 0 15px;
 }
 .location-info img{vertical-align:top;}
 .location-text{
 	overflow:hidden;
-	padding:0 0 0 4px;
+	min-width:200px;
 }
 .logo-ulb-big{
 	margin:0 0 20px -1px;
@@ -603,13 +594,11 @@ a.btn-purple:hover {
 	color:#5f5f5f;
 }
 .footer-holder{
-	width:968px;
 	margin:0 auto;
 	padding:30px 0 67px 10px;
 }
 .panel-block{
 	margin:0 0 15px;
-	padding:0 0 64px;
 	font-size:16px;
 	line-height:20px;
 	overflow:hidden;
@@ -619,6 +608,7 @@ a.btn-purple:hover {
 	float:left;
 	width:200px;
 	padding:0 25px 0 14px;
+	margin-bottom:20px;
 }
 .panel-column h3{
 	margin:0 0 15px;
