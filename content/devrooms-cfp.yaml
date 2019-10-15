@@ -1,6 +1,228 @@
 ---
 kind: internal
+
 days:
-  both:
   saturday:
+    'Ada':
+        ann:
+        deadline:
+    'Backup and Recovery':
+        ann:
+        deadline:
+    'Coding for Language Communities':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002899.html
+        deadline: 2019-12-01
+    
+    'Collaborative Information and Content Management Applications':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002882.html
+        deadline: 2019-12-09
+    
+    'Containers':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002888.html
+        deadline: 2019-11-29
+    
+    'Dependency Management':
+        ann:
+        deadline:
+    
+    'DNS':
+        ann:
+        deadline:
+    
+    'Embedded, Mobile and Automotive':
+        ann:
+        deadline:
+    
+    'Erlang, Elexir and Friends':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002901.html
+        deadline: 2019-11-25
+    
+    'Free Java':
+        ann:
+        deadline:
+    
+    'Game Development':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002884.html
+        deadline: 2019-12-01
+    
+    'Graphics':
+        ann:
+        deadline:
+    
+    'Graph Systems and Algorithms':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002900.html
+        deadline: 2019-12-01
+    
+    'Hardware-aided Trusted Computing':
+        ann: https://pastebin.com/JzxPpsXB
+        deadline: 2019-12-01
+    
+    'Infra Management':
+        ann:
+        deadline:
+    
+    'Legal and Policy Issues':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002883.html
+        deadline: 2019-11-17
+    
+    'LLVM':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002881.html
+        deadline: 2019-11-24
+    
+    'MySQL, MariaDB and Friends':
+        ann:
+        deadline:
+    
+    'Open Document Editors':
+        ann:
+        deadline:
+    
+    'Open Research Tools and Technologies':
+        ann: https://research-fosdem.github.io/
+        deadline: 2019-12-01
+    
+    'Open Source Computer Aided Modeling and Design':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002898.html
+        deadline: 2019-11-20
+    
+    'Open Source Firmware, BMC and Bootloader':
+        ann:
+        deadline:
+    
+    'Python':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002885.html
+        deadline: 2019-11-24
+    
+    'Quantum Computing':
+        ann:
+        deadline:
+    
+    'Retrocomputing':
+        ann:
+        deadline:
+    
+    'RISC-V':
+        ann:
+        deadline:
+    
+    'Security':
+        ann:
+        deadline:
+    
+    'Software Defined Networking':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002886.html
+        deadline: 2019-11-24
+    
+    'Testing and Automation':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002897.html
+        deadline: 2019-12-15
+    
+    'Web Performance':
+        ann: https://github.com/wikimedia/fosdem20-web-performance-cfp
+        deadline: 2019-12-02
+    
   sunday:
+    'BSD':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002890.html
+        deadline: 2019-11-24
+    
+    'Community':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002893.html
+        deadline: 2019-11-27
+    
+    'Continuous Integration and Continuous Deployment':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002880.html 
+        deadline: 2019-11-30
+    
+    'Debugging Tools':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002902.html
+        deadline: 2019-12-01
+    
+    'Decentralized Internet and Privacy':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002903.html
+        deadline: 2019-12-01
+    
+    'Distributions':
+        ann:
+        deadline:
+    
+    'Free Software Radio':
+        ann:
+        deadline:
+    
+    'Free Tools and Editors':
+        ann:
+        deadline:
+    
+    'Geospatial':
+        ann:
+        deadline:
+    
+    'Go':
+        ann:
+        deadline:
+    
+    'Hardware Enablement':
+        ann:
+        deadline:
+    
+    'HPC, Big Data, and Data Science':
+        ann:
+        deadline:
+    
+    'Internet of Things':
+        ann:
+        deadline:
+    
+    'JavaScript':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002892.html
+        deadline: 2019-11-24
+    
+    'Kotlin':
+        ann:
+        deadline:
+    
+    'Microkernels and Component-based OS':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002878.html
+        deadline: 2019-12-01
+    
+    'Minimalistic Languages':
+        ann:
+        deadline:
+    
+    'Monitoring and Observability':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002879.html
+        deadline: 2019-11-26
+    
+    'Mozilla':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002895.html
+        deadline: 2019-11-15
+    
+    'Open Media':
+        ann:
+        deadline:
+    
+    'Open Source Design':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002896.html
+        deadline: 2019-12-01
+    
+    'PostgreSQL':
+        ann:
+        deadline:
+    
+    'Real Time Communications':
+        ann:
+        deadline:
+    
+    'Rust':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002894.html
+        deadline: 2019-11-25
+    
+    'Software Defined Storage':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002891.html
+        deadline: 2019-11-24
+    
+    'Virtualization and IaaS':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002889.html
+        deadline: 2019-12-01
+    

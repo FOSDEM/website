@@ -14,68 +14,42 @@ title: 'Accepted developer rooms'
    community, etc. The individual developer room organisers will issue their
    calls for participation in the next few days.
 </p>
-<p>
-   We will update this page with the day (Saturday/Sunday) and links to the
-   calls for participation when this information becomes available.
-</p>
 
-<p>
-    <ul>
-        <li>Ada</li>
-        <li>Backup and Recovery</li>
-        <li>Beam, the Erlang VM</li>
-        <li>BSD</li>
-        <li>Coding for Language Communities</li>
-        <li>Collaborative Information and Content Management Applications</li>
-        <li>Community</li>
-        <li>Containers</li>
-        <li>Continuous Integration and Continuous Deployment</li>
-        <li>Debugging Tools</li>
-        <li>Decentralized Internet and Privacy</li>
-        <li>Dependency Management</li>
-        <li>Distributions</li>
-        <li>DNS</li>
-        <li>Embedded, Mobile and Automotive</li>
-        <li>Free Java</li>
-        <li>Free Software Radio</li>
-        <li>Free Tools and Editors</li>
-        <li>Game Development</li>
-        <li>Geospatial</li>
-        <li>Go</li>
-        <li>Graph Systems and Algorithms</li>
-        <li>Graphics</li>
-        <li>Hardware Enablement</li>
-        <li>Hardware-aided Trusted Computing</li>
-        <li>HPC, Big Data, and Data Science</li>
-        <li>Infra Management</li>
-        <li>Internet of Things</li>
-        <li>JavaScript</li>
-        <li>Kotlin</li>
-        <li>Legal and Policy Issues</li>
-        <li>LLVM</li>
-        <li>Microkernels and Component-based OS</li>
-        <li>Minimalistic Languages</li>
-        <li>Monitoring and Observability</li>
-        <li>Mozilla</li>
-        <li>MySQL, MariaDB and Friends</li>
-        <li>Open Document Editors</li>
-        <li>Open Media</li>
-        <li>Open Source Computer Aided Modeling and Design</li>
-        <li>Open Source Design</li>
-        <li>Open Source Firmware, BMC and Bootloader</li>
-        <li>Open Source Science and Research Tools</li>
-        <li>PostgreSQL</li>
-        <li>Python</li>
-        <li>Quantum Computing</li>
-        <li>Real Time Communications</li>
-        <li>Retrocomputing</li>
-        <li>RISC-V</li>
-        <li>Rust</li>
-        <li>Security</li>
-        <li>Software Defined Networking</li>
-        <li>Software Defined Storage</li>
-        <li>Testing and Automation</li>
-        <li>Virtualization and IaaS</li>
-        <li>Web Performance</li>
-    </ul>
-</p>
+<%
+  daymap = {
+    :saturday => day('saturday')[:conference_day].strftime('%A %e %B %Y'),
+    :sunday => day('sunday')[:conference_day].strftime('%A %e %B %Y'),
+  }
+%>
+
+
+<table class="table table-striped table-condensed table-bordered">
+  <% $item_by_id.fetch('/devrooms-cfp/')[:days].each do |day, devrooms| %>
+  <thead>
+    <tr>
+      <th colspan="3"><h4><%= daymap.fetch(day) %></h4></th>
+    </tr>
+    <tr>
+      <th>Topic</th>
+      <th>Call for Participation</th>
+      <th>CfP deadline</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% devrooms.each do |devroom, meta| %>
+    <tr>
+      <td><%= devroom.to_s %></td>
+      <% if meta.nil? %>
+      <td>-</td>
+      <td>TBA</td>
+      <% else %>
+      <td><%= cfp_mail_uri(meta[:ann]) %></td>
+      <td><%= cfp_date(meta[:deadline]) %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+  <% end %>
+</table>
+
