@@ -26,8 +26,8 @@ days:
         deadline:
     
     'DNS':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002905.html
+        deadline: 2019-12-01
     
     'Embedded, Mobile and Automotive':
         ann:
@@ -151,8 +151,8 @@ days:
         deadline:
     
     'Free Tools and Editors':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002904.html
+        deadline: 2019-11-24
     
     'Geospatial':
         ann:
