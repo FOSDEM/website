@@ -32,8 +32,8 @@ days:
     'Embedded, Mobile and Automotive':
         ann:
         deadline:
-    
-    'Erlang, Elexir and Friends':
+
+    'Erlang, Elixir and Friends':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002901.html
         deadline: 2019-11-25
     
