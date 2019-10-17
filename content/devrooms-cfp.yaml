@@ -58,8 +58,8 @@ days:
         deadline: 2019-12-01
     
     'Infra Management':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002923.html
+        deadline: 2019-11-30
     
     'Legal and Policy Issues':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002883.html
@@ -147,8 +147,8 @@ days:
         deadline:
     
     'Free Software Radio':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002922.html
+        deadline: 2019-12-06
     
     'Free Tools and Editors':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002904.html
@@ -199,8 +199,8 @@ days:
         deadline: 2019-11-15
     
     'Open Media':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002906.html
+        deadline: 2019-12-02
     
     'Open Source Design':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002896.html
