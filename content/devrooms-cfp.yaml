@@ -74,8 +74,8 @@ days:
         deadline:
     
     'Open Document Editors':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002921.html
+        deadline: 2019-11-30
     
     'Open Research Tools and Technologies':
         ann: https://research-fosdem.github.io/
@@ -106,8 +106,8 @@ days:
         deadline:
     
     'Security':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002909.html
+        deadline: 2019-12-01
     
     'Software Defined Networking':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002886.html
