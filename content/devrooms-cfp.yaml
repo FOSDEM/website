@@ -167,8 +167,8 @@ days:
         deadline:
     
     'HPC, Big Data, and Data Science':
-        ann:
-        deadline:
+        ann: https://hpc-bigdata-fosdem20.github.io/
+        deadline: 2019-11-22
     
     'Internet of Things':
         ann:
