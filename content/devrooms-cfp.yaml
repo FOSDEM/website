@@ -186,9 +186,9 @@ days:
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002878.html
         deadline: 2019-12-01
     
-    'Minimalistic Languages':
-        ann:
-        deadline:
+    'Minimalistic, Experimental and Emerging Languages':
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002916.html
+        deadline: 2019-11-26
     
     'Monitoring and Observability':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002879.html
