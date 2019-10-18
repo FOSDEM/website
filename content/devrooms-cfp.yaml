@@ -171,8 +171,8 @@ days:
         deadline: 2019-11-22
     
     'Internet of Things':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002929.html
+        deadline: 2019-12-15
     
     'JavaScript':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002892.html
