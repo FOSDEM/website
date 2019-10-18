@@ -102,8 +102,8 @@ days:
         deadline:
     
     'RISC-V':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002925.html
+        deadline: 2019-11-24
     
     'Security':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002909.html
