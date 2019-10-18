@@ -22,24 +22,24 @@ days:
         deadline: 2019-11-29
     
     'Dependency Management':
-        ann:
-        deadline:
+        ann: https://l.ow2.org/FOSDEM20
+        deadline: 2019-12-04
     
     'DNS':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002905.html
         deadline: 2019-12-01
     
     'Embedded, Mobile and Automotive':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002920.html
+        deadline: 2019-12-06
 
     'Erlang, Elixir and Friends':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002901.html
         deadline: 2019-11-25
     
     'Free Java':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002917.html
+        deadline: 2019-12-01
     
     'Game Development':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002884.html
