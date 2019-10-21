@@ -70,8 +70,8 @@ days:
         deadline: 2019-11-24
     
     'MySQL, MariaDB and Friends':
-        ann:
-        deadline:
+        ann: https://www.mysqlmariadbandfriends.eu/post/2020-committee/
+        deadline: 2019-11-20
     
     'Open Document Editors':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002921.html
