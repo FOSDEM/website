@@ -1,3 +1,29 @@
 ---
 kind: internal
 events:
+    'FOSS license and security compliance tools workshop':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: Required
+        website: https://groups.io/g/oss-based-compliance-tooling
+        contact: pombredanne@nexb.com
+    
+    'Haiku coding sprint':
+        location: Elsene, BE
+        start: 2020-02-03
+        end: 2020-02-07
+        cost: Free
+        registration: E-mail
+        website: https://www.haiku-os.org/conference/2020_fosdem_2020/
+        contact: pulkomandy@pulkomandy.tk
+    
+    'ZeroMQ meetup':
+        location: Brussels, BE
+        start: 2020-02-03
+        end: 2020-02-04
+        cost: Free
+        registration: Recommended
+        website: https://www.meetup.com/ZeroMQ-FOSDEM-side-event/events/264336737/
+        contact: zeromq-dev@lists.zeromq.org
