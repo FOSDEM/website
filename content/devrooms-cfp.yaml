@@ -179,8 +179,8 @@ days:
         deadline: 2019-11-24
     
     'Kotlin':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002931.html
+        deadline: 2019-11-30
     
     'Microkernels and Component-based OS':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002878.html
