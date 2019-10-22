@@ -159,8 +159,8 @@ days:
         deadline:
     
     'Go':
-        ann:
-        deadline:
+        ann: https://medium.com/@maartjeme/go-devroom-cfp-fosdem-2020-7615f2ed390
+        deadline: 2019-11-30
     
     'Hardware Enablement':
         ann:
@@ -207,8 +207,8 @@ days:
         deadline: 2019-12-01
     
     'PostgreSQL':
-        ann:
-        deadline:
+        ann: https://2020.fosdempgday.org/callforpapers/
+        deadline: 2019-11-18
     
     'Real Time Communications':
         ann:
