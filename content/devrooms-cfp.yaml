@@ -7,8 +7,8 @@ days:
         ann:
         deadline:
     'Backup and Recovery':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002934.html
+        deadline: 2019-11-29
     'Coding for Language Communities':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002899.html
         deadline: 2019-12-01
@@ -86,8 +86,8 @@ days:
         deadline: 2019-11-20
     
     'Open Source Firmware, BMC and Bootloader':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002933.html
+        deadline: 2019-12-01
     
     'Python':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002885.html
