@@ -4,8 +4,8 @@ kind: internal
 days:
   saturday:
     'Ada':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002935.html
+        deadline: 2019-11-25
     'Backup and Recovery':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002934.html
         deadline: 2019-11-29
