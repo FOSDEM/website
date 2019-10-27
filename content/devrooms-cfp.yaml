@@ -143,8 +143,8 @@ days:
         deadline: 2019-12-01
     
     'Distributions':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002936.html
+        deadline: 2019-12-01
     
     'Free Software Radio':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002922.html
