@@ -94,12 +94,12 @@ days:
         deadline: 2019-11-24
     
     'Quantum Computing':
-        ann:
+        ann: 
         deadline:
     
     'Retrocomputing':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/retrocomputing-devroom/2019-October/000026.html
+        deadline: 2019-11-30
     
     'RISC-V':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002925.html
