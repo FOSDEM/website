@@ -155,8 +155,8 @@ days:
         deadline: 2019-11-24
     
     'Geospatial':
-        ann:
-        deadline:
+        ann: https://lists.osgeo.org/pipermail/dutch/2019-October/001773.html
+        deadline: 2019-12-01
     
     'Go':
         ann: https://medium.com/@maartjeme/go-devroom-cfp-fosdem-2020-7615f2ed390
