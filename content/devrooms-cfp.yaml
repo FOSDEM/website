@@ -211,8 +211,8 @@ days:
         deadline: 2019-11-18
     
     'Real Time Communications':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002938.html
+        deadline: 2019-12-15
     
     'Rust':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002894.html
