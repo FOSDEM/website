@@ -46,8 +46,8 @@ days:
         deadline: 2019-12-01
     
     'Graphics':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002943.html 
+        deadline: 2019-12-01
     
     'Graph Systems and Algorithms':
         ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002900.html
