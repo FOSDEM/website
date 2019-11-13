@@ -1,6 +1,42 @@
 ---
 kind: internal
 events:
+    'Hackerspace Brussels Byteweek':
+        location: Brussels, BE
+        start: 2020-01-27
+        end: 2020-02-01
+        cost: Free
+        registration: None
+        website: https://hsbxl.be/events/byteweek/2020/
+        contact: contact@hsbxl.be
+
+    'CentOS Dojo':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: Required
+        website: https://www.eventbrite.com/e/centos-dojo-at-fosdem-2020-tickets-79208596043
+        contact: rbowen@centosproject.org
+
+    'CHAOSScon Europe 2020':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: $10
+        registration: None
+        website: https://chaoss.community/chaosscon-2020-eu/
+        contact: linkgeorg@gmail.com
+
+    'Learn to Code KiCad':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: None
+        website: https://lists.launchpad.net/kicad-developers/msg42419.html
+        contact: seth@kipro-pcb.com
+
     'FOSS license and security compliance tools workshop':
         location: Brussels, BE
         start: 2020-01-31
@@ -9,6 +45,24 @@ events:
         registration: Required
         website: https://groups.io/g/oss-based-compliance-tooling
         contact: pombredanne@nexb.com
+
+    'Usability testing for FOSS projects':
+        location: Brussels, BE
+        start: 2019-01-31
+        end: 2019-01-31
+        cost: Free
+        registration: Required
+        website: https://hsbxl.be/events/byteweek2020/opensourcedesign/
+        contact: belenbarrospena@gmail.com
+
+    'Config Management Camp':
+        location: Ghent, BE
+        start: 2019-02-03
+        end: 2019-02-05
+        cost: Free
+        registration: Required
+        website: https://cfgmgmtcamp.eu
+        contact: info@cfgmgmtcamp.be
     
     'Haiku coding sprint':
         location: Elsene, BE
@@ -18,7 +72,16 @@ events:
         registration: E-mail
         website: https://www.haiku-os.org/conference/2020_fosdem_2020/
         contact: pulkomandy@pulkomandy.tk
-    
+
+    'Second Annual Copyleft Conf':
+        location: Brussels, BE
+        start: 2020-02-03
+        end: 2020-02-03
+        cost: $15-150
+        registration: Required
+        website: https://2020.copyleftconf.org/
+        contact: events@tix.sfconservancy.org
+
     'ZeroMQ meetup':
         location: Brussels, BE
         start: 2020-02-03
