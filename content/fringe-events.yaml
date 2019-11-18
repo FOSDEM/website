@@ -10,6 +10,15 @@ events:
         website: https://hsbxl.be/events/byteweek/2020/
         contact: contact@hsbxl.be
 
+    'MiniDebCamp Belgium 2020':
+        location: Brussels, BE
+        start: 2020-01-29
+        end: 2020-01-31
+        cost: Free
+        registration: None
+        website: https://wiki.debian.org/DebianEvents/be/2020/MiniDebCamp
+        contact: holger@layer-acht.org
+
     'GNU Guix/Guile Days':
         location: Brussels, BE
         start: 2020-01-30
