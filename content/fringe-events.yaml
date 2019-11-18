@@ -10,6 +10,15 @@ events:
         website: https://hsbxl.be/events/byteweek/2020/
         contact: contact@hsbxl.be
 
+    'GNU Guix/Guile Days':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-31
+        cost: Free
+        registration: Website or Email
+        website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2020
+        contact: pjotr2019@thebird.nl
+
     'CentOS Dojo':
         location: Brussels, BE
         start: 2020-01-31
