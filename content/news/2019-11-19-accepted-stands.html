@@ -1,0 +1,51 @@
+---
+title: 'Accepted stands'
+---
+<p>
+    It took a little longer than expected, but we are happy to announce the
+    list of accepted stands for FOSDEM 2020.
+</p>
+
+---MORE---
+
+<p>
+    New this year is that some stands will switch between Saturday and Sunday,
+    so we can give more projects the opportunity to present themselves to the
+    community.
+</p>
+<p>
+    There will be stands in the K, H and AW building, but who will be where
+    will be announced closer to the event.
+    We hope to see you all in February!
+</p>
+
+<%
+daymap = {
+:always => 'Entire Conference'
+:saturday => 'Saturday',
+:sunday => 'Sunday',
+}
+%>
+
+<table class="table table-striped table-condensed table-bordered">
+    <% $item_by_id.fetch('/stands/')[:days].each do |day, stands| %>
+    <thead>
+    <tr>
+        <th colspan="3"><h4><%= daymap.fetch(day) %></h4></th>
+    </tr>
+    <tr>
+        <th>Stand</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% stands.each do |stand| %>
+    <tr>
+        <td><%= stand.to_s %></td>
+    </tr>
+    <% end %>
+    </tbody>
+    <% end %>
+</table>
+
+
