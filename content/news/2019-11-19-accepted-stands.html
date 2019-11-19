@@ -28,7 +28,7 @@ daymap = {
 %>
 
 <table class="table table-striped table-condensed table-bordered">
-    <% $item_by_id.fetch('/stands/')[:days].each do |day, stands| %>
+    <% $item_by_id.fetch('/stands-accepted/')[:days].each do |day, stands| %>
     <thead>
     <tr>
         <th colspan="3"><h4><%= daymap.fetch(day) %></h4></th>
