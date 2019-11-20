@@ -5,8 +5,9 @@ days:
   always:
     - CentOS
     - Debian
-    - Gentoo
+    - Gentoo Linux
     - FreeBSD
+    - Fedora Project
     - openSUSE
     - openMandriva
     - illumos
