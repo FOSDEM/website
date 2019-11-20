@@ -42,7 +42,7 @@ events:
         start: 2020-01-31
         end: 2020-01-31
         cost: $10
-        registration: None
+        registration: Required
         website: https://chaoss.community/chaosscon-2020-eu/
         contact: linkgeorg@gmail.com
 
