@@ -57,7 +57,7 @@ fi
 
 
 PATH="$HOME/.rbenv/bin:$PATH"
-export TZ=UTC
+export TZ=Europe/Brussels
 
 eval "$(rbenv init -)"
 
