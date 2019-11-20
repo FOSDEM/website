@@ -28,6 +28,15 @@ events:
         website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2020
         contact: pjotr2019@thebird.nl
 
+    'XMPP Summit':
+        location: Diegem, BE
+        start: 2019-01-30
+        end: 2019-01-31
+        cost: Free
+        registration: Website or Email
+        website: https://wiki.xmpp.org/web/Conferences/Summit_24
+        contact: summit@xmpp.org
+
     'CentOS Dojo':
         location: Brussels, BE
         start: 2020-01-31
