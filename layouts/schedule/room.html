@@ -65,6 +65,15 @@
     num_cells = dayend.hour - start_hour
     num_slots = num_cells * (60 / interval)
 %>
+<pre>
+interval <%= interval %>
+days <%= days %>
+start <%= start %>
+start_hour <%= start_hour %>
+dayend <%= dayend %>
+num_cells <%= num_cells %>
+num_slots <%= num_slots %>
+</pre>
 <table class="table table-striped table-bordered table-condensed roomtracks">
   <thead>
     <tr>
@@ -100,6 +109,9 @@
         tr_classes << "subsection_end" if row == cellrows.size - 1
       end
     %>
+<pre>
+<%= start_offset_slots %>
+</pre>
     <tr<% unless tr_classes.empty? %> class="<%= tr_classes.join(" ") %>"<% end %>>
       <% if last_day.nil? or last_day != dayslug %>
       <th class="day"<% if day_row_height > 1 %> rowspan="<%= day_row_height %>" style="vertical-align: middle;"<% end %>><%= l(d) %></th>
