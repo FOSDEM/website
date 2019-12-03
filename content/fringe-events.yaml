@@ -28,6 +28,15 @@ events:
         website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2020
         contact: pjotr2019@thebird.nl
 
+    'pre-FOSDEM MySQL Days':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-31
+        cost: Free
+        registration: Required
+        website: https://mysqldays2020.eventbrite.com
+        contact: frederic.descamps@oracle.com
+
     'XMPP Summit':
         location: Diegem, BE
         start: 2019-01-30
