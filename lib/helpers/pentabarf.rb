@@ -802,7 +802,6 @@ module Fosdem
 	  next if e['room'] =~ /2111/
 	  next if e['room'] =~ /3242/
 	  next if e['room'] =~ /3244/
-	  next if e['room'] =~ /ub4/
 	  next if e['room'] =~ /147/
 	  next if e['track'] =~ /certification/
 	  next if e['track'] =~ /bof/
@@ -818,7 +817,7 @@ module Fosdem
 
 	  ll = {}
 	  ll['title'] = 'Live video stream from the room (during event)'
-	  ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/,'').gsub(/ub5132/,'h1301')
+	  ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/,'')
 	  ll['rank'] = nil
 	  e['links'] << ll
 	  video_link_count += 1
