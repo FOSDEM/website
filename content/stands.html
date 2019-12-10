@@ -20,7 +20,7 @@ The following stands will be present at <%= conference()[:title] %>.
     <table class="table table-condensed table-striped table-bordered">
       <thead>
         <tr>
-          <th colspan="2"><h4><%= data['info']['building'] %> level <%= data['info']['floor'] %> (group <%= data['info']['group'] %>) </h4></th>
+          <th colspan="2"><h4><%= data['info']['building'].to_s %> level <%= data['info']['floor'].to_s %> (group <%= data['info']['group'].to_s %>) </h4></th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +33,7 @@ The following stands will be present at <%= conference()[:title] %>.
             <% i += 1 %>
             <tr>
               <td><%= i %></td>
-              <td><%= stand %></td>
+              <td><%= stand.to_s %></td>
             </tr>
           <% end %>
         <% end %>
