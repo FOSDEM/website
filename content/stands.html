@@ -24,8 +24,8 @@ The following stands will be present at <%= conference()[:title] %>.
             </tr>
           </thead>
           <tbody>
-            <% building[:stands].each do | theme | %>
             <% i = 0 %>
+            <% building[:stands].each do | theme | %>
               <tr>
                 <td colspan="2"><h5><%= theme[:theme] %></h5></td>
               </tr>

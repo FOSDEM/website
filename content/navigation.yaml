@@ -4,7 +4,7 @@ top:
   - /about
   - /news
   - /schedule
-# - /stands
+  - /stands
   - /volunteer
   - Practical: /practical
 head:
