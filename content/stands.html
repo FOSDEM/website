@@ -1,166 +1,6 @@
 ---
 # vim: set ts=2 sw=2 et ai ft=eruby:
 
-# Use the format:   - Stand name (#tables): URL
-title: Stands
-stand_lists:
-# All [thematically] ():
-  K [level 1, group A] (12):
-    info:
-      building: K
-      floor: 1
-      group: A
-      amount: 12
-    stands:
-      - theme: Operating Systems
-        stands:
-        - CentOS
-        - Debian
-        - Gentoo Linux
-        - FreeBSD
-        - openSUSE
-        - openMandriva
-        - illumos
-        - Automotive Grade Linux
-        - Fedora Project
-        - Haiku (Saturday) - ReactOS (Sunday)
-      - theme: Desktop Environments
-        stands:
-        - KDE
-        - GNOME
-  K [level 1, group B] (8):
-    info:
-      building: K
-      floor: 1
-      group: B
-      amount: 8
-    stands:
-    - theme: Education
-      stands:
-      - Coderdojo
-      - Skolelinux / BiscuIT / Teckids
-      - Linux Professional Institution (Saturday) - Open Source Design (Sunday)
-      - Sugar Labs (Saturday) - MIT App Inventor (Sunday)
-    - theme: Databases
-      stands:
-      - PostgreSQL
-      - Percona
-      - YottaDB
-      - PostGraphile
-  K [level 1, group C] (10):
-    info:
-      building: K
-      floor: 1
-      group: C
-      amount: 10
-    stands:
-    - theme: Programming Environment
-      stands:
-      - Raku
-      - Javascript
-      - Eclipse Foundation
-      - Nuspell
-      - Integration Process Community
-      - AdoptOpenJDK (Saturday) - Pharo (Sunday)
-    - theme: Gaming
-      stands:
-      - 0 A.D.
-      - Godot Engine
-    - theme: System Administration
-      stands:
-      - GitLab
-  K [level 2, group D] (5):
-    info:
-      building: K
-      floor: 2
-      group: D
-      amount: 5
-    stands:
-    - theme: Community Advocacy
-      stands:
-      - Apache Software Foundation
-      - Free Software Foundation Europe
-      - OW2 Open Source Community
-      - OpenUK (Saturday) - FOSSASIA (Sunday)
-      - Google Summer of Code (Saturday) - Software Freedom Conservancy (Sunday)
-  K [level 2, group E] (16):
-    info:
-      building: K
-      floor: 2
-      group: E
-      amount: 16
-    stands:
-    - theme: World Wide Web
-      stands:
-      - Mozilla
-      - OWASP
-      - Realtime Lounge
-      - Matrix
-      - Mattermost
-      - wolfSSL
-      - Linphone
-      - Mautic (Saturday) - 3Box (Sunday)
-    - theme: System Administration
-      stands:
-      - OpenStack
-      - Jenkins
-      - oVirt & Foreman
-      - Grafana
-      - XCP-ng
-      - Kubevirt & Metal3
-      - Checkmk (Saturday) - Ntopng (Sunday)
-      - OpenTAP (Saturday) - Open Source Test Management (Sunday)
-  AW [group A] (4):
-    info:
-      building: AW
-      floor: 1
-      group: A
-      amount: 4
-    stands:
-    - theme: Hardware
-      stands:
-      - Coreboot + Flashrom + LinuxBoot
-      - Micropython & Espruino
-      - openWifi
-      - openHAB
-  AW [group B] (4):
-    info:
-      building: AW
-      floor: 1
-      group: B
-      amount: 4
-    stands:
-    - theme: Hardware
-      stands:
-      - OpenEmbedded
-      - Infobooth on amateur radio (HAM Radio)
-      - Technoethical (Saturday) - PINE64 (Sunday)
-  H [group A] (4):
-    info:
-      building: H
-      floor: 1
-      group: A
-      amount: 3
-    stands:
-    - theme: Office Software
-      stands:
-      - LibreOffice
-      - Nextcloud
-      - Tine 2.0 (Saturday) - Tracim (Sunday)
-  H [group B] (4):
-    info:
-      building: H
-      floor: 1
-      group: B
-      amount: 3
-    stands:
-    - theme: Office Software
-      stands:
-      - CiviCRM
-      - Kopano
-      - Musescore (Saturday) - Free Culture Podcasts (Sunday)
----
-
 <p>
 Stands can be used to share information, demo software, sell merchandising,
 give away goodies and so forth, and to present themselves to the visitors
@@ -171,16 +11,16 @@ The following stands will be present at <%= conference()[:title] %>.
 </p>
 
 <div class="container-fluid">
-  <% stand_list.each do | building, info | %>
+  <% $item_by_id.fetch('/stands-building/')[:stand_list].each do |building, data| %>
   <div class="row-fluid">
     <table class="table table-condensed table-striped table-bordered">
       <thead>
         <tr>
-          <th colspan="2"><h4><%= info['info']['building'] %> level <%= info['info']['floor'] %>(group <%= info['info']['group'] %>) </h4></th>
+          <th colspan="2"><h4><%= data['info']['building'] %> level <%= data['info']['floor'] %> (group <%= data['info']['group'] %>) </h4></th>
         </tr>
       </thead>
       <tbody>
-        <% info['stands'].each do | theme | %>
+        <% data['stands'].each do | theme | %>
         <% i = 0 %>
           <tr>
             <td colspan="2"><h5><%= theme['theme'] %></h5></td>
