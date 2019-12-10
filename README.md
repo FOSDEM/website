@@ -106,6 +106,21 @@ The site will be generated in `/output`. To view the website, you can use the
 nanoc view -p 1234
 ```
 
+### Running with Docker
+
+```bash
+docker build -t fosdem/website .
+
+# Export from Pentabarf
+docker run --rm -v $(pwd):/usr/src/app fosdem/website nanoc update -y
+
+# Generate the site
+docker run --rm -v $(pwd):/usr/src/app fosdem/website nanoc
+
+# Preview the site (at http://localhost:3000/2018)
+docker run --rm -v $(pwd):/usr/src/app fosdem/website -p 3000:3000 nanoc view
+```
+
 ## Dependency notes
 
 ### Ruby version
