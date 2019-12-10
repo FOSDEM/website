@@ -1,147 +1,159 @@
 title: Stands
 stand_list:
-  - info:
-      building: K
-      floor: 1
-      group: A
-      amount: 12
-    stands:
-      - theme: Operating Systems
+ - name: K (level 1)
+   map: map_k_1
+   groups:
+    - info:
+        building: K
+        floor: 1
+        group: A
+        amount: 12
+      stands:
+        - theme: Operating Systems
+          stands:
+          - CentOS
+          - Debian
+          - Gentoo Linux
+          - FreeBSD
+          - openSUSE
+          - openMandriva
+          - illumos
+          - Automotive Grade Linux
+          - Fedora Project
+          - Haiku (Saturday) - ReactOS (Sunday)
+        - theme: Desktop Environments
+          stands:
+          - KDE
+          - GNOME
+    - info:
+        building: K
+        floor: 1
+        group: B
+        amount: 8
+      stands:
+      - theme: Education
         stands:
-        - CentOS
-        - Debian
-        - Gentoo Linux
-        - FreeBSD
-        - openSUSE
-        - openMandriva
-        - illumos
-        - Automotive Grade Linux
-        - Fedora Project
-        - Haiku (Saturday) - ReactOS (Sunday)
-      - theme: Desktop Environments
+        - Coderdojo
+        - Skolelinux / BiscuIT / Teckids
+        - Linux Professional Institution (Saturday) - Open Source Design (Sunday)
+        - Sugar Labs (Saturday) - MIT App Inventor (Sunday)
+      - theme: Databases
         stands:
-        - KDE
-        - GNOME
-  - info:
-      building: K
-      floor: 1
-      group: B
-      amount: 8
-    stands:
-    - theme: Education
+        - PostgreSQL
+        - Percona
+        - YottaDB
+        - PostGraphile
+    - info:
+        building: K
+        floor: 1
+        group: C
+        amount: 10
       stands:
-      - Coderdojo
-      - Skolelinux / BiscuIT / Teckids
-      - Linux Professional Institution (Saturday) - Open Source Design (Sunday)
-      - Sugar Labs (Saturday) - MIT App Inventor (Sunday)
-    - theme: Databases
+      - theme: Programming Environment
+        stands:
+        - Raku
+        - Javascript
+        - Eclipse Foundation
+        - Nuspell
+        - Integration Process Community
+        - AdoptOpenJDK (Saturday) - Pharo (Sunday)
+      - theme: Gaming
+        stands:
+        - 0 A.D.
+        - Godot Engine
+      - theme: System Administration
+        stands:
+        - GitLab
+ - name: K (level 2)
+   map: map_k_2
+   groups:
+    - info:
+        building: K
+        floor: 2
+        group: D
+        amount: 5
       stands:
-      - PostgreSQL
-      - Percona
-      - YottaDB
-      - PostGraphile
-  - info:
-      building: K
-      floor: 1
-      group: C
-      amount: 10
-    stands:
-    - theme: Programming Environment
+      - theme: Community Advocacy
+        stands:
+        - Apache Software Foundation
+        - Free Software Foundation Europe
+        - OW2 Open Source Community
+        - OpenUK (Saturday) - FOSSASIA (Sunday)
+        - Google Summer of Code (Saturday) - Software Freedom Conservancy (Sunday)
+    - info:
+        building: K
+        floor: 2
+        group: E
+        amount: 16
       stands:
-      - Raku
-      - Javascript
-      - Eclipse Foundation
-      - Nuspell
-      - Integration Process Community
-      - AdoptOpenJDK (Saturday) - Pharo (Sunday)
-    - theme: Gaming
+      - theme: World Wide Web
+        stands:
+        - Mozilla
+        - OWASP
+        - Realtime Lounge
+        - Matrix
+        - Mattermost
+        - wolfSSL
+        - Linphone
+        - Mautic (Saturday) - 3Box (Sunday)
+      - theme: System Administration
+        stands:
+        - OpenStack
+        - Jenkins
+        - oVirt & Foreman
+        - Grafana
+        - XCP-ng
+        - Kubevirt & Metal3
+        - Checkmk (Saturday) - Ntopng (Sunday)
+        - OpenTAP (Saturday) - Open Source Test Management (Sunday)
+ - name: AW
+   map: map_aw
+   groups:
+    - info:
+        building: AW
+        floor: 1
+        group: A
+        amount: 4
       stands:
-      - 0 A.D.
-      - Godot Engine
-    - theme: System Administration
+      - theme: Hardware
+        stands:
+        - Coreboot + Flashrom + LinuxBoot
+        - Micropython & Espruino
+        - openWifi
+        - openHAB
+    - info:
+        building: AW
+        floor: 1
+        group: B
+        amount: 4
       stands:
-      - GitLab
-  - info:
-      building: K
-      floor: 2
-      group: D
-      amount: 5
-    stands:
-    - theme: Community Advocacy
+      - theme: Hardware
+        stands:
+        - OpenEmbedded
+        - Infobooth on amateur radio (HAM Radio)
+        - Technoethical (Saturday) - PINE64 (Sunday)
+ - name: H
+   map: map_h
+   groups:
+    - info:
+        building: H
+        floor: 1
+        group: A
+        amount: 3
       stands:
-      - Apache Software Foundation
-      - Free Software Foundation Europe
-      - OW2 Open Source Community
-      - OpenUK (Saturday) - FOSSASIA (Sunday)
-      - Google Summer of Code (Saturday) - Software Freedom Conservancy (Sunday)
-  - info:
-      building: K
-      floor: 2
-      group: E
-      amount: 16
-    stands:
-    - theme: World Wide Web
+      - theme: Office Software
+        stands:
+        - LibreOffice
+        - Nextcloud
+        - Tine 2.0 (Saturday) - Tracim (Sunday)
+    - info:
+        building: H
+        floor: 1
+        group: B
+        amount: 3
       stands:
-      - Mozilla
-      - OWASP
-      - Realtime Lounge
-      - Matrix
-      - Mattermost
-      - wolfSSL
-      - Linphone
-      - Mautic (Saturday) - 3Box (Sunday)
-    - theme: System Administration
-      stands:
-      - OpenStack
-      - Jenkins
-      - oVirt & Foreman
-      - Grafana
-      - XCP-ng
-      - Kubevirt & Metal3
-      - Checkmk (Saturday) - Ntopng (Sunday)
-      - OpenTAP (Saturday) - Open Source Test Management (Sunday)
-  - info:
-      building: AW
-      floor: 1
-      group: A
-      amount: 4
-    stands:
-    - theme: Hardware
-      stands:
-      - Coreboot + Flashrom + LinuxBoot
-      - Micropython & Espruino
-      - openWifi
-      - openHAB
-  - info:
-      building: AW
-      floor: 1
-      group: B
-      amount: 4
-    stands:
-    - theme: Hardware
-      stands:
-      - OpenEmbedded
-      - Infobooth on amateur radio (HAM Radio)
-      - Technoethical (Saturday) - PINE64 (Sunday)
-  - info:
-      building: H
-      floor: 1
-      group: A
-      amount: 3
-    stands:
-    - theme: Office Software
-      stands:
-      - LibreOffice
-      - Nextcloud
-      - Tine 2.0 (Saturday) - Tracim (Sunday)
-  - info:
-      building: H
-      floor: 1
-      group: B
-      amount: 3
-    stands:
-    - theme: Office Software
-      stands:
-      - CiviCRM
-      - Kopano
-      - Musescore (Saturday) - Free Culture Podcasts (Sunday)
+      - theme: Office Software
+        stands:
+        - CiviCRM
+        - Kopano
+        - Musescore (Saturday) - Free Culture Podcasts (Sunday)

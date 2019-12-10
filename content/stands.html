@@ -17,15 +17,24 @@ The following stands will be present at <%= conference()[:title] %>.
 <div class="container-fluid">
   <% $item_by_id.fetch('/stands-building/')[:stand_list].each do |building| %>
   <div class="row-fluid">
+    <div class="col">
+      <h3><%= building[:name] %></h3>
+      <div>
+        <img src="asset:buildings/<%= building[:map] %>" alt="Map <%= building[:name] %>" width="450px" />
+      </div>
+    </div>
+  </div>
+  <% building[:groups].each do | group | %>
+  <div class="row-fluid">
       <table class="table table-condensed table-striped table-bordered">
           <thead>
             <tr>
-              <th colspan="2"><h4><%= building[:info][:building] %> level <%= building[:info][:floor] %> (group <%= building[:info][:group] %>) </h4></th>
+              <th colspan="2"><h4><%= group[:info][:building] %> level <%= group[:info][:floor] %> (group <%= group[:info][:group] %>) </h4></th>
             </tr>
           </thead>
           <tbody>
             <% i = 0 %>
-            <% building[:stands].each do | theme | %>
+            <% group[:stands].each do | theme | %>
               <tr>
                 <td colspan="2"><h5><%= theme[:theme] %></h5></td>
               </tr>
@@ -40,5 +49,6 @@ The following stands will be present at <%= conference()[:title] %>.
           </tbody>
         </table>
   </div>
+  <% end %>
   <% end %>
 </div> <!-- .row -->
