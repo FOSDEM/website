@@ -118,6 +118,15 @@ events:
         website: https://www.haiku-os.org/conference/2020_fosdem_2020/
         contact: pulkomandy@pulkomandy.tk
 
+    'OpenEmebdded Workshop':
+        location: Brussels, BE
+        start: 2020-02-03
+        end: 2020-02-03
+        cost: €50-75
+        registration: Required
+        website: https://pretalx.com/oe-workshop-2020/
+        contact: philip@balister.org
+
     'Second Annual Copyleft Conf':
         location: Brussels, BE
         start: 2020-02-03
