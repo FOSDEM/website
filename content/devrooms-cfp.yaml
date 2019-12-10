@@ -163,8 +163,8 @@ days:
         deadline: 2019-11-30
     
     'Hardware Enablement':
-        ann:
-        deadline:
+        ann: https://lists.fosdem.org/pipermail/fosdem/2019q4/002955.html
+        deadline: 2019-12-15
     
     'HPC, Big Data, and Data Science':
         ann: https://hpc-bigdata-fosdem20.github.io/
