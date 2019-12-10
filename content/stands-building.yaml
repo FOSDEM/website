@@ -1,7 +1,6 @@
 title: Stands
-stand_lists:
-  K [level 1, group A] (12):
-    info:
+stand_list:
+  - info:
       building: K
       floor: 1
       group: A
@@ -23,8 +22,7 @@ stand_lists:
         stands:
         - KDE
         - GNOME
-  K [level 1, group B] (8):
-    info:
+  - info:
       building: K
       floor: 1
       group: B
@@ -42,8 +40,7 @@ stand_lists:
       - Percona
       - YottaDB
       - PostGraphile
-  K [level 1, group C] (10):
-    info:
+  - info:
       building: K
       floor: 1
       group: C
@@ -64,8 +61,7 @@ stand_lists:
     - theme: System Administration
       stands:
       - GitLab
-  K [level 2, group D] (5):
-    info:
+  - info:
       building: K
       floor: 2
       group: D
@@ -78,8 +74,7 @@ stand_lists:
       - OW2 Open Source Community
       - OpenUK (Saturday) - FOSSASIA (Sunday)
       - Google Summer of Code (Saturday) - Software Freedom Conservancy (Sunday)
-  K [level 2, group E] (16):
-    info:
+  - info:
       building: K
       floor: 2
       group: E
@@ -105,8 +100,7 @@ stand_lists:
       - Kubevirt & Metal3
       - Checkmk (Saturday) - Ntopng (Sunday)
       - OpenTAP (Saturday) - Open Source Test Management (Sunday)
-  AW [group A] (4):
-    info:
+  - info:
       building: AW
       floor: 1
       group: A
@@ -118,8 +112,7 @@ stand_lists:
       - Micropython & Espruino
       - openWifi
       - openHAB
-  AW [group B] (4):
-    info:
+  - info:
       building: AW
       floor: 1
       group: B
@@ -130,8 +123,7 @@ stand_lists:
       - OpenEmbedded
       - Infobooth on amateur radio (HAM Radio)
       - Technoethical (Saturday) - PINE64 (Sunday)
-  H [group A] (4):
-    info:
+  - info:
       building: H
       floor: 1
       group: A
@@ -142,8 +134,7 @@ stand_lists:
       - LibreOffice
       - Nextcloud
       - Tine 2.0 (Saturday) - Tracim (Sunday)
-  H [group B] (4):
-    info:
+  - info:
       building: H
       floor: 1
       group: B
