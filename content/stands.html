@@ -38,12 +38,21 @@ The following stands will be present at <%= conference()[:title] %>.
               <tr>
                 <td colspan="2"><h5><%= theme[:theme] %></h5></td>
               </tr>
-              <% theme[:stands].each do | stand | %>
+              <% theme[:stands][:all].each do | stand | %>
                 <% i += 1 %>
                 <tr>
                   <td><%= i %></td>
-                  <td><%= stand.to_s %></td>
+                  <td><a href="<%= stand[:url].to_s %>"><%= stand[:name].to_s %></a></td>
                 </tr>
+              <% end %>
+              <% if theme[:stands].key?(:saturday) && theme[:stands].key?(:sunday) %>
+              <% theme[:stands][:saturday].each_with_index do | stand, idx | %>
+                <% i += 1 %>
+                <tr>
+                  <td><%= i %></td>
+                  <td><a href="<%= stand[:url].to_s %>"><%= stand[:name].to_s %></a> (Saturday) &mdash; <a href="<%= theme[:stands][:sunday][idx][:url].to_s %>"><%= theme[:stands][:sunday][idx][:name].to_s %></a> (Sunday)</td>
+                </tr>
+              <% end %>
               <% end %>
             <% end %>
           </tbody>
