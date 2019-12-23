@@ -29,12 +29,21 @@ events:
         contact: pjotr2019@thebird.nl
 
     'Jenkins Pipeline - Fundamentals':
-        location: Marivaux Hotel Congress & Seminar Centre
+        location: Brussels, BE
         start: 2020-01-30
         end: 2020-01-30
         cost: €22
         registration: Required
         website: https://www.eventbrite.com/e/jenkins-pipeline-fundamentals-training-tickets-87080214265
+        contact: atong@cloudbees.com
+
+    'Jenkins X: Cloud-Native K8s - First Serverless CD':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-30
+        cost: €25
+        registration: Required
+        website: https://www.eventbrite.com/e/workshop-cloud-native-kubernetes-first-serverless-continuous-delivery-with-jenkins-x-kubernetes-and-tickets-87082627483
         contact: atong@cloudbees.com
 
     'pre-FOSDEM MySQL Days':
