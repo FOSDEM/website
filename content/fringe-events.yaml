@@ -28,6 +28,15 @@ events:
         website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2020
         contact: pjotr2019@thebird.nl
 
+    'Jenkins Pipeline - Fundamentals':
+        location: Marivaux Hotel Congress & Seminar Centre
+        start: 2020-01-30
+        end: 2020-01-30
+        cost: €22
+        registration: Required
+        website: https://www.eventbrite.com/e/jenkins-pipeline-fundamentals-training-tickets-87080214265
+        contact: atong@cloudbees.com
+
     'pre-FOSDEM MySQL Days':
         location: Brussels, BE
         start: 2020-01-30
