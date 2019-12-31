@@ -1,6 +1,15 @@
 ---
 kind: internal
 events:
+    'Open Source Microfactory STEAM Camp':
+        location: Ghent, BE
+        start: 2020-01-25
+        end: 2020-02-02
+        cost: $899-$1499
+        registration: Website
+        website: https://www.opensourceecology.org/steam-camp-january-2020/
+        contact: marcin@opensourceecology.org
+
     'Hackerspace Brussels Byteweek':
         location: Brussels, BE
         start: 2020-01-27
@@ -135,6 +144,15 @@ events:
         registration: E-mail
         website: https://www.haiku-os.org/conference/2020_fosdem_2020/
         contact: pulkomandy@pulkomandy.tk
+
+    'Opencast Dev''n''Hack Camp':
+        location: Ghent, BE
+        start: 2020-02-03
+        end: 2020-02-04
+        cost: Free
+        registration: Required
+        website: https://opencast.org/2019-12-30-opencast-dev-n-hack-camp.html
+        contact: lkiesow@uos.de
 
     'OpenEmebdded Workshop':
         location: Brussels, BE
