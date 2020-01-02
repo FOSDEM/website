@@ -154,7 +154,7 @@ stand_list:
             - name: Mozilla
               url: https://www.mozilla.org
             - name: OWASP
-              url: www.owasp.org
+              url: https://www.owasp.org
             - name: Realtime Lounge
               url: https://xmpp.org/
             - name: Matrix
