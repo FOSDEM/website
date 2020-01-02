@@ -180,3 +180,12 @@ events:
         registration: Recommended
         website: https://www.meetup.com/ZeroMQ-FOSDEM-side-event/events/264336737/
         contact: zeromq-dev@lists.zeromq.org
+
+    'Opencast conference 2020':
+        location: Ghent, BE
+        start: 2020-02-05
+        end: 2020-02-07
+        cost: €150
+        registration: Website
+        website: https://oc2020.ugent.be/
+        contact: multimedia@ugent.be
