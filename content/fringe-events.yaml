@@ -64,6 +64,15 @@ events:
         website: https://mysqldays2020.eventbrite.com
         contact: frederic.descamps@oracle.com
 
+    'Programming Boardgames Evening':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-30
+        cost: Free
+        registration: None
+        website: https://alliancemerode.be/event/soiree-jeux-de-programmation
+        contact: games@alliancemerode.be
+
     'XMPP Summit':
         location: Diegem, BE
         start: 2019-01-30
