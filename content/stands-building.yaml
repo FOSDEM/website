@@ -90,8 +90,6 @@ stand_list:
               url: https://www.perl.org/
             - name: Javascript
               url: https://hackages.io/community
-            - name: Eclipse Foundation
-              url: https://www.eclipse.org
             - name: Nuspell
               url: https://nuspell.github.io
             - name: Integration Process Community
@@ -114,6 +112,11 @@ stand_list:
           all:
             - name: GitLab
               url: https://about.gitlab.com/
+      - theme: Community Advocacy
+        stands:
+          all:
+            - name: Eclipse Foundation
+              url: https://www.eclipse.org
  - name: K (level 2)
    map: map_k_2
    groups:
@@ -122,6 +125,25 @@ stand_list:
         floor: 2
         group: D
         amount: 5
+      stands:
+      - theme: World Wide Web
+        stands:
+          all:
+            - name: Realtime Lounge
+              url: https://xmpp.org/
+            - name: Matrix
+              url: https://matrix.org
+            - name: Mattermost
+              url: https://www.mattermost.com
+            - name: wolfSSL
+              url: https://www.wolfssl.com/products/wolfssl/
+            - name: Linphone
+              url: https://www.linphone.org
+    - info:
+        building: K
+        floor: 2
+        group: E
+        amount: 16
       stands:
       - theme: Community Advocacy
         stands:
@@ -142,12 +164,6 @@ stand_list:
               url: https://fossasia.org
             - name: Software Freedom Conservancy, Inc.
               url: https://sfconservancy.org/
-    - info:
-        building: K
-        floor: 2
-        group: E
-        amount: 16
-      stands:
       - theme: World Wide Web
         stands:
           all:
@@ -155,16 +171,6 @@ stand_list:
               url: https://www.mozilla.org
             - name: OWASP
               url: https://www.owasp.org
-            - name: Realtime Lounge
-              url: https://xmpp.org/
-            - name: Matrix
-              url: https://matrix.org
-            - name: Mattermost
-              url: https://www.mattermost.com
-            - name: wolfSSL
-              url: https://www.wolfssl.com/products/wolfssl/
-            - name: Linphone
-              url: https://www.linphone.org
           saturday:
             - name: Mautic
               url: Https://www.mautic.org
