@@ -126,6 +126,25 @@ stand_list:
         group: D
         amount: 5
       stands:
+      - theme: World Wide Web
+        stands:
+          all:
+            - name: Realtime Lounge
+              url: https://xmpp.org/
+            - name: Matrix
+              url: https://matrix.org
+            - name: Mattermost
+              url: https://www.mattermost.com
+            - name: wolfSSL
+              url: https://www.wolfssl.com/products/wolfssl/
+            - name: Linphone
+              url: https://www.linphone.org
+    - info:
+        building: K
+        floor: 2
+        group: E
+        amount: 16
+      stands:
       - theme: Community Advocacy
         stands:
           all:
@@ -145,12 +164,6 @@ stand_list:
               url: https://fossasia.org
             - name: Software Freedom Conservancy, Inc.
               url: https://sfconservancy.org/
-    - info:
-        building: K
-        floor: 2
-        group: E
-        amount: 16
-      stands:
       - theme: World Wide Web
         stands:
           all:
@@ -158,16 +171,6 @@ stand_list:
               url: https://www.mozilla.org
             - name: OWASP
               url: https://www.owasp.org
-            - name: Realtime Lounge
-              url: https://xmpp.org/
-            - name: Matrix
-              url: https://matrix.org
-            - name: Mattermost
-              url: https://www.mattermost.com
-            - name: wolfSSL
-              url: https://www.wolfssl.com/products/wolfssl/
-            - name: Linphone
-              url: https://www.linphone.org
           saturday:
             - name: Mautic
               url: Https://www.mautic.org
