@@ -86,8 +86,8 @@ stand_list:
       - theme: Programming Environment
         stands:
           all:
-            - name: Raku
-              url: https://raku.online
+            - name: Perl and Raku
+              url: https://www.perl.org/
             - name: Javascript
               url: https://hackages.io/community
             - name: Eclipse Foundation
@@ -154,7 +154,7 @@ stand_list:
             - name: Mozilla
               url: https://www.mozilla.org
             - name: OWASP
-              url: www.owasp.org
+              url: https://www.owasp.org
             - name: Realtime Lounge
               url: https://xmpp.org/
             - name: Matrix
