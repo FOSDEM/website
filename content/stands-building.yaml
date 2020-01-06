@@ -86,8 +86,8 @@ stand_list:
       - theme: Programming Environment
         stands:
           all:
-            - name: Raku
-              url: https://raku.online
+            - name: Perl and Raku
+              url: https://www.perl.org/
             - name: Javascript
               url: https://hackages.io/community
             - name: Eclipse Foundation
