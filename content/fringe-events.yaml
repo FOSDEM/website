@@ -136,6 +136,15 @@ events:
         website: https://hsbxl.be/events/byteweek/2020/opensourcedesign/
         contact: belenbarrospena@gmail.com
 
+    'OFFDEM':
+        location: Brussels, BE
+        start: 2020-02-01
+        end: 2020-02-02
+        cost: Free
+        registration: Website
+        website: https://ps.zoethical.org/c/cooperation/offdem
+        contact: offdem@zoethical.com
+
     'Config Management Camp':
         location: Ghent, BE
         start: 2019-02-03
