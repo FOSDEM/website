@@ -118,6 +118,15 @@ events:
         website: https://lists.launchpad.net/kicad-developers/msg42419.html
         contact: seth@kipro-pcb.com
 
+    'FOSDEM''20 Dataverse Fringe Meeting':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: Required
+        website: http://www.arch.be/index.php?l=en&m=news&r=agenda&e=fosdem-20-dataverse-fringe-meeting
+        contact: benjamin.peuch@arch.be
+
     'FOSS license and security compliance tools workshop':
         location: Brussels, BE
         start: 2020-01-31
@@ -135,6 +144,15 @@ events:
         registration: Required
         website: https://hsbxl.be/events/byteweek/2020/opensourcedesign/
         contact: belenbarrospena@gmail.com
+
+    'OFFDEM':
+        location: Brussels, BE
+        start: 2020-02-01
+        end: 2020-02-02
+        cost: Free
+        registration: Website
+        website: https://ps.zoethical.org/c/cooperation/offdem
+        contact: offdem@zoethical.com
 
     'Config Management Camp':
         location: Ghent, BE
