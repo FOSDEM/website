@@ -163,6 +163,15 @@ events:
         website: https://ps.zoethical.org/c/cooperation/offdem
         contact: offdem@zoethical.com
 
+    'MariaDB Day':
+        location: Brussels, BE
+        start: 2020-02-02
+        end: 2020-02-02
+        cost: Free
+        registration: Required
+        website: https://www.meetup.com/MariaDB-Developers/events/267713381/
+        contact: ian@mariadb.org
+
     'Config Management Camp':
         location: Ghent, BE
         start: 2019-02-03
