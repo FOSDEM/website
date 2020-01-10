@@ -109,6 +109,15 @@ events:
         website: https://chaoss.community/chaosscon-2020-eu/
         contact: linkgeorg@gmail.com
 
+    'EU Open Source Policy Meeting 2020':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: None
+        website: http://www.openforumeurope.org/eu-open-source-policy-meeting-2020-pre-fosdem/
+        contact: paula@openforumeurope.org
+
     'FOSDEM PGDay 2020':
         location: Brussels, BE
         start: 2020-01-31
