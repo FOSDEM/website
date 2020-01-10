@@ -82,6 +82,15 @@ events:
         website: https://wiki.xmpp.org/web/Conferences/Summit_24
         contact: summit@xmpp.org
 
+    'Belgium Kubernetes Meetup ':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: Website
+        website: https://www.meetup.com/kubernetes-belgium/events/267744647/
+        contact: hello@thomasnys.com
+
     'CentOS Dojo':
         location: Brussels, BE
         start: 2020-01-31
@@ -171,6 +180,15 @@ events:
         registration: E-mail
         website: https://www.haiku-os.org/conference/2020_fosdem_2020/
         contact: pulkomandy@pulkomandy.tk
+
+    'LibreOffice Hackfest':
+        location: Brussels, BE
+        start: 2020-02-03
+        end: 2020-02-04
+        cost: Free
+        registration: Website
+        website: https://wiki.documentfoundation.org/Hackfest/FOSDEM2020
+        contact: italo@documentfoundation.org
 
     'Opencast Dev''n''Hack Camp':
         location: Ghent, BE
