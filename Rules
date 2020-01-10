@@ -59,7 +59,7 @@ preprocess do
   make_newspages
 
   # auto-set the title of content/interviews/*
-  #decorate_interviews
+  decorate_interviews
 
   # duplicate favicon.ico to also deploy it under output/ and not just
   # under e.g. output/2013/
