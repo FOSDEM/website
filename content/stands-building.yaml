@@ -93,7 +93,7 @@ stand_list:
             - name: Nuspell
               url: https://nuspell.github.io
             - name: Integration Process Community
-              url: https://syndesis.io/
+              url: https://integrating.community
           saturday:
             - name: AdoptOpenJDK
               url: https://adoptopenjdk.net
