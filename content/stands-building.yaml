@@ -162,7 +162,7 @@ stand_list:
           sunday:
             - name: FOSSASIA
               url: https://fossasia.org
-            - name: Software Freedom Conservancy, Inc.
+            - name: Software Freedom Conservancy
               url: https://sfconservancy.org/
       - theme: World Wide Web
         stands:
@@ -198,7 +198,7 @@ stand_list:
             - name: OpenTAP
               url: https://www.opentap.io/
           sunday:
-            - name: Ntopng
+            - name: ntopng
               url: https://www.ntop.org
             - name: Open Source Test Management
               url: http://kiwitcms.org
