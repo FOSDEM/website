@@ -73,6 +73,15 @@ events:
         website: https://alliancemerode.be/event/soiree-jeux-de-programmation
         contact: games@alliancemerode.be
 
+    'Python Sprints before FOSDEM':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-31
+        cost: Free
+        registration: Website
+        website: https://www.meetup.com/Belgium-Python-Meetup-aka-AperoPythonBe/events/267875996/
+        contact: hugo@okeso.eu
+
     'XMPP Summit':
         location: Diegem, BE
         start: 2020-01-30
