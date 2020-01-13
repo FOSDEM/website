@@ -75,8 +75,8 @@ events:
 
     'XMPP Summit':
         location: Diegem, BE
-        start: 2019-01-30
-        end: 2019-01-31
+        start: 2020-01-30
+        end: 2020-01-31
         cost: Free
         registration: Website or Email
         website: https://wiki.xmpp.org/web/Conferences/Summit_24
@@ -156,8 +156,8 @@ events:
 
     'Usability testing for FOSS projects':
         location: Brussels, BE
-        start: 2019-01-31
-        end: 2019-01-31
+        start: 2020-01-31
+        end: 2020-01-31
         cost: Free
         registration: Required
         website: https://hsbxl.be/events/byteweek/2020/opensourcedesign/
@@ -183,8 +183,8 @@ events:
 
     'Config Management Camp':
         location: Ghent, BE
-        start: 2019-02-03
-        end: 2019-02-05
+        start: 2020-02-03
+        end: 2020-02-05
         cost: Free
         registration: Required
         website: https://cfgmgmtcamp.eu
