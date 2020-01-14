@@ -54,7 +54,7 @@ stand_list:
           all:
             - name: Coderdojo
               url: https://www.coderdojobelgium.be/fr
-            - name: Skolelinux / BiscuIT / Teckids
+            - name: Skolelinux / AlekSIS / Teckids
               url: https://www.schul-frei.org
           saturday:
             - name: Linux Professional Institute
