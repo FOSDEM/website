@@ -28,6 +28,15 @@ events:
         website: https://wiki.debian.org/DebianEvents/be/2020/MiniDebCamp
         contact: holger@layer-acht.org
 
+    'Arch Linux Hackathon':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-31
+        cost: Free
+        registration: E-mail
+        website: https://lists.archlinux.org/pipermail/arch-general/2020-January/047291.html
+        contact: jerome@leclan.ch
+
     'GNU Guix/Guile Days':
         location: Brussels, BE
         start: 2020-01-30
@@ -81,6 +90,15 @@ events:
         registration: Website
         website: https://www.meetup.com/Belgium-Python-Meetup-aka-AperoPythonBe/events/267875996/
         contact: hugo@okeso.eu
+
+    'Sustain Summit 2020':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-30
+        cost: $100
+        registration: None
+        website: https://sustainoss.org/summit-2020/
+        contact: justindorfman@gmail.com
 
     'XMPP Summit':
         location: Diegem, BE
