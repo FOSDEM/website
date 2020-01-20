@@ -46,6 +46,15 @@ events:
         website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2020
         contact: pjotr2019@thebird.nl
 
+    'Hackathon actions citoyennes':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-31
+        cost: Free
+        registration: Required
+        website: http://geomoun.org/hackathon
+        contact: quentin.geluyckens@uclouvain.be
+
     'Jenkins Pipeline - Fundamentals':
         location: Brussels, BE
         start: 2020-01-30
