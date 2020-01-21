@@ -208,6 +208,15 @@ events:
         website: https://ps.zoethical.org/c/cooperation/offdem
         contact: offdem@zoethical.com
 
+    'Python FOSDEM 2020 Dinner':
+        location: Brussels, BE
+        start: 2020-02-01
+        end: 2020-02-01
+        cost: €25
+        registration: Required
+        website: https://fosdempythondinner2020.eventbrite.be
+        contact: jens@adimian.com
+
     'MariaDB Day':
         location: Brussels, BE
         start: 2020-02-02
