@@ -199,6 +199,15 @@ events:
         website: https://hsbxl.be/events/byteweek/2020/opensourcedesign/
         contact: belenbarrospena@gmail.com
 
+    'Apache Camel Social Event':
+        location: Brussels, BE
+        start: 2020-02-01
+        end: 2020-02-01
+        cost: Own drinks
+        registration: None
+        website: https://camel.apache.org/blog/FOSDEM-2020/
+        contact: zregvart@apache.org
+
     'OFFDEM':
         location: Brussels, BE
         start: 2020-02-01
