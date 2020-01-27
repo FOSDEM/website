@@ -235,6 +235,15 @@ events:
         website: https://www.meetup.com/MariaDB-Developers/events/267713381/
         contact: ian@mariadb.org
 
+    'Money & Mentorship':
+        location: Brussels, BE
+        start: 2020-02-01
+        end: 2020-02-01
+        cost: Free
+        registration: Required
+        website: https://opencollective.com/open-source-speed-dating/events/open-source-speed-dating-fosdem-2020-96f78c6c
+        contact: moss@mozilla.com
+
     'Config Management Camp':
         location: Ghent, BE
         start: 2020-02-03
