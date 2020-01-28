@@ -37,6 +37,15 @@ events:
         website: https://lists.archlinux.org/pipermail/arch-general/2020-January/047291.html
         contact: jerome@leclan.ch
 
+    'FreeCAD meetup':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-30
+        cost: Free
+        registration: None
+        website: https://forum.freecadweb.org/viewtopic.php?f=8&t=41047&p=363923#p363923
+        contact: yorik.vanhavre@gmail.com
+
     'GNU Guix/Guile Days':
         location: Brussels, BE
         start: 2020-01-30
