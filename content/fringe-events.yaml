@@ -163,6 +163,15 @@ events:
         website: http://www.openforumeurope.org/eu-open-source-policy-meeting-2020-pre-fosdem/
         contact: paula@openforumeurope.org
 
+    'FOSS license and security compliance tools workshop':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: Required
+        website: https://docs.google.com/document/d/1UphruKKAlsoUEidPCwTF2LCcHFnQkvQCQ9luTXfDupw/edit#
+        contact: pombredanne@nexb.com
+
     'FOSDEM PGDay 2020':
         location: Brussels, BE
         start: 2020-01-31
@@ -171,15 +180,6 @@ events:
         registration: Required
         website: https://2020.fosdempgday.org/
         contact: contact@fosdempgday.org
-
-    'Learn to Code KiCad':
-        location: Brussels, BE
-        start: 2020-01-31
-        end: 2020-01-31
-        cost: Free
-        registration: None
-        website: https://lists.launchpad.net/kicad-developers/msg42419.html
-        contact: seth@kipro-pcb.com
 
     'FOSDEM''20 Dataverse Fringe Meeting':
         location: Brussels, BE
@@ -190,14 +190,32 @@ events:
         website: http://www.arch.be/index.php?l=en&m=news&r=agenda&e=fosdem-20-dataverse-fringe-meeting
         contact: benjamin.peuch@arch.be
 
-    'FOSS license and security compliance tools workshop':
+    'Great Brexit Pub Crawl':
         location: Brussels, BE
         start: 2020-01-31
         end: 2020-01-31
         cost: Free
-        registration: Required
-        website: https://docs.google.com/document/d/1UphruKKAlsoUEidPCwTF2LCcHFnQkvQCQ9luTXfDupw/edit#
-        contact: pombredanne@nexb.com
+        registration: None
+        website: https://sites.google.com/view/great-brexit-pub-crawl
+        contact: cheryljhung@gmail.com
+
+    'Learn to Code KiCad':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: None
+        website: https://lists.launchpad.net/kicad-developers/msg42419.html
+        contact: seth@kipro-pcb.com
+
+    'Rocket.Chat European Meetup':
+        location: Brussels, BE
+        start: 2010-01-31
+        end: 2010-01-31
+        cost: Free
+        registration: None
+        website: https://www.facebook.com/RocketChatApp/photos/a.429764010537332/1585022775011444/?type=3&theater
+        contact: sing.li@rocket.chat
 
     'Usability testing for FOSS projects':
         location: Brussels, BE
