@@ -37,6 +37,15 @@ events:
         website: https://lists.archlinux.org/pipermail/arch-general/2020-January/047291.html
         contact: jerome@leclan.ch
 
+    'FreeCAD meetup':
+        location: Brussels, BE
+        start: 2020-01-30
+        end: 2020-01-30
+        cost: Free
+        registration: None
+        website: https://forum.freecadweb.org/viewtopic.php?f=8&t=41047&p=363923#p363923
+        contact: yorik.vanhavre@gmail.com
+
     'GNU Guix/Guile Days':
         location: Brussels, BE
         start: 2020-01-30
@@ -154,6 +163,15 @@ events:
         website: http://www.openforumeurope.org/eu-open-source-policy-meeting-2020-pre-fosdem/
         contact: paula@openforumeurope.org
 
+    'FOSS license and security compliance tools workshop':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: Required
+        website: https://docs.google.com/document/d/1UphruKKAlsoUEidPCwTF2LCcHFnQkvQCQ9luTXfDupw/edit#
+        contact: pombredanne@nexb.com
+
     'FOSDEM PGDay 2020':
         location: Brussels, BE
         start: 2020-01-31
@@ -162,15 +180,6 @@ events:
         registration: Required
         website: https://2020.fosdempgday.org/
         contact: contact@fosdempgday.org
-
-    'Learn to Code KiCad':
-        location: Brussels, BE
-        start: 2020-01-31
-        end: 2020-01-31
-        cost: Free
-        registration: None
-        website: https://lists.launchpad.net/kicad-developers/msg42419.html
-        contact: seth@kipro-pcb.com
 
     'FOSDEM''20 Dataverse Fringe Meeting':
         location: Brussels, BE
@@ -181,14 +190,41 @@ events:
         website: http://www.arch.be/index.php?l=en&m=news&r=agenda&e=fosdem-20-dataverse-fringe-meeting
         contact: benjamin.peuch@arch.be
 
-    'FOSS license and security compliance tools workshop':
+    'Great Brexit Pub Crawl':
         location: Brussels, BE
         start: 2020-01-31
         end: 2020-01-31
         cost: Free
-        registration: Required
-        website: https://docs.google.com/document/d/1UphruKKAlsoUEidPCwTF2LCcHFnQkvQCQ9luTXfDupw/edit#
-        contact: pombredanne@nexb.com
+        registration: None
+        website: https://sites.google.com/view/great-brexit-pub-crawl
+        contact: cheryljhung@gmail.com
+
+    'IndieHosters 5th birthday!':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: None
+        website: https://forum.indie.host/t/indiehosters-5th-birthday-in-brussels-31st-january-2020-offdem/3377
+        contact: pierre@ozoux.net
+
+    'Learn to Code KiCad':
+        location: Brussels, BE
+        start: 2020-01-31
+        end: 2020-01-31
+        cost: Free
+        registration: None
+        website: https://lists.launchpad.net/kicad-developers/msg42419.html
+        contact: seth@kipro-pcb.com
+
+    'Rocket.Chat European Meetup':
+        location: Brussels, BE
+        start: 2010-01-31
+        end: 2010-01-31
+        cost: Free
+        registration: None
+        website: https://www.facebook.com/RocketChatApp/photos/a.429764010537332/1585022775011444/?type=3&theater
+        contact: sing.li@rocket.chat
 
     'Usability testing for FOSS projects':
         location: Brussels, BE
@@ -199,6 +235,15 @@ events:
         website: https://hsbxl.be/events/byteweek/2020/opensourcedesign/
         contact: belenbarrospena@gmail.com
 
+    'Apache Camel Social Event':
+        location: Brussels, BE
+        start: 2020-02-01
+        end: 2020-02-01
+        cost: Own drinks
+        registration: None
+        website: https://camel.apache.org/blog/FOSDEM-2020/
+        contact: zregvart@apache.org
+
     'OFFDEM':
         location: Brussels, BE
         start: 2020-02-01
@@ -208,6 +253,15 @@ events:
         website: https://ps.zoethical.org/c/cooperation/offdem
         contact: offdem@zoethical.com
 
+    'Python FOSDEM 2020 Dinner':
+        location: Brussels, BE
+        start: 2020-02-01
+        end: 2020-02-01
+        cost: €25
+        registration: Required
+        website: https://fosdempythondinner2020.eventbrite.be
+        contact: jens@adimian.com
+
     'MariaDB Day':
         location: Brussels, BE
         start: 2020-02-02
@@ -216,6 +270,15 @@ events:
         registration: Required
         website: https://www.meetup.com/MariaDB-Developers/events/267713381/
         contact: ian@mariadb.org
+
+    'Money & Mentorship':
+        location: Brussels, BE
+        start: 2020-02-01
+        end: 2020-02-01
+        cost: Free
+        registration: Required
+        website: https://opencollective.com/open-source-speed-dating/events/open-source-speed-dating-fosdem-2020-96f78c6c
+        contact: moss@mozilla.com
 
     'Config Management Camp':
         location: Ghent, BE
