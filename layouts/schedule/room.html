@@ -3,7 +3,7 @@
 # encoding: utf-8
 %>
 <ul class="side-box">
-    <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></li>
+  <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></li>
 <%
   building = $buildings.select{|b, rooms| rooms.map{|r| r[:slug]}.include? item[:slug]}.map{|b, rooms| b}.first
   if building
@@ -11,6 +11,9 @@
   %>
   <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
 <% end %>
+  <li><i class="icon-map-marker"></i> <strong>Location</strong>: <a href="https://nav.fosdem.org/l/<%= item[:conference_room] %>/">
+    <%= item[:conference_room] %>
+  </a></li>
 </ul>
 <br style="clear: both;"/>
 <%
