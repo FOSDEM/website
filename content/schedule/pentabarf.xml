@@ -48,6 +48,11 @@ xml.schedule do
                   xml.person( speaker[:name], {:id=>speaker[:person_id]} )
                 end
               end
+              xml.attachments do
+                event[:attachments].each do |attachment|
+                  xml.attachment(attachment[:title], {:href=>@site.config[:base_url] + ($item_by_id.fetch(attachment[:identifier])).path})
+                end
+	      end
               xml.links do
                 event[:links].each do |link|
                   xml.link(link[:title], {:href=>link[:url]})
