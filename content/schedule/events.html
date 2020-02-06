@@ -25,13 +25,14 @@ size = h.values.map(&:size).inject(:+)
             <th>Day</th>
             <th>Start</th>
             <th>End</th>
+            <th>Attachments</th>
 	    <th>Videos</th>
         </tr>
     </thead>
     <tbody>
       <% h.each do |track, list| %>
         <tr>
-          <td colspan="7"><h4><%= track[:title] %> (<%= list.size %>)</h4></td>
+          <td colspan="8"><h4><%= track[:title] %> (<%= list.size %>)</h4></td>
         </tr>
         <% list.each do |e| %>
         <tr>
@@ -41,6 +42,11 @@ size = h.values.map(&:size).inject(:+)
             <td><%= l day e[:day] %></td>
             <td><%= e[:start_time] %></td>
             <td><%= e[:end_time] %></td>
+	    <td>
+	      <% e[:attachments].each do |a| %>
+	      <a href="<%= @site.config[:base_url] + ($item_by_id.fetch(a[:identifier])).path %>"><%= a[:type] %></a>
+              <% end %>
+	    </td>
 	    <td>
 	      <% video_webm = (e[:links] or []).select{|k| k[:url] =~ /\/video.fosdem.org\/.*webm/}.map{|k| k[:url]} %>
 	      <% video_mp4 = (e[:links] or []).select{|k| k[:url] =~ /\/video.fosdem.org\/.*mp4/}.map{|k| k[:url]} %>
