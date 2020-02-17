@@ -9,7 +9,7 @@ of those will be an inspiration or of help.
 
 ## Prerequisites
 
-- Ruby 2.2.10
+- Ruby 2.4 or newer
 - ImageMagick >= 6.0 < 7.0
 - pngcrush
 - Either:
@@ -48,11 +48,11 @@ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 
 source ~/.bashrc
 
-rbenv install 2.2.10
+rbenv install 2.7.0
 rbenv rehash
-rbenv local 2.2.10
+rbenv local 2.7.0
 
-gem install bundler -v 1.17.3 # bundler 2.0 and up requires ruby >=2.3
+gem install bundler -v 1.17.3 # we’ll upgrade to Bundler 2.x soon
 
 git clone git@git.fosdem.org:website.git
 
@@ -107,11 +107,6 @@ nanoc view -p 1234
 ```
 
 ## Dependency notes
-
-### Ruby version
-
-Ruby must be pinned at 2.2.0, as the code relies on some features present in
-older version.
 
 ### ImageMagick version
 
