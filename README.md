@@ -105,19 +105,3 @@ The site will be generated in `/output`. To view the website, you can use the
 ```
 nanoc view -p 1234
 ```
-
-## Dependency notes
-
-### ImageMagick version
-
-`rmagick` v2.15.4 is not compatible with ImageMagick 7 and newer. Tested with
-ImageMagick 6.9.9-34 on OSX.
-
-## Getting set up on OSX
-
-> You may need to remove/unlink imagemagick if you have a newer version installed already.
-
-```bash
-brew install rbenv pngcrush imagemagick@6
-rbenv install ruby-1.9.3-p551
-```
