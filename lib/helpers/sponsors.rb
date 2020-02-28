@@ -56,6 +56,7 @@ module Fosdem
 
     def thumb
       raise "sponsor #{@name} has no thumb logo" unless self.thumb?
+
       $item_by_id.fetch(@logo[:small])
     end
 
@@ -65,6 +66,7 @@ module Fosdem
 
     def logo
       raise "sponsor #{@name} has no logo" unless self.logo?
+
       $item_by_id.fetch(@logo[:big])
     end
 
@@ -80,12 +82,12 @@ module Fosdem
                      l = $items_cache.select{|item| item[:sponsors_root]}
                      raise "failed to find item with attribute :sponsors_root" if l.empty?
                      raise "found #{l.length} items with attribute :sponsors_root: #{l}" if l.length > 1
+
                      $basepage = l[0]
                    end
                    h
                  end
     end
-
   end
 
   def sponsors

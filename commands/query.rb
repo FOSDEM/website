@@ -8,6 +8,7 @@ flag        :f, :facets,    'do a faceted search'
 class SolrQuery < ::Nanoc::CLI::CommandRunner
   def run
     raise Nanoc::Errors::GenericTrivial, "usage: #{command.usage}" if arguments.size != 1
+
     require 'rsolr'
     self.require_site
     solr = begin

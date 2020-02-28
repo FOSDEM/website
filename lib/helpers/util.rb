@@ -2,7 +2,6 @@
 # encoding: utf-8
 
 module Fosdem
-
   def henc(text)
     $_html_entities_encoder ||= begin
                                   require 'htmlentities'
@@ -185,7 +184,6 @@ module Fosdem
         end
       end
     end
-
   end
 
   def sprite_image(filenames, format='PNG', optimize=true)
@@ -258,11 +256,9 @@ module Fosdem
             end
           end
         end
-
       ensure
         sprite.destroy! if sprite
       end
-
     ensure
       images.each do |img|
         begin
@@ -288,6 +284,7 @@ module Fosdem
       end.join(", ")
     end
   end
+
   def cfp_mail_uri(m)
     if m.nil? or m.empty?
       '-'
@@ -312,6 +309,5 @@ module Fosdem
       end.join(", ")
     end
   end
-
 end #Fosdem
 

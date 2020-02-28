@@ -96,6 +96,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
                                nil
                              end
             raise "item #{item.identifier} has #{item.reps.size}, can't decide which one to use" unless item.reps.size == 1
+
             #raw_content = item.reps.first.content[:last]
             #raw_content = item.compiled_content
 
@@ -201,6 +202,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
   end
 
   private
+
   ACTION_COLORS = {
     :delete   => "\e[1;31m",
     :index    => "\e[1;32m",

@@ -1,7 +1,6 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 
 module Fosdem
-
   # We need the first speaker for sorting the interviews.
   def first_speaker(speakers)
     if speakers.is_a? Enumerable

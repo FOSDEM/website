@@ -6,6 +6,7 @@ module Fosdem
     identifier :toc
 
     private
+
     class Node
       attr_reader :level, :text, :children, :parent, :origin
       def initialize(level, text, parent=nil, element=nil)
@@ -16,9 +17,11 @@ module Fosdem
         @origin = element
         parent.add_child(self) if parent
       end
+
       def add_child(node)
         @children << node
       end
+
       def to_xhtml(attributes={})
         attributes, maxdepth =
           if attributes.has_key? 'maxdepth'
@@ -31,6 +34,7 @@ module Fosdem
 
         _to_xhtml([], maxdepth, attributes)
       end
+
       def numberize(attributes={})
         maxdepth = if attributes.has_key? 'numberdepth'
                      attributes['numberdepth'].value.to_i
@@ -41,10 +45,13 @@ module Fosdem
                    end
         _numberize([], maxdepth)
       end
+
       def anchorize(start=1)
         _anchorize([])
       end
+
       protected
+
       def _to_xhtml(path, maxdepth, attributes)
         t = ""
         t << %Q!<li><a href="#toc-#{path.join('.')}">#{path.join('.')}. #{@text}</a>! if @text
@@ -64,6 +71,7 @@ module Fosdem
         t << "</li>\n"
         t
       end
+
       def _numberize(path, maxdepth)
         if @origin
           @origin.inner_html = %Q!<span class="h-number">#{path.join('.')}</span>#{@origin.text}!
@@ -74,6 +82,7 @@ module Fosdem
           end
         end
       end
+
       def _anchorize(path)
         if @origin
           @origin.add_previous_sibling(%Q!<a name="toc-#{path.join('.')}"></a>!)
@@ -85,6 +94,7 @@ module Fosdem
     end
 
     public
+
     def run(content, params={})
       @item_rep = assigns[:item_rep] if @item_rep.nil?
       require 'nokogiri'
@@ -152,5 +162,4 @@ module Fosdem
       end
     end
   end
-
 end

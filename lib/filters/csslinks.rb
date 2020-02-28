@@ -37,7 +37,6 @@ module Fosdem
           "url(#{target.path})"
         end
       end
-
     end
   end
 end
