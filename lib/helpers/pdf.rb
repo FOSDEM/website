@@ -30,6 +30,7 @@ module Fosdem
     }
 
     public
+
     def self.pdf_grid(size)
       params = $PARAMS[size]
       raise "invalid size: must be one of [#{$PARAMS.keys.join(", ")}]" unless params
@@ -45,7 +46,6 @@ module Fosdem
         Author: "fosdem.org",
         Subject: "FOSDEM",
       }) do
-
         font_families.update(
           'DejaVuSansCondensed' => {
           normal: File.join('pdf', 'DejaVuSansCondensed.ttf'),
@@ -246,7 +246,6 @@ module Fosdem
               end #grids
 
       grids.map do |g|
-
         g = g.map do |row|
           row.map do |cell|
             if cell.is_a? Hash and cell.has_key? :content and (cell[:content].size / cell.fetch(:rowspan, 1)) > cell_text_length_threshold
@@ -264,7 +263,6 @@ module Fosdem
         g
       end
     end
-
   end #Pdf
 end #Fosdem
 

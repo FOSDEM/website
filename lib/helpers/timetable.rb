@@ -15,6 +15,7 @@ module Fosdem
                                 t = Time.parse(td)
                                 raise "conference :timeslot_duration has seconds" unless t.sec == 0
                                 raise "conference :timeslot_duration is less than 5 minutes" unless t.min >= 5
+
                                 t.min + t.hour * 60
                               end
   end
@@ -71,6 +72,7 @@ module Fosdem
     interval, step = begin
                        i = interval_minutes
                        raise "an interval under 5 minutes, really, are you serious?" if i < 5
+
                        # convert the interval to seconds for step as that's what we always need below
                        # to use the + operator on Time objects
                        [ i, i * 60 ]
@@ -413,6 +415,5 @@ module Fosdem
 
     by_day
   end
-
 end
 

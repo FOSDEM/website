@@ -1,5 +1,6 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 # encoding: utf-8
+
 module Fosdem
   def rss_feed(params={})
     require 'builder'
@@ -79,6 +80,7 @@ module Fosdem
   end
 
   private
+
   def rss_tag_for(item)
     hostname, base_dir = %r{^.+?://([^/]+)(.*)$}.match(@site.config[:base_url])[1..2]
 
@@ -86,6 +88,5 @@ module Fosdem
 
     'tag:' + hostname + ',' + formatted_date + ':' + base_dir + (item.path || item.identifier)
   end
-
 end
 

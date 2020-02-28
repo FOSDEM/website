@@ -59,5 +59,4 @@ module Fosdem
     end
     hit
   end
-
 end

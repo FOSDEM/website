@@ -97,6 +97,7 @@ module Fosdem
               end
             end
             fail "link target is not a rendered page: #{target.identifier}" unless link
+
             elem[attr] = link
           end
         end
@@ -104,5 +105,4 @@ module Fosdem
       doc.to_xhtml
     end
   end
-
 end

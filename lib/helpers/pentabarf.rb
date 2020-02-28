@@ -36,6 +36,7 @@ module Fosdem
         raise "Failed to connect to the Pentabarf database //#{hostaddress}:#{port}/#{database} with user #{user}: #{e.message}"
       end
     end
+
     def close
       if @db
         @db.close
@@ -43,6 +44,7 @@ module Fosdem
         @db = nil
       end
     end
+
     def update(config)
       total_time = start_time = Time.now
 
@@ -66,7 +68,6 @@ module Fosdem
                                     [ t.fetch(:width), t.fetch(:height) ]
                                   end
 
-
       $photo_export_root, $thumbnail_export_root, $attachment_export_root, $eventlogos_export_root =
         begin
           t = conf.fetch :export_roots
@@ -81,6 +82,7 @@ module Fosdem
     end
 
     private
+
     def run_internal(conf, total_time)
       require 'yaml'
       require 'time'
@@ -94,6 +96,7 @@ module Fosdem
                 @db.exec('SELECT conference_id FROM conference WHERE acronym=$1', [t]) do |res|
                   fail "no conference found for acronym #{t}" if res.ntuples < 1
                   fail "found more than one conference that matches acronym #{t}" if res.ntuples > 1
+
                   res.first['conference_id'].to_i
                 end
               end
@@ -204,6 +207,7 @@ module Fosdem
 
       def markup(text)
         return '' if text.nil?
+
         text = text.to_s.strip
         return '' if text.empty?
 
@@ -268,6 +272,7 @@ module Fosdem
       conference = model(@db.exec('SELECT * FROM conference WHERE conference_id=$1', [cid]) do |res|
         fail "failed to find conference with conference_id=#{cid}" if res.ntuples < 1
         fail "found more than one conference with conference_id=#{cid}" if res.ntuples > 1
+
         res.first
       end)
       event_time_offset = begin
@@ -280,6 +285,7 @@ module Fosdem
                           end
       conftz = begin
                  fail "conference has no timezone" unless conference.fetch('timezone')
+
                  require 'tzinfo'
                  TZInfo::Timezone.get(conference.fetch('timezone'))
                end
@@ -505,7 +511,6 @@ module Fosdem
                          if sortname =~ /^\(/
                            sortname = "#{n[-2]} #{n.first}"
                          end
-
                          end
                          # Be very evil and sort "roles" under "#"
                          ['Staff', 'Team'].map{|s|
@@ -724,7 +729,6 @@ module Fosdem
                                  days.each{|d| h[d.fetch('slug')] = trackevents.select{|e| e['conference_day_id'] == d['conference_day_id']}.map(&to_slug)}
                                  h
                                end
-
         end
       end
       # decorate events with track information
@@ -806,6 +810,7 @@ module Fosdem
 	  next if e['track'] =~ /certification/
 	  next if e['track'] =~ /bof/
 	  next if e['track'] =~ /workshop/
+
           current_time = Time.now
 
 	  # Uncomment the following line to test what the site looks like at a specific time
@@ -925,6 +930,7 @@ module Fosdem
                  t = Time.parse(conference.fetch('timeslot_duration'))
                  raise "conference :timeslot_duration has seconds" unless t.sec == 0
                  raise "conference :timeslot_duration is less than 5 minutes" unless t.min >= 5
+
                  t.min + t.hour * 60
                end
 
@@ -940,6 +946,7 @@ module Fosdem
               if time
                 time = Time.parse(time)
                 fail"time with granularity != 5 min: #{time} for item #{item.inspect}" if time.min % tsim != 0
+
                 index = (time.hour * 60 + time.min) / tsim
 
                 item[a + '_index'] = index
@@ -958,6 +965,7 @@ module Fosdem
                 unless time.nil?
                   time = Time.parse(time)
                   raise "time with granularity != 5 min: #{time} for item #{item.inspect}" if time.min % tsim != 0
+
                   index = (time.hour * 60 + time.min) / tsim
                   item[a + '_index'][dayslug] = index
                 else
@@ -967,7 +975,6 @@ module Fosdem
             end
           end
         end
-
       end
 
       # event attachments
@@ -999,6 +1006,7 @@ module Fosdem
             # attachment filename sanitization
             d, f, b, ext = sanitize_filename a['filename']
             fail "sanitized basename for attachment with event_attachment_id=#{a['event_attachment_id']} still contains a dot: #{b}" if b =~ /\./
+
             mf = "#{b}.#{$meta_extension}"
 
             filename, meta_filename = [f, mf]
@@ -1066,6 +1074,7 @@ module Fosdem
                 WHERE event_attachment_id=$1}, [todo[:event_attachment_id]]) do |res|
                   fail "failed to find event_attachment with event_attachment_id=#{todo[:event_attachment_id]}" if res.ntuples < 1
                   fail "found more than one event_attachment with event_attachment_id=#{todo[:event_attachment_id]}" if res.ntuples > 1
+
                   res.first
                 end
               end
@@ -1106,6 +1115,7 @@ module Fosdem
           .each do |i|
             counter += 1
             next if i.fetch('image_length') < 1
+
             event = event_by_event_id[i['event_id']]
             next unless event
 
@@ -1169,6 +1179,7 @@ module Fosdem
           WHERE event_id=$1}, [todo[:event_id]]) do |res|
             fail "failed to find event_image for event_id=#{todo[:event_id]}" if res.ntuples < 1
             fail "found more than one event_image for event_id=#{todo[:event_id]}" if res.ntuples > 1
+
             res.first
           end
           image = nil
@@ -1226,6 +1237,7 @@ module Fosdem
             %w(person_id image_length).each{|x| i[x] = i[x].to_i}
 
             next if i.fetch('image_length') < 1
+
             counter += 1
             speaker = speaker_by_person_id[i['person_id']]
             next unless speaker
@@ -1297,6 +1309,7 @@ module Fosdem
           i = @db.exec('SELECT * FROM person_image WHERE person_id=$1', [todo.fetch(:person_id)]) do |res|
             fail "failed to find person_image for person_id=#{todo.fetch(:person_id)}" if res.ntuples < 1
             fail "found more than one person_image for person_id=#{todo.fetch(:person_id)}" if res.ntuples > 1
+
             res.first
           end
           speaker = speaker_by_person_id.fetch(todo.fetch(:person_id))
@@ -1342,7 +1355,6 @@ module Fosdem
               f.write(todo.fetch(:hash))
             end
             $cache_tree_after << todo.fetch(:hash_file)
-
           ensure
             image.destroy! if image
           end
@@ -1426,7 +1438,6 @@ module Fosdem
       end
 
       log(:high, "cache rendered", Time.now - total_time)
-
     ensure
       close
     end
@@ -1447,7 +1458,6 @@ module Fosdem
 
       Nanoc::CLI::Logger.instance.log(prio, "%s%12s%s  %s  %s" % [ "\e[36m", "pentabarf", "\e[0m", t, message ])
     end
-
   end
 end
 

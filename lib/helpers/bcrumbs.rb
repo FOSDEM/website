@@ -1,6 +1,5 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 module Fosdem
-
   def bcrumbs(opts={})
     separator = opts.fetch(:separator, nil)
 
@@ -132,6 +131,5 @@ module Fosdem
 
     list.join('')
   end
-
 end
 

@@ -88,5 +88,4 @@ module Fosdem
     list.first[:navtitle] = 'News'
     list.each{|i| @items << i}
   end
-
 end

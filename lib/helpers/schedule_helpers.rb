@@ -4,7 +4,6 @@
 # item massaging
 
 module Fosdem
-
   def slug(h)
     case h
     when Hash
@@ -60,6 +59,7 @@ module Fosdem
       text = case title
              when Symbol
                raise "item \"#{item.inspect}\" has no title attribute \"#{title}\"" unless item[title]
+
                item[title]
              when String
                title
@@ -99,6 +99,7 @@ module Fosdem
   def ltt(item, whence, opts={})
     fail "item must be a Nanoc::Item" unless item.is_a? Nanoc::Item
     fail "opts must be a Hash" unless opts.is_a? Hash
+
     klass = begin
               c = opts.fetch(:css, nil)
               case c
@@ -132,6 +133,7 @@ module Fosdem
   def conference(sym=nil)
     c = $_conference ||= @items.select{|i| i.identifier == '/schedule/conference/'}.first
     raise "failed to find /schedule/conference/" if c.nil?
+
     if sym.nil?
       c
     else
@@ -238,6 +240,7 @@ module Fosdem
   def filesize(item)
     raise "item #{item.inspect} is not binary" unless item.binary?
     raise "item #{item.inspect} is binary but has no filename" unless item[:filename]
+
     size = File.size item[:filename]
     case
     when size == 1
@@ -277,6 +280,7 @@ module Fosdem
       # e2 ends before e1
       return true
     end
+
     return false
   end
 
@@ -297,12 +301,15 @@ module Fosdem
   def interview?(item)
     item[:kind] == 'interview' or item.identifier =~ %r{^/interviews?/.+}
   end
+
   def page?(item)
     item[:kind] == 'page' or item.identifier.match(%r{^/(news|headlines|assets|sponsors?|schedule)/}).nil?
   end
+
   def news?(item)
     item[:kind] == 'news' or item.identifier.match(%r{^/news/\d\d\d\d-\d\d-\d\d-[^/]+/$}).nil? ? false : true
   end
+
   def sponsor?(item)
     item[:kind] == 'sponsor' or (item[:kind] != 'page' and not item.binary? and item.identifier.match(%r{^/sponsors?/.+/}).nil? ? false : true)
   end
@@ -367,5 +374,4 @@ module Fosdem
       false
     end
   end
-
 end

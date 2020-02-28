@@ -16,6 +16,7 @@ module Fosdem
     end
 
     private
+
     def load_items!
       require 'yaml'
       require 'time'
@@ -78,6 +79,7 @@ module Fosdem
             crawl(key, :kind => kind.to_sym) do |filename, meta|
               id = meta.delete('identifier')
               fail "duplicate: #{id}\n#{memory[id].inspect} (#{memory[id][:filename]})" if memory[id]
+
               i = Nanoc3::Item.new(filename, meta, id, {binary: true})
               memory[id] = i
               i
@@ -111,6 +113,5 @@ module Fosdem
         yield filename, meta
       end
     end
-
   end
 end

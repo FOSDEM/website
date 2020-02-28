@@ -15,7 +15,6 @@
 
 ##### PREPROCESSING
 preprocess do
-
   # Check for presence of export file first:
   begin
     f = config.fetch(:pentabarf).fetch(:meta_export_file)
@@ -40,6 +39,7 @@ preprocess do
                   first_day = begin
                                 d = @items.select{|i| i.identifier =~ %r{^/schedule/day/[^/]+/$}}.sort_by{|d| d[:conference_day]}.first
                                 raise "failed to find item with identifier /schedule/day/..." unless d
+
                                 d[:conference_day]
                               end
                   # the prefix of the site is the year
@@ -80,6 +80,7 @@ preprocess do
   $item_by_id = {}
   @items.each do |item|
     raise "duplicate identifier #{item.identifier}" if $item_by_id.has_key? item.identifier
+
     $item_by_id[item.identifier] = item
   end
 
@@ -131,7 +132,6 @@ preprocess do
                          end
                          [ result, map ]
                        end
-
 end
 
 ##### COMPILING
@@ -407,6 +407,7 @@ end
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
 route '/assets/style/fosdem/' do
   fail "#{item.identifier} is not the css file!" unless item[:extension] == 'css'
+
   suffix = if @site.config[:digest_css]
              parts = @items.select{|i| i.identifier =~ %r{^/assets/style/parts/.+}}.sort_by(&:identifier)
              "-" + digest(parts)
@@ -418,6 +419,7 @@ end
 
 route '/assets/style/fosdem-static/' do
   fail "#{item.identifier} is not the css file!" unless item[:extension] == 'css'
+
   "#{$prefix}#{item.identifier.chop}.#{item[:extension]}"
 end
 

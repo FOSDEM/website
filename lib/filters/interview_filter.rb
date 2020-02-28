@@ -63,5 +63,4 @@ module Fosdem
       content
     end
   end
-
 end

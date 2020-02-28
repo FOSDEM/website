@@ -3,6 +3,7 @@
 module Fosdem
   def sub(here=@item)
     raise "current item may not be nil" if here.nil?
+
     require 'builder'
     buffer = ''
     xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
