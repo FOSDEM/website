@@ -57,11 +57,11 @@ module Fosdem
 
   def timetable_from_items_for_day(items, day)
     rooms = items.select{|i| i.identifier =~ %r{^/schedule/room/.+}}
-    .sort_by{|r| [r[:rank], r[:conference_room_id]]}
+                 .sort_by{|r| [r[:rank], r[:conference_room_id]]}
 
     events = items.select{|i| i.identifier =~ %r{^/schedule/event/.+}}
-    .select{|e| e[:conference_day_id] == day[:conference_day_id]}
-    .sort_by{|e| [e[:start_time], e[:event_id]]}
+                  .select{|e| e[:conference_day_id] == day[:conference_day_id]}
+                  .sort_by{|e| [e[:start_time], e[:event_id]]}
 
     timetable rooms, events
   end

@@ -19,9 +19,9 @@ module Fosdem
                         [ ::Nokogiri::HTML.fragment(content), './/img[@src]' ]
                       end
       doc.xpath(selector)
-      .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
-      .select { |img| img['src'] =~ %r{^/|\.\.\/} }
-      .each do |img|
+         .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
+         .select { |img| img['src'] =~ %r{^/|\.\.\/} }
+         .each do |img|
         width, height = html_image_size(img)
         img['height'] = height
         img['width'] = width

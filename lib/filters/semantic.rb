@@ -17,9 +17,9 @@ module Fosdem
             end
       doc.xpath('.//code').select{|e| e.element? and e.has_attribute? 'class'}.each do |code|
         code
-        .attribute('class')
-        .value.split(/\s+/)
-        .map do |c|
+          .attribute('class')
+          .value.split(/\s+/)
+          .map do |c|
           case c.to_sym
           when :file
             'file'
@@ -31,9 +31,9 @@ module Fosdem
             nil
           end
         end
-        .reject(&:nil?)
-        .map{|i| %Q! <i class="icon-#{i.to_s}"></i>!}
-        .each{|i| code.children.after(i)}
+          .reject(&:nil?)
+          .map{|i| %Q! <i class="icon-#{i.to_s}"></i>!}
+          .each{|i| code.children.after(i)}
       end
 
       doc.to_xhtml

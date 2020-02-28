@@ -52,14 +52,14 @@ module Fosdem
     require 'active_support/inflector/transliterate'
     require 'active_support/inflector/methods'
     b = ActiveSupport::Inflector
-    .transliterate(b)
-    .gsub(%r{/+}, '')
-    .gsub(%r{\s+}, '_')
-    .gsub(/["']+/, '')
-    .gsub(/[^0-9A-Za-z]/i, '_')
-    .gsub(/_+/, '_')
-    .gsub(/^_/, '')
-    .gsub(/_$/, '')
+        .transliterate(b)
+        .gsub(%r{/+}, '')
+        .gsub(%r{\s+}, '_')
+        .gsub(/["']+/, '')
+        .gsub(/[^0-9A-Za-z]/i, '_')
+        .gsub(/_+/, '_')
+        .gsub(/^_/, '')
+        .gsub(/_$/, '')
 
     # skip adding the extension if it is empty
     if e != ''
@@ -175,7 +175,7 @@ module Fosdem
         y += 20 # use additional empty transparent row offset to avoid bleeding
         line
       end
-      .join("\n")
+       .join("\n")
     ensure
       h.each do |rule, img|
         begin
@@ -192,21 +192,21 @@ module Fosdem
     images = []
     begin
       images = filenames
-      .map do |f|
-        case f
-        when Nanoc::Item
-          f[:filename]
-        when String
-          if f.start_with? '/' and f.end_with? '/'
-            $item_by_id.fetch(f)[:filename]
-          else
-            f
-          end
-        else
-          fail "unsupported #{f.class} #{f.inspect}"
-        end
-      end
-      .map do |f|
+               .map do |f|
+                 case f
+                 when Nanoc::Item
+                   f[:filename]
+                 when String
+                   if f.start_with? '/' and f.end_with? '/'
+                     $item_by_id.fetch(f)[:filename]
+                   else
+                     f
+                   end
+                 else
+                   fail "unsupported #{f.class} #{f.inspect}"
+                 end
+               end
+               .map do |f|
         Magick::Image.from_blob(IO.read(f)).first
       end
 

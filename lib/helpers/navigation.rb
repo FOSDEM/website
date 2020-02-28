@@ -45,7 +45,7 @@ module Fosdem
                      @item.path == target.path
                    else
                      @item.path.start_with? target.path
-                 end
+                   end
           css << :active if active
         end
         css << :home if target.identifier == '/'

@@ -24,10 +24,10 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
     self.site.compiler.load
 
     core = if options[:environment]
-      options[:environment]
-    else
-      'staging'
-    end
+             options[:environment]
+           else
+             'staging'
+           end
 
     solr = begin
              url = if options[:url]
@@ -51,17 +51,17 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
 
     indexable_items = self.site.items.reject do |item|
       item.binary? or
-      item[:index] == false or
-      item[:alias_of] or
-      item[:kind] == 'internal' or
-      item[:filename] =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
-      item.path.nil? or
-      item.path =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
-      item.reps.empty? or
-      item.reps.first.raw_paths.empty? or
-      item.reps.first.path.nil?
+        item[:index] == false or
+        item[:alias_of] or
+        item[:kind] == 'internal' or
+        item[:filename] =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
+        item.path.nil? or
+        item.path =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
+        item.reps.empty? or
+        item.reps.first.raw_paths.empty? or
+        item.reps.first.path.nil?
     end
-    .map do |item|
+                          .map do |item|
       file = File.join file_prefix, item.reps.first.path
       file << "index.html" if file.end_with? '/'
       { id: item.identifier, file: file, item: item }
@@ -204,10 +204,10 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
   private
 
   ACTION_COLORS = {
-    :delete   => "\e[1;31m",
-    :index    => "\e[1;32m",
-    :write    => "\e[1;32m",
-    :commit   => "\e[1;33m",
+    :delete => "\e[1;31m",
+    :index => "\e[1;32m",
+    :write => "\e[1;32m",
+    :commit => "\e[1;33m",
     :optimize => "\e[1;33m",
   }
   def log(level, action, name, duration=nil)
