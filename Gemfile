@@ -2,8 +2,7 @@
 
 # see https://bundler.io/
 #
-# After modifying this file, delete Gemfile.lock
-# and run `bundle'
+# After modifying this file, run `bundle'.
 
 source "http://rubygems.org"
 
