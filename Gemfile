@@ -1,6 +1,6 @@
 # vim: set ts=2 sw=2 et noai ft=ruby:
 
-# see http://gembundler.com/
+# see https://bundler.io/
 #
 # After modifying this file, delete Gemfile.lock
 # and run `bundle'
