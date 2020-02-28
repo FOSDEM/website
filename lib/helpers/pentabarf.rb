@@ -173,22 +173,22 @@ module Fosdem
                       # we'd like it to transliterate for us.
                       I18n.config.available_locales = [:custom]
                       I18n.backend.store_translations(:custom, :i18n => {
-                        :transliterate => {
-                          :rule => {
-                            "’" => "'"
-                          }
-                        }
-                      })
+                                                        :transliterate => {
+                                                          :rule => {
+                                                            "’" => "'"
+                                                          }
+                                                        }
+                                                      })
                       I18n.locale = :custom
                       ActiveSupport::Inflector
-                      .transliterate(slug)
-                      .downcase
-                      .gsub(/[&]/, '_and_')
-                      .gsub(/[\s\-\+\/,;:~=]+/, '_')
-                      .gsub(/[\.'"#\?\{\}\*\^\%\$\|<>]+/, '')
-                      .gsub(/[\(]/, '')
-                      .gsub(/[\)]/, '')
-                      .gsub(/__/, '_')
+                        .transliterate(slug)
+                        .downcase
+                        .gsub(/[&]/, '_and_')
+                        .gsub(/[\s\-\+\/,;:~=]+/, '_')
+                        .gsub(/[\.'"#\?\{\}\*\^\%\$\|<>]+/, '')
+                        .gsub(/[\(]/, '')
+                        .gsub(/[\)]/, '')
+                        .gsub(/__/, '_')
                     end
         sanitized
       end
@@ -337,8 +337,8 @@ module Fosdem
                    AND public=true
                    ORDER BY event_id}, [cid]) {|res|
                    res
-                   .select{|e| e['duration'] and e['conference_track_id'] and e['conference_room_id'] and e['conference_day_id']}
-                   .map{|e|
+                     .select{|e| e['duration'] and e['conference_track_id'] and e['conference_room_id'] and e['conference_day_id']}
+                     .map{|e|
                      day = day_by_day_id.fetch(e['conference_day_id'].to_i)
 
                      me = model e, [:event_id, :conference_id, :slug, :title, :subtitle, :conference_track_id, :event_type, :duration, :event_state, :event_state_progress, :language, :conference_room_id, :conference_day_id, :abstract, :description ]
@@ -370,7 +370,7 @@ module Fosdem
 
                      me
                    }
-                   .map{|e| slugify! e, :title}
+                     .map{|e| slugify! e, :title}
                  }
                  log(:high, "loaded #{events.size} events", Time.now - time_before)
                  events
@@ -429,13 +429,13 @@ module Fosdem
                          WHERE event_role IN ('coordinator', 'moderator', 'speaker')
                          AND event_role_state IN ('confirmed', 'offer')
                        })
-                       .map{|ep|
-                         %w(event_id person_id).each do |x|
-                           ep[x] = ep[x].to_i
-                         end
-                         ep
-                       }
-                       .select{|ep| event_by_event_id.has_key? ep['event_id']}
+                                      .map{|ep|
+                                        %w(event_id person_id).each do |x|
+                                          ep[x] = ep[x].to_i
+                                        end
+                                        ep
+                                      }
+                                      .select{|ep| event_by_event_id.has_key? ep['event_id']}
 
                        log(:high, "loaded #{eventpersons.size} eventpersons", Time.now - time_before)
                        eventpersons
@@ -459,9 +459,9 @@ module Fosdem
 
                    list = @db.exec('SELECT * FROM person ORDER BY person_id') do |res|
                      res
-                     .reject{|p| eventpersons_by_person_id.fetch(p['person_id'].to_i, []).empty?}
-                     .map{|p| model(p, [:person_id, :title, :gender, :first_name, :last_name, :public_name, :nickname])}
-                     .map do |p|
+                       .reject{|p| eventpersons_by_person_id.fetch(p['person_id'].to_i, []).empty?}
+                       .map{|p| model(p, [:person_id, :title, :gender, :first_name, :last_name, :public_name, :nickname])}
+                       .map do |p|
                        name = if p['public_name']
                                 p['public_name']
                               elsif p['first_name'] and p['last_name']
@@ -506,11 +506,11 @@ module Fosdem
                              break
                            end
 
-                         # Deal with people who suffix their public_name with
-                         # (nickname) or similar.
-                         if sortname =~ /^\(/
-                           sortname = "#{n[-2]} #{n.first}"
-                         end
+                           # Deal with people who suffix their public_name with
+                           # (nickname) or similar.
+                           if sortname =~ /^\(/
+                             sortname = "#{n[-2]} #{n.first}"
+                           end
                          end
                          # Be very evil and sort "roles" under "#"
                          ['Staff', 'Team'].map{|s|
@@ -518,8 +518,8 @@ module Fosdem
                            if p['public_name'] =~ r
                              sortname = "# #{$1}"
                              break
-                          end
-                       end
+                           end
+                         end
                        elsif p['last_name']
                          sortname = p['last_name']
                          if p['first_name']
@@ -530,9 +530,9 @@ module Fosdem
                        end
                        # Sort non-ASCII characters (more) correctly.
                        p['sortname'] = sortname.upcase
-                         .gsub('é', 'EZ')
-                         .gsub('ñ', 'NZ')
-                         .gsub('ó', 'OZ')
+                                               .gsub('é', 'EZ')
+                                               .gsub('ñ', 'NZ')
+                                               .gsub('ó', 'OZ')
 
                        slugify! p, :name
                      end
@@ -566,7 +566,7 @@ module Fosdem
                   p['abstract_old'] = true
                   p['description_old'] = true
                 end
-		# Store the record this data came from - links come from here 
+                # Store the record this data came from - links come from here
                 p['conference_person_id'] = cp['conference_person_id']
                 next
               end
@@ -671,9 +671,9 @@ module Fosdem
                  WHERE conference_id=$1
                  ORDER BY rank, conference_track_id}, [cid]) do |res|
                    res
-                   .reject{|t| t['conference_track'] == 'Main Tracks'}
-                   .reject{|t| t['conference_track'] == 'Main tracks'}
-                   .map do |t|
+                     .reject{|t| t['conference_track'] == 'Main Tracks'}
+                     .reject{|t| t['conference_track'] == 'Main tracks'}
+                     .map do |t|
                      # XXX: Disgusting hack for 2015 because I really don't have
                      # time to come up with anything more elegant than this!
                      #  pph 20150109.  Disabled agk 20160104 (for Security devroom).
@@ -754,7 +754,7 @@ module Fosdem
                 WHERE conference_id=$1
                 AND public=true
                 ORDER BY rank, conference_room_id}, [cid]),
-                [:conference_room_id, :conference_room, :size, :rank]), :conference_room)
+                                       [:conference_room_id, :conference_room, :size, :rank]), :conference_room)
                 log(:high, "loaded #{rooms.size} rooms", Time.now - time_before)
                 rooms
               end
@@ -798,49 +798,49 @@ module Fosdem
 
       # Add video links for 2 days before until 30 minutes after each event
       begin
-	video_link_count = 0
-	events.each do |e|
-	  next if e['room'] =~ /corridor/
-	  next if e['room'] =~ /level/
-	  next if e['room'] =~ /106/
-	  next if e['room'] =~ /2111/
-	  next if e['room'] =~ /3242/
-	  next if e['room'] =~ /3244/
-	  next if e['room'] =~ /147/
-	  next if e['track'] =~ /certification/
-	  next if e['track'] =~ /bof/
-	  next if e['track'] =~ /workshop/
+        video_link_count = 0
+        events.each do |e|
+          next if e['room'] =~ /corridor/
+          next if e['room'] =~ /level/
+          next if e['room'] =~ /106/
+          next if e['room'] =~ /2111/
+          next if e['room'] =~ /3242/
+          next if e['room'] =~ /3244/
+          next if e['room'] =~ /147/
+          next if e['track'] =~ /certification/
+          next if e['track'] =~ /bof/
+          next if e['track'] =~ /workshop/
 
           current_time = Time.now
 
-	  # Uncomment the following line to test what the site looks like at a specific time
+          # Uncomment the following line to test what the site looks like at a specific time
           # current_time = Time.parse('2017-02-04 13:15:00.000000000 +0100')
 
-	  event_start = Time.parse(e['start_datetime'])
-	  event_end = Time.parse(e['end_datetime'])
-	  next if event_start - current_time > 48 * 60 * 60
-	  next if current_time - event_end > 30 * 60
+          event_start = Time.parse(e['start_datetime'])
+          event_end = Time.parse(e['end_datetime'])
+          next if event_start - current_time > 48 * 60 * 60
+          next if current_time - event_end > 30 * 60
 
-	  ll = {}
-	  ll['title'] = 'Live video stream from the room (during event)'
-	  ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/,'')
-	  ll['rank'] = nil
-	  e['links'] << ll
-	  video_link_count += 1
-	end
-	log(:high, "added #{video_link_count} live video links")
+          ll = {}
+          ll['title'] = 'Live video stream from the room (during event)'
+          ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/,'')
+          ll['rank'] = nil
+          e['links'] << ll
+          video_link_count += 1
+        end
+        log(:high, "added #{video_link_count} live video links")
       end
 
       # Add feedback links (FIXME Only after the event!)
       begin
-	feedback_link_count = 0
-	events.each do |e|
+        feedback_link_count = 0
+        events.each do |e|
           ll = {}
           ll['title'] = 'Submit feedback'
           ll['url'] = "https://submission.fosdem.org/feedback/#{e['event_id']}.php"
           ll['rank'] = nil
           e['links'] << ll
-	  feedback_link_count += 1
+          feedback_link_count += 1
         end
         log(:high, "added #{feedback_link_count} feedback links")
       end
@@ -905,7 +905,7 @@ module Fosdem
 
         {
           conference_track_id: tracks,
-          conference_room_id:  rooms,
+          conference_room_id: rooms,
         }.each do |a, list|
           k = a.to_s
           #raise "empty list? (#{a})" if list.empty?
@@ -992,7 +992,7 @@ module Fosdem
         FROM fosdem.view_event_attachment
         WHERE conference_id=$1}, [cid]) do |res|
           res
-          .map{|a|
+            .map{|a|
             h = a['data_hash']
             a = model(a)
             a['data_hash'] = h
@@ -1010,10 +1010,10 @@ module Fosdem
             mf = "#{b}.#{$meta_extension}"
 
             filename, meta_filename = [f, mf]
-            .map{|x| File.join([d, event['slug'], a['attachment_type'], a['event_attachment_id'].to_s, x].reject(&:nil?))}
+                                      .map{|x| File.join([d, event['slug'], a['attachment_type'], a['event_attachment_id'].to_s, x].reject(&:nil?))}
             file, meta_file = [filename, meta_filename].map{|x| "#{$attachment_export_root}/#{x}".gsub(%r{/+}, '/')}
 
-            type = a['attachment_type'] or 'attachment' 
+            type = a['attachment_type'] or 'attachment'
 
             meta = {
               'file' => file,
@@ -1030,7 +1030,7 @@ module Fosdem
 
             $cache_tree_after << meta_file if File.exists? meta_file
 
-            needs_export = 
+            needs_export =
               if all_exist(file, meta_file)
                 digest = md5_file(file)
                 if a.fetch('data_hash').downcase == digest.downcase
@@ -1111,8 +1111,8 @@ module Fosdem
         FROM event_image
         ORDER BY event_id}) do |res|
           res
-          .map{|i| model(i)}
-          .each do |i|
+            .map{|i| model(i)}
+            .each do |i|
             counter += 1
             next if i.fetch('image_length') < 1
 
@@ -1233,73 +1233,73 @@ module Fosdem
           FROM fosdem.view_person_image
           WHERE conference_id=$1 AND public=true
           ORDER BY person_id}, [cid]) do |res|
-          res.each do |i|
-            %w(person_id image_length).each{|x| i[x] = i[x].to_i}
+            res.each do |i|
+              %w(person_id image_length).each{|x| i[x] = i[x].to_i}
 
-            next if i.fetch('image_length') < 1
+              next if i.fetch('image_length') < 1
 
-            counter += 1
-            speaker = speaker_by_person_id[i['person_id']]
-            next unless speaker
+              counter += 1
+              speaker = speaker_by_person_id[i['person_id']]
+              next unless speaker
 
-            extension = mime_to_extension(i.fetch('mime_type'))
-            _, n = sanitize_filename speaker['slug']
-            filename, thumb_filename, meta_filename, thumb_meta_filename, hash_filename =
-              [extension, extension, $meta_extension, $meta_extension, $hash_extension].map{|x| "#{n}.#{x}"}
+              extension = mime_to_extension(i.fetch('mime_type'))
+              _, n = sanitize_filename speaker['slug']
+              filename, thumb_filename, meta_filename, thumb_meta_filename, hash_filename =
+                [extension, extension, $meta_extension, $meta_extension, $hash_extension].map{|x| "#{n}.#{x}"}
 
-            file, meta_file, hash_file = [filename, meta_filename, hash_filename].map{|x| File.join($photo_export_root, x)}
-            thumb_file, thumb_meta_file = [thumb_filename, thumb_meta_filename].map{|x| File.join($thumbnail_export_root, x)}
+              file, meta_file, hash_file = [filename, meta_filename, hash_filename].map{|x| File.join($photo_export_root, x)}
+              thumb_file, thumb_meta_file = [thumb_filename, thumb_meta_filename].map{|x| File.join($thumbnail_export_root, x)}
 
-            id, thumb_id = ['photo', 'thumbnail'].map{|x| "/schedule/speaker/#{speaker['slug']}/#{x}/"}
-            meta, thumb_meta = [id, thumb_id].map do |x|
-              {
-                'identifier' => x,
-                'file' => file,
-                'filename' => filename,
-                'person_id' => speaker['person_id'],
-                'speaker_slug' => speaker['slug'],
-                'mime' => i.fetch('mime_type'),
-              }
-            end
-
-            {photo: meta, thumbnail: thumb_meta}.each do |k,m|
-              speaker[k.to_s] = {
-                'mime' => i.fetch('mime_type'),
-                'identifier' => m.fetch('identifier'),
-              }
-            end
-
-            file_hash =
-              if all_exist(file, hash_file, thumb_file, meta_file, thumb_meta_file)
-                IO.read(hash_file)
-              else
-                nil
+              id, thumb_id = ['photo', 'thumbnail'].map{|x| "/schedule/speaker/#{speaker['slug']}/#{x}/"}
+              meta, thumb_meta = [id, thumb_id].map do |x|
+                {
+                  'identifier' => x,
+                  'file' => file,
+                  'filename' => filename,
+                  'person_id' => speaker['person_id'],
+                  'speaker_slug' => speaker['slug'],
+                  'mime' => i.fetch('mime_type'),
+                }
               end
 
-            needs_export =
-              if file_hash
-                i['image_hash'].downcase != file_hash
-              else
-                true
+              {photo: meta, thumbnail: thumb_meta}.each do |k,m|
+                speaker[k.to_s] = {
+                  'mime' => i.fetch('mime_type'),
+                  'identifier' => m.fetch('identifier'),
+                }
               end
 
-            if needs_export
-              to_export << {
-                file: file,
-                person_id: i['person_id'],
-                slug: speaker['slug'],
-                meta_file: meta_file,
-                meta: meta,
-                hash_file: hash_file,
-                hash: i['image_hash'].downcase,
-                thumb_file: thumb_file,
-                thumb_meta: thumb_meta,
-                thumb_meta_file: thumb_meta_file,
-              }
-            else
-              $cache_tree_after << file << thumb_file << hash_file << meta_file << thumb_meta_file
-            end #needs_export
-          end #each i
+              file_hash =
+                if all_exist(file, hash_file, thumb_file, meta_file, thumb_meta_file)
+                  IO.read(hash_file)
+                else
+                  nil
+                end
+
+              needs_export =
+                if file_hash
+                  i['image_hash'].downcase != file_hash
+                else
+                  true
+                end
+
+              if needs_export
+                to_export << {
+                  file: file,
+                  person_id: i['person_id'],
+                  slug: speaker['slug'],
+                  meta_file: meta_file,
+                  meta: meta,
+                  hash_file: hash_file,
+                  hash: i['image_hash'].downcase,
+                  thumb_file: thumb_file,
+                  thumb_meta: thumb_meta,
+                  thumb_meta_file: thumb_meta_file,
+                }
+              else
+                $cache_tree_after << file << thumb_file << hash_file << meta_file << thumb_meta_file
+              end #needs_export
+            end #each i
           end #res
         log(:high, "loaded #{counter} speaker photo hashes, #{to_export.size} need to be exported", Time.now - t)
 

@@ -42,22 +42,22 @@ module Fosdem
         page_size: params.fetch(:page_size),
         page_layout: :landscape,
         info: {
-        Title: "#{conference()[:title]} Schedule",
-        Author: "fosdem.org",
-        Subject: "FOSDEM",
-      }) do
+          Title: "#{conference()[:title]} Schedule",
+          Author: "fosdem.org",
+          Subject: "FOSDEM",
+        }) do
         font_families.update(
           'DejaVuSansCondensed' => {
-          normal: File.join('pdf', 'DejaVuSansCondensed.ttf'),
-          bold:   File.join('pdf', 'DejaVuSansCondensed-Bold.ttf'),
-        },
-        'DejaVuSansMono' => {
-          normal: File.join('pdf', 'DejaVuSansMono.ttf'),
-        },
-        'Delicious' => {
-          normal: File.join('pdf', 'Delicious-Bold.ttf'),
-          bold:   File.join('pdf', 'Delicious-Heavy.ttf'),
-        },
+            normal: File.join('pdf', 'DejaVuSansCondensed.ttf'),
+            bold: File.join('pdf', 'DejaVuSansCondensed-Bold.ttf'),
+          },
+          'DejaVuSansMono' => {
+            normal: File.join('pdf', 'DejaVuSansMono.ttf'),
+          },
+          'Delicious' => {
+            normal: File.join('pdf', 'Delicious-Bold.ttf'),
+            bold: File.join('pdf', 'Delicious-Heavy.ttf'),
+          },
         )
         font($PDF_FONT)
 

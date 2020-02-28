@@ -14,59 +14,11 @@ Bundler/OrderedGems:
   Exclude:
     - 'Gemfile'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: with_first_argument, with_fixed_indentation
-Layout/ArgumentAlignment:
-  Exclude:
-    - 'lib/helpers/pentabarf.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleAlignWith.
-# SupportedStylesAlignWith: either, start_of_block, start_of_line
-Layout/BlockAlignment:
-  Exclude:
-    - 'lib/helpers/pentabarf.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 Layout/BlockEndNewline:
   Exclude:
     - 'lib/helpers/pentabarf.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentOneStep, IndentationWidth.
-# SupportedStyles: case, end
-Layout/CaseIndentation:
-  Exclude:
-    - 'lib/helpers/schedule_helpers.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-Layout/CommentIndentation:
-  Exclude:
-    - 'lib/helpers/pentabarf.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/ElseAlignment:
-  Exclude:
-    - 'commands/index.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleAlignWith, AutoCorrect, Severity.
-# SupportedStylesAlignWith: keyword, variable, start_of_line
-Layout/EndAlignment:
-  Exclude:
-    - 'commands/index.rb'
-    - 'lib/filters/pagelinks.rb'
-    - 'lib/helpers/navigation.rb'
-    - 'lib/helpers/pentabarf.rb'
-    - 'lib/helpers/schedule_helpers.rb'
 
 # Offense count: 5
 # Cop supports --auto-correct.
@@ -76,46 +28,6 @@ Layout/ExtraSpacing:
     - 'commands/query.rb'
     - 'lib/helpers/pentabarf.rb'
     - 'lib/helpers/rss.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_braces
-Layout/FirstHashElementIndentation:
-  Exclude:
-    - 'lib/helpers/pdf.rb'
-    - 'lib/helpers/pentabarf.rb'
-
-# Offense count: 12
-# Cop supports --auto-correct.
-# Configuration parameters: AllowMultipleStyles, EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle.
-# SupportedHashRocketStyles: key, separator, table
-# SupportedColonStyles: key, separator, table
-# SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
-Layout/HashAlignment:
-  Exclude:
-    - 'commands/index.rb'
-    - 'lib/filters/pagelinks.rb'
-    - 'lib/helpers/pdf.rb'
-    - 'lib/helpers/pentabarf.rb'
-
-# Offense count: 13
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: normal, indented_internal_methods
-Layout/IndentationConsistency:
-  Exclude:
-    - 'lib/filters/pagelinks.rb'
-    - 'lib/helpers/pentabarf.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: Width, IgnoredPatterns.
-Layout/IndentationWidth:
-  Exclude:
-    - 'commands/index.rb'
-    - 'lib/data_sources/schedule.rb'
-    - 'lib/helpers/pentabarf.rb'
 
 # Offense count: 40
 # Cop supports --auto-correct.
@@ -142,38 +54,6 @@ Layout/LeadingCommentSpace:
 Layout/MultilineMethodCallBraceLayout:
   Exclude:
     - 'lib/helpers/pdf.rb'
-
-# Offense count: 71
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: aligned, indented, indented_relative_to_receiver
-Layout/MultilineMethodCallIndentation:
-  Exclude:
-    - 'commands/index.rb'
-    - 'commands/query.rb'
-    - 'lib/data_sources/schedule.rb'
-    - 'lib/filters/image_size.rb'
-    - 'lib/filters/pagelinks.rb'
-    - 'lib/filters/semantic.rb'
-    - 'lib/helpers/news.rb'
-    - 'lib/helpers/pentabarf.rb'
-    - 'lib/helpers/timetable.rb'
-    - 'lib/helpers/util.rb'
-    - 'search/searcher.rb'
-
-# Offense count: 9
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: aligned, indented
-Layout/MultilineOperationIndentation:
-  Exclude:
-    - 'commands/index.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/RescueEnsureAlignment:
-  Exclude:
-    - 'search/searcher.rb'
 
 # Offense count: 19
 # Cop supports --auto-correct.
@@ -327,13 +207,6 @@ Layout/SpaceInsideRangeLiteral:
 # SupportedStyles: space, no_space
 # SupportedStylesForEmptyBrackets: space, no_space
 Layout/SpaceInsideReferenceBrackets:
-  Exclude:
-    - 'lib/helpers/pentabarf.rb'
-
-# Offense count: 29
-# Cop supports --auto-correct.
-# Configuration parameters: IndentationWidth.
-Layout/Tab:
   Exclude:
     - 'lib/helpers/pentabarf.rb'
 

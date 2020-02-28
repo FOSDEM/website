@@ -76,14 +76,14 @@ module Fosdem
           photos: 'photo',
           thumbnails: 'thumbnail',
         }.each do |key, kind|
-            crawl(key, :kind => kind.to_sym) do |filename, meta|
-              id = meta.delete('identifier')
-              fail "duplicate: #{id}\n#{memory[id].inspect} (#{memory[id][:filename]})" if memory[id]
+          crawl(key, :kind => kind.to_sym) do |filename, meta|
+            id = meta.delete('identifier')
+            fail "duplicate: #{id}\n#{memory[id].inspect} (#{memory[id][:filename]})" if memory[id]
 
-              i = Nanoc3::Item.new(filename, meta, id, {binary: true})
-              memory[id] = i
-              i
-            end.each{|x| r << x}
+            i = Nanoc3::Item.new(filename, meta, id, {binary: true})
+            memory[id] = i
+            i
+          end.each{|x| r << x}
         end
 
         @items = r
@@ -97,9 +97,9 @@ module Fosdem
       dir = @site.config.fetch(:pentabarf).fetch(:export_roots).fetch(dir) if dir.is_a? Symbol
 
       Dir[File.join(dir, '/**/*')]
-      .select{|f| File.file?(f)}
-      .reject{|f| f =~ /\.(hash|yaml)$/}
-      .map do |filename|
+        .select{|f| File.file?(f)}
+        .reject{|f| f =~ /\.(hash|yaml)$/}
+        .map do |filename|
         d, s, name, ext = sanitize_filename filename
 
         meta_filename = File.join([d, "#{name}.yaml"].reject(&:nil?))

@@ -49,11 +49,11 @@ module Fosdem
   def make_newspages
     list = []
     pages = @items
-    .select{|i| news?(i)}
-    .sort_by{|i| i[:created_at]}
-    .reverse
-    .each_slice(@config.fetch(:news).fetch(:news_page_items).to_i)
-    .map(&:to_a)
+            .select{|i| news?(i)}
+            .sort_by{|i| i[:created_at]}
+            .reverse
+            .each_slice(@config.fetch(:news).fetch(:news_page_items).to_i)
+            .map(&:to_a)
 
     pages.each_with_index do |newsitems, i|
       p = i + 1

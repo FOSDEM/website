@@ -41,12 +41,12 @@ $known_types ||= begin
                     }
                     if response.has_key? 'facet_counts'
                       Hash[*(response['facet_counts']['facet_fields']['type'])]
-                      .map{|f,c| f}
+                        .map{|f,c| f}
                     else
                       []
                     end
-                  rescue
-                    nil
+                 rescue
+                   nil
                   end
 
 get '*', :has_parameter => :q, :provides => 'html' do
@@ -133,19 +133,19 @@ def search(template=:html, layout=settings.environment)
 
   @facets = if response.has_key? 'facet_counts'
               Hash[*(response['facet_counts']['facet_fields']['type'])]
-              .sort_by{|facet, count| count}
-              .reject{|facet, count| count < 1}
-              .reject{|facet, count| facet == 'content' or facet == 'schedule'}
-              .reverse
+                .sort_by{|facet, count| count}
+                .reject{|facet, count| count < 1}
+                .reject{|facet, count| facet == 'content' or facet == 'schedule'}
+                .reverse
             else
               {}
             end
 
   @interview_year_facets = if response.has_key? 'facet_counts'
                              Hash[*(response['facet_counts']['facet_fields']['interview_year'])]
-                             .sort_by{|facet, count| count}
-                             .reject{|facet, count| count < 1}
-                             .reverse
+                               .sort_by{|facet, count| count}
+                               .reject{|facet, count| count < 1}
+                               .reverse
                            else
                              {}
                            end

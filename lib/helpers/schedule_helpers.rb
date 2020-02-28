@@ -114,15 +114,15 @@ module Fosdem
     klass << 'value-title'
 
     dt = case whence
-        when DateTime
-          whence
-        when :start
-          DateTime.parse(item[:start_datetime])
-        when :end
-          DateTime.parse(item[:end_datetime])
-        else
-          fail "whence must be either :start or :end or a DateTime but is #{whence.inspect}"
-        end
+         when DateTime
+           whence
+         when :start
+           DateTime.parse(item[:start_datetime])
+         when :end
+           DateTime.parse(item[:end_datetime])
+         else
+           fail "whence must be either :start or :end or a DateTime but is #{whence.inspect}"
+         end
     time = dt.to_time.strftime("%H:%M")
     anchor = time.gsub(/:/, '')
     title = %Q! title="#{dt.iso8601}"!
