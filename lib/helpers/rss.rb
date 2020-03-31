@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 module Fosdem
-  def rss_feed(params={})
+  def rss_feed(params = {})
     require 'builder'
 
     # Extract parameters
@@ -47,10 +47,10 @@ module Fosdem
     xml.rss(version: '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom') do
       xml.channel do
         root_url = @site.config[:base_url]
-        xml.link    root_url + '/'
+        xml.link root_url + '/'
         # http://validator.w3.org/appc/docs/warning/MissingAtomSelfLink.html
         xml.method_missing :'atom:link', href: root_url + @item.path, rel: 'self', type: 'application/rss+xml'
-        xml.title   title
+        xml.title title
         xml.description "#{conference()[:title]} News Feed"
         t = last_article[:created_at]
         xml.lastBuildDate(t)

@@ -80,7 +80,7 @@ module Fosdem
                         grids = begin
                                   matrix = []
                                   source.fetch(:by_room).each_slice(params.fetch(:rooms_per_page)) do |slice|
-                                    by_rooms = slice.map{|a| Hash[*a]}
+                                    by_rooms = slice.map { |a| Hash[*a] }
                                     matrix << Fosdem::Pdf::build_grids(by_rooms, params.fetch(:rows_per_page), params.fetch(:cell_text_length_threshold))
                                   end
                                   flipped_grid = []
@@ -257,7 +257,7 @@ module Fosdem
 
         # compress by removing nil cells
         g = g.map do |row|
-          row.reject{|cell| cell.nil? or (cell.is_a? Hash and cell[:continued])}
+          row.reject { |cell| cell.nil? or (cell.is_a? Hash and cell[:continued]) }
         end
 
         g

@@ -1,6 +1,6 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 module Fosdem
-  def bcrumbs(opts={})
+  def bcrumbs(opts = {})
     separator = opts.fetch(:separator, nil)
 
     # smarter breadcrumbs, preprocess here
@@ -65,19 +65,19 @@ module Fosdem
              @item.identifier.chop.split('/').map do |p|
                title, id, a = case p
                               when ''
-                                [ conference()[:title], '/' ]
+                                [conference()[:title], '/']
                               when '/'
-                                [ conference()[:title], '/' ]
+                                [conference()[:title], '/']
                               when 'track'
-                                [ 'Tracks', '/schedule/tracks/', '/schedule/track/' ]
+                                ['Tracks', '/schedule/tracks/', '/schedule/track/']
                               when 'schedule'
-                                [ 'Schedule', '/schedule/' ]
+                                ['Schedule', '/schedule/']
                               when 'speaker'
-                                [ 'Speakers', '/schedule/speakers/', '/schedule/speaker/' ]
+                                ['Speakers', '/schedule/speakers/', '/schedule/speaker/']
                               when 'room'
-                                [ 'Rooms', '/schedule/rooms/', '/schedule/room/' ]
+                                ['Rooms', '/schedule/rooms/', '/schedule/room/']
                               else
-                                [ nil, accumulator + p + '/' ]
+                                [nil, accumulator + p + '/']
                               end
                accumulator = a ? a : id
                { title: title, id: id }
@@ -95,14 +95,14 @@ module Fosdem
                                else
                                  item[:title]
                                end
-                       [ title, item.path ]
+                       [title, item.path]
                      elsif p[:title]
-                       [ p[:title], nil ]
+                       [p[:title], nil]
                      else
-                       [ p[:id].capitalize, nil ]
+                       [p[:id].capitalize, nil]
                      end
                    elsif p[:title]
-                     [ p[:title], nil ]
+                     [p[:title], nil]
                    else
                      fail "breadcrumbs item for #{@item.identifier} has neither identifier nor title: #{p.inspect}"
                    end
@@ -122,9 +122,9 @@ module Fosdem
     if separator
       list = list.each_with_index.map do |item, i|
         if i > 0
-          [ %Q!<li class="separator">#{separator}</li>!, item ]
+          [%Q!<li class="separator">#{separator}</li>!, item]
         else
-          [ item ]
+          [item]
         end
       end.flatten
     end
