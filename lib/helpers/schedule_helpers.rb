@@ -19,7 +19,7 @@ module Fosdem
     end
   end
 
-  def img(item, attr={})
+  def img(item, attr = {})
     item = $item_by_id.fetch(item) if item.is_a? String and item.start_with? '/' and item.end_with? '/'
 
     a = attr.clone
@@ -44,17 +44,17 @@ module Fosdem
     else
       a[:style] = style
     end
-    %Q!<img #{a.map{|k,v| %Q!#{k}="#{v}"!}.join(" ")}/>!
+    %Q!<img #{a.map { |k, v| %Q!#{k}="#{v}"! }.join(" ")}/>!
   end
 
-  def l(item, title=:title, sep=", ", detail=nil, klass=nil)
+  def l(item, title = :title, sep = ", ", detail = nil, klass = nil)
     if item.is_a? String and item.start_with? '/'
       item = $item_by_id.fetch(item)
     end
 
     case item
     when Array
-      item.map{|i| l(i, title, sep, detail, klass)}.join(sep)
+      item.map { |i| l(i, title, sep, detail, klass) }.join(sep)
     when Nanoc::Item
       text = case title
              when Symbol
@@ -90,13 +90,13 @@ module Fosdem
         args[:class] = (klass.is_a? Array) ? klass.join(" ") : klass
       end
       subtitle = '<br/><i>' + henc(item[:subtitle]) + '</i>' if item[:subtitle]
-      %Q!<a#{args.map{|k,v| %Q( #{k}="#{v}")}.join('')}>#{henc text}#{subtitle if subtitle}</a>!
+      %Q!<a#{args.map { |k, v| %Q( #{k}="#{v}") }.join('')}>#{henc text}#{subtitle if subtitle}</a>!
     else
       raise "unsupported object of type #{item.class}"
     end
   end
 
-  def ltt(item, whence, opts={})
+  def ltt(item, whence, opts = {})
     fail "item must be a Nanoc::Item" unless item.is_a? Nanoc::Item
     fail "opts must be a Hash" unless opts.is_a? Hash
 
@@ -130,8 +130,8 @@ module Fosdem
     %Q!<a#{css}#{title} href="#{$prefix}/schedule/day/#{item[:day]}/##{anchor}">#{time}</a>!
   end
 
-  def conference(sym=nil)
-    c = $_conference ||= @items.select{|i| i.identifier == '/schedule/conference/'}.first
+  def conference(sym = nil)
+    c = $_conference ||= @items.select { |i| i.identifier == '/schedule/conference/' }.first
     raise "failed to find /schedule/conference/" if c.nil?
 
     if sym.nil?
@@ -141,12 +141,12 @@ module Fosdem
     end
   end
 
-  def speakers(sortby=nil)
-    list = $_speakers ||= @items.select{|i| i.identifier =~ %r{^/schedule/speaker/[^/]+/$}}.sort_by{|x| x[:person_id]}
+  def speakers(sortby = nil)
+    list = $_speakers ||= @items.select { |i| i.identifier =~ %r{^/schedule/speaker/[^/]+/$} }.sort_by { |x| x[:person_id] }
     if sortby.nil? or (sortby.is_a? Symbol and sortby == :person_id) or (sortby.size == 1 and sortby[0] == :person_id)
       list
     else
-      list.sort_by{|x| [sortby].flatten.map{|z| x[z]}}
+      list.sort_by { |x| [sortby].flatten.map { |z| x[z] } }
     end
   end
 
@@ -154,12 +154,12 @@ module Fosdem
     $item_by_id.fetch "/schedule/speaker/#{slug(slug)}/"
   end
 
-  def days(sortby=:conference_day)
-    list = $_days ||= @items.select{|i| i.identifier =~ %r{^/schedule/day/.+}}.sort_by{|x| x[:conference_day]}
+  def days(sortby = :conference_day)
+    list = $_days ||= @items.select { |i| i.identifier =~ %r{^/schedule/day/.+} }.sort_by { |x| x[:conference_day] }
     if sortby == :conference_day or sortby == [:conference_day]
       list
     else
-      list.sort_by{|x| [sortby].flatten.map{|z| x[z]}}
+      list.sort_by { |x| [sortby].flatten.map { |z| x[z] } }
     end
   end
 
@@ -167,12 +167,12 @@ module Fosdem
     $item_by_id.fetch "/schedule/day/#{slug(slug)}/"
   end
 
-  def tracks(sortby=[:rank, :conference_track_id])
-    list = $_tracks ||= @items.select{|i| i.identifier =~ %r{^/schedule/track/.+}}.sort_by{|x| [x[:rank], x[:conference_track_id]]}
+  def tracks(sortby = [:rank, :conference_track_id])
+    list = $_tracks ||= @items.select { |i| i.identifier =~ %r{^/schedule/track/.+} }.sort_by { |x| [x[:rank], x[:conference_track_id]] }
     if sortby == [:rank, :conference_track_id]
       list
     else
-      list.sort_by{|x| [sortby].flatten.map{|z| x[z]}}
+      list.sort_by { |x| [sortby].flatten.map { |z| x[z] } }
     end
   end
 
@@ -180,12 +180,12 @@ module Fosdem
     $item_by_id.fetch "/schedule/track/#{slug(slug)}/"
   end
 
-  def rooms(sortby=[:rank, :conference_room_id])
-    list = $_rooms ||= @items.select{|i| i.identifier =~ %r{^/schedule/room/.+}}.sort_by{|x| [x[:rank], x[:conference_room_id]]}
+  def rooms(sortby = [:rank, :conference_room_id])
+    list = $_rooms ||= @items.select { |i| i.identifier =~ %r{^/schedule/room/.+} }.sort_by { |x| [x[:rank], x[:conference_room_id]] }
     if sortby == [:rank, :conference_room_id]
       list
     else
-      list.sort_by{|x| [sortby].flatten.map{|z| x[z]}}
+      list.sort_by { |x| [sortby].flatten.map { |z| x[z] } }
     end
   end
 
@@ -193,14 +193,14 @@ module Fosdem
     $item_by_id.fetch "/schedule/room/#{slug(slug)}/"
   end
 
-  def events(sortby=nil)
+  def events(sortby = nil)
     list = $_events ||= begin
-                          @items.select{|i| i.identifier =~ %r{^/schedule/event/[^/]+/$}}.sort_by{|x| [x[:start_date], x[:start_time]]}
+                          @items.select { |i| i.identifier =~ %r{^/schedule/event/[^/]+/$} }.sort_by { |x| [x[:start_date], x[:start_time]] }
                         end
     if sortby.nil? or (sortby.size == 2 and sortby[0] == :start_date and sortby[1] == :start_time)
       list
     else
-      list.sort_by{|x| [sortby].flatten.map{|z| x[z]}}
+      list.sort_by { |x| [sortby].flatten.map { |z| x[z] } }
     end
   end
 
@@ -208,16 +208,16 @@ module Fosdem
     $item_by_id.fetch "/schedule/event/#{slug(slug)}/"
   end
 
-  $to_item = lambda{|slug| $item_by_id.fetch slug}
-  $to_slug = lambda{|item| slug(item)}
+  $to_item = lambda { |slug| $item_by_id.fetch slug }
+  $to_slug = lambda { |item| slug(item) }
 
-  $to_event = lambda{|slug| $item_by_id.fetch "/schedule/event/#{slug}/"}
-  $to_speaker = lambda{|slug| $item_by_id.fetch "/schedule/speaker/#{slug}/"}
-  $to_day = lambda{|slug| $item_by_id.fetch "/schedule/day/#{slug}/"}
-  $to_room = lambda{|slug| $item_by_id.fetch "/schedule/room/#{slug}/"}
-  $to_room_or_nil = lambda{|slug| $item_by_id["/schedule/room/#{slug}/"]}
-  $to_track = lambda{|slug| $item_by_id.fetch "/schedule/track/#{slug}/"}
-  $empty_track = lambda{|t| t[:events].empty?}
+  $to_event = lambda { |slug| $item_by_id.fetch "/schedule/event/#{slug}/" }
+  $to_speaker = lambda { |slug| $item_by_id.fetch "/schedule/speaker/#{slug}/" }
+  $to_day = lambda { |slug| $item_by_id.fetch "/schedule/day/#{slug}/" }
+  $to_room = lambda { |slug| $item_by_id.fetch "/schedule/room/#{slug}/" }
+  $to_room_or_nil = lambda { |slug| $item_by_id["/schedule/room/#{slug}/"] }
+  $to_track = lambda { |slug| $item_by_id.fetch "/schedule/track/#{slug}/" }
+  $empty_track = lambda { |t| t[:events].empty? }
 
   def _i(identifier)
     $item_by_id.fetch(identifier)
@@ -235,7 +235,7 @@ module Fosdem
     item.path
   end
 
-  $to_path = lambda{|item| pathof item}
+  $to_path = lambda { |item| pathof item }
 
   def filesize(item)
     raise "item #{item.inspect} is not binary" unless item.binary?
@@ -255,8 +255,8 @@ module Fosdem
     end
   end
 
-  def event_is_upcoming_to(e1, e2, limit=15)
-    (DateTime.parse(e2[:end_datetime]) .. (DateTime.parse(e2[:end_datetime]) + (limit*60))).include? DateTime.parse(e1[:start_datetime])
+  def event_is_upcoming_to(e1, e2, limit = 15)
+    (DateTime.parse(e2[:end_datetime])..(DateTime.parse(e2[:end_datetime]) + (limit * 60))).include? DateTime.parse(e1[:start_datetime])
   end
 
   def event_next_in_room(e1, e2)
@@ -328,10 +328,10 @@ module Fosdem
       roomlist.map(&$to_room_or_nil).reject(&:nil?).each do |r|
         list << r
       end
-      rooms.select{|r| r[:slug].upcase.start_with? bcode}.each do |r|
+      rooms.select { |r| r[:slug].upcase.start_with? bcode }.each do |r|
         list << r
       end
-      buildings[bcode] = list.uniq{|r| r[:slug]}.sort_by{|r| [r[:rank], r[:conference_room_id]]}
+      buildings[bcode] = list.uniq { |r| r[:slug] }.sort_by { |r| [r[:rank], r[:conference_room_id]] }
       buildings[bcode].each do |r|
         r[:building] = bcode
       end
@@ -339,8 +339,8 @@ module Fosdem
 
     # make sure there are no rooms left without a :building meta attribute
     begin
-      errors = rooms.select{|r| r[:building].nil? }
-      raise "there are #{errors.size} room(s) without a building assignment, please put them into content/building.yaml: #{errors.map{|r| r[:slug]}.join(", ")}" unless errors.empty?
+      errors = rooms.select { |r| r[:building].nil? }
+      raise "there are #{errors.size} room(s) without a building assignment, please put them into content/building.yaml: #{errors.map { |r| r[:slug] }.join(", ")}" unless errors.empty?
     end
 
     room_to_building = {}
@@ -350,18 +350,18 @@ module Fosdem
       end
     end
 
-    [ buildings, room_to_building ]
+    [buildings, room_to_building]
   end
 
-  def deadline(id, format='%A, %e %B %Y')
+  def deadline(id, format = '%A, %e %B %Y')
     @site.config.fetch(:deadlines).fetch(id).sort.last.strftime(format)
   end
 
-  def deadlines(id, format='%e %B %Y', format_current='%A, %e %B %Y')
+  def deadlines(id, format = '%e %B %Y', format_current = '%A, %e %B %Y')
     deadlines = @site.config.fetch(:deadlines).fetch(id).sort
     if deadlines.size > 1
       current = deadlines.pop
-      (deadlines.map{|d| "<del>#{d.strftime(format)}</del>"} + ["<ins>#{current.strftime(format_current)}</ins>"]).join(" ")
+      (deadlines.map { |d| "<del>#{d.strftime(format)}</del>" } + ["<ins>#{current.strftime(format_current)}</ins>"]).join(" ")
     else
       deadlines.first.strftime(format_current)
     end

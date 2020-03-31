@@ -22,17 +22,17 @@ module Fosdem
 
   # Flatten a time (HH:MM[:SS]) to an index
   def ti(time)
-    h,m = case time
-          when String
-            time.split(':').map(&:to_i)[0,2]
-          when Time
-            [time.hour, time.min]
-          when Date
-            [time.hour, time.min]
-          when DateTime
-            [time.hour, time.min]
-          else
-            raise "unsupported object of type #{time.class}: #{time.inspect}"
+    h, m = case time
+           when String
+             time.split(':').map(&:to_i)[0, 2]
+           when Time
+             [time.hour, time.min]
+           when Date
+             [time.hour, time.min]
+           when DateTime
+             [time.hour, time.min]
+           else
+             raise "unsupported object of type #{time.class}: #{time.inspect}"
           end
 
     # maybe remove later, sanity check
@@ -49,19 +49,19 @@ module Fosdem
   #
   def timetable_from_items(items)
     h = {}
-    items.select{|i| i.identifier =~ %r{^/schedule/day/.+}}.sort_by{|d| d[:conference_day]}.map do |day|
+    items.select { |i| i.identifier =~ %r{^/schedule/day/.+} }.sort_by { |d| d[:conference_day] }.map do |day|
       h[day[:slug]] = timetable_from_items_for_day(items, day)
     end
     h
   end
 
   def timetable_from_items_for_day(items, day)
-    rooms = items.select{|i| i.identifier =~ %r{^/schedule/room/.+}}
-                 .sort_by{|r| [r[:rank], r[:conference_room_id]]}
+    rooms = items.select { |i| i.identifier =~ %r{^/schedule/room/.+} }
+                 .sort_by { |r| [r[:rank], r[:conference_room_id]] }
 
-    events = items.select{|i| i.identifier =~ %r{^/schedule/event/.+}}
-                  .select{|e| e[:conference_day_id] == day[:conference_day_id]}
-                  .sort_by{|e| [e[:start_time], e[:event_id]]}
+    events = items.select { |i| i.identifier =~ %r{^/schedule/event/.+} }
+                  .select { |e| e[:conference_day_id] == day[:conference_day_id] }
+                  .sort_by { |e| [e[:start_time], e[:event_id]] }
 
     timetable rooms, events
   end
@@ -75,14 +75,14 @@ module Fosdem
 
                        # convert the interval to seconds for step as that's what we always need below
                        # to use the + operator on Time objects
-                       [ i, i * 60 ]
+                       [i, i * 60]
                      end
 
     table_by_room = begin
                       table = {}
                       unless events.empty?
-                        start_time = Time.parse(events.map{|e| e[:start_time]}.sort.first)
-                        end_time   = Time.parse(events.map{|e| e[:end_time]}.sort.last)
+                        start_time = Time.parse(events.map { |e| e[:start_time] }.sort.first)
+                        end_time   = Time.parse(events.map { |e| e[:end_time] }.sort.last)
 
                         rooms.each do |room|
                           column = {}
@@ -102,8 +102,8 @@ module Fosdem
     table_by_time = begin
                       table = {}
                       unless events.empty?
-                        start_time = Time.parse(events.map{|e| e[:start_time]}.sort.first)
-                        end_time   = Time.parse(events.map{|e| e[:end_time]}.sort.last)
+                        start_time = Time.parse(events.map { |e| e[:start_time] }.sort.first)
+                        end_time   = Time.parse(events.map { |e| e[:end_time] }.sort.last)
 
                         now = start_time
                         while now <= end_time
@@ -155,13 +155,13 @@ module Fosdem
 
       slots = ti(event[:duration])
       now = Time.parse(event[:start_time])
-      (0..slots-1).each do |slot|
+      (0..slots - 1).each do |slot|
         key = now.strftime("%H:%M")
 
         state = case slot
                 when 0
                   :begin
-                when slots-1
+                when slots - 1
                   :end
                 else
                   :inprogress
@@ -228,7 +228,7 @@ module Fosdem
   #   interval slots that track lasts for (:slots), a slot
   #   being one cell in a resulting table row
   #
-  def timetable_to_track_cells(timetable, compress=true)
+  def timetable_to_track_cells(timetable, compress = true)
     by_day = {}
     days.each do |d|
       interval = $timetable.fetch(d[:slug]).fetch(:interval)
@@ -236,11 +236,11 @@ module Fosdem
       h = {}
       $timetable.fetch(d[:slug]).fetch(:by_room).each do |room, time_cells|
         h[room] = begin
-                    rows = time_cells.values.map{|cell| cell.size}.max
-                    (0..rows-1).map do |row|
+                    rows = time_cells.values.map { |cell| cell.size }.max
+                    (0..rows - 1).map do |row|
                       clusters = []
 
-                      cells = time_cells.values.map{|cells| cells[row]}
+                      cells = time_cells.values.map { |cells| cells[row] }
                       cells.each do |cell|
                         if cell.nil?
                           clusters << nil
@@ -277,8 +277,8 @@ module Fosdem
                               j += 1
                             end
                             if xm > 0
-                              cc << { track: cell[:track], slots: cell[:slots] + xs}
-                              (0..xn-1).each do |n|
+                              cc << { track: cell[:track], slots: cell[:slots] + xs }
+                              (0..xn - 1).each do |n|
                                 cc << nil
                               end
                               i = j
@@ -336,7 +336,7 @@ module Fosdem
   #   interval slots that event lasts for (:slots), a slot
   #   being one cell in a resulting table row
   #
-  def timetable_to_event_cells(timetable, compress=true)
+  def timetable_to_event_cells(timetable, compress = true)
     by_day = {}
     days.each do |d|
       interval = $timetable.fetch(d[:slug]).fetch(:interval)
@@ -344,11 +344,11 @@ module Fosdem
       h = {}
       $timetable.fetch(d[:slug]).fetch(:by_room).each do |room, time_cells|
         h[room] = begin
-                    rows = time_cells.values.map{|cell| cell.size}.max
-                    (0..rows-1).map do |row|
+                    rows = time_cells.values.map { |cell| cell.size }.max
+                    (0..rows - 1).map do |row|
                       clusters = []
 
-                      cells = time_cells.values.map{|cells| cells[row]}
+                      cells = time_cells.values.map { |cells| cells[row] }
                       cells.each do |cell|
                         if cell.nil?
                           clusters << nil
@@ -393,7 +393,7 @@ module Fosdem
                                 track_name: cell[:track_name],
                                 slots: cell[:slots] + xs,
                               }
-                              (0..xn-1).each do |n|
+                              (0..xn - 1).each do |n|
                                 cc << nil
                               end
                               i = j

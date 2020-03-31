@@ -1,6 +1,6 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 module Fosdem
-  def navigation(list, opts={})
+  def navigation(list, opts = {})
     show_active = opts.fetch(:active, true)
     accesskeys = opts.fetch(:accesskeys, false)
 

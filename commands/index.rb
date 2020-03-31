@@ -70,7 +70,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
     xml = Builder::XmlMarkup.new
     docs = []
     begin
-      xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
+      xml.instruct! :xml, :version => "1.0", :encoding => "UTF-8"
       xml.add do
         indexable_items.each do |i|
           start = Time.now
@@ -164,7 +164,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
         log :high, :index, "#{docs.size}/#{self.site.items.size} items in #{solr.uri.to_s}", Time.now - start
       end
 
-      [ :commit, :optimize ].each do |action|
+      [:commit, :optimize].each do |action|
         start = Time.now
         solr.method(action).call
         log :low, action, '', Time.now - start
@@ -191,8 +191,8 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
       Open3.popen2e('ssh', user + '@' + host, command + ' ' + core) do |i, oe, t|
         i.puts xml.target!
         i.close
-        oe.each{|line| message << line}
-        fail "failed to run ssh to " + user + "@" + host +": #{message.join($/)}#{$/}#{$/}Please contact server@fosdem.org" unless t.value.success?
+        oe.each { |line| message << line }
+        fail "failed to run ssh to " + user + "@" + host + ": #{message.join($/)}#{$/}#{$/}Please contact server@fosdem.org" unless t.value.success?
       end
       message = message.join($/)
       if message =~ %r{^(\d+) documents in index ([a-z].*)}
@@ -210,14 +210,14 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
     :commit => "\e[1;33m",
     :optimize => "\e[1;33m",
   }
-  def log(level, action, name, duration=nil)
+  def log(level, action, name, duration = nil)
     Nanoc::CLI::Logger.instance.log(
       level,
       '%s%12s%s  %s%s' % [
         ACTION_COLORS[action.to_sym],
         action.to_s,
         "\e[0m",
-        duration.nil? ? '' : "[%2.2fs]  " % [ duration ],
+        duration.nil? ? '' : "[%2.2fs]  " % [duration],
         name
       ]
     )

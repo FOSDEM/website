@@ -35,15 +35,15 @@ module Fosdem
     b = File.basename filename
     case b
     when %r{^(.+)\.(([^\.]+)\.(gz|bz|bz2|xz))$}
-      [ d, $1, $2 ]
+      [d, $1, $2]
     when %r{^(.+)\.([^\.]+)$}
-      [ d, $1, $2 ]
+      [d, $1, $2]
     when %r{^(.+)\.$}
-      [ d, $1, '' ]
+      [d, $1, '']
     when %r{^([^\.]+)$}
-      [ d, $1, '' ]
+      [d, $1, '']
     else
-      [ d, filename, '' ]
+      [d, filename, '']
     end
   end
 
@@ -63,9 +63,9 @@ module Fosdem
 
     # skip adding the extension if it is empty
     if e != ''
-      [ d, "#{b}.#{e}", b, e ]
+      [d, "#{b}.#{e}", b, e]
     else
-      [ d, "#{b}", b, e ]
+      [d, "#{b}", b, e]
     end
   end
 
@@ -96,14 +96,14 @@ module Fosdem
     require 'rmagick'
     image = Magick::Image.from_blob(IO.read(filename)).first
     begin
-      [ image.columns, image.rows ]
+      [image.columns, image.rows]
     ensure
       image.destroy! if image
     end
   end
 
   def all_exist(*files)
-    files.map{|f| File.exists? f}.all?
+    files.map { |f| File.exists? f }.all?
   end
 
   def hash_by(ary, key)
@@ -129,10 +129,10 @@ module Fosdem
     time.rfc2822
   end
 
-  def excerpt_words(text, limit, more="\u{8230}")
+  def excerpt_words(text, limit, more = "\u{8230}")
     words = text.split(/\s+/)
     if words.size >= limit
-      words[0..(limit-1)].join(" ") + more
+      words[0..(limit - 1)].join(" ") + more
     else
       words.join(" ")
     end
@@ -186,7 +186,7 @@ module Fosdem
     end
   end
 
-  def sprite_image(filenames, format='PNG', optimize=true)
+  def sprite_image(filenames, format = 'PNG', optimize = true)
     require 'rmagick'
 
     images = []
@@ -210,8 +210,8 @@ module Fosdem
         Magick::Image.from_blob(IO.read(f)).first
       end
 
-      width  = images.map{|i| i.columns}.max
-      height = images.map{|i| i.rows}.inject(0, :+) + (images.size - 1) * 20
+      width  = images.map { |i| i.columns }.max
+      height = images.map { |i| i.rows }.inject(0, :+) + (images.size - 1) * 20
 
       sprite = nil
       begin

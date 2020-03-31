@@ -5,7 +5,7 @@ module Fosdem
     type :text
     identifier :pagelinks
 
-    def run(content, params={})
+    def run(content, params = {})
       @item_rep = assigns[:item_rep] if @item_rep.nil?
       require 'nokogiri'
 
@@ -16,10 +16,10 @@ module Fosdem
             end
 
       {
-        a: { href: [ :page, :asset, :event, :track, :speaker, :day, :room ], child: true, },
-        img: { src:  [ :asset ], title: true, alt: true, image: true, },
-        link: { src: [ :asset ] },
-        script: { src: [ :src ] },
+        a: { href: [:page, :asset, :event, :track, :speaker, :day, :room], child: true, },
+        img: { src:  [:asset], title: true, alt: true, image: true, },
+        link: { src: [:asset] },
+        script: { src: [:src] },
       }.each do |tag, x|
         tag = tag.to_s
         attr = x.keys.first.to_s
@@ -27,7 +27,7 @@ module Fosdem
         options = x
 
         doc.xpath(".//#{tag}")
-           .select{|a| a.has_attribute? attr}.each do |elem|
+           .select { |a| a.has_attribute? attr }.each do |elem|
           orig = elem[attr]
           if orig =~ /^(page|asset|event|track|speaker|day|room):(.+)$/
             type = $1.to_sym
@@ -36,9 +36,9 @@ module Fosdem
             id, year = begin
                          m = $2
                          if m =~ %r{^(\d{4})[:/](.+)$}
-                           [ $2, $1 ]
+                           [$2, $1]
                          else
-                           [ m, nil ]
+                           [m, nil]
                          end
                        end
 
@@ -65,9 +65,9 @@ module Fosdem
                        fail "unsupported URL type #{type.to_s}"
                      end
                 id, anchor = if id =~ %r{^(.+)#(.+)$}
-                               [ $1, $2 ]
+                               [$1, $2]
                              else
-                               [ id, nil ]
+                               [id, nil]
                              end
 
                 id.insert(0, '/') unless id.start_with? '/'
