@@ -136,6 +136,10 @@ watcher:
   notify_on_compilation_failure: true
 
 deploy:
+  archive:
+    kind: rsync
+    dst:  "www-archive@www-public0.fosdem.org:/var/www/archive.fosdem.org/public"
+    options: [ '-glPrtvzPO', '--exclude=searcher', '--exclude=404.html', '--exclude=favicon.ico' ]
   public:
     kind: rsync
     dst:  "www-live@www-public0.fosdem.org:/var/www/fosdem.org/public"
