@@ -12,37 +12,11 @@ stand_list:
         - theme: Operating Systems
           stands:
             all:
-              - name: CentOS
-                url: https://centos.org/
-              - name: Debian
-                url: https://www.debian.org
-              - name: Gentoo Linux
-                url: https://www.gentoo.org/
-              - name: FreeBSD Project
-                url: https://www.freebsd.org/
-              - name: openSUSE Project
-                url: https://www.opensuse.org/
-              - name: OpenMandriva
-                url: https://github.com/OpenMandrivaAssociation
-              - name: illumos
-                url: https://illumos.org
-              - name: Automotive Grade Linux
-                url: https://www.automotivelinux.org/
-              - name: The Fedora Project
-                url: https://getfedora.org/
             saturday:
-              - name: Haiku
-                url: https://www.haiku-os.org/
             sunday:
-              - name: ReactOS
-                url: https://reactos.org
         - theme: Desktop Environments
           stands:
             all:
-              - name: KDE
-                url: https://kde.org/
-              - name: GNOME
-                url: https://www.gnome.org/
     - info:
         building: K
         floor: 1
@@ -52,31 +26,11 @@ stand_list:
       - theme: Education
         stands:
           all:
-            - name: Coderdojo
-              url: https://www.coderdojobelgium.be/fr
-            - name: Skolelinux / AlekSIS / Teckids
-              url: https://www.schul-frei.org
           saturday:
-            - name: Linux Professional Institute
-              url: https://www.lpi.org/
-            - name: Sugar Labs
-              url: https://sugarlabs.org/
           sunday:
-            - name: Open Source Design
-              url: http://opensourcedesign.net/
-            - name: MIT App Inventor
-              url: http://appinventor.mit.edu/
       - theme: Databases
         stands:
           all:
-            - name: PostgreSQL
-              url: https://www.postgresql.org/
-            - name: Percona
-              url: https://www.percona.com
-            - name: YottaDB
-              url: https://yottadb.com
-            - name: PostGraphile
-              url: https://graphile.org/postgraphile
     - info:
         building: K
         floor: 1
@@ -86,37 +40,17 @@ stand_list:
       - theme: Programming Environment
         stands:
           all:
-            - name: Perl and Raku
-              url: https://www.perl.org/
-            - name: Javascript
-              url: https://hackages.io/community
-            - name: Nuspell
-              url: https://nuspell.github.io
-            - name: Integration Process Community
-              url: https://integrating.community
           saturday:
-            - name: AdoptOpenJDK
-              url: https://adoptopenjdk.net
           sunday:
-            - name: Pharo
-              url: https://pharo.org/
       - theme: Gaming
         stands:
           all:
-            - name: 0 A.D.
-              url: https://play0ad.com
-            - name: Godot Engine
-              url: https://godotengine.org
       - theme: System Administration
         stands:
           all:
-            - name: GitLab
-              url: https://about.gitlab.com/
       - theme: Community Advocacy
         stands:
           all:
-            - name: Eclipse Foundation
-              url: https://www.eclipse.org
  - name: K (level 2)
    map: map_k_2
    groups:
@@ -129,16 +63,6 @@ stand_list:
       - theme: World Wide Web
         stands:
           all:
-            - name: Realtime Lounge
-              url: https://xmpp.org/
-            - name: Matrix
-              url: https://matrix.org
-            - name: Mattermost
-              url: https://www.mattermost.com
-            - name: wolfSSL
-              url: https://www.wolfssl.com/products/wolfssl/
-            - name: Linphone
-              url: https://www.linphone.org
     - info:
         building: K
         floor: 2
@@ -148,60 +72,18 @@ stand_list:
       - theme: Community Advocacy
         stands:
           all:
-            - name: Apache Software Foundation
-              url: https://www.apache.org/
-            - name: Free Software Foundation Europe
-              url: https://fsfe.org/
-            - name: OW2 Open Source Community
-              url: http://www.ow2.org
           saturday:
-            - name: OpenUK
-              url: https://openuk.uk/
-            - name: Google Summer of Code
-              url: https://g.co/gsoc
           sunday:
-            - name: FOSSASIA
-              url: https://fossasia.org
-            - name: Software Freedom Conservancy
-              url: https://sfconservancy.org/
       - theme: World Wide Web
         stands:
           all:
-            - name: Mozilla
-              url: https://www.mozilla.org
-            - name: OWASP
-              url: https://www.owasp.org
           saturday:
-            - name: Mautic
-              url: Https://www.mautic.org
           sunday:
-            - name: 3Box
-              url: https://3box.io
       - theme: System Administration
         stands:
           all:
-            - name: OpenStack Foundation
-              url: https://www.openstack.org/
-            - name: Jenkins
-              url: https://jenkins.io
-            - name: oVirt & Foreman
-              url: https://theforeman.org
-            - name: Grafana
-              url: https://www.grafana.com
-            - name: XCP-ng
-              url: https://xcp-ng.org/
-            - name: Kubevirt & Metal3
-              url: https://kubevirt.io
           saturday:
-            - name: Checkmk
-              url: https://checkmk.com
-            - name: OpenTAP
-              url: https://www.opentap.io/
           sunday:
-            - name: ntopng
-              url: https://www.ntop.org
-            - name: Open Source Test Management
-              url: http://kiwitcms.org
  - name: AW
    map: map_aw
    groups:
@@ -214,14 +96,6 @@ stand_list:
       - theme: Hardware
         stands:
           all:
-            - name: Coreboot + Flashrom + LinuxBoot
-              url: https://coreboot.org/
-            - name: Micropython & Espruino
-              url: https://micropython.org
-            - name: openWifi
-              url: https://github.com/open-sdr/openwifi
-            - name: openHAB
-              url: https://www.openhab.org/
     - info:
         building: AW
         floor: 1
@@ -231,16 +105,8 @@ stand_list:
       - theme: Hardware
         stands:
           all:
-            - name: OpenEmbedded
-              url: http://www.openembedded.org
-            - name: Infobooth on amateur radio (HAM Radio)
-              url: https://www.uba.be/en
           saturday:
-            - name: Technoethical
-              url: https://tehnoetic.com
           sunday:
-            - name: PINE64
-              url: https://pine64.org
  - name: H
    map: map_h
    groups:
@@ -253,16 +119,8 @@ stand_list:
       - theme: Office Software
         stands:
           all:
-            - name: LibreOffice
-              url: https://www.libreoffice.org
-            - name: Nextcloud, Davx & ONLYOFFICE
-              url: https://nextcloud.com
           saturday:
-            - name: Tine 2.0
-              url: https://www.tine20.com/1/welcome-community/
           sunday:
-            - name: Tracim
-              url: https://www.algoo.fr/fr/tracim
     - info:
         building: H
         floor: 1
@@ -272,13 +130,5 @@ stand_list:
       - theme: Office Software
         stands:
           all:
-            - name: CiviCRM
-              url: https://civicrm.org
-            - name: Kopano
-              url: https://kopano.io/
           saturday:
-            - name: Musescore
-              url: http://musescore.org/
           sunday:
-            - name: Free Culture Podcasts
-              url: http://hackerpublicradio.org/foss-podcasts.php
