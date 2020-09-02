@@ -24,14 +24,14 @@ footer:
     - /schedule
     - /stands
     - /certification
-    - /keysigning
+#   - /keysigning
     - /volunteer
 #   - /beerevent
     - /fringe
   - Practical information:
-    - Getting there: /practical/transportation
+#   - Getting there: /practical/transportation
     - /practical/accessibility
-    - /practical/accommodation
+#   - /practical/accommodation
     - /practical/conduct
     - /practical/services
     - /practical/jobcorner

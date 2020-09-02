@@ -56,7 +56,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   Recent editions featured 400+ speakers, 500+ events and a wealth of tracks.
 <% end %>
   We do our best to provide you with as much information and navigation options
-  about the schedule as we can. Check out our <a href="https://nav.fosdem.org">on-campus navigation tool</a>.
+  about the schedule as we can.
 </p>
 
 <p>
@@ -66,9 +66,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <% else %>
   several
 <% end %>
-  rooms</a> spread across several buildings of
-  <a href="<%= pathof '/practical/transportation/' %>">the Solbosch campus
-  of the ULB (Université Libre de Bruxelles)</a>.<br/>
+  rooms</a>.
   An <a href="<%= pathof '/schedule/roomtracks/' %>">overview of the room
   occupation by track</a> is available, too.
 </p>
@@ -266,10 +264,8 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <a name="stands"></a>
 <h3>Stands<h3>
 <p>
-  In the hallways of the different buildings, FOSDEM visitors will find
-  the many stands set up by individual projects. These offer a unique
-  chance to get in touch with developers or project members, and discover
-  at a glance what they do.
+  Stands offer a unique chance to get in touch with developers or project
+  members, and discover at a glance what they do.
 </p>
 
 <p>

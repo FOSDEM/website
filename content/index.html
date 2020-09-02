@@ -13,7 +13,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
 
     <div class="text-block">
       <h2>FOSDEM is a free event for software developers to meet, share ideas and collaborate.</h2>
-      <p>Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels.</p>
+      <p>Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels. In 2021, they will gather online.</p>
       <p class="btn-news"><a href="page:practical">No registration necessary.</a></p>
     </div>
 
@@ -28,7 +28,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     <h2>NEWS</h2>
     <ul class="news-list">
       <% newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse; newsitems[0,maxnews].each do |hl| %>
-        <li class="news">
+        <li class="news" style="width: 800px">
         <div class="date">
           <div class="holder">
             <div class="frame"><%= hl[:created_at].strftime '%Y-%m-%d' %></div>
@@ -72,24 +72,6 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
 -->
   <div class="location-block">
     <h2>LOCATION</h2>
-    <p>FOSDEM takes place at the ULB Solbosch Campus, <strong>Brussels, Belgium</strong>, Europe, Earth.</p>
-    <div class="location-info">
-      <div class="map">
-        <img style="float: right; text-align: right" src="asset:campusmap" alt="ULB Solbosch Campus map: Location of FOSDEM" title="ULB Solbosch Campus map: Location of FOSDEM"/>
-      </div>
-      <div class="location-text">
-        <a class="logo-ulb-big" href="#">Université libre de bruxelles</a>
-        <ul class="location-list">
-	  <li>ULB</li>
-          <li>Campus du Solbosch</li>
-          <li>Av. F. D. Roosevelt 50</li>
-          <li>1050 Bruxelles</li>
-          <li>Belgium</li>
-        </ul>
-        <div class="btn-location">
-          <a class="btn-purple" href="<%= pathof '/practical/transportation/' %>">venue &amp; travel</a>
-        </div>
-      </div>
-    </div>
+    <p>FOSDEM 2021 will take place online.</p>
   </div>
 
