@@ -4,6 +4,7 @@ module Fosdem
   def relpath(from, to)
     raise "from may not be nil" if from.nil?
     raise "to may not be nil" if to.nil?
+
     require 'pathname'
 
     if to.is_a?(Nanoc::Item) then
@@ -14,12 +15,12 @@ module Fosdem
 
     src_path = Pathname.new(from)
     dst_path = Pathname.new(target)
-    if src_path.to_s[-1,1] != '/'
+    if src_path.to_s[-1, 1] != '/'
       rp = dst_path.relative_path_from(src_path.dirname).to_s
     else
       rp = dst_path.relative_path_from(src_path).to_s
     end
-    if dst_path.to_s[-1,1] == '/'
+    if dst_path.to_s[-1, 1] == '/'
       rp << '/'
     end
     if rp =~ %r{^(.+)(#[^/]+)$} then
@@ -45,5 +46,4 @@ module Fosdem
     end
     result.join '/'
   end
-
 end

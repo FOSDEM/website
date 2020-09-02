@@ -9,7 +9,7 @@ module Fosdem
     attr_reader :id, :name, :propaganda, :section, :url
 
     def initialize(item)
-      [:filename, :title, :url].each{|a| raise "sponsor item #{item.inspect} has no mandatory #{a} attribute" if item[a].nil? }
+      [:filename, :title, :url].each { |a| raise "sponsor item #{item.inspect} has no mandatory #{a} attribute" if item[a].nil? }
 
       # short identifier,
       # e.g. filename == content/sponsor/google.html --> @id == google
@@ -20,7 +20,7 @@ module Fosdem
       b = item.identifier.chop
 
       @logo = {}
-      %w{ big small }.each do |kind|
+      %w{big small}.each do |kind|
         id = b + '-' + kind + '/'
         @logo[kind.to_sym] = id if $item_by_id.has_key? id
       end
@@ -56,6 +56,7 @@ module Fosdem
 
     def thumb
       raise "sponsor #{@name} has no thumb logo" unless self.thumb?
+
       $item_by_id.fetch(@logo[:small])
     end
 
@@ -65,6 +66,7 @@ module Fosdem
 
     def logo
       raise "sponsor #{@name} has no logo" unless self.logo?
+
       $item_by_id.fetch(@logo[:big])
     end
 
@@ -74,18 +76,18 @@ module Fosdem
 
     def self.list(items)
       $cache ||= begin
-                   $items_cache = items.reject{|item| item[:disabled] == true or item[:enabled] == false}
-                   h = $items_cache.select{|item| sponsor?(item) }.map{|item| Sponsor.new(item)}.sort_by{|s| [s.order, s.name.downcase]}
+                   $items_cache = items.reject { |item| item[:disabled] == true or item[:enabled] == false }
+                   h = $items_cache.select { |item| sponsor?(item) }.map { |item| Sponsor.new(item) }.sort_by { |s| [s.order, s.name.downcase] }
                    begin
-                     l = $items_cache.select{|item| item[:sponsors_root]}
+                     l = $items_cache.select { |item| item[:sponsors_root] }
                      raise "failed to find item with attribute :sponsors_root" if l.empty?
                      raise "found #{l.length} items with attribute :sponsors_root: #{l}" if l.length > 1
+
                      $basepage = l[0]
                    end
                    h
                  end
     end
-
   end
 
   def sponsors

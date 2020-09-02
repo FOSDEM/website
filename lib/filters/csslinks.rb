@@ -5,7 +5,7 @@ module Fosdem
     type :text
     identifier :csslinks
 
-    def run(content, params={})
+    def run(content, params = {})
       @item_rep = assigns[:item_rep] if @item_rep.nil?
 
       content.gsub(%r{url\(["']?(.+?)["']?\)}) do
@@ -21,9 +21,9 @@ module Fosdem
                         end
                     r = f.rindex '.'
                     if r
-                      [ f[0..r-1], f[r+1..-1] ]
+                      [f[0..r - 1], f[r + 1..-1]]
                     else
-                      [ f, '' ]
+                      [f, '']
                     end
                   end
 
@@ -37,7 +37,6 @@ module Fosdem
           "url(#{target.path})"
         end
       end
-
     end
   end
 end

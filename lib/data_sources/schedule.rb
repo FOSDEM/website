@@ -7,7 +7,7 @@ module Fosdem
     def items
       time_before = Time.now
       load_items!
-      Nanoc::CLI::Logger.instance.log(:low, "%s%12s%s  [%2.2fs]  %s" % [ "\e[1m", "schedule", "\e[0m", Time.now - time_before, "loaded from #{@file}" ])
+      Nanoc::CLI::Logger.instance.log(:low, "%s%12s%s  [%2.2fs]  %s" % ["\e[1m", "schedule", "\e[0m", Time.now - time_before, "loaded from #{@file}"])
       @items
     end
 
@@ -16,6 +16,7 @@ module Fosdem
     end
 
     private
+
     def load_items!
       require 'yaml'
       require 'time'
@@ -40,7 +41,7 @@ module Fosdem
         end
 
         r = []
-        cache.each do |k,v|
+        cache.each do |k, v|
           if k[-1] == 's'
             name = k[0..-2]
             v.each do |id, meta|
@@ -75,13 +76,14 @@ module Fosdem
           photos: 'photo',
           thumbnails: 'thumbnail',
         }.each do |key, kind|
-            crawl(key, :kind => kind.to_sym) do |filename, meta|
-              id = meta.delete('identifier')
-              fail "duplicate: #{id}\n#{memory[id].inspect} (#{memory[id][:filename]})" if memory[id]
-              i = Nanoc3::Item.new(filename, meta, id, {binary: true})
-              memory[id] = i
-              i
-            end.each{|x| r << x}
+          crawl(key, :kind => kind.to_sym) do |filename, meta|
+            id = meta.delete('identifier')
+            fail "duplicate: #{id}\n#{memory[id].inspect} (#{memory[id][:filename]})" if memory[id]
+
+            i = Nanoc3::Item.new(filename, meta, id, { binary: true })
+            memory[id] = i
+            i
+          end.each { |x| r << x }
         end
 
         @items = r
@@ -89,15 +91,15 @@ module Fosdem
       end
     end
 
-    def crawl(dir, opts={}, &block)
+    def crawl(dir, opts = {}, &block)
       fail "no block?" unless block_given?
 
       dir = @site.config.fetch(:pentabarf).fetch(:export_roots).fetch(dir) if dir.is_a? Symbol
 
       Dir[File.join(dir, '/**/*')]
-      .select{|f| File.file?(f)}
-      .reject{|f| f =~ /\.(hash|yaml)$/}
-      .map do |filename|
+        .select { |f| File.file?(f) }
+        .reject { |f| f =~ /\.(hash|yaml)$/ }
+        .map do |filename|
         d, s, name, ext = sanitize_filename filename
 
         meta_filename = File.join([d, "#{name}.yaml"].reject(&:nil?))
@@ -106,11 +108,10 @@ module Fosdem
         meta[:mtime] = File.mtime(filename)
         meta[:extension] = ext
         meta[:filename] = File.join(d, s)
-        opts.each{|k,v| meta[k] = v}
+        opts.each { |k, v| meta[k] = v }
 
         yield filename, meta
       end
     end
-
   end
 end

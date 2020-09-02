@@ -4,7 +4,7 @@ module Fosdem
   class NewsFilter < Nanoc::Filter
     identifier :news
     type :text
-    def run(content, params={})
+    def run(content, params = {})
       if content =~ /^(.+)---\s*MORE\s*---\s*$(.+)/m then
         $1 + $2
       elsif content =~ /^(.+)---\s*FULL\s*---\s*$(.+)/m then

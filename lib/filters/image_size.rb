@@ -8,20 +8,20 @@ module Fosdem
     type :text
     identifier :imagesize
 
-    def run(content, params={})
+    def run(content, params = {})
       require 'nokogiri'
       doc, selector = if content =~ %r{^\s*(<!DOCTYPE.+>\s*)?<html}
-                        [ ::Nokogiri::HTML.parse(content), '//img[@src]' ]
+                        [::Nokogiri::HTML.parse(content), '//img[@src]']
                       else
                         # needs using .//img here instead of //img because fragments don't have
                         # a root element:
                         # http://stackoverflow.com/questions/8552534/how-can-i-iterate-through-child-nodes-of-a-particular-name-in-a-nokogiri-xml-doc
-                        [ ::Nokogiri::HTML.fragment(content), './/img[@src]' ]
+                        [::Nokogiri::HTML.fragment(content), './/img[@src]']
                       end
       doc.xpath(selector)
-      .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
-      .select { |img| img['src'] =~ %r{^/|\.\.\/} }
-      .each do |img|
+         .reject { |img| img.has_attribute?('width') and img.has_attribute?('height') }
+         .select { |img| img['src'] =~ %r{^/|\.\.\/} }
+         .each do |img|
         width, height = html_image_size(img)
         img['height'] = height
         img['width'] = width
@@ -59,5 +59,4 @@ module Fosdem
     end
     hit
   end
-
 end

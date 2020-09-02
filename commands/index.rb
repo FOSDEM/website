@@ -24,10 +24,10 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
     self.site.compiler.load
 
     core = if options[:environment]
-      options[:environment]
-    else
-      'staging'
-    end
+             options[:environment]
+           else
+             'staging'
+           end
 
     solr = begin
              url = if options[:url]
@@ -51,17 +51,17 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
 
     indexable_items = self.site.items.reject do |item|
       item.binary? or
-      item[:index] == false or
-      item[:alias_of] or
-      item[:kind] == 'internal' or
-      item[:filename] =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
-      item.path.nil? or
-      item.path =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
-      item.reps.empty? or
-      item.reps.first.raw_paths.empty? or
-      item.reps.first.path.nil?
+        item[:index] == false or
+        item[:alias_of] or
+        item[:kind] == 'internal' or
+        item[:filename] =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
+        item.path.nil? or
+        item.path =~ /\.(css|png|gif|jpg|jpeg|xml|ical|xcal)$/ or
+        item.reps.empty? or
+        item.reps.first.raw_paths.empty? or
+        item.reps.first.path.nil?
     end
-    .map do |item|
+                          .map do |item|
       file = File.join file_prefix, item.reps.first.path
       file << "index.html" if file.end_with? '/'
       { id: item.identifier, file: file, item: item }
@@ -70,7 +70,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
     xml = Builder::XmlMarkup.new
     docs = []
     begin
-      xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
+      xml.instruct! :xml, :version => "1.0", :encoding => "UTF-8"
       xml.add do
         indexable_items.each do |i|
           start = Time.now
@@ -96,6 +96,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
                                nil
                              end
             raise "item #{item.identifier} has #{item.reps.size}, can't decide which one to use" unless item.reps.size == 1
+
             #raw_content = item.reps.first.content[:last]
             #raw_content = item.compiled_content
 
@@ -163,7 +164,7 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
         log :high, :index, "#{docs.size}/#{self.site.items.size} items in #{solr.uri.to_s}", Time.now - start
       end
 
-      [ :commit, :optimize ].each do |action|
+      [:commit, :optimize].each do |action|
         start = Time.now
         solr.method(action).call
         log :low, action, '', Time.now - start
@@ -190,8 +191,8 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
       Open3.popen2e('ssh', user + '@' + host, command + ' ' + core) do |i, oe, t|
         i.puts xml.target!
         i.close
-        oe.each{|line| message << line}
-        fail "failed to run ssh to " + user + "@" + host +": #{message.join($/)}#{$/}#{$/}Please contact server@fosdem.org" unless t.value.success?
+        oe.each { |line| message << line }
+        fail "failed to run ssh to " + user + "@" + host + ": #{message.join($/)}#{$/}#{$/}Please contact server@fosdem.org" unless t.value.success?
       end
       message = message.join($/)
       if message =~ %r{^(\d+) documents in index ([a-z].*)}
@@ -201,21 +202,22 @@ class SolrIndex < ::Nanoc::CLI::CommandRunner
   end
 
   private
+
   ACTION_COLORS = {
-    :delete   => "\e[1;31m",
-    :index    => "\e[1;32m",
-    :write    => "\e[1;32m",
-    :commit   => "\e[1;33m",
+    :delete => "\e[1;31m",
+    :index => "\e[1;32m",
+    :write => "\e[1;32m",
+    :commit => "\e[1;33m",
     :optimize => "\e[1;33m",
   }
-  def log(level, action, name, duration=nil)
+  def log(level, action, name, duration = nil)
     Nanoc::CLI::Logger.instance.log(
       level,
       '%s%12s%s  %s%s' % [
         ACTION_COLORS[action.to_sym],
         action.to_s,
         "\e[0m",
-        duration.nil? ? '' : "[%2.2fs]  " % [ duration ],
+        duration.nil? ? '' : "[%2.2fs]  " % [duration],
         name
       ]
     )

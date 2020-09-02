@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 # encoding: UTF-8
+
 #vim: set ts=2 sw=2 et ai:
 require 'sinatra'
 require 'sinatra/reloader'
@@ -40,12 +41,12 @@ $known_types ||= begin
                     }
                     if response.has_key? 'facet_counts'
                       Hash[*(response['facet_counts']['facet_fields']['type'])]
-                      .map{|f,c| f}
+                        .map { |f, c| f }
                     else
                       []
                     end
-                  rescue
-                    nil
+                 rescue
+                   nil
                   end
 
 get '*', :has_parameter => :q, :provides => 'html' do
@@ -70,7 +71,7 @@ error do
   erb :error, :layout => settings.environment
 end
 
-def search(template=:html, layout=settings.environment)
+def search(template = :html, layout = settings.environment)
   q = params[:q] unless q
   page = params[:page] unless page
 
@@ -100,19 +101,19 @@ def search(template=:html, layout=settings.environment)
 
   fq = []
 
-  types = params.keys.select{|name| ($known_types or []).include? name}
+  types = params.keys.select { |name| ($known_types or []).include? name }
   fq << "{!tag=dt}type:" + types.join(" OR ") unless types.empty?
 
   interview_years = begin
                       l = []
-                      params.select{|name, value| name == 'interview_year' }.each do |name, value|
+                      params.select { |name, value| name == 'interview_year' }.each do |name, value|
                         if value.is_a? Array
                           l.push *value
                         else
                           l << value
                         end
                       end
-                      l.select{|year| year =~ /^\d{4}$/}
+                      l.select { |year| year =~ /^\d{4}$/ }
                     end
   fq << "{!tag=dt}interview_year:" + interview_years.join(" OR ") unless interview_years.empty?
 
@@ -132,19 +133,19 @@ def search(template=:html, layout=settings.environment)
 
   @facets = if response.has_key? 'facet_counts'
               Hash[*(response['facet_counts']['facet_fields']['type'])]
-              .sort_by{|facet, count| count}
-              .reject{|facet, count| count < 1}
-              .reject{|facet, count| facet == 'content' or facet == 'schedule'}
-              .reverse
+                .sort_by { |facet, count| count }
+                .reject { |facet, count| count < 1 }
+                .reject { |facet, count| facet == 'content' or facet == 'schedule' }
+                .reverse
             else
               {}
             end
 
   @interview_year_facets = if response.has_key? 'facet_counts'
                              Hash[*(response['facet_counts']['facet_fields']['interview_year'])]
-                             .sort_by{|facet, count| count}
-                             .reject{|facet, count| count < 1}
-                             .reverse
+                               .sort_by { |facet, count| count }
+                               .reject { |facet, count| count < 1 }
+                               .reverse
                            else
                              {}
                            end
@@ -189,7 +190,7 @@ def search(template=:html, layout=settings.environment)
     title = sanitize title
 
     kind = begin
-             ty = doc['type'].map{|t| t.to_sym}
+             ty = doc['type'].map { |t| t.to_sym }
              if ty.include? :speaker
                :speaker
              elsif ty.include? :event
@@ -241,7 +242,7 @@ def search(template=:html, layout=settings.environment)
                   #uri = "#{@base_uri}"
                   #uri << '/' unless uri.end_with? '/'
                   uri = "?q=#{URI.escape q}"
-                  uri << "&" << types.map{|type| URI.escape type}.join('&') unless types.empty?
+                  uri << "&" << types.map { |type| URI.escape type }.join('&') unless types.empty?
                   uri
                 end
 

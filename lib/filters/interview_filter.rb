@@ -4,7 +4,7 @@ module Fosdem
   class InterviewFilter < Nanoc::Filter
     identifier :interview
     type :text
-    def run(content, params={})
+    def run(content, params = {})
       header = ""
       speakers = @item[:speaker]
       unless speakers.is_a? Enumerable
@@ -18,7 +18,7 @@ module Fosdem
         end
       end
       header << "<p>" 
-      header << speaker_list(@item[:speaker], html=true)
+      header << speaker_list(@item[:speaker], html = true)
       event = $item_by_id.fetch("/schedule/event/#{@item[:event]}/")
       header << " will give a talk about <a href='#{event.path}'>#{@item[:topic]}</a> at FOSDEM #{@item[:year]}.</p>\n"
       content = header.concat(content)
@@ -63,5 +63,4 @@ module Fosdem
       content
     end
   end
-
 end

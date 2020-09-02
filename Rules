@@ -15,7 +15,6 @@
 
 ##### PREPROCESSING
 preprocess do
-
   # Check for presence of export file first:
   begin
     f = config.fetch(:pentabarf).fetch(:meta_export_file)
@@ -38,8 +37,9 @@ preprocess do
                 else
                   # search the first day item
                   first_day = begin
-                                d = @items.select{|i| i.identifier =~ %r{^/schedule/day/[^/]+/$}}.sort_by{|d| d[:conference_day]}.first
+                                d = @items.select { |i| i.identifier =~ %r{^/schedule/day/[^/]+/$} }.sort_by { |d| d[:conference_day] }.first
                                 raise "failed to find item with identifier /schedule/day/..." unless d
+
                                 d[:conference_day]
                               end
                   # the prefix of the site is the year
@@ -64,7 +64,7 @@ preprocess do
   # duplicate favicon.ico to also deploy it under output/ and not just
   # under e.g. output/2013/
   begin
-    favicon = @items.select{|i| i.identifier == '/favicon/'}.first
+    favicon = @items.select { |i| i.identifier == '/favicon/' }.first
     if favicon
       @items << dup_item(favicon, '/root_favicon/')
     else
@@ -80,6 +80,7 @@ preprocess do
   $item_by_id = {}
   @items.each do |item|
     raise "duplicate identifier #{item.identifier}" if $item_by_id.has_key? item.identifier
+
     $item_by_id[item.identifier] = item
   end
 
@@ -129,9 +130,8 @@ preprocess do
                            result << css
                            map[css] = '#' + color
                          end
-                         [ result, map ]
+                         [result, map]
                        end
-
 end
 
 ##### COMPILING
@@ -144,7 +144,7 @@ compile '/assets/style/parts/*' do
 end
 # route them into oblivion, as we will only deploy the aggregated
 # CSS file:
-route '/assets/style/parts/*' do;end
+route '/assets/style/parts/*' do; end
 
 compile '/assets/style/sprite/' do
   filter :erb
@@ -178,11 +178,11 @@ end
 # We only use the /navigation/ item (content/navigation.yaml)
 # internally and don't render it to the website as a file, hence
 # short-circuit any compilation and routing right here:
-compile '/navigation/' do;end
-route   '/navigation/' do;end
+compile '/navigation/' do; end
+route   '/navigation/' do; end
 # Same applies to /buildings/:
-compile '/buildings/'  do;end
-route   '/buildings/'  do;end
+compile '/buildings/'  do; end
+route   '/buildings/'  do; end
 
 ### NEWS AND HEADLINES
 
@@ -195,10 +195,10 @@ route   '/buildings/'  do;end
 #end
 
 # don't modify anything on attachments
-compile '/schedule/event/*/attachments/*' do;end
-compile '/schedule/event/*/logo/' do;end
-compile '/schedule/speaker/*/photo/' do;end
-compile '/schedule/speaker/*/thumbnail/' do;end
+compile '/schedule/event/*/attachments/*' do; end
+compile '/schedule/event/*/logo/' do; end
+compile '/schedule/speaker/*/photo/' do; end
+compile '/schedule/speaker/*/thumbnail/' do; end
 
 ### Schedule PDF grids
 # handling is a bit special here, as they go through a specific
@@ -263,7 +263,7 @@ compile '*' do
 
         # do the same as above for items that have "qa: true" in their
         # metadata, but without adding the license footer
-        filter :interview, {:nolicense => true} if item[:filter] == 'qa'
+        filter :interview, { :nolicense => true } if item[:filter] == 'qa'
 
         # run the custom news filter (lib/filters/news_filter.rb) on
         # content/news/* -- it removes "---MORE---" lines and removes
@@ -334,9 +334,9 @@ end
 # send this one into oblivion, its compiled content is included in
 # layouts/default.html, but is not to be rendered as a file of its
 # own into output
-route '/schedule_navigation/' do;end
+route '/schedule_navigation/' do; end
 # same here:
-route '/sponsors_navigation/' do;end
+route '/sponsors_navigation/' do; end
 
 # attachments and such
 route '/schedule/event/*/attachments/*' do
@@ -391,7 +391,7 @@ end
 
 # partials, are included somewhere else, don't create files in
 # output for these:
-route '/schedule/devrooms/*/' do;end
+route '/schedule/devrooms/*/' do; end
 
 route '/assets/style/sprite/' do
   suffix = if @site.config[:digest_assets]
@@ -407,8 +407,9 @@ end
 # (without this, nanoc would deploy it as output/assets/style/foo/index.html)
 route '/assets/style/fosdem/' do
   fail "#{item.identifier} is not the css file!" unless item[:extension] == 'css'
+
   suffix = if @site.config[:digest_css]
-             parts = @items.select{|i| i.identifier =~ %r{^/assets/style/parts/.+}}.sort_by(&:identifier)
+             parts = @items.select { |i| i.identifier =~ %r{^/assets/style/parts/.+} }.sort_by(&:identifier)
              "-" + digest(parts)
            else
              ""
@@ -418,6 +419,7 @@ end
 
 route '/assets/style/fosdem-static/' do
   fail "#{item.identifier} is not the css file!" unless item[:extension] == 'css'
+
   "#{$prefix}#{item.identifier.chop}.#{item[:extension]}"
 end
 
@@ -450,7 +452,7 @@ route '/assets/*/' do
 end
 
 # don't deploy these anywhere, they are only used internally
-route %r{^/schedule/(thumbnail|photo)/speaker/} do;end
+route %r{^/schedule/(thumbnail|photo)/speaker/} do; end
 
 # this is where they are processed to, and these ones get to be deployed:
 route '/schedule/speaker_thumbnails/*/' do

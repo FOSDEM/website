@@ -1,9 +1,8 @@
 # vim: set ts=2 sw=2 et noai ft=ruby:
 
-# see http://gembundler.com/
+# see https://bundler.io/
 #
-# After modifying this file, delete Gemfile.lock
-# and run `bundle'
+# After modifying this file, run `bundle'.
 
 source "http://rubygems.org"
 
@@ -25,4 +24,5 @@ gem "systemu" # needed for "nanoc deploy"
 gem "tzinfo"
 gem "tzinfo-data"
 gem "pry" # needed for debugging the site with "nanoc shell"
+gem "rubocop"
 gem "rsolr"

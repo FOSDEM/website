@@ -2,7 +2,7 @@
 
 module Fosdem
   def make_headlines
-    @items.select{|item| news?(item) }.each do |item|
+    @items.select { |item| news?(item) }.each do |item|
       fqid = id(item)
       if item.identifier =~ %r,(^/news/)(\d{4}-\d{2}-\d{2})-(.+)$, then
         #item.identifier = $1 + $3
@@ -10,7 +10,7 @@ module Fosdem
         item[:created_at] = Time.parse($2)
 
         id = "/headlines/#{fqid}"
-        attrs = item.attributes.reject {|k,v| k == :filename or k == :file}
+        attrs = item.attributes.reject { |k, v| k == :filename or k == :file }
         attrs[:kind] = 'headline'
         attrs[:hidden] = true
         attrs[:layout] = false
@@ -49,11 +49,11 @@ module Fosdem
   def make_newspages
     list = []
     pages = @items
-    .select{|i| news?(i)}
-    .sort_by{|i| i[:created_at]}
-    .reverse
-    .each_slice(@config.fetch(:news).fetch(:news_page_items).to_i)
-    .map(&:to_a)
+            .select { |i| news?(i) }
+            .sort_by { |i| i[:created_at] }
+            .reverse
+            .each_slice(@config.fetch(:news).fetch(:news_page_items).to_i)
+            .map(&:to_a)
 
     pages.each_with_index do |newsitems, i|
       p = i + 1
@@ -62,14 +62,14 @@ module Fosdem
            else
              "/news/"
            end
-      newspage = Nanoc::Item.new('', {kind: 'newspage'}, id, { mtime: newsitems.first.mtime, binary: false})
-      newspage[:newsitems] = newsitems.map{|i| i.identifier}
+      newspage = Nanoc::Item.new('', { kind: 'newspage' }, id, { mtime: newsitems.first.mtime, binary: false })
+      newspage[:newsitems] = newsitems.map { |i| i.identifier }
       newspage[:page] = p
       newspage[:pages] = pages.size
       newspage[:title] = (pages.size > 1) ? "News (#{p} of #{pages.size})" : "News"
       newspage[:titlehead] = false
 
-      headlinks = [ { rel: 'canonical', href: id } ]
+      headlinks = [{ rel: 'canonical', href: id }]
       if p > 1
         prev = if p > 2
                  "/news/#{p - 1}/"
@@ -86,7 +86,6 @@ module Fosdem
       list << newspage
     end
     list.first[:navtitle] = 'News'
-    list.each{|i| @items << i}
+    list.each { |i| @items << i }
   end
-
 end

@@ -30,6 +30,7 @@ module Fosdem
     }
 
     public
+
     def self.pdf_grid(size)
       params = $PARAMS[size]
       raise "invalid size: must be one of [#{$PARAMS.keys.join(", ")}]" unless params
@@ -41,23 +42,22 @@ module Fosdem
         page_size: params.fetch(:page_size),
         page_layout: :landscape,
         info: {
-        Title: "#{conference()[:title]} Schedule",
-        Author: "fosdem.org",
-        Subject: "FOSDEM",
-      }) do
-
+          Title: "#{conference()[:title]} Schedule",
+          Author: "fosdem.org",
+          Subject: "FOSDEM",
+        }) do
         font_families.update(
           'DejaVuSansCondensed' => {
-          normal: File.join('pdf', 'DejaVuSansCondensed.ttf'),
-          bold:   File.join('pdf', 'DejaVuSansCondensed-Bold.ttf'),
-        },
-        'DejaVuSansMono' => {
-          normal: File.join('pdf', 'DejaVuSansMono.ttf'),
-        },
-        'Delicious' => {
-          normal: File.join('pdf', 'Delicious-Bold.ttf'),
-          bold:   File.join('pdf', 'Delicious-Heavy.ttf'),
-        },
+            normal: File.join('pdf', 'DejaVuSansCondensed.ttf'),
+            bold: File.join('pdf', 'DejaVuSansCondensed-Bold.ttf'),
+          },
+          'DejaVuSansMono' => {
+            normal: File.join('pdf', 'DejaVuSansMono.ttf'),
+          },
+          'Delicious' => {
+            normal: File.join('pdf', 'Delicious-Bold.ttf'),
+            bold: File.join('pdf', 'Delicious-Heavy.ttf'),
+          },
         )
         font($PDF_FONT)
 
@@ -80,7 +80,7 @@ module Fosdem
                         grids = begin
                                   matrix = []
                                   source.fetch(:by_room).each_slice(params.fetch(:rooms_per_page)) do |slice|
-                                    by_rooms = slice.map{|a| Hash[*a]}
+                                    by_rooms = slice.map { |a| Hash[*a] }
                                     matrix << Fosdem::Pdf::build_grids(by_rooms, params.fetch(:rows_per_page), params.fetch(:cell_text_length_threshold))
                                   end
                                   flipped_grid = []
@@ -246,7 +246,6 @@ module Fosdem
               end #grids
 
       grids.map do |g|
-
         g = g.map do |row|
           row.map do |cell|
             if cell.is_a? Hash and cell.has_key? :content and (cell[:content].size / cell.fetch(:rowspan, 1)) > cell_text_length_threshold
@@ -258,13 +257,12 @@ module Fosdem
 
         # compress by removing nil cells
         g = g.map do |row|
-          row.reject{|cell| cell.nil? or (cell.is_a? Hash and cell[:continued])}
+          row.reject { |cell| cell.nil? or (cell.is_a? Hash and cell[:continued]) }
         end
 
         g
       end
     end
-
   end #Pdf
 end #Fosdem
 

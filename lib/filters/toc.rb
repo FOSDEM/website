@@ -6,9 +6,10 @@ module Fosdem
     identifier :toc
 
     private
+
     class Node
       attr_reader :level, :text, :children, :parent, :origin
-      def initialize(level, text, parent=nil, element=nil)
+      def initialize(level, text, parent = nil, element = nil)
         @level = level
         @text = text
         @parent = parent
@@ -16,22 +17,25 @@ module Fosdem
         @origin = element
         parent.add_child(self) if parent
       end
+
       def add_child(node)
         @children << node
       end
-      def to_xhtml(attributes={})
+
+      def to_xhtml(attributes = {})
         attributes, maxdepth =
           if attributes.has_key? 'maxdepth'
             a = attributes.clone
             m = a.delete('maxdepth')
-            [ a, m.value.to_i ]
+            [a, m.value.to_i]
           else
-            [ attributes, 2 ]
+            [attributes, 2]
           end
 
         _to_xhtml([], maxdepth, attributes)
       end
-      def numberize(attributes={})
+
+      def numberize(attributes = {})
         maxdepth = if attributes.has_key? 'numberdepth'
                      attributes['numberdepth'].value.to_i
                    elsif attributes.has_key? 'maxdepth'
@@ -41,10 +45,13 @@ module Fosdem
                    end
         _numberize([], maxdepth)
       end
-      def anchorize(start=1)
+
+      def anchorize(start = 1)
         _anchorize([])
       end
+
       protected
+
       def _to_xhtml(path, maxdepth, attributes)
         t = ""
         t << %Q!<li><a href="#toc-#{path.join('.')}">#{path.join('.')}. #{@text}</a>! if @text
@@ -54,7 +61,7 @@ module Fosdem
           else
             attributes['class'] = "toc-#{path.size}"
           end
-          a = attributes.map{|k, v| %Q!#{k}="#{v}"!}.join(" ")
+          a = attributes.map { |k, v| %Q!#{k}="#{v}"! }.join(" ")
           t << "\n<ul #{a}>"
           @children.each_with_index do |c, i|
             t << c._to_xhtml(path + [i + 1], maxdepth, attributes)
@@ -64,6 +71,7 @@ module Fosdem
         t << "</li>\n"
         t
       end
+
       def _numberize(path, maxdepth)
         if @origin
           @origin.inner_html = %Q!<span class="h-number">#{path.join('.')}</span>#{@origin.text}!
@@ -74,18 +82,20 @@ module Fosdem
           end
         end
       end
+
       def _anchorize(path)
         if @origin
           @origin.add_previous_sibling(%Q!<a name="toc-#{path.join('.')}"></a>!)
         end
         @children.each_with_index do |c, i|
-          c._anchorize(path + [ i + 1])
+          c._anchorize(path + [i + 1])
         end
       end
     end
 
     public
-    def run(content, params={})
+
+    def run(content, params = {})
       @item_rep = assigns[:item_rep] if @item_rep.nil?
       require 'nokogiri'
 
@@ -131,9 +141,9 @@ module Fosdem
           if toc.attributes.has_key? 'numberize'
             a = toc.attributes.clone
             a.delete('numberize')
-            [ a, true ]
+            [a, true]
           else
-            [ attributes, false ]
+            [attributes, false]
           end
 
         if numberize
@@ -152,5 +162,4 @@ module Fosdem
       end
     end
   end
-
 end

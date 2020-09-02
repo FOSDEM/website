@@ -1,7 +1,6 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 module Fosdem
-
-  def navigation(list, opts={})
+  def navigation(list, opts = {})
     show_active = opts.fetch(:active, true)
     accesskeys = opts.fetch(:accesskeys, false)
 
@@ -46,7 +45,7 @@ module Fosdem
                      @item.path == target.path
                    else
                      @item.path.start_with? target.path
-                 end
+                   end
           css << :active if active
         end
         css << :home if target.identifier == '/'
@@ -84,6 +83,5 @@ module Fosdem
       end
     end.join("\n")
   end
-
 end
 

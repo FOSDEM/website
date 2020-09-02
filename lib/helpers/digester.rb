@@ -8,7 +8,6 @@ module Fosdem
               [items]
             end
 
-
     require 'digest/sha2'
 
     sha = Digest::SHA256.new

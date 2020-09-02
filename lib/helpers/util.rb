@@ -2,7 +2,6 @@
 # encoding: utf-8
 
 module Fosdem
-
   def henc(text)
     $_html_entities_encoder ||= begin
                                   require 'htmlentities'
@@ -36,15 +35,15 @@ module Fosdem
     b = File.basename filename
     case b
     when %r{^(.+)\.(([^\.]+)\.(gz|bz|bz2|xz))$}
-      [ d, $1, $2 ]
+      [d, $1, $2]
     when %r{^(.+)\.([^\.]+)$}
-      [ d, $1, $2 ]
+      [d, $1, $2]
     when %r{^(.+)\.$}
-      [ d, $1, '' ]
+      [d, $1, '']
     when %r{^([^\.]+)$}
-      [ d, $1, '' ]
+      [d, $1, '']
     else
-      [ d, filename, '' ]
+      [d, filename, '']
     end
   end
 
@@ -53,20 +52,20 @@ module Fosdem
     require 'active_support/inflector/transliterate'
     require 'active_support/inflector/methods'
     b = ActiveSupport::Inflector
-    .transliterate(b)
-    .gsub(%r{/+}, '')
-    .gsub(%r{\s+}, '_')
-    .gsub(/["']+/, '')
-    .gsub(/[^0-9A-Za-z]/i, '_')
-    .gsub(/_+/, '_')
-    .gsub(/^_/, '')
-    .gsub(/_$/, '')
+        .transliterate(b)
+        .gsub(%r{/+}, '')
+        .gsub(%r{\s+}, '_')
+        .gsub(/["']+/, '')
+        .gsub(/[^0-9A-Za-z]/i, '_')
+        .gsub(/_+/, '_')
+        .gsub(/^_/, '')
+        .gsub(/_$/, '')
 
     # skip adding the extension if it is empty
     if e != ''
-      [ d, "#{b}.#{e}", b, e ]
+      [d, "#{b}.#{e}", b, e]
     else
-      [ d, "#{b}", b, e ]
+      [d, "#{b}", b, e]
     end
   end
 
@@ -97,14 +96,14 @@ module Fosdem
     require 'rmagick'
     image = Magick::Image.from_blob(IO.read(filename)).first
     begin
-      [ image.columns, image.rows ]
+      [image.columns, image.rows]
     ensure
       image.destroy! if image
     end
   end
 
   def all_exist(*files)
-    files.map{|f| File.exists? f}.all?
+    files.map { |f| File.exists? f }.all?
   end
 
   def hash_by(ary, key)
@@ -130,10 +129,10 @@ module Fosdem
     time.rfc2822
   end
 
-  def excerpt_words(text, limit, more="\u{8230}")
+  def excerpt_words(text, limit, more = "\u{8230}")
     words = text.split(/\s+/)
     if words.size >= limit
-      words[0..(limit-1)].join(" ") + more
+      words[0..(limit - 1)].join(" ") + more
     else
       words.join(" ")
     end
@@ -176,7 +175,7 @@ module Fosdem
         y += 20 # use additional empty transparent row offset to avoid bleeding
         line
       end
-      .join("\n")
+       .join("\n")
     ensure
       h.each do |rule, img|
         begin
@@ -185,35 +184,34 @@ module Fosdem
         end
       end
     end
-
   end
 
-  def sprite_image(filenames, format='PNG', optimize=true)
+  def sprite_image(filenames, format = 'PNG', optimize = true)
     require 'rmagick'
 
     images = []
     begin
       images = filenames
-      .map do |f|
-        case f
-        when Nanoc::Item
-          f[:filename]
-        when String
-          if f.start_with? '/' and f.end_with? '/'
-            $item_by_id.fetch(f)[:filename]
-          else
-            f
-          end
-        else
-          fail "unsupported #{f.class} #{f.inspect}"
-        end
-      end
-      .map do |f|
+               .map do |f|
+                 case f
+                 when Nanoc::Item
+                   f[:filename]
+                 when String
+                   if f.start_with? '/' and f.end_with? '/'
+                     $item_by_id.fetch(f)[:filename]
+                   else
+                     f
+                   end
+                 else
+                   fail "unsupported #{f.class} #{f.inspect}"
+                 end
+               end
+               .map do |f|
         Magick::Image.from_blob(IO.read(f)).first
       end
 
-      width  = images.map{|i| i.columns}.max
-      height = images.map{|i| i.rows}.inject(0, :+) + (images.size - 1) * 20
+      width  = images.map { |i| i.columns }.max
+      height = images.map { |i| i.rows }.inject(0, :+) + (images.size - 1) * 20
 
       sprite = nil
       begin
@@ -258,11 +256,9 @@ module Fosdem
             end
           end
         end
-
       ensure
         sprite.destroy! if sprite
       end
-
     ensure
       images.each do |img|
         begin
@@ -288,6 +284,7 @@ module Fosdem
       end.join(", ")
     end
   end
+
   def cfp_mail_uri(m)
     if m.nil? or m.empty?
       '-'
@@ -312,6 +309,5 @@ module Fosdem
       end.join(", ")
     end
   end
-
 end #Fosdem
 

@@ -8,6 +8,7 @@ flag        :f, :facets,    'do a faceted search'
 class SolrQuery < ::Nanoc::CLI::CommandRunner
   def run
     raise Nanoc::Errors::GenericTrivial, "usage: #{command.usage}" if arguments.size != 1
+
     require 'rsolr'
     self.require_site
     solr = begin
@@ -43,10 +44,10 @@ class SolrQuery < ::Nanoc::CLI::CommandRunner
     if response.has_key? 'facet_counts'
       puts "\e[36;1;4mFacets:\e[0m"
       Hash[*(response['facet_counts']['facet_fields']['type'])]
-      .reject{|facet, count| count < 1}
-      .sort_by{|facet, count| count}
-      .reverse
-      .each do |facet, count|
+        .reject { |facet, count| count < 1 }
+        .sort_by { |facet, count| count }
+        .reverse
+        .each do |facet, count|
         puts "\e[30;1m*\e[0m #{facet} (#{count})"
       end
       puts

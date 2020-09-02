@@ -1,7 +1,6 @@
 # vim: set ts=2 sw=2 et ai ft=ruby:
 
 module Fosdem
-
   # We need the first speaker for sorting the interviews.
   def first_speaker(speakers)
     if speakers.is_a? Enumerable
@@ -11,7 +10,7 @@ module Fosdem
     end
   end
 
-  def speaker_string(speaker, name, separator="", html=false)
+  def speaker_string(speaker, name, separator = "", html = false)
     if html
       "#{separator}<a href='/schedule/speaker/#{speaker}'>#{name}</a>"
     else
@@ -20,10 +19,10 @@ module Fosdem
   end
 
   # Generate a human-readable list of speakers of an interview, with HTML links for each speaker.
-  def speaker_list(speakers, html=false)
+  def speaker_list(speakers, html = false)
     if speakers.is_a? Enumerable and speakers.length > 1
       # Create pairs of [speaker slug, speaker name].
-      pairs = speakers.map {|s| [s, @items["/schedule/speaker/#{s}/"][:name]]}
+      pairs = speakers.map { |s| [s, @items["/schedule/speaker/#{s}/"][:name]] }
       # Remove the first and last speaker, they get treated separately.
       first_speaker = pairs.shift
       last_speaker = pairs.pop
@@ -41,7 +40,7 @@ module Fosdem
   end
 
   def decorate_interviews
-    @items.select{|item| interview?(item) }.each do |item|
+    @items.select { |item| interview?(item) }.each do |item|
       item[:kind] = 'interview'
       item[:nonav] = true
 
