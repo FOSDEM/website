@@ -3,7 +3,7 @@ https://fosdem.org/).
 
 Our website uses the nanoc static site generator, and we did implement a lot of
 custom code to support our workflow as painlessly as possible. Maybe some bits
-of those will be an inspiration or of help.
+of those will be an inspiration or serve as a help for you.
 
 # Getting started
 
