@@ -39,9 +39,13 @@ to have the following packages installed:
 
 Following the steps below should result in a working environment:
 
+Step 1
+
 ```bash
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+Step 2
 
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -51,6 +55,8 @@ source ~/.bashrc
 rbenv install 2.7.0
 rbenv rehash
 rbenv local 2.7.0
+
+Step 3
 
 gem install bundler -v 1.17.3 # we’ll upgrade to Bundler 2.x soon
 
@@ -68,14 +74,14 @@ source ~/.bashrc
 Of course, if you're not using `bash`, replace `.bashrc` with the appropriate
 initialisation file for your shell.
 
-## Building the site
+##  Building the site
 
 A site build consists of two steps:
 
-1. Export the data from the FOSDEM Pentabarf database
-2. Generate the static site using the exported data
+1.  Export the data from the FOSDEM Pentabarf database
+2.  Generate the static site using the exported data
 
-### Exporting from FOSDEM Pentabarf
+###  Exporting from FOSDEM Pentabarf
 
 To generate the schedule data from Pentabarf, you will first need to obtain a
 Kerberos ticket for a principal with access to the Pentabarf database. Next,
