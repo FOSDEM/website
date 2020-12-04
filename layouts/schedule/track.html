@@ -148,6 +148,15 @@
 </table>
 
 <%
+    cfp = item[:conference_call_for_papers_url]
+    if cfp
+%>
+<div class="well well-small track-cfp">
+      <p>Read the Call for Papers at <a href="<%= cfp %>"><%= cfp %></a>.</p>
+</div>
+<% end %>
+
+<%
     description = $item_by_id["/schedule/devrooms/#{item[:slug]}/"]
     if description
 %>

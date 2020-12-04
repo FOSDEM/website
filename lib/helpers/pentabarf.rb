@@ -705,7 +705,7 @@ module Fosdem
                                    'maintrack'
                                  end
 
-                     slugify!(model(t, [:name, :title, :type, :conference_track_id, :conference_track, :rank]), :name)
+                     slugify!(model(t, [:name, :title, :type, :conference_track_id, :conference_track, :rank, :conference_call_for_papers_url]), :name)
                    end
                  end
                  log(:high, "loaded #{list.size} tracks", Time.now - time_before)
