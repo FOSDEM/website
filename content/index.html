@@ -28,7 +28,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     <h2>NEWS</h2>
     <ul class="news-list">
       <% newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse; newsitems[0,maxnews].each do |hl| %>
-        <li class="news" style="width: 800px">
+        <li class="news">
         <div class="date">
           <div class="holder">
             <div class="frame"><%= hl[:created_at].strftime '%Y-%m-%d' %></div>
@@ -48,7 +48,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
       </div>
     <% end %>
   </div>
-<!--
+
   <div class="logo-block">
     <h2><a href="page:/about/sponsors/">SPONSORS</a></h2>
     <% cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?} %>
@@ -69,7 +69,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
       </ul>
     <% end %>
   </div>
--->
+
   <div class="location-block">
     <h2>LOCATION</h2>
     <p>FOSDEM 2021 will take place online.</p>
