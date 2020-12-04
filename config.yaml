@@ -26,7 +26,7 @@ digest_pdfs: false
 # Whether to render the time table grids as PDFs (only to be turned
 # on for testing or when the schedule is sufficiently complete to
 # make any sense):
-pdf_grid: true
+pdf_grid: false
 
 #########################################################################
 # everything below is standard nanoc configuration stuff
