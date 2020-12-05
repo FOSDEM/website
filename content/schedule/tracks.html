@@ -22,6 +22,7 @@ categories = [
     <thead>
         <tr>
             <th>Track</th>
+	    <th>Call For<br /> Papers</th>
             <th>Rooms</th>
             <% days.each do |d| %>
             <th><%= d[:title] %></th>
@@ -36,7 +37,7 @@ categories = [
             <% unless list.empty?  %>
                 <% if category[:heading] %>
                     <tr>
-                        <th colspan="<%= 2 + days.size %>"><h4><%= category[:heading] %></h4></th>
+                        <th colspan="<%= 3 + days.size %>"><h4><%= category[:heading] %></h4></th>
                     </tr>
                 <% end %>
                 <%
@@ -47,12 +48,22 @@ categories = [
                         <% if category[:heading] %>
                             <tr>
                                 <td><%= l t, :name %></td>
+			        <td>
+			        <% if  t[:conference_call_for_papers_url] %>
+			            <a href="<%= t[:conference_call_for_papers_url] %>">CFP</a>
+			        <% end %>
+			        </td>
                                 <td colspan="<%= 1 + days.size %>"></td>
                             </tr>
                         <% end %>
                     <% else %>
                         <tr>
                             <td><%= l t, :name %></td>
+			    <td>
+			    <% if  t[:conference_call_for_papers_url] %>
+			        <a href="<%= t[:conference_call_for_papers_url] %>">CFP</a>
+			    <% end %>
+			    </td>
                             <td><%= l events.map{|e| e[:room]}.uniq.map(&$to_room).sort_by{|r| [r[:rank], r[:conference_room_id]]} %></td>
                             <% days.each do |d| %>
                                 <td><%=
