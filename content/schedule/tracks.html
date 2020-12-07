@@ -50,7 +50,7 @@ categories = [
                                 <td><%= l t, :name %></td>
 			        <td>
 			        <% if  t[:conference_call_for_papers_url] %>
-			            <a href="<%= t[:conference_call_for_papers_url] %>">CFP</a>
+			            <a href="<%= t[:conference_call_for_papers_url] %>">CfP</a>
 			        <% end %>
 			        </td>
                                 <td colspan="<%= 1 + days.size %>"></td>
@@ -61,7 +61,7 @@ categories = [
                             <td><%= l t, :name %></td>
 			    <td>
 			    <% if  t[:conference_call_for_papers_url] %>
-			        <a href="<%= t[:conference_call_for_papers_url] %>">CFP</a>
+			        <a href="<%= t[:conference_call_for_papers_url] %>">CfP</a>
 			    <% end %>
 			    </td>
                             <td><%= l events.map{|e| e[:room]}.uniq.map(&$to_room).sort_by{|r| [r[:rank], r[:conference_room_id]]} %></td>
