@@ -11,6 +11,7 @@ require 'time'
 keynotes = events.select{|e| e[:type] == 'keynote'}.sort_by{|e| e[:start_datetime]}
 maintracks = tracks.select{|t| t[:type] == 'maintrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
+standtracks = tracks.select{|t| t[:type] == 'standtrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
@@ -77,7 +78,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   <a href="#maintracks">main tracks</a>,
   <a href="#devrooms">developer rooms</a>,
   <a href="#lightningtalks">lightning talks</a>,
-  <a href="#stands">stands</a> and
+  <a href="#standtracks">stands</a> and
   <a href="#certification">certification exams</a>.
 </p>
 
@@ -268,10 +269,30 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
   members, and discover at a glance what they do.
 </p>
 
+<% unless standtracks.empty? %>
+<p>
+  Here is the list of the stands that are present at this edition of FOSDEM,
+  in alphabetical order:
+</p>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <% standtracks.sort_by{|x| x[:title]}.each_slice(standtracks.size / columns) do |list| %>
+        <div class="span<%= 9 / columns %>">
+            <ul>
+                <% list.each do |t| %>
+                <li><%= l t, :name %></li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
+    </div>
+</div>
+<% else %>
 <p>
   A list of projects that will be present with a stand can be found on the
   <a href="page:/stands/">FOSDEM stands page</a>.
 </p>
+<% end %>
 
 <a name="certification"></a>
 <h3> Certification Exams</h3>

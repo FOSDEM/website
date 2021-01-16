@@ -701,6 +701,8 @@ module Fosdem
                                    'workshop'
                                  when /^stands/i
                                    'stand'
+                                 when /\s+stand/i
+                                   'standtrack'
                                  else
                                    'maintrack'
                                  end
