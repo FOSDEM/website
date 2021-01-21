@@ -1,3 +1,59 @@
 ---
 kind: internal
 events:
+    'contributing.today: Java':
+        location: Online
+        start: 2021-01-20
+        end: 2021-01-20
+        cost: Free
+        registration: None
+        website: https://www.contributing.today/
+        contact: floordrees@gmail.com
+    'EasyBuild User Meeting':
+        location: Online
+        start: 2021-01-25
+        end: 2021-01-29
+        cost: Free
+        registration: Website
+        website: https://easybuild.io/eum
+        contact: kenneth.hoste@ugent.be
+    'contributing.today: Rust':
+        location: Online
+        start: 2021-01-27
+        end: 2021-01-27
+        cost: Free
+        registration: None
+        website: https://www.contributing.today/
+        contact: floordrees@gmail.com
+    'contributing.today: Python':
+        location: Online
+        start: 2021-02-03
+        end: 2021-02-03
+        cost: Free
+        registration: None
+        website: https://www.contributing.today/
+        contact: floordrees@gmail.com
+    'libre.re':
+        location: Reunion Island
+        start: 2021-02-06
+        end: 2021-02-06
+        cost: Free
+        registration: Website
+        website: https://www.libre.re/t/fosdem-2021-6-7-fevrier/545
+        contact: marcandre.lureau@gmail.com
+    'Test the Docs Brunch':
+        location: TBD
+        start: 2021-02-07
+        end: 2021-02-07
+        cost: Free
+        registration: None
+        website: https://meet.jit.si/ttd-fosdem21-social
+        contact: chris@chrischinchilla.com
+    'GNU Guix Days':
+        location: Online
+        start: 2021-02-08
+        end: 2021-02-08
+        cost: Free
+        registration: Website
+        website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2021
+        contact: manolis837@gmail.com
