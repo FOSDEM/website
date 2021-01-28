@@ -40,6 +40,7 @@ navcat: true
   <a href="page:practical/conduct">FOSDEM Code of Conduct</a>.
 </p>
 
+<% if not @site.config.fetch(:virtual) %>
 <a name="jobcorner"></a>
 <h3>Job Corner</h3>
 <p>
@@ -47,6 +48,7 @@ navcat: true
   contracting. See
   <a href="page:practical/jobcorner">Job Corner</a> for details.
 </p>
+<% end %>
 
 <a name="other"></a>
 <h3>Further information</h3>

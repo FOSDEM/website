@@ -73,8 +73,10 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 </p>
 
 <p>
-  There are essentially six different categories of sessions and activities:
+  There are essentially the following categories of sessions and activities:
+<% unless keynotes.empty? and @site.config.fetch(:virtual) %>
   <a href="#keynotes">keynotes</a>,
+<% end %>
   <a href="#maintracks">main tracks</a>,
   <a href="#devrooms">developer rooms</a>,
   <a href="#lightningtalks">lightning talks</a>,
@@ -94,6 +96,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
     </div>
 </div>
 
+<% unless keynotes.empty? and @site.config.fetch(:virtual) %>
 <a name="keynotes"></a>
 <h3>Keynotes</h3>
 <p>
@@ -152,6 +155,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 <p>
   <span class="label label-info">The keynotes have not been confirmed yet.</span>
 </p>
+<% end %>
 <% end %>
 
 <a name="maintracks"></a>
@@ -276,7 +280,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 </p>
 <div class="container-fluid">
     <div class="row-fluid">
-        <% standtracks.sort_by{|x| x[:title]}.each_slice(standtracks.size / columns) do |list| %>
+        <% standtracks.sort_by{|x| x[:title].downcase}.each_slice(standtracks.size / columns) do |list| %>
         <div class="span<%= 9 / columns %>">
             <ul>
                 <% list.each do |t| %>

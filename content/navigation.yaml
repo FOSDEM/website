@@ -34,7 +34,7 @@ footer:
 #   - /practical/accommodation
     - /practical/conduct
     - /practical/services
-    - /practical/jobcorner
+#    - /practical/jobcorner
   - Media and press:
     - /interviews
 #   - Video recordings: 'https://video.fosdem.org/'
