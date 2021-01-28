@@ -703,6 +703,8 @@ module Fosdem
                                    'stand'
                                  when /\s+stand/i
                                    'standtrack'
+                                 when /^infodesk/i
+                                   'infodesk'
                                  else
                                    'maintrack'
                                  end
