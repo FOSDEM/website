@@ -41,14 +41,6 @@ events:
         registration: Website
         website: https://www.libre.re/t/fosdem-2021-6-7-fevrier/545
         contact: marcandre.lureau@gmail.com
-    'Test the Docs Brunch':
-        location: TBD
-        start: 2021-02-07
-        end: 2021-02-07
-        cost: Free
-        registration: None
-        website: https://meet.jit.si/ttd-fosdem21-social
-        contact: chris@chrischinchilla.com
     'GNU Guix Days':
         location: Online
         start: 2021-02-08
