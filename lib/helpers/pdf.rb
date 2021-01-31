@@ -248,7 +248,7 @@ module Fosdem
       grids.map do |g|
         g = g.map do |row|
           row.map do |cell|
-            if cell.is_a? Hash and cell.has_key? :content and (cell[:content].size / cell.fetch(:rowspan, 1)) > cell_text_length_threshold
+		  if cell.is_a? Hash and cell.has_key? :content and cell.fetch(:rowspan, 1) > 0 and (cell[:content].size / cell.fetch(:rowspan, 1)) > cell_text_length_threshold
               cell[:content] = "#{cell[:content][0..(cell.fetch(:rowspan, 1) * cell_text_length_threshold)]}\u{2026}"
             end
             cell
