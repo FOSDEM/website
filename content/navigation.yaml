@@ -4,6 +4,7 @@ top:
   - /about
   - /news
   - /schedule
+#  - Stands: 'https://stands.fosdem.org'
   - /stands
   - /volunteer
   - Practical: /practical
