@@ -49,23 +49,6 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     <% end %>
   </div>
 
-  <div class="news-block">
-    <h2>FOSDEM 2021</h2>
-    <ul class="room-grid">
-    <%
-      tracks.each do | track |
-        %>
-        <li class="room-grid-item">
-          <% if track[:rooms][0] %>
-          <%= track[:name] %>: https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org
-          <% else %>
-          <%= track[:name] %>: https://chat.fosdem.org/#/room/#<%= track[:rooms][0] %>:fosdem.org
-          <% end %>
-        </li>
-    <% end %>
-  </ul>
-  </div>
-
   <div class="logo-block">
     <h2><a href="page:/about/sponsors/">SPONSORS</a></h2>
     <% cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?} %>
