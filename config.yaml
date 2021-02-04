@@ -197,4 +197,4 @@ news:
   news_page_items: 6
 
 virtual: true
-go_live: true
+go_live: false
