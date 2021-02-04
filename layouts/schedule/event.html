@@ -12,7 +12,7 @@
   <li>
     <i class="icon-facetime-video"></i> <strong>Live stream</strong>:
     <% if item[:room].nil? || ! go_live %>
-    <span class="muted">Stream has not been set up yet</span>
+    <span class="muted">We're not quite ready yet</span>
     <% else %>
     <a href="<%= stream_link(item) %>"><%= fancy_room_name(item[:room]) %></a>
     <% end %>
@@ -23,7 +23,7 @@
     <% if item[:room].nil? || ! go_live %>
     <span class="muted">We're not quite ready yet</span>
     <% else %>
-    <a href="<%= stream_link(item) %>">Join the conversation!</a>
+    <a href="<%= stream_link(item, is_chat=true) %>">Join the conversation!</a>
     <% end %>
   </li>
 </ul>

@@ -32,7 +32,7 @@ title: FOSDEM 2021
                     <div>
                         <% if go_live %>
                             <% if track[:rooms] && track[:rooms][0] %>
-                                <a href="https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org"><img src="fosdem_2021_live.png" alt="Click for the live stream."/></a>
+                                <a href="<%= stream_link(track) %>"><img src="fosdem_2021_live.png" alt="Click for the live stream."/></a>
                             <% end %>
                         <% end %>
                         <% if track_nice_types[track[:type]] %>
@@ -42,11 +42,11 @@ title: FOSDEM 2021
                         <% end %>
                         <% if go_live %>
                         <% if track[:rooms] && track[:rooms][0] %>
-                        <p><a href="https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org">Go to the live stream.</a></p>
+                        <p><a href="<%= stream_link(track) %>">Go to the live stream.</a></p>
                         <% end %>
                         <p><a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule for this track.</a></p>
                         <% if track[:rooms] && track[:rooms][0] %>
-                        <p><a href="https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org">Take part in the conversation.</a></p>
+                        <p><a href="<%= stream_link(track, is_chat=true) %>">Take part in the conversation.</a></p>
                         <% end %>
                         <% else %>
                         <p>We haven't started yet. <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule</a> to see what we have planned.</p>

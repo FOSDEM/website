@@ -386,17 +386,23 @@ module Fosdem
     end
   end
 
-  def stream_link(track_or_event)
+  def stream_link(track_or_event, is_chat=false)
     if ! track_or_event[:rooms].nil?
       # Track
-      return 'https://chat.fosdem.org/#/room/' + stream_link_name(track_or_event[:rooms][0])
+      slug = stream_link_name(track_or_event[:rooms][0])
     elsif ! track_or_event[:conference_room].nil?
       # Room
-      return 'https://chat.fosdem.org/#/room/' + stream_link_name(track_or_event[:slug])
+      slug = stream_link_name(track_or_event[:slug])
     else
       # Event
-      return 'https://chat.fosdem.org/#/room/' + stream_link_name(track_or_event[:room])
+      slug = stream_link_name(track_or_event[:room])
     end
+    if is_chat
+      link = 'https://matrix.to/#/%s:fosdem.org?web-instance[element.io]=chat.fosdem.org'
+    else
+      link = 'https://chat.fosdem.org/#/room/%s'
+    end
+    return link % slug
   end
 
   def fancy_room_name(slug)
