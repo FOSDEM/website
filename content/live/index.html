@@ -1,0 +1,81 @@
+---
+title: FOSDEM 2021
+---
+<div class="s-block">
+
+    <div class="text-block">
+      <h2>Welcome to the conference floor for FOSDEM 2021!</h2>
+      <p>Find an overview of all talks and all stands. Click on any of them to visit or view them; no registration or configuration required.</p>
+      <p><a href="page:schedule">Visit the schedule</a> to find out what's on in what room, click on your favourite room, sit back and relax.</p>
+      <p>Confused? Unsure how to proceed? <a href="page:practical/online">Visit the practical information page</a>, <a href="page:faq">look in the FAQ</a>
+    or <a href="https://chat.fosdem.org/#/room/#infodesk:fosdem.org">talk to a human at the Infodesk</a>!</p>
+      <p class="btn-news"><a href="#talks">To the talks.</a></p>
+      <p class="btn-news"><a href="#stands">To the stands.</a></p>
+      <p class="btn-news"><a href="page:schedule">To the schedule.</a></p>
+    </div>
+
+    <div class="container">
+        <div class="row" style="margin-top: 5em; margin-bottom: 3em">
+            <div class="span12">
+                <a name="talks"></a>
+                <h2>Talks</h2>
+            </div>
+        </div>
+        <% room_tracks = tracks.select{|t| ['devroom', 'maintrack', 'lightningtalks'].include? t[:type] } %>
+        <% track_nice_types = {'devroom' => 'Devroom', 'maintrack' => 'Main track', 'lightningtalks' => 'Lightning talk'} %>
+        <% room_tracks.each_with_index do | track, i | %>
+        <% if i == 0 || i % 3 == 0 %>
+            <div class="row">
+        <% end %>
+                <div class="span4">
+                    <div>
+                        <% if @site.config.fetch(:go_live) %>
+                            <% if track[:rooms] && track[:rooms][0] %>
+                                <a href="https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org"><img src="fosdem_2021_live.png" alt="Click for the live stream."/></a>
+                            <% end %>
+                        <% end %>
+                        <% if track_nice_types[track[:type]] %>
+                        <h4><%= track[:name] %> <small><%= track_nice_types[track[:type]] %></small></h4>
+                        <% else %>
+                        <h4><%= track[:name] %> <small>Talk</small></h4>
+                        <% end %>
+                        <% if @site.config.fetch(:go_live) %>
+                        <% if track[:rooms] && track[:rooms][0] %>
+                        <p><a href="https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org">Go to the live stream.</a></p>
+                        <% end %>
+                        <p><a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule for this track.</a></p>
+                        <% if track[:rooms] && track[:rooms][0] %>
+                        <p><a href="https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org">Take part in the conversation.</a></p>
+                        <% end %>
+                        <% else %>
+                        <p>We haven't started yet. <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule</a> to see what we have planned.</p>
+                        <% end %>
+                    </div>
+                </div>
+        <% if i % 3 == 2 || i == room_tracks.length() - 1 %>
+            </div>
+        <% end %>
+        <% end %>
+    </div>
+    <div class="row" style="margin-top: 5em; margin-bottom: 2-em;">
+        <div class="span12">
+            <a name="stands"></a>
+            <h2>Stands</h2>
+        </div>
+    </div>
+    <% stand_tracks = tracks.select{|t| ['standtrack'].include? t[:type] } %>
+    <% stand_tracks.each_with_index do | stand, i | %>
+        <% if i == 0 || i % 3 == 0 %>
+            <div class="row">
+        <% end %>
+                <div class="span4">
+                    <div>
+                        <h4><%= stand[:name] %> <small>Stand</small></h4>
+                        <p>We haven't started yet. <a href="page:schedule/track/<%= stand[:slug] %>">Visit the schedule</a> to see what we have planned.</p>
+                    </div>
+                </div>
+        <% if i % 3 == 2 || i == stand_tracks.length() - 1 %>
+            </div>
+        <% end %>
+        <% end %>
+</div>
