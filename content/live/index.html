@@ -23,13 +23,14 @@ title: FOSDEM 2021
         </div>
         <% room_tracks = tracks.select{|t| ['devroom', 'maintrack', 'lightningtalks'].include? t[:type] } %>
         <% track_nice_types = {'devroom' => 'Devroom', 'maintrack' => 'Main track', 'lightningtalks' => 'Lightning talk'} %>
+        <% go_live = @site.config.fetch(:go_live) %>
         <% room_tracks.each_with_index do | track, i | %>
         <% if i == 0 || i % 3 == 0 %>
             <div class="row">
         <% end %>
                 <div class="span4">
                     <div>
-                        <% if @site.config.fetch(:go_live) %>
+                        <% if go_live %>
                             <% if track[:rooms] && track[:rooms][0] %>
                                 <a href="https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org"><img src="fosdem_2021_live.png" alt="Click for the live stream."/></a>
                             <% end %>
@@ -39,7 +40,7 @@ title: FOSDEM 2021
                         <% else %>
                         <h4><%= track[:name] %> <small>Talk</small></h4>
                         <% end %>
-                        <% if @site.config.fetch(:go_live) %>
+                        <% if go_live %>
                         <% if track[:rooms] && track[:rooms][0] %>
                         <p><a href="https://chat.fosdem.org/#/room/#<%= track[:rooms][0][1..-1] %>:fosdem.org">Go to the live stream.</a></p>
                         <% end %>

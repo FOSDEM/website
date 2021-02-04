@@ -1,6 +1,7 @@
 <%
 # vim: set ft=eruby ts=2 sw=2 et ai:
 %>
+<% go_live = @site.config.fetch(:go_live) %>
 <p class="side-box">
 <i class="icon-home"></i> <strong>Room<%= item[:rooms].size == 1 ? '' : 's' %></strong>:
 <% if item[:rooms].empty? %>
@@ -16,6 +17,22 @@
   { name: 'xCal', identifier: "/schedule/xcal/track/#{item[:slug]}/" },
 ].map{|cal| l(cal[:identifier], cal[:name]) }.join(", ")
 %>
+<br/>
+<% if ! is_stand(item[:rooms][0]) %>
+<i class="icon-facetime-video"></i> <strong>Live stream</strong>:
+<% if item[:rooms].empty? || ! go_live %>
+<span class="muted">Stream has not been set up yet</span>
+<% else %>
+<a href="<%= stream_link(item) %>"><%= fancy_room_name(item[:rooms][0]) %></a>
+<% end %>
+<br />
+<% end %>
+<i class="icon-comment"></i> <strong>Chat</strong>:
+<% if item[:rooms].empty? || ! go_live %>
+<span class="muted">We're not quite ready yet</span>
+<% else %>
+<a href="<%= stream_link(item) %>">Join the conversation!</a>
+<% end %>
 </p>
 <br style="clear: both;"/>
 <%

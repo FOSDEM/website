@@ -1,12 +1,31 @@
 <%
 # vim: set ft=eruby ts=2 sw=2 et ai:
 %>
+<% go_live = @site.config.fetch(:go_live) %>
 <ul class="side-box">
   <li><i class="icon-road"></i> <strong>Track</strong>: <%= l track(item[:track]) %></li>
   <li><i class="icon-home"></i> <strong>Room</strong>: <%= l room(item[:room]) %></li>
   <li><i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></li>
   <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %></li>
   <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item, :end %></li>
+  <% if ! is_stand(item[:room]) %>
+  <li>
+    <i class="icon-facetime-video"></i> <strong>Live stream</strong>:
+    <% if item[:room].nil? || ! go_live %>
+    <span class="muted">Stream has not been set up yet</span>
+    <% else %>
+    <a href="<%= stream_link(item) %>"><%= fancy_room_name(item[:room]) %></a>
+    <% end %>
+  </li>
+  <% end %>
+  <li>
+    <i class="icon-comment"></i> <strong>Chat</strong>:
+    <% if item[:room].nil? || ! go_live %>
+    <span class="muted">We're not quite ready yet</span>
+    <% else %>
+    <a href="<%= stream_link(item) %>">Join the conversation!</a>
+    <% end %>
+  </li>
 </ul>
 <br style="clear: both;"/>
 

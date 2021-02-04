@@ -374,4 +374,43 @@ module Fosdem
       false
     end
   end
+
+
+  def stream_link_name(room)
+    if ['d', 'l', 'm'].include? room[0].downcase
+      return '#' + room[1..-1] + ':fosdem.org'
+    elsif ['s'].include? room[0].downcase
+      return '#' + room[1..-1] + '-stand:fosdem.org'
+    else
+      return '#' + room[1..-1] + ':fosdem.org'
+    end
+  end
+
+  def stream_link(track_or_event)
+    if ! track_or_event[:rooms].nil?
+      # Track
+      return 'https://chat.fosdem.org/#/room/' + stream_link_name(track_or_event[:rooms][0])
+    elsif ! track_or_event[:conference_room].nil?
+      # Room
+      return 'https://chat.fosdem.org/#/room/' + stream_link_name(track_or_event[:slug])
+    else
+      # Event
+      return 'https://chat.fosdem.org/#/room/' + stream_link_name(track_or_event[:room])
+    end
+  end
+
+  def fancy_room_name(slug)
+    return slug[0].upcase + '.' + slug[1..-1]
+  end
+
+  def is_stand(slug)
+    if slug.nil?
+      return false
+    end
+    if slug[0].downcase == 's'
+      return true
+    else
+      return false
+    end
+  end
 end

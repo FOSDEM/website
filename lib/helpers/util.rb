@@ -309,5 +309,6 @@ module Fosdem
       end.join(", ")
     end
   end
+
 end #Fosdem
 
