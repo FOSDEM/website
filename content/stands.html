@@ -6,6 +6,7 @@ navtitle: Stands
 # vim: set ts=2 sw=2 et ai ft=eruby:
 %>
 <div class="container">
+<% go_live = @site.config.fetch(:go_live) %>
 <% stand_tracks = tracks.select{|t| ['standtrack'].include? t[:type] } %>
 <% stand_tracks.each_with_index do | stand, i | %>
     <% if i == 0 || i % 3 == 0 %>
