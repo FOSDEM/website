@@ -18,7 +18,10 @@
 ].map{|cal| l(cal[:identifier], cal[:name]) }.join(", ")
 %>
 <br/>
-<% if ! is_stand(item[:rooms][0]) %>
+<% if is_stand(item[:rooms][0]) %>
+  <i class="icon-picture"></i> <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:rooms][0]) %>">Visit the stand</a>
+  <br />
+<% else %>
 <i class="icon-facetime-video"></i> <strong>Live stream</strong>:
 <% if item[:rooms].empty? || ! go_live %>
 <span class="muted">We're not quite ready yet</span>

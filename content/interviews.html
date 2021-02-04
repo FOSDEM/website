@@ -3,7 +3,7 @@ title: Speaker Interviews
 navtitle: Interviews
 ---
 
-<p>Every edition of FOSDEM, we conduct a short interview with the main track and keynote speakers.</p>
+<p>Sadly, there are no interviews this year.</p>
 
 <% interviews = @items.select{|i| interview?(i) and not i[:disabled]}.sort_by{|i| i[:year]}.reverse.group_by{|i| i[:year]} %>
 <% if interviews.empty? %>

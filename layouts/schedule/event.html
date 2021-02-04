@@ -8,7 +8,11 @@
   <li><i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></li>
   <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %></li>
   <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item, :end %></li>
-  <% if ! is_stand(item[:room]) %>
+  <% if is_stand(item[:room]) %>
+    <li>
+      <i class="icon-picture"></i> <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:room]) %>">Visit the stand</a>
+    </li>
+  <% else %>
   <li>
     <i class="icon-facetime-video"></i> <strong>Live stream</strong>:
     <% if item[:room].nil? || ! go_live %>
@@ -42,6 +46,13 @@
 <div class="event-description"><%= item[:description] %></div>
 <% end %>
 </div>
+<% end %>
+<% if is_stand(item[:room]) %>
+  <div class="event-blurb">
+    <div class="event-abstract">
+      <p>Visit the <%= item[:track] %> at <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:room]) %>">stands.fosdem.org</a>.</p>
+    </div>
+  </div>
 <% end %>
 
 <%

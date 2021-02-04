@@ -72,7 +72,14 @@ title: FOSDEM 2021
                 <div class="span4">
                     <div>
                         <h4><%= stand[:name] %> <small>Stand</small></h4>
+                        <% if stand[:rooms] && stand[:rooms][0] %>
+                            <p>Visit the stand at <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>">stands.fosdem.org</a>!</p>
+                        <% end %>
+                        <% if go_live && stand[:rooms] && stand[:rooms][0] %>
+                        <p><a href="<%= stream_link(stand, is_chat=true) %>">Take part in the conversation.</a></p>
+                        <% else %>
                         <p>We haven't started yet. <a href="page:schedule/track/<%= stand[:slug] %>">Visit the schedule</a> to see what we have planned.</p>
+                        <% end %>
                     </div>
                 </div>
         <% if i % 3 == 2 || i == stand_tracks.length() - 1 %>

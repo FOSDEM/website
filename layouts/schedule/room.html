@@ -12,10 +12,16 @@
   %>
   <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
 <% end %>
+<% if ! @site.config.fetch(:virtual) %>
   <li><i class="icon-map-marker"></i> <strong>Location</strong>: <a href="https://nav.fosdem.org/l/<%= item[:slug] %>/">
     <%= item[:conference_room] %>
   </a></li>
-  <% if ! is_stand(item[:slug]) %>
+<% end %>
+  <% if is_stand(item[:slug]) %>
+  <li>
+    <i class="icon-picture"></i> <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:slug]) %>">Visit the stand</a>
+  </li>
+  <% else %>
   <li>
     <i class="icon-facetime-video"></i> <strong>Live stream</strong>:
     <% if ! go_live %>

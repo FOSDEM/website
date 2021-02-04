@@ -375,6 +375,17 @@ module Fosdem
     end
   end
 
+  def link_schedule_to_stand(room)
+    base = room[1..-1]
+    linker_r = $item_by_id.fetch('/stands-chatroom/')
+    linker = linker_r[:stands_chatroom_link]
+    if ! linker[base.to_sym].nil?
+      return linker[base.to_sym]
+    else
+      return base
+    end
+  end
+
 
   def stream_link_name(room)
     if ['d', 'l', 'm'].include? room[0].downcase

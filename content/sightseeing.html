@@ -8,8 +8,7 @@ aliases: /sightseeing
     <span>&copy; <a href="http://creativecommons.org/licenses/by/2.0/" rel="license">CC-BY-2.0</a> by <a href="https://secure.flickr.com/photos/brighton/4424281095/">Jim Linwood</a></span>
 </div>
 
-<p><em>SORRY, TOO LATE. THE FOSDEM 2020 TOURS ARE FULLY BOOKED.</em></p>
-
+<% if ! @site.config.fetch(:virtual) %>
 <p>
   FOSDEM hires professional guides each year to offer free
   guided tours of Brussels to the spouses/partners of FOSDEM visitors.
@@ -124,4 +123,5 @@ aliases: /sightseeing
   mail <a href="mailto:tour@fosdem.org">tour@fosdem.org</a>.
 </p>
 
+<% end %>
 <br style="clear:both;"/>
