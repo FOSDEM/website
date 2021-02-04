@@ -5,16 +5,27 @@ navtitle: Stands
 <%
 # vim: set ts=2 sw=2 et ai ft=eruby:
 %>
-<p>
-    Online stands may seem a bit different from physical stands, but not a lot has changed. We have a little over 50 stands, organised per <a href="https://stands.fosdem.org/themes/">theme</a>.
-    Normally, we would also split them per building, but this year we decided not to do so ;-)
-</p>
-<p>
-    Each stand has its own page (or group of pages), with all the information and topics they wish to show you. We've also created a special chat room for each stand, where you can discuss with the team behind the project (a bit like the hallways - though less crowded). Some stands also recorded video's, demoing their product or showing their <i>new hot thing</i>.
-</p>
-<p>
-    You can browse the stands per theme <a href="https://stands.fosdem.org/themes/">here</a> (or below) or visit all the stands <a href="https://stands.fosdem.org/stands/">here</a>.
-</p>
-<p>
-    You can visit all the stands at <a href="https://stands.fosdem.org">stands.fosdem.org</a>.
-</p>
+<div class="container">
+<% stand_tracks = tracks.select{|t| ['standtrack'].include? t[:type] } %>
+<% stand_tracks.each_with_index do | stand, i | %>
+    <% if i == 0 || i % 3 == 0 %>
+        <div class="row">
+    <% end %>
+            <div class="span4">
+                <div>
+                    <h4><%= stand[:name] %> <small>Stand</small></h4>
+                    <% if stand[:rooms] && stand[:rooms][0] %>
+                        <p>Visit the stand at <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>">stands.fosdem.org</a>!</p>
+                    <% end %>
+                    <% if go_live && stand[:rooms] && stand[:rooms][0] %>
+                    <p><a href="<%= stream_link(stand, is_chat=true) %>">Take part in the conversation.</a></p>
+                    <% else %>
+                    <p>We haven't started yet. <a href="page:schedule/track/<%= stand[:slug] %>">Visit the schedule</a> to see what we have planned.</p>
+                    <% end %>
+                </div>
+            </div>
+    <% if i % 3 == 2 || i == stand_tracks.length() - 1 %>
+        </div>
+    <% end %>
+    <% end %>
+</div>
