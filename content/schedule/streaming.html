@@ -8,12 +8,13 @@ sponsors_under_navigation: true
 <%
   show_video_links = false
   current_day_slug = ''
-  current_time = Time.now
   current_event = nil
 
-  # Uncomment the following line to test what the site looks like at a specific time
-  # current_time = Time.parse('2017-02-04 13:15:00.000000000 +0100')
-
+  if @site.config.fetch(:override_time)
+    current_time = Time.parse(@site.config.fetch(:schedule_time))
+  else
+    current_time = Time.now
+  end
   current_date = current_time.to_date
 %>
 <p>Links to the live streaming in each room will appear on this page during the conference.</a>
