@@ -387,13 +387,14 @@ module Fosdem
   end
 
 
-  def stream_link_name(room)
+  def stream_link_name(roomname)
+    room = room(roomname)[:conference_room] 
     if ['d', 'l', 'm'].include? room[0].downcase
-      return '#' + room[1..-1] + ':fosdem.org'
+      return '#' + room[2..-1] + ':fosdem.org'
     elsif ['s'].include? room[0].downcase
-      return '#' + room[1..-1] + '-stand:fosdem.org'
+      return '#' + room[2..-1] + '-stand:fosdem.org'
     else
-      return '#' + room[1..-1] + ':fosdem.org'
+      return '#' + room[2..-1] + ':fosdem.org'
     end
   end
 
