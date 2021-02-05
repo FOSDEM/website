@@ -416,6 +416,21 @@ module Fosdem
     return link % slug
   end
 
+  def stream_direct_link(track_or_event)
+    if ! track_or_event[:rooms].nil?
+      # Track
+      slug = track_or_event[:rooms][0]
+    elsif ! track_or_event[:conference_room].nil?
+      # Room
+      slug = track_or_event[:slug]
+    else
+      # Event
+      slug = track_or_event[:room]
+    end
+    link = 'https://live.fosdem.org/watch/%s'
+    return link % slug
+  end
+
   def fancy_room_name(slug)
     return slug[0].upcase + '.' + slug[1..-1]
   end

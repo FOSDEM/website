@@ -18,17 +18,30 @@
 ].map{|cal| l(cal[:identifier], cal[:name]) }.join(", ")
 %>
 <br/>
+<% # Link to the video page on chat.fosdem.org %>
 <% if is_stand(item[:rooms][0]) %>
   <i class="icon-picture"></i> <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:rooms][0]) %>">Visit the stand</a>
   <br />
 <% else %>
-<i class="icon-facetime-video"></i> <strong>Live stream</strong>:
-<% if item[:rooms].empty? || ! go_live %>
-<span class="muted">We're not quite ready yet</span>
-<% else %>
-<a href="<%= stream_link(item) %>"><%= fancy_room_name(item[:rooms][0]) %></a>
+<span class="visible-desktop">
+  <i class="icon-facetime-video"></i> <strong>Video with Q&A</strong>:
+  <% if item[:rooms].empty? || ! go_live %>
+  <span class="muted">We're not quite ready yet</span>
+  <% else %>
+  <a href="<%= stream_link(item) %>"><%= fancy_room_name(item[:rooms][0]) %></a>
+  <% end %>
+</span>
 <% end %>
 <br />
+<% # Direct link to the video stream %>
+<% if ! is_stand(item[:rooms][0]) %>
+  <i class="icon-film"></i> <strong>Video only</strong>:
+  <% if item[:rooms].empty? || ! go_live %>
+  <span class="muted">We're not quite ready yet</span>
+  <% else %>
+  <a href="<%= stream_direct_link(item) %>"><%= fancy_room_name(item[:rooms][0]) %></a>
+  <% end %>
+  <br />
 <% end %>
 <i class="icon-comment"></i> <strong>Chat</strong>:
 <% if item[:rooms].empty? || ! go_live %>

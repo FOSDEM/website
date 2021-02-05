@@ -22,12 +22,22 @@
     <i class="icon-picture"></i> <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:slug]) %>">Visit the stand</a>
   </li>
   <% else %>
-  <li>
-    <i class="icon-facetime-video"></i> <strong>Live stream</strong>:
+  <li id="live-stream-with-q-and-a" class="visible-desktop">
+    <i class="icon-facetime-video"></i> <strong>Video with Q&A</strong>:
     <% if ! go_live %>
     <span class="muted">We're not quite ready yet</span>
     <% else %>
     <a href="<%= stream_link(item) %>"><%= item[:conference_room] %></a>
+    <% end %>
+  </li>
+  <% end %>
+  <% if ! is_stand(item[:slug]) %>
+  <li>
+    <i class="icon-film"></i> <strong>Video only</strong>:
+    <% if ! go_live %>
+    <span class="muted">We're not quite ready yet</span>
+    <% else %>
+    <a href="<%= stream_direct_link(item) %>"><%= item[:conference_room] %></a>
     <% end %>
   </li>
   <% end %>

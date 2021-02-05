@@ -8,7 +8,7 @@ title: FOSDEM 2021
       <p>Find an overview of all talks and all stands. Click on any of them to visit or view them; no registration or configuration required.</p>
       <p><a href="page:schedule">Visit the schedule</a> to find out what's on in what room, click on your favourite room, sit back and relax.</p>
       <p>Confused? Unsure how to proceed? <a href="page:practical/online">Visit the practical information page</a>, <a href="page:faq">look in the FAQ</a>
-    or <a href="https://chat.fosdem.org/#/room/#infodesk:fosdem.org">talk to a human at the Infodesk</a>!</p>
+    or <a href="https://matrix.to/#/#infodesk:fosdem.org?web-instance[element.io]=chat.fosdem.org">talk to a human at the Infodesk</a>!</p>
       <p class="btn-news"><a href="#talks">To the talks.</a></p>
       <p class="btn-news"><a href="#stands">To the stands.</a></p>
       <p class="btn-news"><a href="page:schedule">To the schedule.</a></p>
@@ -41,15 +41,16 @@ title: FOSDEM 2021
                         <h4><%= track[:name] %> <small>Talk</small></h4>
                         <% end %>
                         <% if go_live %>
-                        <% if track[:rooms] && track[:rooms][0] %>
-                        <p><a href="<%= stream_link(track) %>">Go to the live stream.</a></p>
-                        <% end %>
-                        <p><a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule for this track.</a></p>
-                        <% if track[:rooms] && track[:rooms][0] %>
-                        <p><a href="<%= stream_link(track, is_chat=true) %>">Take part in the conversation.</a></p>
-                        <% end %>
+                        <ul class="unstyled">
+                            <li><i class="icon-calendar"></i> <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule for this track.</a></li>
+                            <% if track[:rooms] && track[:rooms][0] %>
+                            <li class="visible-desktop"><i class="icon-facetime-video"></i> <a href="<%= stream_link(track) %>">Video with Q&A</a></li>
+                            <li><i class="icon-film"></i> <a href="<%= stream_direct_link(track) %>">Video only</a></li>
+                            <li><i class="icon-comment"></i> <a href="<%= stream_link(track, is_chat=true) %>">Take part in the conversation.</a></li>
+                            <% end %>
+                        </ul>
                         <% else %>
-                        <p>We haven't started yet. <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule</a> to see what we have planned.</p>
+                            <p>We haven't started yet. <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule</a> to see what we have planned.</p>
                         <% end %>
                     </div>
                 </div>
@@ -72,14 +73,16 @@ title: FOSDEM 2021
                 <div class="span4">
                     <div>
                         <h4><%= stand[:name] %> <small>Stand</small></h4>
+                        <ul class="unstyled">
                         <% if stand[:rooms] && stand[:rooms][0] %>
-                            <p>Visit the stand at <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>">stands.fosdem.org</a>!</p>
+                            <li><i class="icon-picture"></i> Visit the stand at <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>">stands.fosdem.org</a>!</li>
                         <% end %>
                         <% if go_live && stand[:rooms] && stand[:rooms][0] %>
-                        <p><a href="<%= stream_link(stand, is_chat=true) %>">Take part in the conversation.</a></p>
+                            <li><i class="icon-comment"></i> <a href="<%= stream_link(stand, is_chat=true) %>">Take part in the conversation.</a></li>
                         <% else %>
-                        <p>We haven't started yet. <a href="page:schedule/track/<%= stand[:slug] %>">Visit the schedule</a> to see what we have planned.</p>
+                        <li>We haven't started yet. <a href="page:schedule/track/<%= stand[:slug] %>">Visit the schedule</a> to see what we have planned.</li>
                         <% end %>
+                        </ul>
                     </div>
                 </div>
         <% if i % 3 == 2 || i == stand_tracks.length() - 1 %>
