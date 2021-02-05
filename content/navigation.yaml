@@ -1,11 +1,12 @@
 ---
 top:
   - Home: /
+#  - Conference floor: /live
   - /about
   - /news
   - /schedule
-#  - Stands: 'https://stands.fosdem.org'
-  - /stands
+  - Stands: 'https://stands.fosdem.org'
+#  - /stands
   - /volunteer
   - Practical: /practical
 head:

@@ -409,7 +409,7 @@ module Fosdem
       slug = stream_link_name(track_or_event[:room])
     end
     if is_chat
-      link = 'https://matrix.to/#/%s:fosdem.org?web-instance[element.io]=chat.fosdem.org'
+      link = 'https://matrix.to/#/%s?web-instance[element.io]=chat.fosdem.org'
     else
       link = 'https://chat.fosdem.org/#/room/%s'
     end
