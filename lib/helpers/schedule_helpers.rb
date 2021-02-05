@@ -127,7 +127,7 @@ module Fosdem
     anchor = time.gsub(/:/, '')
     title = %Q! title="#{dt.iso8601}"!
     css = %Q! class="#{klass.map(&:to_s).join(' ')}"!
-    %Q!<a#{css}#{title} href="#{$prefix}/schedule/day/#{item[:day]}/##{anchor}">#{time}</a>!
+    %Q!<a#{css}#{title} href="#{$prefix}/schedule/day/#{item[:day]}/##{anchor}">#{time}</a> <abbr title="Central European Time; UTC +1">CET</abbr>!
   end
 
   def conference(sym = nil)
