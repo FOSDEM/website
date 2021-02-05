@@ -197,7 +197,7 @@ news:
   news_page_items: 6
 
 virtual: true
-go_live: true
+go_live: false
 
 # Use this to build the site as it will appear at a specific time
 # Example: "2021-02-06 14:15:00.000000000 +0100"
