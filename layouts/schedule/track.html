@@ -20,7 +20,7 @@
 <br/>
 <% # Link to the video page on chat.fosdem.org %>
 <% if is_stand(item[:rooms][0]) %>
-  <i class="icon-picture"></i> <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:rooms][0]) %>">Visit the stand</a>
+  <i class="icon-picture"></i> <strong>Visit</strong>: <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:rooms][0]) %>">Visit the stand</a>
 <% else %>
 <span class="visible-desktop">
   <i class="icon-facetime-video"></i> <strong>Video with Q&A</strong>:
