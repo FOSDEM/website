@@ -62,10 +62,35 @@ title: FOSDEM 2021
                             see what we have planned.</p>
                         <% end %>
                 </div>
-                <% if i % 3 == 2 || i == keynotes.length() - 1 %>
+            <% if i % 3 == 2 || i == keynotes.length() - 1 %>
             </div>
             <% end %>
             <% end %>
+            <div class="row">
+                <div class="span4" style="margin-bottom: 2em">
+                    <h4>Lightning talks <small>Lightning talks</small></h4>
+                    <% if go_live %>
+                        <ul class="unstyled">
+                            <li><i class="icon-calendar"></i> <a href="page:schedule/track/lightning_talks">Visit the
+                                schedule for this track.</a></li>
+                            <% if matrix_works %>
+                            <li class="visible-desktop"><i class="icon-facetime-video"></i> <a href="https://chat.fosdem.org/#/room/#lightningtalks:fosdem.org">Video
+                                with Q&A</a></li>
+                            <% else %>
+                            <li class="visible-desktop"><i class="icon-facetime-video"></i> We've hit a snag. The <i>Video only</i> link still works!</li>
+                            <% end %>
+                            <li><i class="icon-film"></i> <a href="https://live.fosdem.org/watch/llightningtalks">Video only</a></li>
+                            <% if  matrix_works %>
+                            <li><i class="icon-comment"></i> <a href="https://matrix.to/#/#lightningtalks:fosdem.org?web-instance[element.io]=chat.fosdem.org">Take part in the
+                                conversation.</a></li>
+                            <% end %>
+                        </ul>
+                        <% else %>
+                        <p>We haven't started yet. <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule</a> to
+                            see what we have planned.</p>
+                        <% end %>
+                </div>
+            </div>
             <div class="row" style="margin-top: 5em; margin-bottom: 2em;">
                 <div class="span12 hero-unit text-center"
                      style="padding-bottom: 1em; padding-top: 1em; margin-left: 0; margin-right: 1;">
