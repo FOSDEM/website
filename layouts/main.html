@@ -5,6 +5,7 @@ $layout_dateline ||= begin
                        days.map{|d| d[:conference_day].day}.join(' &amp; ') + " " + days.first[:conference_day].strftime('%B %Y')
                      end
 %>
+<% virtual = @site.config.fetch(:virtual) %>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head profile="http://a9.com/-/spec/opensearch/1.1/" prefix="og: http://ogp.me/ns#">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -65,7 +66,11 @@ $layout_dateline ||= begin
           <div class="frame">
             <div class="text-block">
               <h2>Online <span>/</span> <strong><%= $layout_dateline %></strong></h2>
+              <% if virtual %>
+              <a class="btn-purple" href="<%= pathof '/live/' %>">visit</a>
+              <% else %>
               <a class="btn-purple" href="<%= pathof '/schedule/' %>">schedule</a>
+              <% end %>
             </div>
             <ul class="navbar">
               <%= navigation $item_by_id.fetch('/navigation/')[:head] %>
@@ -114,7 +119,11 @@ $layout_dateline ||= begin
             <div class="info-box">
               <div class="holder">
                 <div class="frame">
+                  <% if virtual %>
+                  Online <span>/</span> <strong><%= $layout_dateline %></strong> <a class="btn-purple" href="<%= pathof '/live/' %>">visit</a>
+                  <% else %>
                   Online <span>/</span> <strong><%= $layout_dateline %></strong> <a class="btn-purple" href="<%= pathof '/schedule/' %>">schedule</a>
+                  <% end %>
                 </div>
               </div>
             </div>

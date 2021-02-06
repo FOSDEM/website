@@ -10,6 +10,7 @@ top:
   - /volunteer
   - Practical: /practical
 head:
+  - Visit: /live
   - /news
   - /about/sponsors
   - /contact
@@ -23,6 +24,7 @@ footer:
     - /faq
     - Archives: /archives
   - This year:
+#    - Visit: /live
     - /schedule
     - /stands
     - /certification

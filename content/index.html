@@ -23,6 +23,34 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     # in an "announcement-block" div or be a "news-block" div below the
     # "s-block" div. pph 20141210
     %>
+  <div class="news-block">
+    <ul class="news-list">
+      <li class="news">
+        <h3><a href="page:live#keynotes">Main tracks</a></h3>
+        <p>
+          All of our main tracks, keynotes and lightning talks.
+        </p>
+      </li>
+      <li class="news">
+        <h3><a href="page:live#devrooms">Devrooms</a></h3>
+        <p>
+          All the devrooms @ FOSDEM.
+        </p>
+      </li>
+      <li class="news">
+        <h3><a href="https://stands.fosdem.org/stands/">Stands</a></h3>
+        <p>
+          Visit our stands at <i>stands.fosdem.org</i>.
+        </p>
+      </li>
+      <li class="news">
+        <h3><a href="https://chat.fosdem.org/#/home">Chat</a></h3>
+        <p>
+          Join the chat at <i>chat.fosdem.org</i>.
+        </p>
+      </li>
+    </ul>
+  </div>
 
   <div class="news-block">
     <h2>NEWS</h2>
