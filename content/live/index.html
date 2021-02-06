@@ -56,8 +56,10 @@ title: FOSDEM 2021
                             <li class="visible-desktop"><i class="icon-facetime-video"></i> We've hit a snag. The <i>Video only</i> link still works!</li>
                             <% end %>
                             <li><i class="icon-film"></i> <a href="<%= stream_direct_link(track) %>">Video only</a></li>
+                            <% if  matrix_works %>
                             <li><i class="icon-comment"></i> <a href="<%= stream_link(track, is_chat=true) %>">Take part in the
                                 conversation.</a></li>
+                            <% end %>
                             <% end %>
                         </ul>
                         <% else %>
