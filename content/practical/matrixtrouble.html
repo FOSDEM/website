@@ -1,0 +1,110 @@
+---
+title: Troubleshooting Matrix at FOSDEM 2021
+navcat: true
+---
+<h3>Troubleshooting Matrix at FOSDEM 2021</h3>
+<p>
+  This year, FOSDEM will use Matrix to host the Q&amp;A sessions after each talk, and chat rooms.
+</p>
+<p>
+  <a href="https://matrix.org/">Matrix</a> is a federated decentralised chat protocol. It combines some of the more desirable features of IRC, Slack, and Signal.
+</p>
+
+<a name="nomatrix"></a>
+<h3>Without using Matrix, you can still do the following:</h3>
+<ul>
+<li>View the <a href="https://fosdem.org/2021/live/">live streams</a>. </li>
+<li><a href="#ircinstead">Participate in the Matrix chat rooms via IRC</a>, but some Matrix-specific features can&#39;t be bridged to IRC - e.g. upvoting questions.</li>
+</ul>
+
+<a name="quickstart"></a>
+<h3>Quick Start</h3>
+<p>
+  Whilst there are <a href="https://matrix.org/clients/">many ways</a> to participate in the FOSDEM 2021 Matrix rooms, the most straight-forward should be:
+</p>
+
+<ul>
+<li>Sign-up for a Matrix account on the FOSDEM home server at <a href="https://chat.fosdem.org/">https://chat.fosdem.org/</a>.</li>
+<li>Use the browser-based <a href="https://github.com/vector-im/element-web">&quot;Element&quot;</a> Matrix client hosted there (happens automatically when you create your account, unless you opt-out).</li>
+</ul>
+
+<a name="notworking"></a>
+<h3>chat.fosdem.org isn&#39;t working in my browser!</h3>
+<p>
+  Some privacy-oriented browser extensions (such as <a href="https://privacybadger.org/">EFF Privacy Badger</a> may block Element from contacting the FOSDEM Matrix home servers. 
+That&#39;s because <a href="https://github.com/vector-im/element-web">Element</a> operates as a full autonomous Matrix protocol client (independent of the URL where its code is hosted). 
+</p>
+
+<p>
+  Try:
+</p>
+
+<ul>
+<li>Setting browser privacy extension exceptions for <a href="https://chat.fosdem.org/">https://chat.fosdem.org/</a>.</li>
+<li>Using a dedicated vanilla browser profile.</li>
+<li>Using a different browser (e.g. Firefox, Chromium).</li>
+<li>Use the desktop packaged version of Element (which uses <a href="https://www.electronjs.org/">Electron</a>), but see below...</li>
+</ul>
+
+<a name="videoproblems"></a>
+<h3>Things are mostly working, but the video stream isn&#39;t quite right...</h3>
+<p>
+  No audio? There&#39;s an &#39;unmute&#39; button to the right of the stream (when it&#39;s not in full-screen mode). Still not working? See below.
+</p>
+<p>
+  Jitsi occasionally has <a href="https://github.com/jitsi/jitsi-meet/issues/4758">problems with Firefox</a> - this is related to the WebRTC standardisation, which is still work in progress, and part to the implementation in Firefox. Try using:
+</p>
+
+<ul>
+<li>A <a href="https://www.chromium.org/getting-involved/download-chromium">recent Chromium</a>.</li>
+<li>The <a href="https://www.mozilla.org/firefox/new/">latest Firefox release</a>, or <a href="https://www.mozilla.org/firefox/channel/desktop/">development build</a></li>
+<li>Chrome</li>
+<li><a href="https://element.io/get-started">Element Desktop</a></li>
+</ul>
+<p>
+  Still no luck?  Go to <a href="http://live.fosdem.org/">http://live.fosdem.org/</a>
+</p>
+
+<h3>I &quot;unpinned&quot; the video and now it&#39;s gone!</h3>
+<p>
+  If you click on the info icon (small i) in the top right corner, you see a list of widgets and you can pin them again.
+</p>
+
+
+<a name="otherhomeserver"></a>
+<h3>I&#39;d prefer to just use my existing Matrix client and/or home server (self-hosted or otherwise)</h3>
+<p>
+  You can do that of course, but if you are self-hosting Element, then you should update to at least <a href="https://github.com/vector-im/element-web/releases/tag/v1.7.20">v1.7.20</a>.
+</p>
+
+<p>
+  The FOSDEM Matrix home server name is <code>fosdem.org</code> (<strong>NOT</strong> <code>chat.fosdem.org</code>).
+</p>
+
+<p>
+  Other Matrix clients may be missing features which are necessary for some FOSDEM functionality.
+</p>
+
+<p>
+  Your latency may be higher if you are accessing the rooms via another home server.
+</p>
+
+<p>
+  Third-party Matrix home servers may block access the <code>fosdem.org</code> Matrix rooms (either deliberately, or because of misconfiguration).
+</p>
+
+<p>
+  If you&#39;re still having problems, please try <a href="#quickstart">Quick Start</a>, to work out if the issue that you&#39;re seeing is due to the homeserver version, or Matrix client.  If you wish, you can use the Element instance at <a href="https://chat.fosdem.org/">https://chat.fosdem.org/</a> to access other home servers if you wish (click the &quot;sign-in&quot; button, and then change the specified home server using the <code>Edit</code> link).
+</p>
+
+<a name="help"></a>
+<h3>HELP!</h3>
+<p>
+  If you are still having trouble, you can get to the FOSDEM InfoDesk via IRC at the <code>#fosdem-infodesk</code> channel on the freenode IRC network. No IRC client either? Try <a href="https://webchat.freenode.net/">https://webchat.freenode.net/</a>
+</p>
+
+<a name="ircinstead"></a>
+<h3>Participating via IRC</h2>
+<p>
+  Most FOSDEM 2021 Matrix rooms are &quot;bridged&quot; to channels on the Freenode IRC network.  e.g. the <code>#infodesk:fosdem.org</code> Matrix room is bridged to the Freenode IRC channel <code>#fosdem-infodesk</code>.  Other Matrix rooms follow the same pattern.  The keynotes stream is currently on IRC as <code>#fosdem-fosdem</code>.
+</p>
