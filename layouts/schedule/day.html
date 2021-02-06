@@ -17,7 +17,7 @@ rooms = begin
 
 columns = rooms.size + 1 # one more for the time
 
-xml.table(class: "timetable timetable-head table table-striped table-bordered table-condensed") do
+xml.table(class: "timetable timetable-body table table-striped table-bordered table-condensed") do
   xml.thead do
     xml.tr do
       xml.th(class: 'backlink') do
@@ -32,17 +32,6 @@ xml.table(class: "timetable timetable-head table table-striped table-bordered ta
       end
     end #tr
   end #thead
-  # Produce valid XHTML: can't have a table with a thead without a tbody.
-  # And we need the thead or the style breaks violently.
-  xml.tbody do
-    xml.tr do
-      xml.td(style: "display:none;") do
-      end
-    end
-  end
-end #table
-
-xml.table(class: "timetable timetable-body table table-striped table-bordered table-condensed") do
   xml.tbody do
     c = 0
     source.fetch(:by_time).each do |time, by_rooms|
