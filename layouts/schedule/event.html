@@ -18,7 +18,7 @@
   <li>
     <i class="icon-facetime-video"></i> <strong>Video with Q&A</strong>:
     <% if item[:room].nil? || ! go_live || ! matrix_works %>
-    <span class="muted">We're not quite ready yet</span>
+    <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
     <% else %>
     <a href="<%= stream_link(item) %>"><%= fancy_room_name(item[:room]) %></a>
     <% end %>
@@ -37,7 +37,7 @@
   <li>
     <i class="icon-comment"></i> <strong>Chat</strong>:
     <% if item[:room].nil? || ! go_live || ! matrix_works %>
-    <span class="muted">We're not quite ready yet</span>
+    <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
     <% else %>
     <a href="<%= stream_link(item, is_chat=true) %>">Join the conversation!</a>
     <% end %>
