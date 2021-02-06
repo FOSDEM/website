@@ -198,6 +198,7 @@ news:
 
 virtual: true
 go_live: true
+matrix_works: false
 
 # Use this to build the site as it will appear at a specific time
 # Example: "2021-02-06 14:15:00.000000000 +0100"

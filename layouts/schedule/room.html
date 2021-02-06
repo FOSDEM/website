@@ -3,6 +3,7 @@
 # encoding: utf-8
 %>
 <% go_live = @site.config.fetch(:go_live) %>
+<% matrix_works = @site.config.fetch(:matrix_works) %>
 <ul class="side-box">
   <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></li>
 <%
@@ -24,7 +25,7 @@
   <% else %>
   <li id="live-stream-with-q-and-a" class="visible-desktop">
     <i class="icon-facetime-video"></i> <strong>Video with Q&A</strong>:
-    <% if ! go_live %>
+    <% if ! go_live || ! matrix_works %>
     <span class="muted">We're not quite ready yet</span>
     <% else %>
     <a href="<%= stream_link(item) %>"><%= item[:conference_room] %></a>
@@ -43,7 +44,7 @@
   <% end %>
   <li>
     <i class="icon-comment"></i> <strong>Chat</strong>:
-    <% if ! go_live %>
+    <% if ! go_live || ! matrix_works %>
     <span class="muted">We're not quite ready yet</span>
     <% else %>
     <a href="<%= stream_link(item, is_chat=true) %>">Join the conversation!</a>

@@ -2,6 +2,7 @@
 # vim: set ft=eruby ts=2 sw=2 et ai:
 %>
 <% go_live = @site.config.fetch(:go_live) %>
+<% matrix_works = @site.config.fetch(:matrix_works) %>
 <p class="side-box">
 <i class="icon-home"></i> <strong>Room<%= item[:rooms].size == 1 ? '' : 's' %></strong>:
 <% if item[:rooms].empty? %>
@@ -24,7 +25,7 @@
 <% else %>
 <span class="visible-desktop">
   <i class="icon-facetime-video"></i> <strong>Video with Q&A</strong>:
-  <% if item[:rooms].empty? || ! go_live %>
+  <% if item[:rooms].empty? || ! go_live || ! matrix_works %>
   <span class="muted">We're not quite ready yet</span>
   <% else %>
   <a href="<%= stream_link(item) %>"><%= fancy_room_name(item[:rooms][0]) %></a>
@@ -43,7 +44,7 @@
   <br />
 <% end %>
 <i class="icon-comment"></i> <strong>Chat</strong>:
-<% if item[:rooms].empty? || ! go_live %>
+<% if item[:rooms].empty? || ! go_live || ! matrix_works %>
 <span class="muted">We're not quite ready yet</span>
 <% else %>
 <a href="<%= stream_link(item, is_chat=true) %>">Join the conversation!</a>
