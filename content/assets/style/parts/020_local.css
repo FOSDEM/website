@@ -169,7 +169,7 @@ q:after { content: "’"; }
 #schedule-grid a.trackref { font-variant: small-caps; font-style: normal !important; }
 
 .timetable {
-    table-layout: fixed;
+    table-layout: auto;
     font-size: xx-small;
 }
 
