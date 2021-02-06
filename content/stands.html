@@ -7,26 +7,36 @@ navtitle: Stands
 %>
 <div class="container">
 <% go_live = @site.config.fetch(:go_live) %>
-<% stand_tracks = tracks.select{|t| ['standtrack'].include? t[:type] } %>
-<% stand_tracks.each_with_index do | stand, i | %>
-    <% if i == 0 || i % 3 == 0 %>
-        <div class="row">
-    <% end %>
-            <div class="span4">
-                <div>
-                    <h4><%= stand[:name] %> <small>Stand</small></h4>
-                    <% if stand[:rooms] && stand[:rooms][0] %>
-                        <p>Visit the stand at <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>">stands.fosdem.org</a>!</p>
-                    <% end %>
-                    <% if go_live && stand[:rooms] && stand[:rooms][0] %>
-                    <p><a href="<%= stream_link(stand, is_chat=true) %>">Take part in the conversation.</a></p>
-                    <% else %>
-                    <p>We haven't started yet. <a href="page:schedule/track/<%= stand[:slug] %>">Visit the schedule</a> to see what we have planned.</p>
-                    <% end %>
+<% stands = tracks.select{|t| ['standtrack'].include? t[:type] } %>
+<% stands.each_with_index do | stand, i | %>
+            <% if i == 0 || i % 3 == 0 %>
+            <div class="row">
+                <% end %>
+                <div class="span4" style="margin-bottom: 2em;">
+                        <% if go_live %>
+                        <% if stand[:rooms] && stand[:rooms][0] %>
+                        <a style="font-size: 3em; line-height: 1.5em;" href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>"><span>LIVE</span></a>
+                        <% end %>
+                        <% end %>
+                        <h4><%= stand[:name] %> <small>Stand</small></h4>
+                        <ul class="unstyled">
+                            <% if stand[:rooms] && stand[:rooms][0] %>
+                            <li><i class="icon-picture"></i> Visit the stand at <a
+                                    href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>">stands.fosdem.org</a>!
+                            </li>
+                            <% end %>
+                            <% if go_live && stand[:rooms] && stand[:rooms][0] %>
+                            <li><i class="icon-comment"></i> <a href="<%= stream_link(stand, is_chat=true) %>">Take part in the
+                                conversation.</a></li>
+                            <% else %>
+                            <li>We haven't started yet. <a href="page:schedule/track/<%= stand[:slug] %>">Visit the schedule</a>
+                                to see what we have planned.
+                            </li>
+                            <% end %>
+                        </ul>
                 </div>
+                <% if i % 3 == 2 || i == stands.length() - 1 %>
             </div>
-    <% if i % 3 == 2 || i == stand_tracks.length() - 1 %>
+            <% end %>
+            <% end %>
         </div>
-    <% end %>
-    <% end %>
-</div>
