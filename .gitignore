@@ -1,6 +1,6 @@
-output
-export
-tmp
+/output
+/export
+/tmp
 .*.swp
 *.log
 .ruby-version

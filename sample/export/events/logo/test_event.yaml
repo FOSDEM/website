@@ -1,0 +1,9 @@
+---
+file: export/events/logo/test_event.jpg
+filename: test_event.jpg
+event_id: 10835
+event_slug: test_event
+identifier: "/schedule/event/test_event/logo/"
+mime: image/jpeg
+:height: 200
+:width: 200

@@ -1,0 +1,195 @@
+---
+conference:
+  conference_id: 14
+  acronym: FOSDEMTEST
+  title: FOSDEM Test Conference
+  subtitle: Test data only - content will be discarded
+  conference_phase: chaos
+  venue: Online
+  city: 
+  country: be
+  timezone: Europe/Brussels
+  currency: EUR
+  timeslot_duration: '00:05:00'
+  default_timeslots: 10
+  max_timeslot_duration: 25
+  day_change: '00:00:00'
+  remark: 
+  homepage: https://fosdem.org/
+  abstract_length: 
+  description_length: 
+  export_base_url: https://fosdem.org/2021/schedule/
+  schedule_html_include: 
+  feedback_base_url: https://penta.fosdem.org/
+  css: 
+  email: info@fosdem.org
+  f_feedback_enabled: false
+  f_submission_enabled: false
+  f_submission_new_events: false
+  f_submission_writable: false
+  f_visitor_enabled: false
+  f_reconfirmation_enabled: false
+  f_travel_enabled: false
+  f_matrix_bot_enabled: false
+  f_timeshift_test_enabled: false
+  timeshift_offset: '00:00:00'
+  test_conference_room_id: 
+  timeshift_offset_minutes: 
+days:
+  saturday:
+    conference_day_id: 26
+    name: Saturday
+    conference_day: 2021-02-06
+    slug: saturday
+    title: Saturday
+    start_time: '10:50'
+    end_time: '11:20'
+    start_time_index: 130
+    end_time_index: 136
+  sunday:
+    conference_day_id: 27
+    name: Sunday
+    conference_day: 2021-02-07
+    slug: sunday
+    title: Sunday
+rooms:
+  vtest:
+    conference_room_id: 494
+    conference_room: V.test
+    size: 100
+    rank: 10
+    slug: vtest
+    title: V.test
+    events:
+    - test_event
+    events_by_day:
+      saturday:
+      - test_event
+      sunday: []
+    start_time:
+      saturday: '10:50'
+      sunday: 
+    end_time:
+      saturday: '11:20'
+      sunday: 
+    start_time_index:
+      saturday: 130
+      sunday: 
+    end_time_index:
+      saturday: 136
+      sunday: 
+tracks:
+  test:
+    conference_track_id: 981
+    conference_track: Test Track
+    rank: 100
+    conference_call_for_papers_url: 
+    name: Test
+    title: Test Track
+    type: maintrack
+    slug: test
+    events:
+    - test_event
+    events_by_day:
+      saturday:
+      - test_event
+      sunday: []
+    rooms:
+    - vtest
+    events_per_room_per_day:
+      saturday:
+        vtest:
+        - test_event
+      sunday: {}
+    start_time:
+      saturday: '10:50'
+      sunday: 
+    end_time:
+      saturday: '11:20'
+      sunday: 
+    start_time_index:
+      saturday: 130
+      sunday: 
+    end_time_index:
+      saturday: 136
+      sunday: 
+events:
+  test_event:
+    event_id: 10835
+    conference_id: 14
+    slug: test_event
+    title: Test Event
+    subtitle: subtitle
+    conference_track_id: 981
+    event_type: lecture
+    duration: '00:30:00'
+    event_state: accepted
+    event_state_progress: confirmed
+    language: 
+    conference_room_id: 494
+    conference_day_id: 26
+    abstract: "<p>A line about the event.</p>"
+    description: "<p>More text about it.</p>"
+    start_time: '10:50'
+    end_time: '11:20'
+    start_datetime: '2021-02-06 10:50:00.000000000 +0100'
+    end_datetime: '2021-02-06 11:20:00.000000000 +0100'
+    day: saturday
+    day_name: Saturday
+    raw_abstract: "<p>A line about the event.</p>"
+    raw_description: "<p>More text about it.</p>"
+    attachments:
+    - file: export/events/attachments/test_event/slides/4744/example.pdf
+      filename: example.pdf
+      type: slides
+      event_id: 10835
+      event_slug: test_event
+      id: 4744
+      identifier: "/schedule/event/test_event/attachments/slides/4744/example/"
+      mime: application/pdf
+      title: Slides for the test event
+      size: 194007
+    links:
+    - url: https://example.com
+      title: Event website
+      rank: 
+    - title: Submit feedback
+      url: https://submission.fosdem.org/feedback/10835.php
+      rank: 
+    track: test
+    track_name: Test
+    track_full_name: Test Track
+    track_rank: 100
+    type: maintrack
+    room: vtest
+    room_name: V.test
+    room_rank: 10
+    speakers:
+    - test_account_s
+    start_time_index: 130
+    end_time_index: 136
+    logo:
+      identifier: "/schedule/event/test_event/logo/"
+      mime: image/jpeg
+speakers:
+  test_account_s:
+    person_id: 2999
+    title: Test Account S
+    gender: 
+    first_name: Test Account S
+    last_name: Kergon
+    public_name: Test Account S
+    nickname: 
+    name: Test Account S
+    sortname: S TEST
+    slug: test_account_s
+    abstract: "<p>Short biog</p>"
+    description: "<p>ext biog</p>"
+    conference_person_id: 9027
+    links: []
+    events:
+    - test_event
+    events_by_day:
+      saturday:
+      - test_event
+      sunday: []

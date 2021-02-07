@@ -1,0 +1,10 @@
+---
+file: export/events/attachments/test_event/slides/4744/example.pdf
+filename: example.pdf
+type: slides
+event_id: 10835
+event_slug: test_event
+id: 4744
+identifier: "/schedule/event/test_event/attachments/slides/4744/example/"
+mime: application/pdf
+title: Slides for the test event

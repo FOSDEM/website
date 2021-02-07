@@ -86,14 +86,13 @@ kinit yourprincipal@FOSDEM.ORG
 nanoc update -y
 ```
 
+If you do not have access to the Pentabarf database, you can copy the `export/`
+folder in the `sample/` directory to the root and go from there.
+
 ### Generating the site
 
 > This section assumes you have an exported data from pentabarf already. If you
-> haven't please see the section below first.
->
-> If you've been provided with a dump of the Pentabarf system, place
-> `pentabarf.yaml` and the `events` and `speaker` directories in the `/export`
-> directory of this repository.
+> haven't please see the section above first.
 
 ```bash
 nanoc
