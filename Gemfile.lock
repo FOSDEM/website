@@ -45,7 +45,7 @@ GEM
     rack (2.2.2)
     rainbow (3.0.0)
     rainpress (1.0.1)
-    rexml (3.2.4)
+    rexml (3.2.5)
     rmagick (4.0.0)
     rsolr (2.3.0)
       builder (>= 2.1.2)
