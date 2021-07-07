@@ -196,6 +196,8 @@ table.timetable-body {
     text-align: center;
     padding: 0.1em;
     border-color: #444444;
+    position: sticky;
+    top: 0;
 }
 .timetable thead th a,
 .timetable thead th a:visited {
@@ -238,8 +240,16 @@ table.timetable-body {
     font-family: monospace;
     font-weight: normal;
     line-height: 1.1em;
+    background-color: #2c2c2c;
+    border-color: #444444;
+    position: sticky;
+    left: 0;
 }
 .timetable tbody th.time {
+  color: #999999;
+}
+.timetable.table-striped tbody tr:nth-child(odd) th {
+  background-color: #363636;
 }
 
 <% $colormap.each do |css_class, color| %>
