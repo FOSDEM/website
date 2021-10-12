@@ -5,8 +5,8 @@ top:
   - /about
   - /news
   - /schedule
-  - Stands: 'https://stands.fosdem.org'
-#  - /stands
+# - Stands: 'https://stands.fosdem.org'
+  - /stands
   - /volunteer
   - Practical: /practical
 head:
@@ -36,8 +36,8 @@ footer:
     - /fringe
   - Practical information:
 #   - Getting there: /practical/transportation
-    - /practical/online
-    - /practical/matrix_troubleshooting
+#   - /practical/online
+#   - /practical/matrix_troubleshooting
     - T-shirts and hoodies: /tshirts
     - /practical/accessibility
 #   - /practical/accommodation
