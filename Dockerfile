@@ -1,15 +1,16 @@
-FROM ruby:2.1
+FROM ruby:2.7
 MAINTAINER ryan@slatehorse.com
 
 # Install other dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
       pngcrush \
-      imagemagick 
+      imagemagick \
+      krb5-user
 
 # Copy the Gemfile in and bundle, so we have the dependencies cached
 ADD Gemfile .
 ADD Gemfile.lock .
-RUN bundle install
+RUN gem install bundler:1.17.3 && bundle install
 
 # Set encoding to prevent nanoc exploding
 ENV LANG=C.UTF-8
