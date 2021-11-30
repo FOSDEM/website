@@ -12,7 +12,7 @@ Please help keeping this manual up to date, sources are [on github](https://gith
 
 ## Devroom expectations
 
-To be updated for the 2021 online event
+To be updated for the 2022 online event
 
 ## Before the event
 
@@ -20,10 +20,10 @@ To be updated for the 2021 online event
 
 Devrooms  issue a Call for Papers.
 
-* Note the deadlin: 12/12
+* Note the deadline: 12/12
 * Send a copy to the [FOSDEM mailing list](https://lists.fosdem.org/listinfo/fosdem)
-* We'll put a link to this on our website [2021](https://fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/)
-* Browse examples from previous years if you need inspiration. If you wish, you can ask for review  on the devroom-manager list before publication or on devrooms at fosdem.org.
+* We'll put a link to this on our website [2022](https://fosdem.org/2022/news/2021-12-01-accepted-developer-rooms/)
+* Browse examples from previous years if you need inspiration: [2021](https://fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/). If you wish, you can ask for review  on the devroom-manager list before publication or on devrooms at fosdem.org.
 
 We can also make adjustments to the names of devrooms at this early
 stage - particularly if related proposals got combined or you want
@@ -31,12 +31,13 @@ to emphasise some little change of focus.
 
 Full details of all talks and speakers that you schedule must be
 submitted into our 'pentabarf' database which is used to generate our
-website no later then <b>15th December</b>.  Please try to complete this 
+website no later then <b>31th December</b>.  Please try to complete this 
 earlier. It is better to find out scheduling conflicts early, and by the end of 
-december it is hard to reach people. The schedule at the 1st of January is used for the booklet.
+december it is hard to reach people. By running late, you also give
+your presenters less work to prepare their talks.
     
 All submissions must go through:
-      https://penta.fosdem.org/submission/FOSDEM21
+      https://penta.fosdem.org/submission/FOSDEM22
       
 Remind speakers that if they already have an account from a previous year
 they should reuse it.  (Our website links speakers to all their talks
@@ -82,10 +83,10 @@ To schedule a task in pentabarf you have to:
        Please set the 'Slug' to a unique memorable
        string (without spaces or non-ASCII characters) based on the title of
        the event.  The URL generated for the event is then:
-       https://fosdem.org/2021/schedule/event/&lt;<b>slug</b>&gt;/<br>
+       https://fosdem.org/2022/schedule/event/&lt;<b>slug</b>&gt;/<br>
        To group things to together nicely, you could put the same devroom
        prefix on them all, e.g.
-         https://fosdem.org/2020/schedule/event/ada_.../
+         https://fosdem.org/2021/schedule/event/ada_.../
       * Set the <b>progress</b> to "confirmed" or "reconfirmed" if you want it to appear on the website.
   * In the <b>schedule</b> tab:
       * Set Day, start time, duration and room.
@@ -166,12 +167,12 @@ The website is generated from the data in pentabarf.
 This runs automatically every few minutes.
 
 You can see when it was last updated near the bottom of 
-[the events page](https://fosdem.org/2021/schedule/events/).
+[the events page](https://fosdem.org/2022/schedule/events/).
 
 Note that the data gets pulled from the database slightly before
 this timestamp is generated - sometimes a few minutes before.
 If nothing on this page changed, the date won't be updated.
-https://fosdem.org/2021/sitemap.xml shows the last modified
+https://fosdem.org/2022/sitemap.xml shows the last modified
 date for every page on the site.
 
 If the system detects an inconsistency in the data, it stops
