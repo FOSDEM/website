@@ -2,6 +2,8 @@
 title: Devroom Managers Manual
 ---
 
+Please help keeping this manual up to date, sources are [on github](https://github.com/FOSDEM/website/blob/master/content/manuals/program/devroom.md)!
+
 ## Key dates
 
 * 31 October - deadline for developer room proposals
