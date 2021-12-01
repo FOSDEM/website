@@ -103,4 +103,23 @@ The site will be generated in `/output`. To view the website, you can use the
 
 ```
 nanoc view -p 1234
+
+```
+Don't forget to add the year when you check out the site, eg http://localhost:1234/2022 .
+
+
+### Running with Docker
+
+Rather than installing all dependencies on you machine, it is also possible to use a docker container with all specific versions.
+
+```bash
+docker build -t fosdem/website .
+
+# Export from Pentabarf
+docker run --rm -it -v $(pwd):/usr/src/app fosdem/website kinit <username>@FOSDEM.ORG && nanoc update -y
+# Generate the site
+docker run --rm -v $(pwd):/usr/src/app fosdem/website nanoc
+
+# Preview the site (at http://localhost:3000/2018)
+docker run --rm -v $(pwd):/usr/src/app -p 3000:3000 fosdem/website nanoc view
 ```
