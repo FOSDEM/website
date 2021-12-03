@@ -14,6 +14,40 @@ Please help keeping this manual up to date, sources are [on github](https://gith
 
 To be updated for the 2022 online event
 
+## Communication
+
+FOSDEM uses the devroom-manager mailing list for communications with the
+people who are organising devrooms.  Please make sure you read this
+list and keep the messages for reference.
+
+The FOSDEM Devrooms team can be contacted using devrooms@fosdem.org.
+Please try to remember to send individual requests to that address and
+keep this devroom-manager mailing list for messages and discussion that
+may be of interest to other devrooms.
+
+Secondly, we create mail aliases <room>-devroom-manager@fosdem.org that
+provide a convenient way for us to contact each other, for example
+to discuss moving proposed talks between devrooms.  Note that these
+alias expansions also include devrooms@fosdem.org.
+Again, please make sure you read those messages.
+
+Thirdly, we can create additional mailing lists for devrooms to use
+either for a wider team of organisers or for visitors and these may
+be public or private.
+
+## Devroom managers
+
+Each devroom needs to send to [devrooms@fosdem.org](https://lists.fosdem.org/listinfo/devrooms) the list of the
+pentabarf account names of any room organisers who need to be granted access.
+
+Devrooms managers list can be track on the devroom managers report: https://penta.fosdem.org/report/devroom_managers
+
+Devroom managers status grant access to:
+
+- devroom mailing list
+- talk review
+- talk moderation during live online event
+
 ## Before the event
 
 ### Call for Participation / call for papers
