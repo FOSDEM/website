@@ -11,7 +11,6 @@ continuously adding plugins and solutions that support faster development,
 execution and optimization of test and measurement software that excels — now,
 and next time.
 
-Join us as we contribute, collaborate and create — together. Please visit us at
-our [virtual booth](https://stands.fosdem.org/stands/opentap/) to chat.
+Join us as we contribute, collaborate and create — together. 
 
 OpenTAP supports the event financially.
