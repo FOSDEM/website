@@ -141,6 +141,10 @@ While going through all proposal it is also worth checking their content:
       real name and nickname are not yet connected when you search the internet.
                    
     * If a talk is presented by more than one author, you can add an extra speaker here (they must create a pentabarf account).
+    
+    * In case of online event, if the event is a discussion panel add the personn who will moderate the discussion with the moderator role
+    
+    * FYI, devroom managers will be added automatically by a script as coordinator on all their devroom events. 
 
  * In the <b>description</b> tab:
     * Make sure the abstract is not duplicated in the full description - both are concatenated. It is okay to leave the full description empty.
@@ -229,6 +233,49 @@ overlap so do watch out for that!
 
   Make sure you use a valid [SLUG](#scheduling-in-pentabarf).
 
+
 ## Last weeks before the event
 
-To be adjusted for the online event
+### Video upload and review
+
+In cas of online event, talks need to be pre-recorded. As a devroom managers you have to ask you speakers to edit their video (see [2021 video email to speakers](https://github.com/FOSDEM/video/wiki/FOSDEM-2021-video-email-to-speakers)) and to upoad them. Once uploaded you have to review it to check everything fine.
+
+    This section needs more info on video upload and review
+
+### create and link your Matrix chatroom account in penta
+
+    Needs reviews!
+
+In case of online event, devroom managers *(and speakers ?)* needs to link their penta account with an existing matrix account.
+One can create an account or reuse one.
+The FOSDEM matrix service is hosted here: https://chat.fosdem.org
+
+To link a matrix account in a penta account, fill in the instant messaging field:
+![Instant messaging field in penta](https://user-images.githubusercontent.com/193478/147921592-42379458-f02d-45b6-901b-dfb5dfea01f9.png)
+
+
+    To be adjusted for the online event
+
+
+## During the event
+
+### Online event
+
+The online version of the event consist in one main matric fosdem-specific chatroom by devroom. This chat room has a video stream component which streams the content of the devroom along the day. It has also a text chat component open to any audience registered in https://chat.fosdem.org. Audience can also watch teh stream withour registration in which case they can't interact in the chatroom.
+
+The video stream is composed of:
+
+- prerecorded video talk which are started automatically following the scheduling
+- live video jitsee instance for Q&A , panel discussion, BOF are started automatically: for event with video, the jitsi starts as soon as the video is finishied; for event without video (panel, BOF), it will start at the beginning of the event. 
+
+On top of the public main devroom chatroom, there are managers/speakers only chatroom used to organize the event:
+
+- each talk with Q&A or panel disucssion has a dedicated room witha jitsi video conf component
+- #yourdevroom-backstage is the place were devroom managers and speakers can meet or exchange privately
+- #devroom-managers channel to ask for help or soordinate with org team or other rooms.
+
+During the online event, devrooms managers have to moderate their chatroom with consist in:
+
+- moderate the main public chatroom discussion and note questions to speakers to fuel Q&A/panel discussion
+- be connected to the backstage channel in case speakers needs help
+- Talk moderators have to be connected and welcome speakers in the talk specific channel 10 minutes between the talk starts to test the video conf component and prepare for the live Q&A/discussion panel. The moderator has to then animate the discussion by posing questions taken from the main chatroom audience or some of their own. The live jitsi video conf which is streamed to the audience right after the talk video ends. Speaker can share their screen if a specific question needs a demo or else.
