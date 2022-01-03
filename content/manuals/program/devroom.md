@@ -261,20 +261,20 @@ To link a matrix account in a penta account, fill in the instant messaging field
 
 ### Online event
 
-The online version of the event consist in one main matric fosdem-specific chatroom by devroom. This chat room has a video stream component which streams the content of the devroom along the day. It has also a text chat component open to any audience registered in https://chat.fosdem.org. Audience can also watch teh stream withour registration in which case they can't interact in the chatroom.
+The online version of the event consists of one main matrix fosdem-specific chatroom by devroom. This chat room has a video stream component which streams the content of the devroom along the day. It has also a text chat component open to any audience registered in https://chat.fosdem.org. Audience can also watch the stream without registration in which case they can't interact in the chatroom.
 
 The video stream is composed of:
 
 - prerecorded video talk which are started automatically following the scheduling
-- live video jitsee instance for Q&A , panel discussion, BOF are started automatically: for event with video, the jitsi starts as soon as the video is finishied; for event without video (panel, BOF), it will start at the beginning of the event. 
+- live video jitsi instance for Q&A, panel discussion and BOF. These are started automatically: for event with video, the jitsi starts as soon as the video is finished; for event without video (panel, BOF), it will start at the beginning of the event.
 
 On top of the public main devroom chatroom, there are managers/speakers only chatroom used to organize the event:
 
-- each talk with Q&A or panel disucssion has a dedicated room witha jitsi video conf component
+- each talk with Q&A or panel discussion has a dedicated room with a jitsi video conf component
 - #yourdevroom-backstage is the place were devroom managers and speakers can meet or exchange privately
-- #devroom-managers channel to ask for help or soordinate with org team or other rooms.
+- #devroom-managers channel to ask for help or coordinate with org team or other rooms.
 
-During the online event, devrooms managers have to moderate their chatroom with consist in:
+During the online event, devrooms managers have to moderate their chatroom which consists off:
 
 - moderate the main public chatroom discussion and note questions to speakers to fuel Q&A/panel discussion
 - be connected to the backstage channel in case speakers needs help
