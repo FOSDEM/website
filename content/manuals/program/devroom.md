@@ -202,6 +202,14 @@ overlap so do watch out for that!
 
 ## Last weeks before the event
 
+### Read The Free Manual
+
+Those manuals are from 2021 but must likely still applies: 
+[speakers documentation from video team](https://github.com/FOSDEM/video/blob/master/instructions/fosdem2021/speakers.md)
+[Nice instruction from PERL devroom](https://news.perlfoundation.org/post/fosdem_2021_speaker_guidance)
+
+The video team manual explains how the platform behaves during the event.
+
 ### Video upload and review
 
 In cas of online event, talks need to be pre-recorded. As a devroom managers you have to ask you speakers to edit their video (see [2021 video email to speakers](https://github.com/FOSDEM/video/wiki/FOSDEM-2021-video-email-to-speakers)) and to upoad them. Once uploaded you have to review it to check everything fine.
@@ -212,7 +220,7 @@ In cas of online event, talks need to be pre-recorded. As a devroom managers you
 
     Needs reviews!
 
-In case of online event, devroom managers *(and speakers ?)* needs to link their penta account with an existing matrix account.
+In case of online event, devroom managers and speakers needs to link their penta account with an existing matrix account.
 One can create an account or reuse one.
 The FOSDEM matrix service is hosted here: https://chat.fosdem.org
 
