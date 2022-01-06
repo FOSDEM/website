@@ -205,8 +205,9 @@ overlap so do watch out for that!
 ### Read The Free Manual
 
 Those manuals are from 2021 but must likely still applies: 
-[speakers documentation from video team](https://github.com/FOSDEM/video/blob/master/instructions/fosdem2021/speakers.md)
-[Nice instruction from PERL devroom](https://news.perlfoundation.org/post/fosdem_2021_speaker_guidance)
+
+- [speakers documentation from video team](https://github.com/FOSDEM/video/blob/master/instructions/fosdem2021/speakers.md)
+- [Nice instruction from PERL devroom](https://news.perlfoundation.org/post/fosdem_2021_speaker_guidance)
 
 The video team manual explains how the platform behaves during the event.
 
