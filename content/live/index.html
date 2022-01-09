@@ -28,6 +28,7 @@ title: Conference Floor
                     <a name="keynotes"></a>
                     <h3>MAIN TRACKS</h3>
                 </div>
+            <!-- Row -->
             </div>
             <% keynotes.each_with_index do | track, i | %>
             <% if i == 0 || i % 3 == 0 %>
@@ -61,8 +62,10 @@ title: Conference Floor
                         <p>We haven't started yet. <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule</a> to
                             see what we have planned.</p>
                         <% end %>
+                <!-- Keynote item -->
                 </div>
             <% if i % 3 == 2 || i == keynotes.length() - 1 %>
+            <!-- Keynote row -->
             </div>
             <% end %>
             <% end %>
@@ -89,7 +92,9 @@ title: Conference Floor
                         <p>We haven't started yet. <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule</a> to
                             see what we have planned.</p>
                         <% end %>
+                <!-- Item -->
                 </div>
+            <!-- Row -->
             </div>
             <div class="row" style="margin-top: 5em; margin-bottom: 2em;">
                 <div class="span12 hero-unit text-center"
@@ -130,8 +135,10 @@ title: Conference Floor
                         <p>We haven't started yet. <a href="page:schedule/track/<%= track[:slug] %>">Visit the schedule</a> to
                             see what we have planned.</p>
                         <% end %>
+                    <!-- Devroom item -->
                 </div>
-                <% if i % 3 == 2 || i == keynotes.length() - 1 %>
+                <% if i % 3 == 2 || i == devrooms.length() - 1 %>
+                <!-- Devroom row -->
             </div>
             <% end %>
             <% end %>
@@ -167,8 +174,10 @@ title: Conference Floor
                             </li>
                             <% end %>
                         </ul>
+                    <!-- Stand item -->
                 </div>
                 <% if i % 3 == 2 || i == stands.length() - 1 %>
+                <!-- Stand row -->
             </div>
             <% end %>
             <% end %>
