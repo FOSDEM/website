@@ -74,12 +74,12 @@ Videos should be uploaded to https://penta.fosdem.org
 * resolution: 1280x720
 * frame rate: 25
 * fps video codec: h264 video codec, main profile
-* video bitrate: <= 2Mbit/s
+* video bitrate: aim for 2Mbit/s
 * audio codec: aac audio codec
 * audio sample rate: 48 KHz mono
 * audio bitrate: 128 Kbit/s
 * media container: whatever is easiest for you
-* maximum size of 1 GB
+* maximum size of 2 GB
 
 When you upload your video, the system will verify that it meets these requirements. If it does not, the video will be transcoded first (but this will take longer).
 
