@@ -79,6 +79,7 @@ Videos should be uploaded to https://penta.fosdem.org
 * audio sample rate: 48 KHz mono
 * audio bitrate: 128 Kbit/s
 * media container: whatever is easiest for you
+* maximum size of 1 GB
 
 When you upload your video, the system will verify that it meets these requirements. If it does not, the video will be transcoded first (but this will take longer).
 
