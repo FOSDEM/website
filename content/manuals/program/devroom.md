@@ -65,9 +65,9 @@ to emphasise some little change of focus.
 
 Full details of all talks and speakers that you schedule must be
 submitted into our 'pentabarf' database which is used to generate our
-website no later then <b>31th December</b>.  Please try to complete this 
+website no later then <b>31st December</b>.  Please try to complete this 
 earlier. It is better to find out scheduling conflicts early, and by the end of 
-december it is hard to reach people. By running late, you also give
+December it is hard to reach people. By running late, you also give
 your presenters less work to prepare their talks.
     
 All submissions must go through:
@@ -135,16 +135,16 @@ While going through all proposal it is also worth checking their content:
         * To show a person's nickname, set the Public Name field to
           "Firstname Lastname (Nickname)".
                    
-      Unfortunately, the form Firstname "Nickname" Lastname is not currently supported by the code. 
+      Unfortunately, the form Firstname "Nickname" Lastname is not currently supported by the code.
 
     * Only in rare cases will we hide the speaker's real name - e.g. if their
       real name and nickname are not yet connected when you search the internet.
                    
     * If a talk is presented by more than one author, you can add an extra speaker here (they must create a pentabarf account).
     
-    * In case of online event, if the event is a discussion panel add the personn who will moderate the discussion with the moderator role
+    * In case of online event, if the event is a discussion panel add the person who will moderate the discussion with the moderator role
     
-    * FYI, devroom managers will be added automatically by a script as coordinator on all their devroom events. 
+    * FYI, devroom managers will be added automatically by a script as coordinator on all their devroom events.
 
  * In the <b>description</b> tab:
     * Make sure the abstract is not duplicated in the full description - both are concatenated. It is okay to leave the full description empty.
@@ -153,7 +153,7 @@ While going through all proposal it is also worth checking their content:
 <h4>Inform your speakers</h4>
 <ul>
   <li>
-    Keep in mind that pentabarf does not send automatical emails. You have to inform your speakers yourself. Note that you can use <a href="https://github.com/meyskens/penta-export">this utility</a> provided by the Go devroom managers (thanks!) to get an export of all talks of your track with contact details of the speakers. 
+    Keep in mind that pentabarf does not send automatic emails. You have to inform your speakers yourself. Note that you can use <a href="https://github.com/meyskens/penta-export">this utility</a> provided by the Go devroom managers (thanks!) to get an export of all talks of your track with contact details of the speakers.
   </li>
   <li>
     Encourage your speakers to upload photographs and to
@@ -197,7 +197,7 @@ While going through all proposal it is also worth checking their content:
 
   * That's not crazy at all.  Please do this.
     The video information gets generated from this, so it's the simplest way
-    to make sure the videos are tagged correctly. It would help for the booklets that the titles are very short. 
+    to make sure the videos are tagged correctly. It would help for the booklets that the titles are very short.
 
 #### Website schedule
 
@@ -238,7 +238,7 @@ overlap so do watch out for that!
 
 ### Video upload and review
 
-In cas of online event, talks need to be pre-recorded. As a devroom managers you have to ask you speakers to edit their video (see [2021 video email to speakers](https://github.com/FOSDEM/video/wiki/FOSDEM-2021-video-email-to-speakers)) and to upoad them. Once uploaded you have to review it to check everything fine.
+In case of online event, talks need to be pre-recorded. As a devroom manager you have to ask you speakers to edit their video (see [2021 video email to speakers](https://github.com/FOSDEM/video/wiki/FOSDEM-2021-video-email-to-speakers)) and to upload them. Once uploaded you have to review it to check everything fine.
 
     This section needs more info on video upload and review
 
@@ -271,10 +271,10 @@ The video stream is composed of:
 On top of the public main devroom chatroom, there are managers/speakers only chatroom used to organize the event:
 
 - each talk with Q&A or panel discussion has a dedicated room with a jitsi video conf component
-- #yourdevroom-backstage is the place were devroom managers and speakers can meet or exchange privately
+- #yourdevroom-backstage is the place where devroom managers and speakers can meet or exchange privately
 - #devroom-managers channel to ask for help or coordinate with org team or other rooms.
 
-During the online event, devrooms managers have to moderate their chatroom which consists off:
+During the online event, devrooms managers have to moderate their chatroom which consists of:
 
 - moderate the main public chatroom discussion and note questions to speakers to fuel Q&A/panel discussion
 - be connected to the backstage channel in case speakers needs help
