@@ -68,8 +68,9 @@ headset
 occasion 
 
 ## Uploading videos
-Videos should be uploaded to https://penta.fosdem.org
-(through your account). Technical requirements for your presentation video are:
+Videos should be uploaded to https://penta.fosdem.org/submission/FOSDEM22. Click on "Events" in the left menu, select your own event, select "General" tab, scroll down to "Pre-recorded Video Upload URL" and click on "Upload" text.
+
+Technical requirements for your presentation video are:
 
 * resolution: 1280x720
 * frame rate: 25
