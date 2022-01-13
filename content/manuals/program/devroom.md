@@ -142,9 +142,9 @@ While going through all proposal it is also worth checking their content:
                    
     * If a talk is presented by more than one author, you can add an extra speaker here (they must create a pentabarf account).
     
-    * In case of online event, if the event is a discussion panel add the person who will moderate the discussion with the moderator role
+    * In case of online event, event must have a host role person attached to it. The host is responsible for welcoming speakers and moderate Q&A. If you want the host to be listed publicly on the website add the host again with the moderator role this time.
     
-    * FYI, devroom managers will be added automatically by a script as coordinator on all their devroom events.
+    * FYI, devroom managers will be added automatically by a script as coordinator on all their devroom events. Having at least one coordinator is mandatory.
 
  * In the <b>description</b> tab:
     * Make sure the abstract is not duplicated in the full description - both are concatenated. It is okay to leave the full description empty.
