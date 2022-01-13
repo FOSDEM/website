@@ -161,4 +161,4 @@ in a separate live video conference after your talk has ended.
 
 ## Final words
 This manual is based on a [news post](https://news.perlfoundation.org/post/fosdem_2021_speaker_guidance) by the Perl devroom organisers of 2021.
-We encourage anyone to improve this text: sources are [on github](https://github.com/FOSDEM/website/   blob/master/content/manuals/program/devroom.md)!
+We encourage anyone to improve this text: sources are [on github](https://github.com/FOSDEM/website/blob/master/content/manuals/program/devroom.md)!
