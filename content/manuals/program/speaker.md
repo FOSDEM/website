@@ -21,8 +21,8 @@ this event, here are some guidance notes to support your planning.
 
 ## Key dates
 
-* 17th January 2022
-  All pre-recorded talks are expected to be uploaded by 17th January
+* 21st January 2022
+  All pre-recorded talks are expected to be uploaded by 21st January
   2022 to Pentabarf - the upload link should be available by the time you read
   this, if you don't have it, contact your devroom organiser. After this date,
   there is one week scheduled for you to review and if necessary, to re-upload to
