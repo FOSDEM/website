@@ -427,7 +427,7 @@ module Fosdem
                        eventpersons = dblist(%q{
                          SELECT *
                          FROM event_person
-                         WHERE event_role IN ('coordinator', 'moderator', 'speaker')
+                         WHERE event_role IN ('moderator', 'speaker')
                          AND event_role_state IN ('confirmed', 'offer')
                        })
                                       .map { |ep|
