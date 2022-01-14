@@ -18,6 +18,7 @@
                                   else
                                     [ ".logo-list .logo-#{s.id} a", s.thumb ]
                                   end
+#                image = Magick::Image.from_blob(IO.read(logo[:filename])).first
                 image = Magick::Image.from_blob(IO.read(logo[:filename])).first
                 h[css_class] = logo[:filename]
               end
