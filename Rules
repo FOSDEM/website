@@ -375,6 +375,9 @@ end
 route '/schedule/pentabarf/' do
   "#{$prefix}/schedule/xml"
 end
+route '/schedule/pentabarf-tz/' do
+  "#{$prefix}/schedule/xml-tz"
+end
 route '/schedule/xcal/' do
   "#{$prefix}/schedule/xcal"
 end
