@@ -1,3 +1,11 @@
 ---
 kind: internal
 events:
+    'CentOS Dojo':
+        location: online
+        start: 2022-02-03
+        end: 2022-02-04
+        cost: 0
+        registration: None
+        website: https://wiki.centos.org/Events/Dojo/FOSDEM2022
+        contact: shaunm@redhat.com
