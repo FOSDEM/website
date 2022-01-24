@@ -90,7 +90,7 @@ correct video.
 If you want to change the video, you can overwrite by uploading a replacement.
 However once you have confirmd the video, you can't upload it without FOSDEM
 resetting your confirmation. This enables them to take control of last-minute
-changes.
+changes. A manual upload reset can be requested through video@fosdem.org. In any contact with the video team, please always mention your talk's event id from petabarf.
 
 Bernard Tyers has [created a slide share showing exactly how the upload process
 works](https://www.flickr.com/photos/runningwithbulls/50829935862/in/dateposted/).
