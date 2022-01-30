@@ -390,15 +390,8 @@ module Fosdem
   def stream_link_name(roomname)
     room = room(roomname)[:conference_room]
     matrix_room_name = room[2..-1]
-    if ['d', 'l', 'm'].include? room[0].downcase
-      # Consistency is not our thing
-      if matrix_room_name.downcase == 'network'.downcase
+    if ['d'].include? room[0].downcase
         return '#' + matrix_room_name + '-devroom:fosdem.org'
-      elsif matrix_room_name.downcase == 'community'.downcase && room[0].downcase == 'd'.downcase
-        return '#' + matrix_room_name + '-devroom:fosdem.org'
-      else
-        return '#' + matrix_room_name + ':fosdem.org'
-      end
     elsif ['s'].include? room[0].downcase
       return '#' + matrix_room_name + '-stand:fosdem.org'
     elsif ['k'].include? room[0].downcase
