@@ -813,13 +813,15 @@ module Fosdem
           next if e['room'] =~ /3244/
           next if e['room'] =~ /147/
           next if e['track'] =~ /certification/
-          next if e['track'] =~ /bof/
+          # next if e['track'] =~ /bof/
+          next if e['track'] =~ /infodesk/
           next if e['track'] =~ /workshop/
+          next if e['track'] =~ /stand/
 
           current_time = Time.now
 
           # Uncomment the following line to test what the site looks like at a specific time
-          # current_time = Time.parse('2017-02-04 13:15:00.000000000 +0100')
+          # current_time = Time.parse('2022-02-05 10:15:00.000000000 +0100')
 
           event_start = Time.parse(e['start_datetime'])
           event_end = Time.parse(e['end_datetime'])
@@ -834,6 +836,56 @@ module Fosdem
           video_link_count += 1
         end
         log(:high, "added #{video_link_count} live video links")
+      end
+
+# TODO Only if virtual?
+      # Add chat room links 
+      begin
+        chat_link_count = 0
+        events.each do |e|
+          next if e['track'] =~ /certification/
+
+          current_time = Time.now
+
+          # Uncomment the following line to test what the site looks like at a specific time
+          # current_time = Time.parse('2022-02-05 16:15:00.000000000 +0100')
+
+          event_start = Time.parse(e['start_datetime'])
+          event_end = Time.parse(e['end_datetime'])
+          next if event_start - current_time > 48 * 60 * 60
+
+          ll = {}
+          lm = {}
+
+          # For talks, show the private room afterwards
+          if ( e['room'] =~ /^[dkb]/ && current_time > event_end )
+            chatroom_name = e['slug'] + ':fosdem.org'
+          else
+            chatroom_name = e['room_name'].gsub(/^../, '')
+            if ( e['room'] =~ /^s/ )
+              chatroom_name += '-stand:fosdem.org'
+            elsif ( e['room'] =~ /^d/ )
+              chatroom_name += '-devroom:fosdem.org'
+            elsif ( e['room'] =~ /^k/ )
+              chatroom_name += '-keynotes:fosdem.org'
+            else
+              chatroom_name += ':fosdem.org'
+            end
+          end
+
+          ll['title'] = 'Chat room (web)'
+          ll['url'] = 'https://chat.fosdem.org/#/room/#' + chatroom_name
+          ll['rank'] = nil
+          e['links'] << ll
+
+          lm['title'] = 'Chat room (app)'
+          lm['url'] = 'https://matrix.to/#/#' + chatroom_name + '?web-instance[element.io]=chat.fosdem.org'
+          lm['rank'] = nil
+          e['links'] << lm
+
+          chat_link_count += 2
+        end
+        log(:high, "added #{chat_link_count} chat room links")
       end
 
       # Add feedback links (FIXME Only after the event!)
