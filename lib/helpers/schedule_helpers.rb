@@ -431,6 +431,7 @@ module Fosdem
       # Event
       slug = track_or_event[:room]
     end
+    slug = slug.delete("_")
     link = 'https://live.fosdem.org/watch/%s'
     return link % slug
   end
