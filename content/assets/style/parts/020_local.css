@@ -499,3 +499,19 @@ pre.sh {
 .name-index-items li:before {
     content: "\00B7\00A0";
 }
+
+@media (max-width: 767px) {
+  /* breakpoint in line with bootstraps "phones to tablets" */
+
+  #main {
+    padding: 18px;
+  }
+
+  .container-fluid .row-fluid [class*="span"] {
+    width: 100%;
+    margin-left: 0;
+  }
+  .container-fluid .row-fluid [class*="span"] ul {
+    margin-bottom: 0;
+  }
+}
