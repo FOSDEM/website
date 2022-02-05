@@ -15,6 +15,8 @@ standtracks = tracks.select{|t| t[:type] == 'standtrack'}.sort_by{|t| [ t[:rank]
 lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
+
+columns = 3
 %>
 
 <div class="info-block">
@@ -212,7 +214,6 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 </p>
 <%
   devrooms_announcement = @items.select{|i| i.identifier =~ %r{^/news/.*accepted-devrooms.*/$}}.first
-  columns = 3
   if not devrooms.empty?
 %>
 <p>
@@ -221,7 +222,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 </p>
 <div class="container-fluid">
     <div class="row-fluid">
-        <% devrooms.sort_by{|x| x[:title]}.each_slice(devrooms.size / columns) do |list| %>
+        <% devrooms.sort_by{|x| x[:title]}.each_slice((devrooms.size / columns).ceil) do |list| %>
         <div class="span<%= 9 / columns %>">
             <ul>
                 <% list.each do |t| %>
@@ -280,7 +281,7 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 </p>
 <div class="container-fluid">
     <div class="row-fluid">
-        <% standtracks.sort_by{|x| x[:title].downcase}.each_slice(standtracks.size / columns) do |list| %>
+        <% standtracks.sort_by{|x| x[:title].downcase}.each_slice((standtracks.size / columns).ceil) do |list| %>
         <div class="span<%= 9 / columns %>">
             <ul>
                 <% list.each do |t| %>
