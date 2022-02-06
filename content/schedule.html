@@ -16,7 +16,7 @@ lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
 
-columns = 3
+columns = 3.0
 %>
 
 <div class="info-block">
