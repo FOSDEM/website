@@ -867,21 +867,18 @@ module Fosdem
 
           ll = {}
           lm = {}
+          lh = {}
+          li = {}
 
-          # For talks, show the private room afterwards
-          if ( e['room'] =~ /^[dkb]/ && current_time > event_end )
-            chatroom_name = e['slug'] + ':fosdem.org'
+          chatroom_name = e['room_name'].gsub(/^../, '')
+          if ( e['room'] =~ /^s/ )
+            chatroom_name += '-stand:fosdem.org'
+          elsif ( e['room'] =~ /^d/ )
+            chatroom_name += '-devroom:fosdem.org'
+          elsif ( e['room'] =~ /^k/ )
+            chatroom_name += '-keynotes:fosdem.org'
           else
-            chatroom_name = e['room_name'].gsub(/^../, '')
-            if ( e['room'] =~ /^s/ )
-              chatroom_name += '-stand:fosdem.org'
-            elsif ( e['room'] =~ /^d/ )
-              chatroom_name += '-devroom:fosdem.org'
-            elsif ( e['room'] =~ /^k/ )
-              chatroom_name += '-keynotes:fosdem.org'
-            else
-              chatroom_name += ':fosdem.org'
-            end
+            chatroom_name += ':fosdem.org'
           end
 
           ll['title'] = 'Chat room (web)'
@@ -895,6 +892,25 @@ module Fosdem
           e['links'] << lm
 
           chat_link_count += 2
+
+          # For talks, also show the private room afterwards
+          if ( e['room'] =~ /^[dkb]/ && current_time > event_end )
+            chatroom_name = e['room_name'].gsub(/^../, '') + "-"
+            chatroom_name += e['slug'] + ':fosdem.org'
+
+            lh['title'] = 'Hallway chat room (web)'
+            lh['url'] = 'https://chat.fosdem.org/#/room/#' + chatroom_name
+            lh['rank'] = nil
+            e['links'] << lh
+
+            li['title'] = 'Hallway chat room (app)'
+            li['url'] = 'https://matrix.to/#/#' + chatroom_name + '?web-instance[element.io]=chat.fosdem.org'
+            li['rank'] = nil
+            e['links'] << li
+
+            chat_link_count += 2
+          end
+
         end
         log(:high, "added #{chat_link_count} chat room links")
       end
