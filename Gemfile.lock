@@ -62,7 +62,7 @@ GEM
     systemu (2.6.5)
     thread_safe (0.3.6)
     ttfunk (1.6.2.1)
-    tzinfo (1.2.6)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     tzinfo-data (1.2019.3)
       tzinfo (>= 1.0.0)
