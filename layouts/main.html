@@ -65,7 +65,7 @@ $layout_dateline ||= begin
         <div class="holder">
           <div class="frame">
             <div class="text-block">
-              <h2>Online <span>/</span> <strong><%= $layout_dateline %></strong></h2>
+              <h2>Brussels <span>/</span> <strong><%= $layout_dateline %></strong></h2>
               <% if virtual %>
               <a class="btn-purple" href="<%= pathof '/live/' %>">visit</a>
               <% else %>
@@ -122,7 +122,7 @@ $layout_dateline ||= begin
                   <% if virtual %>
                   Online <span>/</span> <strong><%= $layout_dateline %></strong> <a class="btn-purple" href="<%= pathof '/live/' %>">visit</a>
                   <% else %>
-                  Online <span>/</span> <strong><%= $layout_dateline %></strong> <a class="btn-purple" href="<%= pathof '/schedule/' %>">schedule</a>
+                  Brussels <span>/</span> <strong><%= $layout_dateline %></strong> <a class="btn-purple" href="<%= pathof '/schedule/' %>">schedule</a>
                   <% end %>
                 </div>
               </div>
@@ -166,7 +166,7 @@ $layout_dateline ||= begin
         <div class="company-info">
           <div class="company-info-logo"></div>
           <strong class="logo-small"><a href="<%= pathof '/schedule/' %>"><%= conference()[:acronym] %></a></strong>
-          <p>Online <span>/</span> <strong><%= $layout_dateline %></strong></p>
+          <p>Brussels <span>/</span> <strong><%= $layout_dateline %></strong></p>
         </div>
         <div class="license-info">
           <div class="license-info-logo"></div>
