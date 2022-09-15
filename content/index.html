@@ -70,5 +70,23 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
 
   <div class="location-block">
     <h2>LOCATION</h2>
-    <p>FOSDEM 2022 will take place online.</p>
+    <p>FOSDEM takes place at the ULB Solbosch Campus, <strong>Brussels, Belgium</strong>, Europe, Earth.</p>
+    <div class="location-info">
+      <div class="map">
+        <img style="float: right; text-align: right" src="asset:campusmap" alt="ULB Solbosch Campus map: Location of FOSDEM" title="ULB Solbosch Campus map: Location of FOSDEM"/>
+      </div>
+      <div class="location-text">
+        <a class="logo-ulb-big" href="#">Université libre de bruxelles</a>
+        <ul class="location-list">
+	  <li>ULB</li>
+          <li>Campus du Solbosch</li>
+          <li>Av. F. D. Roosevelt 50</li>
+          <li>1050 Bruxelles</li>
+          <li>Belgium</li>
+        </ul>
+        <div class="btn-location">
+          <a class="btn-purple" href="<%= pathof '/practical/transportation/' %>">venue &amp; travel</a>
+        </div>
+      </div>
+    </div>
   </div>

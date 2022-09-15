@@ -25,7 +25,7 @@ footer:
     - /faq
     - Archives: /archives
   - This year:
-    - Visit: /live
+#   - Visit: /live
     - /schedule
     - /stands
     - /certification
