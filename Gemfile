@@ -19,7 +19,7 @@ gem "pg", "~>0.18.4" # 1.0 requires ruby >= 2.3
 gem "prawn"
 gem "prawn-table"
 gem "rainpress"
-gem "rmagick"
+gem "rmagick", "4.0.0" # 4.1+ generates warnings
 gem "systemu" # needed for "nanoc deploy"
 gem "tzinfo"
 gem "tzinfo-data"
