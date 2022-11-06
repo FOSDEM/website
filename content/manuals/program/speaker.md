@@ -88,7 +88,7 @@ A 'review' link will be available so you can confirm that you have uploaded the
 correct video.
 
 If you want to change the video, you can overwrite by uploading a replacement.
-However once you have confirmd the video, you can't upload it without FOSDEM
+However once you have confirmed the video, you can't upload it without FOSDEM
 resetting your confirmation. This enables them to take control of last-minute
 changes. A manual upload reset can be requested through video@fosdem.org. In any contact with the video team, please always mention your talk's event id from petabarf.
 
