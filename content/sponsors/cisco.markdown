@@ -20,5 +20,5 @@ such as Application Networking, Data Center, Digital Media, IPICS, Mobility,
 Security, Storage Networking, TelePresence, Unified Communications, Video and
 Virtualization
 
-While the 2022 event takes place online, Cisco still supports the event by
-providing the on-site equipment year-round.
+Cisco provides all of our WLAN hardware and helps us setting up the wireless
+network.

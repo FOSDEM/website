@@ -1,6 +1,6 @@
 DST := ../content/sponsors
 
-EXTS = eps svg png
+EXTS = eps svg png jpg
 
 IN = $(foreach EXT, $(EXTS), $(wildcard *.$(EXT)))
 SRCS = $(shell echo $(IN) | perl -pe 's/(-big|-small)?\.[^.]+(?=\s)//g' )

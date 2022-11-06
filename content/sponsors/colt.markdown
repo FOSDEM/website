@@ -17,5 +17,4 @@ Colt operates across Europe, Asia and North America with connections into over
 integrated managed communications and IT infrastructure services business,
 with headquarters in Tokyo and operations in Hong Kong, Seoul and Singapore.
 
-While the 2022 event takes place online, Colt still supports the event by
-providing the on-site internet uplink year-round.
+Colt sponsors an internet uplink at FOSDEM.
