@@ -682,7 +682,7 @@ module Fosdem
                      #if t['conference_track'] == 'Community devroom' then
                      #  t['name'] = t['conference_track']
                      #else
-                     #  t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
+                     t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
                      #end
                      t['title'] = t['conference_track']
                      t['type'] = case t['conference_track']
