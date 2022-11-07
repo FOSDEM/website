@@ -54,10 +54,10 @@ Devrooms  issue a Call for Papers.
 
 * Note the deadline: November 12
 * Send a copy to the [FOSDEM mailing list](https://lists.fosdem.org/listinfo/fosdem)
-* CfP will appear on the [accepted developer rooms](https://fosdem.org/2023/news/2021-11-30-accepted-developer-rooms/) announcement 
+* CfP will appear on the [accepted developer rooms](https://fosdem.org/2023/news/2022-11-07-accepted-developer-rooms/) announcement 
 * Browse examples from previous years if you need inspiration: 
-* [2021](https://archive.fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/)
-* [2022](https://archive.fosdem.org/2022/news/2021-11-30-accepted-developer-rooms/)
+  * [2021](https://archive.fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/)
+  * [2022](https://archive.fosdem.org/2022/news/2021-11-30-accepted-developer-rooms/)
 
 If you wish, you can ask for review  on the devroom-manager list before publication or on devrooms at fosdem.org.
 
