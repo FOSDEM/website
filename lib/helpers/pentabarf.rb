@@ -670,17 +670,6 @@ module Fosdem
                  SELECT *
                  FROM conference_track
                  WHERE conference_id=$1
-                 AND conference_track_id IN (
-                   SELECT DISTINCT conference_track_id
-                   FROM event
-                   WHERE conference_id=$1
-                   AND event_state='accepted'
-                   AND event_state_progress IN ('confirmed', 'reconfirmed')
-                   AND event_type != 'movie'
-                   AND start_time IS NOT NULL
-                   AND (language IS NULL OR language='en')
-                   AND public=true
-                 )
                  ORDER BY rank, conference_track_id}, [cid]) do |res|
                    res
                      .reject { |t| t['conference_track'] == 'Main Tracks' }
@@ -690,11 +679,11 @@ module Fosdem
                      # time to come up with anything more elegant than this!
                      #  pph 20150109.  Disabled agk 20160104 (for Security devroom).
                      #  Re-enabled 20171222 for Community devroom with same name as main track.
-                     if t['conference_track'] == 'Community devroom' then
-                       t['name'] = t['conference_track']
-                     else
-                       t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
-                     end
+                     #if t['conference_track'] == 'Community devroom' then
+                     #  t['name'] = t['conference_track']
+                     #else
+                     #  t['name'] = t['conference_track'].gsub(/\s+(track|devroom)$/i, '')
+                     #end
                      t['title'] = t['conference_track']
                      t['type'] = case t['conference_track']
                                  when /\s+devroom$/i
