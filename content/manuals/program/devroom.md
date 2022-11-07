@@ -29,9 +29,12 @@ to discuss moving proposed talks between devrooms.  Note that these
 alias expansions also include devrooms@fosdem.org.
 Again, please make sure you read those messages.
 
+A list of mail aliases can be found in [pentabarf](https://penta.fosdem.org/report/devroom_managers)
+(this list is only accessible to devroom managers), so you can contact other devrooms, eg for moving talks to another room.
+
 Thirdly, we can create additional mailing lists for devrooms to use
 either for a wider team of organisers or for visitors and these may
-be public or private.
+be public or private. Contact devrooms@fosdem.org for this.
 
 ## Devroom managers
 
@@ -59,7 +62,7 @@ Devrooms  issue a Call for Papers.
   * [2021](https://archive.fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/)
   * [2022](https://archive.fosdem.org/2022/news/2021-11-30-accepted-developer-rooms/)
 
-If you wish, you can ask for review  on the devroom-manager list before publication or on devrooms at fosdem.org.
+If you wish, you can ask for review on the devroom-manager list before publication or on devrooms at fosdem.org.
 
 We can also make adjustments to the names of devrooms at this early
 stage - particularly if related proposals got combined or you want
@@ -67,7 +70,7 @@ to emphasise some little change of focus.
 
 Full details of all talks and speakers that you schedule must be
 submitted into our 'pentabarf' database which is used to generate our
-website no later then <b>31st December</b>.  Please try to complete this 
+website (and booklet) no later then <b>15th December</b>.  Please try to complete this 
 earlier. It is better to find out scheduling conflicts early, and by the end of 
 December it is hard to reach people. By running late, you also give
 your presenters less work to prepare their talks.
