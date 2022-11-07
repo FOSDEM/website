@@ -72,8 +72,8 @@ earlier. It is better to find out scheduling conflicts early, and by the end of
 December it is hard to reach people. By running late, you also give
 your presenters less work to prepare their talks.
     
-All submissions must go through:
-      https://penta.fosdem.org/submission/FOSDEM23
+All submissions must go through penta:
+      [https://penta.fosdem.org/submission/FOSDEM23](https://penta.fosdem.org/submission/FOSDEM23)
       
 Remind speakers that if they already have an account from a previous year
 they should reuse it.  (Our website links speakers to all their talks
@@ -82,11 +82,10 @@ and select talks, and transfer them between devrooms if appropriate.
 
 ### Reviewing talks
 
-https://penta.fosdem.org/report/review/
+[https://penta.fosdem.org/report/review/](https://penta.fosdem.org/report/review/)
 
 Use this to view and review proposals assigned to your devroom track.
 You can add ratings and remarks in the <b>Rating</b> tab. These will not be accessible to the speaker.
-
 
 Use these fields for your workflow:
 
@@ -119,7 +118,7 @@ To schedule a task in pentabarf you have to:
        Please set the 'Slug' to a unique memorable
        string (without spaces or non-ASCII characters) based on the title of
        the event.  The URL generated for the event is then:
-       https://fosdem.org/2022/schedule/event/&lt;<b>slug</b>&gt;/<br>
+       https://fosdem.org/2023/schedule/event/&lt;<b>slug</b>&gt;/<br>
        To group things to together nicely, you could put the same devroom
        prefix on them all, e.g.
          https://fosdem.org/2021/schedule/event/ada_.../
@@ -273,8 +272,8 @@ The video stream is composed of:
 On top of the public main devroom chatroom, there are managers/speakers only chatroom used to organize the event:
 
 - each talk with Q&A or panel discussion has a dedicated room with a jitsi video conf component
-- #yourdevroom-backstage is the place where devroom managers and speakers can meet or exchange privately
-- #devroom-managers channel to ask for help or coordinate with org team or other rooms.
+- \#yourdevroom-backstage is the place where devroom managers and speakers can meet or exchange privately
+- \#devroom-managers channel to ask for help or coordinate with org team or other rooms.
 
 During the online event, devrooms managers have to moderate their chatroom which consists of:
 
