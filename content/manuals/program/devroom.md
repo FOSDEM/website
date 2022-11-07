@@ -6,13 +6,11 @@ Please help keeping this manual up to date, sources are [on github](https://gith
 
 ## Key dates
 
-* 31 October - deadline for developer room proposals
-* 12 December - developer rooms publish Calls for Participation
-* 31 December - developer rooms publish complete schedules
+* 18 October - deadline for developer room proposals
+* 12 November - developer rooms issue Call for Participation
+* 15 December - developer rooms publish complete schedules
 
 ## Devroom expectations
-
-To be updated for the 2022 online event
 
 ## Communication
 
@@ -20,7 +18,7 @@ FOSDEM uses the devroom-manager mailing list for communications with the
 people who are organising devrooms.  Please make sure you read this
 list and keep the messages for reference.
 
-The FOSDEM Devrooms team can be contacted using devrooms@fosdem.org.
+The FOSDEM Devrooms team can be contacted using [devrooms@fosdem.org](mailto:devrooms@fosdem.org).
 Please try to remember to send individual requests to that address and
 keep this devroom-manager mailing list for messages and discussion that
 may be of interest to other devrooms.
@@ -37,10 +35,10 @@ be public or private.
 
 ## Devroom managers
 
-Each devroom needs to send to [devrooms@fosdem.org](https://lists.fosdem.org/listinfo/devrooms) the list of the
+Each devroom needs to send to [devrooms@fosdem.org](mailto:devrooms@fosdem.org) the list of the
 pentabarf account names of any room organisers who need to be granted access.
 
-Devrooms managers list can be track on the devroom managers report: https://penta.fosdem.org/report/devroom_managers
+Devrooms managers list can be track on the devroom managers report: https://penta.fosdem.org/report/devroom\_managers
 
 Devroom managers status grant access to:
 
@@ -54,10 +52,14 @@ Devroom managers status grant access to:
 
 Devrooms  issue a Call for Papers.
 
-* Note the deadline: 12/12
+* Note the deadline: November 12
 * Send a copy to the [FOSDEM mailing list](https://lists.fosdem.org/listinfo/fosdem)
-* CfP will appear on the [accepted developer rooms](https://fosdem.org/2022/news/2021-11-30-accepted-developer-rooms/) announcement 
-* Browse examples from previous years if you need inspiration: [2021](https://fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/). If you wish, you can ask for review  on the devroom-manager list before publication or on devrooms at fosdem.org.
+* CfP will appear on the [accepted developer rooms](https://fosdem.org/2023/news/2021-11-30-accepted-developer-rooms/) announcement 
+* Browse examples from previous years if you need inspiration: 
+* [2021](https://archive.fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/)
+* [2022](https://archive.fosdem.org/2022/news/2021-11-30-accepted-developer-rooms/)
+
+If you wish, you can ask for review  on the devroom-manager list before publication or on devrooms at fosdem.org.
 
 We can also make adjustments to the names of devrooms at this early
 stage - particularly if related proposals got combined or you want
@@ -71,7 +73,7 @@ December it is hard to reach people. By running late, you also give
 your presenters less work to prepare their talks.
     
 All submissions must go through:
-      https://penta.fosdem.org/submission/FOSDEM22
+      https://penta.fosdem.org/submission/FOSDEM23
       
 Remind speakers that if they already have an account from a previous year
 they should reuse it.  (Our website links speakers to all their talks
@@ -205,12 +207,12 @@ The website is generated from the data in pentabarf.
 This runs automatically every few minutes.
 
 You can see when it was last updated near the bottom of 
-[the events page](https://fosdem.org/2022/schedule/events/).
+[the events page](https://fosdem.org/2023/schedule/events/).
 
 Note that the data gets pulled from the database slightly before
 this timestamp is generated - sometimes a few minutes before.
 If nothing on this page changed, the date won't be updated.
-https://fosdem.org/2022/sitemap.xml shows the last modified
+https://fosdem.org/2023/sitemap.xml shows the last modified
 date for every page on the site.
 
 If the system detects an inconsistency in the data, it stops
