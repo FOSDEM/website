@@ -83,6 +83,12 @@ they should reuse it.  (Our website links speakers to all their talks
 across all the years of FOSDEM.)  Then you can use the system to review
 and select talks, and transfer them between devrooms if appropriate.
 
+### Adding a devroom description to the website
+
+Optionally you can add a small description of the devroom on top of the page. See the example at [https://archive.fosdem.org/2020/schedule/track/security/](https://archive.fosdem.org/2020/schedule/track/security/).
+
+Add a .html or .md file in the [website/content/schedule/devrooms/](https://github.com/FOSDEM/website/tree/master/content/schedule/devrooms) folder in the git repo for this description. Keep it concise.
+
 ### Reviewing talks
 
 [https://penta.fosdem.org/report/review/](https://penta.fosdem.org/report/review/)
