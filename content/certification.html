@@ -7,9 +7,5 @@ certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_date
 %>
 
 <p>
-  A number of certification exams will be offered at <%= conference()[:title] %>.
-</p>
-
-<p>
-  Further details will be announced when they become available.
+  <%= conference()[:title] %> will not host any certification exams.
 </p>
