@@ -6,7 +6,7 @@ events:
         location: ICAB Incubator 4 Rue des P??res Blancs 1040 Bruxelles
         start: 2022-02-02
         end: 2022-02-02
-        cost: free
+        cost: Free
         registration: By Jan 26, and tickets are limited
         website: https://blogs.oracle.com/mysql/post/pre-fosdem-mysql-days-2023
         contact: frederic.descamps@oracle.com
@@ -15,8 +15,8 @@ events:
         location: DoubleTree Brussels City Center
         start: 2023-02-03
         end: 2023-02-03
-        cost: free
-        registration: none
+        cost: Free
+        registration: Space limited.  Registration recommended.
         website: https://connect.centos.org/
         contact: shaunm@redhat.com
 
@@ -42,7 +42,7 @@ events:
         location: Ghent, Hogent Campus Schoonmeerssen
         start: 2023-02-06
         end: 2023-02-08
-        cost: free
+        cost: Free
         registration: Preregistration required for Crowd control purposes
         website: https://cfgmgmtcamp.eu/ghent2023/
         contact: info@cfgmgmtcamp.eu
