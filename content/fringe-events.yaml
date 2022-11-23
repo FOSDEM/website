@@ -1,3 +1,49 @@
 ---
 kind: internal
 events:
+
+    'pre-FOSDEM MySQL Days':
+        location: ICAB Incubator 4 Rue des P??res Blancs 1040 Bruxelles
+        start: 2022-02-02
+        end: 2022-02-02
+        cost: free
+        registration: By Jan 26, and tickets are limited
+        website: https://blogs.oracle.com/mysql/post/pre-fosdem-mysql-days-2023
+        contact: frederic.descamps@oracle.com
+
+    'CentOS Connect':
+        location: DoubleTree Brussels City Center
+        start: 2023-02-03
+        end: 2023-02-03
+        cost: free
+        registration: none
+        website: https://connect.centos.org/
+        contact: shaunm@redhat.com
+
+    'FOSDEM PGDay':
+        location: Brussels
+        start: 2023-02-03
+        end: 2023-02-03
+        cost: 50 EUR
+        registration: Registration required, but open to anybody who pays.
+        website: https://2023.fosdempgday.org/
+        contact: contact@fosdempgday.org
+
+    'OpenEmbedded Workshop 2023':
+        location: Brussels
+        start: 2023-02-06
+        end: 2023-02-06
+        cost: 50 / 75 EUR
+        registration: None
+        website: https://pretalx.com/openembedded-workshop-2023/
+        contact: philip@balister.org
+
+    'Config Management Camp 2023':
+        location: Ghent, Hogent Campus Schoonmeerssen
+        start: 2023-02-06
+        end: 2023-02-08
+        cost: free
+        registration: Preregistration required for Crowd control purposes
+        website: https://cfgmgmtcamp.eu/ghent2023/
+        contact: info@cfgmgmtcamp.eu
+
