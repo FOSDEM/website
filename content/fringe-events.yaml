@@ -3,7 +3,7 @@ kind: internal
 events:
 
     'pre-FOSDEM MySQL Days':
-        location: ICAB Incubator 4 Rue des P??res Blancs 1040 Bruxelles
+        location: ICAB Incubator 4 Rue des Pères Blancs 1040 Bruxelles
         start: 2022-02-02
         end: 2022-02-02
         cost: Free
