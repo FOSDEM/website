@@ -34,7 +34,7 @@ events:
         start: 2023-02-06
         end: 2023-02-06
         cost: 50 / 75 EUR
-        registration: None
+        registration: Registration required
         website: https://pretalx.com/openembedded-workshop-2023/
         contact: philip@balister.org
 
