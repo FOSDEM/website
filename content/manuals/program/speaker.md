@@ -1,5 +1,5 @@
 ---
-title: FOSDEM Speakers Manual
+title: FOSDEM Online Speakers Manual
 ---
 
 Please help keeping this manual up to date, sources are [on github](https://github.com/FOSDEM/website/blob/master/content/manuals/program/speaker.md)!
@@ -7,7 +7,7 @@ Please help keeping this manual up to date, sources are [on github](https://gith
 Thank you to all speakers who
 have put themselves forward to speak at this year’s FOSDEM.
 
-As it’s a virtual event, all talks need to be pre-recorded by the speakers. This
+This manual covers the online presentations All online talks need to be pre-recorded by the speakers. This
 is only the second time FOSDEM has operated in this way so please be aware that there
 may be some bumps along the way - but it should be smoother than last year.
 
