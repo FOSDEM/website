@@ -21,9 +21,9 @@ this event, here are some guidance notes to support your planning.
 
 ## Key dates
 
-* 21st January 2022
-  All pre-recorded talks are expected to be uploaded by 21st January
-  2022 to Pentabarf - the upload link should be available by the time you read
+* Friday 20th January 2023, 2 weeks before FOSDEM
+  All pre-recorded talks are expected to be uploaded by 20th January
+  2023 to Pentabarf - the upload link should be available by the time you read
   this, if you don't have it, contact your devroom organiser. After this date,
   there is one week scheduled for you to review and if necessary, to re-upload to
   fix problems.
