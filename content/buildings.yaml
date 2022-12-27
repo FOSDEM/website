@@ -1,14 +1,8 @@
 ---
 map:
-  I:
-  K:
-  M:
-  L:
-  D:
-  S:
-  B:
   J:
     - janson
+  K:
   H:
     - ferrer
   U:
@@ -16,5 +10,6 @@ map:
     - chavanne
     - lameere
   AW:
-  V:
+  D:
+  M:
 ---
