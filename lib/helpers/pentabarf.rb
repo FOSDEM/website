@@ -754,11 +754,12 @@ module Fosdem
       rooms = begin
                 time_before = Time.now
                 rooms = slugify!(model(dblist(%q{
-                SELECT *
-                FROM conference_room
-                WHERE conference_id=$1
-                AND public=true
-                ORDER BY rank, conference_room_id}, [cid]),
+                SELECT DISTINCT r.*
+                FROM conference_room r
+                JOIN event using (conference_room_id)
+                WHERE r.conference_id=$1
+                AND r.public=true
+                ORDER BY r.rank, r.conference_room_id}, [cid]),
                                        [:conference_room_id, :conference_room, :size, :rank]), :conference_room)
                 log(:high, "loaded #{rooms.size} rooms", Time.now - time_before)
                 rooms
