@@ -150,8 +150,10 @@ While going through all proposal it is also worth checking their content:
     * Only in rare cases will we hide the speaker's real name - e.g. if their
       real name and nickname are not yet connected when you search the internet.
                    
-    * If a talk is presented by more than one author, you can add an extra speaker here (they must create a pentabarf account).
-    
+    * If a talk is presented by more than one author, you can add an extra speaker here (they must create a pentabarf account). Use both roles "speaker" and "submitter" to allow the person access to manage the event and show them on the website. Do not forget to set the role state to "confirmed".
+
+      The persons select is populated by async Javascript so if the select does not show any choice for you, try to tweak your browser tracking protection/ad blocker.
+
     * In case of online event, event must have a host role person attached to it. The host is responsible for welcoming speakers and moderate Q&A. If you want the host to be listed publicly on the website add the host again with the moderator role this time.
     
     * FYI, devroom managers will be added automatically by a script as coordinator on all their devroom events. Having at least one coordinator is mandatory.
