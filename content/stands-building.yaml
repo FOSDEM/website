@@ -82,8 +82,6 @@ stand_list:
       stands:
         all:
         - name: VideoLAN
-        saturday:
-        - name: Audacity and MuseScore
     - theme: World wide web
       stands:
         all:
@@ -97,6 +95,8 @@ stand_list:
         - name: It's time to learn Ada!
         - name: AlekSIS
         - name: Chamilo
+        saturday:
+        - name: Audacity and MuseScore
         sunday:
         - name: IsardVDI
 - name: AW
