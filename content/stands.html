@@ -5,38 +5,59 @@ navtitle: Stands
 <%
 # vim: set ts=2 sw=2 et ai ft=eruby:
 %>
-<div class="container">
-<% go_live = @site.config.fetch(:go_live) %>
-<% stands = tracks.select{|t| ['standtrack'].include? t[:type] } %>
-<% stands.each_with_index do | stand, i | %>
-            <% if i == 0 || i % 3 == 0 %>
-            <div class="row">
-                <% end %>
-                <div class="span4" style="margin-bottom: 2em;">
-                        <% if go_live %>
-                        <% if stand[:rooms] && stand[:rooms][0] %>
-                        <a style="font-size: 3em; line-height: 1.5em;" href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>"><span>LIVE</span></a>
-                        <% end %>
-                        <% end %>
-                        <h4><%= stand[:name] %> <small>Stand</small></h4>
-                        <ul class="unstyled">
-                            <% if stand[:rooms] && stand[:rooms][0] %>
-                            <li><i class="icon-picture"></i> Visit the stand at <a
-                                    href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(stand[:rooms][0]) %>">stands.fosdem.org</a>!
-                            </li>
-                            <% end %>
-                            <% if go_live && stand[:rooms] && stand[:rooms][0] %>
-                            <li><i class="icon-comment"></i> <a href="<%= stream_link(stand, is_chat=true) %>">Take part in the
-                                conversation.</a></li>
-                            <% else %>
-                            <li>We haven't started yet. <a href="page:schedule/track/<%= stand[:slug] %>">Visit the schedule</a>
-                                to see what we have planned.
-                            </li>
-                            <% end %>
-                        </ul>
-                </div>
-                <% if i % 3 == 2 || i == stands.length() - 1 %>
-            </div>
+<p>
+Stands can be used to share information, demo software, sell merchandising,
+give away goodies and so forth, and to present themselves to the visitors
+in a more personal fashion.
+</p>
+<p>
+The following stands will be present at <%= conference()[:title] %>.
+</p>
+
+<div class="container-fluid">
+  <% $item_by_id.fetch('/stands-building/')[:stand_list].each do |building| %>
+  <div class="row-fluid">
+    <div class="col">
+      <h3><%= building[:name] %></h3>
+      <div>
+        <img src="asset:buildings/<%= building[:map] %>" alt="Map <%= building[:name] %>" width="450px" />
+      </div>
+    </div>
+  </div>
+  <% building[:groups].each do | group | %>
+  <div class="row-fluid">
+      <table class="table table-condensed table-striped table-bordered">
+          <thead>
+            <tr>
+              <th colspan="2"><h4><%= group[:info][:building] %> level <%= group[:info][:floor] %> (group <%= group[:info][:group] %>) </h4></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% i = 0 %>
+            <% group[:stands].each do | theme | %>
+              <tr>
+                <td colspan="2"><h5><%= theme[:theme] %></h5></td>
+              </tr>
+              <% theme[:stands][:all].each do | stand | %>
+                <% i += 1 %>
+                <tr>
+                  <td><%= i %></td>
+                  <td><%= stand[:name].to_s %></td>
+                </tr>
+              <% end %>
+              <% if theme[:stands].key?(:saturday) && theme[:stands].key?(:sunday) %>
+              <% theme[:stands][:saturday].each_with_index do | stand, idx | %>
+                <% i += 1 %>
+                <tr>
+                  <td><%= i %></td>
+                  <td><%= stand[:name].to_s %> (Saturday) &mdash; <%= theme[:stands][:sunday][idx][:name].to_s %> (Sunday)</td>
+                </tr>
+              <% end %>
+              <% end %>
             <% end %>
-            <% end %>
-        </div>
+          </tbody>
+        </table>
+  </div>
+  <% end %>
+  <% end %>
+</div> <!-- .row -->

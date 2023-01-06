@@ -1,134 +1,153 @@
 title: Stands
 stand_list:
- - name: K (level 1)
-   map: map_k_1
-   groups:
-    - info:
-        building: K
-        floor: 1
-        group: A
-        amount: 12
+- name: K (level 1)
+  map: map_k_1
+  groups:
+  - info:
+      building: K
+      floor: 1
+      amount: 11
+      group: A
+    stands:
+    - theme: Community advocacy
       stands:
-        - theme: Operating Systems
-          stands:
-            all:
-            saturday:
-            sunday:
-        - theme: Desktop Environments
-          stands:
-            all:
-    - info:
-        building: K
-        floor: 1
-        group: B
-        amount: 8
+        all:
+        - name: Eclipse Foundation
+        - name: FOSSASIA
+        - name: Matrix.org Foundation
+        - name: Software Freedom Conservancy
+        - name: Free Software Foundation Europe
+        - name: Realtime Lounge
+        - name: Free Culture Podcasts
+        - name: Open Culture Foundation + COSCUP
+        - name: Open Toolchain Foundation
+        - name: Open UK and Book Signing Stand
+        - name: The Apache Software Foundation
+  - info:
+      building: K
+      floor: 1
+      amount: 8
+      group: B
+    stands:
+    - theme: System administration
       stands:
-      - theme: Education
-        stands:
-          all:
-          saturday:
-          sunday:
-      - theme: Databases
-        stands:
-          all:
-    - info:
-        building: K
-        floor: 1
-        group: C
-        amount: 10
+        all:
+        - name: Ansible
+        - name: Grafana
+        - name: Bareos
+        - name: Foreman
+        - name: DRLM (Disaster Recovery Linux Manager)
+        - name: OpenNebula
+    - theme: Database engines
       stands:
-      - theme: Programming Environment
-        stands:
-          all:
-          saturday:
-          sunday:
-      - theme: Gaming
-        stands:
-          all:
-      - theme: System Administration
-        stands:
-          all:
-      - theme: Community Advocacy
-        stands:
-          all:
- - name: K (level 2)
-   map: map_k_2
-   groups:
-    - info:
-        building: K
-        floor: 2
-        group: D
-        amount: 5
+        all:
+        - name: PostgreSQL
+        - name: MariaDB Server
+  - info:
+      building: K
+      floor: 1
+      amount: 4
+      group: C
+    stands:
+    - theme: Office suites and productivity
       stands:
-      - theme: World Wide Web
-        stands:
-          all:
-    - info:
-        building: K
-        floor: 2
-        group: E
-        amount: 16
+        all:
+        - name: CiviCRM
+        - name: DAVx5 – CalDAV / CardDAV / WebDAV client for Android + jtx Board
+        - name: XWiki & CryptPad
+        - name: Libreoffice
+- name: K (level 2)
+  map: map_k_2
+  groups:
+  - info:
+      building: K
+      floor: 2
+      amount: 17
+      group: A
+    stands:
+    - theme: Desktop environments
       stands:
-      - theme: Community Advocacy
-        stands:
-          all:
-          saturday:
-          sunday:
-      - theme: World Wide Web
-        stands:
-          all:
-          saturday:
-          sunday:
-      - theme: System Administration
-        stands:
-          all:
-          saturday:
-          sunday:
- - name: AW
-   map: map_aw
-   groups:
-    - info:
-        building: AW
-        floor: 1
-        group: A
-        amount: 4
+        all:
+        - name: GNOME
+        - name: KDE
+    - theme: Developer environment
       stands:
-      - theme: Hardware
-        stands:
-          all:
-    - info:
-        building: AW
-        floor: 1
-        group: B
-        amount: 4
+        all:
+        - name: GitLab
+        - name: Homebrew
+        - name: Jenkins
+        - name: The Perl/Raku Foundation
+        - name: Fluence
+    - theme: Multimedia and graphics
       stands:
-      - theme: Hardware
-        stands:
-          all:
-          saturday:
-          sunday:
- - name: H
-   map: map_h
-   groups:
-    - info:
-        building: H
-        floor: 1
-        group: A
-        amount: 3
+        all:
+        - name: VideoLAN
+        saturday:
+        - name: Audacity and MuseScore
+    - theme: World wide web
       stands:
-      - theme: Office Software
-        stands:
-          all:
-          saturday:
-          sunday:
-    - info:
-        building: H
-        floor: 1
-        group: B
-        amount: 3
+        all:
+        - name: Mozilla
+        - name: 'Nextcloud: Self-hosted, open file sync & communication platform'
+    - theme: Education
       stands:
-      - theme: Office Software
-        stands:
-          all:
-          saturday:
-          sunday:
+        all:
+        - name: La Contre-Voie
+        - name: IEEE SA Open
+        - name: It's time to learn Ada!
+        - name: AlekSIS
+        - name: Chamilo
+        sunday:
+        - name: IsardVDI
+- name: AW
+  map: map_aw
+  groups:
+  - info:
+      building: AW
+      floor: 1
+      amount: 9
+      group: A
+    stands:
+    - theme: Operating systems
+      stands:
+        all:
+        - name: OpenEmbedded + AGL
+        - name: GNU GRUB
+    - theme: Hardware
+      stands:
+        all:
+        - name: coreboot/flashrom
+        - name: PINE64
+    - theme: IoT
+      stands:
+        all:
+        - name: MicroPython & Espruino
+        - name: openHAB
+        - name: 'Embedded JavaScript: Moddable SDK & Node-RED MCU Edition'
+        - name: wolfSSL
+    - theme: HAM Radio
+      stands:
+        all:
+        - name: infobooth on amateur radio (hamradio)
+- name: H
+  map: map_h
+  groups:
+  - info:
+      building: H
+      floor: 1
+      amount: 9
+      group: A
+    stands:
+    - theme: Operating systems
+      stands:
+        all:
+        - name: AlmaLinux OS
+        - name: Debian
+        - name: Fedora Project
+        - name: CentOS and RDO
+        - name: FreeBSD Project
+        - name: Linux on Mobile (Sailfish OS, Ubuntu Touch, postmarketOS, Mobian and
+            more)
+        - name: openSUSE Project
+        - name: Ubuntu Ecosystem
+        - name: Gentoo
