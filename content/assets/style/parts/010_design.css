@@ -287,6 +287,8 @@ a.btn-purple:hover {
 }
 .logo-sponsor-cornerstone a {
 	display:block;
+	height: 100%;
+	margin-top: -10px;
 }
 .logo-sponsor-other a {
 	background:url(sprite.png) no-repeat;

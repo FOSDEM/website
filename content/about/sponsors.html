@@ -20,17 +20,22 @@ sponsors_root: true
 </p>
 
 <div id="s-quick-links"><br />
-    <% [ lambda{|s| s.cornerstone?}, lambda{|s| not s.cornerstone?} ].each_with_index do |row, i| %>
-        <% if i > 0 %><br /><br /><br /><% end %>
-        <% sponsors.select{|s| s.include_in_toplevel? }.select(&row).each do |s| %>
-            <a href="#<%= s.id %>">
-                <% if s.thumb? then %>
-                    <%= img s.thumb, {alt: s.name} %>
-                <% else %>
-                    <%= s.name %>
-                <% end %>
-            </a> &nbsp; &nbsp;
+    <% cornerstone, other = sponsors.select{|s| s.include_in_toplevel?}.partition{|s| s.cornerstone?} %>
+
+    <% unless cornerstone.empty? %>
+      <ul class="logo-list">
+        <% cornerstone.each do |c| %>
+          <li class="logo-sponsor-cornerstone logo-<%= c.id %>"><a href="<%= c.path %>"><%= c.name %></a></li>
         <% end %>
+      </ul>
+    <% end %>
+
+    <% unless other.empty? %>
+      <ul class="logo-list">
+        <% other.each do |s| %>
+          <li class="logo-sponsor-other logo-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
+        <% end %>
+      </ul>
     <% end %>
 </div>
 
