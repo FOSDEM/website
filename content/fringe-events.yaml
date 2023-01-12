@@ -101,6 +101,15 @@ events:
         website: https://cfgmgmtcamp.eu/ghent2023/
         contact: info@cfgmgmtcamp.eu
 
+    'GitLab Contributor Days':
+        location: Ghent, Hogent Campus Schoonmeerssen
+        start: 2023-02-07
+        end: 2023-02-08
+        cost: Free
+        registration: See Config Management Camp
+        website: https://www.meetup.com/gitlab-virtual-meetups/events/290364126/
+        contact: ltickett@gitlab.com
+
     'State of Open Conference':
         location: Queen Elizabeth II Centre, Parliament Square, London
         start: 2023-02-07
@@ -109,4 +118,3 @@ events:
         registration: Required
         website: https://stateofopencon.com/
         contact: admin@openuk.uk
-
