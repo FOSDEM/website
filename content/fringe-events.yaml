@@ -79,7 +79,7 @@ events:
         start: 2023-02-03
         end: 2023-02-03
         cost: lunch around 25 EUR
-        registration: None
+        registration: Required
         website: https://www.meetup.com/write-the-docs-berlin/events/290471112/
         contact: ffloreth@redhat.com
 
