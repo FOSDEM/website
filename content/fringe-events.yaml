@@ -56,6 +56,15 @@ events:
         website: https://2023.fosdempgday.org/
         contact: contact@fosdempgday.org
 
+    'FOSS license and security compliance tools developers and users workshop':
+        location: Brussels
+        start: 2023-02-03
+        end: 2023-02-03
+        cost: Free/Free contribution
+        registration: None
+        website: https://opencollective.com/aboutcode/events/fosdem-2023-fringe-event-foss-license-and-security-compliance-tools-developers-and-users-workshop-bruxelles-2023-02-03-159433c1
+        contact: pombredanne@gmail.com
+
     'FreeCAD meeting day':
         location: Atelier des Tanneurs, Huidevettersstraat 60A Rue des Tanneurs, 1000 Brussels
         start: 2023-02-03
