@@ -92,6 +92,15 @@ events:
         website: https://pretalx.com/openembedded-workshop-2023/
         contact: philip@balister.org
 
+    'Hackerspace Brussels Bytenight':
+        location: Klein eilandstraat 1A Rue de la petite île, 1070 Anderlecht
+        start: 2023-02-04 8pm
+        end: 2023-02-05
+        cost: free entry/no free beer
+        registration: be excellent when there
+        website: https://hsbxl.be/events/byteweek/2023/bytenight/
+        contact: contact@hsbxl.be
+
     'Config Management Camp 2023':
         location: Ghent, Hogent Campus Schoonmeerssen
         start: 2023-02-06
