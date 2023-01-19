@@ -83,6 +83,15 @@ events:
         website: https://matrix.to/#/%23fosdem23-community-meetup:matrix.org
         contact: fosdem23-matrix-meetup@matrix.datanauten.de
 
+    'EU Open Source Policy Summit 2023':
+        location: Ravensteinstraat 60 Rue Ravenstein, 1000 Brussels, Belgium
+        start: 2023-02-03
+        end: 2023-02-03
+        cost: Free 
+        registration: Required, on the summit website
+        website: https://summit.openforumeurope.org/
+        contact: summit@openforumeurope.org
+
     'Tool The Docs Pre-FOSDEM Meetup':
         location: Le Grenier d'Elvire, Chaussée de Boondaelsesteenweg 339, 1050 Elsene/Ixelles
         start: 2023-02-03
