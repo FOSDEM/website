@@ -775,7 +775,7 @@ module Fosdem
       # decorate rooms with a title
       rooms.each do |r|
         if r['virtual']
-          r['title'] = 'Online '+ r['conference_room'][2..-1]
+          r['title'] = r['conference_room'] + "(online)"
         else
           r['title'] = r['conference_room']
         end
