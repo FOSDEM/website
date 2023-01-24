@@ -30,7 +30,7 @@ xml.schedule do
     xml.day(:index=>index + 1,:date=>day[:conference_day]) do
       rooms.each do | room |
 
-        xml.room({:name => room[:title]}) do
+        xml.room({:name => room[:conference_room]}) do
           room[:events_by_day][day[:slug].to_sym].map(&$to_event).each do |event|
             xml.event(:id=>event[:event_id]) do
               xml.start event[:start_time]
