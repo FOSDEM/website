@@ -13,7 +13,7 @@
     if building
       building_path = $item_by_id.fetch('/schedule/buildings/').path
     %>
-    <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
+  <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
   <% end %>
 <% end %>
 <% if ! @site.config.fetch(:virtual) && !item[:virtual]%>
