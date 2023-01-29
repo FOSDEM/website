@@ -768,8 +768,10 @@ module Fosdem
       room_by_room_id = byid rooms, :conference_room_id
 
       # decorate rooms with a title
+      # flag virtual rooms
       rooms.each do |r|
         r['title'] = r['conference_room']
+        r['virtual'] = (r['conference_room'] =~ /^[DIMS]/) ? true : false
       end
 
       # decorate rooms with events
@@ -799,6 +801,7 @@ module Fosdem
           e['room'] = room['slug']
           e['room_name'] = room['conference_room']
           e['room_rank'] = room['rank']
+          e['virtual'] = room['virtual']
         end
       end
 

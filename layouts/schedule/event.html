@@ -6,6 +6,9 @@
 <ul class="side-box">
   <li><i class="icon-road"></i> <strong>Track</strong>: <%= l track(item[:track]) %></li>
   <li><i class="icon-home"></i> <strong>Room</strong>: <%= l room(item[:room]) %></li>
+  <% if item[:virtual] %>
+  <li><i class="icon-map-marker"></i> <strong>Location</strong>: Online </li>
+  <% end %>
   <li><i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></li>
   <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %></li>
   <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item, :end %></li>
