@@ -101,6 +101,15 @@ events:
         website: https://www.meetup.com/write-the-docs-berlin/events/290471112/
         contact: ffloreth@redhat.com
 
+    'After-FOSDEM OpenInfra Gathering':
+        location: Rue Grétry 79, 1000 Bruxelles, Belgium
+        start: 2023-02-04
+        end: 2023-02-04
+        cost: Free
+        registration: None
+        website: https://www.linkedin.com/events/openinfragathering-brussels-4fe7023977171765342209/
+        contact: edmitrieva@sardinasystems.com
+
     'BEAM FOSDEM Meetup':
         location: BrewDog Brewery
         start: 2023-02-04
