@@ -1,0 +1,8 @@
+---
+layout: false
+content_type: text/plain
+filename: metrics.txt
+---
+# HELP website_last_build_time Starting time of the last website build
+# TYPE website_last_build_time gauge
+website_last_build_time <%= @item.mtime.to_i %>
