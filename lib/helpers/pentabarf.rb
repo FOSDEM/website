@@ -770,8 +770,12 @@ module Fosdem
       # decorate rooms with a title
       # flag virtual rooms
       rooms.each do |r|
-        r['title'] = r['conference_room']
         r['virtual'] = (r['conference_room'] =~ /^[DIMS]/) ? true : false
+        if r['virtual']
+          r['title'] = r['conference_room'] + "(online)"
+        else
+          r['title'] = r['conference_room']
+        end
       end
 
       # decorate rooms with events
