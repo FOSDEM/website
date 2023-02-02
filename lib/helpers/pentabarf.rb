@@ -772,7 +772,7 @@ module Fosdem
       rooms.each do |r|
         r['virtual'] = (r['conference_room'] =~ /^[DIMS]/) ? true : false
         if r['virtual']
-          r['title'] = r['conference_room'] + "(online)"
+          r['title'] = r['conference_room'] + " (online)"
         else
           r['title'] = r['conference_room']
         end
