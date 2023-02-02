@@ -119,15 +119,6 @@ events:
         website: https://beam-fosdem.dev/meetup/
         contact: erlang-devroom-manager@fosdem.org
 
-    'Celebrating 25 years of Open Source':
-        location: L’Auberge de Boendael
-        start: 2023-02-04
-        end: 2023-02-04
-        cost: Free
-        registration: Required. Space limited.
-        website: https://confidentialcomputing.io/fosdem/
-        contact: nick@profian.com
-
     'Kotlin Community Meetup':
         location: GIST Beer Hall - Pl. de la Vieille Halle aux Blés 30
         start: 2023-02-04
@@ -181,3 +172,12 @@ events:
         registration: Required
         website: https://stateofopencon.com/
         contact: admin@openuk.uk
+
+    'Ansible Contributor Summit':
+        location: Ghent, Hogent Campus Schoonmeerssen
+        start: 2023-02-08
+        end: 2023-02-08
+        cost: Free
+        registration: Register at cfgmgmtcamp.eu and include Workshop/Fringe day - Ansible Contributor Summit
+        website: https://hackmd.io/@ansible-community/cs202302-planning
+        contact: ansible-community@redhat.com
