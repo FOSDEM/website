@@ -767,14 +767,10 @@ module Fosdem
 
       room_by_room_id = byid rooms, :conference_room_id
 
-      # add virtual or not
-      rooms.each do |r|
-        r['virtual'] = (r['conference_room'] =~ /^[DIMS]/) ? true : false
-      end
-
       # decorate rooms with a title
       # flag virtual rooms
       rooms.each do |r|
+        r['virtual'] = (r['conference_room'] =~ /^[DIMS]/) ? true : false
         if r['virtual']
           r['title'] = r['conference_room'] + "(online)"
         else
