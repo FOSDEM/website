@@ -867,16 +867,7 @@ module Fosdem
           lh = {}
           li = {}
 
-          chatroom_name = e['room_name'].gsub(/^../, '')
-          if ( e['room'] =~ /^s/ )
-            chatroom_name += '-stand:fosdem.org'
-          elsif ( e['room'] =~ /^d/ )
-            chatroom_name += '-devroom:fosdem.org'
-          elsif ( e['room'] =~ /^k/ )
-            chatroom_name += '-keynotes:fosdem.org'
-          else
-            chatroom_name += ':fosdem.org'
-          end
+          chatroom_name = '2023-' + e['room_name'].gsub(/\(/, '').gsub(/[\) ]/, '_').downcase + ':fosdem.org'
 
           ll['title'] = 'Chat room (web)'
           ll['url'] = 'https://chat.fosdem.org/#/room/#' + chatroom_name
