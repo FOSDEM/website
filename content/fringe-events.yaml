@@ -101,6 +101,42 @@ events:
         website: https://www.meetup.com/write-the-docs-berlin/events/290471112/
         contact: ffloreth@redhat.com
 
+    'After-FOSDEM OpenInfra Gathering':
+        location: Rue Grétry 79, 1000 Bruxelles, Belgium
+        start: 2023-02-04
+        end: 2023-02-04
+        cost: Free
+        registration: None
+        website: https://www.linkedin.com/events/openinfragathering-brussels-4fe7023977171765342209/
+        contact: edmitrieva@sardinasystems.com
+
+    'BEAM FOSDEM Meetup':
+        location: BrewDog Brewery
+        start: 2023-02-04
+        end: 2023-02-04
+        cost: Free
+        registration: None
+        website: https://beam-fosdem.dev/meetup/
+        contact: erlang-devroom-manager@fosdem.org
+
+    'Celebrating 25 years of Open Source':
+        location: L’Auberge de Boendael
+        start: 2023-02-04
+        end: 2023-02-04
+        cost: Free
+        registration: Required. Space limited.
+        website: https://confidentialcomputing.io/fosdem/
+        contact: nick@profian.com
+
+    'Kotlin Community Meetup':
+        location: GIST Beer Hall - Pl. de la Vieille Halle aux Blés 30
+        start: 2023-02-04
+        end: 2023-02-04
+        cost: Free
+        registration: RSVP using the link on the microsite is optional but highly recommended
+        website: https://kotlin-fosdem.github.io/#meetup
+        contact: kotlin-devroom-manager@fosdem.org
+
     'OpenEmbedded Workshop 2023':
         location: Brussels
         start: 2023-02-06

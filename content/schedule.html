@@ -15,6 +15,7 @@ standtracks = tracks.select{|t| t[:type] == 'standtrack'}.sort_by{|t| [ t[:rank]
 lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
+boftracks = tracks.select{|t| t[:type] == 'bof'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 
 columns = 3
 %>
@@ -29,6 +30,7 @@ columns = 3
   <li>Overview of <a href="<%= pathof '/schedule/roomtracks/' %>">rooms per days</a></li>
   <li>Mobile apps: <a href="<%= pathof '/schedule/mobile/' %>">many platforms</a></li>
   <li>What's on now: <a href="page:/schedule/streaming">Live streaming</a></li>
+  <li>Booklet: <a href="asset:booklet/booklet_2023">Info</a> </li>
   <li>Programme <a href="page:/schedule/amendments">Schedule amendments</a></li>
 <%
   pdfs = items.select{|x| x.identifier =~ %r{^/schedule/pdf/[^/]+/$}}.sort_by{|x| x[:page_size]}.reverse
@@ -83,6 +85,7 @@ columns = 3
   <a href="#devrooms">developer rooms</a>,
   <a href="#lightningtalks">lightning talks</a>,
   <a href="#stands">stands</a> and
+  <a href="#bofs">BOFs</a>.
   <!--a href="#certification">certification exams</a-->.
 </p>
 
@@ -298,6 +301,36 @@ columns = 3
   <a href="page:/stands/">FOSDEM stands page</a>.
 </p>
 <% end %>
+
+<a name="bofs"></a>
+<h3>BOFs<h3>
+<p>
+  BOF stands for Birds Of a Feather who, as the saying goes, flock together.
+  FOSDEM has three meeting rooms that may be booked in 30 or 60 minute blocks
+  for discussions.  All the meetings are public so anyone who is interested can
+  attend if there is enough space.  Slots in Track C may be reserved in advance
+  through <a href="https://fosdem.org/submit">fosdem.org/submit</a> selecting
+  that track. Mention any time preferences in the Submission Notes.
+  Use the signup sheets on the wall near
+  the Infodesk in building H during the event to book slots in tracks A and B.
+</p>
+
+<% unless boftracks.empty? %>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <% boftracks.sort_by{|x| x[:title].downcase}.each_slice((boftracks.size / columns).ceil) do |list| %>
+        <div class="span<%= 9 / columns %>">
+            <ul>
+                <% list.each do |t| %>
+                <li><%= l t, :name %></li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
+    </div>
+</div>
+<% end %>
+
 
 <!--a name="certification"></a>
 <h3> Certification Exams</h3>

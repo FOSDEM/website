@@ -5,18 +5,22 @@
 <% go_live = @site.config.fetch(:go_live) %>
 <% matrix_works = @site.config.fetch(:matrix_works) %>
 <ul class="side-box">
-  <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></li>
-<%
-  building = $buildings.select{|b, rooms| rooms.map{|r| r[:slug]}.include? item[:slug]}.map{|b, rooms| b}.first
-  if building
-    building_path = $item_by_id.fetch('/schedule/buildings/').path
-  %>
-  <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
+  <% if !item[:virtual]%>
+    <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></li>
+  <%
+    building = $buildings.select{|b, rooms| rooms.map{|r| r[:slug]}.include? item[:slug]}.map{|b, rooms| b}.first
+    if building
+      building_path = $item_by_id.fetch('/schedule/buildings/').path
+      %>
+    <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
+  <% end %>
 <% end %>
-<% if ! @site.config.fetch(:virtual) %>
+<% if ! @site.config.fetch(:virtual) && !item[:virtual] %>
   <li><i class="icon-map-marker"></i> <strong>Location</strong>: <a href="https://nav.fosdem.org/l/<%= item[:slug] %>/">
     <%= item[:conference_room] %>
   </a></li>
+<% else %>
+  <li><i class="icon-map-marker"></i> <strong>Location</strong>: Online only</li>
 <% end %>
   <% if is_stand(item[:slug]) %>
   <li>

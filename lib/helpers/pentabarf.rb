@@ -769,10 +769,11 @@ module Fosdem
 
       # add virtual or not
       rooms.each do |r|
-        r['virtual'] = r['conference_room'].start_with?("D.") || r['conference_room'].start_with?("M.")
+        r['virtual'] = (r['conference_room'] =~ /^[DIMS]/) ? true : false
       end
 
       # decorate rooms with a title
+      # flag virtual rooms
       rooms.each do |r|
         if r['virtual']
           r['title'] = r['conference_room'] + "(online)"
@@ -808,6 +809,7 @@ module Fosdem
           e['room'] = room['slug']
           e['room_name'] = room['conference_room']
           e['room_rank'] = room['rank']
+          e['virtual'] = room['virtual']
         end
       end
 

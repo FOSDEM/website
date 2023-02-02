@@ -87,9 +87,10 @@ while true; do
 		git checkout $BRANCH
 		git pull --rebase $REMOTE $BRANCH
 
-		# Always trigger a rebuild of the events and amendments page
+		# Always trigger a rebuild of the events, amendments and metrics page
 		touch content/schedule/events.html
 		touch content/schedule/amendments.html
+		touch content/metrics.txt
 
 		# Refresh the local export
 		nanoc update -y
