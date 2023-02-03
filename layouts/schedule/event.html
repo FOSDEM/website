@@ -12,28 +12,13 @@
   <li><i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></li>
   <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %></li>
   <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item, :end %></li>
-  <% if is_stand(item[:room]) %>
-    <li>
-      <i class="icon-picture"></i>  <strong>Visit</strong>:
-      <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:room]) %>">Visit the stand</a>
-    </li>
-  <% else %>
-  <li>
-    <i class="icon-facetime-video"></i> <strong>Video with Q&amp;A</strong>:
-    <% if item[:room].nil? || ! go_live || ! matrix_works %>
-    <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
-    <% else %>
-    <a href="<%= stream_link(item) %>"><%= fancy_room_name(item[:room]) %></a>
-    <% end %>
-  </li>
-  <% end %>
   <% if ! is_stand(item[:room]) %>
   <li id="live-stream-with-q-and-a" class="visible-desktop">
     <i class="icon-film"></i> <strong>Video only</strong>:
     <% if item[:room].nil? || ! go_live %>
     <span class="muted">We're not quite ready yet</span>
     <% else %>
-    <a href="<%= stream_direct_link(item) %>"><%= fancy_room_name(item[:room]) %></a>
+    <a href="<%= item[:live_video_link] %>"><%= item[:room] %></a>
     <% end %>
   </li>
   <% end %>
@@ -42,7 +27,7 @@
     <% if item[:room].nil? || ! go_live || ! matrix_works %>
     <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
     <% else %>
-    <a href="<%= stream_link(item, is_chat=true) %>">Join the conversation!</a>
+    <a href="<%= item[:chat_link] %>">Join the conversation!</a>
     <% end %>
   </li>
 </ul>
