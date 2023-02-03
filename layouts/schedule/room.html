@@ -22,20 +22,6 @@
 <% else %>
   <li><i class="icon-map-marker"></i> <strong>Location</strong>: Online only</li>
 <% end %>
-  <% if is_stand(item[:slug]) %>
-  <li>
-    <i class="icon-picture"></i> <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:slug]) %>">Visit the stand</a>
-  </li>
-  <% else %>
-  <li id="live-stream-with-q-and-a" class="visible-desktop">
-    <i class="icon-facetime-video"></i> <strong>Video with Q&A</strong>:
-    <% if ! go_live || ! matrix_works %>
-    <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
-    <% else %>
-    <a href="<%= stream_link(item) %>"><%= item[:conference_room] %></a>
-    <% end %>
-  </li>
-  <% end %>
   <% if ! is_stand(item[:slug]) %>
   <li>
     <i class="icon-film"></i> <strong>Video only</strong>:
@@ -51,7 +37,7 @@
     <% if ! go_live || ! matrix_works %>
     <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
     <% else %>
-    <a href="<%= stream_link(item, is_chat=true) %>">Join the conversation!</a>
+    <a href="<%= item[:chat_link] %>">Join the conversation!</a>
     <% end %>
   </li>
 </ul>

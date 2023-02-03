@@ -776,6 +776,8 @@ module Fosdem
         else
           r['title'] = r['conference_room']
         end
+
+        r['chat_link'] = 'https://chat.fosdem.org/#/room/#' + '2023-' + r['conference_room'].gsub(/\(/, '').gsub(/[\) ]/, '_').downcase + ':fosdem.org'
       end
 
       # decorate rooms with events
@@ -841,6 +843,7 @@ module Fosdem
           ll['url'] = 'https://live.fosdem.org/watch/' << e['room'].gsub(/_.*/, '')
           ll['rank'] = nil
           e['links'] << ll
+          e['live_video_link'] = ll['url']
           video_link_count += 1
         end
         log(:high, "added #{video_link_count} live video links")
@@ -873,6 +876,7 @@ module Fosdem
           ll['url'] = 'https://chat.fosdem.org/#/room/#' + chatroom_name
           ll['rank'] = nil
           e['links'] << ll
+          e['chat_link'] = ll['url']
 
           lm['title'] = 'Chat room (app)'
           lm['url'] = 'https://matrix.to/#/#' + chatroom_name + '?web-instance[element.io]=chat.fosdem.org'
