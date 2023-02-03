@@ -112,7 +112,7 @@ stand_list:
       stands:
         all:
         - name: OpenEmbedded + AGL
-        - name: GNU GRUB
+        - name: GNU GRUB - CANCELLED DUE TO ILLNESS
     - theme: Hardware
       stands:
         all:
