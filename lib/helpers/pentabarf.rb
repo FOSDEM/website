@@ -776,8 +776,9 @@ module Fosdem
         else
           r['title'] = r['conference_room']
         end
-
+      # decorate with chat and live video link
         r['chat_link'] = 'https://chat.fosdem.org/#/room/#' + '2023-' + r['conference_room'].gsub(/\(/, '').gsub(/[\) ]/, '_').downcase + ':fosdem.org'
+        r['live_video_link'] = 'https://live.fosdem.org/watch/' + r['slug'].gsub(/_.*/, '')
       end
 
       # decorate rooms with events

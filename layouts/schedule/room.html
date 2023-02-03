@@ -28,7 +28,7 @@
     <% if ! go_live %>
     <span class="muted">We're not quite ready yet</span>
     <% else %>
-    <a href="<%= stream_direct_link(item) %>"><%= item[:conference_room] %></a>
+    <a href="<%= item[:live_video_link] %>"><%= item[:conference_room] %></a>
     <% end %>
   </li>
   <% end %>
