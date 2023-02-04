@@ -89,7 +89,7 @@ are available, too.</p>
 	    <% else %>
 	      <td>No event scheduled.</td>
 	    <% end %>
-	    <% if r[:slug] =~ /corridor/ or r[:slug] =~ /h3227/ or r[:slug] =~ /h3228/ or r[:slug] =~ /level/ or r[:slug] =~ /ub4228/ or r[:slug] =~ /j1106/ or r[:slug] =~ /infodesk/ or !current_event %>
+	    <% if r[:slug] =~ /corridor/ or r[:slug] =~ /h3227/ or r[:slug] =~ /h3228/ or r[:slug] =~ /level/ or r[:slug] =~ /ub4228/ or r[:slug] =~ /j1106/ or r[:slug] =~ /infodesk/ or r[:slug] =~ /ub2147/ or !current_event %>
 	      <td></td>
 	    <% else %>
             <td><a href="<%=stream_direct_link(current_event)%>">Watch Live!</a></td>
