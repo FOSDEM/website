@@ -386,56 +386,6 @@ module Fosdem
     end
   end
 
-
-  def stream_link_name(roomname)
-    room = room(roomname)[:conference_room]
-    matrix_room_name = room[2..-1]
-    if ['d'].include? room[0].downcase
-        return '#' + matrix_room_name + '-devroom:fosdem.org'
-    elsif ['s'].include? room[0].downcase
-      return '#' + matrix_room_name + '-stand:fosdem.org'
-    elsif ['k'].include? room[0].downcase
-      return '#' + matrix_room_name + '-keynotes:fosdem.org'
-    else
-      return '#' + matrix_room_name + ':fosdem.org'
-    end
-  end
-
-  def stream_link(track_or_event, is_chat=false)
-    if ! track_or_event[:rooms].nil?
-      # Track
-      slug = stream_link_name(track_or_event[:rooms][0])
-    elsif ! track_or_event[:conference_room].nil?
-      # Room
-      slug = stream_link_name(track_or_event[:slug])
-    else
-      # Event
-      slug = stream_link_name(track_or_event[:room])
-    end
-    if is_chat
-      link = 'https://matrix.to/#/%s?web-instance[element.io]=chat.fosdem.org'
-    else
-      link = 'https://chat.fosdem.org/#/room/%s'
-    end
-    return link % slug
-  end
-
-  def stream_direct_link(track_or_event)
-    if ! track_or_event[:rooms].nil?
-      # Track
-      slug = track_or_event[:rooms][0]
-    elsif ! track_or_event[:conference_room].nil?
-      # Room
-      slug = track_or_event[:slug]
-    else
-      # Event
-      slug = track_or_event[:room]
-    end
-    slug = slug.delete("_")
-    link = 'https://live.fosdem.org/watch/%s'
-    return link % slug
-  end
-
   def fancy_room_name(slug)
     return slug[0].upcase + '.' + slug[1..-1]
   end
