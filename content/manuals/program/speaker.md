@@ -31,6 +31,13 @@ this event, here are some guidance notes to support your planning.
 **Please do not plan to run right up against these deadlines - you and FOSDEM need
 the contingency for things that genuinely go wrong.**
 
+## Uploading your slides
+
+Slides can be uploaded at  https://penta.fosdem.org/submission/FOSDEM23. Click on
+"Events" in the left menu, select your own event, select "Files" tab, scroll down
+to "Add attachment", choose "Slides", enable public preview and a name for the file
+as well as the title, then choose your file and upload it.
+
 ## Recording your talk
 You can use any tool that you prefer to record your
 presentation. Open Broadcast Studio (OBS) is a powerful tool and recommended by
@@ -68,7 +75,7 @@ headset
 occasion 
 
 ## Uploading videos
-Videos should be uploaded to https://penta.fosdem.org/submission/FOSDEM22. Click on "Events" in the left menu, select your own event, select "General" tab, scroll down to "Pre-recorded Video Upload URL" and click on "Upload" text.
+Videos should be uploaded to https://penta.fosdem.org/submission/FOSDEM23. Click on "Events" in the left menu, select your own event, select "General" tab, scroll down to "Pre-recorded Video Upload URL" and click on "Upload" text.
 
 Technical requirements for your presentation video are:
 
@@ -147,7 +154,7 @@ session. Hosts only need a normal self-created pentabarf account, like a speaker
 them access to what they need.
 
 Speakers, devroom managers and hosts can see the events you are listed against
-at the [‘Own Events’](https://penta.fosdem.org/event/own) link and upload videos [will be available here](https://penta.fosdem.org/submission/FOSDEM22/events).
+at the [‘Own Events’](https://penta.fosdem.org/event/own) link and upload videos [will be available here](https://penta.fosdem.org/submission/FOSDEM23/events).
 
 Please make sure that hosts and coordinators are not taking part in a talk
 before or after your own – otherwise there could be problems with overlap during
