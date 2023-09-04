@@ -21,7 +21,7 @@ footer:
     - About: /about
     - /about/sponsors
     - /support/donate
-    - T-shirts and hoodies: /tshirts
+      #    - T-shirts and hoodies: /tshirts
     - /faq
     - Archives: /archives
   - This year:
@@ -29,7 +29,7 @@ footer:
     - /schedule
     - /stands
     - /certification
-    - T-shirts and hoodies: /tshirts
+#    - T-shirts and hoodies: /tshirts
 #   - /keysigning
     - /volunteer
 #   - /beerevent
@@ -38,7 +38,7 @@ footer:
 #   - Getting there: /practical/transportation
 #   - /practical/online
 #   - /practical/matrix_troubleshooting
-    - T-shirts and hoodies: /tshirts
+#    - T-shirts and hoodies: /tshirts
     - /practical/accessibility
 #   - /practical/accommodation
     - /practical/conduct
