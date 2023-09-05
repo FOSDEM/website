@@ -44,7 +44,7 @@ size = h.values.map(&:size).inject(:+)
             <td><%= e[:end_time] %></td>
 	    <td>
 	      <% e[:attachments].each do |a| %>
-	      <a href="<%= @site.config[:base_url] + ($item_by_id.fetch(a[:identifier])).path %>"><%= a[:type] %></a>
+	      <a href="<%= @site.config[:base_url] + a[:file] %>"><%= a[:type] %></a>
               <% end %>
 	    </td>
 	    <td>

@@ -50,7 +50,7 @@ xml.schedule do
               end
               xml.attachments do
                 event[:attachments].each do |attachment|
-		xml.attachment(attachment[:title], {:type=>attachment[:type]}, {:href=>@site.config[:base_url] + ($item_by_id.fetch(attachment[:identifier])).path})
+		xml.attachment(attachment[:title], {:type=>attachment[:type]}, {:href=>@site.config[:base_url] + attachment[:file]})
                 end
 	      end
               xml.links do
