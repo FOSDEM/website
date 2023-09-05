@@ -53,12 +53,12 @@ days:
     slug: sunday
     title: Sunday
 rooms:
-  vtest:
+  dtest:
     conference_room_id: 494
     conference_room: V.test
     size: 100
     rank: 10
-    slug: vtest
+    slug: dtest
     title: V.test
     events:
     - test_event
@@ -95,10 +95,10 @@ tracks:
       - test_event
       sunday: []
     rooms:
-    - vtest
+    - dtest
     events_per_room_per_day:
       saturday:
-        vtest:
+        dtest:
         - test_event
       sunday: {}
     start_time:
@@ -161,8 +161,8 @@ events:
     track_full_name: Test Track
     track_rank: 100
     type: maintrack
-    room: vtest
-    room_name: V.test
+    room: dtest
+    room_name: D.test
     room_rank: 10
     speakers:
     - test_account_s
