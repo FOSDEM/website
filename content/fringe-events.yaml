@@ -1,3 +1,19 @@
 ---
 kind: internal
 events:
+    'DuckCon #4':
+        location: Amsterdam
+        start: 2024-02-02
+        end: 2024-02-02
+        cost: Free
+        registration: None
+        website: https://duckdb.org/2023/10/06/duckcon4.html
+        contact: gabor@duckdb.org
+    'Config Management Camp 2024':
+        location: Ghent
+        start: 2024-02-05
+        end: 2024-02-07
+        cost: Free
+        registration: Preregistration required for Crowd control purposes
+        website: https://cfgmgmtcamp.eu/ghent2024/
+        contact: info@cfgmgmtcamp.eu
