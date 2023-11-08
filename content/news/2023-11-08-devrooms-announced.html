@@ -1,0 +1,44 @@
+---
+title: 'Accepted developer rooms'
+---
+<p>
+   We are pleased to announce the developer rooms that will be organised at
+   FOSDEM 2023.
+</p>
+
+---MORE---
+
+<p>
+   Developer rooms are assigned to self-organising groups to work together on
+   open source projects, to discuss topics relevant to a broader subset of the
+   community, etc. The individual developer room organisers will issue their
+   calls for participation in the next few days. The list below will be updated
+   accordingly.
+</p>
+
+<%
+devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
+%>
+
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Call for Participation</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% devrooms.each do |t| 
+    cfp = t[:conference_call_for_papers_url]%>
+    <tr>
+      <td><%= l t, :name  %></td>
+      <td>
+          <% if cfp != nil and cfp !="" %>
+          <a href="<%= cfp %>">CfP</a>
+          <% end  %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
