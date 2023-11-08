@@ -176,8 +176,6 @@ pentabarf:
 pretalx:
   conference_slug: fosdem-2024
   host: https://pretalx.fosdem.org
-  # This token can be found at https://pretalx.fosdem.org/fosdem-2024/me/
-  api_key: xxxx
   meta_export_file: export/pentabarf.yaml
 
 keysigning:

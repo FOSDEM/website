@@ -72,26 +72,27 @@ initialisation file for your shell.
 
 A site build consists of two steps:
 
-1. Export the data from the FOSDEM Pentabarf database
+1. Export the data from the FOSDEM Pretalx database
 2. Generate the static site using the exported data
 
-### Exporting from FOSDEM Pentabarf
+### Exporting from FOSDEM Pretalx
 
-To generate the schedule data from Pentabarf, you will first need to obtain a
-Kerberos ticket for a principal with access to the Pentabarf database. Next,
-you will be able to run the update command.
+The schedule data is fetched as a large yaml file.
+Downloading this yaml file requires an api key which you can download at
+https://pretalx.fosdem.org/fosdem-2024/me/
+You need to set it as an environmental variable before running nanoc update -y.
 
 ```bash
-kinit yourprincipal@FOSDEM.ORG
+export pretalx_api_key=xxx
 nanoc update -y
 ```
 
-If you do not have access to the Pentabarf database, you can copy the `export/`
+If you do not have access to the pretalx site or for, you can copy the `export/`
 folder in the `sample/` directory to the root and go from there.
 
 ### Generating the site
 
-> This section assumes you have an exported data from pentabarf already. If you
+> This section assumes you have an exported data from pretalx already. If you
 > haven't please see the section above first.
 
 ```bash
@@ -105,7 +106,7 @@ The site will be generated in `/output`. To view the website, you can use the
 nanoc view -p 1234
 
 ```
-Don't forget to add the year when you check out the site, eg http://localhost:1234/2022 .
+Don't forget to add the year when you check out the site, eg http://localhost:1234/2024 .
 
 
 ### Running with Docker
