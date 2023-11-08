@@ -12,7 +12,8 @@ module Fosdem
     end
 
     def update
-      Fosdem::Pentabarf.update(@site.config)
+      #Fosdem::Pentabarf.update(@site.config)
+      Fosdem::Pretalx.update(@site.config)
     end
 
     private

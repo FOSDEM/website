@@ -173,6 +173,13 @@ pentabarf:
     width: 200
     height: 200
 
+pretalx:
+  conference_slug: fosdem-2024
+  host: https://pretalx.fosdem.org
+  # This token can be found at https://pretalx.fosdem.org/fosdem-2024/me/
+  api_key: xxxx
+  meta_export_file: export/pentabarf.yaml
+
 keysigning:
   submission_deadline: 2024-01-22
   homework_due: 2024-04-30
