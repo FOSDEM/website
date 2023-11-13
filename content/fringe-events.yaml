@@ -17,3 +17,19 @@ events:
         registration: Preregistration required for Crowd control purposes
         website: https://cfgmgmtcamp.eu/ghent2024/
         contact: info@cfgmgmtcamp.eu
+    'OpenEmbedded Workshop 2024':
+        location: Brussels
+        start: 2024-02-05
+        end: 2024-02-05
+        cost: 50+ Euros
+        registration: 
+        website: https://pretalx.com/oe-ws-2024/
+        contact: board@openembedded.org
+    'EU Open Source Policy Summit 2024':
+        location: Arduinkaai 7 1000, Brussels, Belgium
+        start: 2024-02-02
+        end: 2024-02-02
+        cost: Free
+        registration: Express interest to attend on-site to get to the waiting list, online participation open for everyone
+        website: https://summit.openforumeurope.org/
+        contact: summit@openforumeurope.org
