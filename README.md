@@ -78,12 +78,9 @@ A site build consists of two steps:
 ### Exporting from FOSDEM Pretalx
 
 The schedule data is fetched as a large yaml file.
-Downloading this yaml file requires an api key which you can download at
-https://pretalx.fosdem.org/fosdem-2024/me/
 You need to set it as an environmental variable before running nanoc update -y.
 
 ```bash
-export pretalx_api_key=xxx
 nanoc update -y
 ```
 
