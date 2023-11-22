@@ -26,6 +26,11 @@ xml.schedule do
     xml.day_change conf[:day_change]
     xml.timeslot_duration conf[:timeslot_duration]
   end
+  xml.tracks do 
+    tracks.each do | track |
+      xml.track track[:name], {:online_qa=>track[:online_qa]}
+    end
+  end
   days.each_with_index do | day, index |
     xml.day(:index=>index + 1,:date=>day[:conference_day]) do
       rooms.each do | room |
