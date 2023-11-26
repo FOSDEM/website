@@ -8,12 +8,17 @@ index: false
 conf = conference()
 
 require 'builder'
+require 'tzinfo'
+require 'uuidtools'
 buffer = ''
 xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
+tz = TZInfo::Timezone.get(conf[:timezone])
 
 xml.instruct!
 xml.schedule do
+  xml.version '1.0'
   xml.conference do
+    xml.acronym conf[:acronym].downcase
     xml.title conf[:title]
     xml.subtitle conf[:subtitle]
     xml.venue conf[:venue]
@@ -24,6 +29,8 @@ xml.schedule do
     #xml.release $conf.release
     xml.day_change conf[:day_change]
     xml.timeslot_duration conf[:timeslot_duration]
+    xml.base_url conf[:export_base_url]
+    xml.time_zone_name conf[:timezone]
   end
   xml.tracks do 
     tracks.each do | track |
@@ -31,16 +38,24 @@ xml.schedule do
     end
   end
   days.each_with_index do | day, index |
-    xml.day(:index=>index + 1,:date=>day[:conference_day]) do
+    time = Time.iso8601("#{day[:conference_day]}T#{conf[:day_change]}")
+    next_day = Date.new(time.year, time.month, time.day) + 1
+    day_start = Time.new(time.year, time.month, time.day, time.hour, time.min, time.sec, tz).iso8601()
+    day_end = Time.new(next_day.year, next_day.month, next_day.day, time.hour, time.min, time.sec, tz).iso8601()
+    xml.day({:index=>index + 1}, {:date=>day[:conference_day]}, {:start=>day_start}, {:end=>day_end}) do
       rooms.each do | room |
 
-        xml.room({:name => room[:conference_room]}) do
+        xml.room({:name => room[:conference_room]}, {:slug => room[:slug]}) do
           room[:events_by_day][day[:slug].to_sym].map(&$to_event).each do |event|
-            xml.event(:id=>event[:event_id]) do
+            event_url = conf[:export_base_url] + 'event/' + event[:slug] + '/'
+            event_guid = UUIDTools::UUID.sha1_create(UUIDTools::UUID_URL_NAMESPACE, event_url)
+            xml.event({:id=>event[:event_id]}, {:guid=>event_guid}) do
+              xml.date Time.strptime(event[:start_datetime], '%Y-%m-%d %H:%M:%S.%N %z').iso8601()
               xml.start event[:start_time]
               xml.duration Time.parse(event[:duration]).strftime('%H:%M')
               xml.room event[:room_name]
               xml.slug event[:slug]
+              xml.url event_url
               xml.title event[:title]
               xml.subtitle event[:subtitle]
               xml.track event[:track_name]
