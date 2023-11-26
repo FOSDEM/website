@@ -102,8 +102,9 @@
   <ul class="event-attachments unstyled">
     <%
       item[:attachments].each do |a|
-        title = a[:title]
-        icon = case a[:media]
+        ai = $item_by_id.fetch(a[:identifier])
+        title = a[:title] ? a[:title] : ai[:title]
+        icon = case ai[:media]
                when 'slides'
                  'list'
                when 'video'
@@ -116,7 +117,7 @@
                  'download'
                end
       %>
-      <li><i class="icon-<%= icon %>"></i> <a href="<%= a[:file] %>"><%= title %> (<%= a[:type] %>)</a></li>
+      <li><i class="icon-<%= icon %>"></i> <a href="<%= ai.path %>"><%= title %> (<%= ai[:type] %>)</a></li>
     <% end %>
   </ul>
 <% end %>
