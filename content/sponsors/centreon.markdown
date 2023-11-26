@@ -23,7 +23,7 @@ With a commitment to fostering collaboration and technological
 advancement, Centreon has been a steadfast supporter of the
 open-source community.
 
-Visit [Centreon's website](https://www.centreon.com/centreon-editions/centreon-open-source/en-from-the-core)
+Visit [Centreon's website](https://www.centreon.com/centreon-editions/centreon-open-source/)
 to learn more about our comprehensive monitoring platform and how it
 can enhance your organization's IT operations.
 
