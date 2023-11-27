@@ -9,14 +9,13 @@ conf = conference()
 
 require 'builder'
 require 'tzinfo'
-require 'uuidtools'
 buffer = ''
 xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
 tz = TZInfo::Timezone.get(conf[:timezone])
 
 xml.instruct!
 xml.schedule do
-  xml.version '1.0'
+  xml.version conf[:schedule_version]
   xml.conference do
     xml.acronym conf[:acronym].downcase
     xml.title conf[:title]
@@ -48,8 +47,7 @@ xml.schedule do
         xml.room({:name => room[:conference_room]}, {:slug => room[:slug]}) do
           room[:events_by_day][day[:slug].to_sym].map(&$to_event).each do |event|
             event_url = conf[:export_base_url] + 'event/' + event[:slug] + '/'
-            event_guid = UUIDTools::UUID.sha1_create(UUIDTools::UUID_URL_NAMESPACE, event_url)
-            xml.event({:id=>event[:event_id]}, {:guid=>event_guid}) do
+            xml.event({:id=>event[:event_id]}, {:guid=>event[:guid]}) do
               xml.date Time.strptime(event[:start_datetime], '%Y-%m-%d %H:%M:%S.%N %z').iso8601()
               xml.start event[:start_time]
               xml.duration Time.parse(event[:duration]).strftime('%H:%M')

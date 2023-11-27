@@ -77,7 +77,6 @@ GEM
     tzinfo-data (1.2022.3)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.3.0)
-    uuidtools (2.2.0)
 
 PLATFORMS
   ruby
@@ -103,7 +102,6 @@ DEPENDENCIES
   systemu
   tzinfo
   tzinfo-data
-  uuidtools
 
 BUNDLED WITH
    1.17.3
