@@ -33,3 +33,19 @@ events:
         registration: Express interest to attend on-site to get to the waiting list, online participation open for everyone
         website: https://summit.openforumeurope.org/
         contact: summit@openforumeurope.org
+    'MariaDB ServerFest Brussels':
+        location: Avenue Louise 381, Brussels
+        start: 2024-02-02
+        end: 2024-02-03
+        cost: free
+        registration: 
+        website: https://www.meetup.com/mariadb-developers/events/297345406/
+        contact: foundation@mariadb.org
+    'Workshop on FOSS license and security compliance tools':
+        location: Brussels
+        start: 2024-02-02
+        end: 2024-02-02
+        cost: Free or contribution
+        registration: Recommended. Space limited.
+        website: https://opencollective.com/aboutcode/events/fosdem-2024-fringe-workshop-on-foss-license-and-security-compliance-tools-ea75e63c
+        contact: hello@nexb.com
