@@ -93,7 +93,9 @@ while true; do
 		touch content/metrics.txt
 
 		# Refresh the local export
-		nanoc update -y
+		# nanoc update -y
+		ssh pretalx-read@pretalx.int.fosdem.org sudo -u pretalx_event /usr/share/webapps/pretalxevent/venv/bin/python -m pretalx export_resources fosdem-2024 /home/pretalx_event/export/fosdem-2024
+		rsync pretalx-read@pretalx.int.fosdem.org:/home/pretalx_event/export/fosdem-2024/ export -avP --delete-after
 
 		# Compile the website
 		nanoc compile
