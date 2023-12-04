@@ -49,3 +49,35 @@ events:
         registration: Recommended. Space limited.
         website: https://opencollective.com/aboutcode/events/fosdem-2024-fringe-workshop-on-foss-license-and-security-compliance-tools-ea75e63c
         contact: hello@nexb.com
+    'CentOS Connect':
+        location: Radisson Collection Hotel, Grand Place Brussels
+        start: 2024-02-01
+        end: 2024-02-02
+        cost: Free
+        registration: Strongly recommended for space, meals, and swag
+        website: https://connect.centos.org/
+        contact: shaunm@redhat.com
+    'Learn to Code KiCad Day':
+        location: Les Ateliers des Tanneurs, Brussels
+        start: 2024-02-02
+        end: 2024-02-02
+        cost: Free
+        registration: None
+        website: https://forms.gle/9cDo2tj2CWpD66mB9
+        contact: codingday@kicad.org
+    'CHAOSScon Europe 2024':
+        location: Bedford Hotel & Congress Centre, Rue du Midi 135 Brussels, 1000, Belgium
+        start: 2024-02-01
+        end: 2024-02-01
+        cost: $10
+        registration: None
+        website: https://chaoss.community/chaosscon-2024-eu/
+        contact: elizabeth@chaoss.community
+    'State of Open Con':
+        location: London, UK
+        start: 2024-02-06
+        end: 2024-02-07
+        cost: 199 GBP (community tickets also available)
+        registration: None
+        website: https://stateofopencon.com/#
+        contact: admin@openuk.uk
