@@ -225,6 +225,7 @@ columns = 3
 </p>
 <div class="container-fluid">
     <div class="row-fluid">
+        <% columns = [columns, devrooms.size].min %>
         <% devrooms.sort_by{|x| x[:title]}.each_slice((devrooms.size / columns).ceil) do |list| %>
         <div class="span<%= 9 / columns %>">
             <ul>
