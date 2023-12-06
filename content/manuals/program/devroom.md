@@ -28,7 +28,6 @@ provide a convenient way for us to contact each other, for example
 to discuss moving proposed talks between devrooms.  Note that these
 alias expansions also include devrooms@fosdem.org.
 Again, please make sure you read those messages.
-
 A list of mail aliases can be found in [pretalx](https://pretalx.fosdem.org/orga/event/fosdem-2024/p/devroom-report/)
 (this list is only accessible to devroom managers), so you can contact other devrooms, eg for moving talks to another room.
 
@@ -50,7 +49,7 @@ Devroom managers status grant access to:
 - room full + video control (during the event)
 - video review (after the event)
 
-Note we plan to provide a tool to add reviewers for your track soon, which would allow you to self-service reviewers for your track. People who only review should not be made devroom manager.
+People who only review should not be made devroom manager: you can add them to a review team on your [devroom dashboard](https://pretalx.fosdem.org/orga/event/fosdem-2024/p/devroom-dashboard/).
 
 ## Before the event
 
@@ -93,17 +92,41 @@ Optionally you can add a small description of the devroom on top of the page. Se
 
 Add a .html file in the [website/content/schedule/devrooms/](https://github.com/FOSDEM/website/tree/master/content/schedule/devrooms) folder in the git repo for this description. Keep it concise.
 
-*NOTE: this is not yet operational for 2024.*
-
 ### Reviewing talks
 
-* Needs update to pretalx
+* Reviewing talks can happen from the [review](https://pretalx.fosdem.org/orga/event/fosdem-2024/reviews/) page. By default devroom managers will see all proposals, also for other tracks. If you only want to review tracks for which you are a manager or review team member, click the large info box on top of the page.
+
+![Review page](img/review.png)
+
+In addition to devroom managers, you can invite extra reviewers for your track by using the [devroom dashboard](https://pretalx.fosdem.org/orga/event/fosdem-2024/p/devroom-dashboard/). Note invited members have to open the link in the mail they receive in order to get access. As an alternative, you can send them the link next to their invitiation also using any other way.
+
+Note that devroom managers are able to review also proposals in other tracks. This to spot talks which might be better suited for your devroom or to spot people who submit the same talk to different tracks.
+
+### Accepting and Rejecting talks
+
+After the review phase a selection of talks must be made from the [proposals](https://pretalx.fosdem.org/orga/event/fosdem-2024/submissions/) page. 
+When accepting or rejecting a talk, a mail will be generated in the outbox in the bottom left. Please review these mails quickly: it will be confusing for other devroom managers if mails are stuck there. You can edit the mails if you want to add some personalised content or discard them if you inform speakers another way (this is not recommended). In any case, leave the reply-to address to that of the devroom team, so questions get to the track organisers.
+
+![send/edit/discard mails](img/send-edit-mail.png)
+
+In the image above the highlighted buttons on the right allow send/edit/discard mails.
+
+
+You can also mark a decision on accept/reject as pending. In that case the submitter will not see a change in status if they log in. 
+
+You can also change the duration of the talk when accepting it. This will make the next step (scheduling) somewhat easier.
 
 ### Scheduling talks
 
-* Needs update to pretalx
-* Scheduling can only start if the devrooms have been assigned their room
+After a talk has been accepted it can be scheduled. The easiest way to do this is by going to the [schedule](https://pretalx.fosdem.org/orga/event/fosdem-2024/schedule/) page. Choose your track on the top left dropdown and your assigned room in the bottom right (check the mailing list archive if in doubt).
 
+![schedule editor](img/schedule.png)
+
+You can now drag and drop your talk to the schedule. By default the schedule will show the time in 30 minute granularity, but you can click on the time bar to make this 5 minutes. After a talk was added to the schedule, you can adjust it duration by double clicking it. Take care for any warning in the editor.
+
+After you finish scheduling, click the Check bottom in the top right. If this page mentions any errors concerning your track, please review them and fix them. As long as errors are mentioned, no new schedule will be released. If there are no errors, releases of the schedule will be generated automatically and are picked up by the FOSDEM website/apps/.... Only talks which are _confirmed_ will be shown.
+
+Alternatively, if the scheduling interface does not work for you, you can manually add start and stop times and a room to proposals. Note that there is a larger chance to make error if you use this method.
 
 #### Scheduling hints
 
@@ -140,7 +163,7 @@ Add a .html file in the [website/content/schedule/devrooms/](https://github.com/
 
   * That's not crazy at all.  Please do this.
     The video information gets generated from this, so it's the simplest way
-    to make sure the videos are tagged correctly. It would help for the booklets that the titles are very short.
+    to make sure the videos are tagged correctly.
 
 #### Website schedule
 
@@ -153,7 +176,7 @@ You can see when it was last updated near the bottom of
 Note that the data gets pulled from the database slightly before
 this timestamp is generated - sometimes a few minutes before.
 If nothing on this page changed, the date won't be updated.
-https://fosdem.org/2023/sitemap.xml shows the last modified
+https://fosdem.org/2024/sitemap.xml shows the last modified
 date for every page on the site.
 
 If the system detects an inconsistency in the data, it stops
