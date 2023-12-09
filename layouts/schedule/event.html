@@ -40,7 +40,7 @@
 <% if item[:abstract] or item[:description] %>
 <div class="event-blurb">
 <% if item[:abstract] %>
-<div class="event-abstract"><%= item[:abstract] %></div>
+<div class="event-abstract"><%= Kramdown::Document.new(item[:abstract], { auto_ids: false, header_offset: 2 }).to_html %></div>
 <% end %>
 <% if item[:description] %>
 <div class="event-description"><%= item[:description] %></div>
