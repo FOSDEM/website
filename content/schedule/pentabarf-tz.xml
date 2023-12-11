@@ -18,6 +18,7 @@ xml.schedule do
     xml.subtitle conf[:subtitle]
     xml.venue conf[:venue]
     xml.city conf[:city]
+    xml.time_zone_name conf[:timezone]
     xml.start days.first[:conference_day]
     xml.end days.last[:conference_day]
     xml.days days.length
