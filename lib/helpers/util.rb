@@ -56,7 +56,7 @@ module Fosdem
         .gsub(%r{/+}, '')
         .gsub(%r{\s+}, '_')
         .gsub(/["']+/, '')
-        .gsub(/[^0-9A-Za-z]/i, '_')
+        .gsub(/[^0-9A-Za-z\-]/i, '_')
         .gsub(/_+/, '_')
         .gsub(/^_/, '')
         .gsub(/_$/, '')
