@@ -81,3 +81,19 @@ events:
         registration: None
         website: https://stateofopencon.com/#
         contact: admin@openuk.uk
+    'Hackerspace Brussels Bytenight':
+        location: Klein eilandstraat 1A Rue de la petite île, 1070 Anderlecht
+        start: 2023-02-03
+        end: 2023-02-04
+        cost: Free entry, drinks can be bought at the space
+        registration: None
+        website: https://hsbxl.be/events/byteweek/2024/bytenight/
+        contact: contact@hsbxl.be
+    'Guix Days':
+        location: ICAB, 8 rue Amedee Lynenstraat, 1210 Brussels
+        start: 2023-02-01
+        end: 2023-02-02
+        cost: Free
+        registration: None
+        website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2024
+        contact: guix-devel@gnu.org
