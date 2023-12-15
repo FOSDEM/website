@@ -97,3 +97,12 @@ events:
         registration: None
         website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2024
         contact: guix-devel@gnu.org
+    'Matrix Foundation & Community Meetup':
+        location: Hackerspace Brussels (HSBXL) Klein eilandstraat 1A Rue de la petite île, 1070 Anderlecht
+        start: 2024-02-02
+        end: 2024-02-02
+        cost: Free
+        registration: None
+        website: https://matrix.to/#/#fosdem2024-foundation-community-meetup:matrix.org
+        contact: thib@matrix.org
+
