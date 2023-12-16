@@ -12,7 +12,7 @@
   The speaker description is potentially outdated as it is from a previous FOSDEM edition.
   </p>
 <% end %>
-<%= Kramdown::Document.new(item[:abstract], { auto_ids: false, header_offset: 2 }).to_html %>
+<%= item[:abstract] %>
 <%= item[:description] %>
 
 <% if photo %>
