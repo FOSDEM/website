@@ -83,16 +83,16 @@ events:
         contact: admin@openuk.uk
     'Hackerspace Brussels Bytenight':
         location: Klein eilandstraat 1A Rue de la petite île, 1070 Anderlecht
-        start: 2023-02-03
-        end: 2023-02-04
+        start: 2024-02-03
+        end: 2024-02-04
         cost: Free entry, drinks can be bought at the space
         registration: None
         website: https://hsbxl.be/events/byteweek/2024/bytenight/
         contact: contact@hsbxl.be
     'Guix Days':
         location: ICAB, 8 rue Amedee Lynenstraat, 1210 Brussels
-        start: 2023-02-01
-        end: 2023-02-02
+        start: 2024-02-01
+        end: 2024-02-02
         cost: Free
         registration: None
         website: https://libreplanet.org/wiki/Group:Guix/FOSDEM2024
@@ -105,4 +105,11 @@ events:
         registration: None
         website: https://matrix.to/#/#fosdem2024-foundation-community-meetup:matrix.org
         contact: thib@matrix.org
-
+    'Buildroot Developer meeting':
+        location: SMILE offices
+        start: 2024-02-05
+        end: 2024-02-07
+        cost: Free
+        registration: Put your name on https://elinux.org/Buildroot:DeveloperDaysFOSDEM2024
+        website: https://elinux.org/Buildroot:DeveloperDaysFOSDEM2024
+        contact: buildroot@buildroot.org
