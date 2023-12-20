@@ -86,7 +86,7 @@ $layout_dateline ||= begin
           <ul class="visual-panel">
             <%
               $eventcount ||= begin
-				s = events.select{|e| e[:type] != 'certification' && e[:type] != 'keysigning' && e[:type] != 'bof'}.count + 1
+				s = events.select{|e| e[:type] != 'certification' && e[:type] != 'keysigning' && e[:type] != 'bof'}.count
                                 if s > 400
                                   s.to_s
                                 else
