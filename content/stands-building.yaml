@@ -1,2 +1,208 @@
 title: Stands
-stand_list: []
+stand_list:
+  - name: K (level 0)
+    map: map_k_1
+    groups:
+      - info:
+          building: K
+          floor: 1
+          groop: A
+          amount: 11
+        stands:
+          - theme: Gaming
+            stands:
+              all:
+                - name: Minetest
+                  url: https://www.minetest.net/
+          - theme: IoT
+            stands:
+              all:
+                - name: openHAB
+                  url: https://www.openhab.org
+                - name: wolfSSL
+                  url: https://www.wolfssl.com
+                - name: Badge.Team
+                  url: https://badge.team/
+          - theme: System administration
+            stands:
+              all:
+                - name: Proxmox Virtual Environment
+                  url: https://www.proxmox.com/en/proxmox-virtual-environment/
+                - name: Ansible
+                  url: https://ansible.com
+                - name: Checkmk
+                  url: https://checkmk.com/
+                - name: Grafana
+                  url: https://grafana.com/oss/
+          - theme: Hardware
+            stands:
+              all:
+                - name: Prusa Research
+                  url: https://prusa3d.com
+                - name: PINE64
+                  url: https://pine64.org
+                - name: FreeCAD
+                  url: https://freecad.org
+      - info:
+          building: K
+          floor: 1
+          groop: B
+          amount: 8
+        stands:
+          - theme: Database engines
+            stands:
+              all:
+                - name: MariaDB Server
+                  url: https://mariadb.org
+                - name: Percona LLC
+                  url: https://www.percona.com
+                - name: PostgreSQL
+                  url: https://www.postgresql.org/
+          - theme: Office suite and productivity
+            stands:
+              all:
+                - name: CiviCRM
+                  url: https://civicrm.org
+                - name: Joplin
+                  url: https://joplinapp.org
+                - name: LibreOffice
+                  url: https://www.libreoffice.org
+                - name: Nextcloud: Self-hosted, open file sync & communication platform
+                  url: https://nextcloud.com
+                - name: Thunderbird
+                  url: https://thunderbird.net
+      - info:
+          building: K
+          floor: 1
+          groop: C
+          amount: 4
+        stands:
+          - theme: Developer environment
+            stands:
+              all:
+                - name: Codeberg
+                  url: https://codeberg.org
+                - name: GNU Radio + IQEngine
+                  url: https://www.gnuradio.org/ + https://iqengine.org/
+                - name: Homebrew
+                  url: https://brew.sh
+                - name: Jenkins
+                  url: https://www.jenkins.io
+  - name: K (level 1)
+    map: map_k_2
+    groups:
+      - info:
+          building: K
+          floor: 2
+          groop: A
+          amount: 16
+        stands:
+          - theme: Community advocacy
+            stands:
+              all:
+                - name: The OpenSSL Project
+                  url: https://www.openssl.org/
+                - name: CERN Open Source
+                  url: https://opensource.cern
+                - name: coreboot / flashrom / EDKII / OpenBMC
+                  url: https://www.coreboot.org
+                - name: FOSSASIA
+                  url: https://fossasia.org
+                - name: Free Software Foundation Europe
+                  url: https://fsfe.org
+                - name: GNU HEALTH PROJECT
+                  url: https://www.gnuhealth.org
+                - name: Open-source fitness: wger + Feeel
+                  url: https://wger.de/
+                - name: OpenTofu
+                  url: https://opentofu.org
+                - name: Linux Foundation Europe
+                  url: https://linuxfoundation.eu/
+                - name: NLnet Foundation
+                  url: https://nlnet.nl
+                - name: Software Freedom Conservancy
+                  url: http://sfconservancy.org
+                - name: Open Culture Foundation+ Taiwan open source community
+                  url: https://ocf.tw/en
+                - name: ISRG - Let's Encrypt, Prossimo & Divvi Up
+                  url: https://abetterinternet.org
+                - name: Open Source Design
+                  url: https://opensourcedesign.net/
+                - name: Matrix.org Foundation
+                  url: https://matrix.org
+                - name: Realtime Lounge
+                  url: https://xmpp.org/
+  - name: H (level 0)
+    map: map_h_1
+    groups:
+      - info:
+          building: H
+          floor: 1
+          groop: A
+          amount: 9
+        stands:
+          - theme:
+            stands: Education
+              all:
+                - name: La Contre-Voie
+                  url: https://lacontrevoie.fr
+                - name: Code Your Future
+                  url: https://codeyourfuture.io
+                - name: Google Summer of Code 20th year stand
+                  url: http://g.co/gsoc
+          - theme:
+            stands: Multimedia and graphics
+              all:
+                - name: Kodi
+                  url: https://kodi.tv/
+          - theme:
+            stands: Desktop environment
+              all:
+                - name: GNOME
+                  url: https://www.gnome.org/
+                - name: KDE
+                  url: https://kde.org
+          - theme:
+            stands: World wide web
+              all:
+                - name: Mautic
+                  url: https://www.mautic.org
+                - name: Mozilla
+                  url: https://www.mozilla.org/
+                - name: Mastodon
+                  url: https://joinmastodon.org
+  - name: AW (level 0)
+    map: map_AW_2
+    groups:
+      - info:
+          building: AW
+          floor: 1
+          groop: A
+          amount: 10
+        stands:
+          - theme: Operating System
+            stands:
+              all:
+                - name: AlmaLinux
+                  url: https://almalinux.org
+                - name: Automotive Grade Linux
+                  url: https://www.automotivelinux.org
+                - name: CentOS, RDO and OKD
+                  url: https://centos.org/
+                - name: Debian
+                  url: https://www.debian.org
+                - name: Droidian Linux + CalyxsOS
+                  url: https://droidian.org/ + https://calyxos.org/
+                - name: Linux on Mobile (Mobian, Sailfish OS, PureOS, UBports, MNT Research, postmarketOS) + Ubports
+                  url: https://www.flypig.co.uk/fosdem24-lom/ + https://gitlab.com/ubports/
+                - name: Fedora Project
+                  url: https://fedoraproject.org
+                - name: Nix and NIxOS
+                  url: https://nixos.org
+                - name: Rocky Linux / Rocky Enterprise
+                  url: https://git.rockylinux.org/explore
+          - theme: HAM Radio
+            stands:
+              all:
+                - name: Infostand on amateur radio (hamradio)
+                  url: https://www.uba.be
