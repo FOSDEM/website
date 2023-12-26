@@ -1,3 +1,4 @@
+---
 title: Stands
 stand_list:
   - name: K (level 0)
@@ -67,7 +68,8 @@ stand_list:
                   url: https://joplinapp.org
                 - name: LibreOffice
                   url: https://www.libreoffice.org
-                - name: Nextcloud: Self-hosted, open file sync & communication platform
+                - name: Nextcloud\u0003A Self-hosted, open file sync &
+                    communication platform
                   url: https://nextcloud.com
                 - name: Thunderbird
                   url: https://thunderbird.net
@@ -112,7 +114,7 @@ stand_list:
                   url: https://fsfe.org
                 - name: GNU HEALTH PROJECT
                   url: https://www.gnuhealth.org
-                - name: Open-source fitness: wger + Feeel
+                - name: Open-source fitness\u0003A wger + Feeel
                   url: https://wger.de/
                 - name: OpenTofu
                   url: https://opentofu.org
@@ -143,34 +145,34 @@ stand_list:
         stands:
           - theme:
             stands: Education
-              all:
-                - name: La Contre-Voie
-                  url: https://lacontrevoie.fr
-                - name: Code Your Future
-                  url: https://codeyourfuture.io
-                - name: Google Summer of Code 20th year stand
-                  url: http://g.co/gsoc
+            all:
+              - name: La Contre-Voie
+                url: https://lacontrevoie.fr
+              - name: Code Your Future
+                url: https://codeyourfuture.io
+              - name: Google Summer of Code 20th year stand
+                url: http://g.co/gsoc
           - theme:
             stands: Multimedia and graphics
-              all:
-                - name: Kodi
-                  url: https://kodi.tv/
+            all:
+              - name: Kodi
+                url: https://kodi.tv/
           - theme:
             stands: Desktop environment
-              all:
-                - name: GNOME
-                  url: https://www.gnome.org/
-                - name: KDE
-                  url: https://kde.org
+            all:
+              - name: GNOME
+                url: https://www.gnome.org/
+              - name: KDE
+                url: https://kde.org
           - theme:
             stands: World wide web
-              all:
-                - name: Mautic
-                  url: https://www.mautic.org
-                - name: Mozilla
-                  url: https://www.mozilla.org/
-                - name: Mastodon
-                  url: https://joinmastodon.org
+            all:
+              - name: Mautic
+                url: https://www.mautic.org
+              - name: Mozilla
+                url: https://www.mozilla.org/
+              - name: Mastodon
+                url: https://joinmastodon.org
   - name: AW (level 0)
     map: map_AW_2
     groups:
@@ -193,8 +195,8 @@ stand_list:
                   url: https://www.debian.org
                 - name: Droidian Linux + CalyxsOS
                   url: https://droidian.org/ + https://calyxos.org/
-                - name: Linux on Mobile (Mobian, Sailfish OS, PureOS, UBports, MNT Research, postmarketOS) + Ubports
-                  url: https://www.flypig.co.uk/fosdem24-lom/ + https://gitlab.com/ubports/
+                - name: Linux on Mobile (Mobian, Sailfish OS, PureOS, UBports,
+                    MNT Research, postmarketOS) + Ubports
                 - name: Fedora Project
                   url: https://fedoraproject.org
                 - name: Nix and NIxOS
