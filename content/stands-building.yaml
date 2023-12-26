@@ -95,7 +95,7 @@ stand_list:
                 - name: Matrix.org Foundation
                 - name: Realtime Lounge
   - name: H (level 0)
-    map: map_h_1
+    map: map_h
     groups:
       - info:
           building: H
@@ -125,7 +125,7 @@ stand_list:
                 - name: Mozilla
                 - name: Mastodon
   - name: AW (level 0)
-    map: map_aw_2
+    map: map_aw
     groups:
       - info:
           building: AW
