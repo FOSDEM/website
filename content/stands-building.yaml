@@ -7,7 +7,7 @@ stand_list:
       - info:
           building: K
           floor: 1
-          groop: A
+          group: A
           amount: 11
         stands:
           - theme: Gaming
@@ -36,7 +36,7 @@ stand_list:
       - info:
           building: K
           floor: 1
-          groop: B
+          group: B
           amount: 8
         stands:
           - theme: Database engines
@@ -56,7 +56,7 @@ stand_list:
       - info:
           building: K
           floor: 1
-          groop: C
+          group: C
           amount: 4
         stands:
           - theme: Developer environment
@@ -72,7 +72,7 @@ stand_list:
       - info:
           building: K
           floor: 2
-          groop: A
+          group: A
           amount: 16
         stands:
           - theme: Community advocacy
@@ -100,37 +100,37 @@ stand_list:
       - info:
           building: H
           floor: 1
-          groop: A
+          group: A
           amount: 9
         stands:
-          - theme:
-            stands: Education
-            all:
-              - name: La Contre-Voie
-              - name: Code Your Future
-              - name: Google Summer of Code 20th year stand
-          - theme:
-            stands: Multimedia and graphics
-            all:
-              - name: Kodi
-          - theme:
-            stands: Desktop environment
-            all:
-              - name: GNOME
-              - name: KDE
-          - theme:
-            stands: World wide web
-            all:
-              - name: Mautic
-              - name: Mozilla
-              - name: Mastodon
+          - theme: Education
+            stands: 
+              all:
+                - name: La Contre-Voie
+                - name: Code Your Future
+                - name: Google Summer of Code 20th year stand
+          - theme: Multimedia and graphics
+            stands:
+              all:
+                - name: Kodi
+          - theme: Desktop environment
+            stands:
+              all:
+                - name: GNOME
+                - name: KDE
+          - theme: World wide web
+            stands:
+              all:
+                - name: Mautic
+                - name: Mozilla
+                - name: Mastodon
   - name: AW (level 0)
-    map: map_AW_2
+    map: map_aw_2
     groups:
       - info:
           building: AW
           floor: 1
-          groop: A
+          group: A
           amount: 10
         stands:
           - theme: Operating System
