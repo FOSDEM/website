@@ -84,7 +84,7 @@ stand_list:
                 - name: FOSSASIA
                 - name: Free Software Foundation Europe
                 - name: GNU HEALTH PROJECT
-                - name: Open-source fitness\u0003A wger + Feeel
+                - name: 'Open-source fitness: wger + Feeel'
                 - name: OpenTofu
                 - name: Linux Foundation Europe
                 - name: NLnet Foundation
@@ -104,7 +104,7 @@ stand_list:
           amount: 9
         stands:
           - theme: Education
-            stands: 
+            stands:
               all:
                 - name: La Contre-Voie
                 - name: Code Your Future
@@ -140,7 +140,7 @@ stand_list:
                 - name: Automotive Grade Linux
                 - name: CentOS, RDO and OKD
                 - name: Debian
-                - name: Droidian Linux + CalyxsOS
+                - name: Droidian Linux + CalyxOS
                 - name: 'Linux on Mobile (Mobian, Sailfish OS, PureOS, UBports, MNT Research, postmarketOS) + Ubports'
                 - name: Fedora Project
                 - name: Nix and NIxOS
