@@ -139,10 +139,10 @@ stand_list:
                 - name: AlmaLinux
                 - name: Automotive Grade Linux
                 - name: CentOS, RDO and OKD
+                - name: Fedora Project
                 - name: Debian
                 - name: Droidian Linux + CalyxOS
                 - name: 'Linux on Mobile (Mobian, Sailfish OS, PureOS, UBports, MNT Research, postmarketOS) + Ubports'
-                - name: Fedora Project
                 - name: Nix and NIxOS
                 - name: Rocky Linux / Rocky Enterprise
           - theme: HAM Radio
