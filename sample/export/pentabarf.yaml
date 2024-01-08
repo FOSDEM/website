@@ -132,8 +132,8 @@ events:
     description: "<p>More text about it.</p>"
     start_time: '10:50'
     end_time: '11:20'
-    start_datetime: '2021-02-06 10:50:00.000000000 +0100'
-    end_datetime: '2021-02-06 11:20:00.000000000 +0100'
+    start_datetime: '2021-02-06 10:50:00+01:00'
+    end_datetime: '2021-02-06 11:20:00+01:00'
     day: saturday
     day_name: Saturday
     raw_abstract: "<p>A line about the event.</p>"
