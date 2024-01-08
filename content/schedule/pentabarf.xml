@@ -65,6 +65,7 @@ xml.schedule do
               xml.language event[:language]
               xml.abstract event[:abstract]
               xml.description event[:description]
+              xml.feedback_url event[:feedback_url]
               xml.persons do
                 event[:speakers].map(&$to_speaker).each do |speaker|
                   xml.person( speaker[:name], {:id=>speaker[:person_id]} )
