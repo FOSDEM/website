@@ -121,4 +121,19 @@ events:
         registration: None
         website: https://2024.fosdempgday.org/about/
         contact: contact@fosdempgday.org
-
+    '"Digital Services (h)Acked" : the joint 2024 Hackathon of the European Commission and PEReN':
+        location: online (from 2024/01/03 to 2024/01/22) and in Brussels (on 2024/02/02)
+        start: 2024-01-03
+        end: 2024-02-02
+        cost: The event is free of charge, and registration is subject to the conditions set out in the Hackathon rules.
+        registration: It depends on the challenge. Please see the Hackathon rules
+        website: https://hackathon.peren.fr/en/
+        contact: hackathon2024.peren@finances.gouv.fr
+    'Jenkins Contributor Summit':
+        location: Betacowork: 4 Rue des Pères Blancs, 1040 Brussels, Belgium 
+        start: 2024-02-02
+        end: 2024-02-02
+        cost: None
+        registration: 
+        website: https://www.jenkins.io/blog/2023/11/10/Jenkins-Contributor-Summit-in-Brussels/
+        contact: jenkins-advocacy-and-outreach-sig@googlegroups.com
