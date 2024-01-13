@@ -122,7 +122,7 @@ while true; do
 	# Output the time at which we were done, and the time it took
 	NOW=$(date +%s)
 	BUILDTIME=$(expr $NOW - $START)
-	SLEEPTIME=$(expr $START + 240)
+	SLEEPTIME=$(expr $START + 180)
 
 	echo
 	echo "Build done at $(date), build took $BUILDTIME seconds"
