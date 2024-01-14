@@ -137,3 +137,11 @@ events:
         registration: 
         website: https://www.jenkins.io/blog/2023/11/10/Jenkins-Contributor-Summit-in-Brussels/
         contact: jenkins-advocacy-and-outreach-sig@googlegroups.com
+    'Key Signing Party':
+        location: ULB - Bruxells
+        start: 2024-02-04 at 12h CET
+        end: 2024-02-04
+        cost: 0
+        registration: None
+        website: https://ludovic.hirlimann.net/2024/01/key-signing-party-at-fosdem-2024.html
+        contact: ludovic+fosdemksp@hirlimann.net
