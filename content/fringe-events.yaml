@@ -145,3 +145,12 @@ events:
         registration: None
         website: https://ludovic.hirlimann.net/2024/01/key-signing-party-at-fosdem-2024.html
         contact: ludovic+fosdemksp@hirlimann.net
+    'MySQL Belgian Days':
+        location: CAB Incubator, rue des Pères Blancs 4, 1040 Bruxelles
+        start: 2024-02-01
+        end: 2024-02-02
+        cost: free
+        registration: sold-out
+        website: https://blogs.oracle.com/mysql/post/mysql-belgian-days-2024-the-agenda
+        contact: frederic.descamps@oracle.com
+
