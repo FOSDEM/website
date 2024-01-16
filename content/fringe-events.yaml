@@ -153,4 +153,12 @@ events:
         registration: sold-out
         website: https://blogs.oracle.com/mysql/post/mysql-belgian-days-2024-the-agenda
         contact: frederic.descamps@oracle.com
+    'OpenInfra Foundation & Community Meetup':
+        location: Rue Montagne aux Herbes Potagères 2, 1000 Bruxelles, Belgium
+        start: 2024-02-03
+        end: 2024-02-03
+        cost: Free
+        registration: Please RSVP on the Meetup page
+        website: https://www.meetup.com/brussels-openinfra-meetup-group/events/298420649/
+        contact: helena@openinfra.dev
 
