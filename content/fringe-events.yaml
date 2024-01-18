@@ -161,4 +161,19 @@ events:
         registration: Please RSVP on the Meetup page
         website: https://www.meetup.com/brussels-openinfra-meetup-group/events/298420649/
         contact: helena@openinfra.dev
-
+    'Tailscale Happy Hour!':
+        location: BrewDog
+        start: 2024-02-03
+        end: 2024-02-03
+        cost: Nothing! Beers + Snacks on Tailscale 🙂 
+        registration: Register here: forms.gle/womEh9iuJZZHsKCr5
+        website: https://forms.gle/womEh9iuJZZHsKCr5
+        contact: katie@tailscale.com
+    'FreeCAD and KiCAD community meeting':
+        location: Atelier des Tanneurs, Rue des Tanneurs 60A, 1000 Bruxelles
+        start: 2024-02-02
+        end: 2024-02-02
+        cost: Free
+        registration: None
+        website: https://blog.freecad.org/2023/10/31/fosdem-freecad-day-and-hackathon-2024/
+        contact: yorik@freecad.org
