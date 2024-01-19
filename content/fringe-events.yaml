@@ -38,7 +38,7 @@ events:
         start: 2024-02-02
         end: 2024-02-03
         cost: free
-        registration: 
+        registration: None
         website: https://www.meetup.com/mariadb-developers/events/297345406/
         contact: foundation@mariadb.org
     'Workshop on FOSS license and security compliance tools':
@@ -110,7 +110,7 @@ events:
         start: 2024-02-05
         end: 2024-02-07
         cost: Free
-        registration: Put your name on https://elinux.org/Buildroot:DeveloperDaysFOSDEM2024
+        registration: Required
         website: https://elinux.org/Buildroot:DeveloperDaysFOSDEM2024
         contact: buildroot@buildroot.org
     'FOSDEM PGDay':
@@ -166,7 +166,7 @@ events:
         start: 2024-02-03
         end: 2024-02-03
         cost: Nothing! Beers + Snacks on Tailscale 🙂 
-        registration: Register here: forms.gle/womEh9iuJZZHsKCr5
+        registration: Required
         website: https://forms.gle/womEh9iuJZZHsKCr5
         contact: katie@tailscale.com
     'FreeCAD and KiCAD community meeting':
