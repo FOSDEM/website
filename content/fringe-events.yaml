@@ -185,4 +185,28 @@ events:
         registration: Please register through the event link as space is limited. https://lu.ma/t0pyb95z 
         website: https://lu.ma/t0pyb95z
         contact: shannon@livepeer.org
+    'XWiki & CryptPad meetup #1':
+        location: Scott's Bar & Kitchen (2nd floor, Mezzanine) on Rue Montagne aux Herbes Potagères 2, 1000 Bruxelles, Belgium
+        start: 2024-02-03
+        end: 2024-02-03
+        cost: Free
+        registration: Required for space, beers, food, and swag. 🍻
+        website: https://cryptpad.fr/form/#/2/form/view/kJyosWEwOFiib5tLUI0jPhgUN-1ACESkM2kAipxt7Zk/
+        contact: dorina.anton@xwiki.com
+    'OSSci @ FOSDEM: Advancing science through open source and AI':
+        location: IBM Brussels
+        start: 2024-04-01
+        end: 2024-04-01
+        cost: free
+        registration: 
+        website: https://www.eventbrite.com/e/ossci-fosdem-advancing-science-through-open-source-and-ai-tickets-800246818777
+        contact: tim@opensource.science
+    'FreeCAD hackathon at HSBXL':
+        location: HSBXL
+        start: 2024-01-31
+        end: 2024-02-01
+        cost: 
+        registration: 
+        website: https://hsbxl.be/events/byteweek/2024/freecad-hackaton-day1/
+        contact: mail@adipascu.ro
 
