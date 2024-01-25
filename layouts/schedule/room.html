@@ -188,6 +188,7 @@
     <thead>
         <tr>
             <th colspan="2">Title</th>
+            <th>Speakers</th>
             <th>Track</th>
             <th>Start</th>
             <th>End</th>
@@ -196,12 +197,13 @@
     <tbody>
         <% item[:events].map(&$to_event).group_by{|e| e[:day_name]}.each do |day, dayevents| %>
         <tr>
-            <td colspan="5"><h4><%= day %></h4></td>
+            <td colspan="6"><h4><%= day %></h4></td>
         </tr>
         <% dayevents.sort_by{|e| e[:start_datetime]}.each do |e| %>
         <tr>
             <td class="<%= event_color.fetch e[:event_id] %>">&nbsp;</td>
             <td><a name="<%= e[:slug] %>"></a><%= l e %></td>
+            <td><%= l e[:speakers].map(&$to_speaker), :title, ", ", nil, 'quiet' %></td>
             <td><%= l track(e[:track]), :name, nil, nil, :quiet %></td>
             <td><%= ltt e, :start, css: 'quiet' %></td>
             <td><%= ltt e, :end, css: 'quiet' %></td>
