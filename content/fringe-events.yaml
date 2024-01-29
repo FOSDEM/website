@@ -209,4 +209,20 @@ events:
         registration: 
         website: https://hsbxl.be/events/byteweek/2024/freecad-hackaton-day1/
         contact: mail@adipascu.ro
+    'Post-FOSDEM drinkup w/ GitButler':
+        location: Le Waff, Chau. de Boondael 455, 1050 Ixelles, Belgium
+        start: 2024-02-04
+        end: 2024-02-04
+        cost: Free
+        registration: None
+        website: https://lu.ma/u1u5sxjh
+        contact: megan@gitbutler.com
+    'Databases / Platform Engineering Happy Hour hosted by Readyset':
+        location: Delirium Café
+        start: 2024-02-03
+        end: 2024-02-03
+        cost: Free
+        registration: Please register through the event link as space is limited.
+        website: https://partiful.com/e/CINELeTampjpVaJw212W
+        contact: marcelo@readyset.io
 
