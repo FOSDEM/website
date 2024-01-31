@@ -225,4 +225,19 @@ events:
         registration: Please register through the event link as space is limited.
         website: https://partiful.com/e/CINELeTampjpVaJw212W
         contact: marcelo@readyset.io
-
+    'CNCF Happy Hour @ BrewDog':
+        location: BrewDog Brussels - Putterie 20, 1000 Bruxelles, Belgium
+        start: 2024-02-02
+        end: 2024-02-02
+        cost: Free
+        registration: 
+        website: https://community.cncf.io/events/details/cncf-cncg-hq-presents-cncf-happy-hour-fosdem/
+        contact: kschultz@linuxfoundation.org
+    'Post-FOSDEM Rust Meetup':
+        location: Vrije Universiteit Brussel, Bd de la Plaine 2, Ixelles, Building K, second floor, aula Paul Janssens
+        start: 2024-02-05
+        end: 2024-02-05
+        cost: Free, but registration and RSVP on Meetup mandatory
+        registration: Limited seating, mandatory RSVP
+        website: https://www.meetup.com/fr-FR/belgium-rust-user-group/events/298754029/
+        contact: yvan@sraka.xyz
