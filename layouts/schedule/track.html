@@ -152,7 +152,7 @@
 
 <%
     cfp = item[:conference_call_for_papers_url]
-    if cfp
+    if cfp && !cfp.empty?
 %>
 <div class="well well-small track-cfp">
       <p>Read the Call for Papers at <a href="<%= cfp %>"><%= cfp %></a>.</p>
