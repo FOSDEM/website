@@ -16,6 +16,24 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
        <p>FOSDEM is a free event for software developers to meet, share ideas and collaborate. Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels.  You don't need to register.  Just turn up and join in!</p>
     </div>
 
+    <div class="text-block">
+      <h2>Schedule</h2>
+      <p>Navigate the <a href="page:/schedule/">schedule</a> on this website or using one of the <a href="page:/schedule/mobile/">mobile apps</a>.  We have not printed schedule booklets this year.  Rooms with popular talks might fill up.  When this happens, please don't queue outside or block the corridors.  Watch the <a href="page:/schedule/streaming">live stream</a> on your device or select an alternative talk and catch up later by watching the video afterwards.
+      </p>
+
+      <h2>Live Streaming and Chat</h2>
+      <p>Watch sessions online and interact using matrix.  Afterwards, videos will be uploaded and linked to the page for each talk.
+      </p>
+
+      <h2>T-shirts and Hoodies</h2>
+      <p>Purchase your hoodie or T-shirt from the Infodesks while stocks last!   The H building only has T-shirts.  The K building infodesk has both T-shirts and hoodies.
+      </p>
+
+      <h2>Feedback</h2>
+      <p>Please use the links under each event to provide feedback to the speakers.  Send more general feedback - good as well as bad - to <a href="mailto:feedback@fosdem.org">feedback@fosdem.org</a>. </p>
+
+    </div>
+
     <%
     # Depending on the height of the sponsors graphic, general announcements
     # (distinct from "news" by virtue of being undated) should either go here
@@ -70,7 +88,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
 
   <div class="location-block">
     <h2>LOCATION</h2>
-    <p>FOSDEM takes place at the ULB Solbosch Campus, <strong>Brussels, Belgium</strong>, Europe, Earth.  If you aren't there, you may watch the <a href="https://live.fosdem.org/">live streams</a> from the main tracks and developer rooms.</p>
+    <p>FOSDEM takes place at the ULB Solbosch Campus, <strong>Brussels, Belgium</strong>, Europe, Earth.  If you aren't there, you may watch the <a href="https://live.fosdem.org/">live streams</a> from the main tracks and developer rooms.  Note that talks in rooms beginning with D are pre-recorded and only accessible online.</p>
     <div class="location-info">
       <div class="map">
         <img style="float: right; text-align: right" src="asset:campusmap" alt="ULB Solbosch Campus map: Location of FOSDEM" title="ULB Solbosch Campus map: Location of FOSDEM"/>
