@@ -77,11 +77,11 @@ A site build consists of two steps:
 
 ### Exporting from FOSDEM Pretalx
 
-The schedule data is fetched as a large yaml file.
-You need to set it as an environmental variable before running nanoc update -y.
+The schedule data is fetched as a large yaml file and the resources/thumbnails.
+The best way is to clone these from the nanoc server (`nanoc update -y` should be repaired)
 
 ```bash
-nanoc update -y
+rsync nanoc@nanoc.fosdem.org:/srv/nanoc/website/export/ export -aP --delete-after
 ```
 
 If you do not have access to the pretalx site or for, you can copy the `export/`
