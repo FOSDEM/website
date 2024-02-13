@@ -83,7 +83,7 @@ def search(template = :html, layout = settings.environment)
          end
 
   solr_params = {
-    :q => q,
+    :q => RSolr.solr_escape(q),
     :qf => 'title^50 text',
     :rows => settings.results_per_page,
     :fl => '*,score',
