@@ -75,7 +75,7 @@
     url = video
 %>
 <div class="video">
-  <video preload="none" controls="controls" width="300">
+  <video preload="none" controls="controls" width="50%">
     <source src="<%= url %>" type='video/webm; codecs="av01.0.08M.08.0.110.01.01.01.0"' />
     <source src="<%= url.gsub(/\.av1\.webm$/, ".mp4") %>" type='video/mp4' />
   </video>
