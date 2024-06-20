@@ -68,7 +68,7 @@ headset
 occasion 
 
 ## Uploading videos
-Videos should be uploaded to https://penta.fosdem.org/submission/FOSDEM22. Click on "Events" in the left menu, select your own event, select "General" tab, scroll down to "Pre-recorded Video Upload URL" and click on "Upload" text.
+Videos should be uploaded to [Penta](https://penta.fosdem.org/submission/). Click on "Events" in the left menu, select your own event, select "General" tab, scroll down to "Pre-recorded Video Upload URL" and click on "Upload" text.
 
 Technical requirements for your presentation video are:
 
