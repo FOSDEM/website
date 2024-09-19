@@ -1,0 +1,41 @@
+name: Build FOSDEM site
+
+on:
+  push:
+    branches:
+      - master
+      - gha
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy test penta/pretalx export
+        run: |
+          mv sample/export .
+      - name: Ensure pdf_grid is set to false in config.yaml
+        run: |
+          sed -i '/^pdf_grid/d' config.yaml
+          echo "pdf_grid: false" >> config.yaml
+
+
+      - name: Run nanoc build in docker
+        uses: docker://ghcr.io/johanvdw/fosdem-website
+        with:
+          entrypoint: /bin/sh
+          args: -c "bundle install && nanoc"
+
+      # Step 5: Upload the 'output' directory as an artifact
+      - name: Upload output directory
+        uses: actions/upload-artifact@v4
+        with:
+          name: nanoc-output
+          path: output
+
