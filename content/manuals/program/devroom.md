@@ -28,7 +28,7 @@ provide a convenient way for us to contact each other, for example
 to discuss moving proposed talks between devrooms.  Note that these
 alias expansions also include devrooms@fosdem.org.
 Again, please make sure you read those messages.
-A list of mail aliases can be found in [pretalx](https://pretalx.fosdem.org/orga/event/fosdem-2024/p/devroom-report/)
+A list of mail aliases can be found in [pretalx](https://pretalx.fosdem.org/orga/event/fosdem-2025/p/devroom-report/)
 (this list is only accessible to devroom managers), so you can contact other devrooms, eg for moving talks to another room.
 
 Thirdly, we can create additional mailing lists for devrooms to use
@@ -39,7 +39,7 @@ be public or private. Contact devrooms@fosdem.org for this.
 
 Each devroom needs to send to [devrooms@fosdem.org](mailto:devrooms@fosdem.org) the list of the of email adresses for any room organisers who need to be granted access. Note that is for full access including scheduling later in the conference. 
 
-Devrooms managers list can be tracked on the [devroom managers report](https://pretalx.fosdem.org/orga/event/fosdem-2024/p/devroom-report/).
+Devrooms managers list can be tracked on the [devroom managers report](https://pretalx.fosdem.org/orga/event/fosdem-2025/p/devroom-report/).
 We request every devroom to have two people in this list, to make sure there is a backup in case of issues.
 Devroom managers status grant access to:
 
@@ -49,7 +49,7 @@ Devroom managers status grant access to:
 - room full + video control (during the event)
 - video review (after the event)
 
-People who only review should not be made devroom manager: you can add them to a review team on your [devroom dashboard](https://pretalx.fosdem.org/orga/event/fosdem-2024/p/devroom-dashboard/).
+People who only review should not be made devroom manager: you can add them to a review team on your [devroom dashboard](https://pretalx.fosdem.org/orga/event/fosdem-2025/p/devroom-dashboard/).
 
 ## Before the event
 
@@ -59,7 +59,7 @@ Devrooms  issue a Call for Papers.
 
 * Note the deadline: November 12
 * Send a copy to the [FOSDEM mailing list](https://lists.fosdem.org/listinfo/fosdem). Note that this is a moderated list, it may take up to a day before your messages is reviewed.
-* CfP will be added to the [accepted developer rooms](https://fosdem.org/2024/news/2023-11-08-devrooms-announced/).
+* CfP will be added to the [accepted developer rooms](https://fosdem.org/2025/news/2023-11-08-devrooms-announced/).
 * Browse examples from previous years if you need inspiration: 
   * [2021](https://archive.fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/)
   * [2022](https://archive.fosdem.org/2022/news/2021-11-30-accepted-developer-rooms/)
@@ -84,7 +84,7 @@ All submissions must go through pretalx:
 Note that this is a new system and accounts from pentabarf were not migrated: Presenters will have to create a new account.
 
 Staff and devroom managers can access the submitted content through the organisers site which sits at:
-https://pretalx.fosdem.org/orga/event/fosdem-2024/
+https://pretalx.fosdem.org/orga/event/fosdem-2025/
 
 ### Adding a devroom description to the website
 
@@ -94,17 +94,17 @@ Add a .html file in the [website/content/schedule/devrooms/](https://github.com/
 
 ### Reviewing talks
 
-* Reviewing talks can happen from the [review](https://pretalx.fosdem.org/orga/event/fosdem-2024/reviews/) page. By default devroom managers will see all proposals, also for other tracks. If you only want to review tracks for which you are a manager or review team member, click the large info box on top of the page.
+* Reviewing talks can happen from the [review](https://pretalx.fosdem.org/orga/event/fosdem-2025/reviews/) page. By default devroom managers will see all proposals, also for other tracks. If you only want to review tracks for which you are a manager or review team member, click the large info box on top of the page.
 
 ![Review page](img/review.png)
 
-In addition to devroom managers, you can invite extra reviewers for your track by using the [devroom dashboard](https://pretalx.fosdem.org/orga/event/fosdem-2024/p/devroom-dashboard/). Note invited members have to open the link in the mail they receive in order to get access. As an alternative, you can send them the link next to their invitiation also using any other way.
+In addition to devroom managers, you can invite extra reviewers for your track by using the [devroom dashboard](https://pretalx.fosdem.org/orga/event/fosdem-2025/p/devroom-dashboard/). Note invited members have to open the link in the mail they receive in order to get access. As an alternative, you can send them the link next to their invitiation also using any other way.
 
 Note that devroom managers are able to review also proposals in other tracks. This to spot talks which might be better suited for your devroom or to spot people who submit the same talk to different tracks.
 
 ### Accepting and Rejecting talks
 
-After the review phase a selection of talks must be made from the [proposals](https://pretalx.fosdem.org/orga/event/fosdem-2024/submissions/) page. 
+After the review phase a selection of talks must be made from the [proposals](https://pretalx.fosdem.org/orga/event/fosdem-2025/submissions/) page. 
 When accepting or rejecting a talk, a mail will be generated in the outbox in the bottom left. Please review these mails quickly: it will be confusing for other devroom managers if mails are stuck there. You can edit the mails if you want to add some personalised content or discard them if you inform speakers another way (this is not recommended). In any case, leave the reply-to address to that of the devroom team, so questions get to the track organisers.
 
 ![send/edit/discard mails](img/send-edit-mail.png)
@@ -118,7 +118,7 @@ You can also change the duration of the talk when accepting it. This will make t
 
 ### Scheduling talks
 
-After a talk has been accepted it can be scheduled. The easiest way to do this is by going to the [schedule](https://pretalx.fosdem.org/orga/event/fosdem-2024/schedule/) page. Choose your track on the top left dropdown and your assigned room in the bottom right (check the mailing list archive if in doubt).
+After a talk has been accepted it can be scheduled. The easiest way to do this is by going to the [schedule](https://pretalx.fosdem.org/orga/event/fosdem-2025/schedule/) page. Choose your track on the top left dropdown and your assigned room in the bottom right (check the mailing list archive if in doubt).
 
 ![schedule editor](img/schedule.png)
 
@@ -171,12 +171,12 @@ The website is generated from the data in pretalx.
 This runs automatically every few minutes.
 
 You can see when it was last updated near the bottom of 
-[the events page](https://fosdem.org/2024/schedule/events/).
+[the events page](https://fosdem.org/2025/schedule/events/).
 
 Note that the data gets pulled from the database slightly before
 this timestamp is generated - sometimes a few minutes before.
 If nothing on this page changed, the date won't be updated.
-https://fosdem.org/2024/sitemap.xml shows the last modified
+https://fosdem.org/2025/sitemap.xml shows the last modified
 date for every page on the site.
 
 If the system detects an inconsistency in the data, it stops

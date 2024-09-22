@@ -30,7 +30,6 @@ columns = 3
   <li>Overview of <a href="<%= pathof '/schedule/roomtracks/' %>">rooms per days</a></li>
   <li>Mobile apps: <a href="<%= pathof '/schedule/mobile/' %>">many platforms</a></li>
   <li>What's on now: <a href="page:/schedule/streaming">Live streaming</a></li>
-  <!--<li>Booklet: <a href="asset:booklet/booklet_2023">Info</a> </li> -->
   <li>Programme <a href="page:/schedule/amendments">Schedule amendments</a></li>
 <%
   pdfs = items.select{|x| x.identifier =~ %r{^/schedule/pdf/[^/]+/$}}.sort_by{|x| x[:page_size]}.reverse
