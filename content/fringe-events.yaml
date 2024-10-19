@@ -1,3 +1,27 @@
 ---
 kind: internal
 events:
+    'Config Management Camp 2025':
+        location: Ghent, Belgium
+        start: 2025-02-03
+        end: 2025-02-05
+        cost: Free
+        registration: Preregistration required for Crowd control purposes
+        website: https://cfgmgmtcamp.org
+        contact: info@cfgmgmtcamp.org
+    'DuckCon #6':
+        location: Amsterdam
+        start: 2025-01-31
+        end: 2025-01-31
+        cost: free
+        registration: registration is required
+        website: https://duckdb.org/2025/01/31/duckcon6
+        contact: gabor@duckdb.org
+    'CHAOSScon EU 2025':
+        location: Bedford Hotel & Congress Centre, Rue du Midi 135, Brussels, 1000, Belgium
+        start: 2025-01-30
+        end: 2025-01-30
+        cost: $10
+        registration: None
+        website: https://chaoss.community/chaosscon-2025-eu/
+        contact: elizabeth@chaoss.community
