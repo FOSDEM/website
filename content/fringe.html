@@ -1,7 +1,11 @@
 ---
 title: Fringe
 ---
-
+<%
+file = @site.config.fetch(:pretalx).fetch(:meta_export_file)
+pretalx_data = YAML.load_file(file)
+fringe = pretalx_data.fetch('fringe', {})
+%>
 <p>
   The FOSDEM Fringe consists of independent events involving free and open source software taking place in the days around the FOSDEM weekend.
   They are organised independently of FOSDEM so please refer any questions to the contacts listed.
@@ -20,7 +24,7 @@ title: Fringe
     </tr>
   </thead>
   <tbody>
-    <% $item_by_id.fetch('/fringe-events/')[:events].to_a.each do |event_name, meta| %>
+    <% fringe.each do |event_name, meta| %>
     <tr>
       <td><a href="<%=  meta[:website] %>"><%= event_name.to_s %></a></td>
       <td><%= meta[:location] %></td>
