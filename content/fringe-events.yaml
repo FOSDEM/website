@@ -22,6 +22,6 @@ events:
         start: 2025-01-30
         end: 2025-01-30
         cost: $10
-        registration: None
+        registration: registration is required
         website: https://chaoss.community/chaosscon-2025-eu/
         contact: elizabeth@chaoss.community
