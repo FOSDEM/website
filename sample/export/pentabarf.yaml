@@ -193,3 +193,18 @@ speakers:
       saturday:
       - test_event
       sunday: []
+fringe:
+  test:
+    name: test
+    url: https://
+    location: test
+    description: test
+    why: test
+    starts: '2022-02-03 10:00:00+01:00'
+    ends: '2022-03-03 10:11:00+01:00'
+    cost: 100 zimbabwean dollar
+    registration: null
+    contact: fosdem-test@gisky.be
+    online: true
+    submitter: 1
+
