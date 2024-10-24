@@ -49,7 +49,7 @@ categories = [
                             <tr>
                                 <td><%= l t, :name %></td>
 			        <td>
-			        <% if  t[:conference_call_for_papers_url] %>
+			        <% if  t[:conference_call_for_papers_url] && !t[:conference_call_for_papers_url].empty? %>
 			            <a href="<%= t[:conference_call_for_papers_url] %>">CfP</a>
 			        <% end %>
 			        </td>
