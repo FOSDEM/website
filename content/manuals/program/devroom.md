@@ -24,8 +24,8 @@ Please try to remember to send individual requests to that address and
 keep this devroom-manager mailing list for messages and discussion that
 may be of interest to other devrooms.
 
-Secondly, we create mail aliases &lt;room&gt;-devroom-manager@fosdem.org that
-provide a convenient way for us to contact each other, for example
+Secondly, we create mail aliases &lt;room&gt;-devroom-manager@fosdem.org or &lt;room&gt;-devroom-manager@fosdem.org that
+provides a convenient way for us to contact each other, for example
 to discuss moving proposed talks between devrooms.  Note that these
 alias expansions also include devrooms@fosdem.org.
 Again, please make sure you read those messages.
