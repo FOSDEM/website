@@ -16,7 +16,6 @@ lt_track = tracks.select{|t| t[:type] == 'lightningtalk'}.first
 ltalks = events.select{|e| e[:type] == 'lightningtalk'}.sort_by{|e| e[:start_datetime]}
 certs = events.select{|e| e[:type] == 'certification'}.sort_by{|e| e[:start_datetime]}
 boftracks = tracks.select{|t| t[:type] == 'bof'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
-juniortracks = tracks.select{|t| t[:type] == 'junior'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 columns = 3
 %>
 
@@ -327,26 +326,14 @@ columns = 3
 </div>
 <% end %>
 
-<h3><a id="junior"/>Junior<h3>
+<h3><a id="junior"/>FOSDEM Junior<h3>
 <p>
-  Anyone aged 7 to 17 can visit the workshops of FOSDEM junior. Registration is required using the link on the individual web page for each workshop.
+  FOSDEM Junior is a collaboration between FOSDEM, Code Club, CoderDojo, developers, and volunteers to organize workshops and activities for children from age 7 to 17 during the FOSDEM weekend. These activities are for children to learn and get inspired about technology. Last year's activities included microcontrollers, embroidery, plotting, game development, mobile application development, Raspberry Pi's, and Java development.
 </p>
 
-<% unless juniortracks.empty? %>
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <% juniortracks.sort_by { |x| x[:title].downcase }.each_slice((juniortracks.size / columns.to_f).ceil) do |list| %>
-        <div class="span<%= 9 / columns %>">
-          <ul>
-            <% list.each do |t| %>
-              <li><%= l t, :name %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+<p>
+  Further details are available on the <a href="page:/schedule/track/junior">FOSDEM Junior page</a>.
+</p>
 
 <!--a name="certification"></a>
 <h3> Certification Exams</h3>
