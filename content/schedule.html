@@ -284,7 +284,7 @@ columns = 3
 </p>
 <div class="container-fluid">
     <div class="row-fluid">
-        <% standtracks.sort_by{|x| x[:title].downcase}.each_slice((standtracks.size / columns).ceil) do |list| %>
+        <% standtracks.sort_by{|x| x[:title].downcase}.each_slice((standtracks.size.to_f / columns).ceil) do |list| %>
         <div class="span<%= 9 / columns %>">
             <ul>
                 <% list.each do |t| %>
@@ -314,7 +314,7 @@ columns = 3
 <% unless boftracks.empty? %>
 <div class="container-fluid">
     <div class="row-fluid">
-        <% boftracks.sort_by{|x| x[:title].downcase}.each_slice((boftracks.size / columns).ceil) do |list| %>
+        <% boftracks.sort_by{|x| x[:title].downcase}.each_slice((boftracks.size.to_f / columns).ceil) do |list| %>
         <div class="span<%= 9 / columns %>">
             <ul>
                 <% list.each do |t| %>
