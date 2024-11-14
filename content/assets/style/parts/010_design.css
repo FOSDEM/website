@@ -5,6 +5,12 @@ body{
 	font:14px/16px "DejaVu Sans", Arial, Helvetica, sans-serif;
 	background:#fff;
 }
+
+h1 {
+	text-transform: capitalize;
+	text-align: center;
+}
+
 h1, h2, h3, #footer, #header, .visual,
 #main .s-block .text-block p,
 .news-list .date .frame,
