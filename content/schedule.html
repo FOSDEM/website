@@ -48,7 +48,7 @@ columns = 3
 <p>
   Every year, FOSDEM hosts a wide variety of activities.
   This page gives an overview with links to further information about
-  scheduled events. <b>All times CET (UTC+1).</b>
+  scheduled events. <strong>All times CET (UTC+1).</strong>
 </p>
 
 <p>
@@ -90,7 +90,7 @@ columns = 3
 
 <p>
   For a complete (but crowded) overview, there is also a
-  <a href="page:/schedule/events">page that lists all events</a>.<br/>
+  <a href="page:/schedule/events">page that lists all events</a>.<br>
 
   A <a href="page:/schedule/speakers">list of all speakers</a> is available, too.
 </p>
@@ -101,8 +101,7 @@ columns = 3
 </div>
 
 <% unless keynotes.empty? and @site.config.fetch(:virtual) %>
-<a name="keynotes"></a>
-<h3>Keynotes</h3>
+<h3 id="keynotes">Keynotes</h3>
 <p>
   Like almost every other conference, FOSDEM invites speakers to gently start
   the day with talks concerning slightly less technical, but nevertheless
@@ -162,8 +161,7 @@ columns = 3
 <% end %>
 <% end %>
 
-<a name="maintracks"></a>
-<h3>Main tracks</h3>
+<h3 id="maintracks">Main tracks</h3>
 <p>
   The <q>main tracks</q> consist of series of talks that are organised by topic,
   where the FOSDEM program committee selects suggestions and actively invites
@@ -206,7 +204,7 @@ columns = 3
 <p><span class="label label-info">Main tracks have not been confirmed yet.</span></p>
 <% end %>
 
-<h3><a name="devrooms"></a>Developer rooms</h3>
+<h3 id="devrooms">Developer rooms</h3>
 <p>
   The vast majority of events (talks, hacking sessions, open discussions) are
   held in so-called <q>developer rooms</q> (<q>devrooms</q>), which are
@@ -243,8 +241,7 @@ columns = 3
   <p><span class="label label-info">Devrooms have not been confirmed yet.</span></p>
 <% end %>
 
-<a name="lightningtalks"></a>
-<h3>Lightning talks</h3>
+<h3 id="lightningtalks">Lightning talks</h3>
 <p>
   The lightning talk is a very popular format, used at many conferences, where
   speakers have a mere 15 minutes at their disposal to showcase an open
@@ -270,8 +267,7 @@ columns = 3
 </p>
 <% end %>
 
-<a name="stands"></a>
-<h3>Stands<h3>
+<h3 id="stands">Stands</h3>
 <p>
   Stands offer a unique chance to get in touch with developers or project
   members, and discover at a glance what they do.
@@ -302,8 +298,7 @@ columns = 3
 </p>
 <% end %>
 
-<a name="bofs"></a>
-<h3>BOFs<h3>
+<h3 id="bofs">BOFs</h3>
 <p>
   BOF stands for Birds Of a Feather who, as the saying goes, flock together.
   FOSDEM has three meeting rooms that may be booked in 30 or 60 minute blocks
@@ -327,7 +322,7 @@ columns = 3
 </div>
 <% end %>
 
-<h3><a id="junior"/>Junior<h3>
+<h3 id="junior">Junior</h3>
 <p>
   Anyone aged 7 to 17 can visit the workshops of FOSDEM junior. Registration is required using the link on the individual web page for each workshop.
 </p>
@@ -348,8 +343,8 @@ columns = 3
   </div>
 <% end %>
 
-<!--a name="certification"></a>
-<h3> Certification Exams</h3>
+<!--
+<h3 id="certification">Certification Exams</h3>
 <p>
   Several certification organizations provide FOSDEM visitors with the
   opportunity of taking certification exams during the conference.
@@ -398,8 +393,7 @@ columns = 3
 <% end %>
 -->
 
-<a name="fringe"></a>
-<h3> The FOSDEM Fringe</h3>
+<h3 id="fringe">The FOSDEM Fringe</h3>
 <p>
   The FOSDEM Fringe consists of independent events involving free and open source software taking place in the days around the FOSDEM weekend.  Why not extend your trip?
 </p>
@@ -407,11 +401,11 @@ columns = 3
   Further details are available on the <a href="page:/fringe/">FOSDEM Fringe page</a>.
 </p>
 
-<h3>Mobile Apps</h3>
+<h3 id="apps">Mobile Apps</h3>
 <p>People have submitted a variety of <a href="page:/schedule/mobile/">apps for mobile devices</a> that display the FOSDEM schedule.
 </p>
 
-<h3>Raw schedule data</h3>
+<h3 id="schedule">Raw schedule data</h3>
 <p>
 The schedule data is available in:
 <ul>
