@@ -5,3 +5,6 @@
 *.log
 .ruby-version
 .idea
+Dockerfile
+Gemfile
+Rules
