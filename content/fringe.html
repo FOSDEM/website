@@ -25,9 +25,8 @@ fringe = pretalx_data.fetch('fringe', {})
   </thead>
   <tbody>
     <% fringe.each do |event_name, meta| %>
-    <%puts meta%>
     <tr>
-      <td><a href="<%=  meta["website"] %>"><%= event_name.to_s %></a></td>
+      <td><a href="<%= meta['url'] %>"><%= event_name.to_s %></a></td>
       <td><%= meta["location"] %></td>
       <td><%= meta["starts"] %></td>
       <td><%= meta["ends"] %></td>
