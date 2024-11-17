@@ -22,7 +22,7 @@
 <ul class="unstyled" id="all-news">
   <% @item[:newsitems].map(&$to_item).each do |item| %>
     <li class="news-item">
-    <span class="date"><a href="<%= item.path %>"><%= item[:created_at].strftime '%Y-%m-%d' %></a><span class="date-separator">&nbsp;&#x00BB;&nbsp;</span></span>
+    <time class="date"><a href="<%= item.path %>"><%= item[:created_at].strftime '%Y-%m-%d' %></a></time>
     <h2><%= item[:title] %></h2>
     <div class="news-item-content">
       <%= item.compiled_content %>

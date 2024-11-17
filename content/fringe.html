@@ -24,8 +24,8 @@ title: Fringe
     <tr>
       <td><a href="<%=  meta[:website] %>"><%= event_name.to_s %></a></td>
       <td><%= meta[:location] %></td>
-      <td><%= meta[:start] %></td>
-      <td><%= meta[:end] %></td>
+      <td><time><%= meta[:start] %></time></td>
+      <td><time><%= meta[:end] %></time></td>
       <td><%= meta[:cost] %></td>
       <td><%= meta[:registration] %></td>
       <td><a href="mailto:<%= meta[:contact] %>"><%= meta[:contact] %></a></td>
