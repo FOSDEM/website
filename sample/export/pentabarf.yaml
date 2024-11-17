@@ -195,16 +195,14 @@ speakers:
       sunday: []
 fringe:
   test:
-    name: test
-    url: https://
+    name: demo fringe event
+    url: https://archive.fosdem.org
     location: test
-    description: test
-    why: test
-    starts: '2022-02-03 10:00:00+01:00'
-    ends: '2022-03-03 10:11:00+01:00'
-    cost: 100 zimbabwean dollar
-    registration: null
-    contact: fosdem-test@gisky.be
+    starts: '2022-02-03'
+    ends: '2022-03-03'
+    cost: €100
+    registration: recommended
+    contact: fosdem-test@fosdem.org
     online: true
     submitter: 1
 
