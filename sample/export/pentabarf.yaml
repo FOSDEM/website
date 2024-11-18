@@ -193,3 +193,16 @@ speakers:
       saturday:
       - test_event
       sunday: []
+fringe:
+  test:
+    name: demo fringe event
+    url: https://archive.fosdem.org
+    location: test
+    starts: '2022-02-03'
+    ends: '2022-03-03'
+    cost: €100
+    registration: recommended
+    contact: fosdem-test@fosdem.org
+    online: true
+    submitter: 1
+
