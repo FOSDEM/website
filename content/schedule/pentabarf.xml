@@ -68,7 +68,7 @@ xml.schedule do
               xml.feedback_url event[:feedback_url]
               xml.persons do
                 event[:speakers].map(&$to_speaker).each do |speaker|
-                  xml.person( speaker[:name], {:id=>speaker[:person_id]} )
+                  xml.person( speaker[:name], {:id=>speaker[:person_id],:slug=>speaker[:slug]} )
                 end
               end
               xml.attachments do
