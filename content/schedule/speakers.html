@@ -58,7 +58,7 @@ keys = h.keys.sort_by { |k| k
       # (Teams sort under #)
       if k == '#' then idx = 'teams' else idx = k end
     %>
-    <a name="<%= idx %>"></a><h3 class="name-index"><%= k %></h3>
+    <h3 id="<%= idx %>" class="name-index"><%= k %></h3>
     <ul class="name-index-items">
       <% h[k].each do |s| %>
         <li><%= l(s) %></li>

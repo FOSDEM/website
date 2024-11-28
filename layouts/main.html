@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <%
 # vim: set ts=2 sw=2 et ai ft=eruby:
 $layout_dateline ||= begin
@@ -6,39 +6,39 @@ $layout_dateline ||= begin
                      end
 %>
 <% virtual = @site.config.fetch(:virtual) %>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-  <head profile="http://a9.com/-/spec/opensearch/1.1/" prefix="og: http://ogp.me/ns#">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="generator" content="nanoc"/>
-    <link rel="apple-touch-icon" sizes="120x120" href="<%= pathof '/apple-touch-icon/' %>" />
-    <link rel="icon" type="image/png" href="<%= pathof '/favicon-32x32/' %>" sizes="32x32" />
-    <link rel="icon" type="image/png" href="<%= pathof '/favicon-16x16/' %>" sizes="16x16" />
-    <link rel="manifest" href="<%= pathof '/manifest/' %>" />
-    <link rel="mask-icon" href="<%= pathof '/safari-pinned-tab/' %>" color="#af2c93" />
-    <meta name="msapplication-TileColor" content="#af2c93"/>
-    <meta name="theme-color" content="#ffffff" />
-    <link media="all" rel="stylesheet" type="text/css" href="<%= pathof '/assets/style/fosdem/' %>" />
-    <link href="<%= pathof '/atom/' %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed"/>
-    <link href="<%= pathof '/rss/' %>" type="application/rss+xml" rel="alternate" title="<%= conference()[:title] %> RSS Feed"/>
-    <link href="<%= pathof '/opensearch/' %>" type="application/opensearchdescription+xml" title="<%= conference()[:title] %> Search"/>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="nanoc">
+    <link rel="apple-touch-icon" sizes="120x120" href="<%= pathof '/apple-touch-icon/' %>">
+    <link rel="icon" type="image/png" href="<%= pathof '/favicon-32x32/' %>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<%= pathof '/favicon-16x16/' %>" sizes="16x16">
+    <link rel="manifest" href="<%= pathof '/manifest/' %>">
+    <link rel="mask-icon" href="<%= pathof '/safari-pinned-tab/' %>" color="#af2c93">
+    <meta name="msapplication-TileColor" content="#af2c93">
+    <meta name="theme-color" content="#ffffff">
+    <link media="all" rel="stylesheet" type="text/css" href="<%= pathof '/assets/style/fosdem/' %>">
+    <link href="<%= pathof '/atom/' %>" type="application/atom+xml" rel="alternate" title="<%= conference()[:title] %> ATOM Feed">
+    <link href="<%= pathof '/rss/' %>" type="application/rss+xml" rel="alternate" title="<%= conference()[:title] %> RSS Feed">
+    <link rel="search" href="<%= pathof '/opensearch/' %>" type="application/opensearchdescription+xml" title="<%= conference()[:title] %> Search">
     <% (@item[:alternative_representations] or []).each do |alt| %>
-      <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= $item_by_id[alt[:item]].path %>" />
+      <link type="<%= alt[:mime] %>" rel="alternate" title="<%= alt[:title] %>" href="<%= $item_by_id[alt[:item]].path %>">
     <% end %>
     <% (@item[:headlinks] or []).each do |l| %>
-      <link<% if l[:type] %> type="<%= l.fetch(:type) %>"<% end %> rel="<%= l.fetch(:rel) %>"<% if l[:title] %> title="<%= l.fetch(:title) %>"<% end %> href="<%= $item_by_id.fetch(l.fetch(:href)).path %>" />
+      <link<% if l[:type] %> type="<%= l.fetch(:type) %>"<% end %> rel="<%= l.fetch(:rel) %>"<% if l[:title] %> title="<%= l.fetch(:title) %>"<% end %> href="<%= $item_by_id.fetch(l.fetch(:href)).path %>">
     <% end %>
     <% if @item[:head_erb_injection] %><%%= <%= @item[:head_erb_injection] %> %><% end %>
     <title><%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %></title>
-    <link rel="schema.DC" href="http://purl.org/DC/elements/1.0/" />
-    <% if @item[:title] %><meta name="DC.Title" content="<%= @item[:title] %>"/><% end %>
-    <meta name="DC.Format" content="text/html" />
-    <meta name="DC.Language" content="en" />
-    <meta name="DC.Subject" content="<%= conference()[:title] %>" />
-    <meta name="DC.Rights" content="http://creativecommons.org/licenses/by-sa/2.0/be/" />
-    <meta property="og:title" content="<%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %>" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="<%= conference()[:homepage] %><%= pathof('/assets/style/logo-gear/')[1..-1] %>" />
+    <link rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+    <% if @item[:title] %><meta name="DC.Title" content="<%= @item[:title] %>"><% end %>
+    <meta name="DC.Format" content="text/html">
+    <meta name="DC.Language" content="en">
+    <meta name="DC.Subject" content="<%= conference()[:title] %>">
+    <meta name="DC.Rights" content="http://creativecommons.org/licenses/by-sa/2.0/be/">
+    <meta property="og:title" content="<%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %>">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="<%= conference()[:homepage] %><%= pathof('/assets/style/logo-gear/')[1..-1] %>">
   </head>
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
     <div id="header">
@@ -52,7 +52,7 @@ $layout_dateline ||= begin
               <div class="input-prepend">
                 <span class="add-on"><i class="icon-search"></i></span>
                 <span class="degraded-hint">Search:</span>
-                <input type="text" name="q" id="q" class="span2" value="<% if @item[:search_inject_variable] %><%%= <%= @item[:search_inject_variable] %> %><% end %>" />
+                <input type="text" name="q" id="q" class="span2" value="<% if @item[:search_inject_variable] %><%%= <%= @item[:search_inject_variable] %> %><% end %>">
               </div>
             </form>
             </li>
@@ -95,7 +95,7 @@ $layout_dateline ||= begin
                               end
               {
                 'beer' => '/practical/beer/',
-              "#{ tracks.count } devrooms" => '/schedule/tracks/',
+              "#{ tracks.select{|t| t[:type] == 'devroom'}.count } devrooms" => '/schedule/tracks/',
               'open source' => 'https://en.wikipedia.org/wiki/Open-source_model',
               '8000+ hackers' => nil,
               'lightning talks' => '/schedule/track/lightning_talks/',
@@ -149,7 +149,7 @@ $layout_dateline ||= begin
 
       <%= yield %>
     </div> <!-- #main -->
-    <div id="footer">
+    <footer>
       <div class="footer-holder">
         <div class="panel-block">
           <%
@@ -170,13 +170,13 @@ $layout_dateline ||= begin
         </div>
         <div class="license-info">
           <div class="license-info-logo"></div>
-          This work is licensed under the Creative Commons Attribution 2.0 Belgium Licence.<br/>
+          This work is licensed under the Creative Commons Attribution 2.0 Belgium Licence.<br>
           To view a copy of this licence, visit
-          <a class="quiet" rel="license" href="http://creativecommons.org/licenses/by/2.0/be/deed.en">http://creativecommons.org/licenses/by/2.0/be/deed.en</a><br/>
-          or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.<br />
+          <a class="quiet" rel="license" href="http://creativecommons.org/licenses/by/2.0/be/deed.en">http://creativecommons.org/licenses/by/2.0/be/deed.en</a><br>
+          or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.<br>
           All content such as talks and biographies is the sole responsibility of the speaker.
         </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

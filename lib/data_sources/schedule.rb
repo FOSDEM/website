@@ -43,7 +43,7 @@ module Fosdem
 
         r = []
         cache.each do |k, v|
-          if k[-1] == 's'
+          if ['days', 'rooms', 'tracks', 'events', 'speakers'].include?(k)
             name = k[0..-2]
             v.each do |id, meta|
               r << Nanoc3::Item.new('', meta, "/schedule/#{name}/#{id}/", mtime)
