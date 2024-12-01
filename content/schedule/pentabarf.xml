@@ -40,6 +40,16 @@ xml.schedule do
       xml.track track[:name], {:online_qa=>track[:online_qa]}
     end
   end
+  xml.persons do
+    speakers.each do | speaker |
+      xml.person({:id=>speaker[:person_id]}) do
+        xml.name speaker[:name]
+        xml.slug speaker[:slug]
+        xml.biography speaker[:abstract]
+        xml.extended_biography speaker[:description]
+      end
+    end
+  end
   days.each_with_index do | day, index |
     start_time = Time.iso8601("#{day[:conference_day]}T#{conf[:day_change]}")
     end_time = start_time + (((23 * 60) + 59) * 60)
