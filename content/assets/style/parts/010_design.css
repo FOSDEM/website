@@ -279,6 +279,7 @@ a.btn-purple:hover {
 	display:inline-block;
 	vertical-align:middle;
 	padding:10px 0 0;
+	border:0;
 }
 *+html .logo-list li{display:inline;}
 .logo-list li {padding-right: 25px;}

@@ -25,7 +25,7 @@ sponsors_root: true
     <% unless cornerstone.empty? %>
       <ul class="logo-list">
         <% cornerstone.each do |c| %>
-          <li class="logo-sponsor-cornerstone logo-<%= c.id %>"><a href="<%= c.path %>"><%= c.name %></a></li>
+          <li class="logo-sponsor-cornerstone logo-sponsor-name-<%= c.id %>"><a href="<%= c.path %>"><%= c.name %></a></li>
         <% end %>
       </ul>
     <% end %>
@@ -33,7 +33,7 @@ sponsors_root: true
     <% unless other.empty? %>
       <ul class="logo-list">
         <% other.each do |s| %>
-          <li class="logo-sponsor-other logo-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
+          <li class="logo-sponsor-other logo-sponsor-name-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
         <% end %>
       </ul>
     <% end %>
@@ -49,6 +49,7 @@ sponsors_root: true
 %>
 <% unless index == 0 %><hr /><% end %>
 <% list = sponsors.select{|s| section[:section] == s.section }.select(&section[:selector]) %>
+<% unless list.size == 0 %>
 <h2 id="<%= section[:id] %>"><%= section[:title] %><% if section[:plural] and list.size > 1 %>s<% end %></h2>
 <% if section[:alpha] and list.size > 1 %>
     <span class="muted">(in alphabetical order)</span>
@@ -63,6 +64,7 @@ sponsors_root: true
 <% end %>
 <%= s.propaganda %>
 </div>
+<% end %>
 <% end %>
 <% end %>
 

@@ -54,7 +54,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     <% unless cornerstone.empty? %>
       <ul class="logo-list">
         <% cornerstone.each do |c| %>
-          <li class="logo-sponsor-cornerstone logo-<%= c.id %>"><a href="<%= c.path %>"><%= c.name %></a></li>
+          <li class="logo-sponsor-cornerstone logo-sponsor-name-<%= c.id %>"><a href="<%= c.path %>"><%= c.name %></a></li>
         <% end %>
       </ul>
     <% end %>
@@ -62,7 +62,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     <% unless other.empty? %>
       <ul class="logo-list">
         <% other.each do |s| %>
-          <li class="logo-sponsor-other logo-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
+          <li class="logo-sponsor-other logo-sponsor-name-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
         <% end %>
       </ul>
     <% end %>
