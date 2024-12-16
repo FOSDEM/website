@@ -155,7 +155,7 @@ Q&A sessions outside of the presentation time. Remember, your Q&A can continue
 in a separate live video conference after your talk has ended.
 
 ## Further support
-* [FOSDEM matrix channel](https://chat.fosdem.org/#/room/#fosdem:matrix.org)
+* [FOSDEM matrix channel](https://matrix.to/#/%23fosdem:fosdem.org)
 * [#fosdem on Libera.Chat](ircs://irc.libera.chat:6697/fosdem)
 * contact FOSDEM at speakers@fosdem.org
 
