@@ -2,7 +2,7 @@
 title: Stands
 stand_list:
   - name: AW (level 0)
-    map: map_AW_2
+    map: map_aw
     groups:
       - info:
           building: AW
