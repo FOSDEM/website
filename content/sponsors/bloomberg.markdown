@@ -1,6 +1,6 @@
 ---
 title: Bloomberg
-url: http://www.bloomberg.com/
+url: https://www.bloomberg.com/company/values/tech-at-bloomberg/
 ---
 
 Bloomberg is building the world's most trusted information network for
