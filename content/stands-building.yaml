@@ -44,7 +44,7 @@ stand_list:
                 - name: Chamilo
                 - name: GÉANT & NRENs - the Research and Education community
   - name: H (level 0)
-    map: map_h_1
+    map: map_h
     groups:
       - info:
           building: H
