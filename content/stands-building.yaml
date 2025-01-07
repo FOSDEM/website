@@ -152,7 +152,7 @@ stand_list:
             stands:
               all:
                 - name: Open Food Facts
-                - name: WHY2025 (hacker camp) & badge.team (hacker event badges)
+                - name: WHY2025 (hacker camp)
                 - name: Software Freedom Conservancy
                 - name: Panoramax
                 - name: Libre Space Foundation
