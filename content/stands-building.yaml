@@ -1,3 +1,202 @@
 ---
 title: Stands
-stand_list: []
+stand_list:
+  - name: AW (level 0)
+    map: map_AW_2
+    groups:
+      - info:
+          building: AW
+          floor: 1
+          groop: A
+          amount: 12
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: DevPod
+                - name: openHAB
+                - name: OpenRemote
+                - name: TinyGo, Mechanoid & WasmVision
+                - name: GNOME
+                - name: KDE
+                - name: Furi Labs
+                - name: FreeCAD + KiCAD
+                - name: MicroPython & Espruino
+                - name: GNU Radio
+                - name: Meshtastic
+                - name: Infostand on amateur radio
+  - name: F (level 0)
+    map:
+    groups:
+      - info:
+          building: F
+          floor: 1
+          groop: A
+          amount: 6
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: Kotlin community stand
+                - name: Perl and Raku Stand
+                - name: Open Source at CERN
+                - name: AlekSIS and Teckids
+                - name: Chamilo
+                - name: GÉANT & NRENs - the Research and Education community
+  - name: H (level 0)
+    map: map_h_1
+    groups:
+      - info:
+          building: H
+          floor: 1
+          groop: A
+          amount: 14
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: Grafana
+                - name: Prusa Research
+                - name: DeepComputing's DC-ROMA RISC-V Mainboard with Framework Laptop 13
+                - name: OpenFlexure Microscope
+                - name: GraphQL and Graphile (SAT) - Software Heritage (SUN)
+                - name: Drupal
+                - name: Nostr
+                - name: Wireshark
+                - name: Proxmox Virtual Environment
+                - name: Digital Public Goods
+                - name: metal-stack
+                - name: Vates Virtualization and Management Stack
+                - name: privacyIDEA
+                - name: Mastodon
+  - name: J (level 0)
+    map:
+    groups:
+      - info:
+          building: J
+          floor: 1
+          groop: J1.106
+          amount: 1
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: Overte
+  - name: K (level 0)
+    map: map_k_1
+    groups:
+      - info:
+          building: K
+          floor: 1
+          groop: A
+          amount: 11
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: Qubes OS + Genode OS
+                - name: The Zephyr Project
+                - name: Ubuntu Community
+                - name: FreeBSD Project
+                - name: Gentoo Linux & Flatcar Container Linux
+                - name: WireGuard / Linux Kernel RNG
+                - name: Debian
+                - name: Fedora Project
+                - name: AlmaLinux OS (SAT) - Rocky Linux (SUN)
+                - name: openSUSE Project
+                - name: Haiku
+      - info:
+          building: K
+          floor: 1
+          groop: B
+          amount: 8
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: LibreOffice Community
+                - name: SOGo Webmail
+                - name: XWiki & CryptPad
+                - name: Joplin
+                - name: CISO Assistant
+                - name: Mozilla
+                - name: Thunderbird
+                - name: Dolibarr ERP CRM
+      - info:
+          building: K
+          floor: 1
+          groop: C
+          amount: 8
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: Qt Project
+                - name: Homebrew
+                - name: Luanti (formerly Minetest)
+                - name: Firefly Zero
+                - name: 0 A.D. Empires Ascendant
+                - name: Linux on Mobile
+                - name: postmarketOS
+                - name: CalyxOS
+  - name: K (level 1)
+    map: map_k_2
+    groups:
+      - info:
+          building: K
+          floor: 2
+          groop: A
+          amount: 16
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: Open Food Facts
+                - name: WHY2025 (hacker camp) & badge.team (hacker event badges)
+                - name: Software Freedom Conservancy
+                - name: Panoramax
+                - name: Libre Space Foundation
+                - name: Ceph
+                - name: Open Culture Foundation + Taiwan Open Source community
+                - name: VideoLAN
+                - name: Jenkins
+                - name: coreboot / flashprog / EDKII / OpenBMC
+                - name: FOSSASIA
+                - name: Let's Encrypt & Prossimo
+                - name: Hex sticker booth by NLnet Foundation
+                - name: Free Software Foundation Europe
+                - name: Eclipse Foundation
+                - name: Cloud Native Computing Foundation (CNCF)
+      - info:
+          building: K
+          floor: 2
+          groop: B
+          amount: 4
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: Immich (SAT) - Mattermost (SUN)
+                - name: Linphone
+                - name: Matrix.org Foundation
+                - name: Realtime Lounge
+  - name: UA (level 0)
+    map:
+    groups:
+      - info:
+          building: UA
+          floor: 1
+          groop: A
+          amount: 8
+        stands:
+          - theme:
+            stands:
+              all:
+                - name: PostgreSQL
+                - name: FerretDB
+                - name: Open Source Analytics Community
+                - name: Codeberg + Forgejo
+                - name: GitLab
+                - name: Percona
+                - name: MySQL
+                - name: MariaDB Foundation
