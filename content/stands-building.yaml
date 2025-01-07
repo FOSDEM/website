@@ -70,7 +70,7 @@ stand_list:
                 - name: privacyIDEA
                 - name: Mastodon
   - name: J (level 0)
-    map:
+    map: map_j
     groups:
       - info:
           building: J
