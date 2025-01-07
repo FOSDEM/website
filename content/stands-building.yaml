@@ -26,7 +26,6 @@ stand_list:
                 - name: Meshtastic
                 - name: Infostand on amateur radio
   - name: F (level 0)
-    map:
     groups:
       - info:
           building: F
@@ -181,7 +180,6 @@ stand_list:
                 - name: Matrix.org Foundation
                 - name: Realtime Lounge
   - name: UA (level 0)
-    map:
     groups:
       - info:
           building: UA
