@@ -75,7 +75,7 @@ stand_list:
       - info:
           building: J
           floor: 1
-          groop: J1.106
+          groop: 106
           amount: 1
         stands:
           - theme:
