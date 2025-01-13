@@ -49,7 +49,7 @@ You will have a chance to address your real life live audience's questions in a 
   - [K building](https://nav.fosdem.org/l/c:1:165.69:265.77/): behind the 1.105 ("Lafontaine") auditorium, bottom left when facing the stage
   - [UD building](https://nav.fosdem.org/l/ud2119/): room UD2.119
   - [UB building](https://nav.fosdem.org/l/ub4228/): room UB4.228 
-- Alternatively, you may contact video volunteers through the dedicated matrix [video channel](https://chat.fosdem.org/#/room/#fosdem-video:matrix.org).
+- Alternatively, you may contact video volunteers through the dedicated matrix [video channel](https://matrix.to/#/#fosdem-video:matrix.org?web-instance[element.io]=chat.fosdem.org).
 - For issues regarding the stream on https://fosdem.org site in general, please also email both [video@fosdem.org](mailto:video@fosdem.org) and [server@fosdem.org](mailto:server@fosdem.org) .
 - I have a problem connecting to https://chat.fosdem.org at all.
   - Speak to anyone in a blue (FOSDEM developer room manager), green (FOSDEM video) or yellow (FOSDEM staff) t-shirt.
