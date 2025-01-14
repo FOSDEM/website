@@ -16,13 +16,12 @@ h = begin
 size = h.values.map(&:size).inject(:+)
 %>
 <h1><%= size %> Events</h1>
-<table class="table table-striped table-bordered table-condensed">
+<table id="events" class="display" style="width:100%">
     <thead>
         <tr>
             <th>Event</th>
             <th>Speakers</th>
             <th>Room</th>
-            <th>Day</th>
             <th>Start</th>
             <th>End</th>
             <th>Attachments</th>
@@ -31,16 +30,12 @@ size = h.values.map(&:size).inject(:+)
     </thead>
     <tbody>
       <% h.each do |track, list| %>
-        <tr>
-          <td colspan="8"><h4><%= track[:title] %> (<%= list.size %>)</h4></td>
-        </tr>
         <% list.each do |e| %>
         <tr>
             <td><%= l(e) %></td>
             <td><%= l e[:speakers].map(&$to_speaker) %></td>
             <td><%= l room e[:room] %></td>
-            <td><%= l day e[:day] %></td>
-            <td><%= e[:start_time] %></td>
+            <td><%= l day e[:day] %> <%= e[:start_time] %></td>
             <td><%= e[:end_time] %></td>
 	    <td>
 	      <% e[:attachments].each_with_index do |a, index| %>

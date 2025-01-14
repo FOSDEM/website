@@ -39,6 +39,12 @@ $layout_dateline ||= begin
     <meta property="og:title" content="<%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %>">
     <meta property="og:type" content="website">
     <meta property="og:image" content="<%= conference()[:homepage] %><%= pathof('/assets/style/logo-gear/')[1..-1] %>">
+<% if @item.identifier == '/schedule/events/' %>
+    <link href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css" rel="stylesheet" integrity="sha384-lidBvvi7oLJ2j9e3nFlBSXfo+giBJ9L7QnUdgjc3AvLiynS0HdKEEEZtvZ4izE46" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha384-NXgwF8Kv9SSAr+jemKKcbvQsz+teULH/a5UNJvZc6kP47hZgl62M1vGnw6gHQhb1" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js" integrity="sha384-AenwROccLjIcbIsJuEZmrLlBzwrhvO94q+wm9RwETq4Kkqv9npFR2qbpdMhsehX3" crossorigin="anonymous"></script>
+<% end %>
   </head>
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
     <div id="header">
@@ -179,4 +185,15 @@ $layout_dateline ||= begin
       </div>
     </footer>
   </body>
+<% if @item.identifier == '/schedule/events/' %>
+<script>
+  new DataTable('#events', {
+    order: [
+      [3, 'asc'],
+      [4, 'asc']
+    ],
+    paging:      false,
+  });
+</script>
+<% end %>
 </html>
