@@ -19,6 +19,9 @@ You should be invited to:
  * The backstage room for your devroom, where you can coordinate with the devroom organisers and your hosts
  * The devroom itself.
 
+### Uploading slides
+
+ * You can upload your slides and additional resources such as links to your repo on [pretalx](https://pretalx.fosdem.org/fosdem-2025/me/submissions/). Look for the resources section. 
 
 ## During FOSDEM
 
