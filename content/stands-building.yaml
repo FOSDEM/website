@@ -176,7 +176,7 @@ stand_list:
           - theme:
             stands:
               all:
-                - name: Immich (SAT) - Mattermost (SUN)
+                - name: Mattermost (SAT) - Immich (SUN)
                 - name: Linphone
                 - name: Matrix.org Foundation
                 - name: Realtime Lounge
