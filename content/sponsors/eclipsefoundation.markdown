@@ -3,20 +3,19 @@ title: Eclipse Foundation
 url: https://www.eclipse.org/
 ---
 
-The Eclipse Foundation is a European international nonprofit
-association based in Brussels, Belgium. Already the largest open
-source organization in Europe, with 170 member organizations and
-900+ committers based across the continent.
+Headquartered in Brussels, Belgium, the Eclipse Foundation is a global
+non-profit supported by over 385 members. We host a diverse range of
+open source projects, including the Eclipse IDE, Adoptium, Software
+Defined Vehicle, Jakarta EE, and more than 420 other initiatives,
+including runtimes, tools, specifications, and frameworks. Our
+projects serve a broad range of applications and sectors like cloud
+computing, edge and IoT, automotive, embedded systems, systems
+engineering, and open processor designs.
 
-The Eclipse Foundation provides our global community of individuals
-and organizations with a mature, scalable, and business-friendly
-environment for open source software collaboration and innovation.
-We provide a proven governance framework and processes for
-entrepreneurial collaboration on sustainable, commercializable open
-source software that benefits developers, companies, and users alike.
-We do this by enabling members to contribute to projects organized in
-Working Groups and powered by our infrastructure and support in
-multiple areas like IP policy, marketing, and community building.
-Currently, there are 400+ Eclipse projects.
+The foundation's unique value proposition lies in providing a
+vendor-neutral governance framework that fosters collaboration across
+technology domains, enabling individuals and organisations to drive
+community-led, code-first, and commercial ready open source
+innovation.
 
 The Eclipse Foundation supports the event financially.
