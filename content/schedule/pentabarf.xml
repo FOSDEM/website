@@ -37,7 +37,7 @@ xml.schedule do
   end
   xml.tracks do 
     tracks.each do | track |
-      xml.track track[:name], {:online_qa=>track[:online_qa]}
+      xml.track track[:name], {:online_qa=>track[:online_qa], :slug=>track[:slug]}
     end
   end
   days.each_with_index do | day, index |
