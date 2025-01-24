@@ -60,7 +60,7 @@ xml.schedule do
               xml.url event_url
               xml.title event[:title]
               xml.subtitle event[:subtitle]
-              xml.track event[:track_name]
+              xml.track event[:track_name], {:slug=>event[:track]}
               xml.type event[:type]
               xml.language event[:language]
               xml.abstract event[:abstract]
