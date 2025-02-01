@@ -15,6 +15,7 @@ You may want to keep a copy with 4/3 aspect ratio handy for best results should 
 As a speaker, you might want a Matrix account.  You should already have been invited by email (or Matrix, if we know your Matrix ID) to sign up to Matrix and join the relevant chatrooms.  If not, you can get a Matrix account at https://chat.fosdem.org.  Then, to receive the invites, please enter your Matrix ID (e.g. @matthew:fosdem.org) under your account details on [https://pretalx.fosdem.org](https://pretalx.fosdem.org/fosdem-2025/me/) (look for the 'Matrix-id' field) and you'll be invited shortly. We send out invites a few times a day.
 
 You should be invited to:
+
  * [#speakers:fosdem.org](https://matrix.to/#/#speakers:fosdem.org) (the main coordination point for speakers)
  * The backstage room for your devroom, where you can coordinate with the devroom organisers and your hosts
  * The devroom itself.
@@ -30,6 +31,7 @@ You should be invited to:
 The slides capture system will accept hdmi input. Please bring your own whatever-to-hdmi adapter should you need any. Adapters for mini-dp, usb-c and possibly more will be provided on a best effort basis.
 
 Please mind the following requirements:
+
 - 60 Hz or lower video output refresh rate
 - 1080p (1920x1080) or lower output resolution
 
