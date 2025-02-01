@@ -19,6 +19,9 @@
 ].map{|cal| l(cal[:identifier], cal[:name]) }.join(", ")
 %>
 <br/>
+<i class="icon-comment"></i> <strong>Chat</strong>: <a href="<%= item[:chat_link] %>">Join the conversation!</a>
+
+<br/>
 </p>
 <br style="clear: both;"/>
 <%

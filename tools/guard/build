@@ -94,7 +94,7 @@ while true; do
 
 		# Refresh the local export
 		# nanoc update -y
-		ssh pretalx-read@pretalx.int.fosdem.org sudo -u pretalx_event DJANGO_SETTINGS_MODULE=pretalx.settings_pghistory /usr/share/webapps/pretalxevent/venv/bin/python -m pretalx release fosdem-2025 --ignore_warnings --no-mail 
+		ssh pretalx-read@pretalx.int.fosdem.org sudo -u pretalx_event DJANGO_SETTINGS_MODULE=pretalx.settings_pghistory /usr/share/webapps/pretalxevent/venv/bin/python -m pretalx release fosdem-2025 --ignore_warnings
 		ssh pretalx-read@pretalx.int.fosdem.org sudo -u pretalx_event DJANGO_SETTINGS_MODULE=pretalx.settings_pghistory /usr/share/webapps/pretalxevent/venv/bin/python -m pretalx export_resources fosdem-2025 /home/pretalx_event/export/fosdem-2025
 		rsync pretalx-read@pretalx.int.fosdem.org:/home/pretalx_event/export/fosdem-2025/ export -avP --delete-after
 

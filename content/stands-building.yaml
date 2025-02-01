@@ -1,7 +1,7 @@
 ---
 title: Stands
 stand_list:
-  - name: AW (level 0)
+  - name: AW (level 1)
     map: map_aw
     groups:
       - info:
@@ -25,7 +25,7 @@ stand_list:
                 - name: GNU Radio
                 - name: Meshtastic
                 - name: Infostand on amateur radio
-  - name: F (level 1)
+  - name: F (level 2)
     map: map_f
     groups:
       - info:
@@ -43,7 +43,7 @@ stand_list:
                 - name: AlekSIS and Teckids
                 - name: Chamilo
                 - name: GÉANT & NRENs - the Research and Education community
-  - name: H (level 0)
+  - name: H (level 1)
     map: map_h
     groups:
       - info:
@@ -69,7 +69,7 @@ stand_list:
                 - name: Vates Virtualization and Management Stack
                 - name: privacyIDEA
                 - name: Mastodon
-  - name: J (level 0)
+  - name: J (level 1)
     map: map_j
     groups:
       - info:
@@ -82,7 +82,7 @@ stand_list:
             stands:
               all:
                 - name: Overte
-  - name: K (level 0)
+  - name: K (level 1)
     map: map_k_1
     groups:
       - info:
@@ -139,7 +139,7 @@ stand_list:
                 - name: Linux on Mobile
                 - name: postmarketOS
                 - name: CalyxOS
-  - name: K (level 1)
+  - name: K (level 2)
     map: map_k_2
     groups:
       - info:
@@ -176,11 +176,11 @@ stand_list:
           - theme:
             stands:
               all:
-                - name: Immich (SAT) - Mattermost (SUN)
+                - name: Mattermost (SAT) - Immich (SUN)
                 - name: Linphone
                 - name: Matrix.org Foundation
                 - name: Realtime Lounge
-  - name: UA (level 1)
+  - name: UA (level 2)
     map: map_ua
     groups:
       - info:
