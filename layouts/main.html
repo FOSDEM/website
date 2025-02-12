@@ -194,10 +194,7 @@ $layout_dateline ||= begin
 <% if @item.identifier == '/schedule/events/' %>
 <script>
   new DataTable('#events', {
-    order: [
-      [3, 'asc'],
-      [4, 'asc']
-    ],
+    order: [],
     fixedHeader: true,
     mark:        true,
     paging:      false,
