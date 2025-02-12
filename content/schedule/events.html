@@ -21,10 +21,11 @@ size = h.values.map(&:size).inject(:+)
         <tr>
             <th>Event</th>
             <th>Speakers</th>
+            <th>Track</th>
             <th>Room</th>
             <th>Start</th>
             <th>End</th>
-            <th>Attachments</th>
+            <th>Files</th>
 	    <th>Videos</th>
         </tr>
     </thead>
@@ -34,6 +35,7 @@ size = h.values.map(&:size).inject(:+)
         <tr>
             <td><%= l(e) %></td>
             <td><%= l e[:speakers].map(&$to_speaker) %></td>
+            <td><%= l track e[:track] %></td>
             <td><%= l room e[:room] %></td>
             <td><%= l day e[:day] %> <%= e[:start_time] %></td>
             <td><%= e[:end_time] %></td>
