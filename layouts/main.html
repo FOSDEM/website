@@ -47,6 +47,9 @@ $layout_dateline ||= begin
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js" integrity="sha384-AenwROccLjIcbIsJuEZmrLlBzwrhvO94q+wm9RwETq4Kkqv9npFR2qbpdMhsehX3" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js" integrity="sha384-fLqXCJcrAdndivVvcmVV63KCTYYLJXHZwzlfgkRAiROtth7ZJaN3WJr+VaVe/asP" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/1.10.13/features/mark.js/datatables.mark.min.css" integrity="sha384-9/swQ7YisolBtgyqn4bi34Jo3VaBu+I8VwH2bqGS3OcGU8m7EKYMNlXJZ7ZTr1+O" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/g/mark.js(jquery.mark.min.js)" integrity="sha384-kHcMxEJ3FRq+rJD4R+iPxVkVbpyeHUnWOi58kdCsGZSwF891AQa9I4+5LH10Pcd2" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.12.1/features/mark.js/datatables.mark.js" integrity="sha384-5HSpWnHYdw6jL/oVAeo7Ellk5Umv4rceyBYmYoVp0Gs9a3RaPdx5DX6FI49u+jrZ" crossorigin="anonymous"></script>
 <% end %>
   </head>
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
@@ -196,6 +199,7 @@ $layout_dateline ||= begin
       [4, 'asc']
     ],
     fixedHeader: true,
+    mark:        true,
     paging:      false,
   });
 </script>
