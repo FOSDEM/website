@@ -41,6 +41,7 @@
 
 <%
   videos = []
+  videos.push *((item[:attachments] or []).select{|a| a[:mime] == 'video/webm'}.map{|a| $attachments_by_export[a[:filename]][:localname]})
   videos.push *((item[:links] or []).select{|l| l[:url] =~ /\.webm$/}.map{|l| l[:url]})
   videos
   .each do |video|
@@ -56,15 +57,11 @@
            end
     require 'uri'
     url = video
-  vtt_url = item[:links].find { |l| l[:url].end_with?('.vtt') }&.[](:url)
 %>
 <div class="video">
-  <video preload="none" controls="controls" width="75%" crossorigin="anonymous">
+  <video preload="none" controls="controls" width="75%">
     <source src="<%= url %>" type='video/webm; codecs="av01.0.08M.08.0.110.01.01.01.0"' />
     <source src="<%= url.gsub(/\.av1\.webm$/, ".mp4") %>" type='video/mp4' />
-    <% if vtt_url %>
-      <track src="<%= vtt_url %>" label="Captions" kind="captions" srclang="en" />
-    <% end %>
   </video>
 </div>
 <% end %>
