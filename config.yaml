@@ -151,7 +151,7 @@ search:
   command: "./service/searcher/solrize"
 
 pentabarf:
-  conference_id: FOSDEM25
+  conference_id: FOSDEM26
   username: nanoc
   database: pentabarf
   host:     pgsql.fosdem.org
@@ -174,13 +174,13 @@ pentabarf:
     height: 200
 
 pretalx:
-  conference_slug: fosdem-2025
+  conference_slug: fosdem-2026
   host: https://pretalx.fosdem.org
   meta_export_file: export/pentabarf.yaml
 
 keysigning:
-  submission_deadline: 2025-01-22
-  homework_due: 2025-04-30
+  submission_deadline: 2026-01-22
+  homework_due: 2026-04-30
   # Change these when the submission window opens/closes.
   submission_notyet: true
   submission_closed: false
