@@ -103,13 +103,15 @@ end
                                   "600+"
                                 end
                               end
+              devroom_count = tracks.count { |t| t[:type] == 'devroom' }
+	      devroom_label = devroom_count > 0 ? "#{devroom_count} devrooms" : "devrooms"
               {
                 'beer' => '/practical/beer/',
-              "#{ tracks.select{|t| t[:type] == 'devroom'}.count } devrooms" => '/schedule/tracks/',
-              'open source' => 'https://en.wikipedia.org/wiki/Open-source_model',
-              '8000+ hackers' => nil,
-              'lightning talks' => '/schedule/track/lightning_talks/',
-              "#{$eventcount} lectures" => '/schedule/events/',
+                devroom_label => '/schedule/tracks/',
+                'open source' => 'https://en.wikipedia.org/wiki/Open-source_model',
+                '8000+ hackers' => nil,
+                'lightning talks' => '/schedule/track/lightning_talks/',
+                "#{$eventcount} lectures" => '/schedule/events/',
               }.each_with_index do |(label, target), i|
               url, alt = if target
                            t = $item_by_id[target]
