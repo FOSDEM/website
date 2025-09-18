@@ -2,8 +2,18 @@
 <%
 # vim: set ts=2 sw=2 et ai ft=eruby:
 $layout_dateline ||= begin
-                       days.map{|d| d[:conference_day].day}.join(' &amp; ') + " " + days.first[:conference_day].strftime('%B %Y')
-                     end
+  first_day = days.first[:conference_day]
+  last_day  = days.last[:conference_day]
+
+  if first_day.month == last_day.month
+    # Same month: 31 & 1 January 2025
+    days.map { |d| d[:conference_day].day }.join(' &amp; ') + " " + first_day.strftime('%B %Y')
+  else
+    # Different months: 31 January & 1 February 2025
+    "#{first_day.day} #{first_day.strftime('%B')} &amp; #{last_day.day} #{last_day.strftime('%B %Y')}"
+  end
+end
+
 %>
 <% virtual = @site.config.fetch(:virtual) %>
 <html lang="en">
