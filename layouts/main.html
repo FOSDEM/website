@@ -6,10 +6,10 @@ $layout_dateline ||= begin
   last_day  = days.last[:conference_day]
 
   if first_day.month == last_day.month
-    # Same month: 31 & 1 January 2025
+    # Some months: 1 & 2 February 2025
     days.map { |d| d[:conference_day].day }.join(' &amp; ') + " " + first_day.strftime('%B %Y')
   else
-    # Different months: 31 January & 1 February 2025
+    # Different months: 31 January & 1 February 2026
     "#{first_day.day} #{first_day.strftime('%B')} &amp; #{last_day.day} #{last_day.strftime('%B %Y')}"
   end
 end
