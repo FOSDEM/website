@@ -1,189 +1,142 @@
-<%
-# vim: set ft=eruby ts=2 sw=2 et ai:
-%>
-<% go_live = @site.config.fetch(:go_live) %>
-<% matrix_works = @site.config.fetch(:matrix_works) %>
+<% # vim: set ft=eruby ts=2 sw=2 et ai: %> <% go_live =
+@site.config.fetch(:go_live) %> <% matrix_works =
+@site.config.fetch(:matrix_works) %>
 <ul class="side-box">
-  <li><i class="icon-road"></i> <strong>Track</strong>: <%= l track(item[:track]) %></li>
-  <li><i class="icon-home"></i> <strong>Room</strong>: <%= l room(item[:room]) %></li>
-  <li><i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></li>
-  <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %></li>
+  <li>
+    <i class="icon-road"></i> <strong>Track</strong>: <%= l track(item[:track])
+    %>
+  </li>
+  <li>
+    <i class="icon-home"></i> <strong>Room</strong>: <%= l room(item[:room]) %>
+  </li>
+  <li>
+    <i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %>
+  </li>
+  <li>
+    <i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %>
+  </li>
   <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item, :end %></li>
   <% if item[:live_video_link] %>
   <li id="live-stream-with-q-and-a" class="visible-desktop">
     <i class="icon-film"></i> <strong>Video only</strong>:
     <a href="<%= item[:live_video_link] %>"><%= item[:room] %></a>
   </li>
-  <% end %>
-  <% if item[:chat_link] %>
+  <% end %> <% if item[:chat_link] %>
   <li>
     <i class="icon-comment"></i> <strong>Chat</strong>:
     <a href="<%= item[:chat_link] %>">Join the conversation!</a>
   </li>
   <% end %>
 </ul>
-<br style="clear: both;"/>
+<br style="clear: both" />
 
 <%if item[:logo] %>
-  <img src="<%= pathof item[:logo].fetch(:identifier) %>" class="event-logo"/>
-<% end %>
-
-<% if item[:abstract] or item[:description] %>
+<img src="<%= pathof item[:logo].fetch(:identifier) %>" class="event-logo" />
+<% end %> <% if item[:abstract] or item[:description] %>
 <div class="event-blurb">
-<% if item[:abstract] %>
-<div class="event-abstract"><%= item[:abstract] %></div>
-<% end %>
-<% if item[:description] %>
-<div class="event-description"><%= item[:description] %></div>
-<% end %>
+  <% if item[:abstract] %>
+  <div class="event-abstract"><%= item[:abstract] %></div>
+  <% end %> <% if item[:description] %>
+  <div class="event-description"><%= item[:description] %></div>
+  <% end %>
 </div>
-<% end %>
-
-<%
-  videos = []
-  videos.push *((item[:attachments] or []).select{|a| a[:mime] == 'video/webm'}.map{|a| $attachments_by_export[a[:filename]][:localname]})
-  videos.push *((item[:links] or []).select{|l| l[:url] =~ /\.webm$/}.map{|l| l[:url]})
-  videos
-  .each do |video|
-    mime = case video
-           when /\.webm$/
-             'video/webm; codecs="vp8, vorbis"'
-           when /\.og[gv]$/
-             'video/ogg; codecs="theora, vorbis"'
-           when /\.(mp4|mpeg)$/
-             'video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-           else
-             next
-           end
-    require 'uri'
-    url = video
-%>
+<% end %> <% videos = [] videos.push *((item[:attachments] or []).select{|a|
+a[:mime] == 'video/webm'}.map{|a|
+$attachments_by_export[a[:filename]][:localname]}) videos.push *((item[:links]
+or []).select{|l| l[:url] =~ /\.webm$/}.map{|l| l[:url]}) videos .each do
+|video| mime = case video when /\.webm$/ 'video/webm; codecs="vp8, vorbis"' when
+/\.og[gv]$/ 'video/ogg; codecs="theora, vorbis"' when /\.(mp4|mpeg)$/
+'video/mp4; codecs="avc1.42E01E, mp4a.40.2"' else next end require 'uri' url =
+video %>
 <div class="video">
-  <video preload="none" controls="controls" width="75%">
-    <source src="<%= url %>" type='video/webm; codecs="av01.0.08M.08.0.110.01.01.01.0"' />
+  <video preload="none" controls="controls" width="100%">
+    <source
+      src="<%= url %>"
+      type='video/webm; codecs="av01.0.08M.08.0.110.01.01.01.0"'
+    />
     <source src="<%= url.gsub(/\.av1\.webm$/, ".mp4") %>" type='video/mp4' />
   </video>
 </div>
-<% end %>
-
-<% unless item[:speakers].empty? %>
+<% end %> <% unless item[:speakers].empty? %>
 <h3>Speakers</h3>
 <table>
-    <tbody>
-        <% item[:speakers].map(&$to_speaker).each do |s| %>
-        <tr>
-          <% photo = s[:thumbnail] ? $item_by_id.fetch(s[:thumbnail][:identifier]) : nil %>
-          <td><% if photo %><a href="<%= speaker(s).path %>"><img class="thumb" height="<%= photo[:height] %>" width="<%= photo[:width] %>" src="<%= photo.path %>" alt="Photo of <%= s[:name] %>"/></a><% end %></td>
-          <td><%= l s %></td>
-        </tr>
-        <% end %>
-    </tbody>
+  <tbody>
+    <% item[:speakers].map(&$to_speaker).each do |s| %>
+    <tr>
+      <% photo = s[:thumbnail] ? $item_by_id.fetch(s[:thumbnail][:identifier]) :
+      nil %>
+      <td>
+        <% if photo %><a href="<%= speaker(s).path %>"
+          ><img
+            class="thumb"
+            height="<%= photo[:height] %>"
+            width="<%= photo[:width] %>"
+            src="<%= photo.path %>"
+            alt="Photo of <%= s[:name] %>" /></a
+        ><% end %>
+      </td>
+      <td><%= l s %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
-<% end %>
-
-<% if item[:attachments] and not item[:attachments].empty? %>
-  <h3>Attachments</h3>
-  <ul class="event-attachments unstyled">
-    <%
-      item[:attachments].each do |a|
-        ai = $item_by_id.fetch(a[:identifier])
-        title = a[:title] ? a[:title] : ai[:title]
-        icon = case ai[:media]
-               when 'slides'
-                 'list'
-               when 'video'
-                 'facetime-video'
-               when 'audio'
-                 'music'
-               when 'paper'
-                 'book'
-               else
-                 'download'
-               end
-      %>
-      <li><i class="icon-<%= icon %>"></i> <a href="<%= ai.path %>"><%= title %></a></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<% unless item[:links].empty? %>
-  <h3>Links</h3>
-  <ul>
-    <% item[:links].each do |l| %>
-      <li><a href="<%= l[:url] %>"><%= l[:title] %></a></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%
-if false
-  table = $timetable.fetch(item[:day]).fetch(:by_index)
-  interval = $timetable.fetch(item[:day]).fetch(:interval)
-
-  unslug = lambda{|slug| slug == item[:slug]}
-  sort = lambda{|e| [e[:start_time], e[:end_time], e[:room_rank], e[:conference_room_id]]}
-
-  concurrent_events = begin
-                        require 'set'
-                        s = Set.new
-                        (item[:start_time_index]..item[:end_time_index]).each do |i|
-                          table[i].each do |slug|
-                            s << slug
-                          end
-                        end
-                        s.reject(&unslug).map(&$to_event).sort_by(&sort)
-                      end
-
-  next_up_minutes = 30
-  next_up = begin
-              require 'set'
-              (item[:end_time_index]..item[:end_time_index] + (next_up_minutes / interval)).each do |i|
-                (table[i] or []).each do |slug|
-                  s << slug
-                end
-              end
-              s.reject(&unslug).map(&$to_event).sort_by(&sort)
-            end
-
-  next_in_same_room_limit = 3
-  next_in_same_room = begin
-                        require 'set'
-                        list = room(item[:room])[:events_by_day].fetch(item[:day].to_sym)
-                        i = 0
-                        while i < list.size
-                          break if list[i] == item[:slug]
-                          i += 1
-                        end
-                        raise "failed to find the event item in the list of events in the same room" unless i < list.size
-                        list[(i+1)..(i+next_in_same_room_limit)].map(&$to_event)
-                      end
-
-  [
-    ['sametime', "Concurrent events", concurrent_events],
-    ['sameroom', "Next (up to #{next_in_same_room_limit}) talks in the same room (#{@item[:room_name]})", next_in_same_room],
-    ['upcoming', "Events that start after this one (within #{next_up_minutes} minutes)", next_up],
-  ].each do |anchor, heading, event_list|
-      unless event_list.empty?
-    %>
-<a name="<%= anchor %>"></a><h3><%= heading %>:</h3>
+<% end %> <% if item[:attachments] and not item[:attachments].empty? %>
+<h3>Attachments</h3>
+<ul class="event-attachments unstyled">
+  <% item[:attachments].each do |a| ai = $item_by_id.fetch(a[:identifier]) title
+  = a[:title] ? a[:title] : ai[:title] icon = case ai[:media] when 'slides'
+  'list' when 'video' 'facetime-video' when 'audio' 'music' when 'paper' 'book'
+  else 'download' end %>
+  <li>
+    <i class="icon-<%= icon %>"></i> <a href="<%= ai.path %>"><%= title %></a>
+  </li>
+  <% end %>
+</ul>
+<% end %> <% unless item[:links].empty? %>
+<h3>Links</h3>
+<ul>
+  <% item[:links].each do |l| %>
+  <li><a href="<%= l[:url] %>"><%= l[:title] %></a></li>
+  <% end %>
+</ul>
+<% end %> <% if false table = $timetable.fetch(item[:day]).fetch(:by_index)
+interval = $timetable.fetch(item[:day]).fetch(:interval) unslug = lambda{|slug|
+slug == item[:slug]} sort = lambda{|e| [e[:start_time], e[:end_time],
+e[:room_rank], e[:conference_room_id]]} concurrent_events = begin require 'set'
+s = Set.new (item[:start_time_index]..item[:end_time_index]).each do |i|
+table[i].each do |slug| s << slug end end
+s.reject(&unslug).map(&$to_event).sort_by(&sort) end next_up_minutes = 30
+next_up = begin require 'set' (item[:end_time_index]..item[:end_time_index] +
+(next_up_minutes / interval)).each do |i| (table[i] or []).each do |slug| s <<
+slug end end s.reject(&unslug).map(&$to_event).sort_by(&sort) end
+next_in_same_room_limit = 3 next_in_same_room = begin require 'set' list =
+room(item[:room])[:events_by_day].fetch(item[:day].to_sym) i = 0 while i <
+list.size break if list[i] == item[:slug] i += 1 end raise "failed to find the
+event item in the list of events in the same room" unless i < list.size
+list[(i+1)..(i+next_in_same_room_limit)].map(&$to_event) end [ ['sametime',
+"Concurrent events", concurrent_events], ['sameroom', "Next (up to
+#{next_in_same_room_limit}) talks in the same room (#{@item[:room_name]})",
+next_in_same_room], ['upcoming', "Events that start after this one (within
+#{next_up_minutes} minutes)", next_up], ].each do |anchor, heading, event_list|
+unless event_list.empty? %>
+<a name="<%= anchor %>"></a>
+<h3><%= heading %>:</h3>
 <table class="table table-striped table-bordered table-condensed">
-    <thead>
-        <th>When</th>
-        <th>Title</th>
-        <th>Track</th>
-        <th>Where</th>
-    </thead>
-    <tbody>
-        <% event_list.each do |e| %>
-        <tr>
-            <td><%= e[:start_time] %>-<%= e[:end_time] %></td>
-            <td><%= l(e) %></td>
-            <td><%= l(track(e[:track])) %></td>
-            <td><%= l(room(e[:room])) %></td>
-        </tr>
-        <% end %>
-    </tbody>
+  <thead>
+    <th>When</th>
+    <th>Title</th>
+    <th>Track</th>
+    <th>Where</th>
+  </thead>
+  <tbody>
+    <% event_list.each do |e| %>
+    <tr>
+      <td><%= e[:start_time] %>-<%= e[:end_time] %></td>
+      <td><%= l(e) %></td>
+      <td><%= l(track(e[:track])) %></td>
+      <td><%= l(room(e[:room])) %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
-<% end %>
-<% end %>
-<% end %>
+<% end %> <% end %> <% end %>
