@@ -22,8 +22,8 @@ Joint submissions (sharing a table) will be favoured in the process.
 
 After sending your proposal you may add all relevant people, that should be informed, to it.
 
-Submit your application at <a href="https://pretalx.fosdem.org/fosdem-2026-call-for-stands">https://fosdem.org/stands</a>
-Deadline closes the **9th of November**;
-Accepted stands will be announced the **16th of November**.
+- Submit your application at <a href="https://pretalx.fosdem.org/fosdem-2026-call-for-stands">https://fosdem.org/stands</a>
+- Deadline closes the **9th of November**;
+- Accepted stands will be announced the **16th of November**.
 
 Questions or remarks? Contact us at <a href="mailto:stands@fosdem.org">stands@fosdem.org</a>
