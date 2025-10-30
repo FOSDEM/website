@@ -6,7 +6,11 @@ Please help keeping this manual up to date, sources are [on github](https://gith
 
 ## Key dates
 
-* To be announced
+
+* 12 October: deadline for developer room proposals
+* 26 October: accepted developer rooms announced
+* 7 November (or earlier): developer rooms issue Calls for Participation
+* 15 December (or earlier): developer rooms publish complete schedules
 
 ## Devroom expectations
 
@@ -55,7 +59,7 @@ People who only review should not be made devroom manager: you can add them to a
 
 Devrooms issue a Call for Papers.
 
-* Note the deadline: To be announced.
+* Note the deadline: November 7.
 * Send a copy to the [FOSDEM mailing list](https://lists.fosdem.org/listinfo/fosdem). Note that this is a moderated list, it may take up to a day before your messages is reviewed.
 * CfP will be added to the accepted developer rooms.
 * Browse examples from previous years if you need inspiration: 
