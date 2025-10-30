@@ -15,10 +15,10 @@ define template
 	ln "$$<" "$$@"
 
 $(DST)/%-big.png: %-big.$(1)
-	convert -density 1000 "$$<" -background '#ffffff' -flatten -bordercolor white -border 1 -trim -resize 12000@ "$$@"
+	convert -density 1000 "$$<" -background '#ffffff' -flatten -alpha remove -bordercolor white -border 1 -trim -resize 12000@ "$$@"
 
 $(DST)/%-small.png: %-small.$(1)
-	convert -density 1000 "$$<" -background '#ffffff' -flatten -bordercolor white -border 1 -trim -resize 2500@ "$$@"
+	convert -density 1000 "$$<" -background '#ffffff' -flatten -alpha remove -bordercolor white -border 1 -trim -resize 2500@ "$$@"
 endef
 
 $(foreach EXT,$(EXTS),$(eval $(call template,$(EXT))))
