@@ -10,6 +10,10 @@ h1 {
 	text-align: center;
 }
 
+#pagetitles > h1 {
+	text-align: left;
+}
+
 h1, h2, h3, footer, #header, .visual,
 #main .s-block .text-block p,
 .news-list .date .frame,
