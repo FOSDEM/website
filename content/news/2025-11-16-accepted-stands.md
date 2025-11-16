@@ -49,7 +49,7 @@ With great pleasure we can announce that the following project will have a stand
 - Kotlin Community Stand
 - LibreOffice
 - Linphone
-- Linux Foundation Europe + OpenInfra & the Linux Foundation: Building the Open Source Infrastructure Ecosystem
+- Linux Foundation Europe + OpenInfra & the Linux Foundation: Building the Open Source Infrastructure Ecosystem + The Zephyr Project
 - Linux on Mobile
 - Luanti (formerly Minetest)
 - MapLibre
