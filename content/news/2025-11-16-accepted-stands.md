@@ -1,0 +1,107 @@
+---
+title: 'FOSDEM 2026 Accepted Stands'
+---
+
+With great pleasure we can announce that the following project will have a stand at FOSDEM 2026!
+
+---MORE---
+
+- ASF Community
+- BSD + FreeBSD Project
+- Checkmk
+- CiviCRM
+- Cloud Native Computing Foundation + Open Source Security Foundation
+- Codeberg and Forgejo
+- Computer networks with BIRD, KNOT and Turris
+- Debian
+- Delta Chat **(Sunday)**
+- Digital Public Goods
+- Dolibar ERP CRM + Odoo Community Association (OCA)
+- Dronecode Foundation
+- Eclipse Foundation
+- F-Droid and /e/OS
+- Fedora Project
+- Firefly Zero
+- Foreman
+- FOSS United + fundingjson (and FLOSS/fund)
+- FOSSASIA
+- Framework Computer
+- Free Android World: From Hardware to Apps – An Open, Sustainable Ecosystem (BlissLabs, IzzyOnDroid & SHIFTphone)
+- Free Software Foundation Europe
+- Furi Labs
+- Gentoo Linux
+- GitLab
+- GNOME
+- GNU Radio
+- Google Summer of Code
+- Grafana
+- Hex sticker booth by NLnet Foundation
+- Homebrew
+- Infostand on amateur radio
+- Internet Archive Europe **(Saturday)**
+- ISRG (Let's Encrypt, Prossimo, Divvi Up)
+- Jenkins
+- Joplin
+- KAIYUANSHE (China Open Source Alliance)
+- KDE
+- KiCAD + FreeCAD
+- Kiwi TCMS **(Saturday)**
+- Kotlin Community Stand
+- LibreOffice
+- Linphone
+- Linux Foundation Europe + OpenInfra & the Linux Foundation: Building the Open Source Infrastructure Ecosystem
+- Linux on Mobile
+- Luanti (formerly Minetest)
+- MapLibre
+- MariaDB Server
+- Mastodon
+- metal-stack
+- Mozilla
+- MySQL
+- Nextcloud
+- Nix and NixOS
+- Open Culture Foundation + Taiwan Open Source Community
+- Open Source at CERN
+- Open-Source Firmware Foundation
+- OpenAgri Software Services - democratising digital agriculture
+- OpenFlexure Microscope
+- openHAB
+- OpenMandriva
+- OpenNebula
+- OpenPrinting and OpenPrinter
+- OpenRemote
+- OpenSSL Foundation
+- openSUSE Project
+- OpenTofu & OpenBao (incl. Q&A)
+- OW2 FOSS community / Murena degooglized phones and suite
+- Percona
+- PINE64 Community **(Sunday)**
+- PostgreSQL
+- postmarketOS
+- privacyIDEA
+- Proxmox VE
+- Python & Django
+- Qubes OS + Genode OS
+- RISC-V International
+- Rocky Linux
+- Software Freedom Conservancy
+- Software Heritage **(Sunday)**
+- SOGo Webmail
+- Sovereign Identity for server, desktop, and a cloud: Keycloak | FreeIPA | SSSD | OpenWallet **(Saturday)**
+- Sovereign Tech Agency **(Sunday)**
+- T2 SDE Linux
+- The Matrix.org Foundation
+- the Perl & Raku Foundation - Battle Tested; Future Proof
+- Thunderbird
+- TinyGo, Mechanoid & WasmVision
+- Tor / Tails / NoScript
+- Ubuntu Community booth
+- VideoLAN
+- Weblate
+- Wireshark
+- wolfSSL
+- XCP-ng and Xen Orchestra
+- Xen Project
+- XMPP & Realtime Lounge
+
+We will announce the location of every stand closer to the event.
