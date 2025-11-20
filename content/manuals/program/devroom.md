@@ -28,14 +28,14 @@ may be of interest to other devrooms.
 Secondly, we create mail aliases &lt;room&gt;-devroom-manager@fosdem.org that
 provide a convenient way for us to contact each other, for example
 to discuss moving proposed talks between devrooms.  Note that these
-alias expansions also include devrooms@fosdem.org.
+alias expansions also include [devrooms@fosdem.org](mailto:devrooms@fosdem.org).
 Again, please make sure you read those messages.
 A list of mail aliases can be found in [pretalx](https://pretalx.fosdem.org/orga/event/fosdem-2026/p/devroom-report/)
 (this list is only accessible to devroom managers), so you can contact other devrooms, eg for moving talks to another room.
 
 Thirdly, we can create additional mailing lists for devrooms to use
 either for a wider team of organisers or for visitors and these may
-be public or private. Contact devrooms@fosdem.org for this.
+be public or private. Contact [devrooms@fosdem.org](mailto:devrooms@fosdem.org) for this.
 
 ## Devroom managers
 
@@ -86,7 +86,7 @@ All submissions must go through pretalx:
 Note that this is a new system and accounts from pentabarf were not migrated: Presenters will have to create a new account.
 
 Staff and devroom managers can access the submitted content through the organisers site which sits at:
-https://pretalx.fosdem.org/orga/event/fosdem-2026/
+[https://pretalx.fosdem.org/orga/event/fosdem-2026/](https://pretalx.fosdem.org/orga/event/fosdem-2026/)
 
 ### Adding a devroom description to the website
 
@@ -185,7 +185,7 @@ You can see when it was last updated near the bottom of
 Note that the data gets pulled from the database slightly before
 this timestamp is generated - sometimes a few minutes before.
 If nothing on this page changed, the date won't be updated.
-https://fosdem.org/2026/sitemap.xml shows the last modified
+[https://fosdem.org/2026/sitemap.xml](https://fosdem.org/2026/sitemap.xml) shows the last modified
 date for every page on the site.
 
 If the system detects an inconsistency in the data, it stops
