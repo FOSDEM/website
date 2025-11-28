@@ -10,14 +10,14 @@ With great pleasure we can announce that the following project will have a stand
 - BSD + FreeBSD Project
 - Checkmk
 - CiviCRM
-- Cloud Native Computing Foundation + Open Source Security Foundation
+- Cloud Native Computing Foundation + OpenInfra & the Linux Foundation: Building the Open Source Infrastructure Ecosystem
 - Codeberg and Forgejo
 - Computer networks with BIRD, KNOT and Turris
 - Debian
 - Delta Chat **(Sunday)**
 - Digital Public Goods
 - Dolibar ERP CRM + Odoo Community Association (OCA)
-- Dronecode Foundation
+- Dronecode Foundation + The Zephyr Project
 - Eclipse Foundation
 - F-Droid and /e/OS + OW2 FOSS community / Murena degooglized phones and suite
 - Fedora Project
@@ -49,7 +49,7 @@ With great pleasure we can announce that the following project will have a stand
 - Kotlin Community Stand
 - LibreOffice
 - Linphone
-- Linux Foundation Europe + OpenInfra & the Linux Foundation: Building the Open Source Infrastructure Ecosystem + The Zephyr Project
+- Linux Foundation Europe + Open Source Security Foundation
 - Linux on Mobile
 - Luanti (formerly Minetest)
 - MapLibre
