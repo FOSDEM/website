@@ -19,7 +19,7 @@ With great pleasure we can announce that the following project will have a stand
 - Dolibar ERP CRM + Odoo Community Association (OCA)
 - Dronecode Foundation
 - Eclipse Foundation
-- F-Droid and /e/OS
+- F-Droid and /e/OS + OW2 FOSS community / Murena degooglized phones and suite
 - Fedora Project
 - Firefly Zero
 - Foreman
@@ -73,7 +73,6 @@ With great pleasure we can announce that the following project will have a stand
 - OpenSSL Foundation
 - openSUSE Project
 - OpenTofu & OpenBao (incl. Q&A)
-- OW2 FOSS community / Murena degooglized phones and suite
 - Percona
 - PINE64 Community **(Sunday)**
 - PostgreSQL
