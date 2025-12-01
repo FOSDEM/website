@@ -94,6 +94,13 @@ Optionally you can add a small description of the devroom on top of the page. Se
 
 Add a .html file in the [website/content/schedule/devrooms/](https://github.com/FOSDEM/website/tree/master/content/schedule/devrooms) folder in the git repo for this description. Keep it concise.
 
+### Closing your call for papers
+
+Because different devrooms have different deadlines, and some tracks such as BOF stay open until the end of the conference there is no general deadline.
+When you want to close your call for papers, you should activate "require access code" in the devroom dashboard.
+
+![Devroom dashboard showing require access code](img/require_access_code.png)
+
 ### Reviewing talks
 
 * Reviewing talks can happen from the [review](https://pretalx.fosdem.org/orga/event/fosdem-2026/reviews/) page. By default devroom managers will see all proposals, also for other tracks. If you only want to review tracks for which you are a manager or review team member, click the large info box on top of the page.
