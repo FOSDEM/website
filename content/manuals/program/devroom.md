@@ -161,7 +161,7 @@ The break should only be scheduled when a change of devroom happens. If the devr
 
 * Keep a couple of talks in reserve in case speakers drop out at the last
   minute.  Choose these from speakers you know will be attending the event
-  anyway and have the details in pentabarf ready so you can swap them in
+  anyway and have the details ready in pretalx so you can swap them in
   with very little effort if you need to do so.
 
 * If you spot a rejected talk in the system that you are interested in, please
