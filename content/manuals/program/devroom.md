@@ -137,12 +137,18 @@ After you finish scheduling, click the Check bottom in the top right. If this pa
 
 Alternatively, if the scheduling interface does not work for you, you can manually add start and stop times and a room to proposals. Note that there is a larger chance to make error if you use this method.
 
+Warning: by default scheduled talks will be immediately visible on the FOSDEM website. If you prefer editing or feel unsure about the interface, you can (temporary) disable publishing of your track by unsetting `on_website` from the devroom settings page:
+
+[!on_website](img/on_website.png)
+
+
 Reminder, the hours where devrooms can be scheduled are:
 
 * Sat 10.30-14.30  15.00-19.00
 * Sun 09.00-12.45  13.15-17.00
 
 The break should only be scheduled when a change of devroom happens. If the devroom is scheduled for a whole day, don't schedule a break. 
+
 
 #### Scheduling hints
 
