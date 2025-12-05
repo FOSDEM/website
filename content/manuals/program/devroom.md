@@ -139,8 +139,7 @@ Alternatively, if the scheduling interface does not work for you, you can manual
 
 Warning: by default scheduled talks will be immediately visible on the FOSDEM website. If you prefer editing or feel unsure about the interface, you can (temporary) disable publishing of your track by unsetting `on_website` from the devroom settings page:
 
-[!on_website](img/on_website.png)
-
+![on_website](img/on_website.png)
 
 Reminder, the hours where devrooms can be scheduled are:
 
