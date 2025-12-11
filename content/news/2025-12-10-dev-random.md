@@ -2,9 +2,17 @@
 title: '/dev/random and lightning talks'
 ---
 
-The room formally known as "lightning talks" room is now known as `/dev/random`.
+The room formally known as "Lightning Talks" is now known as `/dev/random`.
 
 ---MORE---
+
+After 25 years, we say goodbye to the old Lightning Talks format. In place, we
+have two new things!
+
+- `/dev/random`: 15 minute talks on a random, interesting, FOSS-related
+  subject, just like the older Lightning Talks
+- New Lightning Talks: a highly condensed batch of 5 minute quick talks in the
+  main auditorium on various FOSS-related subjects!
 
 [Last year](https://archive.fosdem.org/2025/schedule/event/fosdem-2025-6674-lightning-lightning-talks/)
 we experimented with running a more spontaneous lightning talk format, with a
@@ -29,7 +37,8 @@ and select /dev/random as the track.
 The deadline for `/dev/random` submissions is the **10th January**, with
 accepted talks being notified around the 17th.
 
-Keep an eye out for more details about taking part in lightning talks, but expect:
+Keep an eye out for more details about taking part in the new lightning talks,
+but expect:
 
 - Around 5 minute time limit
 - Submissions opening closer to the event, and closing a day or two before
