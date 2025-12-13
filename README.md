@@ -7,6 +7,8 @@ of those will be an inspiration or of help.
 
 # Getting started
 
+Building the website can be done either using containers or by doing a manual install. The manual install is a bit fragile and may be hard to install on modern systems. Pull requests to support a more recent environment are very much welcome!
+
 ## Prerequisites
 
 - Ruby 2.4 or newer
@@ -16,7 +18,7 @@ of those will be an inspiration or of help.
   1. An export of the FOSDEM pentabarf system; or
   2. Credentials to connect to the FOSDEM pentabarf database
 
-### Debian 9 with rbenv
+### Debian 9-12 with rbenv
 
 Assuming you are running Debian or a derivative thereof, your system will need
 to have the following packages installed:
@@ -107,10 +109,18 @@ Don't forget to add the year when you check out the site, eg http://localhost:12
 
 ### Running with Docker
 
-Rather than installing all dependencies on you machine, it is also possible to use a docker container with all specific versions.
+Rather than installing all dependencies on you machine, it is also possible to use a docker container with all specific versions. You can either build a container yourself, or pull the one that is used in github actions.
 
+To build yourself:
 ```bash
 docker build -t fosdem/website .
+```
+
+Using the published image:
+```bash
+docker pull ghcr.io/johanvdw/fosdem-website
+docker tag fosdem/website ghcr.io/johanvdw/fosdem-website
+```
 
 # Export from Pentabarf
 docker run --rm -it -v $(pwd):/usr/src/app:z fosdem/website kinit <username>@FOSDEM.ORG && nanoc update -y
