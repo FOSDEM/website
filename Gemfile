@@ -6,7 +6,7 @@
 
 source "http://rubygems.org"
 
-gem "activesupport", "~>5.0" # confirmed working, higher is probably OK too
+gem "activesupport", "~>6.0" # confirmed working, higher is probably OK too
 gem "adsf", "~>1.3" # needed for "nanoc view", 1.4 and up requires ruby >=2.3
 gem "bluecloth"
 gem "builder"
