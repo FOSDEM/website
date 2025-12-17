@@ -8,7 +8,7 @@ navcat: true
 # encoding: utf-8
 require 'time'
 
-keynotes = events.select{|e| e[:type] == 'keynote'}.sort_by{|e| e[:start_datetime]}
+keynotes = events.select{|e| e[:type] == 'maintrack' && e[:featured]}.sort_by{|e| e[:start_datetime]}
 maintracks = tracks.select{|t| t[:type] == 'maintrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 standtracks = tracks.select{|t| t[:type] == 'standtrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
