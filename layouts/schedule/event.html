@@ -66,6 +66,13 @@
 </div>
 <% end %>
 
+<% if item[:registration_link] %><div>
+<h3>Registration</h3>
+Registration is required for this session. You can
+<a href="<%= item[:registration_link]%>">register here</a>
+</div>
+<% end %>
+
 <% unless item[:speakers].empty? %>
 <h3>Speakers</h3>
 <table>
