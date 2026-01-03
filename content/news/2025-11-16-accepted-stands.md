@@ -68,7 +68,7 @@ With great pleasure we can announce that the following project will have a stand
 - openHAB
 - OpenMandriva
 - OpenNebula
-- OpenPrinting and OpenPrinter
+- OpenPrinting
 - OpenRemote
 - OpenSSL Foundation
 - openSUSE Project
