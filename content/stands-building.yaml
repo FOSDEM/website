@@ -61,7 +61,7 @@ stand_list:
                 - name: Joplin
                 - name: Weblate
   - name: H (level 0)
-    map: map_h_1
+    map: map_h
     groups:
       - info:
           building: H
