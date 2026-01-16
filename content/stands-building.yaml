@@ -25,7 +25,6 @@ stand_list:
                 - name: wolfSSL
                 - name: GNU Radio
                 - name: Infostand on amateur radio
-
   - name: AW1124 (level 0)
     map:
     groups:
@@ -40,7 +39,6 @@ stand_list:
             - name: Linphone
             - name: The Matrix.org Foundation
             - name: XMPP & Realtime Lounge
-
   - name: F (level 0)
     map:
     groups:
@@ -63,7 +61,6 @@ stand_list:
                 - name: SOGo Webmail
                 - name: Joplin
                 - name: Weblate
-
   - name: H (level 0)
     map: map_h_1
     groups:
@@ -90,7 +87,6 @@ stand_list:
                 - name: XCP-ng and Xen Orchestra
                 - name: Xen Project
                 - name: Digital Public Goods
-
   - name: K (level 0)
     map: map_k_1
     groups:
@@ -114,7 +110,6 @@ stand_list:
                 - name: the Perl & Raku Foundation
                 - name: Kotlin Community Stand
                 - name: Kiwi TCMS (SAT) - PINE64 Community (SUN)
-
       - info:
           building: K
           floor: 1
@@ -132,7 +127,6 @@ stand_list:
                 - name: Tor, Tails, NoScript
                 - name: Proxmox VE
                 - name: metal-stack
-
       - info:
           building: K
           floor: 1
@@ -150,7 +144,6 @@ stand_list:
                 - name: OpenTofu & OpenBao
                 - name: OpenNebula
                 - name: Foreman
-
   - name: K (level 1)
     map: map_k_2
     groups:
@@ -179,7 +172,6 @@ stand_list:
                 - name: OpenSSL Foundation
                 - name: OpenAgri Software Services
                 - name: Hex sticker booth by NLnet Foundation
-
       - info:
           building: K
           floor: 2
@@ -193,21 +185,20 @@ stand_list:
                 - name: KDE
                 - name: Firefly Zero
                 - name: Luanti (formerly Minetest)
-
   - name: UD (level 0)
     map:
     groups:
       - info:
-          building: UA
+          building: UD
           floor: 1
           groop: A
-          amount: 8
+          amount: 5
         stands:
           - theme:
             stands:
               all:
                 - name: F-Droid and /e/OS + OW2 FOSS community / Murena degooglized phones and suite
-                - name: Free Android World - From Hardware to Apps – An Open, Sustainable Ecosystem (BlissLabs, IzzyOnDroid & SHIFTphone)
+                - name: Free Android World - From Hardware to Apps - An Open, Sustainable Ecosystem (BlissLabs, IzzyOnDroid & SHIFTphone)
                 - name: postmarketOS
                 - name: Linux on Mobile
                 - name: Furi Labs
