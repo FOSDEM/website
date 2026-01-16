@@ -2,7 +2,7 @@
 title: Stands
 stand_list:
   - name: AW (level 0)
-    map: map_AW_2
+    map: map_aw
     groups:
       - info:
           building: AW
@@ -25,13 +25,10 @@ stand_list:
                 - name: wolfSSL
                 - name: GNU Radio
                 - name: Infostand on amateur radio
-  - name: AW1124 (level 0)
-    map:
-    groups:
       - info:
           building: AW
           floor: 1
-          groop: B
+          groop: AW1124
           amount: 4
         stands:
           all:
@@ -40,7 +37,7 @@ stand_list:
             - name: The Matrix.org Foundation
             - name: XMPP & Realtime Lounge
   - name: F (level 0)
-    map:
+    map: map_f
     groups:
       - info:
           building: F
@@ -186,7 +183,7 @@ stand_list:
                 - name: Firefly Zero
                 - name: Luanti (formerly Minetest)
   - name: UD (level 0)
-    map:
+    map: map_ud
     groups:
       - info:
           building: UD
