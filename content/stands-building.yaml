@@ -31,11 +31,13 @@ stand_list:
           groop: AW1124
           amount: 4
         stands:
-          all:
-            - name: Delta Chat (Sunday)
-            - name: Linphone
-            - name: The Matrix.org Foundation
-            - name: XMPP & Realtime Lounge
+          - theme:
+            stands:
+              all:
+                - name: Delta Chat (Sunday)
+                - name: Linphone
+                - name: The Matrix.org Foundation
+                - name: XMPP & Realtime Lounge
   - name: F (level 0)
     map: map_f
     groups:
