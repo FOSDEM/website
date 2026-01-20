@@ -7,9 +7,10 @@
 ## Before FOSDEM
 
 ### Slides: technical requirements
-Please create slides with a 16/9 aspect ratio. 1920x1080 (recommended) or 1280x720 (acceptable) will do.
 
-You may want to keep a copy with 4/3 aspect ratio handy for best results should the room projector in your room have a native 4/3 resolution. 1280x960 will also do.
+For your presentation slides, use a 16:9 aspect ratio with a recommended resolution of 1920×1080. If needed, 1280×720 is also acceptable. While 16:9 is a good default, it is a good idea to keep a 4:3 version (e.g., 1280×960) on hand as a backup.
+
+When designing your slides, pay attention to your colour scheme. Opt for high-contrast colours to ensure readability in both very dark and very bright rooms. Additionally, as you may be presenting in a large room, confirm that all text and visuals remain clear and easy to read, regardless of the audience’s distance from the screen.
 
 ### Matrix account
 As a speaker, you might want a Matrix account.  You should already have been invited by email (or Matrix, if we know your Matrix ID) to sign up to Matrix and join the relevant chatrooms.  If not, you can get a Matrix account at https://chat.fosdem.org.  Then, to receive the invites, please enter your Matrix ID (e.g. @matthew:fosdem.org) under your account details on [https://pretalx.fosdem.org](https://pretalx.fosdem.org/fosdem-2025/me/) (look for the 'Matrix-id' field) and you'll be invited shortly. We send out invites a few times a day.
