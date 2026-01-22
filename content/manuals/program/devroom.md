@@ -288,6 +288,31 @@ conference.
 * The video team in your building may be able to help you with this, depending on their workload.
 * Contact: Wouter Verhelst <wouter@fosdem.org>.
 
+### Safety and crowd control
+
+Every devroom needs at minumum one person present wearing the blue devroom shirt. You can get them from the infodesk.
+These will help building managers, video team, volunteers, staff and visitors to figure out who to talk to. This
+improves response time in case you need help or there are video/other issues.
+They will make you recognisable and identifiable as in charge in case of emergencies or when doing crowd control.
+In the unlikely case we would need to evacuate FOSDEM, the devroom team has to lead people to safety and make sure
+the devroom is empty. When at the evacuation point you will report to FOSDEM staff so a good view of the situation can be
+created. This enables us to communicate a decent situation overview to the rescue services.
+
+Devrooms tend to fill up quite a lot. Try to make sure visitors don't leave too many seats open so that as much
+people as possible can attend the talks. Make sure people are not sitting on the floor all over the room.
+If there is risk of overcrowding, place somebody at the door and use the full signs to control the situation. Make sure
+to have some time in between talks to let people leave and enter without disturbing the speaker.
+
+### Trash and maintenance
+
+Guide devroom visitors to use the trash cans available in the devroom and try to keep the room clean.
+Building managers should be able to provide you with extra trash bags in case of trash can overflow. They will
+also be able to tell you were to get rid of trash at the end of the day.
+
+Report any damage or issue to building managers. You can open windows to keep the temperature bearable and the
+indoor air breathable. Unfortunately not all rooms might have windows that open. In case you open them, make sure to
+close them at the end of the day to avoid animals/birds entering the devroom.
+
 ### Misc
 
 Because most rooms cannot have a dedicated volunteer to manage the camera and
