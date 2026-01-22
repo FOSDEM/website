@@ -13,7 +13,7 @@ For your presentation slides, use a 16:9 aspect ratio with a recommended resolut
 When designing your slides, pay attention to your colour scheme. Opt for high-contrast colours to ensure readability in both very dark and very bright rooms. Additionally, as you may be presenting in a large room, confirm that all text and visuals remain clear and easy to read, regardless of the audience’s distance from the screen.
 
 ### Matrix account
-As a speaker, you might want a Matrix account.  You should already have been invited by email (or Matrix, if we know your Matrix ID) to sign up to Matrix and join the relevant chatrooms.  If not, you can get a Matrix account at https://chat.fosdem.org.  Then, to receive the invites, please enter your Matrix ID (e.g. @matthew:fosdem.org) under your account details on [https://pretalx.fosdem.org](https://pretalx.fosdem.org/fosdem-2025/me/) (look for the 'Matrix-id' field) and you'll be invited shortly. We send out invites a few times a day.
+As a speaker, you might want a Matrix account.  You should already have been invited by email (or Matrix, if we know your Matrix ID) to sign up to Matrix and join the relevant chatrooms.  If not, you can get a Matrix account at https://chat.fosdem.org.  Then, to receive the invites, please enter your Matrix ID (e.g. @matthew:fosdem.org) under your account details on [https://pretalx.fosdem.org](https://pretalx.fosdem.org/fosdem-2026/me/) (look for the 'Matrix-id' field) and you'll be invited shortly. We send out invites a few times a day.
 
 You should be invited to:
 
@@ -23,7 +23,7 @@ You should be invited to:
 
 ### Uploading slides
 
- * You can upload your slides and additional resources such as links to your repo on [pretalx](https://pretalx.fosdem.org/fosdem-2025/me/submissions/). Look for the resources section. 
+ * You can upload your slides and additional resources such as links to your repo on [pretalx](https://pretalx.fosdem.org/fosdem-2026/me/submissions/). Look for the resources section. 
 
 ## During FOSDEM
 
