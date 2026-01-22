@@ -1,16 +1,16 @@
 ---
 title: Stands
 stand_list:
-  - name: AW (level 0)
+  - name: AW
     map: map_aw
     groups:
       - info:
           building: AW
           floor: 1
-          groop: A
+          group: A
           amount: 12
         stands:
-          - theme:
+          - theme: Hardware
             stands:
               all:
                 - name: OpenFlexure Microscope
@@ -18,58 +18,77 @@ stand_list:
                 - name: Framework Computer
                 - name: RISC-V International
                 - name: OpenPrinting
+          - theme: IoT
+            stands:
+              all:
                 - name: Dronecode Foundation + The Zephyr Project
                 - name: openHAB
                 - name: OpenRemote
                 - name: TinyGo, Mechanoid & WasmVision
                 - name: wolfSSL
+          - theme: Developer environment
+            stands:
+              all:
                 - name: GNU Radio
+          - theme: HAM Radio
+            stands:
+              all:
                 - name: Infostand on amateur radio
       - info:
           building: AW
           floor: 1
-          groop: AW1124
+          group: AW1124
           amount: 4
         stands:
-          - theme:
+          - theme: Instant Messaging
             stands:
               all:
                 - name: Delta Chat (Sunday)
                 - name: Linphone
                 - name: The Matrix.org Foundation
                 - name: XMPP & Realtime Lounge
-  - name: F (level 0)
+  - name: F
     map: map_f
     groups:
       - info:
           building: F
           floor: 1
-          groop: A
+          group: A
           amount: 11
         stands:
-          - theme:
+          - theme: Office suites and productivity
             stands:
               all:
                 - name: CiviCRM
                 - name: Dolibar ERP CRM + Odoo Community Association (OCA)
                 - name: LibreOffice
+          - theme: Community advocacy
+            stands:
+              all:
                 - name: Mastodon
+          - theme: Office suites and productivity
+            stands:
+              all:
                 - name: Nextcloud
                 - name: Mozilla
                 - name: Thunderbird
                 - name: SOGo Webmail
                 - name: Joplin
-                - name: Weblate
-  - name: H (level 0)
+                - Weblate
+          - theme: World wide web
+            stands:
+              all:
+                - name: ISRG (Let's Encrypt, Prossimo, Divvi Up)
+  - name: H
     map: map_h
     groups:
       - info:
           building: H
           floor: 1
-          groop: A
+          group: A
           amount: 14
         stands:
-          - theme:
+          - theme: Operating Systems
             stands:
               all:
                 - name: BSD + FreeBSD Project
@@ -85,57 +104,82 @@ stand_list:
                 - name: T2 SDE Linux
                 - name: XCP-ng and Xen Orchestra
                 - name: Xen Project
+          - theme: World wide web
+            stands:
+              all:
                 - name: Digital Public Goods
-  - name: K (level 0)
+  - name: K (level 1)
     map: map_k_1
     groups:
       - info:
           building: K
           floor: 1
-          groop: A
+          group: A
           amount: 11
         stands:
-          - theme:
+          - theme: Education
             stands:
               all:
                 - name: Open Source at CERN
+          - theme: Developer environment
+            stands:
+              all:
                 - name: Homebrew
                 - name: Jenkins
                 - name: GitLab
                 - name: Codeberg and Forgejo
+          - theme: Monitoring and Observability
+            stands:
+              all:
                 - name: Grafana
                 - name: Checkmk
+          - theme: Programming languages
+            stands:
+              all:
                 - name: Python & Django
                 - name: the Perl & Raku Foundation
                 - name: Kotlin Community Stand
-                - name: Kiwi TCMS (SAT) - PINE64 Community (SUN)
+                - name: Kiwi TCMS (SAT)
+          - theme: Hardware
+            stands:
+              all:
+                - name: PINE64 Community (SUN)
       - info:
           building: K
           floor: 1
-          groop: B
+          group: B
           amount: 8
         stands:
-          - theme:
+          - theme: Database engines
             stands:
               all:
                 - name: MariaDB Server
                 - name: Percona
                 - name: MySQL
                 - name: PostgreSQL
+          - theme: World wide web
+            stands:
+              all:
                 - name: MapLibre
                 - name: Tor, Tails, NoScript
+          - theme: System administration
+            stands:
+              all:
                 - name: Proxmox VE
                 - name: metal-stack
       - info:
           building: K
           floor: 1
-          groop: C
+          group: C
           amount: 8
         stands:
-          - theme:
+          - theme: Multimedia and graphics
             stands:
               all:
                 - name: VideoLAN
+          - theme: 
+            stands:
+              all:
                 - name: Sovereign Identity for server, desktop, and a cloud Keycloak, FreeIPA, SSSD, OpenWallet (SAT) - Sovereign Tech Agency (SUN)
                 - name: privacyIDEA
                 - name: Computer networks with BIRD, KNOT and Turris
@@ -143,16 +187,16 @@ stand_list:
                 - name: OpenTofu & OpenBao
                 - name: OpenNebula
                 - name: Foreman
-  - name: K (level 1)
+  - name: K (level 2)
     map: map_k_2
     groups:
       - info:
           building: K
           floor: 2
-          groop: A
+          group: A
           amount: 16
         stands:
-          - theme:
+          - theme: Community advocacy
             stands:
               all:
                 - name: ASF Community
@@ -165,7 +209,14 @@ stand_list:
                 - name: FOSS United + fundingjson (and FLOSS/fund)
                 - name: Free Software Foundation Europe
                 - name: Software Freedom Conservancy
-                - name: Internet Archive Europe (SAT) - Software Heritage (SUN)
+          - theme: World wide web
+            stands:
+              all:
+                - name: Internet Archive Europe (SAT)
+          - theme: Community advocacy
+            stands:
+              all:
+                - name: Software Heritage (SUN)
                 - name: Google Summer of Code
                 - name: Open-Source Firmware Foundation
                 - name: OpenSSL Foundation
@@ -174,26 +225,29 @@ stand_list:
       - info:
           building: K
           floor: 2
-          groop: B
+          group: B
           amount: 4
         stands:
-          - theme:
+          - theme: Desktop environments
             stands:
               all:
                 - name: GNOME
                 - name: KDE
+          - theme: Gaming 
+            stands:
+              all:
                 - name: Firefly Zero
                 - name: Luanti (formerly Minetest)
-  - name: UD (level 0)
+  - name: UD2
     map: map_ud
     groups:
       - info:
           building: UD
           floor: 1
-          groop: A
+          group: A
           amount: 5
         stands:
-          - theme:
+          - theme: Mobile Operating System
             stands:
               all:
                 - name: F-Droid and /e/OS + OW2 FOSS community / Murena degooglized phones and suite
