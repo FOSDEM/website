@@ -177,10 +177,17 @@ stand_list:
           stands:
             all:
               - name: VideoLAN
-        - theme: 
+        - theme: System administration
           stands:
             all:
-              - name: Sovereign Identity for server, desktop, and a cloud Keycloak, FreeIPA, SSSD, OpenWallet (SAT) - Sovereign Tech Agency (SUN)
+              - name: Sovereign Identity for server, desktop, and a cloud Keycloak, FreeIPA, SSSD, OpenWallet (SAT)
+        - theme: Community advocacy
+          stands:
+            all: 
+              - name: Sovereign Tech Agency (SUN)
+        - theme: System administration
+          stands:
+            all:
               - name: privacyIDEA
               - name: Computer networks with BIRD, KNOT and Turris
               - name: Wireshark
