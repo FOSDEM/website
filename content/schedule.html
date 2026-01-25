@@ -8,7 +8,7 @@ navcat: true
 # encoding: utf-8
 require 'time'
 
-keynotes = events.select{|e| e[:type] == 'keynote'}.sort_by{|e| e[:start_datetime]}
+keynotes = events.select{|e| e[:type] == 'maintrack' && e[:featured]}.sort_by{|e| e[:start_datetime]}
 maintracks = tracks.select{|t| t[:type] == 'maintrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 devrooms = tracks.select{|t| t[:type] == 'devroom'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
 standtracks = tracks.select{|t| t[:type] == 'standtrack'}.sort_by{|t| [ t[:rank], t[:conference_track_id] ] }
@@ -31,7 +31,7 @@ columns = 3
   <li>Overview of <a href="<%= pathof '/schedule/roomtracks/' %>">rooms per days</a></li>
   <li>Mobile apps: <a href="<%= pathof '/schedule/mobile/' %>">many platforms</a></li>
   <li>What's on now: <a href="page:/schedule/streaming">Live streaming</a></li>
-  <li>Programme <a href="page:/schedule/amendments">Schedule amendments</a></li>
+  <%# <li>Programme <a href="page:/schedule/amendments">Schedule amendments</a></li> %>
 <%
   pdfs = items.select{|x| x.identifier =~ %r{^/schedule/pdf/[^/]+/$}}.sort_by{|x| x[:page_size]}.reverse
   unless pdfs.empty?

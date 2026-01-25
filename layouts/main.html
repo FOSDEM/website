@@ -2,8 +2,18 @@
 <%
 # vim: set ts=2 sw=2 et ai ft=eruby:
 $layout_dateline ||= begin
-                       days.map{|d| d[:conference_day].day}.join(' &amp; ') + " " + days.first[:conference_day].strftime('%B %Y')
-                     end
+  first_day = days.first[:conference_day]
+  last_day  = days.last[:conference_day]
+
+  if first_day.month == last_day.month
+    # Some months: 1 & 2 February 2025
+    days.map { |d| d[:conference_day].day }.join(' &amp; ') + " " + first_day.strftime('%B %Y')
+  else
+    # Different months: 31 January & 1 February 2026
+    "#{first_day.day} #{first_day.strftime('%B')} &amp; #{last_day.day} #{last_day.strftime('%B %Y')}"
+  end
+end
+
 %>
 <% virtual = @site.config.fetch(:virtual) %>
 <html lang="en">
@@ -35,7 +45,7 @@ $layout_dateline ||= begin
     <meta name="DC.Format" content="text/html">
     <meta name="DC.Language" content="en">
     <meta name="DC.Subject" content="<%= conference()[:title] %>">
-    <meta name="DC.Rights" content="http://creativecommons.org/licenses/by-sa/2.0/be/">
+    <meta name="DC.Rights" content="https://creativecommons.org/licenses/by/4.0/">
     <meta property="og:title" content="<%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %>">
     <meta property="og:type" content="website">
     <meta property="og:image" content="<%= conference()[:homepage] %><%= pathof('/assets/style/logo-gear/')[1..-1] %>">
@@ -93,20 +103,22 @@ $layout_dateline ||= begin
                                   "600+"
                                 end
                               end
+              devroom_count = tracks.count { |t| t[:type] == 'devroom' }
+	      devroom_label = devroom_count > 0 ? "#{devroom_count} devrooms" : "devrooms"
               {
-                'beer' => '/practical/beer/',
-              "#{ tracks.select{|t| t[:type] == 'devroom'}.count } devrooms" => '/schedule/tracks/',
-              'open source' => 'https://en.wikipedia.org/wiki/Open-source_model',
-              '8000+ hackers' => nil,
-              'lightning talks' => '/schedule/track/lightning_talks/',
-              "#{$eventcount} lectures" => '/schedule/events/',
+                'beer' => 'https://en.wikipedia.org/wiki/Beer_in_Belgium',
+                devroom_label => '/schedule/tracks/',
+                'open source' => 'https://en.wikipedia.org/wiki/Open-source_model',
+                '8000+ hackers' => nil,
+                'lightning talks' => '/schedule/track/lightning_talks/',
+                "#{$eventcount} lectures" => '/schedule/events/',
               }.each_with_index do |(label, target), i|
               url, alt = if target
                            t = $item_by_id[target]
                            if t
                              [ t.path, t[:title] ]
                            else
-                             [ '#', nil ]
+                             [ target, nil ]
                            end
                          else
                            [ '#', nil ]
@@ -170,9 +182,9 @@ $layout_dateline ||= begin
         </div>
         <div class="license-info">
           <div class="license-info-logo"></div>
-          This work is licensed under the Creative Commons Attribution 2.0 Belgium Licence.<br>
+          This work is licensed under the Creative Commons Attribution 4.0 International.<br>
           To view a copy of this licence, visit
-          <a class="quiet" rel="license" href="http://creativecommons.org/licenses/by/2.0/be/deed.en">http://creativecommons.org/licenses/by/2.0/be/deed.en</a><br>
+          <a class="quiet" rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en">https://creativecommons.org/licenses/by/4.0/deed.en</a><br>
           or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.<br>
           All content such as talks and biographies is the sole responsibility of the speaker.
         </div>

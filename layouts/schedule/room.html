@@ -32,14 +32,6 @@
     <% end %>
   </li>
   <% end %>
-  <li>
-    <i class="icon-comment"></i> <strong>Chat</strong>:
-    <% if ! go_live || ! matrix_works %>
-    <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
-    <% else %>
-    <a href="<%= item[:chat_link] %>">Join the conversation!</a>
-    <% end %>
-  </li>
 </ul>
 <br style="clear: both;"/>
 <%

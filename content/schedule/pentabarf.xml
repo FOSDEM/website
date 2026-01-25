@@ -37,7 +37,17 @@ xml.schedule do
   end
   xml.tracks do 
     tracks.each do | track |
-      xml.track track[:name], {:online_qa=>track[:online_qa]}
+      xml.track track[:name], {:online_qa=>track[:online_qa], :slug=>track[:slug]}
+    end
+  end
+  xml.persons do
+    speakers.each do | speaker |
+      xml.person({:id=>speaker[:person_id]}) do
+        xml.name speaker[:name]
+        xml.slug speaker[:slug]
+        xml.biography speaker[:abstract]
+        xml.extended_biography speaker[:description]
+      end
     end
   end
   days.each_with_index do | day, index |
@@ -60,7 +70,7 @@ xml.schedule do
               xml.url event_url
               xml.title event[:title]
               xml.subtitle event[:subtitle]
-              xml.track event[:track_name]
+              xml.track event[:track_name], {:slug=>event[:track]}
               xml.type event[:type]
               xml.language event[:language]
               xml.abstract event[:abstract]

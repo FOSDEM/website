@@ -23,5 +23,5 @@
 		}
 	],
 	"theme_color": "#af2c93",
-	"display": "standalone"
+	"display": "browser"
 }

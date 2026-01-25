@@ -7,18 +7,22 @@
 ## Before FOSDEM
 
 ### Slides: technical requirements
-Please create slides with a 16/9 aspect ratio. 1920x1080 (recommended) or 1280x720 (acceptable) will do.
 
-You may want to keep a copy with 4/3 aspect ratio handy for best results should the room projector in your room have a native 4/3 resolution. 1280x960 will also do.
+For your presentation slides, use a 16:9 aspect ratio with a recommended resolution of 1920×1080. If needed, 1280×720 is also acceptable. While 16:9 is a good default, it is a good idea to keep a 4:3 version (e.g., 1280×960) on hand as a backup.
+
+When designing your slides, pay attention to your colour scheme. Opt for high-contrast colours to ensure readability in both very dark and very bright rooms. Additionally, as you may be presenting in a large room, confirm that all text and visuals remain clear and easy to read, regardless of the audience’s distance from the screen.
 
 ### Matrix account
-As a speaker, you might want a Matrix account.  You should already have been invited by email (or Matrix, if we know your Matrix ID) to sign up to Matrix and join the relevant chatrooms.  If not, you can get a Matrix account at https://chat.fosdem.org.  Then, to receive the invites, please enter your Matrix ID (e.g. @matthew:fosdem.org) under your account details on [https://pretalx.fosdem.org](https://pretalx.fosdem.org/fosdem-2025/me/) (look for the 'Matrix-id' field) and you'll be invited shortly. We send out invites a few times a day.
+As a speaker, you might want a Matrix account.  You should already have been invited by email (or Matrix, if we know your Matrix ID) to sign up to Matrix and join the relevant chatrooms.  If not, you can get a Matrix account at https://chat.fosdem.org.  Then, to receive the invites, please enter your Matrix ID (e.g. @matthew:fosdem.org) under your account details on [https://pretalx.fosdem.org](https://pretalx.fosdem.org/fosdem-2026/me/) (look for the 'Matrix-id' field) and you'll be invited shortly. We send out invites a few times a day.
 
 You should be invited to:
  * [#speakers:fosdem.org](https://matrix.to/#/#speakers:fosdem.org?web-instance[element.io]=chat.fosdem.org) (the main coordination point for speakers)
  * The backstage room for your devroom, where you can coordinate with the devroom organisers and your hosts
  * The devroom itself.
 
+### Uploading slides
+
+ * You can upload your slides and additional resources such as links to your repo on [pretalx](https://pretalx.fosdem.org/fosdem-2026/me/submissions/). Look for the resources section. 
 
 ## During FOSDEM
 
@@ -27,6 +31,7 @@ You should be invited to:
 The slides capture system will accept hdmi input. Please bring your own whatever-to-hdmi adapter should you need any. Adapters for mini-dp, usb-c and possibly more will be provided on a best effort basis.
 
 Please mind the following requirements:
+
 - 60 Hz or lower video output refresh rate
 - 1080p (1920x1080) or lower output resolution
 

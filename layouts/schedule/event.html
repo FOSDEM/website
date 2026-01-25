@@ -6,30 +6,21 @@
 <ul class="side-box">
   <li><i class="icon-road"></i> <strong>Track</strong>: <%= l track(item[:track]) %></li>
   <li><i class="icon-home"></i> <strong>Room</strong>: <%= l room(item[:room]) %></li>
-  <% if item[:virtual] %>
-  <li><i class="icon-map-marker"></i> <strong>Location</strong>: Online </li>
-  <% end %>
   <li><i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></li>
   <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %></li>
   <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item, :end %></li>
-  <% if ! is_stand(item[:room]) %>
+  <% if item[:live_video_link] %>
   <li id="live-stream-with-q-and-a" class="visible-desktop">
     <i class="icon-film"></i> <strong>Video only</strong>:
-    <% if item[:room].nil? || ! go_live %>
-    <span class="muted">We're not quite ready yet</span>
-    <% else %>
     <a href="<%= item[:live_video_link] %>"><%= item[:room] %></a>
-    <% end %>
   </li>
   <% end %>
+  <% if item[:chat_link] %>
   <li>
     <i class="icon-comment"></i> <strong>Chat</strong>:
-    <% if item[:room].nil? || ! go_live || ! matrix_works %>
-    <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
-    <% else %>
     <a href="<%= item[:chat_link] %>">Join the conversation!</a>
-    <% end %>
   </li>
+  <% end %>
 </ul>
 <br style="clear: both;"/>
 
@@ -46,13 +37,6 @@
 <div class="event-description"><%= item[:description] %></div>
 <% end %>
 </div>
-<% end %>
-<% if is_stand(item[:room]) %>
-  <div class="event-blurb">
-    <div class="event-abstract">
-      <p>Visit the <%= item[:title] %> at <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:room]) %>">stands.fosdem.org</a>.</p>
-    </div>
-  </div>
 <% end %>
 
 <%
@@ -79,6 +63,13 @@
     <source src="<%= url %>" type='video/webm; codecs="av01.0.08M.08.0.110.01.01.01.0"' />
     <source src="<%= url.gsub(/\.av1\.webm$/, ".mp4") %>" type='video/mp4' />
   </video>
+</div>
+<% end %>
+
+<% if item[:registration_link] %><div>
+<h3>Registration</h3>
+Registration is required for this session. You can
+<a href="<%= item[:registration_link]%>">register here</a>
 </div>
 <% end %>
 

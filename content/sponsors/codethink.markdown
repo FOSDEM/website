@@ -3,11 +3,15 @@ title: Codethink
 url: https://www.codethink.co.uk/
 ---
 
-Codethink has established an international reputation as a world-class
-provider of software engineering and consultancy services. Codethink
-delivers critical, high-performance software projects for
-international companies in a range of industries. We provide expert
-teams to help our clients tackle their most challenging software
-problems.
+Codethink is a world-class provider of critical,
+high-performance software projects and solutions
+for international-scale companies in a range of
+industries including Automotive, Finance, Medical,
+and IoT.
+
+Headquartered in Manchester, UK, Codethink has
+pioneered software industry thinking around concepts
+of trustable software, working to improve the quality
+of software engineering.
 
 Codethink supports the event financially.
