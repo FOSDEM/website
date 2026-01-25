@@ -16,8 +16,7 @@ When designing your slides, pay attention to your colour scheme. Opt for high-co
 As a speaker, you might want a Matrix account.  You should already have been invited by email (or Matrix, if we know your Matrix ID) to sign up to Matrix and join the relevant chatrooms.  If not, you can get a Matrix account at https://chat.fosdem.org.  Then, to receive the invites, please enter your Matrix ID (e.g. @matthew:fosdem.org) under your account details on [https://pretalx.fosdem.org](https://pretalx.fosdem.org/fosdem-2026/me/) (look for the 'Matrix-id' field) and you'll be invited shortly. We send out invites a few times a day.
 
 You should be invited to:
-
- * [#speakers:fosdem.org](https://matrix.to/#/#speakers:fosdem.org) (the main coordination point for speakers)
+ * [#speakers:fosdem.org](https://matrix.to/#/#speakers:fosdem.org?web-instance[element.io]=chat.fosdem.org) (the main coordination point for speakers)
  * The backstage room for your devroom, where you can coordinate with the devroom organisers and your hosts
  * The devroom itself.
 
@@ -40,7 +39,7 @@ Please mind the following requirements:
 You will have a chance to address your real life live audience's questions in a live broadcast q&a session. Your room manager or his assistant may also relay questions from https://chat.fosdem.org .
 
 - You may want to join the following rooms:
-  - [#speakers:fosdem.org](https://chat.fosdem.org/#/room/#speakers:fosdem.org)
+  - [#speakers:fosdem.org](https://matrix.to/#/#speakers:fosdem.org?web-instance[element.io]=chat.fosdem.org)
     - This room is invite only. It's accessible to all speakers and FOSDEM staff.
     - You should have received an invitation by email. In case you have trouble getting in, any FOSDEM staff should be able to invite you here.
   - the general audience room for your talk.
@@ -55,7 +54,7 @@ You will have a chance to address your real life live audience's questions in a 
   - [K building](https://nav.fosdem.org/l/c:1:165.69:265.77/): behind the 1.105 ("Lafontaine") auditorium, bottom left when facing the stage
   - [UD building](https://nav.fosdem.org/l/ud2119/): room UD2.119
   - [UB building](https://nav.fosdem.org/l/ub4228/): room UB4.228 
-- Alternatively, you may contact video volunteers through the dedicated matrix [video channel](https://chat.fosdem.org/#/room/#fosdem-video:matrix.org).
+- Alternatively, you may contact video volunteers through the dedicated matrix [video channel](https://matrix.to/#/#fosdem-video:matrix.org?web-instance[element.io]=chat.fosdem.org).
 - For issues regarding the stream on https://fosdem.org site in general, please also email both [video@fosdem.org](mailto:video@fosdem.org) and [server@fosdem.org](mailto:server@fosdem.org) .
 - I have a problem connecting to https://chat.fosdem.org at all.
   - Speak to anyone in a blue (FOSDEM developer room manager), green (FOSDEM video) or yellow (FOSDEM staff) t-shirt.
