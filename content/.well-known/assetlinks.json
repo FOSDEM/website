@@ -1,0 +1,33 @@
+[
+    {
+        "relation":
+        [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target":
+        {
+            "namespace": "android_app",
+            "package_name": "info.metadude.android.fosdem.schedule",
+            "sha256_cert_fingerprints":
+            [
+                "89:4C:4F:D6:CB:AB:E4:C9:F9:2A:43:A8:25:E7:45:25:0A:17:7D:A0:1A:D0:30:1E:DD:22:3C:03:22:C7:C0:03"
+            ]
+        }
+    },
+    {
+        "relation":
+        [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target":
+        {
+            "namespace": "android_app",
+            "package_name": "info.metadude.android.fosdem.schedule.debug",
+            "sha256_cert_fingerprints":
+            [
+                "D8:E7:B5:B1:50:BB:1E:39:58:A8:AA:E9:95:09:92:68:74:DC:C5:03:79:E5:9C:FD:CC:9A:1B:43:4F:D0:F9:F6"
+            ]
+        }
+    }
+]
+
