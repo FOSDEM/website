@@ -10,7 +10,8 @@
             "package_name": "info.metadude.android.fosdem.schedule",
             "sha256_cert_fingerprints":
             [
-                "89:4C:4F:D6:CB:AB:E4:C9:F9:2A:43:A8:25:E7:45:25:0A:17:7D:A0:1A:D0:30:1E:DD:22:3C:03:22:C7:C0:03"
+                "89:4C:4F:D6:CB:AB:E4:C9:F9:2A:43:A8:25:E7:45:25:0A:17:7D:A0:1A:D0:30:1E:DD:22:3C:03:22:C7:C0:03",
+                "FF:A0:BD:6F:43:2A:A8:B4:43:00:24:87:BC:73:27:70:7F:A4:E6:71:FC:8E:F4:51:59:C5:B6:AD:8B:9D:0F:E6"
             ]
         }
     },
@@ -30,4 +31,3 @@
         }
     }
 ]
-
