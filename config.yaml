@@ -114,6 +114,9 @@ data_sources:
     # it will become “/about.html/” instead.
     allow_periods_in_identifiers: false
 
+    extra_files:
+      - ".well-known/**/*"
+
   -
     type: schedule
 
