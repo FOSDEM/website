@@ -245,8 +245,8 @@ compile '*' do
     # http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html
     filter :erb
 
-    # only run the chain of filters when it's not an .xml or .erb or .ics file
-    unless ['xml', 'erb', 'ics'].include? item[:extension] then
+    # only run the chain of filters when it's not an .xml or .erb or .ics or .json file
+    unless ['xml', 'erb', 'ics', 'json'].include? item[:extension] then
 
       # don't process content that is generated from Pentabarf, or content
       # pages that have "kind: internal" in their metadata
