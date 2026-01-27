@@ -35,6 +35,8 @@ Please mind the following requirements:
 - 60 Hz or lower video output refresh rate
 - 1080p (1920x1080) or lower output resolution
 
+Please do not touch the video capture boxes except for providing them with hdmi input. We'll love to show you around the video boxes, but rather not in live production.
+
 ### Talk Q&A: live audience interaction and text based questions from chat.fosdem.org
 You will have a chance to address your real life live audience's questions in a live broadcast q&a session. Your room manager or his assistant may also relay questions from https://chat.fosdem.org .
 
