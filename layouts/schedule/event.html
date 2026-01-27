@@ -7,8 +7,8 @@
   <li><i class="icon-road"></i> <strong>Track</strong>: <%= l track(item[:track]) %></li>
   <li><i class="icon-home"></i> <strong>Room</strong>: <%= l room(item[:room]) %></li>
   <li><i class="icon-calendar"></i> <strong>Day</strong>: <%= l day(item[:day]) %></li>
-  <li><i class="icon-play"></i> <strong>Start</strong>: <%= ltt item, :start %></li>
-  <li><i class="icon-stop"></i> <strong>End</strong>: <%= ltt item, :end %></li>
+  <li><i class="icon-play"></i> <strong>Start (UTC+1)</strong>: <%= ltt item, :start %></li>
+  <li><i class="icon-stop"></i> <strong>End (UTC+1)</strong>: <%= ltt item, :end %></li>
   <% if item[:live_video_link] %>
   <li id="live-stream-with-q-and-a" class="visible-desktop">
     <i class="icon-film"></i> <strong>Video only</strong>:
