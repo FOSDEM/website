@@ -22,8 +22,9 @@ xml.table(class: "timetable timetable-body table table-striped table-bordered ta
     xml.tr do
       xml.th(class: 'backlink') do
         xml.a(href: pathof('/'), title: 'Site root') do
-          xml << '&larr;&nbsp;/'
+          xml << '&larr;&nbsp;/ '
         end
+          xml << 'UTC+1'
       end
       rooms.map(&$to_room).each do |room|
         xml.th do
