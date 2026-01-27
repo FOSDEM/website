@@ -5,51 +5,33 @@
 <% go_live = @site.config.fetch(:go_live) %>
 <% matrix_works = @site.config.fetch(:matrix_works) %>
 <ul class="side-box">
-  <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></li>
-<%
-  building = $buildings.select{|b, rooms| rooms.map{|r| r[:slug]}.include? item[:slug]}.map{|b, rooms| b}.first
-  if building
-    building_path = $item_by_id.fetch('/schedule/buildings/').path
-  %>
-  <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
+  <% if !item[:virtual]%>
+    <li><i class="icon-user"></i> <strong>Capacity</strong>: <%= item[:size] %></li>
+  <%
+    building = $buildings.select{|b, rooms| rooms.map{|r| r[:slug]}.include? item[:slug]}.map{|b, rooms| b}.first
+    if building
+      building_path = $item_by_id.fetch('/schedule/buildings/').path
+      %>
+    <li><i class="icon-th"></i> <strong>Building</strong>: <a href="<%= building_path %>#<%= building.downcase %>"><%= building %></a></li>
+  <% end %>
 <% end %>
-<% if ! @site.config.fetch(:virtual) %>
+<% if ! @site.config.fetch(:virtual) && !item[:virtual] %>
   <li><i class="icon-map-marker"></i> <strong>Location</strong>: <a href="https://nav.fosdem.org/l/<%= item[:slug] %>/">
     <%= item[:conference_room] %>
   </a></li>
+<% else %>
+  <li><i class="icon-map-marker"></i> <strong>Location</strong>: Online only</li>
 <% end %>
-  <% if is_stand(item[:slug]) %>
-  <li>
-    <i class="icon-picture"></i> <a href="https://stands.fosdem.org/stands/<%= link_schedule_to_stand(item[:slug]) %>">Visit the stand</a>
-  </li>
-  <% else %>
-  <li id="live-stream-with-q-and-a" class="visible-desktop">
-    <i class="icon-facetime-video"></i> <strong>Video with Q&A</strong>:
-    <% if ! go_live || ! matrix_works %>
-    <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
-    <% else %>
-    <a href="<%= stream_link(item) %>"><%= item[:conference_room] %></a>
-    <% end %>
-  </li>
-  <% end %>
   <% if ! is_stand(item[:slug]) %>
   <li>
     <i class="icon-film"></i> <strong>Video only</strong>:
     <% if ! go_live %>
     <span class="muted">We're not quite ready yet</span>
     <% else %>
-    <a href="<%= stream_direct_link(item) %>"><%= item[:conference_room] %></a>
+    <a href="<%= item[:live_video_link] %>"><%= item[:conference_room] %></a>
     <% end %>
   </li>
   <% end %>
-  <li>
-    <i class="icon-comment"></i> <strong>Chat</strong>:
-    <% if ! go_live || ! matrix_works %>
-    <span class="muted">We've hit a snag. The <i>Video only</i> link still works!</span>
-    <% else %>
-    <a href="<%= stream_link(item, is_chat=true) %>">Join the conversation!</a>
-    <% end %>
-  </li>
 </ul>
 <br style="clear: both;"/>
 <%
@@ -59,9 +41,9 @@
   <thead>
     <tr>
       <th style="width: 8em;">Day</th>
-      <th style="width: 4em; text-align: right;">Start</th>
+      <th style="width: 7em; text-align: right;">Start (UTC+1)</th>
       <th style="width: 1em;"></th>
-      <th style="width: 4em; text-align: left;">End</th>
+      <th style="width: 7em; text-align: left;">End (UTC+1)</th>
       <th>Track(s)</th>
     </tr>
   </thead>
@@ -198,20 +180,22 @@
     <thead>
         <tr>
             <th colspan="2">Title</th>
+            <th>Speakers</th>
             <th>Track</th>
-            <th>Start</th>
-            <th>End</th>
+            <th>Start (UTC+1)</th>
+            <th>End (UTC+1)</th>
         </tr>
     </thead>
     <tbody>
         <% item[:events].map(&$to_event).group_by{|e| e[:day_name]}.each do |day, dayevents| %>
         <tr>
-            <td colspan="5"><h4><%= day %></h4></td>
+            <td colspan="6"><h4><%= day %></h4></td>
         </tr>
         <% dayevents.sort_by{|e| e[:start_datetime]}.each do |e| %>
         <tr>
             <td class="<%= event_color.fetch e[:event_id] %>">&nbsp;</td>
             <td><a name="<%= e[:slug] %>"></a><%= l e %></td>
+            <td><%= l e[:speakers].map(&$to_speaker), :title, ", ", nil, 'quiet' %></td>
             <td><%= l track(e[:track]), :name, nil, nil, :quiet %></td>
             <td><%= ltt e, :start, css: 'quiet' %></td>
             <td><%= ltt e, :end, css: 'quiet' %></td>

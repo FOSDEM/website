@@ -27,18 +27,18 @@ module Fosdem
       unless params[:nolicense]
         content << '
 <div class="interview-license">
-<a rel="license" href="http://creativecommons.org/licenses/by/2.0/be/">
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
 <img src="https://creativecommons.org/images/deed/by.png" alt="Creative Commons License">
 </a>
-<h6><a rel="license" href="http://creativecommons.org/licenses/by/2.0/be">Creative Commons License</a></h6>
-<p>This interview is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.0/be">Creative Commons Attribution 2.0 Belgium License</a>.</p>
+<h6><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons License</a></h6>
+<p>This interview is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 <!--
 <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
   <Work rdf:about="">
-    <license rdf:resource="http://creativecommons.org/licenses/by/2.0/be/" />
+    <license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
   </Work>
-  <License rdf:about="http://creativecommons.org/licenses/by/2.0/be/">
+  <License rdf:about="http://creativecommons.org/licenses/by/4.0/">
     <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
     <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
     <requires rdf:resource="http://web.resource.org/cc/Notice"/>

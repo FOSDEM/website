@@ -2,7 +2,7 @@
 title: Room occupation by track
 sponsors_under_navigation: true
 ---
-<p>All times are CET (UTC+1, Brussels time). For a less graphical and colorful overview of the rooms and the tracks that are held in them, respectively, you may <a href="<%= pathof '/schedule/rooms/' %>">look at this page instead</a>.
+<p>All times are <b>CET (UTC+1)</b>. For a less graphical and colorful overview of the rooms and the tracks that are held in them, respectively, you may <a href="<%= pathof '/schedule/rooms/' %>">look at this page instead</a>.
 <%
 # vim: set ft=eruby ts=2 sw=2 et ai:
 
@@ -11,7 +11,7 @@ buildings_path = $item_by_id.fetch('/schedule/buildings/').path
 $track_flatlist.reject{|dayslug, list| list.empty?}.each do |dayslug, flatlist_by_room|
   d = $to_day.call(dayslug)
 %>
-<a name="<%= d[:slug] %>"></a><h2><%= d[:title] %></h2>
+<h2 id="<%= d[:slug] %>"><%= d[:title] %></h2>
 <table class="table table-striped table-bordered table-condensed roomtracks">
   <%
     interval = $timetable.fetch(d[:slug]).fetch(:interval)

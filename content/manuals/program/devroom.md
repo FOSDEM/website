@@ -6,9 +6,11 @@ Please help keeping this manual up to date, sources are [on github](https://gith
 
 ## Key dates
 
-* 18 October - deadline for developer room proposals
-* 12 November - developer rooms issue Call for Participation
-* 15 December - developer rooms publish complete schedules
+
+* 12 October: deadline for developer room proposals
+* 26 October: accepted developer rooms announced
+* 7 November (or earlier): developer rooms issue Calls for Participation
+* 15 December (or earlier): developer rooms publish complete schedules
 
 ## Devroom expectations
 
@@ -26,41 +28,44 @@ may be of interest to other devrooms.
 Secondly, we create mail aliases &lt;room&gt;-devroom-manager@fosdem.org that
 provide a convenient way for us to contact each other, for example
 to discuss moving proposed talks between devrooms.  Note that these
-alias expansions also include devrooms@fosdem.org.
+alias expansions also include [devrooms@fosdem.org](mailto:devrooms@fosdem.org).
 Again, please make sure you read those messages.
-
-A list of mail aliases can be found in [pentabarf](https://penta.fosdem.org/report/devroom_managers)
+A list of mail aliases can be found in [pretalx](https://pretalx.fosdem.org/orga/event/fosdem-2026/p/devroom-report/)
 (this list is only accessible to devroom managers), so you can contact other devrooms, eg for moving talks to another room.
 
 Thirdly, we can create additional mailing lists for devrooms to use
 either for a wider team of organisers or for visitors and these may
-be public or private. Contact devrooms@fosdem.org for this.
+be public or private. Contact [devrooms@fosdem.org](mailto:devrooms@fosdem.org) for this.
 
 ## Devroom managers
 
-Each devroom needs to send to [devrooms@fosdem.org](mailto:devrooms@fosdem.org) the list of the
-pentabarf account names of any room organisers who need to be granted access.
+Each devroom needs to send to [devrooms@fosdem.org](mailto:devrooms@fosdem.org) the list of the of email adresses for any room organisers who need to be granted access. Note that is for full access including scheduling later in the conference. 
 
-Devrooms managers list can be track on the devroom managers report: https://penta.fosdem.org/report/devroom\_managers
-
+Devrooms managers list can be tracked on the [devroom managers report](https://pretalx.fosdem.org/orga/event/fosdem-2026/p/devroom-report/).
+We request every devroom to have two people in this list, to make sure there is a backup in case of issues.
 Devroom managers status grant access to:
 
 - devroom mailing list
 - talk review
-- talk moderation during live online event
+- talk scheduling
+- room full + video control (during the event)
+- video review (after the event)
+
+People who only review should not be made devroom manager: you can add them to a review team on your [devroom dashboard](https://pretalx.fosdem.org/orga/event/fosdem-2026/p/devroom-dashboard/).
 
 ## Before the event
 
 ### Call for Participation / call for papers
 
-Devrooms  issue a Call for Papers.
+Devrooms issue a Call for Papers.
 
-* Note the deadline: November 12
-* Send a copy to the [FOSDEM mailing list](https://lists.fosdem.org/listinfo/fosdem)
-* CfP will appear on the [accepted developer rooms](https://fosdem.org/2023/news/2022-11-07-accepted-developer-rooms/) announcement 
+* Note the deadline: November 7.
+* Send a copy to the [FOSDEM mailing list](https://lists.fosdem.org/listinfo/fosdem). Note that this is a moderated list, it may take up to a day before your messages is reviewed.
+* CfP will be added to the accepted developer rooms.
 * Browse examples from previous years if you need inspiration: 
   * [2021](https://archive.fosdem.org/2021/news/2020-12-06-accepted-developer-rooms/)
   * [2022](https://archive.fosdem.org/2022/news/2021-11-30-accepted-developer-rooms/)
+  * [2023](https://fosdem.org/2023/news/2022-11-07-accepted-developer-rooms/)
 
 If you wish, you can ask for review on the devroom-manager list before publication or on devrooms at fosdem.org.
 
@@ -69,19 +74,19 @@ stage - particularly if related proposals got combined or you want
 to emphasise some little change of focus.
 
 Full details of all talks and speakers that you schedule must be
-submitted into our 'pentabarf' database which is used to generate our
-website (and booklet) no later then <b>15th December</b>.  Please try to complete this 
+submitted into our 'pretalx' database which is used to generate our
+website and schedules no later then <b>15th December</b>.  Please try to complete this 
 earlier. It is better to find out scheduling conflicts early, and by the end of 
 December it is hard to reach people. By running late, you also give
 your presenters less work to prepare their talks.
     
-All submissions must go through penta:
-      [https://penta.fosdem.org/submission/FOSDEM23](https://penta.fosdem.org/submission/FOSDEM23)
-      
-Remind speakers that if they already have an account from a previous year
-they should reuse it.  (Our website links speakers to all their talks
-across all the years of FOSDEM.)  Then you can use the system to review
-and select talks, and transfer them between devrooms if appropriate.
+All submissions must go through pretalx:
+      [https://fosdem.org/submit](https://fosdem.org/submit)
+
+Note that this is a new system and accounts from pentabarf were not migrated: Presenters will have to create a new account.
+
+Staff and devroom managers can access the submitted content through the organisers site which sits at:
+[https://pretalx.fosdem.org/orga/event/fosdem-2026/](https://pretalx.fosdem.org/orga/event/fosdem-2026/)
 
 ### Adding a devroom description to the website
 
@@ -89,90 +94,60 @@ Optionally you can add a small description of the devroom on top of the page. Se
 
 Add a .html file in the [website/content/schedule/devrooms/](https://github.com/FOSDEM/website/tree/master/content/schedule/devrooms) folder in the git repo for this description. Keep it concise.
 
+### Closing your call for papers
+
+Because different devrooms have different deadlines, and some tracks such as BOF stay open until the end of the conference there is no general deadline.
+When you want to close your call for papers, you should activate "require access code" in the devroom dashboard.
+
+![Devroom dashboard showing require access code](img/require_access_code.png)
+
 ### Reviewing talks
 
-[https://penta.fosdem.org/report/review/](https://penta.fosdem.org/report/review/)
+* Reviewing talks can happen from the [review](https://pretalx.fosdem.org/orga/event/fosdem-2026/reviews/) page. By default devroom managers will see all proposals, also for other tracks. If you only want to review tracks for which you are a manager or review team member, click the large info box on top of the page.
 
-Use this to view and review proposals assigned to your devroom track.
-You can add ratings and remarks in the <b>Rating</b> tab. These will not be accessible to the speaker.
+![Review page](img/review.png)
 
-Use these fields for your workflow:
+In addition to devroom managers, you can invite extra reviewers for your track by using the [devroom dashboard](https://pretalx.fosdem.org/orga/event/fosdem-2026/p/devroom-dashboard/). Note invited members have to open the link in the mail they receive in order to get access. As an alternative, you can send them the link next to their invitiation also using any other way.
 
-  * Event state
-  * Progress
-  * Notes
-    
-Ultimately, all 'events' in your devroom track either need to be rejected, or accepted and (re)confirmed. Obviously, don't change the state of events in other tracks.
+Note that devroom managers are able to review also proposals in other tracks. This to spot talks which might be better suited for your devroom or to spot people who submit the same talk to different tracks.
 
-Please don't change the tracks assigned to any Main Track / Keynote /
-Lightning Talks at this stage as we have not reviewed them yet and it's
-only fair that we consider them under the track that the submitter
-selected before considering transferring them to a different track.
+### Accepting and Rejecting talks
 
-(And we won't object if any of you help us out by adding your own review
-comments or scores to events in these tracks as long as you are being
-reasonably objective and not just giving your friends' talks top scores!)
+After the review phase a selection of talks must be made from the [proposals](https://pretalx.fosdem.org/orga/event/fosdem-2026/submissions/) page. 
+When accepting or rejecting a talk, a mail will be generated in the outbox in the bottom left. Please review these mails quickly: it will be confusing for other devroom managers if mails are stuck there. You can edit the mails if you want to add some personalised content or discard them if you inform speakers another way (this is not recommended). In any case, leave the reply-to address to that of the devroom team, so questions get to the track organisers.
 
+![send/edit/discard mails](img/send-edit-mail.png)
+
+In the image above the highlighted buttons on the right allow send/edit/discard mails.
+
+
+You can also mark a decision on accept/reject as pending. In that case the submitter will not see a change in status if they log in. 
+
+You can also change the duration of the talk when accepting it. This will make the next step (scheduling) somewhat easier.
 
 ### Scheduling talks
 
+After a talk has been accepted it can be scheduled. The easiest way to do this is by going to the [schedule](https://pretalx.fosdem.org/orga/event/fosdem-2026/schedule/) page. Choose your track on the top left dropdown and your assigned room in the bottom right (check the mailing list archive if in doubt).
 
-#### Scheduling in Pentabarf
-To schedule a task in pentabarf you have to:
+![schedule editor](img/schedule.png)
 
- *  In the **general tab**:
-     * Make sure **event state** is "accepted"
-     * Set a unique **slug**
+You can now drag and drop your talk to the schedule. By default the schedule will show the time in 30 minute granularity, but you can click on the time bar to make this 5 minutes. After a talk was added to the schedule, you can adjust it duration by double clicking it. Take care for any warning in the editor.
 
-       Please set the 'Slug' to a unique memorable
-       string (without spaces or non-ASCII characters) based on the title of
-       the event.  The URL generated for the event is then:
-       https://fosdem.org/2023/schedule/event/&lt;<b>slug</b>&gt;/<br>
-       To group things to together nicely, you could put the same devroom
-       prefix on them all, e.g.
-         https://fosdem.org/2021/schedule/event/ada_.../
-      * Set the <b>progress</b> to "confirmed" or "reconfirmed" if you want it to appear on the website.
-  * In the <b>schedule</b> tab:
-      * Set Day, start time, duration and room.
-      * Make sure Public event is checked
+After you finish scheduling, click the Check bottom in the top right. If this page mentions any errors concerning your track, please review them and fix them. As long as errors are mentioned, no new schedule will be released. If there are no errors, releases of the schedule will be generated automatically and are picked up by the FOSDEM website/apps/.... Only talks which are _confirmed_ will be shown.
 
-While going through all proposal it is also worth checking their content:
+Alternatively, if the scheduling interface does not work for you, you can manually add start and stop times and a room to proposals. Note that there is a larger chance to make error if you use this method.
 
- * In the <b>persons</b> tab
-    * Make sure the authors full name is present. There's also some understandable confusion about the name fields.
-        * The 'Public Name' field should normally be left blank, and then
-          "Firstname Lastname" is generated automatically.
-        * To show a person's nickname, set the Public Name field to
-          "Firstname Lastname (Nickname)".
-                   
-      Unfortunately, the form Firstname "Nickname" Lastname is not currently supported by the code.
+Warning: by default scheduled talks will be immediately visible on the FOSDEM website. If you prefer editing or feel unsure about the interface, you can (temporary) disable publishing of your track by unsetting `on_website` from the devroom settings page:
 
-    * Only in rare cases will we hide the speaker's real name - e.g. if their
-      real name and nickname are not yet connected when you search the internet.
-                   
-    * If a talk is presented by more than one author, you can add an extra speaker here (they must create a pentabarf account). Use both roles "speaker" and "submitter" to allow the person access to manage the event and show them on the website. Do not forget to set the role state to "confirmed".
+![on_website](img/on_website.png)
 
-      The persons select is populated by async Javascript so if the select does not show any choice for you, try to tweak your browser tracking protection/ad blocker.
+Reminder, the hours where devrooms can be scheduled are:
 
-    * In case of online event, event must have a host role person attached to it. The host is responsible for welcoming speakers and moderate Q&A. If you want the host to be listed publicly on the website add the host again with the moderator role this time.
-    
-    * FYI, devroom managers will be added automatically by a script as coordinator on all their devroom events. Having at least one coordinator is mandatory.
+* Sat 10.30-14.30  15.00-19.00
+* Sun 09.00-12.45  13.15-17.00
 
- * In the <b>description</b> tab:
-    * Make sure the abstract is not duplicated in the full description - both are concatenated. It is okay to leave the full description empty.
-    * Make sure the title is short and stands on its own. Long titles will get truncated in the booklet/apps
+The break should only be scheduled when a change of devroom happens. If the devroom is scheduled for a whole day, don't schedule a break. 
 
-<h4>Inform your speakers</h4>
-<ul>
-  <li>
-    Keep in mind that pentabarf does not send automatic emails. You have to inform your speakers yourself. Note that you can use <a href="https://github.com/meyskens/penta-export">this utility</a> provided by the Go devroom managers (thanks!) to get an export of all talks of your track with contact details of the speakers.
-  </li>
-  <li>
-    Encourage your speakers to upload photographs and to
-    write short biographies.  If you add a speaker to the system yourself,
-    make sure you include a contact email address.
-  </li>
-</ul>
 
 #### Scheduling hints
 
@@ -191,7 +166,7 @@ While going through all proposal it is also worth checking their content:
 
 * Keep a couple of talks in reserve in case speakers drop out at the last
   minute.  Choose these from speakers you know will be attending the event
-  anyway and have the details in pentabarf ready so you can swap them in
+  anyway and have the details ready in pretalx so you can swap them in
   with very little effort if you need to do so.
 
 * If you spot a rejected talk in the system that you are interested in, please
@@ -209,20 +184,20 @@ While going through all proposal it is also worth checking their content:
 
   * That's not crazy at all.  Please do this.
     The video information gets generated from this, so it's the simplest way
-    to make sure the videos are tagged correctly. It would help for the booklets that the titles are very short.
+    to make sure the videos are tagged correctly.
 
 #### Website schedule
 
-The website is generated from the data in pentabarf.
+The website is generated from the data in pretalx.
 This runs automatically every few minutes.
 
 You can see when it was last updated near the bottom of 
-[the events page](https://fosdem.org/2023/schedule/events/).
+[the events page](https://fosdem.org/2026/schedule/events/).
 
 Note that the data gets pulled from the database slightly before
 this timestamp is generated - sometimes a few minutes before.
 If nothing on this page changed, the date won't be updated.
-https://fosdem.org/2023/sitemap.xml shows the last modified
+[https://fosdem.org/2026/sitemap.xml](https://fosdem.org/2026/sitemap.xml) shows the last modified
 date for every page on the site.
 
 If the system detects an inconsistency in the data, it stops
@@ -230,64 +205,119 @@ updating the site until this is corrected in the database.
 
 #### Troubleshooting
 
-Pentabarf still does not detect if a speaker has been allocated two 
-slots that
-overlap so do watch out for that!
-
-
-* "Event with incorrectly named tag"?
-   You've perhaps got some invalid characters in the slug?
-   First one I looked at with that message had spaces in it which I
-   removed.
-   Don't put '?' in a slug.
-
-* Event with missing unique tag (slug)
-
-  Make sure you use a valid [SLUG](#scheduling-in-pentabarf).
-
-
-## Last weeks before the event
-
-### Video upload and review
-
-In case of online event, talks need to be pre-recorded. As a devroom manager you have to ask you speakers to edit their video (see [2021 video email to speakers](https://github.com/FOSDEM/video/wiki/FOSDEM-2021-video-email-to-speakers)) and to upload them. Once uploaded you have to review it to check everything fine.
-
-    This section needs more info on video upload and review
-
-### create and link your Matrix chatroom account in penta
-
-    Needs reviews!
-
-In case of online event, devroom managers *(and speakers ?)* needs to link their penta account with an existing matrix account.
-One can create an account or reuse one.
-The FOSDEM matrix service is hosted here: https://chat.fosdem.org
-
-To link a matrix account in a penta account, fill in the instant messaging field:
-![Instant messaging field in penta](https://user-images.githubusercontent.com/193478/147921592-42379458-f02d-45b6-901b-dfb5dfea01f9.png)
-
-
-    To be adjusted for the online event
-
+* to be updated for pretalx
 
 ## During the event
 
-### Online event
+### Where to get help
 
-The online version of the event consists of one main matrix fosdem-specific chatroom by devroom. This chat room has a video stream component which streams the content of the devroom along the day. It has also a text chat component open to any audience registered in https://chat.fosdem.org. Audience can also watch the stream without registration in which case they can't interact in the chatroom.
+* For general questions on Matrix, `#devroom-managers:fosdem.org`
+* For video/audio questions, `#video:fosdem.org`. The video team
+  monitors also the devroom managers channel, but this might be faster.
+* When using matrix, always mention your room name. Best way is
+  to change your nick name in the room by typing
+  `/myroomnick [k3401] your_nick_name`
+* In person: there is a per-building team in every building, together
+  with FIT or NOC (AW.1125, H.2111, UB4.228, UD2.119)
+* For core issues, the NOC/VOC is in K at the end of corridor in
+  front of K.1.105. Please come to that room only for emergencies.
 
-The video stream is composed of:
+The best way would be to ask in the matrix chat, someone will respond shortly
+and see if people need to be dispatched your way.
 
-- prerecorded video talk which are started automatically following the scheduling
-- live video jitsi instance for Q&A, panel discussion and BOF. These are started automatically: for event with video, the jitsi starts as soon as the video is finished; for event without video (panel, BOF), it will start at the beginning of the event.
+### Remote questions
 
-On top of the public main devroom chatroom, there are managers/speakers only chatroom used to organize the event:
+There is a chatroom in Matrix for your devroom, in which people can see the
+live stream of the talk and add questions. The room is named after the devroom
+(not the physical room).
 
-- each talk with Q&A or panel discussion has a dedicated room with a jitsi video conf component
-- \#yourdevroom-backstage is the place where devroom managers and speakers can meet or exchange privately
-- \#devroom-managers channel to ask for help or coordinate with org team or other rooms.
+If you have your Matrix ID in pretalx, you'll be pulled directly. If you have
+any issues with this, ask questions in the devroom managers' Matrix room.
 
-During the online event, devrooms managers have to moderate their chatroom which consists of:
+### Starting a presentation
 
-- moderate the main public chatroom discussion and note questions to speakers to fuel Q&A/panel discussion
-- be connected to the backstage channel in case speakers needs help
-- Talk moderators have to be connected and welcome speakers in the talk specific channel 10 minutes between the talk starts to test the video conf component and prepare for the live Q&A/discussion panel. The moderator has to then animate the discussion by posing questions taken from the main chatroom audience or some of their own. The live jitsi video conf which is streamed to the audience right after the talk video ends. Speaker can share their screen if a specific question needs a demo or else.
+* Connect the speaker's laptop to the HDMI in port of the video box. If the
+  speaker doesn't have HDMI, adapters are available either in the room or
+  with the per-building video support team.
+  * Make sure that the video box displays the screen of the laptop on its
+    display. The output there is delayed by ~5 seconds.
+* Make the speaker wear the microphone. Here are some guidelines:
+  * The microphone is attached to speaker's clothes, close to the neck,
+     under the chin in the middle of the torso;
+  * Ensure no necklaces, lanyards, scarves, beards or other objects that
+    could touch the microphone during the talk;
+  * If there is no suitable place to attach the microphone, a lanyard
+    could be used for this purpose;
+  * The microphone receiver is attached to the belt of the speaker.
+    If this is not possible, attach it to their pocket;
+* **Make sure the microphone is turned on** and **not muted**. The audio
+  levels can be checked on the camera and on the video box where the
+  microphone is connected.
+
+### Video mixing control
+
+At `https://control.video.fosdem.org/` you can access the video control for
+your room. Username and password will be provided via pretalx.
+
+The interface is pretty self-explanatory (and usable even on a mobile phone).
+You can see the current output, the camera and presenter box sources, and
+select one of four different views that will go on the stream and be recorded:
+
+* Picture-in-picture - big presentation, small camera view (this is the default), or swapped
+* Full-screen - camera or presentation
+
+If you don't want to deal with this, leave it at the default. This should be
+fine for most of the presentations.
+
+If you want to make the most of it, these are a few guidelines:
+
+* Use "full-screen - camera" for the intro and Q&A
+* Use "Picture-in-picture - big camera view, small presentation" for most of the presentation
+* Use "full-screen - presentation" for demonstrations or slides with a lot of small text
+
+Be aware that whatever you choose to do will also end up in the final
+recordings. What is streamed is recorded. We will not re-mix videos after the
+conference.
+
+### Review
+
+`https://review.video.fosdem.org` is for preparing the finished videos.
+
+* All speakers will receive a link for reviewing their video.
+	* As a devroom manager, you'll be on CC: for such emails.
+* The video team in your building may be able to help you with this, depending on their workload.
+* Contact: Wouter Verhelst <wouter@fosdem.org>.
+
+### Safety and crowd control
+
+Every devroom needs at minumum one person present wearing the blue devroom shirt. You can get them from the infodesk.
+These will help building managers, video team, volunteers, staff and visitors to figure out who to talk to. This
+improves response time in case you need help or there are video/other issues.
+They will make you recognisable and identifiable as in charge in case of emergencies or when doing crowd control.
+In the unlikely case we would need to evacuate FOSDEM, the devroom team has to lead people to safety and make sure
+the devroom is empty. When at the evacuation point you will report to FOSDEM staff so a good view of the situation can be
+created. This enables us to communicate a decent situation overview to the rescue services.
+
+Devrooms tend to fill up quite a lot. Try to make sure visitors don't leave too many seats open so that as much
+people as possible can attend the talks. Make sure people are not sitting on the floor all over the room.
+If there is risk of overcrowding, place somebody at the door and use the full signs to control the situation. Make sure
+to have some time in between talks to let people leave and enter without disturbing the speaker.
+
+### Trash and maintenance
+
+Guide devroom visitors to use the trash cans available in the devroom and try to keep the room clean.
+Building managers should be able to provide you with extra trash bags in case of trash can overflow. They will
+also be able to tell you were to get rid of trash at the end of the day.
+
+Report any damage or issue to building managers. You can open windows to keep the temperature bearable and the
+indoor air breathable. Unfortunately not all rooms might have windows that open. In case you open them, make sure to
+close them at the end of the day to avoid animals/birds entering the devroom.
+
+### Misc
+
+Because most rooms cannot have a dedicated volunteer to manage the camera and
+follow the speaker around, we recommend taping two stripes of duct tape or
+similar on the floor to mark the end of the camera's field of vision and
+notifying the speakers to keep in that area. The video team will prepare those
+for the rooms where those could be needed.
+

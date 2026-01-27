@@ -402,17 +402,12 @@ ul.side-box {
 #all-news li.news-item {
   border-bottom: 1px solid #ddd;
   margin-bottom: 2em;
+  list-style-type: none;
 }
 #all-news .date {
   font-family: Lato, "DejaVu Sans", Arial, Helvetica, sans-serif;
   font-size: 125%;
   font-weight: bold;
-  padding: 0;
-  margin-top: 0.3em;
-  width: 6.5em;
-  text-align: left;
-  margin-left: -6.5em;
-  float: left;
   line-height: 1.6;
 }
 #all-news .date-separator {

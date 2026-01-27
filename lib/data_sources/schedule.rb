@@ -12,7 +12,8 @@ module Fosdem
     end
 
     def update
-      Fosdem::Pentabarf.update(@site.config)
+      #Fosdem::Pentabarf.update(@site.config)
+      Fosdem::Pretalx.update(@site.config)
     end
 
     private
@@ -42,7 +43,7 @@ module Fosdem
 
         r = []
         cache.each do |k, v|
-          if k[-1] == 's'
+          if ['days', 'rooms', 'tracks', 'events', 'speakers'].include?(k)
             name = k[0..-2]
             v.each do |id, meta|
               r << Nanoc3::Item.new('', meta, "/schedule/#{name}/#{id}/", mtime)

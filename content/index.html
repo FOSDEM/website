@@ -9,11 +9,10 @@ visual: true
 # vim: set ts=2 sw=2 et ai ft=eruby:
 maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
 %>
-  <div class="s-block">
 
     <div class="text-block">
-      <h2>FOSDEM is a free event for software developers to meet, share ideas and collaborate.</h2>
-      <p>Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels.</p>
+    <h1>Welcome to FOSDEM 2026</h1>
+       <p>FOSDEM is a free event for software developers to meet, share ideas and collaborate. Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels.  You don't need to register.  Just turn up and join in!</p>
     </div>
 
     <%
@@ -23,13 +22,13 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     # "s-block" div. pph 20141210
     %>
   <div class="news-block">
-    <h2>NEWS</h2>
+    <h2>News</h2>
     <ul class="news-list">
       <% newsitems = @items.select {|item| item.identifier =~ %r{/headlines/}}.sort_by {|item| item[:created_at]}.reverse; newsitems[0,maxnews].each do |hl| %>
         <li class="news">
         <div class="date">
           <div class="holder">
-            <div class="frame"><%= hl[:created_at].strftime '%Y-%m-%d' %></div>
+            <time class="frame"><%= hl[:created_at].strftime '%Y-%m-%d' %></time>
           </div>
         </div>
         <h3><a href="page:<%= hl[:fullpost] %>"><%= hl[:title] %></a></h3>
@@ -54,7 +53,7 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     <% unless cornerstone.empty? %>
       <ul class="logo-list">
         <% cornerstone.each do |c| %>
-          <li class="logo-sponsor-cornerstone logo-<%= c.id %>"><a href="<%= c.path %>"><%= c.name %></a></li>
+          <li class="logo-sponsor-cornerstone logo-sponsor-name-<%= c.id %>"><a href="<%= c.path %>"><%= c.name %></a></li>
         <% end %>
       </ul>
     <% end %>
@@ -62,31 +61,29 @@ maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
     <% unless other.empty? %>
       <ul class="logo-list">
         <% other.each do |s| %>
-          <li class="logo-sponsor-other logo-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
+          <li class="logo-sponsor-other logo-sponsor-name-<%= s.id %>"><a href="<%= s.path %>"><%= s.name %></a></li>
         <% end %>
       </ul>
     <% end %>
   </div>
 
   <div class="location-block">
-    <h2>LOCATION</h2>
-    <p>FOSDEM takes place at the ULB Solbosch Campus, <strong>Brussels, Belgium</strong>, Europe, Earth.</p>
+    <h2>Location</h2>
+    <p>FOSDEM takes place at the ULB Solbosch Campus, <strong>Brussels, Belgium</strong>, Europe, Earth.  If you aren't there, you may watch the <a href="https://live.fosdem.org/">live streams</a> from the main tracks and developer rooms.</p>
     <div class="location-info">
-      <div class="map">
-        <img style="float: right; text-align: right" src="asset:campusmap" alt="ULB Solbosch Campus map: Location of FOSDEM" title="ULB Solbosch Campus map: Location of FOSDEM"/>
-      </div>
-      <div class="location-text">
+      <img class="map" src="asset:campusmap" alt="ULB Solbosch Campus map: Location of FOSDEM" title="ULB Solbosch Campus map: Location of FOSDEM">
+      <address class="location-text">
         <a class="logo-ulb-big" href="#">Université libre de bruxelles</a>
         <ul class="location-list">
-	  <li>ULB</li>
+	        <li>ULB</li>
           <li>Campus du Solbosch</li>
           <li>Av. F. D. Roosevelt 50</li>
           <li>1050 Bruxelles</li>
           <li>Belgium</li>
         </ul>
-        <div class="btn-location">
-          <a class="btn-purple" href="<%= pathof '/practical/transportation/' %>">venue &amp; travel</a>
-        </div>
+      </address>
+      <div class="btn-location">
+        <a class="btn-purple" href="<%= pathof '/practical/transportation/' %>">venue &amp; travel</a>
       </div>
     </div>
   </div>

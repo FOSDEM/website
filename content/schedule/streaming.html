@@ -17,7 +17,7 @@ sponsors_under_navigation: true
   end
   current_date = current_time.to_date
 %>
-<p>Links to the live streaming in each room will appear on this page during the conference.</a>
+<p>Links to the live streaming in each room will appear on this page during the conference.</p>
 <p>Static overviews of the <a href="<%= $item_by_id.fetch('/schedule/rooms/').path %>">rooms</a> and the 
 <a href="<%= $item_by_id.fetch('/schedule/roomtracks/').path %>">room occupation by track</a>
 are available, too.</p>
@@ -89,10 +89,10 @@ are available, too.</p>
 	    <% else %>
 	      <td>No event scheduled.</td>
 	    <% end %>
-	    <% if r[:slug] =~ /corridor/ or r[:slug] =~ /h3227/ or r[:slug] =~ /h3228/ or r[:slug] =~ /level/ or r[:slug] =~ /ub4228/ or r[:slug] =~ /j1106/ or r[:slug] =~ /infodesk/ or !current_event %>
+	    <% if r[:slug] =~ /corridor/ or r[:slug] =~ /h3227/ or r[:slug] =~ /h3228/ or r[:slug] =~ /level/ or r[:slug] =~ /ub4228/ or r[:slug] =~ /j1106/ or r[:slug] =~ /infodesk/ or r[:slug] =~ /ub2147/ or !current_event %>
 	      <td></td>
 	    <% else %>
-            <td><a href="<%=stream_direct_link(current_event)%>">Watch Live!</a></td>
+            <td><a href="<%=current_event[:live_video_link]%>">Watch Live!</a></td>
 	    <% end %>
 	  <% end %>
         </tr>

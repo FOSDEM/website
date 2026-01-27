@@ -1,165 +1,68 @@
----
-title: FOSDEM Speakers Manual
----
 
-Please help keeping this manual up to date, sources are [on github](https://github.com/FOSDEM/website/blob/master/content/manuals/program/speaker.md)!
+# FOSDEM speakers manual
 
-Thank you to all speakers who
-have put themselves forward to speak at this year’s FOSDEM.
+* This is a living document. Please check back often or subscribe to the changes
+* Sources are on [github](https://github.com/FOSDEM/website/blob/master/content/manuals/program/speaker.md) - feel free to improve!
 
-As it’s a virtual event, all talks need to be pre-recorded by the speakers. This
-is only the second time FOSDEM has operated in this way so please be aware that there
-may be some bumps along the way - but it should be smoother than last year.
+## Before FOSDEM
 
-On the day your presentation is aired, you will be required to join an online
-Matrix chatroom with delegates as they ask questions during your talk - further
-details below. Afterwards, you will also be able to answer questions in a live
-video conference room.
+### Slides: technical requirements
 
-To make sure you, and anyone listening or asking questions, get the best out of
-this event, here are some guidance notes to support your planning.
+For your presentation slides, use a 16:9 aspect ratio with a recommended resolution of 1920×1080. If needed, 1280×720 is also acceptable. While 16:9 is a good default, it is a good idea to keep a 4:3 version (e.g., 1280×960) on hand as a backup.
 
-## Key dates
+When designing your slides, pay attention to your colour scheme. Opt for high-contrast colours to ensure readability in both very dark and very bright rooms. Additionally, as you may be presenting in a large room, confirm that all text and visuals remain clear and easy to read, regardless of the audience’s distance from the screen.
 
-* Friday 20th January 2023, 2 weeks before FOSDEM
-  All pre-recorded talks are expected to be uploaded by 20th January
-  2023 to Pentabarf - the upload link should be available by the time you read
-  this, if you don't have it, contact your devroom organiser. After this date,
-  there is one week scheduled for you to review and if necessary, to re-upload to
-  fix problems.
+### Matrix account
+As a speaker, you might want a Matrix account.  You should already have been invited by email (or Matrix, if we know your Matrix ID) to sign up to Matrix and join the relevant chatrooms.  If not, you can get a Matrix account at https://chat.fosdem.org.  Then, to receive the invites, please enter your Matrix ID (e.g. @matthew:fosdem.org) under your account details on [https://pretalx.fosdem.org](https://pretalx.fosdem.org/fosdem-2026/me/) (look for the 'Matrix-id' field) and you'll be invited shortly. We send out invites a few times a day.
 
-**Please do not plan to run right up against these deadlines - you and FOSDEM need
-the contingency for things that genuinely go wrong.**
+You should be invited to:
+ * [#speakers:fosdem.org](https://matrix.to/#/#speakers:fosdem.org?web-instance[element.io]=chat.fosdem.org) (the main coordination point for speakers)
+ * The backstage room for your devroom, where you can coordinate with the devroom organisers and your hosts
+ * The devroom itself.
 
-## Recording your talk
-You can use any tool that you prefer to record your
-presentation. Open Broadcast Studio (OBS) is a powerful tool and recommended by
-many speakers. Some useful documents here:
+### Uploading slides
 
-* [How to Use OBS Studio to Record or Stream Live
-  Presentations](https://dev.to/erikaheidi/how-to-use-obs-studio-to-record-or-stream-live-presentations-474j)
-* [FOSDEM 2021 : How to configure OBS to record your talk
-  ](https://peertube.xwiki.com/videos/watch/c5cf50e3-2277-440a-b339-34874acd00b3)
+ * You can upload your slides and additional resources such as links to your repo on [pretalx](https://pretalx.fosdem.org/fosdem-2026/me/submissions/). Look for the resources section. 
 
-Another option is to deliver your
-presentation through a video conferencing platform to a colleague who can then
-record the session. Either use the built-in recording of the conferencing
-platform or ask your colleague to remotely record the presentation.
+## During FOSDEM
 
-For example, you could use Jitsi to present your talk to a colleague, with
-picture-in-picture mode so that the speaker is in the corner of the slides, and,
-on Linux, use Simple Screen Recorder (SSR) to capture the talk in the
-appropriate format.
+### Slides capture
 
-Please bear in mind these tips for a good quality presentation:
+The slides capture system will accept hdmi input. Please bring your own whatever-to-hdmi adapter should you need any. Adapters for mini-dp, usb-c and possibly more will be provided on a best effort basis.
 
-* Test your recording process first to make sure both video and sound are captured
-in the recording
-* Make sure the video fits comfortably into your time slot -
-FOSDEM is on a strict time schedule and you will be cut short if you over-run
-* Don’t overload your slides. Make sure everything is readable when scaled down
-slightly 
-  * The 1280x720 video you send in may be scaled down to fit onto a FOSDEM
-template
-* Make sure you use a good microphone for your presentation, ideally a
-headset
-* Have a suitable background during recording and live Q&A
-* Dress for the
-occasion 
+Please mind the following requirements:
 
-## Uploading videos
-Videos should be uploaded to https://penta.fosdem.org/submission/FOSDEM22. Click on "Events" in the left menu, select your own event, select "General" tab, scroll down to "Pre-recorded Video Upload URL" and click on "Upload" text.
+- 60 Hz or lower video output refresh rate
+- 1080p (1920x1080) or lower output resolution
 
-Technical requirements for your presentation video are:
+Please do not touch the video capture boxes except for providing them with hdmi input. We'll love to show you around the video boxes, but rather not in live production.
 
-* resolution: 1280x720
-* frame rate: 25
-* fps video codec: h264 video codec, main profile
-* video bitrate: aim for 2Mbit/s
-* audio codec: aac audio codec
-* audio sample rate: 48 KHz mono
-* audio bitrate: 128 Kbit/s
-* media container: whatever is easiest for you
-* maximum size of 2 GB
+### Talk Q&A: live audience interaction and text based questions from chat.fosdem.org
+You will have a chance to address your real life live audience's questions in a live broadcast q&a session. Your room manager or his assistant may also relay questions from https://chat.fosdem.org .
 
-When you upload your video, the system will verify that it meets these requirements. If it does not, the video will be transcoded first (but this will take longer).
+- You may want to join the following rooms:
+  - [#speakers:fosdem.org](https://matrix.to/#/#speakers:fosdem.org?web-instance[element.io]=chat.fosdem.org)
+    - This room is invite only. It's accessible to all speakers and FOSDEM staff.
+    - You should have received an invitation by email. In case you have trouble getting in, any FOSDEM staff should be able to invite you here.
+  - the general audience room for your talk.
+    - You will receive an invitation to this room.
+  
+### Help! Something is wrong. Who do I contact?
+- For practical issues regarding projection, capture and sound inside your room, live people in green FOSDEM video t-shirts are your best bet. There is one team per building:
+  - [AW building](https://nav.fosdem.org/l/aw1125/): room AW1.125
+  - [H building](https://nav.fosdem.org/l/h2-infodesk/): H2.111
+  - [J/Janson auditorium](https://nav.fosdem.org/l/janson/): near the audio mixing console, by the camera
+  - [K1.105 "Lafontaine" main track auditorium](): near the camera, if not see K general
+  - [K building](https://nav.fosdem.org/l/c:1:165.69:265.77/): behind the 1.105 ("Lafontaine") auditorium, bottom left when facing the stage
+  - [UD building](https://nav.fosdem.org/l/ud2119/): room UD2.119
+  - [UB building](https://nav.fosdem.org/l/ub4228/): room UB4.228 
+- Alternatively, you may contact video volunteers through the dedicated matrix [video channel](https://matrix.to/#/#fosdem-video:matrix.org?web-instance[element.io]=chat.fosdem.org).
+- For issues regarding the stream on https://fosdem.org site in general, please also email both [video@fosdem.org](mailto:video@fosdem.org) and [server@fosdem.org](mailto:server@fosdem.org) .
+- I have a problem connecting to https://chat.fosdem.org at all.
+  - Speak to anyone in a blue (FOSDEM developer room manager), green (FOSDEM video) or yellow (FOSDEM staff) t-shirt.
 
-A 'review' link will be available so you can confirm that you have uploaded the
-correct video.
+## After your talk & after FOSDEM
+When agreeing to speak at FOSDEM, you explicitly granted FOSDEM vzw the right to publish your video under a CC BY-SA license. Your video will be uploaded to the FOSDEM video archive at https://video.fosdem.org .
 
-If you want to change the video, you can overwrite by uploading a replacement.
-However once you have confirmed the video, you can't upload it without FOSDEM
-resetting your confirmation. This enables them to take control of last-minute
-changes. A manual upload reset can be requested through video@fosdem.org. In any contact with the video team, please always mention your talk's event id from petabarf.
-
-Bernard Tyers has [created a slide share showing exactly how the upload process
-works](https://www.flickr.com/photos/runningwithbulls/50829935862/in/dateposted/).
-
-The 'Review' link is not easy to find - look for the following dialogue box at the bottom of the [submission page](https://penta.fosdem.org/submission/FOSDEM22), and locate the review link:
-
-![pentabarf review video link](assets/FOSDEM-Pentabarf-review-video-link.png)
-
-Note that Duration is the proposed length of your session in the live stream
-combining both pre-recorded talk and a short amount of live Q&A.
-
-The presentation length is the length of the talk recording. This will be
-updated to the exact length of the recording when the video is processed.
-
-Extended Q&A will be offered through break-out rooms after the pre-recorded
-video and Q&A are broadcast.
-
-## Q&A sessions
-Your Q&A session will follow your pre-recorded video. If your
-timeslot is 10:00 - 10:30, for example, your video will be played out over the
-stream from 10am. There will be an associated text chatroom where the speaker,
-host and audience can talk. This means any questions can be answered directly
-whilst the video plays.
-
-When the video completes, for example at 21 minutes, 30 seconds, the live stream
-will automatically switch over to a live video room with the speaker and speaker
-host. The speaker host will lead a live Q&A/discussion on video, asking
-questions that have been upvoted in the text chat or asking questions of their
-own, clarifying anything that may not have been clear.
-
-Just before the 10:30 close of the session, the live stream will end and if any
-of the audience want to continue the Q&A/discussion, they will be directed to
-the right place to go do that.
-
-After the talk closes at 10:30, and the next one begins, you can continue with
-your extended Q&A in a more open, informal fashion than during the session
-itself.
-
-## Real-time chat
-
-The Matrix platform has been selected for the real-time organisers chat during the event. FOSDEM have [released an article explaining the rationale here](https://matrix.org/blog/2021/01/04/taking-fosdem-online-via-matrix). Note that there is also a bridge for IRC and XMPP / Jabber users.
-
-If you are a devroom organiser / host / moderator, you will need to join the
-chat through one of these connected channels on the day to process Q&A and
-communicate with FOSDEM staff.
-
-Hosts and coordinators All speakers must ensure they have a host and a
-coordinator to support their talk.
-
-The coordinator is the devroom manager and the host will work with the speaker
-to ensure they upload a suitable presentation, as well as host the live Q&A
-session. Hosts only need a normal self-created pentabarf account, like a speaker
-(not a devroom manager). Adding them to the event with the ‘host’ role gives
-them access to what they need.
-
-Speakers, devroom managers and hosts can see the events you are listed against
-at the [‘Own Events’](https://penta.fosdem.org/event/own) link and upload videos [will be available here](https://penta.fosdem.org/submission/FOSDEM22/events).
-
-Please make sure that hosts and coordinators are not taking part in a talk
-before or after your own – otherwise there could be problems with overlap during
-Q&A sessions outside of the presentation time. Remember, your Q&A can continue
-in a separate live video conference after your talk has ended.
-
-## Further support
-* [FOSDEM matrix channel](https://chat.fosdem.org/#/room/#fosdem:matrix.org)
-* [#fosdem on Libera.Chat](ircs://irc.libera.chat:6697/fosdem)
-* contact FOSDEM at speakers@fosdem.org
-
-
-## Final words
-This manual is based on a [news post](https://news.perlfoundation.org/post/fosdem_2021_speaker_guidance) by the Perl devroom organisers of 2021.
-We encourage anyone to improve this text: sources are [on github](https://github.com/FOSDEM/website/blob/master/content/manuals/program/speaker.md)!
+### Video review
+Your developer room manager, one of his delegates and/or you should receive a [video review](https://review.video.fosdem.org) link by email. There, you can indicate proper start and end points for your talk video to be released at https://video.fosdem.org .

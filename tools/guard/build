@@ -87,12 +87,16 @@ while true; do
 		git checkout $BRANCH
 		git pull --rebase $REMOTE $BRANCH
 
-		# Always trigger a rebuild of the events and amendments page
+		# Always trigger a rebuild of the events, amendments and metrics page
 		touch content/schedule/events.html
 		touch content/schedule/amendments.html
+		touch content/metrics.txt
 
 		# Refresh the local export
-		nanoc update -y
+		# nanoc update -y
+		ssh pretalx-read@pretalx.int.fosdem.org sudo -u pretalx_event DJANGO_SETTINGS_MODULE=pretalx.settings_pghistory /usr/share/webapps/pretalxevent/venv/bin/python -m pretalx release fosdem-2026 --ignore_warnings
+		ssh pretalx-read@pretalx.int.fosdem.org sudo -u pretalx_event DJANGO_SETTINGS_MODULE=pretalx.settings_pghistory /usr/share/webapps/pretalxevent/venv/bin/python -m pretalx export_resources fosdem-2026 /home/pretalx_event/export/fosdem-2026
+		rsync pretalx-read@pretalx.int.fosdem.org:/home/pretalx_event/export/fosdem-2026/ export -avP --delete-after
 
 		# Compile the website
 		nanoc compile
@@ -119,7 +123,7 @@ while true; do
 	# Output the time at which we were done, and the time it took
 	NOW=$(date +%s)
 	BUILDTIME=$(expr $NOW - $START)
-	SLEEPTIME=$(expr $START + 240)
+	SLEEPTIME=$(expr $START + 120)
 
 	echo
 	echo "Build done at $(date), build took $BUILDTIME seconds"

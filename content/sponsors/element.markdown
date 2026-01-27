@@ -20,4 +20,3 @@ Element was founded by the team behind Matrix as a way to bring it to
 the mainstream.
 
 Element provides the chat infrastructure.
-

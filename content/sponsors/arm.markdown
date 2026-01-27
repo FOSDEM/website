@@ -3,16 +3,16 @@ title: Arm
 url: https://www.arm.com/
 ---
 
-Arm technology is at the heart of a computing and connectivity revolution
-that is transforming the way people live and businesses operate. Our
-advanced, energy-efficient processor designs have enabled intelligent
-computing in more than 125 billion chips. Over 70% of the world’s
-population are using Arm technology, which is securely powering products
-from the sensor to the smartphone to the supercomputer. This technology
-combined with our IoT software and device management platform enables
-customers to derive real business value from their connected devices.
-Together with our 1,000+ technology partners we are at the forefront of
-designing, securing and managing all areas of compute from the chip to
-the cloud.
+Arm is leader in global semiconductor design and software. Our
+energy-efficient processor designs and software platforms have enabled
+advanced computing in more than 270 billion chips to date and are
+defining the future of computing. Collaboration is at the heart of all
+we do. With more than 1,000 technology partners, Arm provides a
+trusted foundation for a vast range of applications, from the sensor
+to the smartphone and the supercomputer. We support thousands of
+open-source software [projects](https://www.arm.com/resources/open-source),
+enabling more than 15 million developers who target Arm platforms to
+build, deploy, and manage their projects seamlessly, enabling top
+performance across the wide spectrum of hardware on Arm.
 
 Arm supports the event financially.

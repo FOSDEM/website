@@ -53,12 +53,12 @@ days:
     slug: sunday
     title: Sunday
 rooms:
-  vtest:
+  dtest:
     conference_room_id: 494
     conference_room: V.test
     size: 100
     rank: 10
-    slug: vtest
+    slug: dtest
     title: V.test
     events:
     - test_event
@@ -95,10 +95,10 @@ tracks:
       - test_event
       sunday: []
     rooms:
-    - vtest
+    - dtest
     events_per_room_per_day:
       saturday:
-        vtest:
+        dtest:
         - test_event
       sunday: {}
     start_time:
@@ -132,8 +132,8 @@ events:
     description: "<p>More text about it.</p>"
     start_time: '10:50'
     end_time: '11:20'
-    start_datetime: '2021-02-06 10:50:00.000000000 +0100'
-    end_datetime: '2021-02-06 11:20:00.000000000 +0100'
+    start_datetime: '2021-02-06 10:50:00+01:00'
+    end_datetime: '2021-02-06 11:20:00+01:00'
     day: saturday
     day_name: Saturday
     raw_abstract: "<p>A line about the event.</p>"
@@ -161,8 +161,8 @@ events:
     track_full_name: Test Track
     track_rank: 100
     type: maintrack
-    room: vtest
-    room_name: V.test
+    room: dtest
+    room_name: D.test
     room_rank: 10
     speakers:
     - test_account_s
@@ -193,3 +193,16 @@ speakers:
       saturday:
       - test_event
       sunday: []
+fringe:
+  test:
+    name: demo fringe event
+    url: https://archive.fosdem.org
+    location: test
+    starts: '2022-02-03'
+    ends: '2022-03-03'
+    cost: €100
+    registration: recommended
+    contact: fosdem-test@fosdem.org
+    online: true
+    submitter: 1
+

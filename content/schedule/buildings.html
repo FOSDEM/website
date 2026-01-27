@@ -2,37 +2,6 @@
 title: Buildings
 forcepagelinks: true
 ---
-<% if @site.config.fetch(:virtual) %>
-<p>
-  While a virtual FOSDEM does not have buildings, our conference management system expects them. So we reused them to group talks by their
-  type.
-</p>
-<p>
-  Find an overview below.
-</p>
-<table class="table table-striped table-bordered table-condensed">
-  <thead>
-    <tr>
-    <th>Building</th>
-    <th style="text-align: center;">Rooms</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% $buildings.each do |building, rooms| %>
-      <tr>
-        <th class="title"><a name="<%= building.downcase %>"></a><%= building %></th>
-        <td>
-          <ul>
-            <% rooms.each do |room| %>
-              <li><%= l(room) %></li>
-            <% end %>
-          </ul>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% else %>
 <p>
 The various events are spread over several buildings (clusters of rooms)
 over the campus.
@@ -46,11 +15,11 @@ Here is a list of those buildings, and the rooms in each of them.
   <thead>
     <tr>
     <th>Building</th>
-    <th style="text-align: center;" colspan="<%= cols %>">Rooms</th>
+    <th style="text-align: center;" colspan="<%= cols %>">Physical Rooms</th>
     </tr>
   </thead>
   <tbody>
-    <% $buildings.each do |building, rooms| %>
+    <% $buildings.reject{ |b| b =~ /^[DMIS]/ }.each do |building, rooms| %>
       <tr>
         <th class="title"><a name="<%= building.downcase %>"></a><%= building %></th>
         <% rooms.each do |room| %>
@@ -65,11 +34,6 @@ Here is a list of those buildings, and the rooms in each of them.
   </tbody>
 </table>
 
-<p><b>Talks shown in the D building only take place online.</b></p>
-<p>(The M building holds live test data used before the event.)</p>
-
-      <div class="map">
-        <img style="display: block; margin-left: auto; margin-right: auto" src="asset:campusmap" alt="ULB Solbosch Campus map" title="ULB Solbosch Campus map"}/>
-      </div>
-
-<% end %>
+<div class="map">
+   <img style="display: block; margin-left: auto; margin-right: auto" src="asset:campusmap" alt="ULB Solbosch Campus map" title="ULB Solbosch Campus map"}/>
+</div>

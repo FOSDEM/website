@@ -3,14 +3,15 @@ title: Codethink
 url: https://www.codethink.co.uk/
 ---
 
-Codethink specialises in system-level software engineering to enable
-advanced technical applications, working across a range of industries
-including finance, automotive, telecoms and medical. As experts in Free
-and Open Source Software, they help customers take maximum advantage of
-the knowledge and technologies developed by the Open Source community.
-Their customers are international-scale organizations who seek
-competitive edge through design of enterprise appliances and embedded
-systems which are faster, smaller, more secure, more up-to-date, or more
-advanced than their competitors.
+Codethink is a world-class provider of critical,
+high-performance software projects and solutions
+for international-scale companies in a range of
+industries including Automotive, Finance, Medical,
+and IoT.
+
+Headquartered in Manchester, UK, Codethink has
+pioneered software industry thinking around concepts
+of trustable software, working to improve the quality
+of software engineering.
 
 Codethink supports the event financially.

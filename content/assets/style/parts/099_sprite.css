@@ -14,9 +14,9 @@
                          end
               if has_logo
                 css_class, logo = if s.cornerstone?
-                                    [ ".logo-#{s.id}", s.logo ]
+                                    [ ".logo-sponsor-name-#{s.id}", s.logo ]
                                   else
-                                    [ ".logo-list .logo-#{s.id} a", s.thumb ]
+                                    [ ".logo-list .logo-sponsor-name-#{s.id} a", s.thumb ]
                                   end
 #                image = Magick::Image.from_blob(IO.read(logo[:filename])).first
                 image = Magick::Image.from_blob(IO.read(logo[:filename])).first

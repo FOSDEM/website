@@ -1,5 +1,10 @@
-FROM ruby:2.7
+FROM docker.io/library/ruby:2.7
 MAINTAINER ryan@slatehorse.com
+
+# Set encoding to prevent nanoc exploding
+ENV LANG=C.UTF-8
+ENV APP_DIR=/usr/src/app
+WORKDIR $APP_DIR
 
 # Install other dependencies
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
@@ -8,19 +13,12 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
       krb5-user
 
 # Copy the Gemfile in and bundle, so we have the dependencies cached
-ADD Gemfile .
-ADD Gemfile.lock .
+COPY Gemfile Gemfile.lock $APP_DIR
 RUN gem install bundler:1.17.3 && bundle install
-
-# Set encoding to prevent nanoc exploding
-ENV LANG=C.UTF-8
-ENV APP_DIR=/usr/src/app
-
-# Copy the rest of the app in
-ADD . $APP_DIR
 
 # Port 3000 is used for `nanoc view`
 EXPOSE 3000
-WORKDIR $APP_DIR
 ENTRYPOINT ["bundle", "exec"]
-CMD ['nanoc', 'view']
+
+LABEL "org.opencontainers.image.source"="https://github.com/FOSDEM/website"
+CMD ["nanoc", "view"]

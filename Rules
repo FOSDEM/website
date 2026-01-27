@@ -245,12 +245,19 @@ compile '*' do
     # http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html
     filter :erb
 
-    # only run the chain of filters when it's not an .xml or .erb or .ics file
-    unless ['xml', 'erb', 'ics'].include? item[:extension] then
+    # only run the chain of filters when it's not an .xml or .erb or .ics or .json file
+    unless ['xml', 'erb', 'ics', 'json'].include? item[:extension] then
 
       # don't process content that is generated from Pentabarf, or content
       # pages that have "kind: internal" in their metadata
       unless item.identifier =~ %r{^/schedule/.+} or item[:kind] == 'internal'
+
+        # run the custom news filter (lib/filters/news_filter.rb) on
+        # content/news/* -- it removes "---MORE---" lines and removes
+        # from the beginning of the content until "---FULL---" lines
+        # (analog to the make_headlines function from lib/helpers/news.rb
+        # which does the "opposite" (kindof) to generate headline items)
+        filter :news if news?(item)
 
         # convert .md and .markdown files to HTML using the
         # kramdown processor
@@ -264,13 +271,6 @@ compile '*' do
         # do the same as above for items that have "qa: true" in their
         # metadata, but without adding the license footer
         filter :interview, { :nolicense => true } if item[:filter] == 'qa'
-
-        # run the custom news filter (lib/filters/news_filter.rb) on
-        # content/news/* -- it removes "---MORE---" lines and removes
-        # from the beginning of the content until "---FULL---" lines
-        # (analog to the make_headlines function from lib/helpers/news.rb
-        # which does the "opposite" (kindof) to generate headline items)
-        filter :news if news?(item)
 
         filter :toc if item[:toc] == true
         filter :semantic if item[:semantic] == true
@@ -329,6 +329,10 @@ end
 
 route '/404/' do
   "/404.html"
+end
+
+route '/.well-known/assetlinks/' do
+  "/.well-known/assetlinks.json"
 end
 
 # send this one into oblivion, its compiled content is included in
