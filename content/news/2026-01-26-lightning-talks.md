@@ -22,8 +22,8 @@ an SLO of 99% talk uptime.
 
 To submit your talk for this session, make sure you meet some standards:
 
-- will be presented in less than or equal to 256 seconds (very strict time limit!)
-- slides created in .pdf format
+- will be presented in less than or equal to **256 seconds** (very strict time limit!)
+- slides created in **.pdf** format and **attached to the submission as a resource**
 - nothing too offensive
 - about something FOSDEM attendees would appreciate
 
@@ -36,7 +36,7 @@ To submit a talk, follow these steps:
 
 1. Follow [this link](https://fosdem.org/submit) and press the "Submit a proposal" button
 1. Select track "Lightning Talks"
-1. Attach your slides in pdf format as a resource
+1. Attach your slides as a **.pdf** as a **resource**
 1. Wait for an acceptance notification, which will be sent out periodically as we get closer to the event
 1. Confirm you'll be able to attend the session
 1. Await further instructions
