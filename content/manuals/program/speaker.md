@@ -28,7 +28,7 @@ You should be invited to:
 
 ### Slides capture
 
-The slides capture system will accept hdmi input. Please bring your own whatever-to-hdmi adapter should you need any. Adapters for mini-dp, usb-c and possibly more will be provided on a best effort basis.
+The slides capture system will accept hdmi input. Please bring your own whatever-to-hdmi adapter should you need any. Adapters for mini-dp, usb-c and possibly more will be provided on a best effort basis. We provide a laptop for main tracks (Janson & K1.105) and /dev/random, but not for developer rooms.
 
 Please mind the following requirements:
 
