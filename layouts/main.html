@@ -49,6 +49,18 @@ end
     <meta property="og:title" content="<%= conference()[:title] %><% if @item[:title] %> - <%= @item[:title] %><% end %>">
     <meta property="og:type" content="website">
     <meta property="og:image" content="<%= conference()[:homepage] %><%= pathof('/assets/style/logo-gear/')[1..-1] %>">
+<% if @item.identifier == '/schedule/events/' %>
+    <link href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css" rel="stylesheet" integrity="sha384-lidBvvi7oLJ2j9e3nFlBSXfo+giBJ9L7QnUdgjc3AvLiynS0HdKEEEZtvZ4izE46" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.dataTables.min.css" rel="stylesheet" integrity="sha384-FidEgRBNslMjNcMkOFgR6bJnL/NNAjZYYob4PXzFLtqQpyiU7HYFjHfG2/OUWpvZ" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha384-NXgwF8Kv9SSAr+jemKKcbvQsz+teULH/a5UNJvZc6kP47hZgl62M1vGnw6gHQhb1" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js" integrity="sha384-AenwROccLjIcbIsJuEZmrLlBzwrhvO94q+wm9RwETq4Kkqv9npFR2qbpdMhsehX3" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js" integrity="sha384-fLqXCJcrAdndivVvcmVV63KCTYYLJXHZwzlfgkRAiROtth7ZJaN3WJr+VaVe/asP" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/1.10.13/features/mark.js/datatables.mark.min.css" integrity="sha384-9/swQ7YisolBtgyqn4bi34Jo3VaBu+I8VwH2bqGS3OcGU8m7EKYMNlXJZ7ZTr1+O" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/g/mark.js(jquery.mark.min.js)" integrity="sha384-kHcMxEJ3FRq+rJD4R+iPxVkVbpyeHUnWOi58kdCsGZSwF891AQa9I4+5LH10Pcd2" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.12.1/features/mark.js/datatables.mark.js" integrity="sha384-5HSpWnHYdw6jL/oVAeo7Ellk5Umv4rceyBYmYoVp0Gs9a3RaPdx5DX6FI49u+jrZ" crossorigin="anonymous"></script>
+<% end %>
   </head>
   <body<%= @item.identifier =~ %r{^/schedule/([^/]+)/} ?  " class=\"schedule-#{$1}\"" : '' %>> 
     <div id="header">
@@ -191,4 +203,14 @@ end
       </div>
     </footer>
   </body>
+<% if @item.identifier == '/schedule/events/' %>
+<script>
+  new DataTable('#events', {
+    order: [],
+    fixedHeader: true,
+    mark:        true,
+    paging:      false,
+  });
+</script>
+<% end %>
 </html>
