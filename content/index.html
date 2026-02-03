@@ -10,32 +10,30 @@ visual: true
 maxnews = @config.fetch(:news).fetch(:items_on_index_page).to_i
 %>
 
-    <div class="text-block">
+  <div class="text-block">
     <h1>FOSDEM 2026 is over</h1>
-    </div>
-    <div class="text-block">
-      <h2>Feedback</h2>
-      <p> Please let us know about your FOSDEM experience at
-      <a href="mailto:feedback@fosdem.org">feedback@fosdem.org</a>.
-      All your feedback, good or bad, and suggestions for future years will be greatly appreciated.
-      Please use the links under each event to provide feedback to the speakers.  </p>
+  </div>
 
-      <h2>Videos</h2>
-      <p>We are adding a video of each talk to its web page when it is ready. 
-      See the <a href="https://review.video.fosdem.org/overview">processing status</a>
-      of individual talks.
-      <!--For everything available so far, look in the right-hand column of 
-	      the <a href="https://fosdem.org/2025/schedule/events/">complete schedule</a>, -->
-      or
-      download from <a href="https://video.fosdem.org/2026/">video.fosdem.org/2026</a>
-(arranged by room name).  
-     </p>
-    </div>
+  <div class="text-block">
+    <h2>Share your feedback</h2>
+    <p>
+      We would love to hear about your FOSDEM experience! Whether positive or
+      constructive, your feedback and suggestions for future editions are
+      invaluable. Please send your thoughts to <a href="mailto:feedback@fosdem.org">feedback@fosdem.org</a>.
+      If you have feedback for speakers, you can also use the links under each
+      event in the schedule.
+    </p>
 
-    <div class="text-block">
-    <h2>FOSDEM</h2>
-       <p>FOSDEM is a free event for software developers to meet, share ideas and collaborate. Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels.  You don't need to register.  Just turn up and join in!</p>
-    </div>
+    <h2>Videos</h2>
+    <p>
+      Videos of each talk are being added to their respective web pages as
+      they become available. Check the <a href="https://review.video.fosdem.org/overview">processing status</a>
+      for updates, or download recordings directly from
+      <a href="https://video.fosdem.org/2026"> our video archive</a> (organised
+      by room).
+    </p>
+  </div>
+
     <%
     # Depending on the height of the sponsors graphic, general announcements
     # (distinct from "news" by virtue of being undated) should either go here
