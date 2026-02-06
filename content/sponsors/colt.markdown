@@ -4,17 +4,23 @@ url: https://www.colt.net/
 cornerstone: false
 ---
 
-Colt provides network, voice, and data centre services to thousands of
-businesses around the world, allowing them to focus on delivering their
-business goals instead of the underlying infrastructure. Customers include 18
-of the top 25 banks and diversified financial groups and 19 out of the top 25
-companies in both global media and telecoms industries (Forbes 2000 list,
-2014). In addition, Colt works with over 50 exchange venues and 13 European
-central banks.
+Colt Technology Services (Colt) is a global digital infrastructure company which
+creates extraordinary connections to help businesses succeed. Powered by amazing
+people and like-minded partners, Colt is driven by its purpose: to put the power
+of the digital universe in the hands of its customers, wherever, whenever and
+however they choose.
 
-Colt operates across Europe, Asia and North America with connections into over
-200 cities globally. It completed the acquisition of KVH in 2014, an
-integrated managed communications and IT infrastructure services business,
-with headquarters in Tokyo and operations in Hong Kong, Seoul and Singapore.
+Since 1992, Colt has set itself apart through its deep commitment to its
+customers, growing from its heritage in the City of London to a global business
+spanning 40+ countries, with over 6,000 employees and more than 80 offices
+around the world. Colt’s customers benefit from expansive digital infrastructure
+connecting 32,000 buildings across 230 cities, more than 50 Metropolitan Area
+Networks and 275+ Points of Presence across Europe, Asia, the Middle East,
+Africa and North America’s largest business hubs.
+
+Privately owned, Colt is one of the most financially sound companies in the
+sector. Obsessed with delivering industry-leading customer experience, Colt is
+guided by its dedication to customer innovation, by its values and its
+responsibility to its customers, partners, people and the planet.
 
 Colt sponsors an internet uplink at FOSDEM.
