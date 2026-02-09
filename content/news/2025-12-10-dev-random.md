@@ -2,7 +2,7 @@
 title: '/dev/random and lightning talks'
 ---
 
-The room formally known as "Lightning Talks" is now known as `/dev/random`.
+The room formerly known as "Lightning Talks" is now known as `/dev/random`.
 
 ---MORE---
 
