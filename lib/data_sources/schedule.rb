@@ -70,6 +70,20 @@ module Fosdem
           end
         end
 
+        # create ical and xcal items for each event
+        cache.fetch('events').each do |event_slug, event|
+          [
+            { title: 'iCal', mime: 'text/calendar', item: "/schedule/ical/event/#{event_slug}/" },
+            { title: 'xCal', mime: 'text/xml',      item: "/schedule/xcal/event/#{event_slug}/" },
+          ].each do |alt|
+            meta = event.dup
+            meta[:events] = [event_slug]
+            r << Nanoc3::Item.new('', meta, alt[:item], mtime)
+            event[:alternative_representations] = [] unless event.has_key? :alternative_representations
+            event[:alternative_representations] << alt
+          end
+        end
+
         memory = {}
         {
           attachments: 'attachment',
