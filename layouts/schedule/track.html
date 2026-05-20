@@ -163,11 +163,11 @@
 <% end %>
 
 <%
-    description = $item_by_id["/schedule/devrooms/#{item[:slug]}/"]
+    description = Kramdown::Document.new(item[:description], :auto_ids => false).to_html
     if description
 %>
 <div class="well well-small track-description">
-    <%= description.compiled_content %>
+    <%= description %>
 </div>
 <% end %>
 
