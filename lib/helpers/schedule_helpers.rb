@@ -298,6 +298,10 @@ module Fosdem
     item.identifier.gsub(%r{/+$}, '').split('/')[-1]
   end
 
+  def event?(item)
+    item.identifier =~ %r{^/schedule/event/[^/]+/$}
+  end
+
   def interview?(item)
     item[:kind] == 'interview' or item.identifier =~ %r{^/interviews?/.+}
   end
