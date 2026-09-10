@@ -1,5 +1,12 @@
-This repository holds the source code and content of the FOSDEM website (as of
-https://fosdem.org/).
+⚠️ **Archived Repository**
+
+This repository is **archived** and contains the source code and content of the FOSDEM website from **2013 to 2025**.
+
+**For FOSDEM 2026 and onward, the website is developed at:** https://git.fosdem.org/FOSDEM/website
+
+---
+
+This repository holds the historical source code and content of the FOSDEM website.
 
 Our website uses the nanoc static site generator, and we did implement a lot of
 custom code to support our workflow as painlessly as possible. Maybe some bits
