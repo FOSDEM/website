@@ -376,6 +376,12 @@ end
 route '/schedule/ical/track/*' do
   "#{$prefix}/schedule/track/#{item.identifier.split('/')[-1]}.ics"
 end
+route '/schedule/xcal/event/*' do
+  "#{$prefix}/schedule/event/#{item.identifier.split('/')[-1]}.xcs"
+end
+route '/schedule/ical/event/*' do
+  "#{$prefix}/schedule/event/#{item.identifier.split('/')[-1]}.ics"
+end
 route '/schedule/pentabarf/' do
   "#{$prefix}/schedule/xml"
 end
