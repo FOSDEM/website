@@ -1,0 +1,8 @@
+---
+title: Video Recordings Podcast RSS Feed
+index: false
+---
+<%= podcast_feed(
+    :events => @items.select{|i| event?(i)},
+    :excerpt_limit => 100,
+    ) %>
